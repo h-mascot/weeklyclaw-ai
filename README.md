@@ -14,3 +14,7 @@ The site is static HTML. Episode decks and agenda notes live under `episodes/`.
 ## Deployment
 
 Production is hosted on Vercel and connected to this GitHub repo. Pushes to `main` auto-deploy to production; pull requests should receive preview deployments once Vercel Git integration is active.
+
+## Contributor workflow
+
+Edit via pull requests or direct commits to `main` if you have write access. Vercel auto-deploys the Git-connected project.
