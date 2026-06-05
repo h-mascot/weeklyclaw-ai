@@ -1,0 +1,10 @@
+{
+  "name": "weeklyclaw-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Official landing page for The Weekly Claw, OpenClaw's weekly community show.",
+  "scripts": {
+    "build": "node ./scripts/validate.mjs",
+    "start": "python3 -m http.server 4173"
+  }
+}

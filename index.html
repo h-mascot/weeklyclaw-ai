@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WeeklyClaw.ai — The Weekly Claw</title>
+  <meta name="description" content="The official page for The Weekly Claw, OpenClaw's weekly community show covering releases, developer experience, news, community signal, and events." />
+  <meta property="og:title" content="WeeklyClaw.ai — The Weekly Claw" />
+  <meta property="og:description" content="OpenClaw's weekly show: changelog, developer experience, news, community signal, and events." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-card: #141414;
+      --bg-card-hover: #1a1a1a;
+      --claw-red: #e63946;
+      --claw-orange: #f4845f;
+      --claw-gradient: linear-gradient(135deg, #e63946, #f4845f);
+      --claw-gradient-wide: linear-gradient(90deg, #e63946, #f4845f, #e63946);
+      --text-primary: #f5f5f5;
+      --text-secondary: #a0a0a0;
+      --text-muted: #666;
+      --border-subtle: #242424;
+      --accent-blue: #4a9eff;
+      --accent-green: #34d399;
+      --accent-purple: #a78bfa;
+      --accent-yellow: #fbbf24;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(230,57,70,0.24), transparent 30rem),
+        radial-gradient(circle at 85% 2%, rgba(244,132,95,0.16), transparent 28rem),
+        linear-gradient(rgba(230,57,70,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230,57,70,0.035) 1px, transparent 1px),
+        var(--bg-dark);
+      background-size: auto, auto, 64px 64px, 64px 64px, auto;
+      color: var(--text-primary);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+    .site-shell { width: min(100% - 32px, var(--max)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(10,10,10,0.74);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .topbar-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -0.04em; }
+    .brand-mark {
+      width: 42px; height: 42px; border-radius: 14px;
+      display: grid; place-items: center;
+      background: var(--claw-gradient);
+      box-shadow: 0 0 40px rgba(230,57,70,0.25);
+      font-size: 23px;
+    }
+    .brand small { display: block; color: var(--text-muted); font: 700 10px/1 JetBrains Mono, monospace; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 4px; }
+    .nav { display: flex; align-items: center; gap: 18px; color: var(--text-secondary); font-size: 13px; font-weight: 700; }
+    .nav a:hover { color: var(--text-primary); }
+    .hero { position: relative; padding: 94px 0 78px; overflow: hidden; }
+    .lobster-bg { position: absolute; right: -80px; top: 28px; font-size: min(42vw, 420px); opacity: 0.035; pointer-events: none; transform: rotate(-10deg); }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--claw-orange); font: 800 12px/1 JetBrains Mono, monospace; letter-spacing: 0.16em; text-transform: uppercase; }
+    .pulse { width: 8px; height: 8px; border-radius: 999px; background: var(--claw-red); box-shadow: 0 0 0 6px rgba(230,57,70,0.12), 0 0 24px rgba(230,57,70,0.9); }
+    h1 { max-width: 980px; margin: 22px 0 20px; font-size: clamp(50px, 8.6vw, 112px); line-height: 0.88; letter-spacing: -0.075em; }
+    .gradient-text { background: var(--claw-gradient-wide); background-size: 180% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-copy { max-width: 780px; color: var(--text-secondary); font-size: clamp(18px, 2vw, 23px); line-height: 1.55; }
+    .hero-copy strong { color: var(--text-primary); }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 34px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 48px; padding: 0 18px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--text-primary); font-weight: 800; font-size: 14px;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .btn:hover { transform: translateY(-1px); border-color: rgba(244,132,95,0.7); background: rgba(255,255,255,0.07); }
+    .btn-primary { background: var(--claw-gradient); border-color: transparent; box-shadow: 0 12px 45px rgba(230,57,70,0.22); }
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 42px; }
+    .stat, .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018));
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      box-shadow: 0 28px 80px rgba(0,0,0,0.22);
+    }
+    .stat { padding: 20px; min-height: 118px; }
+    .stat b { display: block; font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.06em; line-height: 1; }
+    .stat span { display: block; color: var(--text-secondary); margin-top: 10px; font-size: 13px; line-height: 1.45; }
+    section { padding: 66px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 22px; }
+    .section-kicker { color: var(--claw-orange); font: 800 12px/1 JetBrains Mono, monospace; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 12px; }
+    h2 { margin: 0; font-size: clamp(32px, 5vw, 58px); line-height: 0.95; letter-spacing: -0.06em; }
+    .section-note { color: var(--text-secondary); max-width: 470px; line-height: 1.55; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .card { padding: 24px; position: relative; overflow: hidden; }
+    .card::before { content: ''; position: absolute; left: 0; top: 0; right: 0; height: 3px; background: var(--claw-gradient-wide); opacity: 0.65; }
+    .card h3 { margin: 0 0 10px; font-size: 20px; letter-spacing: -0.03em; }
+    .card p { margin: 0; color: var(--text-secondary); line-height: 1.58; }
+    .tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; padding: 7px 10px; border-radius: 999px; background: rgba(230,57,70,0.11); color: var(--claw-orange); font: 800 11px/1 JetBrains Mono, monospace; text-transform: uppercase; letter-spacing: .08em; }
+    .episode { display: flex; flex-direction: column; gap: 16px; min-height: 100%; }
+    .episode-top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
+    .episode-number { font: 900 54px/0.9 Inter, sans-serif; letter-spacing: -0.08em; color: rgba(245,245,245,0.16); }
+    .episode-meta { color: var(--text-muted); font: 700 12px/1.4 JetBrains Mono, monospace; text-transform: uppercase; letter-spacing: .08em; }
+    .link-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 8px; }
+    .mini-link { border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); border-radius: 999px; padding: 8px 12px; font-size: 12px; font-weight: 800; }
+    .mini-link:hover { color: var(--text-primary); border-color: rgba(244,132,95,0.7); }
+    .run-of-show { counter-reset: item; display: grid; gap: 10px; }
+    .run-item { display: grid; grid-template-columns: 50px 1fr auto; gap: 16px; align-items: center; padding: 16px; border: 1px solid var(--border-subtle); border-radius: 18px; background: rgba(255,255,255,0.025); }
+    .run-item::before { counter-increment: item; content: counter(item, decimal-leading-zero); color: var(--claw-orange); font: 800 12px/1 JetBrains Mono, monospace; }
+    .run-title { font-weight: 850; letter-spacing: -0.02em; }
+    .run-desc { color: var(--text-muted); font-size: 13px; margin-top: 4px; line-height: 1.4; }
+    .run-time { color: var(--text-secondary); font: 800 12px/1 JetBrains Mono, monospace; white-space: nowrap; }
+    .banner {
+      border-radius: 30px; padding: 34px;
+      background:
+        linear-gradient(135deg, rgba(230,57,70,0.18), rgba(244,132,95,0.08)),
+        rgba(255,255,255,0.035);
+      border: 1px solid rgba(244,132,95,0.22);
+      display: grid; grid-template-columns: 1.4fr .9fr; gap: 24px; align-items: center;
+    }
+    .banner p { color: var(--text-secondary); font-size: 17px; line-height: 1.55; margin: 10px 0 0; }
+    .footer { padding: 44px 0 52px; border-top: 1px solid rgba(255,255,255,0.06); color: var(--text-muted); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 13px; }
+    .mono { font-family: JetBrains Mono, monospace; }
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .hero { padding-top: 66px; }
+      .stats, .grid-3, .grid-2, .banner { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-note { margin-top: 12px; }
+      .run-item { grid-template-columns: 38px 1fr; }
+      .run-time { grid-column: 2; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="site-shell topbar-inner">
+      <a class="brand" href="#top" aria-label="WeeklyClaw.ai home">
+        <span class="brand-mark">🦞</span>
+        <span>WeeklyClaw.ai<small>The Claw is the Law</small></span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#show">Show</a>
+        <a href="#episodes">Episodes</a>
+        <a href="#format">Format</a>
+        <a href="#links">Links</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="lobster-bg">🦞</div>
+      <div class="site-shell">
+        <div class="eyebrow"><span class="pulse"></span> OpenClaw Discord · Fridays · 4 PM ET</div>
+        <h1>The weekly show for the <span class="gradient-text">OpenClaw</span> world.</h1>
+        <p class="hero-copy"><strong>The Weekly Claw</strong> is the official weekly roundup for builders, operators, testers, and agent weirdos shipping around OpenClaw: release notes, developer experience, community signal, news, events, demos, and the occasional lobster-grade public service announcement.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#episodes">Browse recent materials</a>
+          <a class="btn" href="#format">See the format</a>
+        </div>
+        <div class="stats" aria-label="Show highlights">
+          <div class="stat"><b>60<span class="gradient-text">min</span></b><span>Fast weekly room, built for signal over ceremony.</span></div>
+          <div class="stat"><b>4<span class="gradient-text">PM</span></b><span>Friday show slot on OpenClaw Discord voice.</span></div>
+          <div class="stat"><b>DX</b><span>Release changelog plus developer experience report.</span></div>
+          <div class="stat"><b>🦞</b><span>No token. No coin. No blockchain. Still funny we need to say it.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="show">
+      <div class="site-shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">What it is</div>
+            <h2>One room for the week in claws.</h2>
+          </div>
+          <p class="section-note">This page is intentionally simple for now: the home base, the show promise, and the latest public materials. No bloated media empire cosplay. Yet.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="tag">Changelog</span>
+            <h3>What shipped</h3>
+            <p>Henry’s segment turns OpenClaw release notes into operator-readable signal: what changed, what broke, what got fixed, and what the team should care about next.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Dev Experience</span>
+            <h3>What it felt like</h3>
+            <p>Real builder feedback from the week: installs, gateways, integrations, approvals, agent UX, community friction, and the small papercuts that compound.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Community</span>
+            <h3>What is moving</h3>
+            <p>News, meetups, demos, beta reports, events, ecosystem moves, and the outside stories shaping how people understand persistent AI agents.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="episodes">
+      <div class="site-shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Recent materials</div>
+            <h2>Latest show packets.</h2>
+          </div>
+          <p class="section-note">Seeded from the current Weekly Claw decks and agendas. Henry’s changelog slides stay on SuperAda until this site gets a fuller CMS.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card episode">
+            <div class="episode-top">
+              <div>
+                <div class="episode-meta">May 22, 2026 · News + events</div>
+                <h3>The Weekly Claw #15</h3>
+              </div>
+              <div class="episode-number">15</div>
+            </div>
+            <p>Claw Chain, token economics, Google’s OpenClaw-shaped response, governed enterprise agents, and the next two weeks of meetups.</p>
+            <div class="link-row">
+              <a class="mini-link" href="/episodes/15/deck.html">Open deck</a>
+              <a class="mini-link" href="/episodes/15/agenda.md">Agenda notes</a>
+              <a class="mini-link" href="https://superada.ai/weekly-claw/week15">SuperAda edition</a>
+            </div>
+          </article>
+          <article class="card episode">
+            <div class="episode-top">
+              <div>
+                <div class="episode-meta">May 8, 2026 · Andy + Henry</div>
+                <h3>The Weekly Claw #13</h3>
+              </div>
+              <div class="episode-number">13</div>
+            </div>
+            <p>Meta’s Hatch story, the GitHub milestone, the rough-week post, changelog + DevX, Jensen Huang at Milken, and community meetups.</p>
+            <div class="link-row">
+              <a class="mini-link" href="/episodes/13/deck.html">Open deck</a>
+              <a class="mini-link" href="/episodes/13/agenda.md">Agenda notes</a>
+              <a class="mini-link" href="https://superada.ai/weekly-claw/week13">SuperAda edition</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="format">
+      <div class="site-shell">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Run of show</div>
+            <h2>Built to move fast.</h2>
+          </div>
+          <p class="section-note">The default format is tight enough for a weekly habit, flexible enough for news spikes, guest demos, and the occasional “we need to talk about this bug” segment.</p>
+        </div>
+        <div class="run-of-show">
+          <div class="run-item"><div><div class="run-title">Welcome & housekeeping</div><div class="run-desc">Recording note, room norms, standing no-token PSA.</div></div><div class="run-time">3 min</div></div>
+          <div class="run-item"><div><div class="run-title">Community guidelines</div><div class="run-desc">Keep the server useful: right channels, clean voice norms, report paths.</div></div><div class="run-time">3 min</div></div>
+          <div class="run-item"><div><div class="run-title">OpenClaw in the news</div><div class="run-desc">The outside stories shaping how the ecosystem is perceived.</div></div><div class="run-time">12 min</div></div>
+          <div class="run-item"><div><div class="run-title">Changelog + DevX</div><div class="run-desc">Henry’s release walkthrough and operator-grade developer experience report.</div></div><div class="run-time">14 min</div></div>
+          <div class="run-item"><div><div class="run-title">Deep dive / demo / video review</div><div class="run-desc">One topic worth extra attention from the builder room.</div></div><div class="run-time">8 min</div></div>
+          <div class="run-item"><div><div class="run-title">Meetups + community signal</div><div class="run-desc">What happened, what is coming, who needs the mic next week.</div></div><div class="run-time">5 min</div></div>
+          <div class="run-item"><div><div class="run-title">Close</div><div class="run-desc">Links, next Friday, and a final reminder that the lobster remains coinless.</div></div><div class="run-time">3 min</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="links">
+      <div class="site-shell">
+        <div class="banner">
+          <div>
+            <div class="section-kicker">Official links</div>
+            <h2>Bring receipts. Bring questions.</h2>
+            <p>For now, the live changelog and DevX slide archive lives on SuperAda. This domain becomes the public front door for show notes, recordings, guest slots, and upcoming episode materials.</p>
+          </div>
+          <div class="link-row">
+            <a class="btn btn-primary" href="https://superada.ai/weekly-claw">Slide archive</a>
+            <a class="btn" href="https://openclaw.ai">OpenClaw</a>
+            <a class="btn" href="https://github.com/openclaw/openclaw">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="site-shell footer-inner">
+      <div>© 2026 WeeklyClaw.ai · The Weekly Claw</div>
+      <div class="mono">OpenClaw Discord · Fridays · 4 PM ET</div>
+    </div>
+  </footer>
+</body>
+</html>

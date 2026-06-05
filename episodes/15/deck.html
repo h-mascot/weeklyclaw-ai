@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Weekly Claw #15 — May 22, 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-card: #141414;
+  --bg-card-hover: #1a1a1a;
+  --claw-red: #e63946;
+  --claw-orange: #f4845f;
+  --claw-gradient: linear-gradient(135deg, #e63946, #f4845f);
+  --claw-gradient-wide: linear-gradient(90deg, #e63946, #f4845f, #e63946);
+  --text-primary: #f5f5f5;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666;
+  --border-subtle: #222;
+  --accent-blue: #4a9eff;
+  --accent-green: #34d399;
+  --accent-purple: #a78bfa;
+  --accent-yellow: #fbbf24;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  width: 100%; height: 100%;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow: hidden;
+}
+.slide-container { width: 100%; height: 100vh; position: relative; overflow: hidden; }
+.slide {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  padding: 56px 70px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+.slide.active { opacity: 1; pointer-events: all; }
+.progress-bar {
+  position: fixed; top: 0; left: 0;
+  height: 3px; background: var(--claw-gradient);
+  transition: width 0.4s ease; z-index: 100;
+}
+.slide-counter {
+  position: fixed; bottom: 22px; right: 32px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px; color: var(--text-muted); z-index: 100;
+}
+.nav-dots {
+  position: fixed; bottom: 22px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 7px; z-index: 100;
+}
+.nav-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--text-muted); cursor: pointer;
+  transition: all 0.3s;
+}
+.nav-dot.active { background: var(--claw-red); width: 24px; border-radius: 4px; }
+.kb-hint {
+  position: fixed; bottom: 22px; left: 32px;
+  font-size: 11px; color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace; z-index: 100;
+}
+.kb-hint kbd {
+  background: #222; padding: 2px 6px; border-radius: 3px;
+  border: 1px solid #333; font-size: 10px;
+}
+h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 18px; }
+h2 { font-size: 2.3rem; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 14px; }
+h3 { font-size: 1.35rem; font-weight: 600; margin-bottom: 10px; }
+.subtitle { font-size: 1.1rem; color: var(--text-secondary); font-weight: 400; line-height: 1.55; max-width: 760px; }
+.gradient-text {
+  background: var(--claw-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.red { color: var(--claw-red); }
+.orange { color: var(--claw-orange); }
+.blue { color: var(--accent-blue); }
+.green { color: var(--accent-green); }
+.purple { color: var(--accent-purple); }
+.yellow { color: var(--accent-yellow); }
+.muted { color: var(--text-secondary); }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.lobster-bg { position: absolute; font-size: 22rem; opacity: 0.04; z-index: 0; pointer-events: none; }
+.full-width { width: 100%; max-width: 1140px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; width: 100%; max-width: 1140px; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; width: 100%; max-width: 1140px; }
+.text-center { text-align: center; }
+.align-start { align-items: flex-start; }
+.mt-1 { margin-top: 8px; } .mt-2 { margin-top: 14px; } .mt-3 { margin-top: 22px; } .mt-4 { margin-top: 30px; }
+.mb-2 { margin-bottom: 14px; }
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px; padding: 22px;
+  text-align: left;
+}
+.card-glow { box-shadow: 0 0 40px rgba(230,57,70,0.08); border-color: rgba(230,57,70,0.2); }
+.card h3 { font-size: 1.05rem; margin-bottom: 7px; }
+.card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; }
+.stat-block { text-align: center; padding: 14px; }
+.stat-number {
+  font-size: 2.6rem; font-weight: 800;
+  background: var(--claw-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+.stat-label { font-size: 0.82rem; color: var(--text-secondary); margin-top: 6px; }
+.tag {
+  display: inline-block; padding: 4px 12px;
+  border-radius: 20px; font-size: 0.74rem;
+  font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.tag-red { background: rgba(230,57,70,0.15); color: var(--claw-red); }
+.tag-orange { background: rgba(244,132,95,0.15); color: var(--claw-orange); }
+.tag-green { background: rgba(52,211,153,0.15); color: var(--accent-green); }
+.tag-blue { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+.tag-purple { background: rgba(167,139,250,0.15); color: var(--accent-purple); }
+.tag-yellow { background: rgba(251,191,36,0.15); color: var(--accent-yellow); }
+.quote-block {
+  border-left: 3px solid var(--claw-red);
+  padding: 14px 22px; margin: 14px 0;
+  background: rgba(230,57,70,0.05);
+  border-radius: 0 8px 8px 0;
+  font-style: italic; color: var(--text-primary);
+  font-size: 1.15rem; line-height: 1.55;
+  max-width: 1000px;
+}
+.quote-block .attribution {
+  font-style: normal; font-weight: 600;
+  color: var(--text-secondary); margin-top: 8px; font-size: 0.85rem;
+}
+.gradient-line { width: 80px; height: 3px; background: var(--claw-gradient); border-radius: 2px; margin: 14px auto; }
+.gradient-line.wide { width: 120px; }
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(230,57,70,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(230,57,70,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.slide-brand {
+  position: absolute; top: 24px; left: 36px;
+  font-weight: 700; font-size: 0.82rem;
+  display: flex; align-items: center; gap: 8px;
+  color: var(--text-muted); z-index: 5;
+}
+.slide-brand .lobster-icon { font-size: 1.2rem; }
+.slide-tag {
+  position: absolute; top: 24px; right: 36px;
+  font-size: 0.7rem; font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted); z-index: 5;
+}
+.alert-card {
+  background: rgba(230,57,70,0.08);
+  border: 1px solid rgba(230,57,70,0.3);
+  border-radius: 12px; padding: 22px;
+  max-width: 900px; width: 100%;
+}
+.alert-card h3 { color: var(--claw-red); }
+.warn-card {
+  background: rgba(251,191,36,0.06);
+  border: 1px solid rgba(251,191,36,0.25);
+  border-radius: 12px; padding: 18px 22px;
+  max-width: 900px; width: 100%;
+}
+.agenda-row {
+  display: flex; gap: 18px; align-items: center;
+  padding: 11px 0; border-bottom: 1px solid #1a1a1a;
+}
+.agenda-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem; color: var(--claw-red);
+  width: 28px; flex-shrink: 0; font-weight: 600;
+}
+.agenda-title { font-size: 0.96rem; font-weight: 600; flex: 1; }
+.agenda-time {
+  font-size: 0.78rem; color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.big-quote {
+  font-size: 1.7rem; font-weight: 700; line-height: 1.3;
+  max-width: 880px; text-align: center; letter-spacing: -0.02em;
+}
+.part-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem; color: var(--claw-red);
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.news-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; width: 100%; max-width: 1140px;
+}
+.news-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px; padding: 18px 20px;
+  text-align: left; position: relative; overflow: hidden;
+}
+.news-card .news-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem; color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.news-card h4 { font-size: 1.02rem; font-weight: 700; margin-bottom: 6px; }
+.news-card p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.5; }
+.news-card .accent-bar {
+  position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%;
+}
+.bar-red { background: var(--claw-red); }
+.bar-blue { background: var(--accent-blue); }
+.bar-green { background: var(--accent-green); }
+.bar-orange { background: var(--claw-orange); }
+.bar-yellow { background: var(--accent-yellow); }
+.bar-purple { background: var(--accent-purple); }
+.two-col-img {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 28px; width: 100%; max-width: 1140px;
+  align-items: center;
+}
+.events-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0 32px; width: 100%; max-width: 1180px;
+}
+.event-row {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px; align-items: start;
+  padding: 8px 0; border-bottom: 1px solid #181818;
+  font-size: 0.82rem;
+}
+.event-row .event-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem; color: var(--text-muted);
+  white-space: nowrap;
+}
+.event-row .event-title {
+  color: var(--text-primary); font-weight: 600;
+  font-size: 0.85rem;
+}
+.event-row .meta { color: var(--text-secondary); font-weight: 400; font-size: 0.75rem; }
+
+.story-frame {
+  display: grid; grid-template-columns: auto 1fr; gap: 22px;
+  align-items: center; width: 100%; max-width: 1140px;
+}
+.story-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem; letter-spacing: 0.14em;
+  color: var(--claw-red); text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-subtle);
+  padding: 5px 11px; border-radius: 999px;
+  font-size: 0.74rem; color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+}
+.pill.red { color: var(--claw-red); border-color: rgba(230,57,70,0.35); background: rgba(230,57,70,0.08); }
+.pill.blue { color: var(--accent-blue); border-color: rgba(74,158,255,0.35); background: rgba(74,158,255,0.08); }
+.pill.green { color: var(--accent-green); border-color: rgba(52,211,153,0.35); background: rgba(52,211,153,0.08); }
+.pill.yellow { color: var(--accent-yellow); border-color: rgba(251,191,36,0.35); background: rgba(251,191,36,0.08); }
+.pill.purple { color: var(--accent-purple); border-color: rgba(167,139,250,0.35); background: rgba(167,139,250,0.08); }
+
+.bullet-list { list-style: none; padding: 0; margin: 0; }
+.bullet-list li {
+  position: relative; padding-left: 20px;
+  margin-bottom: 9px; font-size: 0.95rem;
+  color: var(--text-secondary); line-height: 1.55;
+}
+.bullet-list li::before {
+  content: ''; position: absolute; left: 0; top: 9px;
+  width: 8px; height: 8px; border-radius: 2px;
+  background: var(--claw-gradient);
+}
+.bullet-list li strong { color: var(--text-primary); font-weight: 600; }
+
+.divider-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8rem; font-weight: 800;
+  background: var(--claw-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.coverage-pill {
+  display: inline-block;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-subtle);
+  padding: 6px 14px; border-radius: 999px;
+  font-size: 0.78rem; font-weight: 600;
+  color: var(--text-secondary); margin: 4px 6px 4px 0;
+}
+
+img.embed {
+  display: block;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  max-width: 100%;
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+.orb-red { background: #e63946; }
+.orb-orange { background: #f4845f; }
+.orb-blue { background: #4a9eff; }
+.orb-purple { background: #a78bfa; }
+.orb-green { background: #34d399; }
+
+.content { position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center; }
+
+.headline-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 2.4rem;
+  background: var(--claw-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+</style>
+
+<style>
+a { color: inherit; }
+.event-row-big {
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 28px;
+  padding: 16px 0;
+  align-items: start;
+}
+.event-row-big .event-date {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.event-row-big .event-title {
+  font-size: 1.02rem;
+  line-height: 1.35;
+  margin-bottom: 5px;
+  overflow-wrap: anywhere;
+}
+.event-row-big .meta {
+  display: block;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  color: var(--text-muted);
+}
+.events-grid-single { grid-template-columns: 1fr; gap: 0; }
+.warn-card .mono { display:inline-block; margin-bottom:6px; }
+.news-card .mono { display:block; }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="slide-counter"><span id="slideNum">1</span> / <span id="slideTotal">36</span></div>
+<div class="nav-dots" id="navDots"></div>
+<div class="kb-hint"><kbd>←</kbd> <kbd>→</kbd> navigate · <kbd>F</kbd> fullscreen</div>
+
+<div class="slide-container">
+
+<!-- ============ SLIDE 1 - COVER ============ -->
+<div class="slide grid-bg active" id="slide-1">
+  <div class="lobster-bg" style="top:6%; right:-3%;">🦞</div>
+  <div class="glow-orb orb-red" style="width:520px; height:520px; top:-160px; left:-140px;"></div>
+  <div class="glow-orb orb-orange" style="width:420px; height:420px; bottom:-140px; right:-100px;"></div>
+  <div class="content">
+    <div class="part-label">Episode 15 · May 22, 2026 · News + Events</div>
+    <h1 style="font-size:5rem; text-align:center; margin-bottom:8px;">The <span class="gradient-text">Weekly Claw</span></h1>
+    <div class="gradient-line wide"></div>
+    <p class="subtitle text-center mt-2" style="max-width:900px; font-size:1.22rem;">
+      Claw Chain, token economics, Google’s response, governed enterprise agents, and the next two weeks of meetups.
+    </p>
+    <div class="mt-4" style="display:flex; gap:18px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill red">21 news links</span>
+      <span class="pill blue">10 upcoming events</span>
+      <span class="pill green">May 22 - Jun 5</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 2 - NEWS THEMES ============ -->
+<div class="slide grid-bg" id="slide-2">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">02 / NEWS MAP</div>
+  <div class="content">
+    <div class="part-label">Last 7 days</div>
+    <h2 class="text-center">The week split into <span class="gradient-text">six signals</span></h2>
+    <div class="gradient-line"></div>
+    <div class="news-grid mt-3">
+      <div class="news-card"><div class="accent-bar bar-red"></div><div class="news-num">01 · SECURITY</div><h4>Claw Chain became the dominant story</h4><p>Four patched CVEs turned into a broader debate about agent blast radius, exposed instances, and supply-chain footholds.</p></div>
+      <div class="news-card"><div class="accent-bar bar-orange"></div><div class="news-num">02 · ECONOMICS</div><h4>The $1.3M token bill put numbers on autonomy</h4><p>One screenshot made 100-agent coding fleets, Fast Mode pricing, and subscription subsidies concrete.</p></div>
+      <div class="news-card"><div class="accent-bar bar-blue"></div><div class="news-num">03 · PLATFORMS</div><h4>Google answered the form factor</h4><p>Gemini Spark is always-on, cloud-hosted, Workspace-connected, and explicitly OpenClaw-shaped.</p></div>
+      <div class="news-card"><div class="accent-bar bar-green"></div><div class="news-num">04 · ENTERPRISE</div><h4>Governance became a product category</h4><p>EnterpriseClaw, MightyClaw, and NanoClaw all sell control, isolation, and auditability around the agent pattern.</p></div>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 3 - CYBER SECURITY NEWS ============ -->
+<div class="slide grid-bg" id="slide-3">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">03 / SECURITY</div>
+  <div class="content">
+    <div class="story-num">Source 01 · Cyber Security News · May 15, 2026</div>
+    <h2 class="text-center">Claw Chain exposes public OpenClaw servers</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-red"></div>
+        <span class="tag tag-red">SECURITY</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">Four patched vulnerabilities are framed as one chain: sandbox escape, secret leakage, owner escalation, and persistence.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://cybersecuritynews.com/openclaw-chain-vulnerabilities/</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="red">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>245,000 exposed instances cited across Shodan and ZoomEye scans</li>
+          <li>Highest CVSS: 9.6 for TOCTOU write escape in OpenShell</li>
+          <li>Recommended response: patch, rotate secrets, inventory exposed hosts, tighten auth/firewalls</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>Use this as the broadest security headline: public exposure plus agent privileges turns a patch story into an operations story.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill red">Cyber Security News</span>
+      <span class="pill">May 15, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 4 - CYERA RESEARCH ============ -->
+<div class="slide grid-bg" id="slide-4">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">04 / RESEARCH</div>
+  <div class="content">
+    <div class="story-num">Source 02 · Cyera Research · May 15, 2026</div>
+    <h2 class="text-center">Cyera names the chain and the model</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-purple"></div>
+        <span class="tag tag-purple">RESEARCH</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">The primary research write-up anchors the story: four CVEs across isolation, execution validation, and identity can be chained from one foothold.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.cyera.com/blog/claw-chain-cyera-research-unveil-four-chainable-vulnerabilities-in-openclaw</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="purple">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Affected versions: OpenClaw before April 23 patches</li>
+          <li>Attack vector: malicious plugin, prompt injection, or supply-chain input</li>
+          <li>Core claim: agent behavior can make hostile actions look normal</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>Treat this as the receipt slide for the security cluster. It is the source the rest of the coverage is orbiting.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill purple">Cyera Research</span>
+      <span class="pill">May 15, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 5 - THE HACKER NEWS ============ -->
+<div class="slide grid-bg" id="slide-5">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">05 / SECURITY</div>
+  <div class="content">
+    <div class="story-num">Source 03 · The Hacker News · May 15, 2026</div>
+    <h2 class="text-center">Data theft, escalation, persistence</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-red"></div>
+        <span class="tag tag-red">SECURITY</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">The Hacker News compresses the chain into the classic attacker path: foothold, secrets, owner-level control, and backdoor persistence.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://thehackernews.com/2026/05/four-openclaw-flaws-enable-data-theft.html</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="red">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>CVE-2026-44112 and CVE-2026-44113 hit OpenShell TOCTOU paths</li>
+          <li>CVE-2026-44115 leaks environment variables through heredoc expansion</li>
+          <li>CVE-2026-44118 fixes centered on owner/non-owner bearer tokens</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>Good slide for a technically literate audience: specific CVEs, concrete fix language, and a clean four-step exploit path.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill red">The Hacker News</span>
+      <span class="pill">May 15, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 6 - ZENTERA ============ -->
+<div class="slide grid-bg" id="slide-6">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">06 / ARCHITECTURE</div>
+  <div class="content">
+    <div class="story-num">Source 04 · Zentera · May 2026</div>
+    <h2 class="text-center">Patching is necessary, not sufficient</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-blue"></div>
+        <span class="tag tag-blue">ARCHITECTURE</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">Zentera turns Claw Chain into an isolation argument: a patched agent can still have too much reach if the trust model is flat.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.zentera.net/blog/ai-agent-isolation-openclaw-claw-chain</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="blue">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Recommended controls: enclave isolation, credential substitution, process-level visibility</li>
+          <li>Blast radius should be bounded by architecture, not healthy-agent behavior</li>
+          <li>Question for CISOs: what can a compromised agent reach after the patch?</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>This is the best bridge from vulnerability news to enterprise deployment design.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill blue">Zentera</span>
+      <span class="pill">May 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 7 - HACKREAD ============ -->
+<div class="slide grid-bg" id="slide-7">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">07 / SECURITY</div>
+  <div class="content">
+    <div class="story-num">Source 05 · HackRead · May 16, 2026</div>
+    <h2 class="text-center">Plain-English risk framing</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-yellow"></div>
+        <span class="tag tag-yellow">SECURITY</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">HackRead explains the same chain for a broader audience, emphasizing admin-level takeover and secret exposure across thousands of servers.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://hackread.com/claw-chain-vulnerabilities-openclaw-ai-servers-risk/</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="yellow">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Highlights CVE-2026-44112 as the critical 9.6 issue</li>
+          <li>Frames senderIsOwner abuse as owner/admin impersonation</li>
+          <li>Notes highest risk for banks, healthcare, IT support, and customer-service use cases</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>Use this when you want less CVE density and more operator-risk language.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill yellow">HackRead</span>
+      <span class="pill">May 16, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 8 - TOM&#X27;S HARDWARE ============ -->
+<div class="slide grid-bg" id="slide-8">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">08 / ECONOMICS</div>
+  <div class="content">
+    <div class="story-num">Source 06 · Tom&#x27;s Hardware · May 17, 2026</div>
+    <h2 class="text-center">$1.3M in tokens becomes the cost story</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-orange"></div>
+        <span class="tag tag-orange">ECONOMICS</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">Peter Steinberger posted a 30-day OpenAI usage screenshot: $1.305M, 603B tokens, 7.6M requests, and roughly 100 Codex instances.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.tomshardware.com/tech-industry/artificial-intelligence/openclaw-creator-burns-through-1-3-million-in-openai-api-tokens-in-a-single-month</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="orange">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>OpenAI covers the spend because Steinberger now works there</li>
+          <li>Fast Mode explains much of the headline number; non-fast use was estimated near $300K</li>
+          <li>The story turned OpenClaw into a visible benchmark for agentic coding economics</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>This is not just a “big bill” story. It makes autonomous development costs legible.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill yellow">Tom&#x27;s Hardware</span>
+      <span class="pill">May 17, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 9 - SC MEDIA ============ -->
+<div class="slide grid-bg" id="slide-9">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">09 / SECURITY BRIEF</div>
+  <div class="content">
+    <div class="story-num">Source 07 · SC Media · May 2026</div>
+    <h2 class="text-center">Security brief: patch and rotate</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-red"></div>
+        <span class="tag tag-red">SECURITY BRIEF</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">SC Media recaps Claw Chain as a security-ops brief: patch levels, secret leakage, admin bypass, and public exposure.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.scworld.com/brief/four-vulnerabilities-in-openclaw-ai-agent-put-thousands-of-servers-at-risk</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="red">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Cites 65,000 to 180,000 public instances as the exposure range</li>
+          <li>Recommends immediate updates and password/key changes</li>
+          <li>Frames agents as tools attackers can use to access internal systems</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>Short and practical. Use it as the executive-summary version of the same advisory.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill red">SC Media</span>
+      <span class="pill">May 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 10 - DARK READING ============ -->
+<div class="slide grid-bg" id="slide-10">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">10 / APPSEC</div>
+  <div class="content">
+    <div class="story-num">Source 08 · Dark Reading · May 18, 2026</div>
+    <h2 class="text-center">Security trade press connects risk to growth</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-red"></div>
+        <span class="tag tag-red">APPSEC</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">Dark Reading puts the vulnerabilities inside OpenClaw’s rapid adoption curve and recurring security scrutiny.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.darkreading.com/application-security/claw-chain-vulnerabilities-threaten-openclaw</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="red">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Notes all four flaws were patched after Cyera reported them</li>
+          <li>Connects agent privileges to hard-to-detect “normal” activity</li>
+          <li>Calls out prior OpenClaw advisories around command execution, token theft, and prompt injection</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>The useful angle: breakout adoption means security stories no longer stay inside the repo.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill red">Dark Reading</span>
+      <span class="pill">May 18, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 11 - BUSINESS INSIDER ============ -->
+<div class="slide grid-bg" id="slide-11">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">11 / CULTURE</div>
+  <div class="content">
+    <div class="story-num">Source 09 · Business Insider · May 18, 2026</div>
+    <h2 class="text-center">Tokenmaxxing reaches OpenClaw</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-orange"></div>
+        <span class="tag tag-orange">CULTURE</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">Business Insider frames the $1.3M usage as both AI talent perk and Silicon Valley token-spend spectacle.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.businessinsider.com/openclaw-peter-steinberger-ai-token-bill-2026-5</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="orange">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Daily screenshot showed just under $20,000 for one day</li>
+          <li>Steinberger said OpenAI support for OpenClaw covered the cost</li>
+          <li>Follow-up framed the question: what if tokens do not matter?</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>This is the public-reaction slide: the compute bill became a labor, perks, and status story.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill yellow">Business Insider</span>
+      <span class="pill">May 18, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 12 - THE NEXT WEB ============ -->
+<div class="slide grid-bg" id="slide-12">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">12 / ECONOMICS</div>
+  <div class="content">
+    <div class="story-num">Source 10 · The Next Web · May 18, 2026</div>
+    <h2 class="text-center">A concrete data point for agentic coding scale</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-orange"></div>
+        <span class="tag tag-orange">ECONOMICS</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">TNW treats the bill as a rare public cost model for 100 always-running coding agents overseen by a three-person team.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://thenextweb.com/news/openclaw-peter-steinberger-1-3-million-openai-token-bill</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="orange">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Agents review PRs, scan commits, dedupe issues, write fixes, monitor benchmarks</li>
+          <li>Fast Mode estimate: $1.3M headline versus roughly $300K optimized monthly cost</li>
+          <li>Per-agent economics land far above flat subscription assumptions</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>Use this to make the pricing discussion sober: autonomy changes the shape of usage.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill yellow">The Next Web</span>
+      <span class="pill">May 18, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 13 - PC GAMER ============ -->
+<div class="slide grid-bg" id="slide-13">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">13 / MAINSTREAM</div>
+  <div class="content">
+    <div class="story-num">Source 11 · PC Gamer · May 18, 2026</div>
+    <h2 class="text-center">The gamer press finds the OpenAI bill</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-yellow"></div>
+        <span class="tag tag-yellow">MAINSTREAM</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">PC Gamer turns the token story into mainstream culture coverage: OpenClaw’s compute appetite is now legible outside developer media.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.pcgamer.com/software/ai/the-creator-of-openclaw-used-usd1-300-000-of-openai-tokens-in-30-days-which-is-a-hell-of-a-perk/</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="yellow">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Repeats the core numbers: $1.305M, 603B tokens, 7.6M requests</li>
+          <li>Highlights roughly 100 Codex instances and a three-person team</li>
+          <li>Frames Fast Mode as a major driver of the bill</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>Signal: OpenClaw is no longer only in AI newsletters. It is showing up wherever computing costs are interesting.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill yellow">PC Gamer</span>
+      <span class="pill">May 18, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 14 - BANKINFOSECURITY ============ -->
+<div class="slide grid-bg" id="slide-14">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">14 / RISK</div>
+  <div class="content">
+    <div class="story-num">Source 12 · BankInfoSecurity · May 19, 2026</div>
+    <h2 class="text-center">Finance/security audience gets the hijack story</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-red"></div>
+        <span class="tag tag-red">RISK</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">BankInfoSecurity emphasizes the enterprise and personal-device risk: a compromised agent can operate through trusted permissions.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.bankinfosecurity.com/patched-openclaw-flaw-let-hackers-hijack-ai-agents-a-31720</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="red">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Calls the agent an ideal initial access and lateral-movement point</li>
+          <li>Notes personal agents touching work systems can become enterprise pathways</li>
+          <li>Cites more than 500 GitHub Security Advisories tracked against the platform</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>This is the strongest “personal agent meets corporate device” slide.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill red">BankInfoSecurity</span>
+      <span class="pill">May 19, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 15 - CIO ============ -->
+<div class="slide grid-bg" id="slide-15">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">15 / ENTERPRISE</div>
+  <div class="content">
+    <div class="story-num">Source 13 · CIO · May 19, 2026</div>
+    <h2 class="text-center">EnterpriseClaw packages governance</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-green"></div>
+        <span class="tag tag-green">ENTERPRISE</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">Automation Anywhere launched EnterpriseClaw with Cisco, Nvidia, Okta, and OpenAI to sell centralized control around autonomous agent fleets.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.cio.com/article/4173405/enterpriseclaw-wants-to-bring-governance-to-the-openclaw-era.html</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="green">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Targets desktops, cloud platforms, behind-the-firewall networks, and on-prem systems</li>
+          <li>Positioning: centralized access, control, observability, and governance</li>
+          <li>OpenClaw’s virality becomes the setup for enterprise-managed alternatives</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>This is the commercialization story: enterprises want OpenClaw-like capability with admin surfaces.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill green">CIO</span>
+      <span class="pill">May 19, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 16 - WIRED ============ -->
+<div class="slide grid-bg" id="slide-16">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">16 / GOOGLE</div>
+  <div class="content">
+    <div class="story-num">Source 14 · WIRED · May 19, 2026</div>
+    <h2 class="text-center">Gemini Spark as the OpenClaw response</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-blue"></div>
+        <span class="tag tag-blue">GOOGLE</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">WIRED frames Gemini Spark as Google’s always-running agent for personal data, emails, calendars, purchases, and proactive tasks.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.wired.com/story/googles-response-to-openclaws-24-7-ai-agent/</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="blue">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Slow rollout: early testers now, beta next week for $100+ AI plan subscribers</li>
+          <li>Spark asks before high-stakes actions like spending money or sending emails</li>
+          <li>Google can start with deep first-party personal context before third-party integrations</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>This is the platform-response slide: Google wants OpenClaw behavior inside Google’s account surface.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill blue">WIRED</span>
+      <span class="pill">May 19, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 17 - THE VERGE ============ -->
+<div class="slide grid-bg" id="slide-17">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">17 / GOOGLE I/O</div>
+  <div class="content">
+    <div class="story-num">Source 15 · The Verge · May 19, 2026</div>
+    <h2 class="text-center">Google launches its version of OpenClaw</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-blue"></div>
+        <span class="tag tag-blue">GOOGLE I/O</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">The Verge covers Gemini Spark as a 24/7 Google Cloud agent with Workspace integrations and MCP-connected third-party apps.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.theverge.com/tech/932996/google-gemini-spark-antigravity-io-2026</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="blue">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Runs in the background on Google Cloud VMs</li>
+          <li>Connects to Gmail, Docs, Sheets, Slides, Canva, OpenTable, Instacart, and more</li>
+          <li>Roadmap includes local files on macOS, Chrome, texting, email, and Antigravity updates</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>Pair this with WIRED: one slide is product feel, this one is platform mechanics.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill blue">The Verge</span>
+      <span class="pill">May 19, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 18 - TECHCRUNCH ============ -->
+<div class="slide grid-bg" id="slide-18">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">18 / STARTUPS</div>
+  <div class="content">
+    <div class="story-num">Source 16 · TechCrunch · May 20, 2026</div>
+    <h2 class="text-center">NanoClaw raises $12M instead of selling</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-green"></div>
+        <span class="tag tag-green">STARTUPS</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">NanoCo raised a $12M seed after NanoClaw’s viral launch and declined a roughly $20M acquisition offer.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://techcrunch.com/2026/05/20/nanoclaw-creator-turns-down-20m-buyout-offer-raises-12m-seed-instead/</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="green">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Backers include Valley Capital Partners, Docker, Vercel, Monday.com, Slow Ventures, and Clem Delangue</li>
+          <li>NanoClaw is positioned as a security-focused OpenClaw alternative</li>
+          <li>Sandboxed/container architecture is the core contrast against direct computer access</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>The alternative ecosystem is now fundable. Security posture is part of the pitch, not an afterthought.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill green">TechCrunch</span>
+      <span class="pill">May 20, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 19 - BUSINESS INSIDER ============ -->
+<div class="slide grid-bg" id="slide-19">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">19 / STARTUPS</div>
+  <div class="content">
+    <div class="story-num">Source 17 · Business Insider · May 20, 2026</div>
+    <h2 class="text-center">The Cohen brothers make NanoClaw enterprise</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-green"></div>
+        <span class="tag tag-green">STARTUPS</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">Business Insider profiles NanoClaw’s origin: two brothers built a secure, lightweight OpenClaw alternative after being spooked by OpenClaw risk.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.businessinsider.com/cohen-brothers-raised-millions-openclaw-competitor-nanoclaw-agentic-ai-enterprise-2026-5</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="green">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Seed round: $12M; reported valuation: $62M</li>
+          <li>Company says 100+ companies reached out for personal agents across organizations</li>
+          <li>Singapore’s foreign minister and Andrej Karpathy helped fuel the viral loop</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>This is the human/startup version of the TechCrunch funding slide.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill green">Business Insider</span>
+      <span class="pill">May 20, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 20 - WIRED ============ -->
+<div class="slide grid-bg" id="slide-20">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">20 / ROBOTICS</div>
+  <div class="content">
+    <div class="story-num">Source 18 · WIRED · May 20, 2026</div>
+    <h2 class="text-center">OpenClaw gets a robot arm</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-purple"></div>
+        <span class="tag tag-purple">ROBOTICS</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">WIRED tests OpenClaw and Codex against a LeRobot 101 arm, moving the agent from software automation into physical manipulation.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.wired.com/story/i-gave-my-openclaw-agent-physical-body-robot/</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="purple">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Agent helped configure, calibrate, detect a red ball, and write Python control scripts</li>
+          <li>Experiment connects vibe coding to robotics “code as policy” methods</li>
+          <li>Caveat: hallucinated code and hardware control still need human supervision</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>This is the fun frontier slide: agents are starting to operate in the physical world, but supervision still matters.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill purple">WIRED</span>
+      <span class="pill">May 20, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 21 - GQ ============ -->
+<div class="slide grid-bg" id="slide-21">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">21 / LIFESTYLE</div>
+  <div class="content">
+    <div class="story-num">Source 19 · GQ · May 21, 2026</div>
+    <h2 class="text-center">Cloning yourself with OpenClaw</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-yellow"></div>
+        <span class="tag tag-yellow">LIFESTYLE</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">GQ’s experiment puts OpenClaw into personal-life automation: texts, delegation, awkward failures, and token-cost reality.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.gq.com/story/what-happened-when-i-cloned-myself-with-openclaw-ai</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="yellow">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>The clone sent a delicate professional contact the wrong vibe</li>
+          <li>A prediction-market arbitrage bot made $60 while spending $100 in tokens</li>
+          <li>Consumer agent stories are now about social judgment, not just technical capability</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>This is the “agents are weird because humans are weird” slide.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill yellow">GQ</span>
+      <span class="pill">May 21, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 22 - TIMES OF INDIA ============ -->
+<div class="slide grid-bg" id="slide-22">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">22 / GLOBAL</div>
+  <div class="content">
+    <div class="story-num">Source 20 · Times of India · May 22, 2026</div>
+    <h2 class="text-center">M37Labs launches governed agentic platform</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-green"></div>
+        <span class="tag tag-green">GLOBAL</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">M37Labs launched MightyClaw, a governed enterprise agent platform built around Nvidia NemoClaw and OpenAI OpenClaw.</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://timesofindia.indiatimes.com/technology/tech-news/indian-startup-m37labs-releases-governed-agentic-ai-platform-based-on-nemoclaw-and-openclaw/articleshow/131262598.cms</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="green">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Positioning: autonomous enterprise infrastructure for agent swarms</li>
+          <li>Claims focus on data sovereignty, governance, auditability, and production readiness</li>
+          <li>Shows OpenClaw/NemoClaw becoming reference ingredients in regional enterprise stacks</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>Use this as the global enterprise adoption slide: governance language is traveling fast.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill green">Times of India</span>
+      <span class="pill">May 22, 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 23 - WALL STREET JOURNAL ============ -->
+<div class="slide grid-bg" id="slide-23">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">23 / AI CODE</div>
+  <div class="content">
+    <div class="story-num">Source 21 · Wall Street Journal · May 2026</div>
+    <h2 class="text-center">WSJ weighs vibe coding versus AI slop</h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="news-card card-glow" style="min-height:300px;"><div class="accent-bar bar-purple"></div>
+        <span class="tag tag-purple">AI CODE</span>
+        <h3 class="mt-2">Takeaway</h3>
+        <p style="font-size:1rem; color:var(--text-primary); line-height:1.55;">The WSJ link points at the broader quality debate around AI coding tools: faster generation, but more scrutiny of maintainability and “AI slop.”</p>
+        <p class="mono muted mt-3" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.wsj.com/tech/ai/vibe-coding-slop-ai-tools-e6a99394</p>
+      </div>
+      <div class="card" style="min-height:300px;">
+        <h3 class="purple">What to say</h3>
+        <ul class="bullet-list mt-1">
+          <li>Useful frame for OpenClaw: generation speed is no longer the only metric</li>
+          <li>Review, tests, security boundaries, and ownership define whether agent-built code survives</li>
+          <li>This pairs naturally with the token-cost and security stories earlier in the deck</li>
+        </ul>
+        <div class="warn-card mt-3" style="padding:14px 16px;">
+          <p style="font-size:0.86rem;"><span class="yellow mono">HOST ANGLE</span><br/>Keep this high-level: the useful connection is code quality, review discipline, and what separates agent-built software from throwaway slop.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill purple">Wall Street Journal</span>
+      <span class="pill">May 2026</span>
+      <span class="pill">Last 7 days</span>
+    </div>
+  </div>
+</div>
+<!-- ============ SLIDE 24 - EVENTS DIVIDER ============ -->
+<div class="slide grid-bg" id="slide-24">
+  <div class="lobster-bg" style="bottom:-4%; left:-3%;">🦞</div>
+  <div class="glow-orb orb-green" style="width:560px; height:560px; top:-170px; right:-150px;"></div>
+  <div class="content">
+    <div class="divider-num">EV</div>
+    <h1 style="text-align:center; margin-top:14px;">ClawExplorer <span class="gradient-text">Events</span></h1>
+    <div class="gradient-line wide"></div>
+    <p class="subtitle text-center mt-2" style="max-width:920px;">Next 14 days from <span class="mono blue">clawexplorer.ai/feed.xml</span>, pulled May 22.<br/>Split by upcoming week first, then the following week.</p>
+    <div class="mt-3" style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+      <span class="pill red">30 this upcoming week</span>
+      <span class="pill blue">12 the following week</span>
+      <span class="pill green">42 total listings</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 25 - EVENTS UPCOMING WEEK ============ -->
+<div class="slide grid-bg" id="slide-25">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">25 / CLAWEXPLORER</div>
+  <div class="content">
+    <div class="part-label">Upcoming week · Fri May 22-May 23</div>
+    <h2 class="text-center">4 listings · <span class="gradient-text">Fri May 22-May 23</span></h2>
+    <div class="gradient-line"></div>
+    <div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;">
+      <div class="events-grid events-grid-single">
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Fri May 22</strong><br/>5:00 PM - 9:00 PM GMT+2</div>
+        <div><div class="event-title">Milano · ClawCon Milan</div><div class="meta mono">luma.com/cy303ytc</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Fri May 22</strong><br/>6:00 PM - 7:00 PM CDT</div>
+        <div><div class="event-title">Online · AI Agent Builder Masterclass</div><div class="meta mono">www.meetup.com/city-freelance-peers-remote-networking-group/events/314844810/</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Fri May 22</strong><br/>6:00 PM - 8:45 PM EDT</div>
+        <div><div class="event-title">Brooklyn · NYC Personal AI Agents Meetup 🦞 : Beyond the Single Agent</div><div class="meta mono">luma.com/2itoszun</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sat May 23</strong><br/>2:00 PM - 5:00 PM GMT+7</div>
+        <div><div class="event-title">Đống Đa · ClawUp Workshop: Build Your First AI Agent</div><div class="meta mono">luma.com/skarl8x2</div></div>
+      </div>
+      </div>
+    </div>
+    <p class="mono muted mt-3" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered May 22-Jun 5</p>
+  </div>
+</div>
+
+<!-- ============ SLIDE 26 - EVENTS UPCOMING WEEK ============ -->
+<div class="slide grid-bg" id="slide-26">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">26 / CLAWEXPLORER</div>
+  <div class="content">
+    <div class="part-label">Upcoming week · Sat May 23-May 24</div>
+    <h2 class="text-center">4 listings · <span class="gradient-text">Sat May 23-May 24</span></h2>
+    <div class="gradient-line"></div>
+    <div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;">
+      <div class="events-grid events-grid-single">
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sat May 23</strong><br/>3:00 PM - 5:00 PM EDT</div>
+        <div><div class="event-title">Washington · Outdoor Discussion Walk: OpenClaw and Autonomous Agents</div><div class="meta mono">luma.com/uk22t7r2</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sat May 23</strong><br/>4:00 PM - 8:00 PM GMT+8</div>
+        <div><div class="event-title">Nangang District · Meet-a-Claw - Taipei</div><div class="meta mono">luma.com/nvidia-claw-taipei</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sat May 23</strong><br/>6:00 PM - 7:00 PM EDT</div>
+        <div><div class="event-title">Online · Create AI Agents in One Session</div><div class="meta mono">www.meetup.com/local-remote-professionals-and-nomad-network/events/314844131/</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sun May 24</strong><br/>8:30 AM - 6:30 PM GMT+8</div>
+        <div><div class="event-title">Kuala Lumpur · Lovable Vibeathon KL (ft. OpenClaw KL)</div><div class="meta mono">luma.com/giop8lkh</div></div>
+      </div>
+      </div>
+    </div>
+    <p class="mono muted mt-3" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered May 22-Jun 5</p>
+  </div>
+</div>
+
+<!-- ============ SLIDE 27 - EVENTS UPCOMING WEEK ============ -->
+<div class="slide grid-bg" id="slide-27">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">27 / CLAWEXPLORER</div>
+  <div class="content">
+    <div class="part-label">Upcoming week · Sun May 24</div>
+    <h2 class="text-center">4 listings · <span class="gradient-text">Sun May 24</span></h2>
+    <div class="gradient-line"></div>
+    <div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;">
+      <div class="events-grid events-grid-single">
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sun May 24</strong><br/>10:00 AM - 2:00 PM GMT+5:30</div>
+        <div><div class="event-title">Online · Agent Mode: OpenClaw Workshop</div><div class="meta mono">luma.com/67tncidl</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sun May 24</strong><br/>12:00 PM - 6:00 PM PDT</div>
+        <div><div class="event-title">Vancouver · OpenClaw / Local Agent Demo and Install Day</div><div class="meta mono">luma.com/ns82u324</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sun May 24</strong><br/>6:00 PM - 7:00 PM GMT+1</div>
+        <div><div class="event-title">Online · AI Automation Workshop — OpenClaw</div><div class="meta mono">www.meetup.com/circle-of-freelance-nomads-co-working-connect/events/314844819/</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sun May 24</strong><br/>6:00 PM - 7:00 PM EDT</div>
+        <div><div class="event-title">Online · Your First AI Agent — OpenClaw</div><div class="meta mono">www.meetup.com/sunday-connect-global-nomads-through-coworking-sessions/events/314844794/</div></div>
+      </div>
+      </div>
+    </div>
+    <p class="mono muted mt-3" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered May 22-Jun 5</p>
+  </div>
+</div>
+
+<!-- ============ SLIDE 28 - EVENTS UPCOMING WEEK ============ -->
+<div class="slide grid-bg" id="slide-28">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">28 / CLAWEXPLORER</div>
+  <div class="content">
+    <div class="part-label">Upcoming week · Mon May 25-May 26</div>
+    <h2 class="text-center">4 listings · <span class="gradient-text">Mon May 25-May 26</span></h2>
+    <div class="gradient-line"></div>
+    <div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;">
+      <div class="events-grid events-grid-single">
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Mon May 25</strong><br/>6:00 PM - 9:00 PM GMT+8</div>
+        <div><div class="event-title">Singapore · OpenClaw Singapore Happy Hours - Agentic Night</div><div class="meta mono">luma.com/kobpm6gr</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Mon May 25</strong><br/>6:00 PM - 9:00 PM GMT+2</div>
+        <div><div class="event-title">Roma · OpenClaw vs Claude #BattleoftheAgentics</div><div class="meta mono">luma.com/AI-Salon-Rome-May-2026</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Mon May 25</strong><br/>7:00 PM - 9:00 PM GMT+8</div>
+        <div><div class="event-title">Kuala Lumpur · Openclaw KL x Codex Meetup (May Edition)</div><div class="meta mono">luma.com/h9fqpbjf</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Tue May 26</strong><br/>9:00 AM - 10:00 AM PDT</div>
+        <div><div class="event-title">Online · Build an expert agentic Slack bot with OpenClaw, Nebius Token Factory, and Tavily</div><div class="meta mono">luma.com/82ompy1u</div></div>
+      </div>
+      </div>
+    </div>
+    <p class="mono muted mt-3" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered May 22-Jun 5</p>
+  </div>
+</div>
+
+<!-- ============ SLIDE 29 - EVENTS UPCOMING WEEK ============ -->
+<div class="slide grid-bg" id="slide-29">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">29 / CLAWEXPLORER</div>
+  <div class="content">
+    <div class="part-label">Upcoming week · Tue May 26-May 27</div>
+    <h2 class="text-center">4 listings · <span class="gradient-text">Tue May 26-May 27</span></h2>
+    <div class="gradient-line"></div>
+    <div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;">
+      <div class="events-grid events-grid-single">
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Tue May 26</strong><br/>10:00 AM - 9:00 PM EDT</div>
+        <div><div class="event-title">Toronto · 🦞 OpenClaw Hack Toronto Students &amp; Alumni - Win Mac Mini &amp; Interships (In Person Only)</div><div class="meta mono">luma.com/2bntw4vd</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Tue May 26</strong><br/>6:00 PM - 9:00 PM EDT</div>
+        <div><div class="event-title">Toronto · ClawCon Toronto</div><div class="meta mono">luma.com/clawcontoronto</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Wed May 27</strong><br/>5:30 PM - 8:30 PM GMT+2</div>
+        <div><div class="event-title">Speicherstraße 1 · OpenClaw Meetup Frankfurt: Offener Austausch</div><div class="meta mono">luma.com/yfwflxek</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Wed May 27</strong><br/>6:00 PM - 9:00 PM EDT</div>
+        <div><div class="event-title">Philadelphia · ClawCon Philadelphia</div><div class="meta mono">luma.com/clawconphiladelphia</div></div>
+      </div>
+      </div>
+    </div>
+    <p class="mono muted mt-3" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered May 22-Jun 5</p>
+  </div>
+</div>
+
+<!-- ============ SLIDE 30 - EVENTS UPCOMING WEEK ============ -->
+<div class="slide grid-bg" id="slide-30">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">30 / CLAWEXPLORER</div>
+  <div class="content">
+    <div class="part-label">Upcoming week · Wed May 27-May 28</div>
+    <h2 class="text-center">4 listings · <span class="gradient-text">Wed May 27-May 28</span></h2>
+    <div class="gradient-line"></div>
+    <div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;">
+      <div class="events-grid events-grid-single">
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Wed May 27</strong><br/>7:00 PM - 11:30 PM EDT</div>
+        <div><div class="event-title">Toronto · Agents After Dark  —  OpenClaw x Kuvi</div><div class="meta mono">luma.com/rcccrk6s</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Wed May 27</strong><br/>7:00 PM - 9:30 PM PDT</div>
+        <div><div class="event-title">Los Angeles · OpenClaw LA #6</div><div class="meta mono">www.meetup.com/openclaw-la/events/314754342/</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Thu May 28</strong><br/>11:30 AM - 1:30 PM GMT+8</div>
+        <div><div class="event-title">Singapore · OpenClaw SG CMO Lunch</div><div class="meta mono">luma.com/8es7i5k4</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Thu May 28</strong><br/>5:00 PM - 7:00 PM GMT+3</div>
+        <div><div class="event-title">Athina · OpenClaw Greece: Build Your First Agent (Hands-On Workshop) @ Panathēnea</div><div class="meta mono">luma.com/d55ljt9k</div></div>
+      </div>
+      </div>
+    </div>
+    <p class="mono muted mt-3" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered May 22-Jun 5</p>
+  </div>
+</div>
+
+<!-- ============ SLIDE 31 - EVENTS UPCOMING WEEK ============ -->
+<div class="slide grid-bg" id="slide-31">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">31 / CLAWEXPLORER</div>
+  <div class="content">
+    <div class="part-label">Upcoming week · Thu May 28</div>
+    <h2 class="text-center">4 listings · <span class="gradient-text">Thu May 28</span></h2>
+    <div class="gradient-line"></div>
+    <div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;">
+      <div class="events-grid events-grid-single">
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Thu May 28</strong><br/>5:30 PM - 7:30 PM GMT+10</div>
+        <div><div class="event-title">Kensington · Building Agents with OpenClaw and Hermes</div><div class="meta mono">www.meetup.com/en-au/dsai-syd/events/314813807/</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Thu May 28</strong><br/>6:00 PM - 9:00 PM GMT-3</div>
+        <div><div class="event-title">Buenos Aires · ClawCon Buenos Aires</div><div class="meta mono">luma.com/clawconbuenosaires</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Thu May 28</strong><br/>6:00 PM - 9:00 PM GMT+2</div>
+        <div><div class="event-title">Hürth · OpenClaw Showcase</div><div class="meta mono">luma.com/vwpxvn7p</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Thu May 28</strong><br/>6:00 PM - 8:30 PM EDT</div>
+        <div><div class="event-title">Cary · OpenClaw Triangle Meetup - Third Edition</div><div class="meta mono">luma.com/8x5d70r9</div></div>
+      </div>
+      </div>
+    </div>
+    <p class="mono muted mt-3" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered May 22-Jun 5</p>
+  </div>
+</div>
+
+<!-- ============ SLIDE 32 - EVENTS UPCOMING WEEK ============ -->
+<div class="slide grid-bg" id="slide-32">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">32 / CLAWEXPLORER</div>
+  <div class="content">
+    <div class="part-label">Upcoming week · Thu May 28</div>
+    <h2 class="text-center">2 listings · <span class="gradient-text">Thu May 28</span></h2>
+    <div class="gradient-line"></div>
+    <div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;">
+      <div class="events-grid events-grid-single">
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Thu May 28</strong><br/>6:00 PM - 9:00 PM PDT</div>
+        <div><div class="event-title">Los Angeles · Practical PM AI Workflows -OpenClaw</div><div class="meta mono">luma.com/lc6l7i55</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Thu May 28</strong><br/>6:30 PM - 9:30 PM GMT+2</div>
+        <div><div class="event-title">Granger Bay Blvd · Clawd &amp; Claws 2.0</div><div class="meta mono">www.meetup.com/zatech/events/314767145/</div></div>
+      </div>
+      </div>
+    </div>
+    <p class="mono muted mt-3" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered May 22-Jun 5</p>
+  </div>
+</div>
+
+<!-- ============ SLIDE 33 - EVENTS FOLLOWING WEEK ============ -->
+<div class="slide grid-bg" id="slide-33">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">33 / CLAWEXPLORER</div>
+  <div class="content">
+    <div class="part-label">Following week · Sat May 30</div>
+    <h2 class="text-center">4 listings · <span class="gradient-text">Sat May 30</span></h2>
+    <div class="gradient-line"></div>
+    <div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;">
+      <div class="events-grid events-grid-single">
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sat May 30</strong><br/>9:00 AM - 10:30 AM CDT</div>
+        <div><div class="event-title">Nashville · CLAWS &amp; COFFEE - Nashville</div><div class="meta mono">luma.com/iranbxr9</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sat May 30</strong><br/>10:00 AM - 1:00 PM GMT+8</div>
+        <div><div class="event-title">Kreta Ayer · Build Your First and Very Own AI Employee (OpenClaw) Hands On (The AI Burrow x first AIde x The AI Capitol)</div><div class="meta mono">luma.com/ilbdpj1k</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sat May 30</strong><br/>1:00 PM - 5:00 PM GMT+8</div>
+        <div><div class="event-title">The Venetian Macao · ClawCon Macao @BEYOND Expo 2026</div><div class="meta mono">luma.com/clawconmacao</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sat May 30</strong><br/>2:00 PM - 6:00 PM GMT+8</div>
+        <div><div class="event-title">Shenzhen · OpenSchool AI Claw Demo Day · 深圳站 5.30</div><div class="meta mono">luma.com/a2ylyu0w</div></div>
+      </div>
+      </div>
+    </div>
+    <p class="mono muted mt-3" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered May 22-Jun 5</p>
+  </div>
+</div>
+
+<!-- ============ SLIDE 34 - EVENTS FOLLOWING WEEK ============ -->
+<div class="slide grid-bg" id="slide-34">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">34 / CLAWEXPLORER</div>
+  <div class="content">
+    <div class="part-label">Following week · Sun May 31-Jun 2</div>
+    <h2 class="text-center">4 listings · <span class="gradient-text">Sun May 31-Jun 2</span></h2>
+    <div class="gradient-line"></div>
+    <div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;">
+      <div class="events-grid events-grid-single">
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sun May 31</strong><br/>2:00 PM - 5:00 PM PDT</div>
+        <div><div class="event-title">Los Angeles · OpenClaw Meetup LA: Demos &amp; Networking</div><div class="meta mono">luma.com/f087jlip</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Mon Jun 1</strong><br/>4:00 PM - 5:00 PM EDT</div>
+        <div><div class="event-title">Ocala · Openclaw: AI for Small Businesses</div><div class="meta mono">luma.com/1tt35fxm</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Mon Jun 1</strong><br/>5:30 PM - 7:00 PM CDT</div>
+        <div><div class="event-title">Bentonville · OpenClaw NWA Meetup</div><div class="meta mono">luma.com/li9q8pr2</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Tue Jun 2</strong><br/>6:00 PM - 9:00 PM GMT+8</div>
+        <div><div class="event-title">Singapore · OpenClaw Singapore — eCommerce Edition</div><div class="meta mono">luma.com/u57e5vds</div></div>
+      </div>
+      </div>
+    </div>
+    <p class="mono muted mt-3" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered May 22-Jun 5</p>
+  </div>
+</div>
+
+<!-- ============ SLIDE 35 - EVENTS FOLLOWING WEEK ============ -->
+<div class="slide grid-bg" id="slide-35">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #15</div>
+  <div class="slide-tag">35 / CLAWEXPLORER</div>
+  <div class="content">
+    <div class="part-label">Following week · Wed Jun 3-Jun 4</div>
+    <h2 class="text-center">4 listings · <span class="gradient-text">Wed Jun 3-Jun 4</span></h2>
+    <div class="gradient-line"></div>
+    <div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;">
+      <div class="events-grid events-grid-single">
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Wed Jun 3</strong><br/>5:15 PM - 8:45 PM PDT</div>
+        <div><div class="event-title">San Francisco · OpenClaw: After Hours @ GitHub</div><div class="meta mono">luma.com/OpenClaw-GitHub</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Wed Jun 3</strong><br/>6:30 PM - 8:30 PM CDT</div>
+        <div><div class="event-title">Austin · OpenClaw and Agentic Workflows Demystified: Sleep While It Ships</div><div class="meta mono">www.meetup.com/ai-automation-and-marketing/events/314755354/</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Thu Jun 4</strong><br/>6:00 PM - 9:00 PM GMT+2</div>
+        <div><div class="event-title">Provincia di Treviso · ClawCon Venice</div><div class="meta mono">luma.com/clawcon-6g3t</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Thu Jun 4</strong><br/>6:30 PM - 8:00 PM PDT</div>
+        <div><div class="event-title">San Francisco · OpenClaw User Group Meetup</div><div class="meta mono">luma.com/bslydhj8</div></div>
+      </div>
+      </div>
+    </div>
+    <p class="mono muted mt-3" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered May 22-Jun 5</p>
+  </div>
+</div>
+
+<!-- ============ SLIDE 36 - CLOSING ============ -->
+<div class="slide grid-bg" id="slide-36">
+  <div class="lobster-bg" style="top:6%; right:-3%;">🦞</div>
+  <div class="glow-orb orb-red" style="width:560px; height:560px; bottom:-180px; left:-140px;"></div>
+  <div class="content">
+    <div class="part-label">Link roundup</div>
+    <h1 style="text-align:center; font-size:4rem;">News, events, <span class="gradient-text">then chat</span>.</h1>
+    <div class="gradient-line wide"></div>
+    <div class="three-col mt-3" style="max-width:1080px;">
+      <div class="card"><h3 class="red">Security</h3><p>Claw Chain coverage: Cyera, Cyber Security News, THN, HackRead, SC Media, Dark Reading, BankInfoSecurity.</p></div>
+      <div class="card"><h3 class="orange">Economics + platforms</h3><p>Token bill coverage from Tom's Hardware, BI, TNW, PC Gamer. Google Spark from WIRED and The Verge.</p></div>
+      <div class="card"><h3 class="green">Events</h3><p>42 ClawExplorer listings from May 22 through June 5. Calendar source: <span class="mono">clawexplorer.ai/feed.xml</span></p></div>
+    </div>
+    <p class="mt-3 mono muted" style="font-size:0.82rem; letter-spacing:0.14em; text-transform:uppercase;">The Claw is the Law.</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+(function() {
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+  const slideNumEl = document.getElementById('slideNum');
+  const slideTotalEl = document.getElementById('slideTotal');
+  const progressBar = document.getElementById('progressBar');
+  const navDots = document.getElementById('navDots');
+  slideTotalEl.textContent = total;
+
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => go(i));
+    navDots.appendChild(dot);
+  }
+  const dots = navDots.querySelectorAll('.nav-dot');
+
+  function go(i) {
+    if (i < 0 || i >= total) return;
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = i;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    slideNumEl.textContent = current + 1;
+    progressBar.style.width = ((current + 1) / total * 100) + '%';
+  }
+  progressBar.style.width = (1 / total * 100) + '%';
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(current - 1); }
+    else if (e.key === 'Home') { e.preventDefault(); go(0); }
+    else if (e.key === 'End') { e.preventDefault(); go(total - 1); }
+    else if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
