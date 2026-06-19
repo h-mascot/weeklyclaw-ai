@@ -18,6 +18,17 @@ SuperAda Weekly Claw changelog decks are mirrored into short WeeklyClaw.ai paths
 
 `/wN/` is a static redirect page to `/wN/changelog/`. Slide JPGs are copied beside each changelog deck so the archived HTML remains self-contained. The homepage should not send Weekly Claw slide traffic back to SuperAda; it presents **Main slides** and **Changelog** links on WeeklyClaw.ai.
 
+
+## Main slide routes
+
+Recent MascotM3 main decks are hosted directly under WeeklyClaw.ai:
+
+- `/episodes/10/deck.html`
+- `/episodes/12/deck.html`
+- `/episodes/13/deck.html`
+- `/episodes/14/deck.html`
+- `/episodes/15/deck.html`
+
 ## Local check
 
 ```bash

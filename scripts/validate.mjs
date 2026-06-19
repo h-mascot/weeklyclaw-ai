@@ -5,8 +5,11 @@ const root = new URL('..', import.meta.url);
 const required = [
   'index.html',
   'changelog/index.html',
+  'episodes/10/deck.html',
+  'episodes/12/deck.html',
   'episodes/13/deck.html',
   'episodes/13/agenda.md',
+  'episodes/14/deck.html',
   'episodes/15/deck.html',
   'episodes/15/agenda.md',
 ];
@@ -23,7 +26,7 @@ if (missing.length) {
 }
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-for (const needle of ['WeeklyClaw.ai', 'The Weekly Claw', 'OpenClaw Discord', '/changelog/', 'Main slides', '/w12/changelog/', '/w14/changelog/', '/w18/changelog/']) {
+for (const needle of ['WeeklyClaw.ai', 'The Weekly Claw', 'OpenClaw Discord', '/changelog/', 'Main slides', '/episodes/10/deck.html', '/episodes/12/deck.html', '/episodes/14/deck.html', '/w12/changelog/', '/w14/changelog/', '/w18/changelog/']) {
   if (!html.includes(needle)) {
     console.error(`Missing expected copy: ${needle}`);
     process.exit(1);
@@ -36,9 +39,18 @@ if (html.includes('superada.ai/weekly-claw') || html.includes('SuperAda edition'
 }
 
 const changelogHtml = readFileSync(new URL('../changelog/index.html', import.meta.url), 'utf8');
-for (const needle of ['Changelog archive', '/w11/changelog/', '/w18/changelog/', 'Main slides']) {
+for (const needle of ['Changelog archive', '/w11/changelog/', '/w18/changelog/', '/episodes/12/deck.html', '/episodes/14/deck.html', 'Main slides']) {
   if (!changelogHtml.includes(needle)) {
     console.error(`Changelog index missing expected copy: ${needle}`);
+    process.exit(1);
+  }
+}
+
+
+for (const week of [10, 12, 13, 14, 15]) {
+  const mainDeck = readFileSync(new URL(`../episodes/${week}/deck.html`, import.meta.url), 'utf8');
+  if (!mainDeck.includes('Weekly') && !mainDeck.includes('OpenClaw')) {
+    console.error(`Week ${week} main deck does not look like a Weekly Claw deck`);
     process.exit(1);
   }
 }
