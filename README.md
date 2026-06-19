@@ -6,6 +6,7 @@ Official landing page for **The Weekly Claw**, OpenClaw's weekly community show.
 
 SuperAda Weekly Claw changelog decks are mirrored into short WeeklyClaw.ai paths:
 
+- `/changelog/` lists every mirrored changelog deck.
 - `/w11/changelog/` and `/w11/`
 - `/w12/changelog/` and `/w12/`
 - `/w13/changelog/` and `/w13/`
@@ -15,7 +16,7 @@ SuperAda Weekly Claw changelog decks are mirrored into short WeeklyClaw.ai paths
 - `/w17/changelog/` and `/w17/`
 - `/w18/changelog/` and `/w18/`
 
-`/wN/` is a static redirect page to `/wN/changelog/`. Slide JPGs are copied beside each changelog deck so the archived HTML remains self-contained.
+`/wN/` is a static redirect page to `/wN/changelog/`. Slide JPGs are copied beside each changelog deck so the archived HTML remains self-contained. The homepage should not send Weekly Claw slide traffic back to SuperAda; it presents **Main slides** and **Changelog** links on WeeklyClaw.ai.
 
 ## Local check
 

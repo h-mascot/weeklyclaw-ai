@@ -4,6 +4,7 @@ import { join } from 'node:path';
 const root = new URL('..', import.meta.url);
 const required = [
   'index.html',
+  'changelog/index.html',
   'episodes/13/deck.html',
   'episodes/13/agenda.md',
   'episodes/15/deck.html',
@@ -22,9 +23,22 @@ if (missing.length) {
 }
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-for (const needle of ['WeeklyClaw.ai', 'The Weekly Claw', 'OpenClaw Discord', '/w12/changelog/', '/w14/', '/w18/changelog/']) {
+for (const needle of ['WeeklyClaw.ai', 'The Weekly Claw', 'OpenClaw Discord', '/changelog/', 'Main slides', '/w12/changelog/', '/w14/changelog/', '/w18/changelog/']) {
   if (!html.includes(needle)) {
     console.error(`Missing expected copy: ${needle}`);
+    process.exit(1);
+  }
+}
+
+if (html.includes('superada.ai/weekly-claw') || html.includes('SuperAda edition') || html.includes('Short route')) {
+  console.error('Homepage still contains stale SuperAda or Short route links');
+  process.exit(1);
+}
+
+const changelogHtml = readFileSync(new URL('../changelog/index.html', import.meta.url), 'utf8');
+for (const needle of ['Changelog archive', '/w11/changelog/', '/w18/changelog/', 'Main slides']) {
+  if (!changelogHtml.includes(needle)) {
+    console.error(`Changelog index missing expected copy: ${needle}`);
     process.exit(1);
   }
 }

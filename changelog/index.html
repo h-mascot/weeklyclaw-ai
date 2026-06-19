@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WeeklyClaw.ai — Changelog slides</title>
+  <meta name="description" content="All Weekly Claw changelog slide decks mirrored on WeeklyClaw.ai." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-card: #141414;
+      --claw-red: #e63946;
+      --claw-orange: #f4845f;
+      --claw-gradient: linear-gradient(135deg, #e63946, #f4845f);
+      --text-primary: #f5f5f5;
+      --text-secondary: #a0a0a0;
+      --text-muted: #666;
+      --border-subtle: #242424;
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(230,57,70,0.22), transparent 30rem),
+        radial-gradient(circle at 88% 0%, rgba(244,132,95,0.14), transparent 28rem),
+        var(--bg-dark);
+      color: var(--text-primary);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(100% - 32px, var(--max)); margin: 0 auto; }
+    .topbar { border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(10,10,10,0.72); backdrop-filter: blur(18px); }
+    .topbar-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -0.04em; }
+    .brand-mark { width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center; background: var(--claw-gradient); font-size: 23px; }
+    .nav { display: flex; gap: 16px; color: var(--text-secondary); font-size: 13px; font-weight: 800; }
+    .nav a:hover { color: var(--text-primary); }
+    main { padding: 72px 0 80px; }
+    .eyebrow { color: var(--claw-orange); font: 800 12px/1 JetBrains Mono, monospace; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { max-width: 820px; margin: 18px 0 16px; font-size: clamp(44px, 7vw, 86px); line-height: .9; letter-spacing: -.07em; }
+    .intro { max-width: 740px; color: var(--text-secondary); font-size: 19px; line-height: 1.55; margin: 0 0 36px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border: 1px solid var(--border-subtle); border-radius: 24px; padding: 24px; position: relative; overflow: hidden; }
+    .card::before { content: ''; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, #e63946, #f4845f, #e63946); opacity: .72; }
+    .meta { color: var(--text-muted); font: 800 12px/1.4 JetBrains Mono, monospace; text-transform: uppercase; letter-spacing: .08em; }
+    h2 { margin: 12px 0 8px; font-size: 28px; letter-spacing: -.04em; }
+    p { color: var(--text-secondary); line-height: 1.56; margin: 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .btn { display: inline-flex; min-height: 42px; align-items: center; justify-content: center; border-radius: 999px; padding: 0 14px; border: 1px solid rgba(255,255,255,.12); color: var(--text-primary); font-weight: 850; font-size: 13px; }
+    .btn:hover { border-color: rgba(244,132,95,.75); background: rgba(255,255,255,.06); }
+    .btn-primary { background: var(--claw-gradient); border-color: transparent; }
+    .footer { border-top: 1px solid rgba(255,255,255,.06); color: var(--text-muted); padding: 36px 0; font-size: 13px; }
+    @media (max-width: 780px) { .grid { grid-template-columns: 1fr; } .nav { display: none; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="/" aria-label="WeeklyClaw.ai home"><span class="brand-mark">🦞</span><span>WeeklyClaw.ai</span></a>
+      <nav class="nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/changelog/">Changelog</a><a href="https://openclaw.ai">OpenClaw</a></nav>
+    </div>
+  </header>
+  <main>
+    <div class="shell">
+      <div class="eyebrow">Changelog archive</div>
+      <h1>All Weekly Claw changelog decks.</h1>
+      <p class="intro">The changelog route collects every mirrored SuperAda Weekly Claw changelog deck now hosted directly on WeeklyClaw.ai. Use the short week routes when you want the fastest path.</p>
+      <section class="grid" aria-label="Weekly Claw changelog decks">
+        <article class="card" id="w18"><div class="meta">W18 · 14 slides</div><h2>The Weekly Claw #18</h2><p>Latest OpenClaw changelog, DX, community signal, and weekly summary.</p><div class="actions"><a class="btn btn-primary" href="/w18/changelog/">Open changelog</a></div></article>
+        <article class="card" id="w17"><div class="meta">W17 · 15 slides</div><h2>The Weekly Claw #17</h2><p>OpenClaw release proof loops, maintainer signal, and DX readout.</p><div class="actions"><a class="btn btn-primary" href="/w17/changelog/">Open changelog</a></div></article>
+        <article class="card" id="w16"><div class="meta">W16 · 17 slides</div><h2>The Weekly Claw #16</h2><p>Ecosystem story, release signal, and compressed developer-experience notes.</p><div class="actions"><a class="btn btn-primary" href="/w16/changelog/">Open changelog</a></div></article>
+        <article class="card" id="w15"><div class="meta">W15 · 13 slides</div><h2>The Weekly Claw #15</h2><p>Changelog companion for the May 22 main show packet.</p><div class="actions"><a class="btn btn-primary" href="/w15/changelog/">Open changelog</a><a class="btn" href="/episodes/15/deck.html">Main slides</a></div></article>
+        <article class="card" id="w14"><div class="meta">W14 · 11 slides</div><h2>The Weekly Claw #14</h2><p>OpenClaw release themes, support signal, and weekly close.</p><div class="actions"><a class="btn btn-primary" href="/w14/changelog/">Open changelog</a></div></article>
+        <article class="card" id="w13"><div class="meta">W13 · 21 slides</div><h2>The Weekly Claw #13</h2><p>Codex, Code Mode, validation infra, and community proof pressure.</p><div class="actions"><a class="btn btn-primary" href="/w13/changelog/">Open changelog</a><a class="btn" href="/episodes/13/deck.html">Main slides</a></div></article>
+        <article class="card" id="w12"><div class="meta">W12 · 13 slides</div><h2>The Weekly Claw #12</h2><p>OpenClaw changelog slides, community signal, and release framing.</p><div class="actions"><a class="btn btn-primary" href="/w12/changelog/">Open changelog</a></div></article>
+        <article class="card" id="w11"><div class="meta">W11 · 13 slides</div><h2>The Weekly Claw #11</h2><p>Earliest available Weekly Claw slide packet in this mirror.</p><div class="actions"><a class="btn btn-primary" href="/w11/changelog/">Open changelog</a></div></article>
+      </section>
+    </div>
+  </main>
+  <footer class="footer"><div class="shell">© 2026 WeeklyClaw.ai · The Weekly Claw</div></footer>
+</body>
+</html>
