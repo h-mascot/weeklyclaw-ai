@@ -12,6 +12,10 @@ const required = [
   'episodes/14/deck.html',
   'episodes/15/deck.html',
   'episodes/15/agenda.md',
+  'episodes/19/deck.html',
+  'episodes/19/host.html',
+  'episodes/19/viewer-agenda.md',
+  'episodes/19/host-agenda.md',
   'w18/changelog/index.html', 'w19/changelog/index.html'];
 
 const weeks = [11, 12, 13, 14, 15, 16, 17, 18, 19];
@@ -26,7 +30,7 @@ if (missing.length) {
 }
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-for (const needle of ['WeeklyClaw.ai', 'The Weekly Claw', 'OpenClaw Discord', '/changelog/', 'Main slides', '/episodes/10/deck.html', '/episodes/12/deck.html', '/episodes/14/deck.html', '/w12/changelog/', '/w14/changelog/', '/w18/changelog/', '/w19/changelog/']) {
+for (const needle of ['WeeklyClaw.ai', 'The Weekly Claw', 'OpenClaw Discord', '/changelog/', 'Main slides', '/episodes/10/deck.html', '/episodes/12/deck.html', '/episodes/14/deck.html', '/episodes/19/deck.html', '/episodes/19/host.html', '/w12/changelog/', '/w14/changelog/', '/w18/changelog/', '/w19/changelog/']) {
   if (!html.includes(needle)) {
     console.error(`Missing expected copy: ${needle}`);
     process.exit(1);
@@ -39,7 +43,7 @@ if (html.includes('superada.ai/weekly-claw') || html.includes('SuperAda edition'
 }
 
 const changelogHtml = readFileSync(new URL('../changelog/index.html', import.meta.url), 'utf8');
-for (const needle of ['Changelog archive', '/w11/changelog/', '/w18/changelog/', '/w19/changelog/', '/w19/changelog/', '/episodes/12/deck.html', '/episodes/14/deck.html', 'Main slides']) {
+for (const needle of ['Changelog archive', '/w11/changelog/', '/w18/changelog/', '/w19/changelog/', '/w19/changelog/', '/episodes/12/deck.html', '/episodes/14/deck.html', '/episodes/19/deck.html', '/episodes/19/host.html', 'Main slides']) {
   if (!changelogHtml.includes(needle)) {
     console.error(`Changelog index missing expected copy: ${needle}`);
     process.exit(1);
@@ -47,12 +51,18 @@ for (const needle of ['Changelog archive', '/w11/changelog/', '/w18/changelog/',
 }
 
 
-for (const week of [10, 12, 13, 14, 15]) {
+for (const week of [10, 12, 13, 14, 15, 19]) {
   const mainDeck = readFileSync(new URL(`../episodes/${week}/deck.html`, import.meta.url), 'utf8');
   if (!mainDeck.includes('Weekly') && !mainDeck.includes('OpenClaw')) {
     console.error(`Week ${week} main deck does not look like a Weekly Claw deck`);
     process.exit(1);
   }
+}
+
+const week19HostDeck = readFileSync(new URL('../episodes/19/host.html', import.meta.url), 'utf8');
+if (!week19HostDeck.includes('Host cue') || !week19HostDeck.includes('Weekly Claw #19')) {
+  console.error('Week 19 host deck is missing expected host cue/content markers');
+  process.exit(1);
 }
 
 for (const week of weeks) {

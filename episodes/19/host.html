@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Weekly Claw #19 — June 26, 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-card: #141414;
+  --bg-card-hover: #1a1a1a;
+  --claw-red: #e63946;
+  --claw-orange: #f4845f;
+  --claw-gradient: linear-gradient(135deg, #e63946, #f4845f);
+  --claw-gradient-wide: linear-gradient(90deg, #e63946, #f4845f, #e63946);
+  --text-primary: #f5f5f5;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666;
+  --border-subtle: #222;
+  --accent-blue: #4a9eff;
+  --accent-green: #34d399;
+  --accent-purple: #a78bfa;
+  --accent-yellow: #fbbf24;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  width: 100%; height: 100%;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow: hidden;
+}
+.slide-container { width: 100%; height: 100vh; position: relative; overflow: hidden; }
+.slide {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  padding: 56px 70px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+.slide.active { opacity: 1; pointer-events: all; }
+.progress-bar {
+  position: fixed; top: 0; left: 0;
+  height: 3px; background: var(--claw-gradient);
+  transition: width 0.4s ease; z-index: 100;
+}
+.slide-counter {
+  position: fixed; bottom: 22px; right: 32px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px; color: var(--text-muted); z-index: 100;
+}
+.nav-dots {
+  position: fixed; bottom: 22px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 7px; z-index: 100;
+}
+.nav-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--text-muted); cursor: pointer;
+  transition: all 0.3s;
+}
+.nav-dot.active { background: var(--claw-red); width: 24px; border-radius: 4px; }
+.kb-hint {
+  position: fixed; bottom: 22px; left: 32px;
+  font-size: 11px; color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace; z-index: 100;
+}
+.kb-hint kbd {
+  background: #222; padding: 2px 6px; border-radius: 3px;
+  border: 1px solid #333; font-size: 10px;
+}
+h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 18px; }
+h2 { font-size: 2.3rem; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 14px; }
+h3 { font-size: 1.35rem; font-weight: 600; margin-bottom: 10px; }
+.subtitle { font-size: 1.1rem; color: var(--text-secondary); font-weight: 400; line-height: 1.55; max-width: 760px; }
+.gradient-text {
+  background: var(--claw-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.red { color: var(--claw-red); }
+.orange { color: var(--claw-orange); }
+.blue { color: var(--accent-blue); }
+.green { color: var(--accent-green); }
+.purple { color: var(--accent-purple); }
+.yellow { color: var(--accent-yellow); }
+.muted { color: var(--text-secondary); }
+.mono { font-family: 'JetBrains Mono', monospace; }
+.lobster-bg { position: absolute; font-size: 22rem; opacity: 0.04; z-index: 0; pointer-events: none; }
+.full-width { width: 100%; max-width: 1140px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; width: 100%; max-width: 1140px; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; width: 100%; max-width: 1140px; }
+.text-center { text-align: center; }
+.align-start { align-items: flex-start; }
+.mt-1 { margin-top: 8px; } .mt-2 { margin-top: 14px; } .mt-3 { margin-top: 22px; } .mt-4 { margin-top: 30px; }
+.mb-2 { margin-bottom: 14px; }
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px; padding: 22px;
+  text-align: left;
+}
+.card-glow { box-shadow: 0 0 40px rgba(230,57,70,0.08); border-color: rgba(230,57,70,0.2); }
+.card h3 { font-size: 1.05rem; margin-bottom: 7px; }
+.card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; }
+.stat-block { text-align: center; padding: 14px; }
+.stat-number {
+  font-size: 2.6rem; font-weight: 800;
+  background: var(--claw-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+.stat-label { font-size: 0.82rem; color: var(--text-secondary); margin-top: 6px; }
+.tag {
+  display: inline-block; padding: 4px 12px;
+  border-radius: 20px; font-size: 0.74rem;
+  font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.tag-red { background: rgba(230,57,70,0.15); color: var(--claw-red); }
+.tag-orange { background: rgba(244,132,95,0.15); color: var(--claw-orange); }
+.tag-green { background: rgba(52,211,153,0.15); color: var(--accent-green); }
+.tag-blue { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+.tag-purple { background: rgba(167,139,250,0.15); color: var(--accent-purple); }
+.tag-yellow { background: rgba(251,191,36,0.15); color: var(--accent-yellow); }
+.quote-block {
+  border-left: 3px solid var(--claw-red);
+  padding: 14px 22px; margin: 14px 0;
+  background: rgba(230,57,70,0.05);
+  border-radius: 0 8px 8px 0;
+  font-style: italic; color: var(--text-primary);
+  font-size: 1.15rem; line-height: 1.55;
+  max-width: 1000px;
+}
+.quote-block .attribution {
+  font-style: normal; font-weight: 600;
+  color: var(--text-secondary); margin-top: 8px; font-size: 0.85rem;
+}
+.gradient-line { width: 80px; height: 3px; background: var(--claw-gradient); border-radius: 2px; margin: 14px auto; }
+.gradient-line.wide { width: 120px; }
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(230,57,70,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(230,57,70,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.slide-brand {
+  position: absolute; top: 24px; left: 36px;
+  font-weight: 700; font-size: 0.82rem;
+  display: flex; align-items: center; gap: 8px;
+  color: var(--text-muted); z-index: 5;
+}
+.slide-brand .lobster-icon { font-size: 1.2rem; }
+.slide-tag {
+  position: absolute; top: 24px; right: 36px;
+  font-size: 0.7rem; font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted); z-index: 5;
+}
+.host-note {
+  position: absolute;
+  top: 66px;
+  right: 36px;
+  width: min(370px, calc(100% - 72px));
+  z-index: 12;
+  padding: 10px 14px;
+  border: 1px solid rgba(74,158,255,0.32);
+  border-radius: 8px;
+  background: rgba(4, 8, 12, 0.84);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+.host-note strong {
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.68rem;
+}
+#slide-14 .host-note { top: 104px; }
+#slide-8 .host-note { width: 300px; }
+.alert-card {
+  background: rgba(230,57,70,0.08);
+  border: 1px solid rgba(230,57,70,0.3);
+  border-radius: 12px; padding: 22px;
+  max-width: 900px; width: 100%;
+}
+.alert-card h3 { color: var(--claw-red); }
+.warn-card {
+  background: rgba(251,191,36,0.06);
+  border: 1px solid rgba(251,191,36,0.25);
+  border-radius: 12px; padding: 18px 22px;
+  max-width: 900px; width: 100%;
+}
+.agenda-row {
+  display: flex; gap: 18px; align-items: center;
+  padding: 7px 0; border-bottom: 1px solid #1a1a1a;
+}
+.agenda-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem; color: var(--claw-red);
+  width: 28px; flex-shrink: 0; font-weight: 600;
+}
+.agenda-title { font-size: 0.96rem; font-weight: 600; flex: 1; }
+.agenda-time {
+  font-size: 0.78rem; color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.big-quote {
+  font-size: 1.7rem; font-weight: 700; line-height: 1.3;
+  max-width: 880px; text-align: center; letter-spacing: -0.02em;
+}
+.part-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem; color: var(--claw-red);
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.news-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; width: 100%; max-width: 1140px;
+}
+.news-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px; padding: 18px 20px;
+  text-align: left; position: relative; overflow: hidden;
+}
+.news-card .news-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.60rem; color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.news-card h4 { font-size: 1.02rem; font-weight: 700; margin-bottom: 6px; }
+.news-card p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.5; }
+.news-card .accent-bar {
+  position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%;
+}
+.bar-red { background: var(--claw-red); }
+.bar-blue { background: var(--accent-blue); }
+.bar-green { background: var(--accent-green); }
+.bar-orange { background: var(--claw-orange); }
+.bar-yellow { background: var(--accent-yellow); }
+.bar-purple { background: var(--accent-purple); }
+.two-col-img {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 28px; width: 100%; max-width: 1140px;
+  align-items: center;
+}
+.events-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0 32px; width: 100%; max-width: 1180px;
+}
+.event-row {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px; align-items: start;
+  padding: 8px 0; border-bottom: 1px solid #181818;
+  font-size: 0.82rem;
+}
+.event-row .event-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem; color: var(--text-muted);
+  white-space: nowrap;
+}
+.event-row .event-title {
+  color: var(--text-primary); font-weight: 600;
+  font-size: 0.85rem;
+}
+.event-row .meta { color: var(--text-secondary); font-weight: 400; font-size: 0.75rem; }
+
+.story-frame {
+  display: grid; grid-template-columns: auto 1fr; gap: 22px;
+  align-items: center; width: 100%; max-width: 1140px;
+}
+.story-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem; letter-spacing: 0.14em;
+  color: var(--claw-red); text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-subtle);
+  padding: 5px 11px; border-radius: 999px;
+  font-size: 0.74rem; color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+}
+.pill.red { color: var(--claw-red); border-color: rgba(230,57,70,0.35); background: rgba(230,57,70,0.08); }
+.pill.blue { color: var(--accent-blue); border-color: rgba(74,158,255,0.35); background: rgba(74,158,255,0.08); }
+.pill.green { color: var(--accent-green); border-color: rgba(52,211,153,0.35); background: rgba(52,211,153,0.08); }
+.pill.yellow { color: var(--accent-yellow); border-color: rgba(251,191,36,0.35); background: rgba(251,191,36,0.08); }
+.pill.purple { color: var(--accent-purple); border-color: rgba(167,139,250,0.35); background: rgba(167,139,250,0.08); }
+
+.bullet-list { list-style: none; padding: 0; margin: 0; }
+.bullet-list li {
+  position: relative; padding-left: 20px;
+  margin-bottom: 9px; font-size: 0.95rem;
+  color: var(--text-secondary); line-height: 1.55;
+}
+.bullet-list li::before {
+  content: ''; position: absolute; left: 0; top: 9px;
+  width: 8px; height: 8px; border-radius: 2px;
+  background: var(--claw-gradient);
+}
+.bullet-list li strong { color: var(--text-primary); font-weight: 600; }
+
+
+.coverage-pill {
+  display: inline-block;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-subtle);
+  padding: 6px 14px; border-radius: 999px;
+  font-size: 0.78rem; font-weight: 600;
+  color: var(--text-secondary); margin: 4px 6px 4px 0;
+}
+
+img.embed {
+  display: block;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  max-width: 100%;
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+.orb-red { background: #e63946; }
+.orb-orange { background: #f4845f; }
+.orb-blue { background: #4a9eff; }
+.orb-purple { background: #a78bfa; }
+.orb-green { background: #34d399; }
+
+.content { position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center; }
+
+.headline-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 2.4rem;
+  background: var(--claw-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+.event-row-big {
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 28px;
+  padding: 16px 0;
+  align-items: start;
+}
+.event-row-big .event-date {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.event-row-big .event-title {
+  font-size: 1.02rem;
+  line-height: 1.35;
+  margin-bottom: 5px;
+  overflow-wrap: anywhere;
+}
+.event-row-big .meta {
+  display: block;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  color: var(--text-muted);
+}
+.events-grid-single { grid-template-columns: 1fr; gap: 0; }
+
+
+.claw-map-layout {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 26px;
+  align-items: stretch;
+  width: min(1120px, 100%);
+  margin-top: 22px;
+}
+.map-summary-card {
+  text-align: left;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.map-summary-card .stat-row {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.map-summary-card .stat-row:last-child { border-bottom: 0; }
+.map-summary-card .stat-num {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent-green);
+  font-weight: 800;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+.claw-map-panel {
+  position: relative;
+  min-height: 340px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #111827;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.34);
+}
+.real-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.map-attribution {
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  z-index: 450;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  color: rgba(245,245,245,0.72);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(10,10,10,0.58);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  padding: 5px 8px;
+  backdrop-filter: blur(8px);
+}
+.leaflet-tile-pane { filter: brightness(0.78) invert(1) hue-rotate(180deg) saturate(0.75); }
+.leaflet-marker-icon, .leaflet-marker-shadow { filter: hue-rotate(180deg) invert(1); }
+.leaflet-container { background: #111827; font-family: 'Inter', -apple-system, sans-serif; }
+.leaflet-control-attribution {
+  background: rgba(10,10,10,0.72) !important;
+  color: rgba(245,245,245,0.74) !important;
+  font-size: 10px !important;
+}
+.leaflet-control-attribution a { color: var(--claw-orange) !important; }
+.leaflet-popup-content-wrapper {
+  background: #141414 !important;
+  color: var(--text-primary) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 12px 28px -8px rgba(230,57,70,0.35) !important;
+}
+.leaflet-popup-tip { background: #141414 !important; }
+.leaflet-popup-close-button { color: var(--text-secondary) !important; }
+.map-popup { min-width: 190px; }
+.map-popup .popup-date { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 4px; }
+.map-popup .popup-title { font-weight: 700; font-size: 0.92rem; margin-bottom: 6px; line-height: 1.25; }
+.map-popup .popup-venue { color: var(--text-secondary); font-size: 0.82rem; margin-bottom: 9px; }
+.map-popup a { display:inline-flex; padding:5px 10px; border-radius:999px; background:var(--claw-red); color:#fff !important; text-decoration:none; font-size:0.78rem; font-weight:700; }
+.map-loading {
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:0;
+  color:var(--text-secondary);
+  font-family:'JetBrains Mono', monospace;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  font-size:0.72rem;
+}
+
+
+.event-list-map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.92fr);
+  gap: 18px;
+  align-items: stretch;
+  width: min(1120px, 100%);
+  margin-top: 18px;
+}
+.event-list-map-layout .card { margin-top: 0 !important; }
+.event-list-map-layout .event-row-big {
+  grid-template-columns: 158px minmax(0, 1fr);
+  gap: 18px;
+  padding: 7px 0;
+}
+.event-list-map-layout .event-row-big .event-title { font-size: 0.82rem; }
+.event-list-map-layout .event-row-big .event-date { font-size: 0.60rem; }
+.event-list-map-layout .event-row-big .meta { font-size: 0.56rem; }
+.listing-map-panel {
+  position: relative;
+  min-height: 315px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #111827;
+  box-shadow: 0 18px 54px rgba(0,0,0,0.28);
+}
+.listing-map-label {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 450;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  color: rgba(245,245,245,0.72);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(10,10,10,0.58);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  padding: 5px 8px;
+  backdrop-filter: blur(8px);
+}
+
+
+.event-list-map-layout .card { min-height: 315px; }
+.event-list-map-layout .events-grid-single { max-height: none; overflow: visible; }
+
+
+.template-panel {
+  width: min(1080px, 100%);
+  border: 1px dashed rgba(244,132,95,0.45);
+  background: rgba(244,132,95,0.045);
+}
+.template-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--claw-orange);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.template-map-placeholder {
+  position: relative;
+  min-height: 340px;
+  border: 1px dashed rgba(52,211,153,0.42);
+  border-radius: 10px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(17,24,39,0.92), rgba(8,13,22,0.96));
+  background-size: 54px 54px, 54px 54px, auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.template-map-placeholder::after {
+  content: "Map View - This Week";
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  padding: 5px 8px;
+  background: rgba(10,10,10,0.58);
+  color: rgba(245,245,245,0.72);
+  font-size: 0.58rem;
+}
+.event-list-template .event-row-big {
+  grid-template-columns: 158px minmax(0, 1fr);
+  gap: 18px;
+  padding: 8px 0;
+}
+.event-list-template .event-title { color: var(--text-primary); }
+
+</style>
+<meta name="weeklyclaw-source" content="episode-19.zip/host.html">
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<div class="slide-counter"><span id="slideNum">1</span> / <span id="slideTotal">14</span></div>
+<div class="nav-dots" id="navDots"></div>
+<div class="kb-hint"><kbd>←</kbd> <kbd>→</kbd> navigate · <kbd>F</kbd> fullscreen</div>
+<div class="slide-container">
+<!-- ============ SLIDE 1 — COVER ============ -->
+<div class="slide grid-bg active" id="slide-1">
+  <div class="lobster-bg" style="top:6%; right:-3%;">🦞</div>
+  <div class="glow-orb orb-red" style="width:520px; height:520px; top:-160px; left:-140px;"></div>
+  <div class="glow-orb orb-orange" style="width:420px; height:420px; bottom:-140px; right:-100px;"></div>
+  <div class="content">
+    <div class="part-label">Episode 19 · June 26, 2026 · 4:00 PM ET</div>
+    <h1 style="font-size:5rem; text-align:center; margin-bottom:8px;">The <span class="gradient-text">Weekly Claw</span></h1>
+    <div class="gradient-line wide"></div>
+    <p class="subtitle text-center mt-2" style="max-width:900px; font-size:1.25rem;">This week’s news, ClawExplorer events, and Discord Happy Hour.<br/>Live Friday at 4:00 PM ET.</p>
+    <div class="mt-4" style="display:flex; gap:18px; flex-wrap:wrap; justify-content:center;"><span class="pill red">🦞 OpenClaw Discord</span><span class="pill blue">Hosts: Henry, Tim &amp; Andy</span><span class="pill green">Episode 19</span></div>
+    <div class="mt-4 mono muted" style="font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase;">"The Claw is the Law."</div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 2 — AGENDA ============ -->
+<div class="slide grid-bg" id="slide-2"><div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #19</div><div class="slide-tag">TONIGHT'S RUNDOWN</div><div class="content"><div class="part-label">Tonight's Rundown</div><h2 class="text-center">What we're chewing on</h2><div class="gradient-line"></div><div class="full-width mt-3" style="max-width:880px;"><div class="agenda-row"><span class="agenda-num">01</span><span class="agenda-title">Welcome &amp; Housekeeping</span><span class="agenda-time">3 min</span></div><div class="agenda-row"><span class="agenda-num">02</span><span class="agenda-title">Community Guidelines</span><span class="agenda-time">3 min</span></div><div class="agenda-row"><span class="agenda-num">03</span><span class="agenda-title">OpenAI previews GPT-5.6 Sol</span><span class="agenda-time">5 min</span></div><div class="agenda-row"><span class="agenda-num">04</span><span class="agenda-title">Malicious OpenClaw skills found online</span><span class="agenda-time">5 min</span></div><div class="agenda-row"><span class="agenda-num">05</span><span class="agenda-title">ClawExplorer Events — next 7 days</span><span class="agenda-time">8 min</span></div><div class="agenda-row"><span class="agenda-num">06</span><span class="agenda-title">Closing + Discord Happy Hour</span><span class="agenda-time">3 min</span></div></div><p class="muted mt-3 mono" style="font-size:0.78rem;">News starts with OpenAI's GPT-5.6 Sol preview, then a ClawHub skill security warning.</p></div></div>
+
+<!-- ============ SLIDE 3 — WELCOME / ANTI-SCAM PSA ============ -->
+<div class="slide grid-bg" id="slide-3"><div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #19</div><div class="slide-tag">HOUSEKEEPING</div><div class="content"><div class="part-label">Quick housekeeping</div><h2 class="text-center">Recording &amp; the standing PSA</h2><div class="gradient-line"></div><div class="two-col mt-3"><div class="card"><h3 class="blue">📼 Session may be recorded</h3><p>Joining voice is your opt-in. The disclosure link lives in the server rules. Prefer not to be on the recording? Hang out in text chat — you're still part of the room.</p></div><div class="alert-card"><h3>⚠️ Standing PSA — read every week</h3><p style="color:var(--text-primary); font-size:1rem; line-height:1.55; margin-top:6px;"><strong>OpenClaw has no token, no coin, no blockchain component.</strong> If you see a wallet, an airdrop, or a presale claiming any association with this project — it's a scam. <span class="red">Report it and move on.</span></p></div></div><p class="muted mt-3" style="font-size:0.92rem;">If anything feels off in the server, <span class="mono red">/report</span> flags it.</p></div></div>
+
+<!-- ============ SLIDE 4 — GUIDELINES ============ -->
+<div class="slide grid-bg" id="slide-4"><div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #19</div><div class="slide-tag">GUIDELINES</div><div class="content"><div class="part-label">Keeping the signal high</div><h2 class="text-center">House rules — the short version</h2><div class="gradient-line"></div><div class="three-col mt-3"><div class="card"><span class="tag tag-red">SERVER</span><h3 class="mt-1">No spam, no NSFW, no harassment, no hate.</h3><p>And — ever — no crypto, betting, or trading talk. Serious builders and high-profile guests come here. Keep the bar.</p></div><div class="card"><span class="tag tag-blue">CHANNELS</span><h3 class="mt-1">Right room, right question.</h3><p><span class="mono">#self-promotion</span> only · <span class="mono">#help</span> &amp; <span class="mono">#users-helping-users</span> for fixes · <span class="mono">#models</span> for model talk · <span class="mono">/report</span> if something looks off.</p></div><div class="card"><span class="tag tag-green">VOICE</span><h3 class="mt-1">Listen for a beat. Share the mic.</h3><p>Keep it kid-safe-ish on the language. Norms run on honor. <span class="mono red">/report-vc</span> pings Audrey if something goes sideways.</p></div></div></div></div>
+
+<!-- ============ SLIDE 5 — NEWS DIVIDER ============ -->
+<div class="slide grid-bg" id="slide-5"><div class="lobster-bg" style="bottom:-4%; left:-3%;">🦞</div><div class="glow-orb orb-red" style="width:600px; height:600px; top:-180px; right:-160px;"></div><div class="content"><h1 style="text-align:center; margin-top:14px;">OpenClaw <span class="gradient-text">in the News</span></h1><div class="gradient-line wide"></div><p class="subtitle text-center mt-2">Two current-week stories: GPT-5.6 Sol and malicious OpenClaw skills.</p><p class="mono muted mt-3" style="font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase;">News window: Jun 20-Jun 26</p></div></div>
+
+<!-- ============ SLIDE 6 — NEWS SLOT 1 ============ -->
+<div class="slide grid-bg" id="slide-6">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #19</div><div class="slide-tag">SOURCE 01</div>
+  <div class="content">
+    <div class="part-label">OpenAI · June 26, 2026 · Product / Release</div>
+    <h2 class="text-center">OpenAI previews <span class="gradient-text">GPT-5.6 Sol</span></h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="card card-glow template-panel"><div class="template-kicker">Source 01 · OpenAI</div><h3 class="mt-1">Previewing GPT-5.6 Sol</h3><p>OpenAI began a limited preview of GPT-5.6 models: Sol as the flagship, Terra as the balanced everyday model, and Luna as the fast lower-cost option.</p><p class="mono muted mt-2" style="font-size:0.72rem; overflow-wrap:anywhere;">https://openai.com/index/previewing-gpt-5-6-sol/</p></div>
+      <div class="card template-panel"><div class="template-kicker">Why it matters</div><ul class="bullet-list mt-1"><li>Sol raises the bar for coding, biology, and cybersecurity workflows.</li><li>The preview pairs stronger capability with layered safeguards and automated red-teaming.</li><li>Initial access runs through the API and Codex for selected trusted partners before broader release.</li></ul></div>
+    </div>
+  </div>
+  <div class="host-note"><strong>Host cue</strong><br/>Frame this as the model-release story first: limited preview now, broader ChatGPT/Codex/API availability planned soon, with cyber safeguards as the core discussion angle.</div>
+</div>
+
+<!-- ============ SLIDE 7 — NEWS SLOT 2 ============ -->
+<div class="slide grid-bg" id="slide-7">
+  <div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #19</div><div class="slide-tag">SOURCE 02</div>
+  <div class="content">
+    <div class="part-label">TechRadar · June 25, 2026 · Security</div>
+    <h2 class="text-center">Malicious OpenClaw <span class="gradient-text">skills found online</span></h2>
+    <div class="gradient-line"></div>
+    <div class="two-col mt-3" style="align-items:flex-start;">
+      <div class="card card-glow template-panel"><div class="template-kicker">Source 02 · TechRadar</div><h3 class="mt-1">Multiple malicious OpenClaw skills found online</h3><p>TechRadar reports Unit 42 found five malicious ClawHub skills, including two macOS infostealers, before the listings and accounts were removed.</p><p class="mono muted mt-2" style="font-size:0.72rem; overflow-wrap:anywhere;">https://www.techradar.com/pro/security/multiple-malicious-openclaw-skills-found-online-including-two-macos-infostealers</p></div>
+      <div class="card template-panel"><div class="template-kicker">Why it matters</div><ul class="bullet-list mt-1"><li>Skills can package powerful agent behavior, so marketplace trust matters.</li><li>Mac users are explicitly in scope through AMOS-style infostealer payloads.</li><li>Good default behavior: inspect sources, pin trusted skills, and remove anything suspicious.</li></ul></div>
+    </div>
+  </div>
+  <div class="host-note"><strong>Host cue</strong><br/>Make this practical: source skills from trusted publishers, review what a skill can access, and treat removed malicious listings as a warning about supply-chain hygiene.</div>
+</div>
+
+<!-- ============ SLIDE 8 — EVENTS OVERVIEW ============ -->
+<div class="slide grid-bg" id="slide-8"><div class="lobster-bg" style="bottom:-4%; left:-3%;">🦞</div><div class="glow-orb orb-green" style="width:560px; height:560px; top:-170px; right:-150px;"></div><div class="content"><h1 style="text-align:center; margin-top:0; font-size:2.85rem;">ClawExplorer <span class="gradient-text">Events</span></h1><div class="gradient-line wide" style="margin-top:10px; margin-bottom:12px;"></div><p class="subtitle text-center mt-1" style="max-width:920px; font-size:1.05rem;">Next 7 days from <span class="mono blue">clawexplorer.ai/feed.xml</span>, pulled June 26.</p><div class="claw-map-layout"><div class="card card-glow map-summary-card"><span class="tag tag-green">LIVE MAP</span><h3 class="mt-1">Next-week locations</h3><p>Real Leaflet/OpenStreetMap view using ClawExplorer source listings and geocoded locations.</p><div class="mt-2"><div class="stat-row"><div class="stat-num">17</div><div><strong>source listings pinned</strong><br/><span class="muted">Includes the Menlo Park Luma/Eventbrite duplicate.</span></div></div><div class="stat-row"><div class="stat-num">11</div><div><strong>countries</strong><br/><span class="muted">AM, CA, DE, GB, IE, IN, KR, MY, TR, US, VN.</span></div></div><div class="stat-row"><div class="stat-num">5</div><div><strong>event slides</strong><br/><span class="muted">Each listing slide has its own map.</span></div></div></div></div><div class="claw-map-panel" aria-label="Real map of Episode 19 event locations"><div class="map-loading">Loading OpenStreetMap tiles...</div><div id="episode-map" class="real-map" data-map-group="all"></div><div class="map-attribution">Map View - This Week</div></div></div></div>
+  <div class="host-note"><strong>Host cue</strong><br/>Quick scan. Note the Menlo Park duplicate appears as two ClawExplorer source listings.</div></div>
+
+<!-- ============ SLIDE 9 — EVENTS FRI JUN 26-SAT JUN 27 ============ -->
+<div class="slide grid-bg" id="slide-9"><div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #19</div><div class="slide-tag">CLAWEXPLORER</div><div class="content"><div class="part-label">ClawExplorer · Fri Jun 26-Sat Jun 27</div><h2 class="text-center">4 listings · <span class="gradient-text">Fri Jun 26-Sat Jun 27</span></h2><div class="gradient-line"></div><div class="event-list-map-layout"><div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;"><div class="events-grid events-grid-single event-list-template">      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Fri Jun 26</strong><br/>4:00 PM - 6:00 PM<br/>Vancouver, BC</div>
+        <div><div class="event-title">Vancouver · 🤖🔓🛡️ Who Controls Your AI? (Part 2) Building Your Own Private Self-Hosted AI Machine (Community Sharing)</div><div class="meta mono">luma.com/dxkun3mj · luma</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Fri Jun 26</strong><br/>6:00 PM - 9:00 PM<br/>Thành phố Hồ Chí Minh</div>
+        <div><div class="event-title">Thành phố Hồ Chí Minh · NEAR Legion Vietnam: IronClaw 101 [Agentic Workshop]</div><div class="meta mono">luma.com/eh0is5ju · luma</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sat Jun 27</strong><br/>9:00 AM - 10:30 AM<br/>Nashville, TN</div>
+        <div><div class="event-title">Nashville · CLAWS &amp; COFFEE - Nashville</div><div class="meta mono">luma.com/u12k9tmt · luma</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sat Jun 27</strong><br/>11:00 AM - 5:00 PM<br/>Dublin 8</div>
+        <div><div class="event-title">Dublin 8 · OpenClaw: Applied usecases</div><div class="meta mono">luma.com/oc-dublin · luma</div></div>
+      </div></div></div><div class="listing-map-panel"><div class="map-loading">Loading map...</div><div id="episode-map-9" class="real-map" data-map-group="9"></div></div></div><p class="mono muted mt-3" style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered Jun 26-Jul 3</p></div></div>
+
+<!-- ============ SLIDE 10 — EVENTS SAT JUN 27-SUN JUN 28 ============ -->
+<div class="slide grid-bg" id="slide-10"><div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #19</div><div class="slide-tag">CLAWEXPLORER</div><div class="content"><div class="part-label">ClawExplorer · Sat Jun 27-Sun Jun 28</div><h2 class="text-center">4 listings · <span class="gradient-text">Sat Jun 27-Sun Jun 28</span></h2><div class="gradient-line"></div><div class="event-list-map-layout"><div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;"><div class="events-grid events-grid-single event-list-template">      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sat Jun 27</strong><br/>11:00 AM - 1:00 PM<br/>Pune, Maharashtra</div>
+        <div><div class="event-title">Pune · Explore AI Agents 🛠️</div><div class="meta mono">luma.com/geukd2ml · luma</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sat Jun 27</strong><br/>6:00 PM - 9:00 PM<br/>Seoul</div>
+        <div><div class="event-title">Seoul · ClawCon Seoul</div><div class="meta mono">luma.com/clawconseoul · luma</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sun Jun 28</strong><br/>2:00 PM - 5:00 PM<br/>Los Angeles, CA</div>
+        <div><div class="event-title">Los Angeles · AI Clubhouse Meetup: Demos &amp; Networking</div><div class="meta mono">luma.com/ai-2gos · luma</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Sun Jun 28</strong><br/>2:00 PM - 7:30 PM<br/>Çankaya, Ankara</div>
+        <div><div class="event-title">Çankaya · ClawCon Ankara 2</div><div class="meta mono">luma.com/clawconankara2 · luma</div></div>
+      </div></div></div><div class="listing-map-panel"><div class="map-loading">Loading map...</div><div id="episode-map-10" class="real-map" data-map-group="10"></div></div></div><p class="mono muted mt-3" style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered Jun 26-Jul 3</p></div></div>
+
+<!-- ============ SLIDE 11 — EVENTS TUE JUN 30 ============ -->
+<div class="slide grid-bg" id="slide-11"><div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #19</div><div class="slide-tag">CLAWEXPLORER</div><div class="content"><div class="part-label">ClawExplorer · Tue Jun 30</div><h2 class="text-center">4 listings · <span class="gradient-text">Tue Jun 30</span></h2><div class="gradient-line"></div><div class="event-list-map-layout"><div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;"><div class="events-grid events-grid-single event-list-template">      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Tue Jun 30</strong><br/>9:00 AM - 11:00 AM<br/>Yerevan</div>
+        <div><div class="event-title">Yerevan · Build Your First AI Project Manager-Live with OpenClaw</div><div class="meta mono">luma.com/1255v3n4 · luma</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Tue Jun 30</strong><br/>3:30 PM - 8:30 PM<br/>Menlo Park, CA</div>
+        <div><div class="event-title">Menlo Park · Building AI Ecosystem: Talks + AI Agent Workshops, Ft ServiceNow, Glean, SAP &amp; Snowflake</div><div class="meta mono">luma.com/jun-ai-forum · luma</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Tue Jun 30</strong><br/>4:00 PM - 9:00 PM<br/>Menlo Park, CA</div>
+        <div><div class="event-title">Menlo Park · Building AI Ecosystem: Talks + AI Agent Workshops</div><div class="meta mono">www.eventbrite.com/e/building-ai-ecosystem-talks-ai-agent-workshops-tickets-1986966901490 · eventbrite</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Tue Jun 30</strong><br/>6:30 PM - 9:00 PM<br/>London, England</div>
+        <div><div class="event-title">London · Product is... Trading Control for Time</div><div class="meta mono">luma.com/er1klcu3 · luma</div></div>
+      </div></div></div><div class="listing-map-panel"><div class="map-loading">Loading map...</div><div id="episode-map-11" class="real-map" data-map-group="11"></div></div></div><p class="mono muted mt-3" style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered Jun 26-Jul 3</p></div></div>
+
+<!-- ============ SLIDE 12 — EVENTS WED JUL 1-THU JUL 2 ============ -->
+<div class="slide grid-bg" id="slide-12"><div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #19</div><div class="slide-tag">CLAWEXPLORER</div><div class="content"><div class="part-label">ClawExplorer · Wed Jul 1-Thu Jul 2</div><h2 class="text-center">4 listings · <span class="gradient-text">Wed Jul 1-Thu Jul 2</span></h2><div class="gradient-line"></div><div class="event-list-map-layout"><div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;"><div class="events-grid events-grid-single event-list-template">      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Wed Jul 1</strong><br/>2:00 PM - 5:00 PM<br/>Kuala Lumpur</div>
+        <div><div class="event-title">Kuala Lumpur · From OpenClaw to Hermes: Discover AI Agents with Tencent Cloud</div><div class="meta mono">luma.com/ul0g4kww · luma</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Wed Jul 1</strong><br/>6:00 PM - 9:00 PM<br/>Dublin 1</div>
+        <div><div class="event-title">Dublin 1 · ClawCon Dublin</div><div class="meta mono">luma.com/clawcondublin · luma</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Thu Jul 2</strong><br/>8:00 AM - 9:30 AM<br/>San Francisco, CA</div>
+        <div><div class="event-title">San Francisco · Agent Builders Breakfast - Founders &amp; Builders in SOMA, SF</div><div class="meta mono">luma.com/pq60ro1w · luma</div></div>
+      </div>
+      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Thu Jul 2</strong><br/>6:00 PM - 9:00 PM<br/>Kassel, HE</div>
+        <div><div class="event-title">Kassel · Claude Code vs. Cursor vs. ChatGPT vs. OpenClaw</div><div class="meta mono">luma.com/pbrztjib · luma</div></div>
+      </div></div></div><div class="listing-map-panel"><div class="map-loading">Loading map...</div><div id="episode-map-12" class="real-map" data-map-group="12"></div></div></div><p class="mono muted mt-3" style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered Jun 26-Jul 3</p></div></div>
+
+<!-- ============ SLIDE 13 — EVENTS THU JUL 2 ============ -->
+<div class="slide grid-bg" id="slide-13"><div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #19</div><div class="slide-tag">CLAWEXPLORER</div><div class="content"><div class="part-label">ClawExplorer · Thu Jul 2</div><h2 class="text-center">1 listing · <span class="gradient-text">Thu Jul 2</span></h2><div class="gradient-line"></div><div class="event-list-map-layout"><div class="card card-glow mt-3" style="max-width:1080px; width:100%; padding:22px 28px;"><div class="events-grid events-grid-single event-list-template">      <div class="event-row event-row-big">
+        <div class="event-date"><strong>Thu Jul 2</strong><br/>7:00 PM - 8:00 PM<br/>Fulda, Hessen</div>
+        <div><div class="event-title">Fulda · KI-Agenten im Alltag eines Entwicklers.</div><div class="meta mono">luma.com/q3wg5e3t · luma</div></div>
+      </div></div></div><div class="listing-map-panel"><div class="map-loading">Loading map...</div><div id="episode-map-13" class="real-map" data-map-group="13"></div></div></div><p class="mono muted mt-3" style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;">Source: clawexplorer.ai/feed.xml · filtered Jun 26-Jul 3</p></div></div>
+
+<!-- ============ SLIDE 14 — CLOSING / DISCORD HAPPY HOUR ============ -->
+<div class="slide grid-bg" id="slide-14"><div class="slide-brand"><span class="lobster-icon">🦞</span> The Weekly Claw #19</div><div class="slide-tag">CLOSING</div><div class="content"><div class="part-label">Closing · Discord happy hour</div><h2 class="text-center">Stick around for <span class="gradient-text">Happy Hour</span></h2><div class="gradient-line"></div><div class="two-col-img mt-3" style="max-width:1080px; grid-template-columns: 0.92fr 1.08fr;"><div><img class="embed" src="f5205c0a976defdfc3f054ee5713450d8a92fdeaf06460a2f16eb2cc9681cb7c.png" alt="OpenClaw happy hour announcement" style="max-height:470px; width:auto; margin:0 auto; object-fit:contain; background:#111;"></div><div class="card card-glow"><span class="tag tag-orange">DISCORD</span><h3 class="mt-1">After the show</h3><p>We’ll keep the room open in Discord for Happy Hour: casual questions, demos, event follow-ups, and whatever came up during the episode.</p><ul class="bullet-list mt-2"><li>Drop links and field reports in chat.</li><li>Bring quick demos or questions from the week.</li><li>If you hosted or attended an event, tell the room what landed.</li></ul></div></div><p class="mt-3 mono muted" style="font-size:0.82rem; letter-spacing:0.14em; text-transform:uppercase;">See you in Discord · The Claw is the Law.</p></div>
+  <div class="host-note"><strong>Host cue</strong><br/>Handoff into informal Discord time.</div></div>
+</div>
+<script>
+(function() {
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+  const slideNumEl = document.getElementById('slideNum');
+  const slideTotalEl = document.getElementById('slideTotal');
+  const progressBar = document.getElementById('progressBar');
+  const navDots = document.getElementById('navDots');
+  slideTotalEl.textContent = total;
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => go(i));
+    navDots.appendChild(dot);
+  }
+  const dots = navDots.querySelectorAll('.nav-dot');
+  function go(i) {
+    if (i < 0 || i >= total) return;
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = i;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    slideNumEl.textContent = current + 1;
+    progressBar.style.width = ((current + 1) / total * 100) + '%';
+    initActiveMaps();
+  }
+  progressBar.style.width = (1 / total * 100) + '%';
+  const initialHashMatch = window.location.hash.match(/^#slide-(\d+)$/);
+  if (initialHashMatch) go(Number(initialHashMatch[1]) - 1);
+
+  const episodeMapGroups = {"all": [{"title": "🤖🔓🛡️ Who Controls Your AI? (Part 2) Building Your Own Private Self-Hosted AI Machine (Community Sharing)", "city": "Vancouver", "region": "BC", "country": "CA", "date_iso": "2026-06-26", "start": "16:00", "end": "18:00", "timezone": "America/Vancouver", "url": "https://luma.com/dxkun3mj", "source": "luma", "lat": 49.282648, "lng": -123.1154321}, {"title": "NEAR Legion Vietnam: IronClaw 101 [Agentic Workshop]", "city": "Thành phố Hồ Chí Minh", "region": "Hồ Chí Minh", "country": "VN", "date_iso": "2026-06-26", "start": "18:00", "end": "21:00", "timezone": "Asia/Ho_Chi_Minh", "url": "https://luma.com/eh0is5ju", "source": "luma", "lat": 10.7737261, "lng": 106.7166008}, {"title": "CLAWS & COFFEE - Nashville", "city": "Nashville", "region": "TN", "country": "US", "date_iso": "2026-06-27", "start": "09:00", "end": "10:30", "timezone": "America/Chicago", "url": "https://luma.com/u12k9tmt", "source": "luma", "lat": 36.1349596, "lng": -86.801014}, {"title": "OpenClaw: Applied usecases", "city": "Dublin 8", "region": "D", "country": "IE", "date_iso": "2026-06-27", "start": "11:00", "end": "17:00", "timezone": "Europe/Dublin", "url": "https://luma.com/oc-dublin", "source": "luma", "lat": 53.3503422, "lng": -6.3203113}, {"title": "Explore AI Agents 🛠️", "city": "Pune", "region": "Maharashtra", "country": "IN", "date_iso": "2026-06-27", "start": "11:00", "end": "13:00", "timezone": "Asia/Calcutta", "url": "https://luma.com/geukd2ml", "source": "luma", "lat": 18.5213738, "lng": 73.8545071}, {"title": "ClawCon Seoul", "city": "Seoul", "region": "", "country": "KR", "date_iso": "2026-06-27", "start": "18:00", "end": "21:00", "timezone": "Asia/Seoul", "url": "https://luma.com/clawconseoul", "source": "luma", "lat": 37.5666791, "lng": 126.9782914}, {"title": "AI Clubhouse Meetup: Demos & Networking", "city": "Los Angeles", "region": "CA", "country": "US", "date_iso": "2026-06-28", "start": "14:00", "end": "17:00", "timezone": "America/Los_Angeles", "url": "https://luma.com/ai-2gos", "source": "luma", "lat": 34.0536909, "lng": -118.242766}, {"title": "ClawCon Ankara 2", "city": "Çankaya", "region": "Ankara", "country": "TR", "date_iso": "2026-06-28", "start": "14:00", "end": "19:30", "timezone": "Europe/Istanbul", "url": "https://luma.com/clawconankara2", "source": "luma", "lat": 39.8853321, "lng": 32.8554966}, {"title": "Build Your First AI Project Manager-Live with OpenClaw", "city": "Yerevan", "region": "Yerevan", "country": "AM", "date_iso": "2026-06-30", "start": "09:00", "end": "11:00", "timezone": "Asia/Yerevan", "url": "https://luma.com/1255v3n4", "source": "luma", "lat": 40.1777112, "lng": 44.5126233}, {"title": "Building AI Ecosystem: Talks + AI Agent Workshops, Ft ServiceNow, Glean, SAP & Snowflake", "city": "Menlo Park", "region": "CA", "country": "US", "date_iso": "2026-06-30", "start": "15:30", "end": "20:30", "timezone": "America/Los_Angeles", "url": "https://luma.com/jun-ai-forum", "source": "luma", "lat": 37.4850492, "lng": -122.1762094}, {"title": "Building AI Ecosystem: Talks + AI Agent Workshops", "city": "Menlo Park", "region": "CA", "country": "US", "date_iso": "2026-06-30", "start": "16:00", "end": "21:00", "timezone": "America/Los_Angeles", "url": "https://www.eventbrite.com/e/building-ai-ecosystem-talks-ai-agent-workshops-tickets-1986966901490", "source": "eventbrite", "lat": 37.4850492, "lng": -122.1762094}, {"title": "Product is... Trading Control for Time", "city": "London", "region": "England", "country": "GB", "date_iso": "2026-06-30", "start": "18:30", "end": "21:00", "timezone": "Europe/London", "url": "https://luma.com/er1klcu3", "source": "luma", "lat": 51.5074456, "lng": -0.1277653}, {"title": "From OpenClaw to Hermes: Discover AI Agents with Tencent Cloud", "city": "Kuala Lumpur", "region": "Wilayah Persekutuan Kuala Lumpur", "country": "MY", "date_iso": "2026-07-01", "start": "14:00", "end": "17:00", "timezone": "Asia/Kuala_Lumpur", "url": "https://luma.com/ul0g4kww", "source": "luma", "lat": 3.1516964, "lng": 101.6942371}, {"title": "ClawCon Dublin", "city": "Dublin 1", "region": "D", "country": "IE", "date_iso": "2026-07-01", "start": "18:00", "end": "21:00", "timezone": "Europe/Dublin", "url": "https://luma.com/clawcondublin", "source": "luma", "lat": 53.3524881, "lng": -6.2566457}, {"title": "Agent Builders Breakfast - Founders & Builders in SOMA, SF", "city": "San Francisco", "region": "CA", "country": "US", "date_iso": "2026-07-02", "start": "08:00", "end": "09:30", "timezone": "America/Los_Angeles", "url": "https://luma.com/pq60ro1w", "source": "luma", "lat": 37.7879363, "lng": -122.4075201}, {"title": "Claude Code vs. Cursor vs. ChatGPT vs. OpenClaw", "city": "Kassel", "region": "HE", "country": "DE", "date_iso": "2026-07-02", "start": "18:00", "end": "21:00", "timezone": "Europe/Berlin", "url": "https://luma.com/pbrztjib", "source": "luma", "lat": 51.3079382, "lng": 9.5313239}, {"title": "KI-Agenten im Alltag eines Entwicklers.", "city": "Fulda", "region": "Hessen", "country": "DE", "date_iso": "2026-07-02", "start": "19:00", "end": "20:00", "timezone": "Europe/Berlin", "url": "https://luma.com/q3wg5e3t", "source": "luma", "lat": 50.5640012, "lng": 9.6842166}], "9": [{"title": "🤖🔓🛡️ Who Controls Your AI? (Part 2) Building Your Own Private Self-Hosted AI Machine (Community Sharing)", "city": "Vancouver", "region": "BC", "country": "CA", "date_iso": "2026-06-26", "start": "16:00", "end": "18:00", "timezone": "America/Vancouver", "url": "https://luma.com/dxkun3mj", "source": "luma", "lat": 49.282648, "lng": -123.1154321}, {"title": "NEAR Legion Vietnam: IronClaw 101 [Agentic Workshop]", "city": "Thành phố Hồ Chí Minh", "region": "Hồ Chí Minh", "country": "VN", "date_iso": "2026-06-26", "start": "18:00", "end": "21:00", "timezone": "Asia/Ho_Chi_Minh", "url": "https://luma.com/eh0is5ju", "source": "luma", "lat": 10.7737261, "lng": 106.7166008}, {"title": "CLAWS & COFFEE - Nashville", "city": "Nashville", "region": "TN", "country": "US", "date_iso": "2026-06-27", "start": "09:00", "end": "10:30", "timezone": "America/Chicago", "url": "https://luma.com/u12k9tmt", "source": "luma", "lat": 36.1349596, "lng": -86.801014}, {"title": "OpenClaw: Applied usecases", "city": "Dublin 8", "region": "D", "country": "IE", "date_iso": "2026-06-27", "start": "11:00", "end": "17:00", "timezone": "Europe/Dublin", "url": "https://luma.com/oc-dublin", "source": "luma", "lat": 53.3503422, "lng": -6.3203113}], "10": [{"title": "Explore AI Agents 🛠️", "city": "Pune", "region": "Maharashtra", "country": "IN", "date_iso": "2026-06-27", "start": "11:00", "end": "13:00", "timezone": "Asia/Calcutta", "url": "https://luma.com/geukd2ml", "source": "luma", "lat": 18.5213738, "lng": 73.8545071}, {"title": "ClawCon Seoul", "city": "Seoul", "region": "", "country": "KR", "date_iso": "2026-06-27", "start": "18:00", "end": "21:00", "timezone": "Asia/Seoul", "url": "https://luma.com/clawconseoul", "source": "luma", "lat": 37.5666791, "lng": 126.9782914}, {"title": "AI Clubhouse Meetup: Demos & Networking", "city": "Los Angeles", "region": "CA", "country": "US", "date_iso": "2026-06-28", "start": "14:00", "end": "17:00", "timezone": "America/Los_Angeles", "url": "https://luma.com/ai-2gos", "source": "luma", "lat": 34.0536909, "lng": -118.242766}, {"title": "ClawCon Ankara 2", "city": "Çankaya", "region": "Ankara", "country": "TR", "date_iso": "2026-06-28", "start": "14:00", "end": "19:30", "timezone": "Europe/Istanbul", "url": "https://luma.com/clawconankara2", "source": "luma", "lat": 39.8853321, "lng": 32.8554966}], "11": [{"title": "Build Your First AI Project Manager-Live with OpenClaw", "city": "Yerevan", "region": "Yerevan", "country": "AM", "date_iso": "2026-06-30", "start": "09:00", "end": "11:00", "timezone": "Asia/Yerevan", "url": "https://luma.com/1255v3n4", "source": "luma", "lat": 40.1777112, "lng": 44.5126233}, {"title": "Building AI Ecosystem: Talks + AI Agent Workshops, Ft ServiceNow, Glean, SAP & Snowflake", "city": "Menlo Park", "region": "CA", "country": "US", "date_iso": "2026-06-30", "start": "15:30", "end": "20:30", "timezone": "America/Los_Angeles", "url": "https://luma.com/jun-ai-forum", "source": "luma", "lat": 37.4850492, "lng": -122.1762094}, {"title": "Building AI Ecosystem: Talks + AI Agent Workshops", "city": "Menlo Park", "region": "CA", "country": "US", "date_iso": "2026-06-30", "start": "16:00", "end": "21:00", "timezone": "America/Los_Angeles", "url": "https://www.eventbrite.com/e/building-ai-ecosystem-talks-ai-agent-workshops-tickets-1986966901490", "source": "eventbrite", "lat": 37.4850492, "lng": -122.1762094}, {"title": "Product is... Trading Control for Time", "city": "London", "region": "England", "country": "GB", "date_iso": "2026-06-30", "start": "18:30", "end": "21:00", "timezone": "Europe/London", "url": "https://luma.com/er1klcu3", "source": "luma", "lat": 51.5074456, "lng": -0.1277653}], "12": [{"title": "From OpenClaw to Hermes: Discover AI Agents with Tencent Cloud", "city": "Kuala Lumpur", "region": "Wilayah Persekutuan Kuala Lumpur", "country": "MY", "date_iso": "2026-07-01", "start": "14:00", "end": "17:00", "timezone": "Asia/Kuala_Lumpur", "url": "https://luma.com/ul0g4kww", "source": "luma", "lat": 3.1516964, "lng": 101.6942371}, {"title": "ClawCon Dublin", "city": "Dublin 1", "region": "D", "country": "IE", "date_iso": "2026-07-01", "start": "18:00", "end": "21:00", "timezone": "Europe/Dublin", "url": "https://luma.com/clawcondublin", "source": "luma", "lat": 53.3524881, "lng": -6.2566457}, {"title": "Agent Builders Breakfast - Founders & Builders in SOMA, SF", "city": "San Francisco", "region": "CA", "country": "US", "date_iso": "2026-07-02", "start": "08:00", "end": "09:30", "timezone": "America/Los_Angeles", "url": "https://luma.com/pq60ro1w", "source": "luma", "lat": 37.7879363, "lng": -122.4075201}, {"title": "Claude Code vs. Cursor vs. ChatGPT vs. OpenClaw", "city": "Kassel", "region": "HE", "country": "DE", "date_iso": "2026-07-02", "start": "18:00", "end": "21:00", "timezone": "Europe/Berlin", "url": "https://luma.com/pbrztjib", "source": "luma", "lat": 51.3079382, "lng": 9.5313239}], "13": [{"title": "KI-Agenten im Alltag eines Entwicklers.", "city": "Fulda", "region": "Hessen", "country": "DE", "date_iso": "2026-07-02", "start": "19:00", "end": "20:00", "timezone": "Europe/Berlin", "url": "https://luma.com/q3wg5e3t", "source": "luma", "lat": 50.5640012, "lng": 9.6842166}]};
+  let episodeMapLoadPromise = null;
+  const episodeMapInstances = new Map();
+  function loadEpisodeLeaflet() {
+    if (window.L) return Promise.resolve();
+    if (episodeMapLoadPromise) return episodeMapLoadPromise;
+    episodeMapLoadPromise = new Promise((resolve, reject) => {
+      const link = document.createElement('link'); link.rel = 'stylesheet'; link.href = 'https://clawexplorer.ai/lib/leaflet/leaflet.css'; document.head.appendChild(link);
+      const script = document.createElement('script'); script.src = 'https://clawexplorer.ai/lib/leaflet/leaflet.js'; script.onload = resolve; script.onerror = () => reject(new Error('Leaflet failed to load')); document.head.appendChild(script);
+    });
+    return episodeMapLoadPromise;
+  }
+  function safeHtml(value) { return String(value || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  async function initMapElement(el) {
+    if (!el || episodeMapInstances.has(el.id)) { const existing = el && episodeMapInstances.get(el.id); if (existing) setTimeout(() => existing.invalidateSize(), 80); return; }
+    await loadEpisodeLeaflet();
+    const group = el.dataset.mapGroup || 'all';
+    const events = episodeMapGroups[group] || episodeMapGroups.all || [];
+    const map = L.map(el, { scrollWheelZoom: false, worldCopyJump: true, zoomControl: true });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }).addTo(map);
+    const bounds = [];
+    events.forEach((event) => {
+      const latLng = [event.lat, event.lng];
+      const popup = `<div class="map-popup"><div class="popup-date">${safeHtml(event.date_iso)} · ${safeHtml(event.start)}</div><div class="popup-title">${safeHtml(event.title)}</div><div class="popup-venue">${safeHtml(event.city)}</div><a href="${safeHtml(event.url)}" target="_blank" rel="noopener noreferrer">RSVP</a></div>`;
+      L.marker(latLng).bindPopup(popup).addTo(map); bounds.push(latLng);
+    });
+    if (bounds.length === 1) map.setView(bounds[0], 5); else map.fitBounds(bounds, { padding: [28, 28], maxZoom: group === 'all' ? 4 : 5 });
+    episodeMapInstances.set(el.id, map); setTimeout(() => map.invalidateSize(), 80);
+  }
+  async function initActiveMaps() {
+    const activeSlide = slides[current]; if (!activeSlide) return;
+    const maps = activeSlide.querySelectorAll('.real-map'); if (!maps.length) return;
+    try { for (const el of maps) await initMapElement(el); } catch (err) { activeSlide.querySelectorAll('.map-loading').forEach((loading) => { loading.textContent = 'Map failed to load. Check network access.'; }); }
+  }
+  initActiveMaps();
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(current - 1); }
+    else if (e.key === 'Home') { e.preventDefault(); go(0); }
+    else if (e.key === 'End') { e.preventDefault(); go(total - 1); }
+    else if (e.key === 'f' || e.key === 'F') { if (!document.fullscreenElement) document.documentElement.requestFullscreen(); else document.exitFullscreen(); }
+  });
+})();
+</script>
+</body>
+</html>

@@ -28,6 +28,8 @@ Recent MascotM3 main decks are hosted directly under WeeklyClaw.ai:
 - `/episodes/13/deck.html`
 - `/episodes/14/deck.html`
 - `/episodes/15/deck.html`
+- `/episodes/19/deck.html`
+- `/episodes/19/host.html`
 
 ## Local check
 
