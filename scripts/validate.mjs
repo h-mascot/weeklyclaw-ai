@@ -30,7 +30,7 @@ if (missing.length) {
 }
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-for (const needle of ['WeeklyClaw.ai', 'The Weekly Claw', 'OpenClaw Discord', '/changelog/', 'Main slides', '/episodes/10/deck.html', '/episodes/12/deck.html', '/episodes/14/deck.html', '/episodes/19/deck.html', '/episodes/19/host.html', '/w12/changelog/', '/w14/changelog/', '/w18/changelog/', '/w19/changelog/']) {
+for (const needle of ['WeeklyClaw.ai', 'The Weekly Claw', 'OpenClaw Discord', '/changelog/', 'Episode deck', 'Changelog/DX deck', '/episodes/10/deck.html', '/episodes/12/deck.html', '/episodes/14/deck.html', '/episodes/19/deck.html', '/w12/changelog/', '/w14/changelog/', '/w18/changelog/', '/w19/changelog/']) {
   if (!html.includes(needle)) {
     console.error(`Missing expected copy: ${needle}`);
     process.exit(1);
@@ -42,12 +42,33 @@ if (html.includes('superada.ai/weekly-claw') || html.includes('SuperAda edition'
   process.exit(1);
 }
 
+if (html.includes('Open changelog archive') || html.includes('Browse recent materials') || html.includes('Host deck') || html.includes('Main slides') || html.includes('Recent materials') || html.includes('show packets') || html.includes('this mirror') || html.includes('MascotM3')) {
+  console.error('Homepage still contains low-value or duplicate CTA copy');
+  process.exit(1);
+}
+
+
+if (html.includes('May 22, 2026 · Show deck + changelog/DX')) {
+  console.error('Homepage still contains stale date/availability meta copy');
+  process.exit(1);
+}
+
+if (!readFileSync(new URL('../README.md', import.meta.url), 'utf8').includes('/w19/changelog/')) {
+  console.error('README is missing the W19 changelog route');
+  process.exit(1);
+}
+
 const changelogHtml = readFileSync(new URL('../changelog/index.html', import.meta.url), 'utf8');
-for (const needle of ['Changelog archive', '/w11/changelog/', '/w18/changelog/', '/w19/changelog/', '/w19/changelog/', '/episodes/12/deck.html', '/episodes/14/deck.html', '/episodes/19/deck.html', '/episodes/19/host.html', 'Main slides']) {
+for (const needle of ['Release changelogs', '/w11/changelog/', '/w18/changelog/', '/w19/changelog/', '/episodes/12/deck.html', '/episodes/14/deck.html', '/episodes/19/deck.html', 'Episode deck', 'Changelog/DX deck']) {
   if (!changelogHtml.includes(needle)) {
     console.error(`Changelog index missing expected copy: ${needle}`);
     process.exit(1);
   }
+}
+
+if (changelogHtml.includes('Open changelog') || changelogHtml.includes('Host deck') || changelogHtml.includes('/episodes/19/host.html') || changelogHtml.includes('Main slides') || changelogHtml.includes('Changelog archive') || changelogHtml.includes('mirrored SuperAda') || changelogHtml.includes('short week routes')) {
+  console.error('Changelog index still exposes low-value or duplicate CTA copy');
+  process.exit(1);
 }
 
 
@@ -76,6 +97,10 @@ for (const week of weeks) {
   const deck = readFileSync(join(dir, 'index.html'), 'utf8');
   if (!deck.includes('Weekly') && !deck.includes('OpenClaw')) {
     console.error(`Week ${week} changelog does not look like a Weekly Claw deck`);
+    process.exit(1);
+  }
+  if (!deck.includes('name="weeklyclaw-route"') || !deck.includes(`/w${week}/changelog/`)) {
+    console.error(`Week ${week} changelog is missing weeklyclaw-route metadata`);
     process.exit(1);
   }
   const shortRoute = readFileSync(new URL(`../w${week}/index.html`, import.meta.url), 'utf8');

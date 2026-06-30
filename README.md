@@ -4,9 +4,9 @@ Official landing page for **The Weekly Claw**, OpenClaw's weekly community show.
 
 ## Published Weekly Claw slide routes
 
-SuperAda Weekly Claw changelog decks are mirrored into short WeeklyClaw.ai paths:
+Weekly Claw changelog decks are published into short WeeklyClaw.ai paths:
 
-- `/changelog/` lists every mirrored changelog deck.
+- `/changelog/` lists every changelog/DX deck.
 - `/w11/changelog/` and `/w11/`
 - `/w12/changelog/` and `/w12/`
 - `/w13/changelog/` and `/w13/`
@@ -15,13 +15,14 @@ SuperAda Weekly Claw changelog decks are mirrored into short WeeklyClaw.ai paths
 - `/w16/changelog/` and `/w16/`
 - `/w17/changelog/` and `/w17/`
 - `/w18/changelog/` and `/w18/`
+- `/w19/changelog/` and `/w19/`
 
-`/wN/` is a static redirect page to `/wN/changelog/`. Slide JPGs are copied beside each changelog deck so the archived HTML remains self-contained. The homepage should not send Weekly Claw slide traffic back to SuperAda; it presents **Main slides** and **Changelog** links on WeeklyClaw.ai.
+`/wN/` is a static redirect page to `/wN/changelog/`. Slide JPGs are copied beside each changelog deck so each route remains self-contained. The homepage presents clear **Episode deck** and **Changelog/DX deck** links on WeeklyClaw.ai without duplicate host-deck CTAs.
 
 
 ## Main slide routes
 
-Recent MascotM3 main decks are hosted directly under WeeklyClaw.ai:
+Recent Weekly Claw main show decks are hosted directly under WeeklyClaw.ai:
 
 - `/episodes/10/deck.html`
 - `/episodes/12/deck.html`
@@ -29,7 +30,8 @@ Recent MascotM3 main decks are hosted directly under WeeklyClaw.ai:
 - `/episodes/14/deck.html`
 - `/episodes/15/deck.html`
 - `/episodes/19/deck.html`
-- `/episodes/19/host.html`
+
+Episode 19 also keeps an internal host cue deck at `/episodes/19/host.html`, but the public UI links to the main room deck and the changelog deck only.
 
 ## Local check
 
