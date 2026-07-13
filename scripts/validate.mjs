@@ -4,6 +4,7 @@ import { join } from 'node:path';
 const root = new URL('..', import.meta.url);
 const required = [
   'index.html',
+  'feedback.html',
   'changelog/index.html',
   'episodes/10/deck.html',
   'episodes/12/deck.html',
@@ -30,26 +31,28 @@ if (missing.length) {
 }
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-for (const needle of ['WeeklyClaw.ai', 'The Weekly Claw', 'OpenClaw Discord', '/changelog/', 'Episode deck', 'Changelog/DX deck', '/episodes/10/deck.html', '/episodes/12/deck.html', '/episodes/14/deck.html', '/episodes/19/deck.html', '/w12/changelog/', '/w14/changelog/', '/w18/changelog/', '/w19/changelog/']) {
+for (const needle of ['Weekly Claw', 'live TV for people who ship with agents', '/feedback.html', 'OpenClaw community show']) {
   if (!html.includes(needle)) {
-    console.error(`Missing expected copy: ${needle}`);
+    console.error(`Missing expected homepage copy: ${needle}`);
     process.exit(1);
   }
 }
 
-if (html.includes('superada.ai/weekly-claw') || html.includes('SuperAda edition') || html.includes('Short route')) {
-  console.error('Homepage still contains stale SuperAda or Short route links');
-  process.exit(1);
+const feedbackHtml = readFileSync(new URL('../feedback.html', import.meta.url), 'utf8');
+for (const needle of [
+  'id="feedback-form"',
+  'https://formsubmit.co/ajax/551466e066875528b97a01a246d8d45b',
+  'id="form-status"',
+  'Feedback sent. Thank you for helping shape the next Weekly Claw.',
+  'form.reportValidity()',
+]) {
+  if (!feedbackHtml.includes(needle)) {
+    console.error(`Feedback page missing expected integration marker: ${needle}`);
+    process.exit(1);
+  }
 }
-
-if (html.includes('Open changelog archive') || html.includes('Browse recent materials') || html.includes('Host deck') || html.includes('Main slides') || html.includes('Recent materials') || html.includes('show packets') || html.includes('this mirror') || html.includes('MascotM3')) {
-  console.error('Homepage still contains low-value or duplicate CTA copy');
-  process.exit(1);
-}
-
-
-if (html.includes('May 22, 2026 · Show deck + changelog/DX')) {
-  console.error('Homepage still contains stale date/availability meta copy');
+if (feedbackHtml.includes('formsubmit.co/ajax/show@weeklyclaw.ai')) {
+  console.error('Feedback page exposes the inactive naked-email FormSubmit endpoint');
   process.exit(1);
 }
 

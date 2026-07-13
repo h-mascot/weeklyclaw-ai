@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weekly Claw Feedback</title>
+  <meta name="description" content="Share quick feedback on Weekly Claw. Tell us what worked, what should change, and what you want more of next." />
+  <meta property="og:title" content="Weekly Claw Feedback" />
+  <meta property="og:description" content="A quick Weekly Claw audience feedback survey." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <script>
+    (function () {
+      const storageKey = "weeklyclaw-theme";
+      const media = window.matchMedia("(prefers-color-scheme: light)");
+      const saved = localStorage.getItem(storageKey);
+      const resolved = saved === "light" || saved === "dark" ? saved : (media.matches ? "light" : "dark");
+      document.documentElement.setAttribute("data-theme", resolved);
+      document.documentElement.style.colorScheme = resolved;
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute("content", resolved === "light" ? "#fcf7f5" : "#0a0a0a");
+    }());
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-soft: #0f0f10;
+      --bg-elev: #0d0d0d;
+      --panel: #111111;
+      --panel-2: #171717;
+      --line: #232323;
+      --line-strong: #333333;
+      --red: #e63946;
+      --red-deep: #d22d39;
+      --red-dim: rgba(230, 57, 70, 0.14);
+      --text: #f2f2f2;
+      --text-2: #a7a7a7;
+      --text-3: #666666;
+      --ok: #89d185;
+      --ok-bg: rgba(137, 209, 133, 0.12);
+      --warn: #ffcb6b;
+      --warn-bg: rgba(255, 203, 107, 0.08);
+      --focus: rgba(230, 57, 70, 0.95);
+      --max: 1120px;
+      --mono: "JetBrains Mono", monospace;
+    }
+    html[data-theme="light"] {
+      --bg: #fcf7f5;
+      --bg-soft: #fff1ed;
+      --bg-elev: #fff5f2;
+      --panel: #fffdfc;
+      --panel-2: #fff2ee;
+      --line: #dfc9c3;
+      --line-strong: #b79287;
+      --red-dim: rgba(230, 57, 70, 0.12);
+      --text: #211715;
+      --text-2: #5a4540;
+      --text-3: #7d635b;
+      --ok: #176b2a;
+      --ok-bg: rgba(23, 107, 42, 0.10);
+      --warn: #8d5400;
+      --warn-bg: rgba(207, 138, 0, 0.12);
+      --focus: rgba(180, 27, 41, 0.95);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(230, 57, 70, 0.16), transparent 28%),
+        radial-gradient(circle at top left, rgba(230, 57, 70, 0.08), transparent 24%),
+        linear-gradient(180deg, var(--bg-elev) 0%, var(--bg) 100%);
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+    .mark { width: 30px; height: 30px; flex: none; }
+    .brand-name {
+      font-weight: 900;
+      font-size: 17px;
+      letter-spacing: -0.03em;
+    }
+    .brand-name small {
+      display: block;
+      margin-top: 3px;
+      color: var(--text-3);
+      font: 700 9px/1 var(--mono);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--text-2);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .nav a:hover,
+    .nav a:focus-visible { color: var(--text); }
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 36px;
+      padding: 0 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--text);
+      font: 700 11px/1 var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+    }
+    .theme-toggle:hover { border-color: var(--red); background: var(--panel-2); }
+    .theme-icon {
+      width: 16px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--red-dim);
+      color: var(--red);
+      font-size: 11px;
+      line-height: 1;
+      flex: none;
+    }
+    .hero {
+      padding: 52px 0 38px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.96fr) minmax(320px, 0.78fr);
+      gap: 28px;
+      align-items: start;
+    }
+    .eyebrow,
+    .kicker {
+      font: 700 11px/1 var(--mono);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .eyebrow { color: var(--red); }
+    .hero-card,
+    .form-shell,
+    .proof-strip {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--panel) 96%, transparent), color-mix(in srgb, var(--bg) 96%, transparent));
+      box-shadow: 0 16px 56px rgba(0, 0, 0, 0.28);
+    }
+    .hero-copy-card {
+      padding: 30px 30px 32px;
+      border-left: 3px solid var(--red);
+    }
+    h1 {
+      margin: 14px 0 18px;
+      font-size: clamp(40px, 7vw, 76px);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+      max-width: 11ch;
+    }
+    .accent { color: var(--red); }
+    .hero-copy {
+      max-width: 60ch;
+      color: var(--text-2);
+      font-size: clamp(16px, 1.8vw, 18px);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .time-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 12px;
+      border: 1px solid var(--line-strong);
+      background: var(--bg-soft);
+      color: var(--text-2);
+      border-radius: 999px;
+      font: 700 11px/1 var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .chip.is-hot {
+      border-color: rgba(230, 57, 70, 0.45);
+      background: var(--red-dim);
+      color: var(--text);
+    }
+    .hero-side {
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-side::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(230, 57, 70, 0.12), transparent 42%),
+        repeating-linear-gradient(180deg, transparent 0, transparent 30px, color-mix(in srgb, var(--text) 3%, transparent) 30px, color-mix(in srgb, var(--text) 3%, transparent) 31px);
+      pointer-events: none;
+    }
+    .hero-side > * { position: relative; }
+    .mini-stack {
+      display: grid;
+      gap: 14px;
+    }
+    .mini-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--panel-2) 82%, transparent);
+    }
+    .mini-card strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 15px;
+      letter-spacing: -0.02em;
+    }
+    .mini-card p {
+      margin: 0;
+      color: var(--text-2);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .survey {
+      padding: 42px 0 82px;
+    }
+    .form-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+      gap: 0;
+      overflow: hidden;
+    }
+    .form-main {
+      padding: 28px;
+      border-right: 1px solid var(--line);
+    }
+    .form-side {
+      padding: 28px 24px;
+      background: linear-gradient(180deg, rgba(230, 57, 70, 0.09), color-mix(in srgb, var(--panel-2) 96%, transparent));
+    }
+    .section-title {
+      margin: 12px 0 8px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+    }
+    .section-note {
+      margin: 0 0 22px;
+      max-width: 62ch;
+      color: var(--text-2);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    form {
+      display: grid;
+      gap: 22px;
+    }
+    fieldset {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      min-width: 0;
+    }
+    legend,
+    label {
+      display: block;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+    }
+    .field-note {
+      margin-top: 6px;
+      color: var(--text-2);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .required {
+      color: var(--red);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-left: 6px;
+      font-family: var(--mono);
+    }
+    .rating-grid,
+    .check-grid,
+    .choice-grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .rating-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+    .choice-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .check-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .option {
+      position: relative;
+    }
+    .option input {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+    }
+    .option-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      min-height: 82px;
+      padding: 14px 15px;
+      border: 1px solid var(--line-strong);
+      background: color-mix(in srgb, var(--panel-2) 82%, transparent);
+      transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+    }
+    .option-card strong {
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .option-card span {
+      color: var(--text-2);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .check-grid .option-card,
+    .choice-grid .option-card {
+      min-height: 74px;
+    }
+    .option input:checked + .option-card {
+      border-color: var(--red);
+      background: linear-gradient(180deg, rgba(230, 57, 70, 0.18), rgba(230, 57, 70, 0.05));
+      transform: translateY(-1px);
+    }
+    .option input:focus-visible + .option-card,
+    input:focus-visible,
+    textarea:focus-visible,
+    button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
+    .field-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .field { display: grid; gap: 8px; }
+    .field.full { grid-column: 1 / -1; }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line-strong);
+      background: color-mix(in srgb, var(--panel) 90%, transparent);
+      color: var(--text);
+      border-radius: 3px;
+      padding: 13px 14px;
+      font: 500 15px/1.5 Inter, sans-serif;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+    input:hover,
+    textarea:hover { border-color: var(--red); }
+    textarea {
+      min-height: 118px;
+      resize: vertical;
+    }
+    input::placeholder,
+    textarea::placeholder { color: #7b7b7b; }
+    input:invalid,
+    textarea:invalid { box-shadow: none; }
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .status {
+      display: none;
+      padding: 14px 15px;
+      border: 1px solid var(--line);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .status.is-visible { display: block; }
+    .status[data-tone="loading"] { color: var(--warn); background: var(--warn-bg); border-color: rgba(255, 203, 107, 0.35); }
+    .status[data-tone="success"] { color: var(--ok); background: var(--ok-bg); border-color: rgba(137, 209, 133, 0.35); }
+    .status[data-tone="error"] { color: #ff9a9a; background: rgba(255, 99, 99, 0.08); border-color: rgba(255, 99, 99, 0.35); }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid var(--line-strong);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--text);
+      font: 700 13px/1 Inter, sans-serif;
+      cursor: pointer;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+    .btn:hover { border-color: var(--red); background: var(--panel-2); }
+    .btn-red {
+      background: var(--red);
+      border-color: var(--red);
+      color: #ffffff;
+    }
+    .btn-red:hover { background: var(--red-deep); }
+    .btn[disabled] {
+      opacity: 0.62;
+      cursor: wait;
+    }
+    .side-block + .side-block {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+    .side-block h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+    .side-block p,
+    .side-block li {
+      margin: 0;
+      color: var(--text-2);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .side-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .side-list li::before {
+      content: "■";
+      color: var(--red);
+      margin-right: 10px;
+      font-size: 10px;
+      vertical-align: middle;
+    }
+    .proof-strip {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--red);
+    }
+    .proof-strip p {
+      margin: 8px 0 0;
+      color: var(--text-2);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .footer {
+      padding: 0 0 60px;
+      color: var(--text-3);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+    }
+    @media (max-width: 980px) {
+      .hero-grid,
+      .form-shell {
+        grid-template-columns: 1fr;
+      }
+      .form-main {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+    }
+    @media (max-width: 980px) {
+      .nav { display: none; }
+      .topbar-inner {
+        min-height: 64px;
+        padding: 10px 0;
+        flex-wrap: nowrap;
+      }
+      .brand { min-width: 0; }
+      .brand-name { font-size: 15px; }
+      .hero { padding-top: 34px; }
+      .hero-copy-card,
+      .form-main,
+      .form-side { padding: 22px; }
+      .rating-grid,
+      .choice-grid,
+      .check-grid,
+      .field-grid {
+        grid-template-columns: 1fr;
+      }
+      .option-card { min-height: auto; }
+    }
+    @media (max-width: 640px) {
+      .shell { width: min(var(--max), calc(100% - 24px)); }
+      .theme-toggle { padding: 0 10px; }
+      h1 { font-size: clamp(32px, 11vw, 42px); line-height: 0.96; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="claw-mark">
+        <path d="M4 3 C4 12 7.5 16 12 19" fill="none" stroke="#e63946" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M12 3 C12 10 12 14 12 19" fill="none" stroke="#e63946" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M20 3 C20 12 16.5 16 12 19" fill="none" stroke="#e63946" stroke-width="2.6" stroke-linecap="round"/>
+      </g>
+    </defs>
+  </svg>
+
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="/index.html" aria-label="Weekly Claw home">
+        <svg class="mark" viewBox="0 0 24 22" aria-hidden="true"><use href="#claw-mark"/></svg>
+        <span class="brand-name">Weekly Claw</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/index.html#segments">Segments</a>
+        <a href="/index.html#episodes">Episodes</a>
+        <a href="/feedback.html" aria-current="page">Feedback</a>
+        <a href="/index.html#guest">Be on the show</a>
+      </nav>
+      <div class="topbar-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch to light theme">
+          <span class="theme-icon" aria-hidden="true">◐</span>
+          <span id="theme-toggle-label">Light</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-card hero-copy-card">
+          <span class="eyebrow">Audience feedback</span>
+          <h1>Help shape the <span class="accent">next claw.</span></h1>
+          <p class="hero-copy">This survey is built to take under two minutes. Tell us what hit, what dragged, which segments deserve more airtime, and whether you want to bring a story or demo onto the show.</p>
+          <div class="time-chip-row" aria-label="Survey qualities">
+            <span class="chip is-hot">Under 2 minutes</span>
+            <span class="chip">Live show tuning</span>
+            <span class="chip">No login required</span>
+          </div>
+        </div>
+        <aside class="hero-card hero-side" aria-label="Why this matters">
+          <div class="mini-stack">
+            <div class="mini-card">
+              <strong>What gets decided from this</strong>
+              <p>Segment mix, topic lineup, tool fights, guest invites, and which failure stories or workflows get pulled into future episodes.</p>
+            </div>
+            <div class="mini-card">
+              <strong>Good nominations</strong>
+              <p>Sharp tool matchups, repeatable workflows, postmortems with lessons, or audience stories that deserve a live teardown.</p>
+            </div>
+            <div class="mini-card">
+              <strong>If you want on the show</strong>
+              <p>Say yes in the form and drop a contact. Demos, audience experiences, and strong “what broke” stories are all fair game.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="survey">
+      <div class="shell">
+        <div class="form-shell">
+          <div class="form-main">
+            <span class="kicker" style="color: var(--red)">Quick survey</span>
+            <h2 class="section-title">Tell us what should happen next.</h2>
+            <p class="section-note">Required fields are marked. The form submits directly to Weekly Claw via FormSubmit AJAX and does not expose any secret keys in the page.</p>
+
+            <div id="form-status" class="status" aria-live="polite" data-tone="loading"></div>
+
+            <form id="feedback-form" action="https://formsubmit.co/ajax/551466e066875528b97a01a246d8d45b" method="post" novalidate>
+              <input type="hidden" name="_subject" value="Weekly Claw audience feedback" />
+              <input type="hidden" name="_template" value="table" />
+              <div class="visually-hidden" aria-hidden="true">
+                <label for="company">Leave this field empty</label>
+                <input id="company" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <fieldset>
+                <legend>Overall rating <span class="required">Required</span></legend>
+                <p class="field-note">1 is rough, 5 is excellent.</p>
+                <div class="rating-grid" role="radiogroup" aria-describedby="rating-help">
+                  <label class="option">
+                    <input type="radio" name="overall_rating" value="1" required />
+                    <span class="option-card"><strong>1</strong><span>Needs work</span></span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="overall_rating" value="2" />
+                    <span class="option-card"><strong>2</strong><span>Mixed</span></span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="overall_rating" value="3" />
+                    <span class="option-card"><strong>3</strong><span>Solid</span></span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="overall_rating" value="4" />
+                    <span class="option-card"><strong>4</strong><span>Strong</span></span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="overall_rating" value="5" />
+                    <span class="option-card"><strong>5</strong><span>Must-watch</span></span>
+                  </label>
+                </div>
+                <p id="rating-help" class="field-note">Pick the number that best matches the overall episode experience.</p>
+              </fieldset>
+
+              <fieldset>
+                <legend>What do you want more of? <span class="required">Required</span></legend>
+                <p class="field-note">Choose as many as you want.</p>
+                <div class="check-grid" id="segment-options">
+                  <label class="option">
+                    <input type="checkbox" name="more_of[]" value="The Wire" />
+                    <span class="option-card"><strong>The Wire</strong><span>Faster weekly signal and news cuts.</span></span>
+                  </label>
+                  <label class="option">
+                    <input type="checkbox" name="more_of[]" value="Tool Fight" />
+                    <span class="option-card"><strong>Tool Fight</strong><span>Head-to-head tool matchups on a real task.</span></span>
+                  </label>
+                  <label class="option">
+                    <input type="checkbox" name="more_of[]" value="Live demos" />
+                    <span class="option-card"><strong>Live demos</strong><span>Builders shipping on air.</span></span>
+                  </label>
+                  <label class="option">
+                    <input type="checkbox" name="more_of[]" value="Practical workflows / project leverage" />
+                    <span class="option-card"><strong>Practical workflows</strong><span>Reusable patterns that create leverage.</span></span>
+                  </label>
+                  <label class="option">
+                    <input type="checkbox" name="more_of[]" value="What broke" />
+                    <span class="option-card"><strong>What broke</strong><span>Failures, recovery, and the lesson.</span></span>
+                  </label>
+                  <label class="option">
+                    <input type="checkbox" name="more_of[]" value="Audience stories" />
+                    <span class="option-card"><strong>Audience stories</strong><span>Field reports from people actually using agents.</span></span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="field-grid">
+                <div class="field full">
+                  <label for="favorite_part">Favorite part <span class="required">Required</span></label>
+                  <textarea id="favorite_part" name="favorite_part" required placeholder="What landed best, and why?"></textarea>
+                </div>
+                <div class="field full">
+                  <label for="change_request">What should change?</label>
+                  <textarea id="change_request" name="change_request" placeholder="What dragged, what was missing, or what should be cut?"></textarea>
+                </div>
+                <div class="field full">
+                  <label for="nomination">Next topic or tool matchup nomination</label>
+                  <textarea id="nomination" name="next_nomination" placeholder="Suggest a topic, debate, workflow, or tool fight for a future episode."></textarea>
+                </div>
+              </div>
+
+              <fieldset>
+                <legend>Would you want to share an experience or demo on the show?</legend>
+                <div class="choice-grid">
+                  <label class="option">
+                    <input type="radio" name="share_on_show" value="Yes" checked />
+                    <span class="option-card"><strong>Yes</strong><span>I have something worth bringing live.</span></span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="share_on_show" value="Maybe" />
+                    <span class="option-card"><strong>Maybe</strong><span>Depends on the format and timing.</span></span>
+                  </label>
+                  <label class="option">
+                    <input type="radio" name="share_on_show" value="No" />
+                    <span class="option-card"><strong>No</strong><span>Just sharing feedback for now.</span></span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="field-grid">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" type="text" name="name" autocomplete="name" placeholder="Optional" />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" name="email" autocomplete="email" placeholder="Optional" />
+                </div>
+                <div class="field full">
+                  <label for="handle">Discord or X handle</label>
+                  <input id="handle" type="text" name="handle" autocomplete="off" placeholder="Optional" />
+                </div>
+              </div>
+
+              <div class="actions">
+                <button class="btn btn-red" type="submit" id="submit-button">Send feedback</button>
+                <a class="btn" href="/index.html">Back to Weekly Claw</a>
+              </div>
+            </form>
+          </div>
+
+          <aside class="form-side" aria-label="Survey guidance">
+            <div class="side-block">
+              <span class="kicker" style="color: var(--text)">What helps</span>
+              <h3>Useful feedback is specific.</h3>
+              <p>A great answer names a moment, a segment, or a decision. The more concrete the note, the easier it is to act on before the next episode.</p>
+            </div>
+            <div class="side-block">
+              <h3>Good prompts</h3>
+              <ul class="side-list">
+                <li>Which moment made you stay?</li>
+                <li>Which segment felt too long or too thin?</li>
+                <li>Which tool fight would you actually tune in for?</li>
+                <li>What workflow or failure deserves a live teardown?</li>
+              </ul>
+            </div>
+            <div class="side-block">
+              <h3>What happens after submit</h3>
+              <p>You’ll get a clear success or error message in-page. If you volunteer a story or demo, the show team can follow up using the contact details you choose to leave.</p>
+            </div>
+          </aside>
+        </div>
+
+        <div class="proof-strip">
+          <span class="kicker" style="color: var(--red)">Audience mode</span>
+          <p>This page keeps the same dark/red Weekly Claw system, works on mobile, and preserves the existing static site model with no secrets embedded client-side.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <div>© 2026 Weekly Claw · live TV for people who ship with agents</div>
+      <div>Feedback goes straight to `show@weeklyclaw.ai` via FormSubmit AJAX.</div>
+    </div>
+  </footer>
+
+  <script>
+    const THEME_STORAGE_KEY = "weeklyclaw-theme";
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      document.documentElement.style.colorScheme = theme;
+      if (themeMeta) themeMeta.setAttribute("content", theme === "light" ? "#fcf7f5" : "#0a0a0a");
+      const toggle = document.getElementById("theme-toggle");
+      const label = document.getElementById("theme-toggle-label");
+      const nextTheme = theme === "light" ? "dark" : "light";
+      if (toggle) {
+        toggle.setAttribute("aria-label", "Switch to " + nextTheme + " theme");
+        toggle.setAttribute("title", "Switch to " + nextTheme + " theme");
+        toggle.setAttribute("aria-pressed", String(theme === "light"));
+      }
+      if (label) label.textContent = nextTheme.charAt(0).toUpperCase() + nextTheme.slice(1);
+    }
+
+    function initThemeToggle() {
+      const toggle = document.getElementById("theme-toggle");
+      if (!toggle) return;
+      const media = window.matchMedia("(prefers-color-scheme: light)");
+      const saved = localStorage.getItem(THEME_STORAGE_KEY);
+      applyTheme(saved === "light" || saved === "dark" ? saved : (media.matches ? "light" : "dark"));
+      toggle.addEventListener("click", () => {
+        const current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+        const next = current === "light" ? "dark" : "light";
+        localStorage.setItem(THEME_STORAGE_KEY, next);
+        applyTheme(next);
+      });
+      media.addEventListener("change", (event) => {
+        if (localStorage.getItem(THEME_STORAGE_KEY)) return;
+        applyTheme(event.matches ? "light" : "dark");
+      });
+    }
+
+    const form = document.getElementById("feedback-form");
+    const submitButton = document.getElementById("submit-button");
+    const statusEl = document.getElementById("form-status");
+    const segmentInputs = Array.from(form.querySelectorAll('input[name="more_of[]"]'));
+
+    function showStatus(tone, message) {
+      statusEl.dataset.tone = tone;
+      statusEl.textContent = message;
+      statusEl.classList.add("is-visible");
+    }
+
+    function clearStatus() {
+      statusEl.textContent = "";
+      statusEl.classList.remove("is-visible");
+    }
+
+    function validateSegments() {
+      const hasSelection = segmentInputs.some((input) => input.checked);
+      const first = segmentInputs[0];
+      if (!hasSelection) {
+        first.setCustomValidity("Choose at least one segment you want more of.");
+      } else {
+        first.setCustomValidity("");
+      }
+      return hasSelection;
+    }
+
+    segmentInputs.forEach((input) => {
+      input.addEventListener("change", validateSegments);
+    });
+
+    initThemeToggle();
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      clearStatus();
+      validateSegments();
+
+      if (!form.reportValidity()) {
+        showStatus("error", "Please fix the highlighted fields before sending your feedback.");
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+      showStatus("loading", "Sending your feedback now.");
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: {
+            "Accept": "application/json"
+          },
+          body: new FormData(form)
+        });
+
+        const payload = await response.json().catch(() => ({}));
+
+        if (!response.ok || payload.success === "false") {
+          throw new Error(payload.message || "Submission failed.");
+        }
+
+        form.reset();
+        validateSegments();
+        showStatus("success", "Feedback sent. Thank you for helping shape the next Weekly Claw.");
+      } catch (error) {
+        showStatus("error", "Could not send feedback right now. Please try again in a moment or email show@weeklyclaw.ai directly.");
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send feedback";
+      }
+    });
+  </script>
+</body>
+</html>

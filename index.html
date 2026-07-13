@@ -3,319 +3,549 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WeeklyClaw.ai — The Weekly Claw</title>
-  <meta name="description" content="The official page for The Weekly Claw, OpenClaw's weekly community show covering releases, developer experience, news, community signal, and events." />
-  <meta property="og:title" content="WeeklyClaw.ai — The Weekly Claw" />
-  <meta property="og:description" content="OpenClaw's weekly show: changelog, developer experience, news, community signal, and events." />
+  <title>Weekly Claw — live TV for people who ship with agents</title>
+  <meta name="description" content="Weekly Claw is a live builder show about AI, agents, devtools, and startups. Demos, tool fights, hot takes, and the week's news — live every Friday." />
+  <meta property="og:title" content="Weekly Claw — live TV for people who ship with agents" />
+  <meta property="og:description" content="A live builder show about AI, agents, devtools, and startups. Demos, tool fights, hot takes, and the week's news." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#0a0a0a" />
+  <script>
+    (function () {
+      const storageKey = "weeklyclaw-theme";
+      const media = window.matchMedia("(prefers-color-scheme: light)");
+      const saved = localStorage.getItem(storageKey);
+      const resolved = saved === "light" || saved === "dark" ? saved : (media.matches ? "light" : "dark");
+      document.documentElement.setAttribute("data-theme", resolved);
+      document.documentElement.style.colorScheme = resolved;
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute("content", resolved === "light" ? "#fcf7f5" : "#0a0a0a");
+    }());
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-dark: #0a0a0a;
-      --bg-card: #141414;
-      --bg-card-hover: #1a1a1a;
-      --claw-red: #e63946;
-      --claw-orange: #f4845f;
-      --claw-gradient: linear-gradient(135deg, #e63946, #f4845f);
-      --claw-gradient-wide: linear-gradient(90deg, #e63946, #f4845f, #e63946);
-      --text-primary: #f5f5f5;
-      --text-secondary: #a0a0a0;
-      --text-muted: #666;
-      --border-subtle: #242424;
-      --accent-blue: #4a9eff;
-      --accent-green: #34d399;
-      --accent-purple: #a78bfa;
-      --accent-yellow: #fbbf24;
-      --max: 1180px;
+      --bg: #0a0a0a;
+      --bg-elev: #0d0d0d;
+      --panel: #111111;
+      --panel-2: #171717;
+      --line: #222222;
+      --line-strong: #333333;
+      --red: #e63946;
+      --red-deep: #d32c39;
+      --red-dim: rgba(230,57,70,0.14);
+      --text: #f2f2f2;
+      --text-2: #9b9b9b;
+      --text-3: #5d5d5d;
+      --focus: rgba(230,57,70,0.95);
+      --max: 1080px;
+      --mono: "JetBrains Mono", monospace;
+    }
+    html[data-theme="light"] {
+      --bg: #fcf7f5;
+      --bg-elev: #fff4f1;
+      --panel: #fffdfc;
+      --panel-2: #fff0ec;
+      --line: #dfc8c2;
+      --line-strong: #b8958b;
+      --red-dim: rgba(230,57,70,0.12);
+      --text: #211715;
+      --text-2: #5b4640;
+      --text-3: #7c6259;
+      --focus: rgba(180, 27, 41, 0.95);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at 18% 10%, rgba(230,57,70,0.24), transparent 30rem),
-        radial-gradient(circle at 85% 2%, rgba(244,132,95,0.16), transparent 28rem),
-        linear-gradient(rgba(230,57,70,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(230,57,70,0.035) 1px, transparent 1px),
-        var(--bg-dark);
-      background-size: auto, auto, 64px 64px, 64px 64px, auto;
-      color: var(--text-primary);
+      background: var(--bg);
+      color: var(--text);
       font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       min-height: 100vh;
     }
     a { color: inherit; text-decoration: none; }
-    .site-shell { width: min(100% - 32px, var(--max)); margin: 0 auto; }
-    .topbar {
-      position: sticky; top: 0; z-index: 10;
-      backdrop-filter: blur(18px);
-      background: rgba(10,10,10,0.74);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
     }
-    .topbar-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -0.04em; }
-    .brand-mark {
-      width: 42px; height: 42px; border-radius: 14px;
-      display: grid; place-items: center;
-      background: var(--claw-gradient);
-      box-shadow: 0 0 40px rgba(230,57,70,0.25);
-      font-size: 23px;
+    .shell { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .mono { font-family: var(--mono); }
+    .kicker { font: 700 11px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); }
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
-    .brand small { display: block; color: var(--text-muted); font: 700 10px/1 JetBrains Mono, monospace; letter-spacing: 0.16em; text-transform: uppercase; margin-top: 4px; }
-    .nav { display: flex; align-items: center; gap: 18px; color: var(--text-secondary); font-size: 13px; font-weight: 700; }
-    .nav a:hover { color: var(--text-primary); }
-    .hero { position: relative; padding: 94px 0 78px; overflow: hidden; }
-    .lobster-bg { position: absolute; right: -80px; top: 28px; font-size: min(42vw, 420px); opacity: 0.035; pointer-events: none; transform: rotate(-10deg); }
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--claw-orange); font: 800 12px/1 JetBrains Mono, monospace; letter-spacing: 0.16em; text-transform: uppercase; }
-    .pulse { width: 8px; height: 8px; border-radius: 999px; background: var(--claw-red); box-shadow: 0 0 0 6px rgba(230,57,70,0.12), 0 0 24px rgba(230,57,70,0.9); }
-    h1 { max-width: 980px; margin: 22px 0 20px; font-size: clamp(50px, 8.6vw, 112px); line-height: 0.88; letter-spacing: -0.075em; }
-    .gradient-text { background: var(--claw-gradient-wide); background-size: 180% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero-copy { max-width: 780px; color: var(--text-secondary); font-size: clamp(18px, 2vw, 23px); line-height: 1.55; }
-    .hero-copy strong { color: var(--text-primary); }
-    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 34px; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      min-height: 48px; padding: 0 18px; border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      color: var(--text-primary); font-weight: 800; font-size: 14px;
-      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+
+    .topbar { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    .topbar-inner { height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 11px; }
+    .brand-name { font-weight: 900; font-size: 17px; letter-spacing: -0.03em; }
+    .brand-name small { display: block; font: 700 9px/1 var(--mono); letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-3); margin-top: 3px; }
+    .mark { width: 30px; height: 30px; flex: none; }
+    .nav { display: flex; align-items: center; gap: 20px; font-size: 13px; font-weight: 700; color: var(--text-2); }
+    .nav a:hover { color: var(--text); }
+    .topbar-actions { display: flex; align-items: center; gap: 10px; }
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 36px;
+      padding: 0 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--text);
+      font: 700 11px/1 var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: border-color .15s, background .15s, color .15s;
     }
-    .btn:hover { transform: translateY(-1px); border-color: rgba(244,132,95,0.7); background: rgba(255,255,255,0.07); }
-    .btn-primary { background: var(--claw-gradient); border-color: transparent; box-shadow: 0 12px 45px rgba(230,57,70,0.22); }
-    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 42px; }
-    .stat, .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018));
-      border: 1px solid var(--border-subtle);
-      border-radius: 24px;
-      box-shadow: 0 28px 80px rgba(0,0,0,0.22);
+    .theme-toggle:hover { border-color: var(--red); background: var(--panel-2); }
+    .theme-toggle .theme-icon {
+      width: 16px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--red-dim);
+      color: var(--red);
+      font-size: 11px;
+      line-height: 1;
+      flex: none;
     }
-    .stat { padding: 20px; min-height: 118px; }
-    .stat b { display: block; font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.06em; line-height: 1; }
-    .stat span { display: block; color: var(--text-secondary); margin-top: 10px; font-size: 13px; line-height: 1.45; }
-    section { padding: 66px 0; }
-    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 22px; }
-    .section-kicker { color: var(--claw-orange); font: 800 12px/1 JetBrains Mono, monospace; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 12px; }
-    h2 { margin: 0; font-size: clamp(32px, 5vw, 58px); line-height: 0.95; letter-spacing: -0.06em; }
-    .section-note { color: var(--text-secondary); max-width: 470px; line-height: 1.55; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-    .card { padding: 24px; position: relative; overflow: hidden; }
-    .card::before { content: ''; position: absolute; left: 0; top: 0; right: 0; height: 3px; background: var(--claw-gradient-wide); opacity: 0.65; }
-    .card h3 { margin: 0 0 10px; font-size: 20px; letter-spacing: -0.03em; }
-    .card p { margin: 0; color: var(--text-secondary); line-height: 1.58; }
-    .tag { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; padding: 7px 10px; border-radius: 999px; background: rgba(230,57,70,0.11); color: var(--claw-orange); font: 800 11px/1 JetBrains Mono, monospace; text-transform: uppercase; letter-spacing: .08em; }
-    .episode { display: flex; flex-direction: column; gap: 16px; min-height: 100%; }
-    .episode-top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; }
-    .episode-number { font: 900 54px/0.9 Inter, sans-serif; letter-spacing: -0.08em; color: rgba(245,245,245,0.16); }
-    .episode-meta { color: var(--text-muted); font: 700 12px/1.4 JetBrains Mono, monospace; text-transform: uppercase; letter-spacing: .08em; }
-    .link-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 8px; }
-    .mini-link { border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); border-radius: 999px; padding: 8px 12px; font-size: 12px; font-weight: 800; }
-    .mini-link:hover { color: var(--text-primary); border-color: rgba(244,132,95,0.7); }
-    .run-of-show { counter-reset: item; display: grid; gap: 10px; }
-    .run-item { display: grid; grid-template-columns: 50px 1fr auto; gap: 16px; align-items: center; padding: 16px; border: 1px solid var(--border-subtle); border-radius: 18px; background: rgba(255,255,255,0.025); }
-    .run-item::before { counter-increment: item; content: counter(item, decimal-leading-zero); color: var(--claw-orange); font: 800 12px/1 JetBrains Mono, monospace; }
-    .run-title { font-weight: 850; letter-spacing: -0.02em; }
-    .run-desc { color: var(--text-muted); font-size: 13px; margin-top: 4px; line-height: 1.4; }
-    .run-time { color: var(--text-secondary); font: 800 12px/1 JetBrains Mono, monospace; white-space: nowrap; }
-    .banner {
-      border-radius: 30px; padding: 34px;
-      background:
-        linear-gradient(135deg, rgba(230,57,70,0.18), rgba(244,132,95,0.08)),
-        rgba(255,255,255,0.035);
-      border: 1px solid rgba(244,132,95,0.22);
-      display: grid; grid-template-columns: 1.4fr .9fr; gap: 24px; align-items: center;
-    }
-    .banner p { color: var(--text-secondary); font-size: 17px; line-height: 1.55; margin: 10px 0 0; }
-    .footer { padding: 44px 0 52px; border-top: 1px solid rgba(255,255,255,0.06); color: var(--text-muted); }
-    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 13px; }
-    .mono { font-family: JetBrains Mono, monospace; }
-    @media (max-width: 900px) {
+    .air-pill { display: inline-flex; align-items: center; gap: 7px; font: 700 10px/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 11px; border: 1px solid var(--line); border-radius: 3px; color: var(--text-2); white-space: nowrap; }
+    .air-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--text-3); flex: none; }
+    .air-pill.is-live { border-color: var(--red); color: var(--red); background: var(--red-dim); }
+    .air-pill.is-live .dot { background: var(--red); animation: blink 1.2s steps(2) infinite; }
+    @keyframes blink { 50% { opacity: 0.25; } }
+
+    .ticker { border-bottom: 1px solid var(--line); overflow: hidden; background: var(--bg-elev); }
+    .ticker-track { display: flex; width: max-content; animation: ticker 42s linear infinite; padding: 9px 0; }
+    .ticker:hover .ticker-track { animation-play-state: paused; }
+    .ticker span { font: 400 11px/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-2); white-space: nowrap; padding: 0 14px; }
+    .ticker b { color: var(--red); font-weight: 400; padding-right: 14px; }
+    @keyframes ticker { to { transform: translateX(-50%); } }
+
+    .hero { padding: 72px 0 64px; border-bottom: 1px solid var(--line); }
+    .state-strip { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; padding: 14px 18px; border: 1px solid var(--line); border-left: 3px solid var(--red); background: var(--panel); margin-bottom: 44px; }
+    .state-kicker { font: 700 11px/1.5 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-2); }
+    .state-kicker b { color: var(--red); font-weight: 700; }
+    #countdown { font: 700 20px/1 var(--mono); letter-spacing: 0.02em; }
+    .state-cta { margin-left: auto; display: flex; gap: 8px; }
+    h1 { margin: 0 0 20px; font-size: clamp(42px, 7.4vw, 92px); line-height: 0.94; letter-spacing: -0.055em; font-weight: 900; max-width: 900px; }
+    h1 .accent { color: var(--red); }
+    .hero-copy { max-width: 660px; color: var(--text-2); font-size: clamp(16px, 1.8vw, 19px); line-height: 1.6; }
+    .hero-copy strong { color: var(--text); font-weight: 700; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border: 1px solid var(--line-strong); border-radius: 3px; background: transparent; color: var(--text); font: 700 13px/1 Inter, sans-serif; cursor: pointer; transition: border-color .15s, background .15s, color .15s; }
+    .btn:hover { border-color: var(--red); background: var(--panel-2); }
+    .btn-red { background: var(--red); border-color: var(--red); color: #fff; }
+    .btn-red:hover { background: #d32c39; }
+    .btn-sm { min-height: 34px; padding: 0 13px; font-size: 12px; }
+
+    section { padding: 64px 0; border-bottom: 1px solid var(--line); }
+    .sec-head { margin-bottom: 34px; }
+    .sec-head .kicker { display: block; margin-bottom: 12px; }
+    h2 { margin: 0; font-size: clamp(28px, 4.4vw, 46px); line-height: 1; letter-spacing: -0.045em; font-weight: 900; }
+    .sec-note { color: var(--text-2); max-width: 560px; line-height: 1.6; font-size: 15px; margin-top: 14px; }
+
+    .segment-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .segment { background: var(--bg); padding: 26px 24px 30px; transition: background .15s, border-color .15s; }
+    .segment:hover { background: var(--panel); }
+    .seg-mark { display: inline-block; font: 700 10px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); border: 1px solid rgba(230,57,70,0.45); padding: 6px 9px; border-radius: 2px; margin-bottom: 16px; }
+    .segment h3 { margin: 0 0 8px; font-size: 18px; letter-spacing: -0.02em; font-weight: 700; }
+    .segment p { margin: 0; color: var(--text-2); font-size: 14px; line-height: 1.55; }
+
+    .ep-row { display: grid; grid-template-columns: 84px 1fr auto; gap: 22px; align-items: center; padding: 22px 0; border-top: 1px solid var(--line); }
+    .ep-row:last-child { border-bottom: 1px solid var(--line); }
+    .ep-num { font: 700 34px/1 var(--mono); letter-spacing: -0.04em; color: var(--text-3); }
+    .ep-meta { font: 400 11px/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); margin-bottom: 7px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .era-tag { color: var(--text-2); border: 1px solid var(--line); padding: 3px 7px; border-radius: 2px; }
+    .ep-title { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; }
+    .ep-desc { color: var(--text-2); font-size: 14px; line-height: 1.5; margin-top: 6px; max-width: 620px; }
+    .ep-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+
+    .banner { border: 1px solid var(--line); border-left: 3px solid var(--red); background: var(--panel); padding: 36px; display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 28px; align-items: center; }
+    .banner p { color: var(--text-2); font-size: 15px; line-height: 1.6; margin: 12px 0 0; }
+    .banner-ctas { display: flex; flex-direction: column; gap: 10px; align-items: stretch; }
+    .mini-note { color: var(--text-3); font: 700 11px/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .footer { padding: 40px 0 90px; color: var(--text-3); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; }
+    .footer .mono { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .bug { position: fixed; right: 18px; bottom: 16px; z-index: 30; display: flex; align-items: center; gap: 7px; opacity: 0.55; pointer-events: none; }
+    .bug .mark { width: 22px; height: 22px; }
+    .bug span { font: 700 9px/1 var(--mono); letter-spacing: 0.2em; color: var(--text-2); }
+    .bug .live-dot { display: none; width: 6px; height: 6px; border-radius: 50%; background: var(--red); animation: blink 1.2s steps(2) infinite; }
+    .bug.is-live { opacity: 0.9; }
+    .bug.is-live .live-dot { display: block; }
+
+    @media (max-width: 980px) {
       .nav { display: none; }
-      .hero { padding-top: 66px; }
-      .stats, .grid-3, .grid-2, .banner { grid-template-columns: 1fr; }
-      .section-head { display: block; }
-      .section-note { margin-top: 12px; }
-      .run-item { grid-template-columns: 38px 1fr; }
-      .run-time { grid-column: 2; }
+      .topbar-inner { height: auto; min-height: 64px; padding: 10px 0; flex-wrap: nowrap; }
+      .brand { min-width: 0; }
+      .brand-name { font-size: 15px; }
+      .hero { padding: 44px 0; }
+      .state-strip { flex-direction: column; align-items: flex-start; }
+      .state-cta { margin-left: 0; }
+      .segment-grid { grid-template-columns: 1fr; }
+      .ep-row { grid-template-columns: 56px 1fr; }
+      .ep-num { font-size: 24px; }
+      .ep-links { grid-column: 2; justify-content: flex-start; }
+      .banner { grid-template-columns: 1fr; padding: 26px; }
+    }
+    @media (max-width: 640px) {
+      .shell { width: min(var(--max), calc(100% - 24px)); }
+      .theme-toggle { padding: 0 10px; }
+      h1 { font-size: clamp(32px, 11vw, 42px); line-height: 0.96; max-width: 100%; }
+      .hero-actions > * { flex: 1 1 150px; justify-content: center; }
+      .state-strip { padding: 14px; }
     }
   </style>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="claw-mark">
+        <path d="M4 3 C4 12 7.5 16 12 19" fill="none" stroke="#e63946" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M12 3 C12 10 12 14 12 19" fill="none" stroke="#e63946" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M20 3 C20 12 16.5 16 12 19" fill="none" stroke="#e63946" stroke-width="2.6" stroke-linecap="round"/>
+      </g>
+    </defs>
+  </svg>
+
   <header class="topbar">
-    <div class="site-shell topbar-inner">
-      <a class="brand" href="#top" aria-label="WeeklyClaw.ai home">
-        <span class="brand-mark">🦞</span>
-        <span>WeeklyClaw.ai<small>The Claw is the Law</small></span>
+    <div class="shell topbar-inner">
+      <a class="brand" href="#top" aria-label="Weekly Claw home">
+        <svg class="mark" viewBox="0 0 24 22" aria-hidden="true"><use href="#claw-mark"/></svg>
+        <span class="brand-name">Weekly Claw</span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
+        <a href="#segments">Segments</a>
         <a href="#episodes">Episodes</a>
-        <a href="/changelog/">Release changelogs</a>
-        <a href="#format">Format</a>
-        <a href="https://openclaw.ai">OpenClaw</a>
+        <a href="/feedback.html">Feedback</a>
+        <a href="#guest">Be on the show</a>
       </nav>
+      <div class="topbar-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch to light theme">
+          <span class="theme-icon" aria-hidden="true">◐</span>
+          <span id="theme-toggle-label">Light</span>
+        </button>
+        <span class="air-pill" id="air-pill"><span class="dot"></span><span id="air-pill-text">off air</span></span>
+      </div>
     </div>
   </header>
 
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="ticker-track"></div>
+  </div>
+
   <main id="top">
-    <section class="hero">
-      <div class="lobster-bg">🦞</div>
-      <div class="site-shell">
-        <div class="eyebrow"><span class="pulse"></span> OpenClaw Discord · Fridays · 4 PM ET</div>
-        <h1>The weekly OpenClaw roundup for <span class="gradient-text">builders</span>.</h1>
-        <p class="hero-copy"><strong>The Weekly Claw</strong> is OpenClaw’s Friday roundup: what shipped, what changed, what builders are seeing, and what to watch before next week’s build.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="/episodes/19/deck.html">Open the latest episode</a>
-          <a class="btn" href="/w19/changelog/">See release changelog</a>
+    <section class="hero" style="border-bottom:1px solid var(--line)">
+      <div class="shell">
+        <div class="state-strip">
+          <span class="state-kicker" id="state-kicker"></span>
+          <span id="countdown"></span>
+          <span class="state-cta" id="state-cta"></span>
         </div>
-        <div class="stats" aria-label="Show highlights">
-          <div class="stat"><b>60<span class="gradient-text">min</span></b><span>Live weekly roundup, built for signal over ceremony.</span></div>
-          <div class="stat"><b>4<span class="gradient-text">PM</span></b><span>Fridays on OpenClaw Discord voice.</span></div>
-          <div class="stat"><b>DevEx</b><span>Release notes plus builder feedback.</span></div>
-          <div class="stat"><b>🦞</b><span>No token, coin, airdrop, presale, or blockchain detour.</span></div>
+        <h1>The weekly show where we talk all things about AI &amp; agents.</h1>
+        <p class="hero-copy"><strong>Weekly Claw</strong> is a live builder show about AI, agents, devtools, and startups. Demos from people who actually ship, tool fights settled on air, hot takes on record, and the week's news — wherever the excitement actually is.</p>
+        <div class="hero-actions">
+          <a class="btn btn-red" href="#episodes">Watch the latest</a>
+          <a class="btn" href="#segments">The segments</a>
+          <a class="btn" href="/feedback.html">Give feedback</a>
+          <a class="btn" href="#guest">Come on the show</a>
         </div>
       </div>
     </section>
 
-    <section id="show">
-      <div class="site-shell">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">What it is</div>
-            <h2>A weekly OpenClaw briefing.</h2>
-          </div>
-          <p class="section-note">Every Friday, The Weekly Claw turns release notes, builder feedback, community news, demos, and events into one fast readout for the OpenClaw community.</p>
+    <section id="segments">
+      <div class="shell">
+        <div class="sec-head">
+          <span class="kicker">The format</span>
+          <h2>Segments, not slots.</h2>
+          <p class="sec-note">The show follows the excitement. These are the recurring segments — any given week runs the ones the week deserves.</p>
         </div>
-        <div class="grid-3">
-          <article class="card">
-            <span class="tag">Changelog</span>
-            <h3>What shipped</h3>
-            <p>Henry’s segment turns OpenClaw release notes into operator-readable signal: what changed, what broke, what got fixed, and what the team should care about next.</p>
+        <div class="segment-grid">
+          <article class="segment">
+            <span class="seg-mark">The Wire</span>
+            <h3>The week, fast</h3>
+            <p>What actually happened in AI and agents this week, cut for people who build — no press-release recycling.</p>
           </article>
-          <article class="card">
-            <span class="tag">Dev Experience</span>
-            <h3>What it felt like</h3>
-            <p>Real builder feedback from the week: installs, gateways, integrations, approvals, agent UX, community friction, and the small papercuts that compound.</p>
+          <article class="segment">
+            <span class="seg-mark">Tool Fight</span>
+            <h3>Two tools. One task. Live.</h3>
+            <p>Head-to-head on a real job, on air, with a verdict. Vendors welcome to show up and defend their corner.</p>
           </article>
-          <article class="card">
-            <span class="tag">Community</span>
-            <h3>What is moving</h3>
-            <p>News, meetups, demos, beta reports, events, ecosystem moves, and the outside stories shaping how people understand persistent AI agents.</p>
+          <article class="segment">
+            <span class="seg-mark">Demo</span>
+            <h3>A builder ships on air</h3>
+            <p>Guest builders demo what they're making — agents, devtools, weird workflows — live, with real questions.</p>
+          </article>
+          <article class="segment">
+            <span class="seg-mark">Hot Takes</span>
+            <h3>Debates, on record</h3>
+            <p>The arguments everyone is having in DMs, had in public. Positions get taken and clipped.</p>
+          </article>
+          <article class="segment">
+            <span class="seg-mark">Postmortem</span>
+            <h3>Agent failures, autopsied</h3>
+            <p>The runaway cron job, the $400 loop, the deleted repo. What broke, why, and what it teaches.</p>
+          </article>
+          <article class="segment">
+            <span class="seg-mark">Breaking</span>
+            <h3>News drops, we go live</h3>
+            <p>When something big lands mid-week, the show doesn't wait for Friday. Live reaction while it matters.</p>
           </article>
         </div>
       </div>
     </section>
 
     <section id="episodes">
-      <div class="site-shell">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Latest episodes</div>
-            <h2>Catch up on recent shows.</h2>
-          </div>
-          <p class="section-note">Open the public episode deck for the full show. Use changelog/DX decks for the release-note and developer-experience deep dive.</p>
+      <div class="shell">
+        <div class="sec-head">
+          <span class="kicker">The archive</span>
+          <h2>Every episode. Every source.</h2>
+          <p class="sec-note">Weekly Claw was born as an OpenClaw community show — those episodes stay right here. New-era episodes get full pages: chapters, clips, and every link mentioned on air.</p>
         </div>
-        <div class="grid-2">
-          <article class="card episode">
-            <div class="episode-top"><div><div class="episode-meta">June 26, 2026</div><h3>The Weekly Claw #19</h3></div><div class="episode-number">19</div></div>
-            <p>Episode 19 covers GPT-5.6 Sol news, OpenClaw security-skill coverage, ClawExplorer events, Discord Happy Hour, and the changelog/DX companion.</p>
-            <div class="link-row"><a class="mini-link" href="/episodes/19/deck.html">Episode deck</a><a class="mini-link" href="/w19/changelog/">Changelog/DX deck</a></div>
-          </article>
-          <article class="card episode">
-            <div class="episode-top"><div><div class="episode-meta">June 19, 2026</div><h3>The Weekly Claw #18</h3></div><div class="episode-number">18</div></div>
-            <p>Release notes, developer-experience signal, community updates, and the weekly summary.</p>
-            <div class="link-row"><a class="mini-link" href="/w18/changelog/">Changelog/DX deck</a></div>
-          </article>
-          <article class="card episode">
-            <div class="episode-top"><div><div class="episode-meta">June 12, 2026</div><h3>The Weekly Claw #17</h3></div><div class="episode-number">17</div></div>
-            <p>OpenClaw releases, proof loops, Peter Steinberger’s build-the-builder framing, and DX signals.</p>
-            <div class="link-row"><a class="mini-link" href="/w17/changelog/">Changelog/DX deck</a></div>
-          </article>
-          <article class="card episode">
-            <div class="episode-top"><div><div class="episode-meta">June 5, 2026</div><h3>The Weekly Claw #16</h3></div><div class="episode-number">16</div></div>
-            <p>OpenClaw ecosystem, product narrative, release signal, and compressed DX readout.</p>
-            <div class="link-row"><a class="mini-link" href="/w16/changelog/">Changelog/DX deck</a></div>
-          </article>
-          <article class="card episode">
-            <div class="episode-top"><div><div class="episode-meta">May 29, 2026</div><h3>The Weekly Claw #15</h3></div><div class="episode-number">15</div></div>
-            <p>May 29 episode deck with its changelog/DX companion.</p>
-            <div class="link-row"><a class="mini-link" href="/episodes/15/deck.html">Episode deck</a><a class="mini-link" href="/w15/changelog/">Changelog/DX deck</a></div>
-          </article>
-          <article class="card episode">
-            <div class="episode-top"><div><div class="episode-meta">May 22, 2026</div><h3>The Weekly Claw #14</h3></div><div class="episode-number">14</div></div>
-            <p>May 22 episode deck with OpenClaw release themes, developer experience, support signal, and weekly close.</p>
-            <div class="link-row"><a class="mini-link" href="/episodes/14/deck.html">Episode deck</a><a class="mini-link" href="/w14/changelog/">Changelog/DX deck</a></div>
-          </article>
-          <article class="card episode">
-            <div class="episode-top"><div><div class="episode-meta">May 15, 2026</div><h3>The Weekly Claw #13</h3></div><div class="episode-number">13</div></div>
-            <p>May 15 episode deck with changelog slides on Codex, Code Mode, validation infra, and community proof pressure.</p>
-            <div class="link-row"><a class="mini-link" href="/episodes/13/deck.html">Episode deck</a><a class="mini-link" href="/w13/changelog/">Changelog/DX deck</a></div>
-          </article>
-          <article class="card episode">
-            <div class="episode-top"><div><div class="episode-meta">May 1, 2026</div><h3>The Weekly Claw #12</h3></div><div class="episode-number">12</div></div>
-            <p>May 1 episode deck with OpenClaw changelog slides, community signal, and weekly release framing.</p>
-            <div class="link-row"><a class="mini-link" href="/episodes/12/deck.html">Episode deck</a><a class="mini-link" href="/w12/changelog/">Changelog/DX deck</a></div>
-          </article>
-          <article class="card episode">
-            <div class="episode-top"><div><div class="episode-meta">April 2026</div><h3>The Weekly Claw #11</h3></div><div class="episode-number">11</div></div>
-            <p>Earliest Weekly Claw changelog currently available here.</p>
-            <div class="link-row"><a class="mini-link" href="/w11/changelog/">Changelog/DX deck</a></div>
-          </article>
-          <article class="card episode">
-            <div class="episode-top"><div><div class="episode-meta">April 17, 2026</div><h3>The Weekly Claw #10</h3></div><div class="episode-number">10</div></div>
-            <p>April 17 main episode deck.</p>
-            <div class="link-row"><a class="mini-link" href="/episodes/10/deck.html">Episode deck</a></div>
-          </article>
+        <div id="episode-list"></div>
+        <div style="margin-top:20px">
+          <a class="btn btn-sm" href="https://superada.ai/weekly-claw">Full slide archive on SuperAda</a>
         </div>
       </div>
     </section>
 
-    <section id="format">
-      <div class="site-shell">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker">Run of show</div>
-            <h2>Built to move fast.</h2>
-          </div>
-          <p class="section-note">The default format is tight enough for a weekly habit, flexible enough for news spikes, guest demos, and the occasional “we need to talk about this bug” segment.</p>
-        </div>
-        <div class="run-of-show">
-          <div class="run-item"><div><div class="run-title">Welcome & housekeeping</div><div class="run-desc">Recording note, room norms, standing no-token PSA.</div></div><div class="run-time">3 min</div></div>
-          <div class="run-item"><div><div class="run-title">Community guidelines</div><div class="run-desc">Keep the server useful: right channels, clean voice norms, report paths.</div></div><div class="run-time">3 min</div></div>
-          <div class="run-item"><div><div class="run-title">OpenClaw in the news</div><div class="run-desc">The outside stories shaping how the ecosystem is perceived.</div></div><div class="run-time">12 min</div></div>
-          <div class="run-item"><div><div class="run-title">Changelog + DevEx</div><div class="run-desc">Release walkthrough and operator-grade developer-experience report.</div></div><div class="run-time">14 min</div></div>
-          <div class="run-item"><div><div class="run-title">Demo + video review</div><div class="run-desc">One topic worth extra attention from the builder room.</div></div><div class="run-time">8 min</div></div>
-          <div class="run-item"><div><div class="run-title">Meetups + community signal</div><div class="run-desc">What happened, what is coming, who needs the mic next week.</div></div><div class="run-time">5 min</div></div>
-          <div class="run-item"><div><div class="run-title">Close</div><div class="run-desc">Links, next Friday, and a final reminder that the lobster remains coinless.</div></div><div class="run-time">3 min</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="links">
-      <div class="site-shell">
+    <section id="guest">
+      <div class="shell">
         <div class="banner">
           <div>
-            <div class="section-kicker">Official links</div>
-            <h2>Get ready for Friday.</h2>
-            <p>Review the latest episode deck, catch up on release changelogs, or head to OpenClaw for the broader project.</p>
+            <span class="kicker">Be on the show</span>
+            <h2>Built something? Prove it live.</h2>
+            <p>Demo what you're shipping, defend your tool in a Tool Fight, or bring the failure story everyone can learn from. Live audience, honest questions, clips you'll actually want to repost.</p>
           </div>
-          <div class="link-row">
-            <a class="btn btn-primary" href="/w19/changelog/">Latest changelog/DX deck</a>
-            <a class="btn" href="/episodes/19/deck.html">Latest episode deck</a>
-            <a class="btn" href="https://openclaw.ai">OpenClaw</a>
-          </div>
+          <div class="banner-ctas" id="guest-ctas"></div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="site-shell footer-inner">
-      <div>© 2026 WeeklyClaw.ai · The Weekly Claw</div>
-      <div class="mono">OpenClaw Discord · Fridays · 4 PM ET</div>
+    <div class="shell footer-inner">
+      <div>© 2026 Weekly Claw · born in the OpenClaw community, now covering everyone shipping with agents</div>
+      <div class="mono" id="footer-schedule"></div>
+    </div>
+    <div class="shell" style="margin-top:14px">
+      <div class="mono" style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color: var(--text-3)">No token. No coin. No blockchain. The claw remains coinless.</div>
     </div>
   </footer>
+
+  <div class="bug" id="bug" aria-hidden="true">
+    <span class="live-dot"></span>
+    <svg class="mark" viewBox="0 0 24 22"><use href="#claw-mark"/></svg>
+    <span>WC</span>
+  </div>
+
+  <script>
+    const THEME_STORAGE_KEY = "weeklyclaw-theme";
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      document.documentElement.style.colorScheme = theme;
+      if (themeMeta) themeMeta.setAttribute("content", theme === "light" ? "#fcf7f5" : "#0a0a0a");
+      const toggle = document.getElementById("theme-toggle");
+      const label = document.getElementById("theme-toggle-label");
+      const nextTheme = theme === "light" ? "dark" : "light";
+      if (toggle) {
+        toggle.setAttribute("aria-label", "Switch to " + nextTheme + " theme");
+        toggle.setAttribute("title", "Switch to " + nextTheme + " theme");
+        toggle.setAttribute("aria-pressed", String(theme === "light"));
+      }
+      if (label) label.textContent = nextTheme.charAt(0).toUpperCase() + nextTheme.slice(1);
+    }
+
+    function initThemeToggle() {
+      const toggle = document.getElementById("theme-toggle");
+      if (!toggle) return;
+      const media = window.matchMedia("(prefers-color-scheme: light)");
+      const saved = localStorage.getItem(THEME_STORAGE_KEY);
+      applyTheme(saved === "light" || saved === "dark" ? saved : (media.matches ? "light" : "dark"));
+      toggle.addEventListener("click", () => {
+        const current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+        const next = current === "light" ? "dark" : "light";
+        localStorage.setItem(THEME_STORAGE_KEY, next);
+        applyTheme(next);
+      });
+      media.addEventListener("change", (event) => {
+        if (localStorage.getItem(THEME_STORAGE_KEY)) return;
+        applyTheme(event.matches ? "light" : "dark");
+      });
+    }
+
+    const CONFIG = {
+      show: { day: 5, hour: 16, minute: 0, durationMin: 90, postWindowMin: 180, tz: "America/New_York", label: "Fridays · 4:00 PM ET" },
+      links: {
+        x: null,
+        youtube: null,
+        archive: "https://superada.ai/weekly-claw",
+        guestPitch: "mailto:show@weeklyclaw.ai?subject=Weekly%20Claw%20guest%20pitch"
+      },
+      ticker: [
+        "the pivot: one live show for everyone shipping with agents",
+        "tool fight — nominate a matchup",
+        "pitch a demo, come on the show",
+        "fridays · 4pm et · live",
+        "no token, no coin, no blockchain"
+      ]
+    };
+
+    const EPISODES = [
+      {
+        num: 15, date: "May 22, 2026", era: "openclaw era",
+        title: "The Weekly Claw #15",
+        desc: "Claw Chain, token economics, Google's OpenClaw-shaped response, governed enterprise agents, and the next two weeks of meetups.",
+        links: [
+          { label: "Deck", href: "/episodes/15/deck.html" },
+          { label: "Agenda", href: "/episodes/15/agenda.md" },
+          { label: "SuperAda", href: "https://superada.ai/weekly-claw/week15" }
+        ]
+      },
+      {
+        num: 13, date: "May 8, 2026", era: "openclaw era",
+        title: "The Weekly Claw #13",
+        desc: "Meta's Hatch story, the GitHub milestone, the rough-week post, changelog + DevX, Jensen Huang at Milken, and community meetups.",
+        links: [
+          { label: "Deck", href: "/episodes/13/deck.html" },
+          { label: "Agenda", href: "/episodes/13/agenda.md" },
+          { label: "SuperAda", href: "https://superada.ai/weekly-claw/week13" }
+        ]
+      }
+    ];
+
+    function nyNow() {
+      return new Date(new Date().toLocaleString("en-US", { timeZone: CONFIG.show.tz }));
+    }
+
+    function airState() {
+      const override = new URLSearchParams(location.search).get("state");
+      if (["live", "next", "post"].includes(override)) {
+        return { state: override, msToNext: 2 * 86400000 + 4 * 3600000 };
+      }
+      const s = CONFIG.show;
+      const now = nyNow();
+      const last = new Date(now);
+      last.setHours(s.hour, s.minute, 0, 0);
+      let back = (now.getDay() - s.day + 7) % 7;
+      last.setDate(last.getDate() - back);
+      if (last > now) last.setDate(last.getDate() - 7);
+      const sinceMin = (now - last) / 60000;
+      if (sinceMin < s.durationMin) return { state: "live", msToNext: 0 };
+      if (sinceMin < s.durationMin + s.postWindowMin) return { state: "post", msToNext: 0 };
+      const next = new Date(last);
+      next.setDate(next.getDate() + 7);
+      return { state: "next", msToNext: next - now };
+    }
+
+    function fmtCountdown(ms) {
+      const d = Math.floor(ms / 86400000);
+      const h = Math.floor((ms % 86400000) / 3600000);
+      const m = Math.floor((ms % 3600000) / 60000);
+      return "T−" + (d > 0 ? d + "d " : "") + String(h).padStart(2, "0") + "h " + String(m).padStart(2, "0") + "m";
+    }
+
+    function ctaBtn(label, href, red) {
+      return '<a class="btn btn-sm' + (red ? ' btn-red' : '') + '" href="' + href + '">' + label + "</a>";
+    }
+
+    function watchCtas(red) {
+      const L = CONFIG.links;
+      let out = "";
+      if (L.x) out += ctaBtn("Watch on X", L.x, red);
+      if (L.youtube) out += ctaBtn("Watch on YouTube", L.youtube, !L.x && red);
+      if (!L.x && !L.youtube) out += ctaBtn("Episode archive", "#episodes", red);
+      return out;
+    }
+
+    function render() {
+      const { state, msToNext } = airState();
+      const pill = document.getElementById("air-pill");
+      const pillText = document.getElementById("air-pill-text");
+      const kicker = document.getElementById("state-kicker");
+      const countdown = document.getElementById("countdown");
+      const cta = document.getElementById("state-cta");
+      const bug = document.getElementById("bug");
+
+      pill.classList.toggle("is-live", state === "live");
+      bug.classList.toggle("is-live", state === "live");
+
+      if (state === "live") {
+        pillText.textContent = "on air";
+        kicker.innerHTML = "<b>on air</b> · streaming now · " + CONFIG.show.label;
+        countdown.textContent = "";
+        cta.innerHTML = watchCtas(true);
+      } else if (state === "post") {
+        pillText.textContent = "just aired";
+        kicker.innerHTML = "<b>just aired</b> · replay and clips landing shortly";
+        countdown.textContent = "";
+        cta.innerHTML = watchCtas(false);
+      } else {
+        pillText.textContent = "off air";
+        kicker.innerHTML = "next show · <b>" + CONFIG.show.label.toLowerCase() + "</b>";
+        countdown.textContent = fmtCountdown(msToNext);
+        let out = "";
+        if (CONFIG.links.x) out += ctaBtn("Remind me on X", CONFIG.links.x, false);
+        out += ctaBtn("Latest materials", "#episodes", false);
+        cta.innerHTML = out;
+      }
+      document.getElementById("footer-schedule").textContent = "live · " + CONFIG.show.label.toLowerCase();
+    }
+
+    function renderTicker() {
+      const items = CONFIG.ticker.map(t => "<span><b>▪</b>" + t + "</span>").join("");
+      document.getElementById("ticker-track").innerHTML = items + items;
+    }
+
+    function renderEpisodes() {
+      document.getElementById("episode-list").innerHTML = EPISODES.map(ep =>
+        '<div class="ep-row">' +
+          '<div class="ep-num">' + String(ep.num).padStart(2, "0") + "</div>" +
+          "<div>" +
+            '<div class="ep-meta"><span>' + ep.date + '</span><span class="era-tag">' + ep.era + "</span></div>" +
+            '<div class="ep-title">' + ep.title + "</div>" +
+            '<div class="ep-desc">' + ep.desc + "</div>" +
+          "</div>" +
+          '<div class="ep-links">' + ep.links.map(l => ctaBtn(l.label, l.href, false)).join("") + "</div>" +
+        "</div>"
+      ).join("");
+    }
+
+    function renderGuestCtas() {
+      let out = ctaBtn("Pitch a demo", CONFIG.links.guestPitch, true);
+      out += ctaBtn("Start a tool fight", CONFIG.links.guestPitch.replace("guest%20pitch", "tool%20fight"), false);
+      out += ctaBtn("Audience feedback", "/feedback.html", false);
+      out += '<div class="mini-note">2-minute survey · help shape the next run of the show</div>';
+      document.getElementById("guest-ctas").innerHTML = out;
+    }
+
+    renderTicker();
+    renderEpisodes();
+    renderGuestCtas();
+    initThemeToggle();
+    render();
+    setInterval(render, 30000);
+  </script>
 </body>
 </html>
