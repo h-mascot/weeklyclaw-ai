@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weekly Claw Archive — Main slides and Changelog / DevX</title>
+  <meta name="description" content="Browse Weekly Claw main show decks and companion changelog and developer-experience slides.">
+  <meta name="theme-color" content="#ece4d5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #080d18;
+      --page: #0d1324;
+      --panel: #141b2e;
+      --coral: #6c7cff;
+      --coral-hot: #d9ff5a;
+      --cream: #f4f2e8;
+      --paper: #f2f1e8;
+      --muted: #aab2c8;
+      --line: #46506b;
+      --line-soft: rgba(244, 242, 232, .14);
+      --teal: #d9ff5a;
+      --wine: #283b94;
+      --max: 1240px;
+      --radius: 12px;
+      --sans: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { color-scheme: dark; scroll-behavior: smooth; }
+    body { margin: 0; min-width: 320px; color: var(--cream); background: var(--page); font-family: var(--sans); line-height: 1.45; }
+    body.viewer-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { display: block; max-width: 100%; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    :focus-visible { outline: 3px solid var(--coral-hot); outline-offset: 4px; }
+    ::selection { color: var(--ink); background: var(--coral-hot); }
+
+    .shell { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .skip-link { position: fixed; top: 10px; left: 10px; z-index: 100; padding: 10px 14px; color: var(--ink); background: var(--cream); border-radius: 6px; font-weight: 700; transform: translateY(-160%); }
+    .skip-link:focus { transform: translateY(0); }
+    .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line-soft); background: rgba(11, 12, 13, .91); backdrop-filter: blur(18px); }
+    .header-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .wordmark { color: var(--coral); font-size: 27px; font-weight: 700; letter-spacing: -.045em; }
+    .back-link { display: inline-flex; align-items: center; gap: 9px; color: var(--cream); font-weight: 700; }
+    .back-link:hover { color: var(--coral-hot); }
+
+    .hero { position: relative; overflow: hidden; padding: 80px 0 72px; border-bottom: 1px solid var(--line-soft); background: linear-gradient(rgba(244,242,232,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(244,242,232,.05) 1px, transparent 1px), radial-gradient(circle at 88% 20%, rgba(40,59,148,.62), transparent 34rem), var(--ink); background-size: 64px 64px, 64px 64px, auto, auto; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; align-items: end; gap: 64px; }
+    .eyebrow { margin-bottom: 16px; color: var(--coral-hot); font: 700 11px/1.2 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+    h1 { max-width: 860px; margin-bottom: 22px; color: var(--cream); font-size: clamp(56px, 8vw, 104px); line-height: .86; letter-spacing: -.07em; text-transform: uppercase; }
+    .hero-copy { max-width: 740px; margin-bottom: 0; color: var(--muted); font-size: clamp(17px, 2vw, 21px); }
+    .archive-facts { display: grid; gap: 1px; border: 1px solid var(--line); background: var(--line); }
+    .fact { display: grid; grid-template-columns: 68px 1fr; align-items: center; gap: 16px; padding: 18px; background: var(--panel); }
+    .fact strong { color: var(--coral); font: 700 28px/1 var(--mono); }
+    .fact span { color: var(--muted); font-size: 13px; }
+
+    .archive { padding: 68px 0 92px; }
+    .archive-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
+    .archive-toolbar h2 { margin-bottom: 0; font-size: clamp(32px, 5vw, 54px); line-height: .95; letter-spacing: -.05em; text-transform: uppercase; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-button { min-height: 42px; padding: 0 14px; border: 1px solid var(--line); border-radius: 7px; color: var(--cream); background: transparent; font: 700 11px/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; cursor: pointer; }
+    .filter-button:hover, .filter-button[aria-pressed="true"] { color: var(--ink); background: var(--coral); border-color: var(--coral); }
+    .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .week-card { min-width: 0; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); transition: transform 170ms ease, border-color 170ms ease; }
+    .week-card:hover { transform: translateY(-4px); border-color: rgba(108,124,255,.75); }
+    .week-card[hidden] { display: none; }
+    .thumb { position: relative; overflow: hidden; aspect-ratio: 3 / 2; margin: 12px 12px 0; border: 1px solid var(--line-soft); border-radius: 7px; background: var(--ink); }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 300ms ease; }
+    .week-card:hover .thumb img { transform: scale(1.035); }
+    .week-number { position: absolute; left: 12px; bottom: 12px; padding: 6px 9px; border: 1px solid rgba(255,241,214,.6); border-radius: 5px; color: var(--cream); background: rgba(11,12,13,.88); font: 700 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .availability { position: absolute; top: 12px; right: 12px; padding: 6px 8px; border-radius: 5px; color: var(--ink); background: var(--cream); font: 700 9px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+    .card-copy { min-height: 178px; padding: 20px 20px 16px; }
+    .card-kicker { margin-bottom: 8px; color: var(--coral-hot); font: 700 10px/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .week-card h3 { margin-bottom: 10px; font-size: clamp(24px, 2.4vw, 31px); line-height: 1; letter-spacing: -.035em; }
+    .week-card p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .card-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: auto; padding: 0 12px 16px; }
+    .deck-button, .source-link { min-height: 42px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 0 13px; border: 1px solid var(--coral); border-radius: 7px; color: var(--ink); background: var(--coral); font-weight: 700; cursor: pointer; }
+    .deck-button:hover { background: var(--coral-hot); border-color: var(--coral-hot); }
+    .deck-button.secondary { color: var(--cream); background: transparent; border-color: var(--line); }
+    .deck-button.secondary:hover { color: var(--ink); background: var(--cream); border-color: var(--cream); }
+    .source-note { margin: 34px 0 0; color: var(--muted); font-size: 13px; }
+    .source-note a { color: var(--cream); text-decoration: underline; text-underline-offset: 3px; }
+
+    dialog { width: min(96vw, 1500px); height: min(94vh, 1000px); max-width: none; max-height: none; margin: auto; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; color: var(--cream); background: var(--ink); box-shadow: 0 30px 100px rgba(0,0,0,.65); }
+    dialog::backdrop { background: rgba(3,4,5,.84); backdrop-filter: blur(8px); }
+    .viewer { height: 100%; display: grid; grid-template-rows: auto 1fr; }
+    .viewer-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 20px; min-height: 82px; padding: 14px 18px 14px 22px; border-bottom: 1px solid var(--line); background: var(--panel); }
+    .viewer-bar .eyebrow { margin-bottom: 4px; }
+    .viewer-title { margin-bottom: 0; font-size: clamp(18px, 2vw, 26px); line-height: 1.1; }
+    .viewer-tools { display: flex; align-items: center; gap: 9px; }
+    .viewer-tools a, .close-button { min-height: 42px; display: inline-flex; align-items: center; justify-content: center; padding: 0 13px; border: 1px solid var(--line); border-radius: 7px; color: var(--cream); background: var(--ink); font-weight: 700; }
+    .close-button { width: 42px; padding: 0; cursor: pointer; }
+    .viewer-tools a:hover, .close-button:hover { color: var(--ink); background: var(--cream); border-color: var(--cream); }
+    .frame-wrap { position: relative; min-height: 0; background: #050607; }
+    .viewer-loading { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font: 700 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .deck-frame { position: relative; z-index: 1; width: 100%; height: 100%; border: 0; background: #050607; }
+    .deck-frame:not([src]), .deck-frame[src="about:blank"] { visibility: hidden; }
+    .site-footer { padding: 30px 0 46px; border-top: 1px solid var(--line-soft); color: var(--muted); background: var(--ink); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-inner a:hover { color: var(--coral-hot); }
+
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .archive-facts { grid-template-columns: repeat(3, 1fr); }
+      .fact { grid-template-columns: 1fr; gap: 7px; }
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .archive-toolbar { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 640px) {
+      .shell { width: min(var(--max), calc(100% - 24px)); }
+      .header-inner { min-height: 64px; }
+      .wordmark { font-size: 22px; }
+      .back-link span:last-child { display: none; }
+      .hero { padding: 54px 0; }
+      .archive-facts { grid-template-columns: 1fr; }
+      .fact { grid-template-columns: 56px 1fr; }
+      .gallery { grid-template-columns: 1fr; }
+      .filters { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; }
+      .filter-button { width: 100%; }
+      dialog { width: 100vw; height: 100dvh; border: 0; border-radius: 0; }
+      .viewer-bar { min-height: 118px; grid-template-columns: 1fr; gap: 10px; padding: 12px; }
+      .viewer-tools { width: 100%; }
+      .viewer-tools a { flex: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+  <style id="field-manual-theme">
+    :root {
+      --ink: #171513;
+      --page: #211d1a;
+      --panel: #292421;
+      --coral: #9de5c9;
+      --coral-hot: #82d2e6;
+      --cream: #f2e5cd;
+      --paper: #d8c9b3;
+      --muted: #b9aa96;
+      --line: #554e48;
+      --line-soft: rgba(242, 229, 205, .16);
+      --teal: #9de5c9;
+      --wine: #73b9b2;
+      --radius: 18px;
+      --sans: "Barlow Condensed", "Arial Narrow", sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+    body { background: radial-gradient(circle at 50% -10%, rgba(157,229,201,.055), transparent 32rem), var(--page); font-size: 18px; letter-spacing: .005em; }
+    .shell { width: min(var(--max), calc(100% - 48px)); }
+    .site-header { border-color: var(--line); background: rgba(23,21,19,.93); }
+    .wordmark { color: var(--cream); font-weight: 800; letter-spacing: .015em; text-transform: uppercase; }
+    .wordmark::before { content: "/// "; color: var(--coral); font-family: var(--mono); font-size: .55em; }
+    .back-link { color: var(--muted); font: 600 12px/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+    .back-link:hover { color: var(--coral); }
+    .eyebrow { color: var(--coral); }
+    .hero { padding: 90px 0 78px; border-color: var(--line); background: linear-gradient(rgba(242,229,205,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(242,229,205,.045) 1px, transparent 1px), radial-gradient(circle at 84% 30%, rgba(130,210,230,.1), transparent 30rem), var(--ink); background-size: 56px 56px, 56px 56px, auto, auto; }
+    .hero::before { position: absolute; inset: 18px; content: ""; pointer-events: none; border: 2px solid rgba(242,229,205,.16); border-radius: 22px; }
+    h1 { color: var(--cream); font-weight: 800; letter-spacing: -.03em; }
+    .hero-copy { color: var(--muted); font-size: 20px; }
+    .archive-facts { border: 2px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--line); box-shadow: inset 0 0 0 6px var(--ink); }
+    .fact { background: var(--panel); }
+    .fact strong { color: var(--cream); font-family: var(--sans); font-size: 36px; }
+    .fact span { color: var(--muted); font-family: var(--mono); font-size: 10px; text-transform: uppercase; }
+
+    .archive { background: var(--page); }
+    .archive-toolbar h2 { color: var(--cream); font-weight: 800; letter-spacing: -.02em; }
+    .filter-button { border-radius: 4px; color: var(--muted); font-size: 10px; }
+    .filter-button:hover, .filter-button[aria-pressed="true"] { color: var(--ink); border-color: var(--coral); background: var(--coral); }
+    .gallery { gap: 16px; }
+    .week-card { border: 2px solid var(--line); border-radius: 18px; background: var(--panel); box-shadow: inset 0 0 0 7px var(--ink); }
+    .week-card:hover { border-color: var(--coral); box-shadow: inset 0 0 0 7px var(--ink), 0 0 28px rgba(157,229,201,.08); }
+    .thumb { margin: 20px 20px 0; border-color: var(--line); border-radius: 9px; }
+    .thumb::after { position: absolute; inset: 0; content: ""; pointer-events: none; background: rgba(157,229,201,.08); mix-blend-mode: color; }
+    .thumb img { filter: saturate(.72) contrast(1.06) brightness(.86); }
+    .week-number { border-color: var(--coral); border-radius: 3px; color: var(--ink); background: var(--coral); }
+    .availability { border: 1px solid var(--coral-hot); border-radius: 3px; color: var(--coral-hot); background: rgba(23,21,19,.9); }
+    .card-kicker { color: var(--coral); }
+    .week-card h3 { color: var(--cream); font-weight: 700; letter-spacing: -.01em; text-transform: uppercase; }
+    .week-card p { color: var(--muted); font-size: 16px; }
+    .deck-button, .source-link { border-color: var(--coral); border-radius: 4px; color: var(--ink); background: var(--coral); font: 600 11px/1 var(--mono); letter-spacing: .03em; text-transform: uppercase; }
+    .deck-button:hover { border-color: var(--coral-hot); background: var(--coral-hot); }
+    .deck-button.secondary { color: var(--cream); border-color: var(--line); background: var(--ink); }
+    .source-note, .site-footer { color: var(--muted); }
+    .source-note a { color: var(--coral); }
+    dialog { border: 2px solid var(--line); border-radius: 14px; background: var(--ink); }
+    .viewer-bar { background: var(--panel); }
+    .viewer-title { color: var(--cream); text-transform: uppercase; }
+    .viewer-tools a, .close-button { border-radius: 4px; }
+    .site-footer { border-color: var(--line); background: var(--ink); font-family: var(--mono); font-size: 11px; text-transform: uppercase; }
+    @media (max-width: 640px) {
+      .shell { width: min(var(--max), calc(100% - 28px)); }
+      .hero::before { inset: 8px; border-radius: 14px; }
+      .hero { padding: 68px 0 56px; }
+      .week-card { border-radius: 14px; }
+    }
+  </style>
+  <style id="cardboard-light-theme">
+    :root {
+      --ink: #24201c;
+      --page: #ece4d5;
+      --panel: #f7f0e4;
+      --coral: #2a7e6b;
+      --coral-hot: #286f7d;
+      --cream: #28231f;
+      --paper: #fff9ee;
+      --muted: #6e645a;
+      --line: #b5a996;
+      --line-soft: rgba(47, 41, 35, .15);
+      --teal: #24695e;
+      --wine: #24695e;
+    }
+    html { color-scheme: light; }
+    body {
+      color: var(--cream);
+      background:
+        repeating-linear-gradient(0deg, rgba(81,69,56,.018) 0, rgba(81,69,56,.018) 1px, transparent 1px, transparent 4px),
+        radial-gradient(circle at 50% -10%, rgba(255,255,255,.72), transparent 34rem),
+        var(--page);
+    }
+    .site-header { border-color: var(--line); background: rgba(236,228,213,.92); }
+    .wordmark { color: var(--ink); }
+    .back-link { color: var(--muted); }
+    .back-link:hover { color: var(--wine); }
+    .eyebrow { color: var(--wine); }
+    .hero {
+      color: var(--ink);
+      border-color: var(--line);
+      background:
+        linear-gradient(rgba(57,49,42,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57,49,42,.07) 1px, transparent 1px),
+        radial-gradient(circle at 84% 30%, rgba(114,199,217,.17), transparent 30rem),
+        var(--paper);
+      background-size: 56px 56px, 56px 56px, auto, auto;
+    }
+    .hero::before { border-color: rgba(54,47,40,.2); }
+    h1 { color: var(--ink); }
+    .hero-copy { color: var(--muted); }
+    .archive-facts { border-color: var(--line); background: var(--line); box-shadow: inset 0 0 0 6px var(--paper); }
+    .fact { background: var(--panel); }
+    .fact strong { color: var(--ink); }
+    .fact span { color: var(--muted); }
+
+    .archive { color: var(--ink); background: transparent; }
+    .archive-toolbar h2 { color: var(--ink); }
+    .filter-button { color: var(--muted); border-color: var(--line); background: rgba(255,249,238,.5); }
+    .filter-button:hover, .filter-button[aria-pressed="true"] { color: var(--paper); border-color: #216655; background: var(--coral); }
+    .week-card { border-color: var(--line); background: var(--panel); box-shadow: inset 0 0 0 7px var(--paper); }
+    .week-card:hover { border-color: var(--coral); box-shadow: inset 0 0 0 7px var(--paper), 0 12px 28px rgba(79,64,49,.12); }
+    .thumb { border-color: var(--line); }
+    .week-number { color: var(--paper); border-color: #216655; background: var(--coral); }
+    .availability { color: #216f77; border-color: #4aa8b9; background: rgba(237,250,247,.94); }
+    .card-kicker { color: var(--wine); }
+    .week-card h3 { color: var(--ink); }
+    .week-card p { color: var(--muted); }
+    .deck-button, .source-link { color: var(--paper); border-color: #216655; background: var(--coral); }
+    .deck-button:hover { color: var(--paper); border-color: #225e6a; background: var(--coral-hot); }
+    .deck-button.secondary { color: var(--ink); border-color: var(--line); background: var(--paper); }
+    .deck-button.secondary:hover { color: var(--paper); border-color: var(--ink); background: var(--ink); }
+    .source-note { color: var(--muted); }
+    .source-note a { color: var(--wine); }
+
+    dialog { color: #f2e5cd; border-color: #554e48; background: #24201c; }
+    dialog::backdrop { background: rgba(56,48,40,.58); }
+    .viewer-bar { border-color: #554e48; background: #2d2824; }
+    .viewer-title { color: #f2e5cd; }
+    .viewer-bar .eyebrow { color: #9de5c9; }
+    .viewer-tools a, .close-button { color: #f2e5cd; border-color: #5c554e; background: #24201c; }
+    .site-footer { color: var(--muted); border-color: var(--line); background: #ddd2c0; }
+    .footer-inner a:hover { color: var(--wine); }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#archive">Skip to archive</a>
+  <header class="site-header" aria-label="Archive header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="weeklyclaw-v2.html">Weekly Claw</a>
+      <a class="back-link" href="weeklyclaw-v2.html"><span aria-hidden="true">←</span><span>Back to the show</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">The complete GitHub archive</p>
+          <h1 id="page-title">Every deck. Same room.</h1>
+          <p class="hero-copy">Choose a week, open the main show or its changelog and developer-experience companion, then flip through the original slides without leaving this gallery.</p>
+        </div>
+        <div class="archive-facts" role="group" aria-label="Archive summary">
+          <div class="fact"><strong>09</strong><span>weekly Changelog / DevX decks</span></div>
+          <div class="fact"><strong>05</strong><span>matching main show decks</span></div>
+          <div class="fact"><strong>01</strong><span>earlier main-only episode</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="archive" id="archive" aria-labelledby="archive-title">
+      <div class="shell">
+        <div class="archive-toolbar">
+          <div><p class="eyebrow">Weekly packets</p><h2 id="archive-title">Pick a week</h2></div>
+          <div class="filters" role="group" aria-label="Filter archive">
+            <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-button" type="button" data-filter="complete" aria-pressed="false">Both decks</button>
+            <button class="filter-button" type="button" data-filter="changelog" aria-pressed="false">Changelog only</button>
+            <button class="filter-button" type="button" data-filter="main" aria-pressed="false">Main only</button>
+          </div>
+        </div>
+
+        <div class="gallery" id="gallery">
+          <article class="week-card" data-kind="complete">
+            <div class="thumb"><img src="assets/episode-art-v2/agent-lab.jpg" alt="Cobalt agent cube inside a mechanical testing rig"><span class="week-number">W19</span><span class="availability">Both decks</span></div>
+            <div class="card-copy"><p class="card-kicker">14 changelog slides</p><h3>Security skills and the weirdness ahead</h3><p>GPT‑5.6 Sol, dependable agent recovery, provider plugins, ClawExplorer events, and the weekly signal map.</p></div>
+            <div class="card-actions"><button class="deck-button" type="button" data-week="19" data-deck="main" data-title="W19 · Main show slides" data-url="https://weeklyclaw.ai/episodes/19/deck.html">Main slides</button><button class="deck-button secondary" type="button" data-week="19" data-deck="changelog" data-title="W19 · Changelog / DevX" data-url="https://weeklyclaw.ai/w19/changelog/">Changelog / DevX</button></div>
+          </article>
+
+          <article class="week-card" data-kind="changelog">
+            <div class="thumb"><img src="assets/episode-art-v2/network-constellation.jpg" alt="Modular stations connected around an analog dial"><span class="week-number">W18</span><span class="availability">Changelog only</span></div>
+            <div class="card-copy"><p class="card-kicker">14 changelog slides</p><h3>Community signal and weekly summary</h3><p>OpenClaw release notes, developer-experience signal, community updates, and the week’s close.</p></div>
+            <div class="card-actions"><button class="deck-button secondary" type="button" data-week="18" data-deck="changelog" data-title="W18 · Changelog / DevX" data-url="https://weeklyclaw.ai/w18/changelog/">Changelog / DevX</button></div>
+          </article>
+
+          <article class="week-card" data-kind="changelog">
+            <div class="thumb"><img src="assets/episode-art-v2/signal-studio.jpg" alt="Cobalt broadcast studio connecting unusual software objects"><span class="week-number">W17</span><span class="availability">Changelog only</span></div>
+            <div class="card-copy"><p class="card-kicker">15 changelog slides</p><h3>Release proof loops</h3><p>Maintainer signal, release evidence, and a developer-experience readout grounded in what shipped.</p></div>
+            <div class="card-actions"><button class="deck-button secondary" type="button" data-week="17" data-deck="changelog" data-title="W17 · Changelog / DevX" data-url="https://weeklyclaw.ai/w17/changelog/">Changelog / DevX</button></div>
+          </article>
+
+          <article class="week-card" data-kind="changelog">
+            <div class="thumb"><img src="assets/episode-art-v2/system-blueprint.jpg" alt="Modular software components arranged on a drafting surface"><span class="week-number">W16</span><span class="availability">Changelog only</span></div>
+            <div class="card-copy"><p class="card-kicker">17 changelog slides</p><h3>Ecosystem and release signal</h3><p>The ecosystem story, release signal, and compressed developer-experience notes.</p></div>
+            <div class="card-actions"><button class="deck-button secondary" type="button" data-week="16" data-deck="changelog" data-title="W16 · Changelog / DevX" data-url="https://weeklyclaw.ai/w16/changelog/">Changelog / DevX</button></div>
+          </article>
+
+          <article class="week-card" data-kind="complete">
+            <div class="thumb"><img src="assets/episode-art-v2/network-constellation.jpg" alt="Modular stations connected around an analog dial"><span class="week-number">W15</span><span class="availability">Both decks</span></div>
+            <div class="card-copy"><p class="card-kicker">13 changelog slides</p><h3>Enterprise agents and token economics</h3><p>Claw Chain, enterprise agents, token economics, and the first community meetups.</p></div>
+            <div class="card-actions"><button class="deck-button" type="button" data-week="15" data-deck="main" data-title="W15 · Main show slides" data-url="https://weeklyclaw.ai/episodes/15/deck.html">Main slides</button><button class="deck-button secondary" type="button" data-week="15" data-deck="changelog" data-title="W15 · Changelog / DevX" data-url="https://weeklyclaw.ai/w15/changelog/">Changelog / DevX</button></div>
+          </article>
+
+          <article class="week-card" data-kind="complete">
+            <div class="thumb"><img src="assets/episode-art-v2/system-blueprint.jpg" alt="Modular software components arranged on a drafting surface"><span class="week-number">W14</span><span class="availability">Both decks</span></div>
+            <div class="card-copy"><p class="card-kicker">11 changelog slides</p><h3>The reference design</h3><p>OpenClaw release themes, support signal, runtime quality, and the weekly close.</p></div>
+            <div class="card-actions"><button class="deck-button" type="button" data-week="14" data-deck="main" data-title="W14 · Main show slides" data-url="https://weeklyclaw.ai/episodes/14/deck.html">Main slides</button><button class="deck-button secondary" type="button" data-week="14" data-deck="changelog" data-title="W14 · Changelog / DevX" data-url="https://weeklyclaw.ai/w14/changelog/">Changelog / DevX</button></div>
+          </article>
+
+          <article class="week-card" data-kind="complete">
+            <div class="thumb"><img src="assets/episode-art-v2/agent-lab.jpg" alt="Cobalt agent cube inside a mechanical testing rig"><span class="week-number">W13</span><span class="availability">Both decks</span></div>
+            <div class="card-copy"><p class="card-kicker">21 changelog slides</p><h3>Codex, Code Mode, and proof pressure</h3><p>Validation infrastructure, GitHub milestones, community proof, and a rough week worth unpacking.</p></div>
+            <div class="card-actions"><button class="deck-button" type="button" data-week="13" data-deck="main" data-title="W13 · Main show slides" data-url="https://weeklyclaw.ai/episodes/13/deck.html">Main slides</button><button class="deck-button secondary" type="button" data-week="13" data-deck="changelog" data-title="W13 · Changelog / DevX" data-url="https://weeklyclaw.ai/w13/changelog/">Changelog / DevX</button></div>
+          </article>
+
+          <article class="week-card" data-kind="complete">
+            <div class="thumb"><img src="assets/episode-art-v2/signal-studio.jpg" alt="Cobalt broadcast studio connecting unusual software objects"><span class="week-number">W12</span><span class="availability">Both decks</span></div>
+            <div class="card-copy"><p class="card-kicker">13 changelog slides</p><h3>Less haunted. More operating system.</h3><p>OpenClaw changelog slides, community signal, release framing, memory, and provider routing.</p></div>
+            <div class="card-actions"><button class="deck-button" type="button" data-week="12" data-deck="main" data-title="W12 · Main show slides" data-url="https://weeklyclaw.ai/episodes/12/deck.html">Main slides</button><button class="deck-button secondary" type="button" data-week="12" data-deck="changelog" data-title="W12 · Changelog / DevX" data-url="https://weeklyclaw.ai/w12/changelog/">Changelog / DevX</button></div>
+          </article>
+
+          <article class="week-card" data-kind="changelog">
+            <div class="thumb"><img src="assets/episode-art-v2/network-constellation.jpg" alt="Modular stations connected around an analog dial"><span class="week-number">W11</span><span class="availability">Changelog only</span></div>
+            <div class="card-copy"><p class="card-kicker">13 changelog slides</p><h3>The earliest mirrored weekly packet</h3><p>The first Weekly Claw changelog and developer-experience deck currently available in GitHub.</p></div>
+            <div class="card-actions"><button class="deck-button secondary" type="button" data-week="11" data-deck="changelog" data-title="W11 · Changelog / DevX" data-url="https://weeklyclaw.ai/w11/changelog/">Changelog / DevX</button></div>
+          </article>
+
+          <article class="week-card" data-kind="main">
+            <div class="thumb"><img src="assets/episode-art-v2/system-blueprint.jpg" alt="Modular software components arranged on a drafting surface"><span class="week-number">E10</span><span class="availability">Main only</span></div>
+            <div class="card-copy"><p class="card-kicker">Earlier episode</p><h3>Stability, memory, and multimodal</h3><p>Behavior tuning, active memory, provider recovery, multimodal tools, and security hardening.</p></div>
+            <div class="card-actions"><button class="deck-button" type="button" data-week="10" data-deck="main" data-title="Episode 10 · Main show slides" data-url="https://weeklyclaw.ai/episodes/10/deck.html">Main slides</button></div>
+          </article>
+        </div>
+
+        <p class="source-note">Availability is based on the current <a href="https://github.com/h-mascot/weeklyclaw-ai">h-mascot/weeklyclaw-ai</a> repository. W16–W18 have changelog/DevX decks but no separate main deck in GitHub.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><span>© 2026 Weekly Claw</span><a href="weeklyclaw-v2.html">Return to homepage</a></div></footer>
+
+  <dialog id="deck-viewer" aria-labelledby="viewer-title">
+    <div class="viewer">
+      <header class="viewer-bar" aria-label="Deck viewer controls">
+        <div><p class="eyebrow" id="viewer-type">Original Weekly Claw deck</p><h2 class="viewer-title" id="viewer-title">Deck viewer</h2></div>
+        <div class="viewer-tools"><a id="viewer-external" href="https://weeklyclaw.ai" target="_blank" rel="noopener">Open in new tab ↗</a><button class="close-button" id="viewer-close" type="button" aria-label="Close deck viewer">×</button></div>
+      </header>
+      <div class="frame-wrap"><div class="viewer-loading" id="viewer-loading">Loading original slides…</div><iframe class="deck-frame" id="deck-frame" title="Weekly Claw slide deck" src="about:blank" allow="fullscreen"></iframe></div>
+    </div>
+  </dialog>
+
+  <script>
+    const filterButtons = [...document.querySelectorAll('.filter-button')];
+    const cards = [...document.querySelectorAll('.week-card')];
+    const deckButtons = [...document.querySelectorAll('.deck-button')];
+    const viewer = document.getElementById('deck-viewer');
+    const viewerTitle = document.getElementById('viewer-title');
+    const viewerType = document.getElementById('viewer-type');
+    const viewerExternal = document.getElementById('viewer-external');
+    const viewerClose = document.getElementById('viewer-close');
+    const viewerLoading = document.getElementById('viewer-loading');
+    const deckFrame = document.getElementById('deck-frame');
+
+    function applyFilter(filter) {
+      filterButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === filter)));
+      cards.forEach(card => { card.hidden = filter !== 'all' && card.dataset.kind !== filter; });
+    }
+
+    function openDeck(button, updateHistory = true) {
+      const { title, url, week, deck } = button.dataset;
+      viewerTitle.textContent = title;
+      viewerType.textContent = deck === 'main' ? 'Main show slides' : 'Changelog + developer experience';
+      viewerExternal.href = url;
+      viewerLoading.hidden = false;
+      deckFrame.src = url;
+      viewer.showModal();
+      document.body.classList.add('viewer-open');
+      if (updateHistory) history.replaceState(null, '', `?week=${week}&deck=${deck}`);
+    }
+
+    function closeDeck() {
+      viewer.close();
+      deckFrame.src = 'about:blank';
+      document.body.classList.remove('viewer-open');
+      history.replaceState(null, '', location.pathname);
+    }
+
+    filterButtons.forEach(button => button.addEventListener('click', () => applyFilter(button.dataset.filter)));
+    deckButtons.forEach(button => button.addEventListener('click', () => openDeck(button)));
+    viewerClose.addEventListener('click', closeDeck);
+    deckFrame.addEventListener('load', () => {
+      if (deckFrame.src !== 'about:blank') viewerLoading.hidden = true;
+    });
+    viewer.addEventListener('cancel', event => { event.preventDefault(); closeDeck(); });
+    viewer.addEventListener('click', event => { if (event.target === viewer) closeDeck(); });
+
+    const params = new URLSearchParams(location.search);
+    const requestedWeek = params.get('week');
+    const requestedDeck = params.get('deck');
+    if (requestedWeek && requestedDeck) {
+      const requestedButton = deckButtons.find(button => button.dataset.week === requestedWeek && button.dataset.deck === requestedDeck);
+      if (requestedButton) openDeck(requestedButton, false);
+    }
+  </script>
+</body>
+</html>
