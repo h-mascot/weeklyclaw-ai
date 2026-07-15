@@ -102,10 +102,35 @@
     @media (max-width: 900px) { .hero-grid, .form-layout { grid-template-columns: 1fr; } .guide-panel { position: static; } }
     @media (max-width: 640px) { .shell { width: min(var(--max), calc(100% - 24px)); } .hero { padding: 64px 0 54px; } .hero::before { inset: 8px; border-radius: 14px; } h1 { font-size: clamp(54px, 17vw, 76px); } .form-panel { padding: 24px; } .rating-grid, .check-grid, .choice-grid, .field-grid { grid-template-columns: 1fr; } .field.full { grid-column: auto; } .actions .button { width: 100%; } }
   </style>
+  <style id="theme-switcher">
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+    .theme-toggle { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 12px; border: 1px solid var(--line); border-radius: 5px; color: var(--ink); background: transparent; cursor: pointer; font: 600 11px/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+    .theme-toggle:hover { border-color: var(--green); }
+    [data-theme="dark"] { color-scheme: only dark; --page: #211d1a; --paper: #171513; --panel: #292421; --ink: #f2e5cd; --muted: #b9aa96; --line: #554e48; --green: #9de5c9; --green-deep: #9de5c9; --cyan: #82d2e6; --error: #ffb4a9; }
+    [data-theme="dark"] body { background: radial-gradient(circle at 50% -10%, rgba(157,229,201,.055), transparent 32rem), var(--page); }
+    [data-theme="dark"] .site-header { background: rgba(23,21,19,.93); }
+    [data-theme="dark"] .hero { background: linear-gradient(rgba(242,229,205,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(242,229,205,.045) 1px, transparent 1px), radial-gradient(circle at 84% 34%, rgba(157,229,201,.09), transparent 28rem), var(--paper); background-size: 56px 56px, 56px 56px, auto, auto; }
+    [data-theme="dark"] .hero::before { border-color: rgba(242,229,205,.16); }
+    [data-theme="dark"] .option-card { color: #f2e5cd; background: #171513; }
+    [data-theme="dark"] .option-card span { color: #24201c; }
+    [data-theme="dark"] .option input:checked + .option-card { color: #171513; }
+    [data-theme="dark"] .option input:checked + .option-card span { color: rgba(23,21,19,.72); }
+    [data-theme="dark"] .status[data-tone="loading"] { color: #171513; }
+    [data-theme="dark"] .site-footer { background: #171513; }
+    @media (max-width: 560px) { .header-inner { gap: 8px; } .header-actions { gap: 8px; } .back-link { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; } .theme-toggle { padding: 0; } .theme-toggle-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; } }
+  </style>
+  <script>
+    (() => {
+      let theme = 'light';
+      try { theme = localStorage.getItem('weeklyclaw-theme') || 'light'; } catch {}
+      document.documentElement.dataset.theme = theme;
+      window.__weeklyClawTheme = theme;
+    })();
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#feedback-form">Skip to feedback form</a>
-  <header class="site-header"><div class="shell header-inner"><a class="wordmark" href="index.html">Weekly Claw</a><a class="back-link" href="index.html">← Back to the show</a></div></header>
+  <header class="site-header"><div class="shell header-inner"><a class="wordmark" href="index.html">Weekly Claw</a><div class="header-actions"><a class="back-link" href="index.html">← Back to the show</a><button class="theme-toggle" data-theme-toggle type="button" aria-pressed="false"><span aria-hidden="true" data-theme-icon>☾</span><span class="theme-toggle-label" data-theme-label>Dark mode</span></button></div></div></header>
   <main>
     <section class="hero" aria-labelledby="page-title"><div class="shell hero-grid"><div><p class="eyebrow">Audience field report</p><h1 id="page-title">Shape the next show.</h1><p class="hero-copy">Tell us what landed, what dragged, and which conversations, demos, or failures deserve the room next Friday.</p></div><div class="hero-facts" role="group" aria-label="Feedback form details"><div class="fact"><strong>02</strong><span>minutes to complete</span></div><div class="fact"><strong>00</strong><span>login required</span></div><div class="fact"><strong>01</strong><span>line straight to the hosts</span></div></div></div></section>
     <section class="survey"><div class="shell form-layout"><div class="form-panel"><p class="eyebrow">Quick survey</p><h2 class="section-title">What should happen next?</h2><p class="section-note">Required fields are marked. Specific notes are easier to turn into a better episode.</p><div id="form-status" class="status" aria-live="polite" data-tone="loading"></div>
@@ -136,6 +161,21 @@
   </main>
   <footer class="site-footer"><div class="shell footer-inner"><span>© 2026 Weekly Claw</span><span>Feedback goes directly to the show team.</span></div></footer>
   <script>
+    const themeButton = document.querySelector('[data-theme-toggle]');
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    function applyTheme(theme, persist = true) {
+      const isDark = theme === 'dark';
+      document.documentElement.dataset.theme = theme;
+      themeColor?.setAttribute('content', isDark ? '#211d1a' : '#ece4d5');
+      themeButton.setAttribute('aria-pressed', String(isDark));
+      themeButton.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+      themeButton.querySelector('[data-theme-icon]').textContent = isDark ? '☀' : '☾';
+      themeButton.querySelector('[data-theme-label]').textContent = isDark ? 'Light mode' : 'Dark mode';
+      if (persist) { try { localStorage.setItem('weeklyclaw-theme', theme); } catch {} }
+    }
+    applyTheme(window.__weeklyClawTheme || 'light', false);
+    themeButton.addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+
     const form = document.getElementById("feedback-form");
     const submitButton = document.getElementById("submit-button");
     const statusEl = document.getElementById("form-status");

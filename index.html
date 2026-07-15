@@ -993,11 +993,56 @@
     .sponsor-symbol .herald-logo { width: 48px; height: 48px; border-radius: 9px; }
     .sponsor-copy { display: flex; align-items: center; }
     .sponsor-name { margin: 0; font-size: 23px; transition: color 150ms ease; }
+    .theme-toggle {
+      min-width: 44px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      color: var(--ink);
+      background: transparent;
+      cursor: pointer;
+      font: 600 11px/1 var(--mono);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
+    }
+    .theme-toggle:hover { border-color: var(--coral); background: rgba(42, 126, 107, .08); }
+    .theme-toggle-icon { width: 16px; font-size: 16px; line-height: 1; }
+    .theme-toggle.mobile { display: none; }
+    [data-theme="dark"] .theme-toggle { color: var(--cream); }
+    [data-theme="dark"] .theme-toggle:hover { background: rgba(157, 229, 201, .08); }
+    [data-theme="dark"] .sponsors { background: rgba(18, 17, 15, .82); }
+    [data-theme="dark"] .sponsor-name { color: var(--cream); }
+    @media (max-width: 1040px) {
+      .theme-toggle.mobile { display: inline-flex; margin-left: auto; padding: 0; }
+      .theme-toggle.mobile .theme-toggle-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+      .menu-button { margin-left: 0; }
+    }
     @media (max-width: 680px) {
+      .header-inner { gap: 8px; }
+      .wordmark { font-size: 22px; }
+      .theme-toggle.mobile { min-width: 42px; min-height: 42px; }
+      .menu-button { width: 42px; height: 42px; }
+      .menu-button span, .menu-button::before, .menu-button::after { top: 20px; left: 10px; }
       .sponsor-grid { grid-template-columns: 1fr; gap: 14px; }
       .sponsor-card { justify-content: flex-start; }
     }
   </style>
+  <script>
+    (() => {
+      let theme = 'light';
+      try { theme = localStorage.getItem('weeklyclaw-theme') || 'light'; } catch {}
+      document.documentElement.dataset.theme = theme;
+      window.__weeklyClawTheme = theme;
+      const lightTheme = document.getElementById('cardboard-light-theme');
+      if (lightTheme?.sheet) lightTheme.sheet.disabled = theme === 'dark';
+    })();
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -1008,8 +1053,10 @@
         <a href="#episodes">Episodes</a>
         <a href="#formats">Formats</a>
         <a href="#community">Community</a>
+        <button class="theme-toggle" data-theme-toggle data-scope="desktop" type="button" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark mode</span></button>
       </nav>
       <a class="header-cta" href="weeklyclaw-archive.html?week=19&amp;deck=main">Watch the latest <span class="youtube-mark" aria-hidden="true">▶</span></a>
+      <button class="theme-toggle mobile" data-theme-toggle data-scope="mobile" type="button" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark mode</span></button>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu"><span></span></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
@@ -1198,6 +1245,30 @@
     const playerForward = document.getElementById('player-forward');
     const playerProgress = document.getElementById('player-progress');
     const playerTime = document.getElementById('player-time');
+    const themeButtons = [...document.querySelectorAll('[data-theme-toggle]')];
+    const lightTheme = document.getElementById('cardboard-light-theme');
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+
+    function applyTheme(theme, persist = true) {
+      const isDark = theme === 'dark';
+      document.documentElement.dataset.theme = theme;
+      if (lightTheme?.sheet) lightTheme.sheet.disabled = isDark;
+      themeColor?.setAttribute('content', isDark ? '#211d1a' : '#ece4d5');
+      themeButtons.forEach(button => {
+        button.setAttribute('aria-pressed', String(isDark));
+        button.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+        button.querySelector('.theme-toggle-icon').textContent = isDark ? '☀' : '☾';
+        button.querySelector('.theme-toggle-label').textContent = isDark ? 'Light mode' : 'Dark mode';
+      });
+      if (persist) {
+        try { localStorage.setItem('weeklyclaw-theme', theme); } catch {}
+      }
+    }
+
+    applyTheme(window.__weeklyClawTheme || 'light', false);
+    themeButtons.forEach(button => button.addEventListener('click', () => {
+      applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+    }));
 
     function formatTime(seconds) {
       if (!Number.isFinite(seconds)) return '0:00';
