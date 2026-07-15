@@ -276,13 +276,33 @@
     .site-footer { color: var(--muted); border-color: var(--line); background: #ddd2c0; }
     .footer-inner a:hover { color: var(--wine); }
   </style>
+  <style id="theme-switcher">
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+    .theme-toggle { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 12px; border: 1px solid var(--line); border-radius: 5px; color: var(--ink); background: transparent; cursor: pointer; font: 600 11px/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+    .theme-toggle:hover { border-color: var(--coral); }
+    [data-theme="dark"] .theme-toggle { color: var(--cream); }
+    @media (max-width: 560px) { .header-inner { gap: 8px; } .header-actions { gap: 8px; } .back-link span:last-child, .theme-toggle-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; } .theme-toggle { padding: 0; } }
+  </style>
+  <script>
+    (() => {
+      let theme = 'light';
+      try { theme = localStorage.getItem('weeklyclaw-theme') || 'light'; } catch {}
+      document.documentElement.dataset.theme = theme;
+      window.__weeklyClawTheme = theme;
+      const lightTheme = document.getElementById('cardboard-light-theme');
+      if (lightTheme?.sheet) lightTheme.sheet.disabled = theme === 'dark';
+    })();
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#archive">Skip to archive</a>
   <header class="site-header" aria-label="Archive header">
     <div class="shell header-inner">
-      <a class="wordmark" href="weeklyclaw-v2.html">Weekly Claw</a>
-      <a class="back-link" href="weeklyclaw-v2.html"><span aria-hidden="true">←</span><span>Back to the show</span></a>
+      <a class="wordmark" href="index.html">Weekly Claw</a>
+      <div class="header-actions">
+        <a class="back-link" href="index.html"><span aria-hidden="true">←</span><span>Back to the show</span></a>
+        <button class="theme-toggle" data-theme-toggle type="button" aria-pressed="false"><span aria-hidden="true" data-theme-icon>☾</span><span class="theme-toggle-label" data-theme-label>Dark mode</span></button>
+      </div>
     </div>
   </header>
 
@@ -381,7 +401,7 @@
     </section>
   </main>
 
-  <footer class="site-footer"><div class="shell footer-inner"><span>© 2026 Weekly Claw</span><a href="weeklyclaw-v2.html">Return to homepage</a></div></footer>
+  <footer class="site-footer"><div class="shell footer-inner"><span>© 2026 Weekly Claw</span><a href="index.html">Return to homepage</a></div></footer>
 
   <dialog id="deck-viewer" aria-labelledby="viewer-title">
     <div class="viewer">
@@ -394,6 +414,25 @@
   </dialog>
 
   <script>
+    const themeButton = document.querySelector('[data-theme-toggle]');
+    const lightTheme = document.getElementById('cardboard-light-theme');
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+
+    function applyTheme(theme, persist = true) {
+      const isDark = theme === 'dark';
+      document.documentElement.dataset.theme = theme;
+      if (lightTheme?.sheet) lightTheme.sheet.disabled = isDark;
+      themeColor?.setAttribute('content', isDark ? '#211d1a' : '#ece4d5');
+      themeButton.setAttribute('aria-pressed', String(isDark));
+      themeButton.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+      themeButton.querySelector('[data-theme-icon]').textContent = isDark ? '☀' : '☾';
+      themeButton.querySelector('[data-theme-label]').textContent = isDark ? 'Light mode' : 'Dark mode';
+      if (persist) { try { localStorage.setItem('weeklyclaw-theme', theme); } catch {} }
+    }
+
+    applyTheme(window.__weeklyClawTheme || 'light', false);
+    themeButton.addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+
     const filterButtons = [...document.querySelectorAll('.filter-button')];
     const cards = [...document.querySelectorAll('.week-card')];
     const deckButtons = [...document.querySelectorAll('.deck-button')];
