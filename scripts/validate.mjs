@@ -5,6 +5,15 @@ const root = new URL('..', import.meta.url);
 const required = [
   'index.html',
   'feedback.html',
+  'weeklyclaw-archive.html',
+  'assets/weeklyclaw-hosts-source.png',
+  'assets/episode-19-audio-brief.m4a',
+  'assets/episode-art-v2/agent-lab.jpg',
+  'assets/episode-art-v2/network-constellation.jpg',
+  'assets/episode-art-v2/signal-studio.jpg',
+  'assets/episode-art-v2/system-blueprint.jpg',
+  'assets/sponsors/herald.jpg',
+  'assets/sponsors/openclaw.svg',
   'changelog/index.html',
   'episodes/10/deck.html',
   'episodes/12/deck.html',
@@ -31,7 +40,7 @@ if (missing.length) {
 }
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-for (const needle of ['Weekly Claw', 'live TV for people who ship with agents', '/feedback.html', 'OpenClaw community show']) {
+for (const needle of ['Weekly Claw', 'The week decides', 'feedback.html', 'Supported by', 'Herald Labs', 'https://labs.theherald.co/', 't3ch5-mark']) {
   if (!html.includes(needle)) {
     console.error(`Missing expected homepage copy: ${needle}`);
     process.exit(1);
