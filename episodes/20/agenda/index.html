@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Weekly Claw #20 Agenda — July 10, 2026</title>
+<meta content="The complete host rundown and source notes for Weekly Claw Episode 20, recorded July 10, 2026." name="description"/>
+<meta content="#0a0a0a" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root { color-scheme: dark; --bg:#0a0a0a; --panel:#131313; --ink:#f4f2e8; --muted:#aaa79d; --line:#323232; --accent:#f4845f; --hot:#e63946; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.7 Inter,system-ui,sans-serif; }
+    a { color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere; }
+    .shell { width:min(880px,calc(100% - 32px)); margin:auto; }
+    header { position:sticky; top:0; z-index:5; border-bottom:1px solid var(--line); background:rgba(10,10,10,.92); backdrop-filter:blur(16px); }
+    nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .wordmark { color:var(--ink); text-decoration:none; font-weight:800; letter-spacing:-.04em; font-size:21px; }
+    .nav-actions { display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+    .button { min-height:40px; display:inline-flex; align-items:center; justify-content:center; padding:0 13px; border:1px solid var(--accent); border-radius:5px; background:var(--accent); color:#0a0a0a; text-decoration:none; font:700 12px/1 'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:.03em; }
+    .button.secondary { background:transparent; color:var(--ink); border-color:var(--line); }
+    main { padding:72px 0 88px; }
+    .eyebrow { margin:0 0 12px; color:var(--accent); font:700 12px/1 'JetBrains Mono',monospace; letter-spacing:.1em; text-transform:uppercase; }
+    .intro { margin-bottom:38px; padding-bottom:32px; border-bottom:1px solid var(--line); }
+    .intro h1 { margin:0; font-size:clamp(40px,8vw,72px); line-height:.98; letter-spacing:-.065em; max-width:760px; }
+    .intro p { max-width:680px; color:var(--muted); font-size:18px; }
+    article { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:clamp(22px,5vw,48px); box-shadow:0 24px 70px rgba(0,0,0,.24); }
+    article h1 { display:none; }
+    article h2 { margin:2.4em 0 .65em; padding-top:.8em; border-top:1px solid var(--line); font-size:clamp(25px,4vw,36px); line-height:1.15; letter-spacing:-.035em; }
+    article h2:first-of-type { margin-top:.5em; border-top:0; padding-top:0; }
+    article p { margin:0 0 1.1em; }
+    article strong { color:#fff; }
+    article blockquote { margin:24px 0; padding:18px 20px; border-left:4px solid var(--hot); background:#191414; color:var(--muted); }
+    article hr { margin:42px 0; border:0; border-top:1px solid var(--line); }
+    footer { padding:30px 0 50px; color:var(--muted); text-align:center; font:500 12px/1.6 'JetBrains Mono',monospace; }
+    @media (max-width:620px) { nav { align-items:flex-start; padding:14px 0; } .nav-actions { gap:7px; } .button { min-height:36px; padding:0 9px; font-size:10px; } main { padding-top:48px; } }
+  </style>
+</head>
+<body>
+<header><nav aria-label="Episode navigation" class="shell"><a class="wordmark" href="/">Weekly Claw</a><div class="nav-actions"><a class="button secondary" href="/episodes">Episodes</a><a class="button" href="/episodes/20/deck">Open slides</a></div></nav></header>
+<main class="shell">
+<div class="intro"><p class="eyebrow">Episode 20 · July 10, 2026</p><h1>The cost of intelligence collapsed</h1><p>The complete original host rundown for Weekly Claw #20: frontier-model pile-up, agentic ransomware, Tool Fight, and open agent systems.</p></div>
+<article><h1>🦞 Weekly Claw — Episode 20 Rundown</h1>
+<p><strong>Date:</strong> Friday, July 10, 2026 · 4:00 PM ET
+<strong>A live builder show about AI, agents, devtools, startups, and the weird edge of software.</strong>
+<strong>Host:</strong> Andy (@AndyML) · <strong>Featuring:</strong> @HiM · possible guest builder
+<strong>Target runtime:</strong> ~43 min (~48 with a guest) · built to be clipped</p>
+
+
+<h2>Cold Open — The Frame (2 min)</h2>
+<p>Welcome to Weekly Claw. The last seven days might be the most important week in AI all year, so I'm not going to waste the top of the show — here's what actually mattered. Two frontier models launched in a single day. The cost of running an agent just fell off a cliff. And the first fully autonomous AI ransomware showed up in the wild. That's the episode. Let's get into it.</p>
+<hr/>
+<h2>What Happened This Week (14 min)</h2>
+<p><strong>The headline: this wasn't a launch, it was a pile-up — maybe the biggest 72 hours in AI model history.</strong> Run the tape. July 8th, OpenAI drops <strong>GPT-Live</strong> — a full-duplex voice model that listens and talks at the same time, backchannels "mhmm" at you like a person, and hands off to a frontier model when it needs to actually think. Same day, <strong>Cognition ships SWE-1.7</strong>, their best coding model yet, running in Devin at a thousand tokens a second on Cerebras — frontier-class agentic coding at a fraction of the cost. <strong>Perplexity's</strong> in the mix too, rolling out local-cloud routing on Perplexity Computer that keeps your sensitive stuff on-device and ships the heavy lifting to the cloud automatically. And then July 9th is the real earthquake: <strong>GPT-5.6</strong> in three tiers — Sol, Terra, Luna — with ChatGPT and Codex folded into one super app, and hours later <strong>xAI's Grok 4.5</strong> at two dollars a million tokens, which Cursor's CEO instantly made his daily driver at roughly a quarter of Opus 4.8's token count.</p>
+<p>The takeaway — and it's the theme of the whole episode: the cost of intelligence just collapsed, and it's coming from everywhere at once. Voice, coding, routing, frontier — four different fronts in three days. What was expensive six months ago is commodity infrastructure now, and that changes what's worth building. (And if OpenClaw's your harness — it already wired up the full GPT-5.6 family, day one.)</p>
+<p><strong>Second: Claude Cowork went mobile and web.</strong> Anthropic made Cowork sessions run remotely — start a task on your laptop, close the lid, check it from your phone, and scheduled tasks run when nothing's even online. That's the real shift: from "AI tool you sit in front of" to "AI teammate working in the background." They doubled usage limits through August 5th to get you hooked. Watch this pattern — async agents are becoming the default, not the novelty.</p>
+<p><strong>Third: Cursor had an absurd week.</strong> They launched Automations — coding agents that trigger themselves off repo changes, Slack messages, or a timer. Code review, security audits, incident response, all running with nobody pressing a button. They shipped an iOS app. And Bloomberg says revenue doubled to over two billion dollars in three months, sixty-billion valuation. Devtools just became always-on infrastructure, and the money says it's real.</p>
+<p><strong>Fourth, and this one's strategic: Chinese models now run up to 46% of US enterprise API tokens.</strong> CNBC's investigation — up from about four and a half percent a year ago. DeepSeek V4 Flash is fourteen cents per million tokens against GPT-5.5's five dollars. Coinbase runs twelve hundred agents on Chinese models and halved its bill. The House Committee opened a probe. Your model choice is now a strategic and political decision, not just a technical one.</p>
+<p><strong>And the one that should scare you a little: JADEPUFFER.</strong> Sysdig documented the first fully autonomous AI ransomware attack. An LLM agent exploited a vulnerability, moved laterally, escalated privileges, encrypted over thirteen hundred configs, and demanded ransom — all on its own, fixing its own failed steps in real time. This is not a demo. If you build agents, that's your threat model now. The age of agentic attackers is officially here.</p>
+<hr/>
+
+
+
+
+
+<h2>Hot Takes / Debate (7 min)</h2>
+<p>Alright, takes. Two big ones this week.</p>
+<p><strong>Take one: the frontier-model moat is basically gone.</strong> When Grok 4.5 lands at two dollars and DeepSeek's at fourteen cents and Cursor's CEO swaps daily drivers in an afternoon — the model isn't the moat anymore. The moat is moving up the stack: the harness, the routing, the workflows, the distribution. My prediction: within a year, "which model" becomes a config setting most builders barely think about, and the companies that win are the ones that own the layer <em>above</em> the model, not the model itself. If you're betting your product on having access to the single best model, I think you're betting on the wrong thing.</p>
+<p><strong>Take two, the spicy one: are you actually going to run DeepSeek in production?</strong> Because the cost math says yes and the politics say maybe not. I think most builders quietly will, congressional probe or not — the price gap is too big to ignore for background agent work where the data isn't sensitive. But I'd bet we see the first "company got burned running Chinese models" headline within a couple months, and then everyone pretends they were always careful about it. Where do you land — pragmatist or hard no? Drop it in chat, I want the disagreement.</p>
+<hr/>
+<h2>Tool Fight — Grok 4.5 vs the Frontier for Agent Work (6 min)</h2>
+<p>So let's actually put yesterday's launches in the ring, because this is the question everyone's going to be arguing about all weekend: what's your agent daily driver now — Grok 4.5, GPT-5.6, or Claude Opus 4.8?</p>
+<p>Here's my read. On raw cost-per-outcome, Grok 4.5 is the story — two bucks a million and, if the token-efficiency claims hold, roughly a quarter of the tokens Opus burns for the same job. For long-running agent loops where you're paying per step, that compounds fast; the Cursor endorsement isn't nothing. GPT-5.6 Luna is the sleeper — a dollar in, and now it lives inside a merged Codex-plus-ChatGPT app, so the distribution is brutal. And Opus 4.8 is still, for my money, the best when the task needs judgment and long-horizon coherence — but it's now the premium option you reach for deliberately, not the default you leave running.</p>
+<p>The real move, though — and this is what the smart teams are already doing — isn't picking one. It's routing: cheap fast model for the ninety percent of agent steps that are grunt work, frontier model for the ten percent that actually need taste. Which, funny enough, is exactly what the guy in our next segment spends twenty minutes arguing. So let's go there.</p>
+<hr/>
+<h2>Signal From Outside — Jensen Huang on Open Agent Systems (7 min)</h2>
+<p>The one video worth your time this week dropped two days ago: Jensen Huang, NVIDIA's CEO, sitting down with Harrison Chase from LangChain. Title's "Why companies need open agent systems." Sounds like an all-hands snoozer. It is not — it's the sharpest framing I've heard of exactly the thing we were just talking about.</p>
+<p>Chase asks what changed in the last six months to make AI actually <em>useful</em>. And Jensen's answer isn't about the models — it's about what he calls the <strong>harness</strong>. The scaffolding around the model: tools, memory, domain context, the learning loop. AI got useful, he says, when people stopped treating it as raw capability and started wrapping it in a harness they own and control. That's agent frameworks. That's the whole game.</p>
+<p>Then he gets to model selection, and it's the same take I just gave in the tool fight — start with the frontier model to find the ceiling of what's possible in your domain, then build <strong>specialized sub-agents</strong> for your critical workflows, and <em>that's</em> where cheap open-weight models shine because you can fine-tune them and run them yourself. His line is that when intelligence is cheap, you use <em>more</em> of it — more agents in parallel, bigger search, faster iteration. Which is precisely the world yesterday's launches just dropped us into.</p>
+<p>The part that stuck with me: he says most companies treat agents like a software-procurement decision when it's actually a strategy decision — that a company is "a collection of proprietary, super-important workflows," and whoever encodes those into agent systems on infrastructure they control wins. He and Chase announce a Deep Agents plus OpenShell reference architecture to go do exactly that. And he throws in, without hedging, that more AI means more jobs — the AI-native roles just aren't invented yet.</p>
+<p>Why I'm showing you this: it's a CEO of a three-trillion-dollar company describing the open-harness, route-between-models, own-your-infrastructure playbook as <em>the</em> winning architecture. That's not fringe anymore. It's the consensus forming in real time. Video's linked — the Nemotron and LangChain middle section gets usefully technical if you want to go deeper.</p>
+<hr/>
+<h2>Close — One To Watch + Where To Follow (2 min)</h2>
+<p>One thing to watch next week: the next shoe. Two frontier models launched in a day, so keep an eye on how Anthropic responds and whether that House probe on Chinese models turns into anything real — that's the story with legs.</p>
+<p>If you want to travel for something: the AGI Summit is at the Palace of Fine Arts in San Francisco July 18–19, and there's a sharp little "Loop Engineering" night at Frontier Labs in SF on the 14th if last week's Steinberger talk landed for you.</p>
+<p>And the housekeeping that actually matters now: this show lives on <strong>X</strong> first — that's where the clips and the live takes go, so follow the show and follow me, <strong>@AndyML</strong>. Full episodes and highlights land on <strong>YouTube</strong>, and everything's archived with sources at <strong>weeklyclaw.ai</strong>.</p>
+<p>Next episode is Friday, July 17th, 4 PM ET. New format, same time. We follow the excitement — see you then.</p>
+<hr/>
+<p><em>Weekly Claw #20 · July 10, 2026 · 🦞</em>
+<em>"Follow the excitement."</em></p></article>
+</main>
+<footer class="shell">Weekly Claw #20 · Original agenda and source notes · <a href="/episodes/20/deck">View the host deck</a></footer>
+</body>
+</html>

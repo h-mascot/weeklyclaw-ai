@@ -1,3 +1,11 @@
 {
-  "outputDirectory": "."
+  "cleanUrls": true,
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/weeklyclaw-archive",
+      "destination": "/episodes",
+      "permanent": true
+    }
+  ]
 }

@@ -6,15 +6,8 @@ const required = [
   'index.html',
   'feedback.html',
   'weeklyclaw-archive.html',
-  'assets/weeklyclaw-hosts-source.png',
-  'assets/episode-19-audio-brief.m4a',
-  'assets/episode-art-v2/agent-lab.jpg',
-  'assets/episode-art-v2/network-constellation.jpg',
-  'assets/episode-art-v2/signal-studio.jpg',
-  'assets/episode-art-v2/system-blueprint.jpg',
-  'assets/sponsors/herald.jpg',
-  'assets/sponsors/openclaw.svg',
   'changelog/index.html',
+  'episodes/index.html',
   'episodes/10/deck.html',
   'episodes/12/deck.html',
   'episodes/13/deck.html',
@@ -26,6 +19,9 @@ const required = [
   'episodes/19/host.html',
   'episodes/19/viewer-agenda.md',
   'episodes/19/host-agenda.md',
+  'episodes/20/agenda.md',
+  'episodes/20/agenda/index.html',
+  'episodes/20/deck.html',
   'w18/changelog/index.html', 'w19/changelog/index.html'];
 
 const weeks = [11, 12, 13, 14, 15, 16, 17, 18, 19];
@@ -40,7 +36,18 @@ if (missing.length) {
 }
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
-for (const needle of ['Weekly Claw', 'The week decides', 'feedback.html', 'Supported by', 'Herald Labs', 'https://labs.theherald.co/', 't3ch5-mark']) {
+for (const needle of [
+  'Weekly Claw',
+  'The cost of intelligence collapsed',
+  '/feedback',
+  '/episodes?week=20&amp;deck=main',
+  'live builder show about AI, agents, devtools, and startups',
+  'The week decides',
+  'Supported by',
+  'Herald Labs',
+  'https://labs.theherald.co/',
+  't3ch5-mark',
+]) {
   if (!html.includes(needle)) {
     console.error(`Missing expected homepage copy: ${needle}`);
     process.exit(1);
@@ -71,7 +78,7 @@ if (!readFileSync(new URL('../README.md', import.meta.url), 'utf8').includes('/w
 }
 
 const changelogHtml = readFileSync(new URL('../changelog/index.html', import.meta.url), 'utf8');
-for (const needle of ['Release changelogs', '/w11/changelog/', '/w18/changelog/', '/w19/changelog/', '/episodes/12/deck.html', '/episodes/14/deck.html', '/episodes/19/deck.html', 'Episode deck', 'Changelog/DX deck']) {
+for (const needle of ['Release changelogs', '/w11/changelog/', '/w18/changelog/', '/w19/changelog/', '/episodes/12/deck', '/episodes/14/deck', '/episodes/19/deck', 'Episode deck', 'Changelog/DX deck']) {
   if (!changelogHtml.includes(needle)) {
     console.error(`Changelog index missing expected copy: ${needle}`);
     process.exit(1);
@@ -84,7 +91,39 @@ if (changelogHtml.includes('Open changelog') || changelogHtml.includes('Host dec
 }
 
 
-for (const week of [10, 12, 13, 14, 15, 19]) {
+const episodesHtml = readFileSync(new URL('../episodes/index.html', import.meta.url), 'utf8');
+for (const needle of ['Weekly Claw Episodes', 'W20', '/episodes/20/deck', '/episodes/20/agenda', '<strong>11</strong>', 'archived episodes']) {
+  if (!episodesHtml.includes(needle)) {
+    console.error(`Episodes index missing expected copy: ${needle}`);
+    process.exit(1);
+  }
+}
+
+for (const path of ['../episodes/20/agenda.md', '../episodes/20/agenda/index.html']) {
+  const agenda = readFileSync(new URL(path, import.meta.url), 'utf8');
+  for (const marker of ['Build notes', 'WINNERS:', 'fill in the winner', 'template.md']) {
+    if (agenda.includes(marker)) {
+      console.error(`Episode 20 public agenda exposes an internal marker: ${marker}`);
+      process.exit(1);
+    }
+  }
+}
+
+const legacyArchiveHtml = readFileSync(new URL('../weeklyclaw-archive.html', import.meta.url), 'utf8');
+if (!legacyArchiveHtml.includes("window.location.replace('/episodes'") || !legacyArchiveHtml.includes('href="/episodes"')) {
+  console.error('Legacy archive page does not redirect to /episodes');
+  process.exit(1);
+}
+
+for (const [name, page] of [['homepage', html], ['episodes index', episodesHtml], ['legacy archive', legacyArchiveHtml], ['changelog index', changelogHtml], ['feedback page', feedbackHtml]]) {
+  const htmlRoute = page.match(/(?:href|src|action|data-url)=["'][^"']*\.html(?:[?#][^"']*)?["']/);
+  if (htmlRoute) {
+    console.error(`${name} still exposes a public .html URL: ${htmlRoute[0]}`);
+    process.exit(1);
+  }
+}
+
+for (const week of [10, 12, 13, 14, 15, 19, 20]) {
   const mainDeck = readFileSync(new URL(`../episodes/${week}/deck.html`, import.meta.url), 'utf8');
   if (!mainDeck.includes('Weekly') && !mainDeck.includes('OpenClaw')) {
     console.error(`Week ${week} main deck does not look like a Weekly Claw deck`);
