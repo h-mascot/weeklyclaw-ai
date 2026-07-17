@@ -266,7 +266,7 @@
     }
     .portrait.andy::after { content: "Andy"; }
     .portrait.henry::after { content: "Henry"; }
-    .portrait.henry {
+    .portrait.andy {
       width: 240px;
       height: 240px;
       top: 4px;
@@ -274,7 +274,7 @@
       background-size: 1120px auto;
       background-position: -396px -291px;
     }
-    .portrait.andy {
+    .portrait.henry {
       width: 246px;
       height: 246px;
       right: 0;
@@ -592,8 +592,8 @@
       .hero h1 { font-size: clamp(58px, 20vw, 82px); }
       .hero-copy { font-size: 20px; }
       .hero-art { min-height: 360px; }
-      .portrait.henry { width: 204px; height: 204px; background-size: 950px auto; background-position: -336px -247px; }
-      .portrait.andy { width: 210px; height: 210px; background-size: 956px auto; background-position: -85px -248px; }
+      .portrait.andy { width: 204px; height: 204px; background-size: 950px auto; background-position: -336px -247px; }
+      .portrait.henry { width: 210px; height: 210px; background-size: 956px auto; background-position: -85px -248px; }
       .hero-claw { width: 135px; }
       .latest-card { grid-template-columns: 1fr; gap: 18px; padding: 20px; }
       .latest-number { min-height: 86px; border-right: 0; border-bottom: 1px solid var(--line-soft); font-size: 58px; }
@@ -821,8 +821,8 @@
     .hero-art::after { color: var(--wine); }
     .portrait { border-color: var(--coral); box-shadow: 0 0 0 6px var(--paper), 0 18px 42px rgba(69, 56, 43, .18); }
     .portrait::after { color: var(--paper); border-color: #216655; background: var(--coral); }
-    .portrait.henry { background-size: 1120px auto; background-position: -396px -291px; }
-    .portrait.andy { background-size: 1120px auto; background-position: -99px -291px; }
+    .portrait.andy { background-size: 1120px auto; background-position: -396px -291px; }
+    .portrait.henry { background-size: 1120px auto; background-position: -99px -291px; }
 
     .latest { background: transparent; }
     .latest-card { border-color: var(--line); background: radial-gradient(circle at 18% 50%, rgba(138,217,188,.16), transparent 22rem), var(--panel); box-shadow: inset 0 0 0 8px var(--page); }
@@ -876,8 +876,8 @@
     .footer-links a:hover { color: var(--wine); }
     .footer-note { color: var(--muted); }
     @media (max-width: 680px) {
-      .portrait.henry { background-size: 950px auto; background-position: -336px -247px; }
-      .portrait.andy { background-size: 956px auto; background-position: -85px -248px; }
+      .portrait.andy { background-size: 950px auto; background-position: -336px -247px; }
+      .portrait.henry { background-size: 956px auto; background-position: -85px -248px; }
       .host-photo.andy { background-size: 840px auto; background-position: -74px -218px; }
       .host-photo.henry { background-size: 840px auto; background-position: -297px -218px; }
     }
@@ -1091,8 +1091,8 @@
         </div>
         <div class="hero-art" role="img" aria-label="Weekly Claw hosts Andy and Henry">
           <svg class="hero-claw top" viewBox="0 0 120 160" fill="none" aria-hidden="true"><path d="M30 13C12 40 17 75 43 91c-10-32 1-44 17-50-2 30 13 45 32 51 18-36 4-70-22-84 8 26-2 40-16 48-3-23-12-36-24-43Z" fill="currentColor"/><path d="M44 92c-8 17-10 35-5 55M72 93c8 19 10 36 5 57" stroke="currentColor" stroke-width="9" stroke-linecap="round"/></svg>
-          <div class="portrait henry" aria-hidden="true"></div>
           <div class="portrait andy" aria-hidden="true"></div>
+          <div class="portrait henry" aria-hidden="true"></div>
           <svg class="hero-claw bottom" viewBox="0 0 120 160" fill="none" aria-hidden="true"><path d="M30 13C12 40 17 75 43 91c-10-32 1-44 17-50-2 30 13 45 32 51 18-36 4-70-22-84 8 26-2 40-16 48-3-23-12-36-24-43Z" fill="currentColor"/><path d="M44 92c-8 17-10 35-5 55M72 93c8 19 10 36 5 57" stroke="currentColor" stroke-width="9" stroke-linecap="round"/></svg>
         </div>
       </div>
