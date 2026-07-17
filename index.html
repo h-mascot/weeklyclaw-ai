@@ -1031,12 +1031,23 @@
       .theme-toggle.mobile { min-width: 42px; min-height: 42px; }
       .menu-button { width: 42px; height: 42px; }
       .menu-button span, .menu-button::before, .menu-button::after { top: 20px; left: 10px; }
-      .sponsor-grid { grid-template-columns: 1fr; gap: 14px; }
-      .sponsor-card { justify-content: flex-start; }
-      .sponsor-symbol { width: 60px; height: 60px; flex-basis: 60px; }
-      .sponsor-symbol img, .sponsor-symbol .herald-logo { width: 60px; height: 60px; }
-      .sponsor-name { font-size: 28px; }
-      .heritage-logo { max-width: 190px; }
+      .sponsors { padding-block: 42px 48px; }
+      .sponsor-title { margin-bottom: 22px; }
+      .sponsor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; }
+      .sponsor-card {
+        min-height: 142px;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-content: center;
+        gap: 12px;
+        text-align: center;
+      }
+      .sponsor-symbol { width: 74px; height: 74px; flex-basis: 74px; }
+      .sponsor-symbol img, .sponsor-symbol .herald-logo { width: 74px; height: 74px; }
+      .sponsor-name { font-size: clamp(20px, 7vw, 28px); line-height: .9; }
+      .heritage-card { grid-column: 1 / -1; min-height: 116px; }
+      .heritage-logo { width: min(280px, 78vw); max-width: 100%; max-height: 76px; }
     }
   </style>
   <script>
