@@ -5,6 +5,7 @@ const root = new URL('..', import.meta.url);
 const required = [
   'index.html',
   'feedback.html',
+  'api/feedback.js',
   'weeklyclaw-archive.html',
   'changelog/index.html',
   'episodes/index.html',
@@ -59,19 +60,28 @@ for (const needle of [
 const feedbackHtml = readFileSync(new URL('../feedback.html', import.meta.url), 'utf8');
 for (const needle of [
   'id="feedback-form"',
-  'https://formsubmit.co/ajax/551466e066875528b97a01a246d8d45b',
+  'action="/api/feedback"',
   'id="form-status"',
   'Feedback sent. Thank you for helping shape the next Weekly Claw.',
   'form.reportValidity()',
+  'Content-Type": "application/json"',
 ]) {
   if (!feedbackHtml.includes(needle)) {
     console.error(`Feedback page missing expected integration marker: ${needle}`);
     process.exit(1);
   }
 }
-if (feedbackHtml.includes('formsubmit.co/ajax/show@weeklyclaw.ai')) {
-  console.error('Feedback page exposes the inactive naked-email FormSubmit endpoint');
+if (feedbackHtml.includes('formsubmit.co')) {
+  console.error('Feedback page still exposes the retired FormSubmit endpoint');
   process.exit(1);
+}
+
+const feedbackApi = readFileSync(new URL('../api/feedback.js', import.meta.url), 'utf8');
+for (const needle of ['WEEKLYCLAW_FEEDBACK_REPO', 'WEEKLYCLAW_GITHUB_TOKEN', 'https://api.github.com/repos/${repo}/issues', 'website-feedback']) {
+  if (!feedbackApi.includes(needle)) {
+    console.error(`Feedback API missing expected GitHub integration marker: ${needle}`);
+    process.exit(1);
+  }
 }
 
 if (!readFileSync(new URL('../README.md', import.meta.url), 'utf8').includes('/w19/changelog/')) {

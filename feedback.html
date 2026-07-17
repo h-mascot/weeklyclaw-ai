@@ -134,8 +134,8 @@
   <main>
     <section class="hero" aria-labelledby="page-title"><div class="shell hero-grid"><div><p class="eyebrow">Audience field report</p><h1 id="page-title">Shape the next show.</h1><p class="hero-copy">Tell us what landed, what dragged, and which conversations, demos, or failures deserve the room next Friday.</p></div><div class="hero-facts" role="group" aria-label="Feedback form details"><div class="fact"><strong>02</strong><span>minutes to complete</span></div><div class="fact"><strong>00</strong><span>login required</span></div><div class="fact"><strong>01</strong><span>line straight to the hosts</span></div></div></div></section>
     <section class="survey"><div class="shell form-layout"><div class="form-panel"><p class="eyebrow">Quick survey</p><h2 class="section-title">What should happen next?</h2><p class="section-note">Required fields are marked. Specific notes are easier to turn into a better episode.</p><div id="form-status" class="status" aria-live="polite" data-tone="loading"></div>
-      <form id="feedback-form" action="https://formsubmit.co/ajax/551466e066875528b97a01a246d8d45b" method="post" novalidate>
-        <input type="hidden" name="_subject" value="Weekly Claw audience feedback"><input type="hidden" name="_template" value="table"><div class="visually-hidden" aria-hidden="true"><label for="company">Leave empty</label><input id="company" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+      <form id="feedback-form" action="/api/feedback" method="post" novalidate>
+        <div class="visually-hidden" aria-hidden="true"><label for="company">Leave empty</label><input id="company" type="text" name="company" tabindex="-1" autocomplete="off"></div>
         <fieldset><legend>Overall rating <span class="required">Required</span></legend><p class="field-note">1 is rough. 5 is must-watch.</p><div class="rating-grid" role="radiogroup">
           <label class="option"><input type="radio" name="overall_rating" value="1" required><span class="option-card"><strong>01</strong><span>Needs work</span></span></label>
           <label class="option"><input type="radio" name="overall_rating" value="2"><span class="option-card"><strong>02</strong><span>Mixed</span></span></label>
@@ -189,9 +189,29 @@
       if (!form.reportValidity()) { showStatus("error", "Please complete the required fields before sending your feedback."); return; }
       submitButton.disabled = true; submitButton.textContent = "Sending…"; showStatus("loading", "Sending your feedback now.");
       try {
-        const response = await fetch(form.action, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(form) });
+        const formData = new FormData(form);
+        const moreOf = formData.getAll("more_of[]");
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify({
+            overall_rating: formData.get("overall_rating"),
+            more_of: moreOf,
+            favorite_part: formData.get("favorite_part"),
+            change_request: formData.get("change_request"),
+            next_nomination: formData.get("next_nomination"),
+            share_on_show: formData.get("share_on_show"),
+            name: formData.get("name"),
+            email: formData.get("email"),
+            handle: formData.get("handle"),
+            company: formData.get("company"),
+            page: window.location.pathname,
+            user_agent: navigator.userAgent,
+            submitted_at: new Date().toISOString(),
+          }),
+        });
         const payload = await response.json().catch(() => ({}));
-        if (!response.ok || payload.success === "false") throw new Error(payload.message || "Submission failed.");
+        if (!response.ok || payload.ok !== true) throw new Error(payload.error || "Submission failed.");
         form.reset(); validateSegments(); showStatus("success", "Feedback sent. Thank you for helping shape the next Weekly Claw.");
       } catch (error) { showStatus("error", "Could not send feedback right now. Please try again or email show@weeklyclaw.ai."); }
       finally { submitButton.disabled = false; submitButton.textContent = "Send feedback"; }

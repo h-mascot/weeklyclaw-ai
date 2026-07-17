@@ -40,7 +40,14 @@ npm run build
 python3 -m http.server 4173
 ```
 
-The site is static HTML. Episode decks and agenda notes live under `episodes/`. Changelog decks live under `w*/changelog/`.
+The site is static HTML with one Vercel serverless function at `/api/feedback`. Episode decks and agenda notes live under `episodes/`. Changelog decks live under `w*/changelog/`.
+
+## Feedback submissions
+
+`/feedback` posts JSON to `/api/feedback`. The serverless function creates a private GitHub issue in `h-mascot/weeklyclaw-feedback` using these environment variables:
+
+- `WEEKLYCLAW_GITHUB_TOKEN` — GitHub token with private repo issue-write access.
+- `WEEKLYCLAW_FEEDBACK_REPO` — optional override; defaults to `h-mascot/weeklyclaw-feedback`.
 
 ## Deployment
 
