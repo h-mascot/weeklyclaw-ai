@@ -48,7 +48,7 @@ for (const needle of [
   'https://labs.theherald.co/',
   'https://heritagetel.com/',
   'assets/sponsors/heritage-logo.png',
-  'assets/henry-profile-source.png',
+  'assets/weeklyclaw-hosts-source.png?v=20260717-light-smile',
 ]) {
   if (!html.includes(needle)) {
     console.error(`Missing expected homepage copy: ${needle}`);
