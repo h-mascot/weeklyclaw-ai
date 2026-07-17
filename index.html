@@ -960,8 +960,6 @@
     .sponsor-copy { min-width: 0; }
     .sponsor-name { display: block; margin-bottom: 5px; font-size: 27px; font-weight: 800; line-height: .95; letter-spacing: -.01em; text-transform: uppercase; }
     .sponsor-copy small { display: block; color: var(--muted); font: 500 10px/1.4 var(--mono); }
-    .t3ch5-mark { text-transform: none; letter-spacing: -.05em; }
-    .t3ch5-mark span { color: var(--coral); }
 
     @media (max-width: 860px) {
       .sponsor-heading-row { align-items: flex-start; flex-direction: column; gap: 12px; }
@@ -993,10 +991,10 @@
     .sponsor-symbol img { width: 66px; height: 66px; }
     .sponsor-symbol.agent-avatar img { border-radius: 16px; object-fit: cover; box-shadow: 0 10px 28px rgba(33, 29, 26, .18); }
     .sponsor-symbol .herald-logo { width: 72px; height: 72px; border-radius: 13px; }
+    .heritage-card { min-width: 170px; }
+    .heritage-logo { width: min(190px, 100%); height: auto; max-height: 58px; object-fit: contain; }
     .sponsor-copy { display: flex; align-items: center; }
     .sponsor-name { margin: 0; font-size: 32px; transition: color 150ms ease; }
-    .sponsor-card.t3ch5-card .sponsor-symbol { font-size: 34px; font-weight: 700; }
-    .sponsor-card.t3ch5-card .t3ch5-mark { font-size: 42px; }
     .theme-toggle {
       min-width: 44px;
       min-height: 44px;
@@ -1022,7 +1020,6 @@
     [data-theme="dark"] .theme-toggle:hover { background: rgba(157, 229, 201, .08); }
     [data-theme="dark"] .sponsors { background: rgba(18, 17, 15, .82); }
     [data-theme="dark"] .sponsor-name { color: var(--cream); }
-    [data-theme="dark"] .sponsor-card.t3ch5-card .sponsor-symbol { color: var(--cream); }
     @media (max-width: 1040px) {
       .theme-toggle.mobile { display: inline-flex; margin-left: auto; padding: 0; }
       .theme-toggle.mobile .theme-toggle-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
@@ -1039,8 +1036,7 @@
       .sponsor-symbol { width: 60px; height: 60px; flex-basis: 60px; }
       .sponsor-symbol img, .sponsor-symbol .herald-logo { width: 60px; height: 60px; }
       .sponsor-name { font-size: 28px; }
-      .sponsor-card.t3ch5-card .sponsor-symbol { font-size: 28px; }
-      .sponsor-card.t3ch5-card .t3ch5-mark { font-size: 36px; }
+      .heritage-logo { max-width: 190px; }
     }
   </style>
   <script>
@@ -1195,8 +1191,8 @@
             <span class="sponsor-symbol agent-avatar"><img src="assets/agents/max-avatar.png" alt="Max avatar"></span>
             <span class="sponsor-copy"><strong class="sponsor-name">Max</strong></span>
           </div>
-          <a class="sponsor-card t3ch5-card" href="https://t3ch5.com/" target="_blank" rel="noopener">
-            <span class="sponsor-copy"><strong class="sponsor-name t3ch5-mark">T3ch<span>5</span></strong></span>
+          <a class="sponsor-card heritage-card" href="https://heritagetel.com/" target="_blank" rel="noopener" aria-label="HeritageTel">
+            <img class="heritage-logo" src="assets/sponsors/heritage-logo.png" alt="HeritageTel">
           </a>
           <a class="sponsor-card" href="https://labs.theherald.co/" target="_blank" rel="noopener">
             <span class="sponsor-symbol"><img class="herald-logo" src="assets/sponsors/herald.jpg" alt=""></span>

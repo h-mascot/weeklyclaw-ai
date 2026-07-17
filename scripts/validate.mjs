@@ -46,7 +46,8 @@ for (const needle of [
   'Supported by',
   'Herald Labs',
   'https://labs.theherald.co/',
-  't3ch5-mark',
+  'https://heritagetel.com/',
+  'assets/sponsors/heritage-logo.png',
 ]) {
   if (!html.includes(needle)) {
     console.error(`Missing expected homepage copy: ${needle}`);
