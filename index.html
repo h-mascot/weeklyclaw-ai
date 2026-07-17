@@ -981,18 +981,20 @@
   <style id="final-structure-refinement">
     .hero-art { border: 0; background: transparent; box-shadow: none; }
     .hero-art::before, .hero-art::after { display: none; }
-    .sponsors { padding: 26px 0 30px; border-block: 1px solid var(--line); background: rgba(255, 249, 238, .72); }
+    .sponsors { padding: 38px 0 46px; border-block: 1px solid var(--line); background: rgba(255, 249, 238, .72); }
     .sponsor-heading-row { display: block; }
-    .sponsor-title { margin: 0 0 18px; color: var(--muted); font: 600 10px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
-    .sponsor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 0; }
-    .sponsor-card { min-height: 62px; display: flex; justify-content: center; gap: 13px; padding: 0; border: 0; border-radius: 0; background: transparent; }
+    .sponsor-title { margin: 0 0 26px; color: var(--muted); font: 600 11px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+    .sponsor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 0; }
+    .sponsor-card { min-height: 96px; display: flex; justify-content: center; gap: 18px; padding: 0; border: 0; border-radius: 0; background: transparent; }
     a.sponsor-card:hover { transform: none; border-color: transparent; background: transparent; }
     a.sponsor-card:hover .sponsor-name { color: var(--wine); }
-    .sponsor-symbol { width: 48px; height: 48px; flex: 0 0 48px; border: 0; border-radius: 8px; background: transparent; }
-    .sponsor-symbol img { width: 44px; height: 44px; }
-    .sponsor-symbol .herald-logo { width: 48px; height: 48px; border-radius: 9px; }
+    .sponsor-symbol { width: 72px; height: 72px; flex: 0 0 72px; border: 0; border-radius: 12px; background: transparent; font-size: 26px; }
+    .sponsor-symbol img { width: 66px; height: 66px; }
+    .sponsor-symbol .herald-logo { width: 72px; height: 72px; border-radius: 13px; }
     .sponsor-copy { display: flex; align-items: center; }
-    .sponsor-name { margin: 0; font-size: 23px; transition: color 150ms ease; }
+    .sponsor-name { margin: 0; font-size: 32px; transition: color 150ms ease; }
+    .sponsor-card:first-child .sponsor-symbol { font-size: 34px; font-weight: 700; }
+    .sponsor-card:first-child .t3ch5-mark { font-size: 42px; }
     .theme-toggle {
       min-width: 44px;
       min-height: 44px;
@@ -1018,6 +1020,7 @@
     [data-theme="dark"] .theme-toggle:hover { background: rgba(157, 229, 201, .08); }
     [data-theme="dark"] .sponsors { background: rgba(18, 17, 15, .82); }
     [data-theme="dark"] .sponsor-name { color: var(--cream); }
+    [data-theme="dark"] .sponsor-card:first-child .sponsor-symbol { color: var(--cream); }
     @media (max-width: 1040px) {
       .theme-toggle.mobile { display: inline-flex; margin-left: auto; padding: 0; }
       .theme-toggle.mobile .theme-toggle-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
@@ -1031,6 +1034,11 @@
       .menu-button span, .menu-button::before, .menu-button::after { top: 20px; left: 10px; }
       .sponsor-grid { grid-template-columns: 1fr; gap: 14px; }
       .sponsor-card { justify-content: flex-start; }
+      .sponsor-symbol { width: 60px; height: 60px; flex-basis: 60px; }
+      .sponsor-symbol img, .sponsor-symbol .herald-logo { width: 60px; height: 60px; }
+      .sponsor-name { font-size: 28px; }
+      .sponsor-card:first-child .sponsor-symbol { font-size: 28px; }
+      .sponsor-card:first-child .t3ch5-mark { font-size: 36px; }
     }
   </style>
   <script>
@@ -1191,6 +1199,10 @@
       <div class="shell">
         <div class="sponsor-heading-row"><h2 class="sponsor-title" id="sponsors-title">Supported by</h2></div>
         <div class="sponsor-grid">
+          <a class="sponsor-card" href="https://t3ch5.com/" target="_blank" rel="noopener">
+            <span class="sponsor-symbol" aria-hidden="true">T5</span>
+            <span class="sponsor-copy"><strong class="sponsor-name t3ch5-mark">T3ch<span>5</span></strong></span>
+          </a>
           <a class="sponsor-card" href="https://labs.theherald.co/" target="_blank" rel="noopener">
             <span class="sponsor-symbol"><img class="herald-logo" src="assets/sponsors/herald.jpg" alt=""></span>
             <span class="sponsor-copy"><strong class="sponsor-name">Herald Labs</strong></span>
@@ -1198,10 +1210,6 @@
           <a class="sponsor-card" href="https://openclaw.ai/" target="_blank" rel="noopener">
             <span class="sponsor-symbol"><img src="assets/sponsors/openclaw.svg" alt=""></span>
             <span class="sponsor-copy"><strong class="sponsor-name">OpenClaw</strong></span>
-          </a>
-          <a class="sponsor-card" href="https://t3ch5.com/" target="_blank" rel="noopener">
-            <span class="sponsor-symbol" aria-hidden="true">T5</span>
-            <span class="sponsor-copy"><strong class="sponsor-name t3ch5-mark">T3ch<span>5</span></strong></span>
           </a>
         </div>
       </div>
