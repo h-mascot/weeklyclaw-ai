@@ -50,6 +50,11 @@ for (const needle of [
   'https://heritagetel.com/',
   'assets/sponsors/heritage-logo.png',
   'assets/weeklyclaw-hosts-source.png?v=20260717-light-smile',
+  'https://x.com/weeklyclaw',
+  'https://youtube.com/@weeklyclaw',
+  'action="https://weeklyclaw.beehiiv.com/create"',
+  'name="sent_from_orchid" value="true"',
+  'id="newsletter"',
 ]) {
   if (!html.includes(needle)) {
     console.error(`Missing expected homepage copy: ${needle}`);

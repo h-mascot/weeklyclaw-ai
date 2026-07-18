@@ -557,6 +557,22 @@
     .join .button:hover { background: #222; border-color: #222; }
     .join .button.secondary { color: var(--ink); background: transparent; border-color: rgba(11,12,13,.55); }
     .join .button.secondary:hover { color: var(--cream); background: var(--ink); border-color: var(--ink); }
+    .newsletter-form { display: grid; gap: 10px; }
+    .newsletter-form-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; }
+    .newsletter-form input[type="email"] {
+      min-height: 46px;
+      width: 100%;
+      padding: 0 14px;
+      border: 1px solid rgba(11,12,13,.55);
+      border-radius: 8px;
+      color: var(--ink);
+      background: rgba(255,255,255,.72);
+      font: 600 15px/1 var(--sans);
+    }
+    .newsletter-form input[type="email"]::placeholder { color: rgba(11,12,13,.62); }
+    .newsletter-note { margin: 0; color: rgba(11,12,13,.66); font: 700 10px/1.45 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .social-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .social-links .button { min-height: 39px; padding-inline: 14px; font-size: 13px; }
 
     .site-footer { padding: 32px 0 44px; color: var(--muted); background: var(--ink); }
     .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding-top: 24px; border-top: 1px solid var(--line); }
@@ -618,6 +634,8 @@
       .host-photo.henry { background-size: 840px auto; background-position: -74px -218px; }
       .host-photo.andy { background-size: 840px auto; background-position: -297px -218px; }
       .join-inner { grid-template-columns: 1fr; }
+      .newsletter-form-row { grid-template-columns: 1fr; }
+      .newsletter-form-row .button { width: 100%; }
       .footer-inner { flex-direction: column; }
     }
   </style>
@@ -748,6 +766,8 @@
     .join .eyebrow { color: var(--coral); }
     .join h2 { color: var(--cream); font-weight: 800; text-transform: uppercase; }
     .join p { color: var(--muted); }
+    .join .newsletter-note { color: var(--muted); }
+    .join .newsletter-form input[type="email"] { color: var(--ink); background: var(--paper); border-color: var(--line); }
     .join .button { color: var(--ink); border-color: var(--coral); background: var(--coral); }
     .join .button.secondary { color: var(--cream); border-color: var(--line); }
     .site-footer { background: var(--ink); }
@@ -1070,6 +1090,9 @@
         <a href="#episodes">Episodes</a>
         <a href="#formats">Formats</a>
         <a href="#community">Community</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="https://x.com/weeklyclaw" target="_blank" rel="noopener">X</a>
+        <a href="https://youtube.com/@weeklyclaw" target="_blank" rel="noopener">YouTube</a>
         <button class="theme-toggle" data-theme-toggle data-scope="desktop" type="button" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Dark mode</span></button>
       </nav>
       <a class="header-cta" href="/episodes?week=20&amp;deck=main">Watch the latest <span class="youtube-mark" aria-hidden="true">▶</span></a>
@@ -1080,6 +1103,9 @@
       <a href="#episodes">Episodes</a>
       <a href="#formats">Formats</a>
       <a href="#community">Community</a>
+      <a href="#newsletter">Newsletter</a>
+      <a href="https://x.com/weeklyclaw" target="_blank" rel="noopener">X</a>
+      <a href="https://youtube.com/@weeklyclaw" target="_blank" rel="noopener">YouTube</a>
       <a class="header-cta" href="/episodes?week=20&amp;deck=main">Watch the latest <span class="youtube-mark" aria-hidden="true">▶</span></a>
     </nav>
   </header>
@@ -1096,6 +1122,7 @@
           <div class="hero-actions">
             <a class="button" href="/episodes?week=20&amp;deck=main">Watch the latest <span aria-hidden="true">▶</span></a>
             <a class="button secondary" href="#episodes">Browse episodes</a>
+            <a class="button secondary" href="#newsletter">Subscribe free</a>
           </div>
         </div>
         <div class="hero-art" role="img" aria-label="Weekly Claw hosts Andy and Henry">
@@ -1222,10 +1249,29 @@
         <div>
           <p class="eyebrow">Come on the show</p>
           <h2 id="join-title">Built something weird? Prove it live.</h2>
-          <p>Pitch a demo, nominate a tool fight, or bring the agent failure everyone can learn from.</p>
+          <p>Pitch a demo, nominate a tool fight, bring the agent failure everyone can learn from, or follow the show where the clips and weekly notes land.</p>
+          <div class="social-links" aria-label="Weekly Claw social links">
+            <a class="button secondary" href="https://x.com/weeklyclaw" target="_blank" rel="noopener">Follow @weeklyclaw on X</a>
+            <a class="button secondary" href="https://youtube.com/@weeklyclaw" target="_blank" rel="noopener">Watch @weeklyclaw on YouTube</a>
+          </div>
         </div>
-        <div class="join-actions">
-          <a class="button" href="mailto:show@weeklyclaw.ai?subject=Weekly%20Claw%20guest%20pitch">Pitch a segment</a>
+        <div class="join-actions" id="newsletter">
+          <form class="newsletter-form" action="https://weeklyclaw.beehiiv.com/create" method="post" target="_blank">
+            <input type="hidden" name="subscribe_error_message" value="Oops, something went wrong.">
+            <input type="hidden" name="subscribe_success_message" value="Subscribed!">
+            <input type="hidden" name="sent_from_orchid" value="true">
+            <input type="hidden" name="signup_flow_id" value="">
+            <input type="hidden" name="automation_ids" value="">
+            <input type="hidden" name="double_opt" value="false">
+            <input type="hidden" name="auto_login_enabled" value="true">
+            <label class="eyebrow" for="newsletter-email">Newsletter</label>
+            <div class="newsletter-form-row">
+              <input id="newsletter-email" type="email" name="email" placeholder="Email" autocomplete="email" required>
+              <button class="button" type="submit">Subscribe</button>
+            </div>
+            <p class="newsletter-note">Connects to WeeklyClaw on Beehiiv. Free, builder-signal only.</p>
+          </form>
+          <a class="button secondary" href="mailto:show@weeklyclaw.ai?subject=Weekly%20Claw%20guest%20pitch">Pitch a segment</a>
           <a class="button secondary" href="/feedback">Give audience feedback</a>
         </div>
       </div>
@@ -1239,6 +1285,9 @@
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="#episodes">Episodes</a>
         <a href="#formats">Formats</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="https://x.com/weeklyclaw" target="_blank" rel="noopener">X</a>
+        <a href="https://youtube.com/@weeklyclaw" target="_blank" rel="noopener">YouTube</a>
         <a href="mailto:show@weeklyclaw.ai">Contact</a>
         <a href="/feedback">Feedback</a>
       </nav>
