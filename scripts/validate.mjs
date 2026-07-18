@@ -55,10 +55,29 @@ for (const needle of [
   'action="https://weeklyclaw.beehiiv.com/create"',
   'name="sent_from_orchid" value="true"',
   'id="newsletter"',
+  'class="social-icon"',
+  'aria-label="Follow Weekly Claw on X"',
+  'aria-label="Watch Weekly Claw on YouTube"',
 ]) {
   if (!html.includes(needle)) {
     console.error(`Missing expected homepage copy: ${needle}`);
     process.exit(1);
+  }
+}
+
+const desktopNav = html.match(/<nav class="desktop-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
+const mobileNav = html.match(/<nav class="mobile-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
+const footerNav = html.match(/<nav class="footer-links"[\s\S]*?<\/nav>/)?.[0] ?? '';
+for (const [label, nav] of [['desktop nav', desktopNav], ['mobile nav', mobileNav], ['footer nav', footerNav]]) {
+  if (!nav) {
+    console.error(`Missing ${label}`);
+    process.exit(1);
+  }
+  for (const forbidden of ['#newsletter', 'https://x.com/weeklyclaw', 'https://youtube.com/@weeklyclaw', '>Newsletter<', '>X<', '>YouTube<']) {
+    if (nav.includes(forbidden)) {
+      console.error(`${label} still contains forbidden menu item: ${forbidden}`);
+      process.exit(1);
+    }
   }
 }
 
