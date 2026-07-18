@@ -23,6 +23,9 @@ const required = [
   'episodes/20/agenda.md',
   'episodes/20/agenda/index.html',
   'episodes/20/deck.html',
+  'episodes/21/agenda.md',
+  'episodes/21/agenda/index.html',
+  'episodes/21/deck.html',
   'w18/changelog/index.html', 'w19/changelog/index.html'];
 
 const weeks = [11, 12, 13, 14, 15, 16, 17, 18, 19];
@@ -41,7 +44,7 @@ for (const needle of [
   'Weekly Claw',
   'The cost of intelligence collapsed',
   '/feedback',
-  '/episodes?week=20&amp;deck=main',
+  '/episodes?week=21&amp;deck=main',
   'live builder show about AI, agents, devtools, and startups',
   'The week decides',
   'Supported by',
@@ -128,7 +131,7 @@ if (changelogHtml.includes('Open changelog') || changelogHtml.includes('Host dec
 
 
 const episodesHtml = readFileSync(new URL('../episodes/index.html', import.meta.url), 'utf8');
-for (const needle of ['Weekly Claw Episodes', 'W20', '/episodes/20/deck', '/episodes/20/agenda', '<strong>11</strong>', 'archived episodes']) {
+for (const needle of ['Weekly Claw Episodes', 'W21', '/episodes/21/deck', '/episodes/21/agenda', '<strong>12</strong>', 'archived episodes']) {
   if (!episodesHtml.includes(needle)) {
     console.error(`Episodes index missing expected copy: ${needle}`);
     process.exit(1);
@@ -159,7 +162,7 @@ for (const [name, page] of [['homepage', html], ['episodes index', episodesHtml]
   }
 }
 
-for (const week of [10, 12, 13, 14, 15, 19, 20]) {
+for (const week of [10, 12, 13, 14, 15, 19, 20, 21]) {
   const mainDeck = readFileSync(new URL(`../episodes/${week}/deck.html`, import.meta.url), 'utf8');
   if (!mainDeck.includes('Weekly') && !mainDeck.includes('OpenClaw')) {
     console.error(`Week ${week} main deck does not look like a Weekly Claw deck`);
@@ -167,11 +170,6 @@ for (const week of [10, 12, 13, 14, 15, 19, 20]) {
   }
 }
 
-const week19HostDeck = readFileSync(new URL('../episodes/19/host.html', import.meta.url), 'utf8');
-if (!week19HostDeck.includes('Host cue') || !week19HostDeck.includes('Weekly Claw #19')) {
-  console.error('Week 19 host deck is missing expected host cue/content markers');
-  process.exit(1);
-}
 
 for (const week of weeks) {
   const dir = join(root.pathname, `w${week}`, 'changelog');

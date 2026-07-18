@@ -30,8 +30,10 @@ Recent Weekly Claw main show decks are hosted directly under WeeklyClaw.ai:
 - `/episodes/14/deck.html`
 - `/episodes/15/deck.html`
 - `/episodes/19/deck.html`
+- `/episodes/20/deck.html` and `/episodes/20/agenda/`
+- `/episodes/21/deck.html`, `/episodes/21/agenda/`, and `/episodes/21/host-cheat-sheet/`
 
-Episode 19 also keeps an internal host cue deck at `/episodes/19/host.html`, but the public UI links to the main room deck and the changelog deck only.
+Episode 19 also keeps an internal host cue deck at `/episodes/19/host.html`, but the public UI links to the main room deck and the changelog deck only. Episode 21 is the current latest episode packet.
 
 ## Local check
 
