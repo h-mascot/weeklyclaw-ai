@@ -44,8 +44,8 @@ for (const needle of [
   'Weekly Claw',
   'The cost of intelligence collapsed',
   '/feedback',
-  '/episodes?week=21&amp;deck=main',
-  'live builder show about AI, agents, devtools, and startups',
+  'https://youtube.com/@weeklyclaw',
+  'live builder show about AI, agents, devtools, and the future of work',
   'The week decides',
   'Supported by',
   'Herald Labs',
@@ -76,7 +76,7 @@ for (const [label, nav] of [['desktop nav', desktopNav], ['mobile nav', mobileNa
     console.error(`Missing ${label}`);
     process.exit(1);
   }
-  for (const forbidden of ['#newsletter', 'https://x.com/weeklyclaw', 'https://youtube.com/@weeklyclaw', '>Newsletter<', '>X<', '>YouTube<']) {
+  for (const forbidden of ['#newsletter', 'https://x.com/weeklyclaw', '>Newsletter<', '>X<', '>YouTube<']) {
     if (nav.includes(forbidden)) {
       console.error(`${label} still contains forbidden menu item: ${forbidden}`);
       process.exit(1);
