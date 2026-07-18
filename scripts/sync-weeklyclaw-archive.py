@@ -27,6 +27,7 @@ def repo_root_from_script() -> Path:
 
 def copy_tree_merge(src: Path, dst: Path) -> None:
     for root, dirs, files in os.walk(src):
+        dirs[:] = [d for d in dirs if d not in {"legacy-week-page", "recordings"}]
         rel = Path(root).relative_to(src)
         out = dst / rel
         out.mkdir(parents=True, exist_ok=True)
