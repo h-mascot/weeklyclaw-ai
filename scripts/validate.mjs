@@ -47,6 +47,7 @@ for (const needle of [
   'https://youtu.be/-AyhXoB20c0?si=c85QY4T_WjS84ehC',
   'live builder show about AI, agents, devtools, and the future of work',
   'The week decides',
+  'Latest Episodes',
   'Supported by',
   'Herald Labs',
   'https://labs.theherald.co/',
