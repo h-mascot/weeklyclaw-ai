@@ -50,6 +50,7 @@ for (const needle of [
   'Supported by',
   'Herald Labs',
   'https://labs.theherald.co/',
+  'https://superada.ai/',
   'https://heritagetel.com/',
   'assets/sponsors/heritage-logo.png',
   'assets/weeklyclaw-hosts-source.png?v=20260717-light-smile',
