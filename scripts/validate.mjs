@@ -44,7 +44,7 @@ for (const needle of [
   'Weekly Claw',
   'The cost of intelligence collapsed',
   '/feedback',
-  'https://youtube.com/@weeklyclaw',
+  'https://youtu.be/-AyhXoB20c0?si=c85QY4T_WjS84ehC',
   'live builder show about AI, agents, devtools, and the future of work',
   'The week decides',
   'Supported by',
