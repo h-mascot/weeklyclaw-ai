@@ -97,7 +97,7 @@ def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archi
         local_thumbnail = f"/assets/youtube-thumbnails/w{episode}.jpg"
         if archive:
             media = (
-                f'<a class="thumb" href="{video["url"]}" target="_blank" rel="noopener" '
+                f'<a class="thumb youtube-thumb" href="{video["url"]}" target="_blank" rel="noopener" '
                 f'aria-label="Watch Weekly Claw episode {episode} on YouTube">'
                 f'<img src="{local_thumbnail}" alt="YouTube thumbnail for Weekly Claw episode {episode}">'
                 f'<span class="week-number">W{episode}</span><span class="availability">Video + slides</span></a>'
@@ -112,7 +112,7 @@ def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archi
             block = re.sub(r'<div class="card-actions">[\s\S]*?</div>', actions, block, count=1)
         else:
             media = (
-                f'<a class="episode-thumb" href="{video["url"]}" target="_blank" rel="noopener" '
+                f'<a class="episode-thumb youtube-thumb" href="{video["url"]}" target="_blank" rel="noopener" '
                 f'aria-label="Watch Weekly Claw episode {episode} on YouTube">'
                 f'<img src="assets/youtube-thumbnails/w{episode}.jpg" alt="YouTube thumbnail for Weekly Claw episode {episode}">'
                 f'<span class="episode-week">W{episode}</span></a>'
