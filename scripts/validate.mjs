@@ -45,6 +45,9 @@ for (const needle of [
   'The cost of intelligence collapsed',
   '/feedback',
   'https://www.youtube.com/watch?v=dquJyEBQWpE',
+  'https://www.youtube.com/watch?v=MSRFmpDfaTg',
+  'assets/youtube-thumbnails/w21.jpg',
+  'assets/youtube-thumbnails/w20.jpg',
   'live builder show about AI, agents, devtools, and the future of work',
   'The week decides',
   'Latest Episodes',
@@ -133,10 +136,19 @@ if (changelogHtml.includes('Open changelog') || changelogHtml.includes('Host dec
 
 
 const episodesHtml = readFileSync(new URL('../episodes/index.html', import.meta.url), 'utf8');
-for (const needle of ['Weekly Claw Episodes', 'W21', '/episodes/21/deck', '/episodes/21/agenda', '<strong>12</strong>', 'archived episodes']) {
+for (const needle of ['Weekly Claw Episodes', 'W21', '/episodes/21/deck', 'https://www.youtube.com/watch?v=dquJyEBQWpE', 'https://www.youtube.com/watch?v=MSRFmpDfaTg', '/assets/youtube-thumbnails/w21.jpg', '/assets/youtube-thumbnails/w20.jpg', '<strong>12</strong>', 'archived episodes']) {
   if (!episodesHtml.includes(needle)) {
     console.error(`Episodes index missing expected copy: ${needle}`);
     process.exit(1);
+  }
+}
+
+for (const [name, page] of [['homepage', html], ['episodes index', episodesHtml]]) {
+  for (const forbidden of ['>Agenda<', 'slides + agenda', 'Slides + agenda', 'full agenda', '/agenda">']) {
+    if (page.includes(forbidden)) {
+      console.error(`${name} still exposes removed agenda UI: ${forbidden}`);
+      process.exit(1);
+    }
   }
 }
 
@@ -193,6 +205,15 @@ for (const week of weeks) {
   const shortRoute = readFileSync(new URL(`../w${week}/index.html`, import.meta.url), 'utf8');
   if (!shortRoute.includes(`/w${week}/changelog/`)) {
     console.error(`Week ${week} short route does not redirect to changelog`);
+    process.exit(1);
+  }
+}
+
+const vercelConfig = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
+for (const source of ['/episodes/:episode/agenda', '/episodes/:episode/agenda.md']) {
+  const redirect = vercelConfig.redirects?.find((item) => item.source === source);
+  if (!redirect || redirect.destination !== '/episodes?week=:episode&deck=main' || redirect.permanent !== true) {
+    console.error(`Missing permanent agenda redirect: ${source}`);
     process.exit(1);
   }
 }

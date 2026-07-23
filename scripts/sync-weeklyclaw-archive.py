@@ -5,13 +5,13 @@ Default source: /home/henrymascot/weeklyclaw
 Default destination: current repo root
 
 This intentionally does not delete repo files. It only copies/updates episode files,
-regenerates simple agenda HTML pages, and refreshes the homepage/episode archive
-latest-card metadata.
+refreshes the homepage/episode archive, and connects published YouTube videos.
 """
 from __future__ import annotations
 
 import argparse
 import html
+import json
 import os
 import re
 import shutil
@@ -23,6 +23,111 @@ MONTH_RE = r"(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|J
 
 def repo_root_from_script() -> Path:
     return Path(__file__).resolve().parents[1]
+
+
+def fetch_youtube_episodes() -> dict[int, dict[str, str]]:
+    """Return public Weekly Claw videos keyed by episode number.
+
+    Sync remains usable offline: a missing yt-dlp binary or network failure simply
+    leaves existing card media unchanged.
+    """
+    try:
+        result = subprocess.run(
+            [
+                "yt-dlp",
+                "--flat-playlist",
+                "--playlist-end",
+                "50",
+                "--dump-single-json",
+                "https://www.youtube.com/@weeklyclaw/videos",
+            ],
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=90,
+        )
+        playlist = json.loads(result.stdout)
+    except (FileNotFoundError, json.JSONDecodeError, subprocess.SubprocessError):
+        return {}
+
+    episodes: dict[int, dict[str, str]] = {}
+    for entry in playlist.get("entries") or []:
+        video_id = entry.get("id")
+        title = entry.get("title") or ""
+        match = re.search(r"Weekly Claw\s*#(\d+)\b", title, re.I)
+        if not video_id or not match:
+            continue
+        episode = int(match.group(1))
+        episodes[episode] = {
+            "url": f"https://www.youtube.com/watch?v={video_id}",
+            "thumbnail": f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg",
+        }
+    return episodes
+
+
+def download_youtube_thumbnails(repo: Path, videos: dict[int, dict[str, str]]) -> None:
+    asset_dir = repo / "assets" / "youtube-thumbnails"
+    asset_dir.mkdir(parents=True, exist_ok=True)
+    for episode, video in videos.items():
+        destination = asset_dir / f"w{episode}.jpg"
+        try:
+            subprocess.run(
+                ["curl", "-L", "--fail", "--silent", "--show-error", video["thumbnail"], "-o", str(destination)],
+                check=True,
+                timeout=45,
+            )
+        except (FileNotFoundError, subprocess.SubprocessError):
+            destination.unlink(missing_ok=True)
+
+
+def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archive: bool) -> str:
+    """Convert cards for published videos to Video + Slides without touching other cards."""
+    card_class = "week-card" if archive else "episode-card"
+    week_class = "week-number" if archive else "episode-week"
+
+    for episode, video in videos.items():
+        pattern = re.compile(
+            rf'(<article class="{card_class}"[^>]*>(?:(?!</article>)[\s\S])*?'
+            rf'<span class="{week_class}">W{episode}</span>(?:(?!</article>)[\s\S])*?</article>)'
+        )
+        match = pattern.search(text)
+        if not match:
+            continue
+        block = match.group(1)
+        local_thumbnail = f"/assets/youtube-thumbnails/w{episode}.jpg"
+        if archive:
+            media = (
+                f'<a class="thumb" href="{video["url"]}" target="_blank" rel="noopener" '
+                f'aria-label="Watch Weekly Claw episode {episode} on YouTube">'
+                f'<img src="{local_thumbnail}" alt="YouTube thumbnail for Weekly Claw episode {episode}">'
+                f'<span class="week-number">W{episode}</span><span class="availability">Video + slides</span></a>'
+            )
+            block = re.sub(r'<div class="thumb">[\s\S]*?</div>', media, block, count=1)
+            block = re.sub(r'<p class="card-kicker">.*?</p>', '<p class="card-kicker">Video · main slides</p>', block, count=1)
+            actions = (
+                f'<div class="card-actions"><a class="source-link" href="{video["url"]}" target="_blank" rel="noopener">Video</a>'
+                f'<button class="deck-button secondary" type="button" data-week="{episode}" data-deck="main" '
+                f'data-title="W{episode} · Main show slides" data-url="/episodes/{episode}/deck">Slides</button></div>'
+            )
+            block = re.sub(r'<div class="card-actions">[\s\S]*?</div>', actions, block, count=1)
+        else:
+            media = (
+                f'<a class="episode-thumb" href="{video["url"]}" target="_blank" rel="noopener" '
+                f'aria-label="Watch Weekly Claw episode {episode} on YouTube">'
+                f'<img src="assets/youtube-thumbnails/w{episode}.jpg" alt="YouTube thumbnail for Weekly Claw episode {episode}">'
+                f'<span class="episode-week">W{episode}</span></a>'
+            )
+            block = re.sub(r'<div class="episode-thumb">[\s\S]*?</div>', media, block, count=1)
+            block = re.sub(r'<p class="packet-label">.*?</p>', '<p class="packet-label">Video + slides</p>', block, count=1)
+            actions = (
+                f'<div class="episode-actions">\n'
+                f'              <a class="button small" href="{video["url"]}" target="_blank" rel="noopener">Video</a>\n'
+                f'              <a class="button small secondary" href="/episodes?week={episode}&amp;deck=main">Slides</a>\n'
+                f'            </div>'
+            )
+            block = re.sub(r'<div class="episode-actions">[\s\S]*?</div>', actions, block, count=1)
+        text = text[:match.start()] + block + text[match.end():]
+    return text
 
 
 def copy_tree_merge(src: Path, dst: Path) -> None:
@@ -77,7 +182,7 @@ def deck_meta(repo: Path, ep: int) -> dict[str, str]:
                 desc = strip_tags(clean)
                 break
     if not desc:
-        desc = "Latest Weekly Claw host deck, agenda, and show packet."
+        desc = "Latest Weekly Claw video and main show slides."
     if len(desc) > 170:
         desc = desc[:167].rsplit(" ", 1)[0] + "…"
 
@@ -193,7 +298,7 @@ def write_markdown_page(repo: Path, ep: int, source_name: str, route_name: str, 
 <body><header><nav class="shell"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/{ep}/deck">Open slides</a></div></nav></header><main class="shell"><section class="intro"><p class="eyebrow">Episode {ep} · {html.escape(title_suffix)}</p><h1>{html.escape(meta['headline'])}</h1></section><article>{body}</article></main><footer class="shell">Weekly Claw #{ep} · {html.escape(title_suffix)}</footer></body></html>
 """)
 
-def update_homepage(repo: Path, latest: int, meta: dict[str, str]) -> None:
+def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[int, dict[str, str]]) -> None:
     path = repo / "index.html"
     text = path.read_text()
     # Only update explicit latest CTAs. Historical episode-card links must keep their own week.
@@ -207,34 +312,35 @@ def update_homepage(repo: Path, latest: int, meta: dict[str, str]) -> None:
     card = f'''          <article class="episode-card">
             <div class="episode-thumb"><img src="assets/episode-art-v2/signal-studio.jpg" alt="Editorial illustration of a cobalt broadcast studio connecting unusual software objects"><span class="episode-week">W{latest}</span></div>
             <div class="episode-copy">
-              <p class="packet-label">Main slides + agenda</p>
+              <p class="packet-label">Main slides</p>
               <h3>{html.escape(meta['headline'])}</h3>
               <p>{html.escape(meta['desc'])}</p>
             </div>
             <div class="episode-actions">
-              <a class="button small" href="/episodes?week={latest}&amp;deck=main">Main slides</a>
-              <a class="button small secondary" href="/episodes/{latest}/agenda">Agenda</a>
+              <a class="button small" href="/episodes?week={latest}&amp;deck=main">Slides</a>
             </div>
           </article>'''
     if f'<span class="episode-week">W{latest}</span>' not in text:
         text = text.replace('        <div class="archive-grid">\n', '        <div class="archive-grid">\n' + card + '\n')
+    text = refresh_youtube_cards(text, videos, archive=False)
     path.write_text(text)
 
 
-def update_episodes_index(repo: Path, latest: int, meta: dict[str, str]) -> None:
+def update_episodes_index(repo: Path, latest: int, meta: dict[str, str], videos: dict[int, dict[str, str]]) -> None:
     path = repo / "episodes" / "index.html"
     text = path.read_text()
     count = len([p for p in (repo / "episodes").iterdir() if p.is_dir() and p.name.isdigit() and (p / "deck.html").exists() or (p.is_dir() and p.name.isdigit() and (repo / f"w{p.name}" / "changelog" / "index.html").exists())])
     text = re.sub(r'<div class="fact"><strong>\d+</strong><span>archived episodes</span></div>', f'<div class="fact"><strong>{count:02d}</strong><span>archived episodes</span></div>', text)
 
     card = f'''          <article class="week-card" data-kind="main">
-            <div class="thumb"><img src="/assets/episode-art-v2/signal-studio.jpg" alt="Cobalt broadcast studio connecting unusual software objects"><span class="week-number">W{latest}</span><span class="availability">Slides + agenda</span></div>
-            <div class="card-copy"><p class="card-kicker">Main slides · full agenda</p><h3>{html.escape(meta['headline'])}</h3><p>{html.escape(meta['desc'])}</p></div>
-            <div class="card-actions"><button class="deck-button" type="button" data-week="{latest}" data-deck="main" data-title="W{latest} · Main show slides" data-url="/episodes/{latest}/deck">Main slides</button><a class="source-link secondary" href="/episodes/{latest}/agenda">Agenda</a><a class="source-link secondary" href="/episodes/{latest}/host-cheat-sheet">Host sheet</a></div>
+            <div class="thumb"><img src="/assets/episode-art-v2/signal-studio.jpg" alt="Cobalt broadcast studio connecting unusual software objects"><span class="week-number">W{latest}</span><span class="availability">Main slides</span></div>
+            <div class="card-copy"><p class="card-kicker">Main slides</p><h3>{html.escape(meta['headline'])}</h3><p>{html.escape(meta['desc'])}</p></div>
+            <div class="card-actions"><button class="deck-button" type="button" data-week="{latest}" data-deck="main" data-title="W{latest} · Main show slides" data-url="/episodes/{latest}/deck">Slides</button></div>
           </article>'''
     if f'<span class="week-number">W{latest}</span>' not in text:
         text = text.replace('        <div class="gallery" id="gallery">\n', '        <div class="gallery" id="gallery">\n' + card + '\n')
-    text = text.replace('W20 includes its original host slides and agenda;', f'W{latest} includes its original host slides and agenda;')
+    text = re.sub(r'W\d+ includes its original host slides and agenda;', f'W{latest} includes its original host slides;', text)
+    text = refresh_youtube_cards(text, videos, archive=True)
     path.write_text(text)
 
 
@@ -278,16 +384,17 @@ def main() -> int:
         raise SystemExit("No episode decks found")
     latest = max(episode_nums)
     meta = deck_meta(repo, latest)
-    write_agenda_html(repo, latest, meta)
+    videos = fetch_youtube_episodes()
+    download_youtube_thumbnails(repo, videos)
     write_markdown_page(repo, latest, "host-cheat-sheet.md", "host-cheat-sheet", "Host Cheat Sheet", meta)
-    update_homepage(repo, latest, meta)
-    update_episodes_index(repo, latest, meta)
+    update_homepage(repo, latest, meta, videos)
+    update_episodes_index(repo, latest, meta, videos)
     update_validate(repo, latest)
 
     print(f"SYNC_OK latest={latest} headline={meta['headline']!r}")
     if args.commit or args.push:
         subprocess.run(["npm", "run", "build"], cwd=repo, check=True)
-        subprocess.run(["git", "add", "index.html", "episodes/index.html", f"episodes/{latest}", "scripts/validate.mjs", "scripts/sync-weeklyclaw-archive.py", "README.md"], cwd=repo, check=True)
+        subprocess.run(["git", "add", "index.html", "episodes/index.html", "assets/youtube-thumbnails", f"episodes/{latest}", "scripts/validate.mjs", "scripts/sync-weeklyclaw-archive.py", "README.md"], cwd=repo, check=True)
         diff = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=repo)
         if diff.returncode == 0:
             print("GIT_NO_CHANGES")
