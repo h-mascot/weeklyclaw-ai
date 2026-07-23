@@ -25,10 +25,12 @@ Weekly Claw changelog decks are published into short WeeklyClaw.ai paths:
 Recent Weekly Claw main show decks are hosted directly under WeeklyClaw.ai:
 
 - `/episodes/10/deck.html`
+- `/episodes/11/deck.html`
 - `/episodes/12/deck.html`
 - `/episodes/13/deck.html`
 - `/episodes/14/deck.html`
 - `/episodes/15/deck.html`
+- `/episodes/18/deck.html`
 - `/episodes/19/deck.html`
 - `/episodes/20/deck.html` and `/episodes/20/agenda/`
 - `/episodes/21/deck.html`, `/episodes/21/agenda/`, and `/episodes/21/host-cheat-sheet/`

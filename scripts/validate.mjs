@@ -10,12 +10,14 @@ const required = [
   'changelog/index.html',
   'episodes/index.html',
   'episodes/10/deck.html',
+  'episodes/11/deck.html',
   'episodes/12/deck.html',
   'episodes/13/deck.html',
   'episodes/13/agenda.md',
   'episodes/14/deck.html',
   'episodes/15/deck.html',
   'episodes/15/agenda.md',
+  'episodes/18/deck.html',
   'episodes/19/deck.html',
   'episodes/19/host.html',
   'episodes/19/viewer-agenda.md',
@@ -125,7 +127,7 @@ if (!readFileSync(new URL('../README.md', import.meta.url), 'utf8').includes('/w
 }
 
 const changelogHtml = readFileSync(new URL('../changelog/index.html', import.meta.url), 'utf8');
-for (const needle of ['Release changelogs', '/w11/changelog/', '/w18/changelog/', '/w19/changelog/', '/episodes/12/deck', '/episodes/14/deck', '/episodes/19/deck', 'Episode deck', 'Changelog/DX deck']) {
+for (const needle of ['Release changelogs', '/w11/changelog/', '/w18/changelog/', '/w19/changelog/', '/episodes/11/deck', '/episodes/12/deck', '/episodes/14/deck', '/episodes/18/deck', '/episodes/19/deck', 'Episode deck', 'Changelog/DX deck']) {
   if (!changelogHtml.includes(needle)) {
     console.error(`Changelog index missing expected copy: ${needle}`);
     process.exit(1);
@@ -179,7 +181,7 @@ for (const [name, page] of [['homepage', html], ['episodes index', episodesHtml]
   }
 }
 
-for (const week of [10, 12, 13, 14, 15, 19, 20, 21]) {
+for (const week of [10, 11, 12, 13, 14, 15, 18, 19, 20, 21]) {
   const mainDeck = readFileSync(new URL(`../episodes/${week}/deck.html`, import.meta.url), 'utf8');
   if (!mainDeck.includes('Weekly') && !mainDeck.includes('OpenClaw')) {
     console.error(`Week ${week} main deck does not look like a Weekly Claw deck`);
@@ -187,6 +189,19 @@ for (const week of [10, 12, 13, 14, 15, 19, 20, 21]) {
   }
 }
 
+const archivedMainDeckCanaries = new Map([
+  [11, ['The Weekly Claw #11', 'Friday, April 24, 2026', "That's <span class=\"gradient-text\">Episode 11"]],
+  [18, ['The Weekly Claw #18', 'Skill Workshop is your homework', 'Host: Andy · @AndyML']],
+]);
+for (const [week, canaries] of archivedMainDeckCanaries) {
+  const mainDeck = readFileSync(new URL(`../episodes/${week}/deck.html`, import.meta.url), 'utf8');
+  for (const canary of canaries) {
+    if (!mainDeck.includes(canary)) {
+      console.error(`Week ${week} archived main deck is missing source canary: ${canary}`);
+      process.exit(1);
+    }
+  }
+}
 
 for (const week of weeks) {
   const dir = join(root.pathname, `w${week}`, 'changelog');
