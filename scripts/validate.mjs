@@ -41,6 +41,9 @@ if (missing.length) {
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 for (const needle of [
+  '<title>Weekly Claw</title>',
+  '<meta property="og:title" content="Weekly Claw">',
+  '<meta name="twitter:title" content="Weekly Claw">',
   'Weekly Claw',
   'The cost of intelligence collapsed',
   '/feedback',
