@@ -144,7 +144,7 @@ def copy_tree_merge(src: Path, dst: Path) -> None:
 
 
 def strip_tags(s: str) -> str:
-    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", s)).strip()
+    return html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", s))).strip()
 
 
 def deck_meta(repo: Path, ep: int) -> dict[str, str]:
@@ -157,6 +157,10 @@ def deck_meta(repo: Path, ep: int) -> dict[str, str]:
         title = strip_tags(m.group(1))
     h = re.search(r"<h1[^>]*>(.*?)</h1>", text, re.I | re.S) or re.search(r"<h2[^>]*>(.*?)</h2>", text, re.I | re.S)
     headline = strip_tags(h.group(1)) if h else title
+    if re.sub(r"[^a-z0-9]+", " ", headline.lower()).strip() in {"weekly claw", f"weekly claw {ep}"}:
+        story_frame = re.search(r"<h2[^>]*>(.*?)</h2>", text, re.I | re.S)
+        if story_frame:
+            headline = strip_tags(story_frame.group(1))
     if not headline:
         headline = f"Weekly Claw #{ep}"
 
@@ -175,6 +179,10 @@ def deck_meta(repo: Path, ep: int) -> dict[str, str]:
     thesis = re.search(r"##\s*Episode Thesis\s+(.+?)(?:\n##|\Z)", md, re.I | re.S)
     if thesis:
         desc = strip_tags(thesis.group(1).replace("**", ""))
+    if not desc:
+        cold_open = re.search(r"##\s*Cold Open[^\n]*\n+([^\n]+)", md, re.I)
+        if cold_open:
+            desc = strip_tags(re.sub(r"[#*_`>]+", " ", cold_open.group(1)))
     if not desc and md:
         for para in re.split(r"\n\s*\n", md):
             clean = re.sub(r"[#*_`>\-]+", " ", para).strip()
@@ -302,8 +310,8 @@ def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[
     path = repo / "index.html"
     text = path.read_text()
     # Only update explicit latest CTAs. Historical episode-card links must keep their own week.
-    text = text.replace('href="/episodes?week=20&amp;deck=main">Watch the latest', f'href="/episodes?week={latest}&amp;deck=main">Watch the latest')
-    text = text.replace('href="/episodes?week=20&amp;deck=main">Open episode', f'href="/episodes?week={latest}&amp;deck=main">Open episode')
+    text = re.sub(r'href="/episodes\?week=\d+&amp;deck=main">Watch the latest', f'href="/episodes?week={latest}&amp;deck=main">Watch the latest', text)
+    text = re.sub(r'href="/episodes\?week=\d+&amp;deck=main">Open episode', f'href="/episodes?week={latest}&amp;deck=main">Open episode', text)
     text = re.sub(r'<div class="latest-number" aria-hidden="true">\d+</div>', f'<div class="latest-number" aria-hidden="true">{latest}</div>', text)
     text = re.sub(r'<p class="latest-label">Featured latest episode · .*?</p>', f'<p class="latest-label">Featured latest episode · {html.escape(meta["date"])}</p>', text)
     text = re.sub(r'<h2 id="latest-title">.*?</h2>', f'<h2 id="latest-title">{html.escape(meta["headline"])}</h2>', text)
@@ -320,7 +328,10 @@ def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[
               <a class="button small" href="/episodes?week={latest}&amp;deck=main">Slides</a>
             </div>
           </article>'''
-    if f'<span class="episode-week">W{latest}</span>' not in text:
+    existing_card = re.compile(rf'          <article class="episode-card">(?:(?!          </article>).)*?<span class="episode-week">W{latest}</span>(?:(?!          </article>).)*?          </article>', re.S)
+    if existing_card.search(text):
+        text = existing_card.sub(card, text, count=1)
+    else:
         text = text.replace('        <div class="archive-grid">\n', '        <div class="archive-grid">\n' + card + '\n')
     text = refresh_youtube_cards(text, videos, archive=False)
     path.write_text(text)
@@ -337,7 +348,10 @@ def update_episodes_index(repo: Path, latest: int, meta: dict[str, str], videos:
             <div class="card-copy"><p class="card-kicker">Main slides</p><h3>{html.escape(meta['headline'])}</h3><p>{html.escape(meta['desc'])}</p></div>
             <div class="card-actions"><button class="deck-button" type="button" data-week="{latest}" data-deck="main" data-title="W{latest} · Main show slides" data-url="/episodes/{latest}/deck">Slides</button></div>
           </article>'''
-    if f'<span class="week-number">W{latest}</span>' not in text:
+    existing_card = re.compile(rf'          <article class="week-card"[^>]*>(?:(?!          </article>).)*?<span class="week-number">W{latest}</span>(?:(?!          </article>).)*?          </article>', re.S)
+    if existing_card.search(text):
+        text = existing_card.sub(card, text, count=1)
+    else:
         text = text.replace('        <div class="gallery" id="gallery">\n', '        <div class="gallery" id="gallery">\n' + card + '\n')
     text = re.sub(r'W\d+ includes its original host slides and agenda;', f'W{latest} includes its original host slides;', text)
     text = refresh_youtube_cards(text, videos, archive=True)
@@ -353,12 +367,32 @@ def update_validate(repo: Path, latest: int) -> None:
     text = text.replace("'/episodes/20/deck'", f"'/episodes/{latest}/deck'")
     text = text.replace("'/episodes/20/agenda'", f"'/episodes/{latest}/agenda'")
     text = text.replace("'W20'", f"'W{latest}'")
-    text = text.replace("'<strong>11</strong>'", "'<strong>12</strong>'")
+    count = len([p for p in (repo / "episodes").iterdir() if p.is_dir() and p.name.isdigit() and ((p / "deck.html").exists() or (repo / f"w{p.name}" / "changelog" / "index.html").exists())])
+    text = re.sub(r"(for \(const needle of \['Weekly Claw Episodes', )'W\d+'", rf"\1'W{latest}'", text)
+    text = re.sub(rf"('W{latest}', )'/episodes/\d+/deck'", rf"\1'/episodes/{latest}/deck'", text)
+    text = re.sub(r"'<strong>\d+</strong>', 'archived episodes'", f"'<strong>{count:02d}</strong>', 'archived episodes'", text)
     text = text.replace("'/episodes?week=20&amp;deck=main'", f"'/episodes?week={latest}&amp;deck=main'")
     text = text.replace("const week19HostDeck = readFileSync(new URL('../episodes/19/host.html', import.meta.url), 'utf8');\nif (!week19HostDeck.includes('Host cue') || !week19HostDeck.includes('Weekly Claw #19')) {\n  console.error('Week 19 host deck is missing expected host cue/content markers');\n  process.exit(1);\n}\n", "")
     # Include latest deck in basic deck sanity loop.
-    text = text.replace("for (const week of [10, 12, 13, 14, 15, 19, 20])", f"for (const week of [10, 12, 13, 14, 15, 19, 20, {latest}])")
+    def include_latest(match: re.Match[str]) -> str:
+        weeks = [int(value) for value in re.findall(r"\d+", match.group(1))]
+        if latest not in weeks:
+            weeks.append(latest)
+        return "for (const week of [" + ", ".join(map(str, weeks)) + "])"
+    text = re.sub(r"for \(const week of \[([0-9, ]+)\]\)", include_latest, text, count=1)
     path.write_text(text)
+
+
+def public_episode_paths(repo: Path, latest: int) -> list[Path]:
+    episode = repo / "episodes" / str(latest)
+    candidates = [
+        episode / "deck.html",
+        episode / "agenda.md",
+        episode / "agenda" / "index.html",
+        episode / "source-assets",
+        episode / "host-cheat-sheet",
+    ]
+    return [path for path in candidates if path.exists()]
 
 
 def main() -> int:
@@ -386,6 +420,7 @@ def main() -> int:
     meta = deck_meta(repo, latest)
     videos = fetch_youtube_episodes()
     download_youtube_thumbnails(repo, videos)
+    write_agenda_html(repo, latest, meta)
     write_markdown_page(repo, latest, "host-cheat-sheet.md", "host-cheat-sheet", "Host Cheat Sheet", meta)
     update_homepage(repo, latest, meta, videos)
     update_episodes_index(repo, latest, meta, videos)
@@ -394,7 +429,8 @@ def main() -> int:
     print(f"SYNC_OK latest={latest} headline={meta['headline']!r}")
     if args.commit or args.push:
         subprocess.run(["npm", "run", "build"], cwd=repo, check=True)
-        subprocess.run(["git", "add", "index.html", "episodes/index.html", "assets/youtube-thumbnails", f"episodes/{latest}", "scripts/validate.mjs", "scripts/sync-weeklyclaw-archive.py", "README.md"], cwd=repo, check=True)
+        public_paths = [str(path.relative_to(repo)) for path in public_episode_paths(repo, latest)]
+        subprocess.run(["git", "add", "index.html", "episodes/index.html", "assets/youtube-thumbnails", *public_paths, "scripts/validate.mjs", "scripts/sync-weeklyclaw-archive.py", "README.md"], cwd=repo, check=True)
         diff = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=repo)
         if diff.returncode == 0:
             print("GIT_NO_CHANGES")
