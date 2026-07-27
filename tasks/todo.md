@@ -18,3 +18,12 @@
 - Final Codex review: `~/.codex/skills/codex-review/scripts/codex-review --parallel-tests "python3 -m unittest scripts/test_sync_weeklyclaw_archive.py && npm run build"` returned no accepted/actionable findings.
 - Jeff Dean review: media identity remains owned by the existing archive sync pipeline; no duplicate episode metadata source was introduced.
 - Luke W + Ryan Singer review: player sits immediately below the hero, keeps one obvious two-mode control, and remains usable without horizontal overflow on mobile.
+
+# Episode 22 canonical title and approved artwork
+
+- [x] Add a versioned Episode 22 thumbnail asset and persistent sync override
+- [x] Make `The Sandbox Failed` canonical on homepage, archive, and episode surfaces
+- [x] Add focused validation coverage
+- [x] Run tests, static build, and Codex review
+- [ ] Commit and push the production website change
+- [ ] Verify live desktop and mobile title/artwork

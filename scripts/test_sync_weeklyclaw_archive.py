@@ -76,6 +76,38 @@ class SyncMetadataTests(unittest.TestCase):
         self.assertNotIn("assets/youtube-thumbnails/w21.jpg", refreshed_archive)
         self.assertNotIn("assets/youtube-thumbnails/w21.jpg", refreshed_homepage)
 
+    def test_refresh_youtube_cards_preserves_episode_22_thumbnail_override(self):
+        videos = {
+            22: {
+                "id": "f2yugYwXOBo",
+                "url": "https://www.youtube.com/watch?v=f2yugYwXOBo",
+                "thumbnail": "https://i.ytimg.com/vi/f2yugYwXOBo/maxresdefault.jpg",
+            }
+        }
+        archive_html = """
+        <article class="week-card" data-kind="main">
+          <div class="thumb"><img src="/old.jpg"><span class="week-number">W22</span><span class="availability">Main slides</span></div>
+          <p class="card-kicker">Main slides</p>
+          <div class="card-actions"><button>Slides</button></div>
+        </article>
+        """
+        homepage_html = """
+        <article class="episode-card">
+          <div class="episode-thumb"><img src="old.jpg"><span class="episode-week">W22</span></div>
+          <p class="packet-label">Main slides</p>
+          <div class="episode-actions"><a>Slides</a></div>
+        </article>
+        """
+
+        refreshed_archive = SYNC.refresh_youtube_cards(archive_html, videos, archive=True)
+        refreshed_homepage = SYNC.refresh_youtube_cards(homepage_html, videos, archive=False)
+
+        expected = "assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg"
+        self.assertIn(f'/{expected}', refreshed_archive)
+        self.assertIn(expected, refreshed_homepage)
+        self.assertNotIn("assets/youtube-thumbnails/w22.jpg", refreshed_archive)
+        self.assertNotIn("assets/youtube-thumbnails/w22.jpg", refreshed_homepage)
+
     def test_refresh_youtube_cards_wires_archive_media_to_in_page_player(self):
         videos = {
             22: {

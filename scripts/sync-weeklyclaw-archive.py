@@ -22,6 +22,7 @@ MONTH_RE = r"(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|J
 YOUTUBE_THUMBNAIL_OVERRIDES = {
     20: "w20-v2-ai-got-cheap-approved-20260727.jpg",
     21: "w21-v2-approved-20260727.jpg",
+    22: "w22-v2-the-sandbox-failed-approved-20260727.jpg",
 }
 
 

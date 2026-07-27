@@ -1,4 +1,4 @@
-# 🦞 Weekly Claw — Episode 22 Rundown
+# The Sandbox Failed — Weekly Claw #22
 
 **Date:** Friday, July 24, 2026 · 4:00 PM ET
 **A live builder show about AI, agents, devtools, startups, and the weird edge of software.**
