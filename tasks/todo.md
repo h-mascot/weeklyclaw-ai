@@ -25,5 +25,15 @@
 - [x] Make `The Sandbox Failed` canonical on homepage, archive, and episode surfaces
 - [x] Add focused validation coverage
 - [x] Run tests, static build, and Codex review
-- [ ] Commit and push the production website change
-- [ ] Verify live desktop and mobile title/artwork
+- [x] Commit and push the production website change
+- [x] Verify live desktop and mobile title/artwork
+
+## Review
+
+- Focused tests: `python3 -m unittest scripts/test_sync_weeklyclaw_archive.py` — 8 passed.
+- Static validation: `npm run build` — passed.
+- Codex review: `~/.codex/skills/codex-review/scripts/codex-review --parallel-tests "python3 -m unittest scripts/test_sync_weeklyclaw_archive.py && npm run build"` — clean, no accepted/actionable findings.
+- Production commit: `121fe4515a8e656d91919ab692cc984b7ed729eb`.
+- Independent desktop/mobile QA: homepage, archive, agenda, and deck passed; live versioned artwork is `1280x720` and byte-identical to the repository asset.
+- ✅ Jeff Dean review: canonical title and artwork remain in the existing episode and thumbnail-override pipeline; no parallel metadata system was introduced.
+- ✅ Luke W + Ryan Singer review: the approved 16:9 artwork and title remain legible at `390x844`, with no visible crop, clipping, distortion, or interaction regression.
