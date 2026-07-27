@@ -151,6 +151,22 @@ for (const needle of ['Weekly Claw Episodes', 'W22', '/episodes/22/deck', 'https
   }
 }
 
+const homepageEpisodeWeeks = [...html.matchAll(/<span class="episode-week">W(\d+)<\/span>/g)]
+  .map((match) => Number(match[1]));
+const newestArchiveWeeks = [...episodesHtml.matchAll(/<span class="week-number">W(\d+)<\/span>/g)]
+  .map((match) => Number(match[1]))
+  .sort((a, b) => b - a)
+  .slice(0, 6);
+if (!html.includes('.archive-grid > .episode-card:nth-child(n + 7) { display: none; }')) {
+  console.error('Homepage is missing the 6-episode display limit');
+  process.exit(1);
+}
+const visibleHomepageWeeks = homepageEpisodeWeeks.slice(0, 6);
+if (visibleHomepageWeeks.join(',') !== newestArchiveWeeks.join(',')) {
+  console.error(`Homepage episode cards are not the newest 6 archive weeks: expected ${newestArchiveWeeks.map((week) => `W${week}`).join(', ')}, found ${visibleHomepageWeeks.map((week) => `W${week}`).join(', ')}`);
+  process.exit(1);
+}
+
 for (const [name, page] of [['homepage', html], ['episodes index', episodesHtml]]) {
   for (const forbidden of ['>Agenda<', 'slides + agenda', 'Slides + agenda', 'full agenda', '/agenda">']) {
     if (page.includes(forbidden)) {
