@@ -144,11 +144,54 @@ if (changelogHtml.includes('Open changelog') || changelogHtml.includes('Host dec
 
 
 const episodesHtml = readFileSync(new URL('../episodes/index.html', import.meta.url), 'utf8');
-for (const needle of ['Weekly Claw Episodes', 'W22', '/episodes/22/deck', 'https://www.youtube.com/watch?v=dquJyEBQWpE', 'https://www.youtube.com/watch?v=MSRFmpDfaTg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>13</strong>', 'archived episodes']) {
+for (const needle of ['Weekly Claw Episodes', 'W22', '/episodes/22/deck', 'data-video-id="f2yugYwXOBo"', 'data-video-id="dquJyEBQWpE"', 'data-video-id="MSRFmpDfaTg"', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>13</strong>', 'archived episodes']) {
   if (!episodesHtml.includes(needle)) {
     console.error(`Episodes index missing expected copy: ${needle}`);
     process.exit(1);
   }
+}
+
+const playerMarkers = [
+  'class="episode-player"',
+  'aria-label="Episode player mode"',
+  'data-player-mode="video"',
+  'data-player-mode="audio"',
+  'id="episode-video-frame"',
+  'id="episode-audio"',
+  'id="audio-unavailable"',
+  'data-play-video',
+  'https://www.youtube-nocookie.com/embed/',
+  'cards.find(card => card.dataset.videoId)',
+  "card === latestArchiveCard ? 'Latest episode' : 'From the archive'",
+  'if (!card || !loadEpisode(card)) return;',
+  'event.preventDefault()',
+];
+for (const marker of playerMarkers) {
+  if (!episodesHtml.includes(marker)) {
+    console.error(`Episodes index missing player integration marker: ${marker}`);
+    process.exit(1);
+  }
+}
+
+const episode22Card = episodesHtml.match(/<article class="week-card"[^>]*data-week="22"[^>]*>[\s\S]*?<\/article>/)?.[0] ?? '';
+if (!episode22Card.includes('data-video-id="f2yugYwXOBo"')) {
+  console.error('Episode 22 card is missing its verified YouTube video ID');
+  process.exit(1);
+}
+if (!episode22Card.includes('href="https://www.youtube.com/watch?v=f2yugYwXOBo"')) {
+  console.error('Episode 22 player controls need a direct YouTube fallback');
+  process.exit(1);
+}
+if (episodesHtml.includes('autoplay=1')) {
+  console.error('Episode player must not autoplay');
+  process.exit(1);
+}
+const heroEnd = episodesHtml.indexOf('</section>', episodesHtml.indexOf('<section class="hero"'));
+const playerStart = episodesHtml.indexOf('<section class="episode-player"');
+const archiveStart = episodesHtml.indexOf('<section class="archive"');
+if (!(heroEnd < playerStart && playerStart < archiveStart)) {
+  console.error('Episode player must appear directly between the hero and archive');
+  process.exit(1);
 }
 
 const homepageEpisodeWeeks = [...html.matchAll(/<span class="episode-week">W(\d+)<\/span>/g)]

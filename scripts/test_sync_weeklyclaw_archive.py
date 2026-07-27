@@ -15,6 +15,7 @@ class SyncMetadataTests(unittest.TestCase):
     def test_refresh_youtube_cards_preserves_episode_20_thumbnail_override(self):
         videos = {
             20: {
+                "id": "MSRFmpDfaTg",
                 "url": "https://www.youtube.com/watch?v=MSRFmpDfaTg",
                 "thumbnail": "https://i.ytimg.com/vi/MSRFmpDfaTg/maxresdefault.jpg",
             }
@@ -46,6 +47,7 @@ class SyncMetadataTests(unittest.TestCase):
     def test_refresh_youtube_cards_preserves_episode_21_thumbnail_override(self):
         videos = {
             21: {
+                "id": "dquJyEBQWpE",
                 "url": "https://www.youtube.com/watch?v=dquJyEBQWpE",
                 "thumbnail": "https://i.ytimg.com/vi/dquJyEBQWpE/maxresdefault.jpg",
             }
@@ -73,6 +75,80 @@ class SyncMetadataTests(unittest.TestCase):
         self.assertIn(expected, refreshed_homepage)
         self.assertNotIn("assets/youtube-thumbnails/w21.jpg", refreshed_archive)
         self.assertNotIn("assets/youtube-thumbnails/w21.jpg", refreshed_homepage)
+
+    def test_refresh_youtube_cards_wires_archive_media_to_in_page_player(self):
+        videos = {
+            22: {
+                "id": "f2yugYwXOBo",
+                "url": "https://www.youtube.com/watch?v=f2yugYwXOBo",
+                "thumbnail": "https://i.ytimg.com/vi/f2yugYwXOBo/maxresdefault.jpg",
+            }
+        }
+        archive_html = """
+        <article class="week-card" data-kind="main">
+          <div class="thumb"><img src="/old.jpg"><span class="week-number">W22</span><span class="availability">Main slides</span></div>
+          <p class="card-kicker">Main slides</p>
+          <div class="card-actions"><button>Slides</button></div>
+        </article>
+        """
+
+        refreshed = SYNC.refresh_youtube_cards(archive_html, videos, archive=True)
+
+        self.assertIn('data-week="22"', refreshed)
+        self.assertIn('data-video-id="f2yugYwXOBo"', refreshed)
+        self.assertIn('href="https://www.youtube.com/watch?v=f2yugYwXOBo" data-play-video="22"', refreshed)
+        self.assertIn('aria-label="Play Weekly Claw episode 22 video on this page"', refreshed)
+        self.assertNotIn('target="_blank"', refreshed)
+        self.assertEqual(SYNC.refresh_youtube_cards(refreshed, videos, archive=True), refreshed)
+
+    def test_offline_sync_preserves_latest_archive_player_wiring(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = Path(tmp)
+            episode = repo / "episodes" / "22"
+            episode.mkdir(parents=True)
+            (episode / "deck.html").write_text("fixture")
+            (repo / "episodes" / "index.html").write_text(
+                """
+                <div class="fact"><strong>01</strong><span>archived episodes</span></div>
+                <div class="gallery" id="gallery">
+                  <article class="week-card" data-kind="main" data-week="22" data-video-id="f2yugYwXOBo" data-audio-src="/audio/weekly-claw-22.mp3">
+                    <a class="thumb youtube-thumb" href="https://www.youtube.com/watch?v=f2yugYwXOBo" data-play-video="22">
+                      <span class="week-number">W22</span>
+                    </a>
+                    <div class="card-copy"><p class="card-kicker">Video · main slides</p><h3>Existing episode</h3><p>Existing summary.</p></div>
+                    <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=f2yugYwXOBo" data-play-video="22" aria-label="Play Weekly Claw episode 22 video on this page">Video</a></div>
+                  </article>
+                </div>
+                """
+            )
+
+            SYNC.update_episodes_index(
+                repo,
+                22,
+                {"headline": "Existing episode", "desc": "Existing summary."},
+                {},
+            )
+
+            refreshed = (repo / "episodes" / "index.html").read_text()
+            self.assertIn('data-video-id="f2yugYwXOBo"', refreshed)
+            self.assertIn('data-audio-src="/audio/weekly-claw-22.mp3"', refreshed)
+            self.assertIn('href="https://www.youtube.com/watch?v=f2yugYwXOBo" data-play-video="22"', refreshed)
+
+            videos = {
+                22: {
+                    "id": "f2yugYwXOBo",
+                    "url": "https://www.youtube.com/watch?v=f2yugYwXOBo",
+                    "thumbnail": "https://i.ytimg.com/vi/f2yugYwXOBo/maxresdefault.jpg",
+                }
+            }
+            SYNC.update_episodes_index(
+                repo,
+                22,
+                {"headline": "Existing episode", "desc": "Existing summary."},
+                videos,
+            )
+            refreshed = (repo / "episodes" / "index.html").read_text()
+            self.assertIn('data-audio-src="/audio/weekly-claw-22.mp3"', refreshed)
 
     def test_generic_deck_title_uses_first_story_frame_and_skips_build_notes(self):
         with tempfile.TemporaryDirectory() as tmp:
