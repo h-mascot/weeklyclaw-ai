@@ -63,6 +63,7 @@ def fetch_youtube_episodes() -> dict[int, dict[str, str]]:
             continue
         episode = int(match.group(1))
         episodes[episode] = {
+            "id": video_id,
             "url": f"https://www.youtube.com/watch?v={video_id}",
             "thumbnail": f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg",
         }
@@ -103,16 +104,22 @@ def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archi
         block = match.group(1)
         local_thumbnail = f"/assets/youtube-thumbnails/{thumbnail_filename}"
         if archive:
+            def add_player_data(article_match: re.Match[str]) -> str:
+                opening = re.sub(r'\sdata-(?:week|video-id)="[^"]*"', "", article_match.group(0))
+                return f'{opening[:-1]} data-week="{episode}" data-video-id="{video["id"]}">'
+
+            block = re.sub(r'<article class="week-card"[^>]*>', add_player_data, block, count=1)
             media = (
-                f'<a class="thumb youtube-thumb" href="{video["url"]}" target="_blank" rel="noopener" '
-                f'aria-label="Watch Weekly Claw episode {episode} on YouTube">'
+                f'<a class="thumb youtube-thumb" href="{video["url"]}" data-play-video="{episode}" '
+                f'aria-label="Play Weekly Claw episode {episode} on this page">'
                 f'<img src="{local_thumbnail}" alt="YouTube thumbnail for Weekly Claw episode {episode}">'
                 f'<span class="week-number">W{episode}</span><span class="availability">Video + slides</span></a>'
             )
-            block = re.sub(r'<div class="thumb">[\s\S]*?</div>', media, block, count=1)
+            block = re.sub(r'<(?:div|a) class="thumb(?: youtube-thumb)?"[^>]*>[\s\S]*?</(?:div|a)>', media, block, count=1)
             block = re.sub(r'<p class="card-kicker">.*?</p>', '<p class="card-kicker">Video · main slides</p>', block, count=1)
             actions = (
-                f'<div class="card-actions"><a class="source-link" href="{video["url"]}" target="_blank" rel="noopener">Video</a>'
+                f'<div class="card-actions"><a class="source-link" href="{video["url"]}" data-play-video="{episode}" '
+                f'aria-label="Play Weekly Claw episode {episode} video on this page">Video</a>'
                 f'<button class="deck-button secondary" type="button" data-week="{episode}" data-deck="main" '
                 f'data-title="W{episode} · Main show slides" data-url="/episodes/{episode}/deck">Slides</button></div>'
             )
@@ -356,8 +363,23 @@ def update_episodes_index(repo: Path, latest: int, meta: dict[str, str], videos:
             <div class="card-actions"><button class="deck-button" type="button" data-week="{latest}" data-deck="main" data-title="W{latest} · Main show slides" data-url="/episodes/{latest}/deck">Slides</button></div>
           </article>'''
     existing_card = re.compile(rf'          <article class="week-card"[^>]*>(?:(?!          </article>).)*?<span class="week-number">W{latest}</span>(?:(?!          </article>).)*?          </article>', re.S)
-    if existing_card.search(text):
-        text = existing_card.sub(card, text, count=1)
+    existing_match = existing_card.search(text)
+    if existing_match:
+        existing_block = existing_match.group(0)
+        existing_audio = re.search(r'\sdata-audio-src="[^"]+"', existing_block)
+        if existing_audio:
+            card = card.replace('data-kind="main"', f'data-kind="main"{existing_audio.group(0)}', 1)
+        if latest not in videos and 'data-video-id=' in existing_block:
+            card = re.sub(
+                r'(<div class="card-copy"><p class="card-kicker">.*?</p>)<h3>.*?</h3><p>.*?</p>(</div>)',
+                lambda match: (
+                    f'{match.group(1)}<h3>{html.escape(meta["headline"])}</h3>'
+                    f'<p>{html.escape(meta["desc"])}</p>{match.group(2)}'
+                ),
+                existing_block,
+                count=1,
+            )
+        text = existing_card.sub(lambda _: card, text, count=1)
     else:
         text = text.replace('        <div class="gallery" id="gallery">\n', '        <div class="gallery" id="gallery">\n' + card + '\n')
     text = re.sub(r'W\d+ includes its original host slides and agenda;', f'W{latest} includes its original host slides;', text)
