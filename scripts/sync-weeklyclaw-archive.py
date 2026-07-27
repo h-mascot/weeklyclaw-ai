@@ -19,6 +19,9 @@ import subprocess
 from pathlib import Path
 
 MONTH_RE = r"(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)"
+YOUTUBE_THUMBNAIL_OVERRIDES = {
+    21: "w21-v2-approved-20260727.jpg",
+}
 
 
 def repo_root_from_script() -> Path:
@@ -69,6 +72,8 @@ def download_youtube_thumbnails(repo: Path, videos: dict[int, dict[str, str]]) -
     asset_dir = repo / "assets" / "youtube-thumbnails"
     asset_dir.mkdir(parents=True, exist_ok=True)
     for episode, video in videos.items():
+        if episode in YOUTUBE_THUMBNAIL_OVERRIDES:
+            continue
         destination = asset_dir / f"w{episode}.jpg"
         try:
             subprocess.run(
@@ -86,6 +91,7 @@ def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archi
     week_class = "week-number" if archive else "episode-week"
 
     for episode, video in videos.items():
+        thumbnail_filename = YOUTUBE_THUMBNAIL_OVERRIDES.get(episode, f"w{episode}.jpg")
         pattern = re.compile(
             rf'(<article class="{card_class}"[^>]*>(?:(?!</article>)[\s\S])*?'
             rf'<span class="{week_class}">W{episode}</span>(?:(?!</article>)[\s\S])*?</article>)'
@@ -94,7 +100,7 @@ def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archi
         if not match:
             continue
         block = match.group(1)
-        local_thumbnail = f"/assets/youtube-thumbnails/w{episode}.jpg"
+        local_thumbnail = f"/assets/youtube-thumbnails/{thumbnail_filename}"
         if archive:
             media = (
                 f'<a class="thumb youtube-thumb" href="{video["url"]}" target="_blank" rel="noopener" '
@@ -114,7 +120,7 @@ def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archi
             media = (
                 f'<a class="episode-thumb youtube-thumb" href="{video["url"]}" target="_blank" rel="noopener" '
                 f'aria-label="Watch Weekly Claw episode {episode} on YouTube">'
-                f'<img src="assets/youtube-thumbnails/w{episode}.jpg" alt="YouTube thumbnail for Weekly Claw episode {episode}">'
+                f'<img src="assets/youtube-thumbnails/{thumbnail_filename}" alt="YouTube thumbnail for Weekly Claw episode {episode}">'
                 f'<span class="episode-week">W{episode}</span></a>'
             )
             block = re.sub(r'<div class="episode-thumb">[\s\S]*?</div>', media, block, count=1)

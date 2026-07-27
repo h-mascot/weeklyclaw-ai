@@ -12,6 +12,37 @@ SPEC.loader.exec_module(SYNC)
 
 
 class SyncMetadataTests(unittest.TestCase):
+    def test_refresh_youtube_cards_preserves_episode_21_thumbnail_override(self):
+        videos = {
+            21: {
+                "url": "https://www.youtube.com/watch?v=dquJyEBQWpE",
+                "thumbnail": "https://i.ytimg.com/vi/dquJyEBQWpE/maxresdefault.jpg",
+            }
+        }
+        archive_html = """
+        <article class="week-card" data-kind="main">
+          <div class="thumb"><img src="/old.jpg"><span class="week-number">W21</span><span class="availability">Main slides</span></div>
+          <p class="card-kicker">Main slides</p>
+          <div class="card-actions"><button>Slides</button></div>
+        </article>
+        """
+        homepage_html = """
+        <article class="episode-card">
+          <div class="episode-thumb"><img src="old.jpg"><span class="episode-week">W21</span></div>
+          <p class="packet-label">Main slides</p>
+          <div class="episode-actions"><a>Slides</a></div>
+        </article>
+        """
+
+        refreshed_archive = SYNC.refresh_youtube_cards(archive_html, videos, archive=True)
+        refreshed_homepage = SYNC.refresh_youtube_cards(homepage_html, videos, archive=False)
+
+        expected = "assets/youtube-thumbnails/w21-v2-approved-20260727.jpg"
+        self.assertIn(f'/{expected}', refreshed_archive)
+        self.assertIn(expected, refreshed_homepage)
+        self.assertNotIn("assets/youtube-thumbnails/w21.jpg", refreshed_archive)
+        self.assertNotIn("assets/youtube-thumbnails/w21.jpg", refreshed_homepage)
+
     def test_generic_deck_title_uses_first_story_frame_and_skips_build_notes(self):
         with tempfile.TemporaryDirectory() as tmp:
             repo = Path(tmp)

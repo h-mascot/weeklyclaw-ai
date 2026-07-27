@@ -54,7 +54,7 @@ for (const needle of [
   '/feedback',
   'https://www.youtube.com/watch?v=dquJyEBQWpE',
   'https://www.youtube.com/watch?v=MSRFmpDfaTg',
-  'assets/youtube-thumbnails/w21.jpg',
+  'assets/youtube-thumbnails/w21-v2-approved-20260727.jpg',
   'assets/youtube-thumbnails/w20.jpg',
   'live builder show about AI, agents, devtools, and the future of work',
   'The week decides',
@@ -144,7 +144,7 @@ if (changelogHtml.includes('Open changelog') || changelogHtml.includes('Host dec
 
 
 const episodesHtml = readFileSync(new URL('../episodes/index.html', import.meta.url), 'utf8');
-for (const needle of ['Weekly Claw Episodes', 'W22', '/episodes/22/deck', 'https://www.youtube.com/watch?v=dquJyEBQWpE', 'https://www.youtube.com/watch?v=MSRFmpDfaTg', '/assets/youtube-thumbnails/w21.jpg', '/assets/youtube-thumbnails/w20.jpg', '<strong>13</strong>', 'archived episodes']) {
+for (const needle of ['Weekly Claw Episodes', 'W22', '/episodes/22/deck', 'https://www.youtube.com/watch?v=dquJyEBQWpE', 'https://www.youtube.com/watch?v=MSRFmpDfaTg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20.jpg', '<strong>13</strong>', 'archived episodes']) {
   if (!episodesHtml.includes(needle)) {
     console.error(`Episodes index missing expected copy: ${needle}`);
     process.exit(1);
