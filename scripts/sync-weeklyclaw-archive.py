@@ -20,6 +20,7 @@ from pathlib import Path
 
 MONTH_RE = r"(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)"
 YOUTUBE_THUMBNAIL_OVERRIDES = {
+    20: "w20-v2-ai-got-cheap-approved-20260727.jpg",
     21: "w21-v2-approved-20260727.jpg",
 }
 
