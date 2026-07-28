@@ -211,7 +211,7 @@ Welcome back to Weekly Claw. Six stories share one thread: control of context, p
             self.assertTrue(meta["desc"].startswith("Welcome back to Weekly Claw."))
             self.assertNotIn("Build notes", meta["desc"])
 
-    def test_latest_episode_link_advances_from_any_previous_week(self):
+    def test_homepage_sync_removes_obsolete_featured_open_episode_link(self):
         with tempfile.TemporaryDirectory() as tmp:
             repo = Path(tmp)
             (repo / "index.html").write_text(
@@ -226,8 +226,8 @@ Welcome back to Weekly Claw. Six stories share one thread: control of context, p
             )
 
             html = (repo / "index.html").read_text()
-            self.assertIn('/episodes?week=22&amp;deck=main">Open episode', html)
-            self.assertNotIn('/episodes?week=21&amp;deck=main">Open episode', html)
+            self.assertNotIn("Open episode", html)
+            self.assertNotIn('class="latest-action"', html)
 
     def test_homepage_sync_updates_featured_player_video_and_drops_stale_audio(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -328,7 +328,7 @@ def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[
     existing_week = int(existing_week_match.group(1)) if existing_week_match else None
     # Only update explicit latest CTAs. Historical episode-card links must keep their own week.
     text = re.sub(r'href="/episodes\?week=\d+&amp;deck=main">Watch the latest', f'href="/episodes?week={latest}&amp;deck=main">Watch the latest', text)
-    text = re.sub(r'href="/episodes\?week=\d+&amp;deck=main">Open episode', f'href="/episodes?week={latest}&amp;deck=main">Open episode', text)
+    text = re.sub(r'\s*<div class="latest-action">.*?</div>', "", text, count=1)
     text = re.sub(r'<div class="latest-number" aria-hidden="true">\d+</div>', f'<div class="latest-number" aria-hidden="true">{latest}</div>', text)
     text = re.sub(r'<p class="latest-label">Featured latest episode · .*?</p>', f'<p class="latest-label">Featured latest episode · {html.escape(meta["date"])}</p>', text)
     text = re.sub(r'<h2 id="latest-title">.*?</h2>', f'<h2 id="latest-title">{html.escape(meta["headline"])}</h2>', text)
