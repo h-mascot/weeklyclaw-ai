@@ -184,8 +184,8 @@ h3{font-size:1.45rem;line-height:1;}
 .slide-counter,.slide-tag,.kb-hint{color:#74695f;}
 .kb-hint kbd{color:var(--site-ink);background:#e2d8c9;border-color:#a99d8c;border-radius:4px;}
 .slide-brand{color:#74695f;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;}
-.slide-brand::before{content:"///";color:var(--claw-red);font-weight:700;}
-.slide-brand svg{display:none;}
+.slide-brand::before{content:none;}
+.slide-brand svg{display:block;width:24px;height:24px;filter:drop-shadow(0 2px 4px rgba(42,126,107,.18));}
 .part-label,.story-num{color:#24695e;font-weight:700;}
 .card,.hook,.alert-card,.warn-card,.shot-frame{
   border:2px solid var(--border-subtle);
@@ -246,9 +246,7 @@ h3{font-size:1.45rem;line-height:1;}
 .glow-orb{filter:blur(90px);opacity:.10;}
 .orb-red,.orb-green{background:#2a7e6b;}.orb-orange,.orb-blue{background:#286f7d;}.orb-purple{background:#6a5d91;}
 .lobster-bg{opacity:.035;}
-#lobster-gradient stop:first-child{stop-color:#2a7e6b;}
-#lobster-gradient stop:last-child{stop-color:#24695e;}
-#lobster circle:nth-last-child(-n+2){fill:#82d2e6;}
+#weeklyclaw-logo{overflow:visible;}
 .red{color:#8f403a;}.orange,.blue{color:#225e6a;}.green{color:#216655;}.purple{color:#5d527b;}.yellow{color:#7b5a1c;}.muted{color:var(--text-secondary);}
 
 @media(max-width:900px){
@@ -261,15 +259,10 @@ h3{font-size:1.45rem;line-height:1;}
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <linearGradient id="lobster-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ff4d4d"></stop><stop offset="100%" stop-color="#991b1b"></stop>
-    </linearGradient>
-    <symbol id="lobster" viewBox="0 0 120 120">
-      <path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#lobster-gradient)"></path>
-      <path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#lobster-gradient)"></path>
-      <path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#lobster-gradient)"></path>
-      <circle cx="45" cy="35" r="6" fill="#050810"></circle><circle cx="75" cy="35" r="6" fill="#050810"></circle>
-      <circle cx="46" cy="34" r="2.5" fill="#00e5cc"></circle><circle cx="76" cy="34" r="2.5" fill="#00e5cc"></circle>
+    <symbol id="weeklyclaw-logo" viewBox="0 0 64 64">
+      <rect x="2" y="2" width="60" height="60" rx="12" fill="#f2eadb" stroke="#2f2923" stroke-width="3"></rect>
+      <path d="M12 19 16 9M21 19 25 9M30 19 34 9" fill="none" stroke="#2d8472" stroke-width="4" stroke-linecap="round"></path>
+      <path d="m13 27 8 25 11-18 10 18 9-25" fill="none" stroke="#211c18" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></path>
     </symbol>
   </defs>
 </svg>
@@ -282,11 +275,11 @@ h3{font-size:1.45rem;line-height:1;}
 
 <!-- SLIDE 0 — TITLE -->
 <div class="slide grid-bg active">
-  <svg class="lobster-bg" style="top:2%;right:-4%;"><use href="#lobster"/></svg>
+  <svg class="lobster-bg" style="top:2%;right:-4%;"><use href="#weeklyclaw-logo"/></svg>
   <div class="glow-orb orb-red" style="width:520px;height:520px;top:-160px;left:-140px;"></div>
   <div class="glow-orb orb-orange" style="width:420px;height:420px;bottom:-140px;right:-100px;"></div>
   <div class="content">
-    <svg style="width:82px;height:82px;margin-bottom:10px;filter:drop-shadow(0 0 30px rgba(230,57,70,0.45));"><use href="#lobster"/></svg>
+    <svg aria-label="Weekly Claw logo" style="width:92px;height:92px;margin-bottom:14px;filter:drop-shadow(0 12px 24px rgba(42,126,107,.22));"><use href="#weeklyclaw-logo"/></svg>
     <div class="part-label">Episode 22 &middot; Friday, July 24, 2026 &middot; 4:00 PM ET</div>
     <h1 style="font-size:4.7rem;text-align:center;margin-bottom:6px;"><span class="gradient-text">Weekly Claw</span></h1>
     <div class="gradient-line wide"></div>
@@ -307,7 +300,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 1 — COLD OPEN -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">01 / COLD OPEN</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">01 / COLD OPEN</div>
   <div class="glow-orb orb-red" style="width:460px;height:460px;top:-150px;right:-120px;"></div>
   <div class="content">
     <div class="part-label">Cold open &middot; the frame</div>
@@ -331,7 +324,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 2 — SPONSOR: HERALD LABS -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">SPONSOR</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">SPONSOR</div>
   <div class="glow-orb orb-blue" style="width:420px;height:420px;top:-120px;left:-100px;"></div>
   <div class="content">
     <div class="part-label">Brought to you by</div>
@@ -343,7 +336,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 3 — NEWS INTRO -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">02 / WHAT HAPPENED THIS WEEK</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">02 / WHAT HAPPENED THIS WEEK</div>
   <div class="content">
     <div class="part-label">What happened this week &middot; ~14.5 min</div>
     <h2 class="text-center">Six stories, <span class="gradient-text">Henry&rsquo;s order.</span></h2>
@@ -360,7 +353,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 4 — OPENAI BUNDLE: THE BREACH -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">STORY 01 / RISK</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">STORY 01 / RISK</div>
   <div class="glow-orb orb-red" style="width:480px;height:480px;top:-140px;right:-140px;"></div>
   <div class="content">
     <div class="story-num">Story 01 &middot; the OpenAI bundle, part A</div>
@@ -385,7 +378,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 5 — OPENAI BUNDLE: VOICE + PRESENCE -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">STORY 01 / CONTROL</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">STORY 01 / CONTROL</div>
   <div class="glow-orb orb-green" style="width:440px;height:440px;bottom:-140px;left:-120px;"></div>
   <div class="content">
     <div class="story-num">Story 01 &middot; the OpenAI bundle, part B</div>
@@ -411,7 +404,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 6 — CURSOR SWARM -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">STORY 02 / ARCHITECTURE</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">STORY 02 / ARCHITECTURE</div>
   <div class="glow-orb orb-blue" style="width:460px;height:460px;top:-140px;left:-100px;"></div>
   <div class="content">
     <div class="story-num">Story 02 &middot; Cursor swarm</div>
@@ -429,7 +422,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 7 — BLOCK BUZZ -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">STORY 03 / WORKSPACE</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">STORY 03 / WORKSPACE</div>
   <div class="glow-orb orb-green" style="width:480px;height:480px;bottom:-160px;right:-120px;"></div>
   <div class="content">
     <div class="story-num">Story 03 &middot; Block Buzz</div>
@@ -455,7 +448,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 8 — CLAUDE OPUS 5 -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">STORY 04 / ECONOMICS</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">STORY 04 / ECONOMICS</div>
   <div class="glow-orb orb-orange" style="width:460px;height:460px;top:-140px;right:-100px;"></div>
   <div class="content">
     <div class="story-num">Story 04 &middot; Claude Opus 5</div>
@@ -480,7 +473,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 9 — JENSEN HUANG -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">STORY 05 / SOVEREIGNTY</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">STORY 05 / SOVEREIGNTY</div>
   <div class="glow-orb orb-purple" style="width:460px;height:460px;bottom:-140px;left:-100px;"></div>
   <div class="content">
     <div class="story-num">Story 05 &middot; Jensen Huang</div>
@@ -495,7 +488,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 10 — UNITY CLI (LIGHTNING) -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">STORY 06 / LIGHTNING &middot; CUT FIRST IF SHORT</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">STORY 06 / LIGHTNING &middot; CUT FIRST IF SHORT</div>
   <div class="content">
     <div class="story-num">Story 06 &middot; Unity CLI</div>
     <h2 class="text-center">A live game engine, wired for agents.</h2>
@@ -508,7 +501,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 11 — SIGNAL FROM OUTSIDE INTRO -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">03 / SIGNAL FROM OUTSIDE</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">03 / SIGNAL FROM OUTSIDE</div>
   <div class="glow-orb orb-blue" style="width:500px;height:500px;top:-160px;right:-140px;"></div>
   <div class="content">
     <div class="part-label">Signal from outside &middot; 8 min</div>
@@ -524,7 +517,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 12 — ALTMAN: EFFICIENCY + VOICE -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">SIGNAL FROM OUTSIDE</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">SIGNAL FROM OUTSIDE</div>
   <div class="content">
     <div class="story-num">The pitch is entirely cost and speed</div>
     <h2 class="text-center">&ldquo;That number, <span class="gradient-text">that&rsquo;s news.</span>&rdquo;</h2>
@@ -536,7 +529,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 13 — ALTMAN: POLITICS + IPO CLOSE -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">SIGNAL FROM OUTSIDE</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">SIGNAL FROM OUTSIDE</div>
   <div class="content">
     <div class="story-num">Government red-teaming, and the question he wouldn&rsquo;t answer</div>
     <h2 class="text-center">Three words closed the interview.</h2>
@@ -557,7 +550,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 14 — HOT TAKE -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">04 / HOT TAKE</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">04 / HOT TAKE</div>
   <div class="glow-orb orb-red" style="width:480px;height:480px;top:-140px;left:-120px;"></div>
   <div class="content">
     <div class="part-label">Hot take &middot; 5 min</div>
@@ -578,7 +571,7 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 15 — SPONSOR: HERITAGE TELECOM -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">SPONSOR</div>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">SPONSOR</div>
   <div class="glow-orb orb-green" style="width:420px;height:420px;bottom:-120px;right:-100px;"></div>
   <div class="content">
     <div class="part-label">Also brought to you by</div>
@@ -590,8 +583,8 @@ h3{font-size:1.45rem;line-height:1;}
 </div>
 
 <!-- SLIDE 16 — CLOSE -->
-<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#lobster"/></svg> Weekly Claw #22</div><div class="slide-tag">05 / CLOSE</div>
-  <svg class="lobster-bg" style="bottom:-6%;left:-4%;"><use href="#lobster"/></svg>
+<div class="slide grid-bg"><div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #22</div><div class="slide-tag">05 / CLOSE</div>
+  <svg class="lobster-bg" style="bottom:-6%;left:-4%;"><use href="#weeklyclaw-logo"/></svg>
   <div class="glow-orb orb-red" style="width:460px;height:460px;bottom:-150px;left:-100px;"></div>
   <div class="content">
     <div class="part-label">One to watch + where to follow</div>
