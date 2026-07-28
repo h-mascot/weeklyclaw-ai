@@ -76,6 +76,8 @@ for (const needle of [
   'class="social-icon"',
   'aria-label="Follow Weekly Claw on X"',
   'aria-label="Watch Weekly Claw on YouTube"',
+  'aria-label="Weekly Claw on Apple Podcasts, coming soon"',
+  'aria-label="Weekly Claw on Spotify, coming soon"',
 ]) {
   if (!html.includes(needle)) {
     console.error(`Missing expected homepage copy: ${needle}`);
@@ -194,6 +196,7 @@ for (const marker of homepagePlayerMarkers) {
 }
 const featuredEpisode = html.match(/<div class="latest-card"[^>]*>/)?.[0] ?? '';
 const featuredVideoId = featuredEpisode.match(/data-video-id="([\w-]{11})"/)?.[1];
+const featuredAudioSrc = featuredEpisode.match(/data-audio-src="([^"]+)"/)?.[1];
 const featuredWeek = html.match(/<div class="latest-number" aria-hidden="true">(\d+)<\/div>/)?.[1];
 const featuredArchiveCard = html.match(new RegExp(`<article class="episode-card">[\\s\\S]*?<span class="episode-week">W${featuredWeek}</span>[\\s\\S]*?</article>`))?.[0] ?? '';
 const archiveVideoId = featuredArchiveCard.match(/youtube\.com\/watch\?v=([\w-]{11})/)?.[1];
@@ -203,6 +206,15 @@ if (featuredVideoId !== archiveVideoId) {
 }
 if (html.includes('autoplay=1')) {
   console.error('Homepage Featured Episode player must not autoplay');
+  process.exit(1);
+}
+if (featuredAudioSrc && (!featuredAudioSrc.startsWith('/') || !existsSync(new URL(`..${featuredAudioSrc}`, import.meta.url)))) {
+  console.error(`Homepage Featured Episode audio source does not resolve to a local asset: ${featuredAudioSrc}`);
+  process.exit(1);
+}
+const featuredCopy = html.match(/<div class="latest-card"[\s\S]*?<div class="featured-player"/)?.[0] ?? '';
+if (featuredCopy.includes('Open episode') || featuredCopy.includes('class="latest-action"')) {
+  console.error('Homepage Featured Episode still exposes the obsolete slides-opening action');
   process.exit(1);
 }
 
