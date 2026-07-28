@@ -324,6 +324,8 @@ def write_markdown_page(repo: Path, ep: int, source_name: str, route_name: str, 
 def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[int, dict[str, str]]) -> None:
     path = repo / "index.html"
     text = path.read_text()
+    existing_week_match = re.search(r'<div class="latest-number" aria-hidden="true">(\d+)</div>', text)
+    existing_week = int(existing_week_match.group(1)) if existing_week_match else None
     # Only update explicit latest CTAs. Historical episode-card links must keep their own week.
     text = re.sub(r'href="/episodes\?week=\d+&amp;deck=main">Watch the latest', f'href="/episodes?week={latest}&amp;deck=main">Watch the latest', text)
     text = re.sub(r'href="/episodes\?week=\d+&amp;deck=main">Open episode', f'href="/episodes?week={latest}&amp;deck=main">Open episode', text)
@@ -331,6 +333,21 @@ def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[
     text = re.sub(r'<p class="latest-label">Featured latest episode · .*?</p>', f'<p class="latest-label">Featured latest episode · {html.escape(meta["date"])}</p>', text)
     text = re.sub(r'<h2 id="latest-title">.*?</h2>', f'<h2 id="latest-title">{html.escape(meta["headline"])}</h2>', text)
     text = re.sub(r'<p class="latest-meta">.*?</p>', f'<p class="latest-meta">{html.escape(meta["desc"])}</p>', text)
+
+    def update_featured_media(card_match: re.Match[str]) -> str:
+        opening = card_match.group(0)
+        existing_video = re.search(r'\sdata-video-id="[^"]+"', opening)
+        existing_audio = re.search(r'\sdata-audio-src="[^"]+"', opening)
+        opening = re.sub(r'\sdata-(?:video-id|audio-src)="[^"]*"', "", opening)
+        video_attribute = (
+            f' data-video-id="{videos[latest]["id"]}"'
+            if latest in videos
+            else existing_video.group(0) if existing_week == latest and existing_video else ""
+        )
+        audio_attribute = existing_audio.group(0) if existing_week == latest and existing_audio else ""
+        return f"{opening[:-1]}{video_attribute}{audio_attribute}>"
+
+    text = re.sub(r'<div class="latest-card"[^>]*>', update_featured_media, text, count=1)
 
     card = f'''          <article class="episode-card">
             <div class="episode-thumb"><img src="assets/episode-art-v2/signal-studio.jpg" alt="Editorial illustration of a cobalt broadcast studio connecting unusual software objects"><span class="episode-week">W{latest}</span></div>

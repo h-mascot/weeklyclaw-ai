@@ -229,6 +229,93 @@ Welcome back to Weekly Claw. Six stories share one thread: control of context, p
             self.assertIn('/episodes?week=22&amp;deck=main">Open episode', html)
             self.assertNotIn('/episodes?week=21&amp;deck=main">Open episode', html)
 
+    def test_homepage_sync_updates_featured_player_video_and_drops_stale_audio(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = Path(tmp)
+            (repo / "index.html").write_text(
+                """
+                <div class="latest-card" data-video-id="f2yugYwXOBo" data-audio-src="/audio/weekly-claw-22.mp3">
+                  <div class="latest-number" aria-hidden="true">22</div>
+                  <p class="latest-label">Featured latest episode · Previous date</p>
+                  <h2 id="latest-title">Previous episode</h2>
+                  <p class="latest-meta">Previous summary.</p>
+                  <div class="latest-action"><a class="button" href="/episodes?week=22&amp;deck=main">Open episode <span>→</span></a></div>
+                </div>
+                """
+            )
+            videos = {
+                23: {
+                    "id": "ABCDEFGHIJK",
+                    "url": "https://www.youtube.com/watch?v=ABCDEFGHIJK",
+                    "thumbnail": "https://i.ytimg.com/vi/ABCDEFGHIJK/maxresdefault.jpg",
+                }
+            }
+
+            SYNC.update_homepage(
+                repo,
+                23,
+                {"headline": "Future episode", "date": "Future date", "desc": "Future summary."},
+                videos,
+            )
+
+            html = (repo / "index.html").read_text()
+            self.assertIn('class="latest-card" data-video-id="ABCDEFGHIJK"', html)
+            self.assertNotIn('class="latest-card" data-video-id="f2yugYwXOBo"', html)
+            self.assertNotIn('data-audio-src=', html)
+
+    def test_homepage_sync_preserves_media_for_same_featured_episode(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = Path(tmp)
+            (repo / "index.html").write_text(
+                """
+                <div class="latest-card" data-video-id="f2yugYwXOBo" data-audio-src="/audio/weekly-claw-22.mp3">
+                  <div class="latest-number" aria-hidden="true">22</div>
+                  <p class="latest-label">Featured latest episode · Previous date</p>
+                  <h2 id="latest-title">Previous episode</h2>
+                  <p class="latest-meta">Previous summary.</p>
+                  <div class="latest-action"><a class="button" href="/episodes?week=22&amp;deck=main">Open episode <span>→</span></a></div>
+                </div>
+                """
+            )
+
+            SYNC.update_homepage(
+                repo,
+                22,
+                {"headline": "Current episode", "date": "Current date", "desc": "Current summary."},
+                {},
+            )
+
+            html = (repo / "index.html").read_text()
+            self.assertIn('data-video-id="f2yugYwXOBo"', html)
+            self.assertIn('data-audio-src="/audio/weekly-claw-22.mp3"', html)
+
+    def test_homepage_sync_clears_stale_media_before_new_video_is_published(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = Path(tmp)
+            (repo / "index.html").write_text(
+                """
+                <div class="latest-card" data-video-id="f2yugYwXOBo" data-audio-src="/audio/weekly-claw-22.mp3">
+                  <div class="latest-number" aria-hidden="true">22</div>
+                  <p class="latest-label">Featured latest episode · Previous date</p>
+                  <h2 id="latest-title">Previous episode</h2>
+                  <p class="latest-meta">Previous summary.</p>
+                  <div class="latest-action"><a class="button" href="/episodes?week=22&amp;deck=main">Open episode <span>→</span></a></div>
+                </div>
+                """
+            )
+
+            SYNC.update_homepage(
+                repo,
+                23,
+                {"headline": "Future episode", "date": "Future date", "desc": "Future summary."},
+                {},
+            )
+
+            html = (repo / "index.html").read_text()
+            self.assertIn('class="latest-card">', html)
+            self.assertNotIn('data-video-id=', html)
+            self.assertNotIn('data-audio-src=', html)
+
     def test_public_episode_paths_exclude_internal_research_notes(self):
         with tempfile.TemporaryDirectory() as tmp:
             repo = Path(tmp)
