@@ -344,6 +344,86 @@
     .latest-label { margin-bottom: 8px; color: var(--muted); font: 400 12px/1.2 var(--mono); text-transform: uppercase; }
     .latest h2 { max-width: 720px; margin-bottom: 10px; font-size: clamp(28px, 4vw, 46px); line-height: 1; letter-spacing: -.045em; }
     .latest-meta { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .featured-player {
+      position: relative;
+      z-index: 1;
+      grid-column: 1 / -1;
+      display: grid;
+      gap: 14px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+    .featured-player-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .featured-player-label {
+      margin: 0;
+      color: var(--muted);
+      font: 700 11px/1.35 var(--mono);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .featured-mode-switch {
+      display: inline-grid;
+      grid-template-columns: repeat(2, minmax(86px, 1fr));
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: var(--panel-deep);
+    }
+    .featured-mode-button {
+      min-height: 40px;
+      padding: 0 14px;
+      border: 0;
+      border-radius: 4px;
+      color: var(--muted);
+      background: transparent;
+      font: 700 11px/1 var(--mono);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .featured-mode-button:hover { color: var(--cream); }
+    .featured-mode-button[aria-pressed="true"] { color: var(--ink); background: var(--coral); }
+    .featured-player-surface {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #050607;
+    }
+    .featured-video-wrap { aspect-ratio: 16 / 9; }
+    .featured-video-frame { display: block; width: 100%; height: 100%; border: 0; }
+    .featured-audio-panel {
+      min-height: 230px;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      color: var(--cream);
+      background: var(--panel-deep);
+    }
+    .featured-audio-panel[hidden],
+    .featured-video-panel[hidden],
+    .featured-audio[hidden],
+    .featured-audio-unavailable[hidden] { display: none; }
+    .featured-audio-card { width: min(100%, 660px); text-align: center; }
+    .featured-audio-card h3 { margin-bottom: 9px; font-size: clamp(24px, 3vw, 34px); line-height: 1; }
+    .featured-audio-card p { margin: 0 auto 20px; color: var(--muted); }
+    .featured-audio { width: 100%; }
+    .featured-return-video {
+      min-height: 42px;
+      padding: 0 15px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      color: var(--cream);
+      background: var(--panel);
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .featured-return-video:hover { color: var(--paper); background: var(--ink); }
     .episode-player {
       position: relative;
       z-index: 1;
@@ -631,6 +711,9 @@
       .latest-card { grid-template-columns: 1fr; gap: 18px; padding: 20px; }
       .latest-number { min-height: 86px; border-right: 0; border-bottom: 1px solid var(--line-soft); font-size: 58px; }
       .latest-action { grid-column: auto; }
+      .featured-player-bar { align-items: stretch; flex-direction: column; }
+      .featured-mode-switch { width: 100%; }
+      .featured-audio-panel { min-height: 210px; padding: 24px 18px; }
       .episode-player { grid-column: auto; grid-template-columns: auto auto auto 1fr; }
       .player-progress { grid-column: 1 / -1; grid-row: 2; }
       .player-time { grid-column: 4; grid-row: 1; }
@@ -868,6 +951,8 @@
     .latest-label { color: var(--wine); }
     .latest h2 { color: var(--ink); }
     .latest-meta { color: var(--muted); }
+    .featured-mode-button:hover { color: var(--ink); }
+    .featured-mode-button[aria-pressed="true"] { color: var(--paper); }
     .episode-player { color: #f2e5cd; border-color: #554e48; background: #24201c; }
     .player-button { color: #f2e5cd; border-color: #5c554e; background: #2d2824; }
     .player-button.play { color: var(--paper); border-color: #216655; background: var(--coral); }
@@ -1147,7 +1232,7 @@
 
     <section class="latest" aria-labelledby="latest-title">
       <div class="shell">
-        <div class="latest-card">
+        <div class="latest-card" data-video-id="f2yugYwXOBo">
           <div class="latest-number" aria-hidden="true">22</div>
           <div class="latest-copy">
             <p class="latest-label">Featured latest episode · Friday, July 24, 2026 · 4:00 PM ET</p>
@@ -1155,6 +1240,32 @@
             <p class="latest-meta">Welcome back to Weekly Claw. Today&#x27;s episode has a shape to it, so let&#x27;s name it up front: risk, then control, then architecture, then a new place to work, then who…</p>
           </div>
           <div class="latest-action"><a class="button" href="/episodes?week=22&amp;deck=main">Open episode <span aria-hidden="true">→</span></a></div>
+          <div class="featured-player" id="featured-player" role="region" aria-labelledby="latest-title">
+            <div class="featured-player-bar">
+              <p class="featured-player-label">Play the featured episode here</p>
+              <div class="featured-mode-switch" role="group" aria-label="Featured episode player mode">
+                <button class="featured-mode-button" type="button" data-featured-mode="video" aria-pressed="true">Video</button>
+                <button class="featured-mode-button" type="button" data-featured-mode="audio" aria-pressed="false">Audio</button>
+              </div>
+            </div>
+            <div class="featured-player-surface">
+              <div class="featured-video-panel" data-featured-panel="video">
+                <div class="featured-video-wrap">
+                  <iframe class="featured-video-frame" id="featured-video-frame" src="about:blank" title="Featured Weekly Claw episode video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div class="featured-audio-panel" data-featured-panel="audio" hidden>
+                <div class="featured-audio-card">
+                  <audio class="featured-audio" id="featured-audio" controls preload="metadata" aria-label="Featured Weekly Claw episode audio" hidden></audio>
+                  <div class="featured-audio-unavailable" id="featured-audio-unavailable">
+                    <h3>Audio edition not published yet</h3>
+                    <p>This episode has no separate audio file. Its full audio remains available in the on-site video player.</p>
+                    <button class="featured-return-video" type="button" data-featured-return-video>Return to video</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1374,6 +1485,53 @@
       applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
     }));
 
+    const featuredCard = document.querySelector('.latest-card');
+    const featuredPlayer = document.getElementById('featured-player');
+    const featuredVideoFrame = document.getElementById('featured-video-frame');
+    const featuredAudio = document.getElementById('featured-audio');
+    const featuredAudioUnavailable = document.getElementById('featured-audio-unavailable');
+    const featuredModeButtons = [...document.querySelectorAll('[data-featured-mode]')];
+    const featuredPanels = [...document.querySelectorAll('[data-featured-panel]')];
+    const featuredReturnVideo = document.querySelector('[data-featured-return-video]');
+    const featuredVideoId = featuredCard?.dataset.videoId;
+
+    function setFeaturedMode(mode) {
+      featuredModeButtons.forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.featuredMode === mode));
+      });
+      featuredPanels.forEach(panel => {
+        panel.hidden = panel.dataset.featuredPanel !== mode;
+      });
+      if (mode === 'audio') {
+        featuredVideoFrame.contentWindow?.postMessage(
+          JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }),
+          'https://www.youtube-nocookie.com',
+        );
+      } else {
+        featuredAudio.pause();
+      }
+    }
+
+    if (/^[\w-]{11}$/.test(featuredVideoId)) {
+      featuredVideoFrame.src = `https://www.youtube-nocookie.com/embed/${featuredVideoId}?rel=0&enablejsapi=1`;
+      featuredVideoFrame.title = `Weekly Claw episode ${featuredCard.querySelector('.latest-number')?.textContent.trim()}: ${document.getElementById('latest-title')?.textContent.trim()}`;
+      const featuredAudioSrc = featuredCard.dataset.audioSrc;
+      if (featuredAudioSrc) {
+        featuredAudio.src = featuredAudioSrc;
+        featuredAudio.hidden = false;
+        featuredAudioUnavailable.hidden = true;
+      }
+    } else {
+      featuredPlayer.hidden = true;
+    }
+
+    featuredModeButtons.forEach(button => {
+      button.addEventListener('click', () => setFeaturedMode(button.dataset.featuredMode));
+    });
+    featuredReturnVideo.addEventListener('click', () => {
+      setFeaturedMode('video');
+      featuredModeButtons.find(button => button.dataset.featuredMode === 'video')?.focus();
+    });
 
     function closeMenu() {
       menuButton.setAttribute('aria-expanded', 'false');

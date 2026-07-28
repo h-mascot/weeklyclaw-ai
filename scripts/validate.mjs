@@ -175,6 +175,37 @@ for (const marker of playerMarkers) {
   }
 }
 
+const homepagePlayerMarkers = [
+  'id="featured-player"',
+  'aria-label="Featured episode player mode"',
+  'data-featured-mode="video"',
+  'data-featured-mode="audio"',
+  'id="featured-video-frame"',
+  'id="featured-audio"',
+  'id="featured-audio-unavailable"',
+  'https://www.youtube-nocookie.com/embed/${featuredVideoId}',
+  'featuredCard?.dataset.videoId',
+];
+for (const marker of homepagePlayerMarkers) {
+  if (!html.includes(marker)) {
+    console.error(`Homepage missing Featured Episode player marker: ${marker}`);
+    process.exit(1);
+  }
+}
+const featuredEpisode = html.match(/<div class="latest-card"[^>]*>/)?.[0] ?? '';
+const featuredVideoId = featuredEpisode.match(/data-video-id="([\w-]{11})"/)?.[1];
+const featuredWeek = html.match(/<div class="latest-number" aria-hidden="true">(\d+)<\/div>/)?.[1];
+const featuredArchiveCard = html.match(new RegExp(`<article class="episode-card">[\\s\\S]*?<span class="episode-week">W${featuredWeek}</span>[\\s\\S]*?</article>`))?.[0] ?? '';
+const archiveVideoId = featuredArchiveCard.match(/youtube\.com\/watch\?v=([\w-]{11})/)?.[1];
+if (featuredVideoId !== archiveVideoId) {
+  console.error('Homepage Featured Episode player does not match the latest episode card video');
+  process.exit(1);
+}
+if (html.includes('autoplay=1')) {
+  console.error('Homepage Featured Episode player must not autoplay');
+  process.exit(1);
+}
+
 const episode22Card = episodesHtml.match(/<article class="week-card"[^>]*data-week="22"[^>]*>[\s\S]*?<\/article>/)?.[0] ?? '';
 if (!episode22Card.includes('data-video-id="f2yugYwXOBo"')) {
   console.error('Episode 22 card is missing its verified YouTube video ID');
