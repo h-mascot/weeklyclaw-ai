@@ -3,6 +3,11 @@
   "outputDirectory": ".",
   "redirects": [
     {
+      "source": "/discord",
+      "destination": "https://discord.gg/areQk7hh9",
+      "permanent": false
+    },
+    {
       "source": "/weeklyclaw-archive",
       "destination": "/episodes",
       "permanent": true
