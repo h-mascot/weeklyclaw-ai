@@ -15,7 +15,7 @@ Weekly Claw changelog decks are published into short WeeklyClaw.ai paths:
 - `/w16/changelog/` and `/w16/`
 - `/w17/changelog/` and `/w17/`
 - `/w18/changelog/` and `/w18/`
-- `/w19/changelog/` and `/w19/`
+- `/w19/changelog/ /w20/changelog/` and `/w19/`
 
 `/wN/` is a static redirect page to `/wN/changelog/`. Slide JPGs are copied beside each changelog deck so each route remains self-contained. The homepage presents clear **Episode deck** and **Changelog/DX deck** links on WeeklyClaw.ai without duplicate host-deck CTAs.
 

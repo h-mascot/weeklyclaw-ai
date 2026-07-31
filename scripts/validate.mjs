@@ -33,7 +33,7 @@ const required = [
   'episodes/21/deck.html',
   'w18/changelog/index.html', 'w19/changelog/index.html'];
 
-const weeks = [11, 12, 13, 14, 15, 16, 17, 18, 19];
+const weeks = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 for (const week of weeks) {
   required.push(`w${week}/index.html`, `w${week}/changelog/index.html`);
 }
@@ -134,7 +134,7 @@ if (!readFileSync(new URL('../README.md', import.meta.url), 'utf8').includes('/w
 }
 
 const changelogHtml = readFileSync(new URL('../changelog/index.html', import.meta.url), 'utf8');
-for (const needle of ['Release changelogs', '/w11/changelog/', '/w18/changelog/', '/w19/changelog/', '/episodes/11/deck', '/episodes/12/deck', '/episodes/14/deck', '/episodes/18/deck', '/episodes/19/deck', 'Episode deck', 'Changelog/DX deck']) {
+for (const needle of ['Release changelogs', '/w11/changelog/', '/w18/changelog/', '/w19/changelog/', '/w20/changelog/', '/episodes/11/deck', '/episodes/12/deck', '/episodes/14/deck', '/episodes/18/deck', '/episodes/19/deck', 'Episode deck', 'Changelog/DX deck']) {
   if (!changelogHtml.includes(needle)) {
     console.error(`Changelog index missing expected copy: ${needle}`);
     process.exit(1);
