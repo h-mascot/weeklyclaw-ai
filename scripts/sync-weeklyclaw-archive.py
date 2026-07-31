@@ -437,6 +437,8 @@ def public_episode_paths(repo: Path, latest: int) -> list[Path]:
         episode / "agenda.md",
         episode / "agenda" / "index.html",
         episode / "source-assets",
+        episode / "assets",
+        episode / "media-manifest.json",
         episode / "host-cheat-sheet",
     ]
     return [path for path in candidates if path.exists()]

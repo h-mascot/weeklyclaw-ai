@@ -1,0 +1,219 @@
+{
+  "schema_version": 2,
+  "episode": 23,
+  "show_date": "2026-07-31",
+  "rules": {
+    "autoplay": false,
+    "fabricated_media": false,
+    "broken_media_blocks_promotion": true
+  },
+  "assets": [
+    {
+      "id": "minimax-h3-launch-film-60s",
+      "kind": "video",
+      "source_url": "https://x.com/MiniMax_AI/status/2082779062653845803",
+      "direct_media_url": "https://video.twimg.com/amplify_video/2082778044692135936/vid/avc1/2560x1440/7ydrRtg9F1D4-I9E.mp4",
+      "creator": "MiniMax (@MiniMax_AI official account)",
+      "retrieval_time": "2026-07-31T23:35:00Z",
+      "provenance": "Official post media; HTTP 200; 45,392,496 bytes; ffprobe duration 60.053s; sha256 ea44a067d7d319e622f9690034de5239c71269e7fc10b076939be8e0802b4c36. Edited launch film, not one 60-second model output.",
+      "rights_embedding_note": "Official vendor launch asset used for editorial review/commentary with attribution; mirrored locally; no autoplay; manual cue only.",
+      "cue": {
+        "start": "0:00",
+        "end": "0:30",
+        "note": "play first 30 seconds, then stop manually; full 60.053s file remains available"
+      },
+      "local_path": "assets/videos/minimax-h3-official-launch-60s.mp4",
+      "poster_local_path": "assets/images/minimax-h3-launch-poster.jpg",
+      "alt_text": "Official sixty-second MiniMax H3 launch film",
+      "verification_status": "verified-playable (HTTP 200, downloaded, ffprobe 60.053s, poster extracted)"
+    },
+    {
+      "id": "minimax-h3-launch-film-poster",
+      "kind": "image",
+      "source_url": "https://x.com/MiniMax_AI/status/2082779062653845803",
+      "direct_media_url": "https://video.twimg.com/amplify_video/2082778044692135936/vid/avc1/2560x1440/7ydrRtg9F1D4-I9E.mp4",
+      "creator": "MiniMax (frame extracted from official launch film)",
+      "retrieval_time": "2026-07-31T23:35:00Z",
+      "provenance": "Frame extracted locally at t=4s; sha256 bb9c128b6f170054fc36c6cb28438c6595af1e40730dd8530b288446b66e9325",
+      "rights_embedding_note": "Derived still from official vendor launch asset; editorial use with attribution.",
+      "cue": null,
+      "local_path": "assets/images/minimax-h3-launch-poster.jpg",
+      "alt_text": "Poster frame from the official MiniMax H3 launch film",
+      "verification_status": "verified (derived from verified official asset)"
+    },
+    {
+      "id": "seedance-2.5-launch-video",
+      "kind": "video",
+      "source_url": "https://x.com/dreamina_ai/status/2083056471147958714",
+      "direct_media_url": "https://video.twimg.com/amplify_video/2083005997065633792/vid/avc1/1280x720/2X-Z9B3Sl_sG1sKF.mp4",
+      "creator": "Dreamina AI (@dreamina_ai official account)",
+      "retrieval_time": "2026-07-31T23:35:00Z",
+      "provenance": "Official launch-post media; HTTP 200; 28,800,876 bytes; ffprobe duration 160.102s; sha256 ca2a575fb147843a82e0bc2f6da3c97b152ad1b3679da3df9000ce3aac5eb9fe.",
+      "rights_embedding_note": "Official vendor launch showcase used for editorial review/commentary with attribution; mirrored locally; no autoplay; manual cue only.",
+      "cue": {
+        "start": "0:00",
+        "end": "0:20",
+        "note": "play first 20 seconds, then stop manually; full 160.102s file remains available"
+      },
+      "local_path": "assets/videos/seedance-2.5-official-launch.mp4",
+      "poster_local_path": "assets/images/seedance-2.5-poster.jpg",
+      "alt_text": "Official Dreamina Seedance 2.5 global launch showcase",
+      "verification_status": "verified-playable (HTTP 200, downloaded, ffprobe 160.102s, poster extracted)"
+    },
+    {
+      "id": "seedance-2.5-poster",
+      "kind": "image",
+      "source_url": "https://x.com/dreamina_ai/status/2083056471147958714",
+      "direct_media_url": "https://video.twimg.com/amplify_video/2083005997065633792/vid/avc1/1280x720/2X-Z9B3Sl_sG1sKF.mp4",
+      "creator": "Dreamina AI (frame extracted from official launch showcase)",
+      "retrieval_time": "2026-07-31T23:35:00Z",
+      "provenance": "Frame extracted locally at t=4s; sha256 c056a9c9102c881b08491210bb9b5fa53f1626cbd13b044888e9268d589ab89b",
+      "rights_embedding_note": "Derived still from official vendor launch asset; editorial use with attribution.",
+      "cue": null,
+      "local_path": "assets/images/seedance-2.5-poster.jpg",
+      "alt_text": "Poster frame from the official Seedance 2.5 launch showcase",
+      "verification_status": "verified (derived from verified official asset)"
+    },
+    {
+      "id": "minimax-h3-demo-video",
+      "kind": "video",
+      "source_url": "https://www.minimax.io/blog/minimax-h3",
+      "direct_media_url": "https://filecdn.minimax.chat/public/h3-en-v2-video-001-1785473639588.mp4",
+      "creator": "MiniMax (official launch blog, H3 multimodal-context demo)",
+      "retrieval_time": "2026-07-31T19:00:00-04:00",
+      "provenance": "Direct mp4 URL extracted from the official MiniMax H3 launch blog HTML; HTTP 200 verified; content-type video/mp4; 1,625,977 bytes; sha256 21634eaa6f1183adf4a40005d44d2873f829c0a4d939dd31e1df76e1a3e56892; ffprobe-verified duration 2.090s (2026-07-31) — the local mirror is a 2.09-second excerpt, not a 15-second clip",
+      "rights_embedding_note": "Vendor-published marketing/demo asset on MiniMax's own CDN; used for editorial review/commentary with attribution and source link on slide; no autoplay; manual cue only",
+      "cue": {
+        "start": "0:00",
+        "end": "0:02",
+        "note": "verified duration 2.090s via ffprobe; play the 2.09-second excerpt once, manually cued on camera"
+      },
+      "local_path": "assets/videos/minimax-h3-official-demo-001.mp4",
+      "poster_local_path": "assets/images/minimax-h3-poster.jpg",
+      "alt_text": "Official MiniMax H3 launch demo excerpt (2.09 seconds): multimodal context (video, image, audio references) transformed into a generated 2K clip with native stereo audio",
+      "verification_status": "verified-playable (HTTP 200, downloaded, frame extracted, ffprobe duration 2.090s)"
+    },
+    {
+      "id": "minimax-h3-poster",
+      "kind": "image",
+      "source_url": "https://www.minimax.io/blog/minimax-h3",
+      "direct_media_url": "https://filecdn.minimax.chat/public/h3-en-v2-video-001-1785473639588.mp4",
+      "creator": "MiniMax (frame extracted from official demo video)",
+      "retrieval_time": "2026-07-31T19:00:00-04:00",
+      "provenance": "Single frame at t=1s extracted locally with ffmpeg from the verified official demo mp4; sha256 4dce964c86b8010df00df65078e8de15eb91a3fa0b3323cb8a83df515c5095a8",
+      "rights_embedding_note": "Derived still from vendor demo asset; editorial use with attribution",
+      "cue": null,
+      "local_path": "assets/images/minimax-h3-poster.jpg",
+      "alt_text": "Poster frame from the official MiniMax H3 demo video showing a cinematic character shot",
+      "verification_status": "verified (derived from verified asset)"
+    },
+    {
+      "id": "flux3-demo-video",
+      "kind": "video-remote",
+      "source_url": "https://bfl.ai/blog/flux-3",
+      "direct_media_url": "https://cdn.sanity.io/files/2gpum2i6/production/8d241b4b5d8df9d2b53edbac8c48f7d1e055115d.mp4",
+      "creator": "Black Forest Labs (official FLUX 3 launch blog demo)",
+      "retrieval_time": "2026-07-31T19:00:00-04:00",
+      "provenance": "Direct mp4 URL extracted from official BFL FLUX 3 blog HTML (BFL Sanity CDN); HTTP 200 verified; 145,738,435 bytes. Local fallback frame extracted from the same official video at t=1s.",
+      "rights_embedding_note": "NOT mirrored locally (145 MB); stream on demand from the official URL in a browser tab; editorial use with attribution; no autoplay; no preload",
+      "cue": {
+        "start": "0:00",
+        "end": "full",
+        "note": "open in browser tab live; abandon within 3s if stuttering and use fallback still"
+      },
+      "local_path": null,
+      "fallback_local_path": "assets/images/flux3-official-demo-poster.jpg",
+      "alt_text": "Official FLUX 3 demo video from Black Forest Labs showing multimodal video generation with native audio",
+      "verification_status": "verified-playable (HTTP 200 HEAD, 145,738,435 bytes); official demo-frame fallback verified locally"
+    },
+    {
+      "id": "flux3-official-demo-poster",
+      "kind": "image",
+      "source_url": "https://bfl.ai/blog/flux-3",
+      "direct_media_url": "https://cdn.sanity.io/files/2gpum2i6/production/8d241b4b5d8df9d2b53edbac8c48f7d1e055115d.mp4",
+      "creator": "Black Forest Labs (frame extracted from official FLUX 3 demo video)",
+      "retrieval_time": "2026-07-31T19:31:55Z",
+      "provenance": "Single frame at t=1s extracted locally with ffmpeg from verified official BFL demo mp4; JPEG 1280x720; sha256 0a088ecd28095dd60587fde14ab3947b0c6682dd6e06037c01c95d336ad1d5a6",
+      "rights_embedding_note": "Derived still from vendor demo asset; editorial use with attribution; remote video remains manual-open and no-autoplay.",
+      "cue": null,
+      "local_path": "assets/images/flux3-official-demo-poster.jpg",
+      "alt_text": "Frame from the official FLUX 3 video demo showing a running horse",
+      "verification_status": "verified (derived from verified official asset; visually inspected in rendered slide)"
+    },
+    {
+      "id": "flux3-self-flow-figure",
+      "kind": "image",
+      "source_url": "https://bfl.ai/blog/flux-3",
+      "direct_media_url": "https://cdn.sanity.io/images/2gpum2i6/production/84c6a074bfe2ea965f869b948a51df493ec3637a-2240x1152.png",
+      "creator": "Black Forest Labs (official Self-Flow vs Flow Matching evaluation figure)",
+      "retrieval_time": "2026-07-31T19:00:00-04:00",
+      "provenance": "Image URL extracted from official BFL FLUX 3 blog HTML; downloaded (130,772 bytes); sha256 6a74fbc1e519c8ff6d83b59f8346e1e253bbf82823ead716ff45da96473b2fd9; visually confirmed as the Self-Flow comparison figure",
+      "rights_embedding_note": "Vendor-published technical figure; editorial use with attribution and source link on slide",
+      "cue": null,
+      "local_path": "assets/images/flux3-self-flow-figure.png",
+      "alt_text": "FLUX 3 official figure comparing Self-Flow against Flow Matching: generation error per modality (normalized, FM=100) and manipulation-task success rate",
+      "verification_status": "verified (HTTP 200, downloaded, visually inspected)"
+    },
+    {
+      "id": "anthropic-eval-report",
+      "kind": "external-page",
+      "source_url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "direct_media_url": null,
+      "creator": "Anthropic (official incident report)",
+      "retrieval_time": "2026-07-31T18:58:00-04:00",
+      "provenance": "Primary URL verified HTTP 200; full text retrieved and quoted (141,006 runs; three incidents; Irregular; notification timeline)",
+      "rights_embedding_note": "Link only; screen-share headline and incident table as fallback still",
+      "cue": null,
+      "local_path": null,
+      "alt_text": "Anthropic report: Investigating three real-world incidents in our cybersecurity evaluations",
+      "verification_status": "verified"
+    },
+    {
+      "id": "codex-security-cli-docs",
+      "kind": "external-page",
+      "source_url": "https://learn.chatgpt.com/docs/security/cli",
+      "direct_media_url": null,
+      "creator": "OpenAI (official Codex Security CLI docs)",
+      "retrieval_time": "2026-07-31T18:58:00-04:00",
+      "provenance": "Primary URL verified HTTP 200; command surface and scope quoted from docs",
+      "rights_embedding_note": "Link only; no screenshots captured",
+      "cue": null,
+      "local_path": null,
+      "alt_text": "Codex Security CLI quickstart documentation",
+      "verification_status": "verified"
+    },
+    {
+      "id": "signal-outside-youtube-video",
+      "kind": "video-external",
+      "source_url": "https://www.youtube.com/watch?v=I4B37S1dyQQ",
+      "direct_media_url": null,
+      "creator": "Y Combinator (YouTube) — \"Jensen Huang: The Mindset That Built NVIDIA\", Startup School 2026; Garry Tan interviews Jensen Huang live at Chase Center; published 2026-07-26; ~49 min",
+      "retrieval_time": "2026-07-31T19:55:00-04:00",
+      "provenance": "Official watch page verified HTTP 200 (2026-07-31); talk-track facts adapted from input/weekly-claw-talk-track-2026-07-31.md; transcript corroboration at https://www.ycrootaccess.com/p/jensen-huang-the-mindset-that-built",
+      "rights_embedding_note": "Video is NOT embedded or downloaded; editorial review/commentary with attribution and source link on slide; no autoplay; manual open in browser tab only if a moment is referenced on camera",
+      "cue": {
+        "start": "manual",
+        "end": "manual",
+        "note": "no autoplay; recap does not require playback; open watch page by hand and pause immediately if referenced"
+      },
+      "local_path": null,
+      "fallback_local_path": "assets/images/jensen-huang-yc-signal-outside-thumb.jpg",
+      "alt_text": "Y Combinator YouTube video: Jensen Huang, The Mindset That Built NVIDIA, Startup School 2026",
+      "verification_status": "verified (watch page HTTP 200; official thumbnail fallback in place)"
+    },
+    {
+      "id": "signal-outside-thumbnail",
+      "kind": "image",
+      "source_url": "https://www.youtube.com/watch?v=I4B37S1dyQQ",
+      "direct_media_url": "https://img.youtube.com/vi/I4B37S1dyQQ/maxresdefault.jpg",
+      "creator": "Y Combinator (official YouTube video thumbnail)",
+      "retrieval_time": "2026-07-31T19:55:00-04:00",
+      "provenance": "Official YouTube maxresdefault thumbnail; HTTP 200; JPEG 1280x720; 309,057 bytes; sha256 ae6fbd8e6785328b5ef86ba67c865d7bcaa79861ce2d55f97dfd396493e8dd2d; not a fabricated screenshot",
+      "rights_embedding_note": "Platform-served official thumbnail; editorial use with attribution and source link on slide; used as the non-autoplay fallback still",
+      "cue": null,
+      "local_path": "assets/images/jensen-huang-yc-signal-outside-thumb.jpg",
+      "alt_text": "Official YouTube thumbnail for Jensen Huang: The Mindset That Built NVIDIA, Y Combinator Startup School 2026",
+      "verification_status": "verified (HTTP 200, downloaded, JPEG integrity checked)"
+    }
+  ]
+}

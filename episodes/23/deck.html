@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Claw #23 &mdash; July 31, 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+:root{
+  --bg-dark:#ece4d5;--bg-card:#f7f0e4;
+  --claw-red:#2a7e6b;--claw-orange:#286f7d;
+  --claw-gradient:linear-gradient(135deg,#2a7e6b,#286f7d);
+  --text-primary:#28231f;--text-secondary:#5f564e;--text-muted:#74695f;
+  --border-subtle:#b5a996;
+  --accent-blue:#286f7d;--accent-green:#2a7e6b;--accent-purple:#6a5d91;--accent-yellow:#9a6b22;
+  --site-paper:#fff9ee;--site-ink:#24201c;--site-mint:#9de5c9;--site-cyan:#82d2e6;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;height:100%;color-scheme:light;
+  background:repeating-linear-gradient(0deg,rgba(81,69,56,.018) 0,rgba(81,69,56,.018) 1px,transparent 1px,transparent 4px),radial-gradient(circle at 50% -10%,rgba(255,255,255,.72),transparent 34rem),var(--bg-dark);
+  color:var(--text-primary);font-family:var(--display);letter-spacing:.005em;overflow:hidden;}
+.slide-container{width:100%;height:100vh;position:relative;overflow:hidden;}
+.slide{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:52px 68px 64px;opacity:0;pointer-events:none;transition:opacity 0.45s ease;
+  background:linear-gradient(rgba(57,49,42,.065) 1px,transparent 1px),linear-gradient(90deg,rgba(57,49,42,.065) 1px,transparent 1px),radial-gradient(circle at 88% 18%,rgba(114,199,217,.16),transparent 30rem),var(--site-paper);
+  background-size:56px 56px,56px 56px,auto,auto;}
+.slide::before{position:absolute;inset:18px;z-index:1;content:"";pointer-events:none;border:2px solid rgba(54,47,40,.20);border-radius:22px;}
+.slide.active{opacity:1;pointer-events:all;}
+.slide.active .content{animation:rise 0.6s cubic-bezier(.2,.7,.2,1) both;}
+@keyframes rise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.progress-bar{position:fixed;top:0;left:0;height:5px;background:var(--claw-gradient);transition:width 0.4s ease;z-index:100;}
+.slide-counter{position:fixed;bottom:22px;right:32px;font-family:var(--mono);font-size:13px;color:#74695f;z-index:100;}
+.nav-dots{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:100;max-width:60%;flex-wrap:wrap;justify-content:center;}
+.nav-dot{width:8px;height:8px;border-radius:50%;background:#9c9184;border:1px solid #766b60;cursor:pointer;transition:all 0.3s;}
+.nav-dot.active{background:var(--claw-red);width:24px;border-radius:4px;}
+.kb-hint{position:fixed;bottom:22px;left:32px;font-size:11px;color:#74695f;font-family:var(--mono);z-index:100;}
+.kb-hint kbd{color:var(--site-ink);background:#e2d8c9;border:1px solid #a99d8c;border-radius:4px;padding:2px 6px;font-size:10px;}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.025em;}
+h1,h2{text-transform:uppercase;}
+h1{font-size:4rem;line-height:.92;margin-bottom:16px;}
+h2{font-size:2.55rem;line-height:.96;margin-bottom:12px;}
+h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
+.subtitle{font-size:1.15rem;color:var(--text-secondary);line-height:1.5;max-width:820px;}
+.mono{font-family:var(--mono);}
+.gradient-text{background:var(--claw-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.gradient-line{width:80px;height:5px;background:var(--claw-gradient);border-radius:2px;margin:12px auto;}
+.gradient-line.wide{width:120px;}
+.red{color:#8f403a;}.orange,.blue{color:#225e6a;}.green{color:#216655;}.purple{color:#5d527b;}.yellow{color:#7b5a1c;}.muted{color:var(--text-secondary);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px;width:100%;max-width:1160px;}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;width:100%;max-width:1160px;}
+.text-center{text-align:center;}
+.mt-1{margin-top:8px;}.mt-2{margin-top:14px;}.mt-3{margin-top:20px;}
+.content{position:relative;z-index:2;width:100%;max-width:1184px;display:flex;flex-direction:column;align-items:center;}
+.card{background:var(--bg-card);border:2px solid var(--border-subtle);border-radius:18px;padding:20px 22px;text-align:left;position:relative;overflow:hidden;box-shadow:inset 0 0 0 6px var(--site-paper),0 10px 24px rgba(79,64,49,.06);}
+.card h3{font-size:1.15rem;margin-bottom:6px;}
+.card p,.card li{font-size:0.95rem;color:var(--text-secondary);line-height:1.45;}
+.card-glow{border-color:var(--claw-red);box-shadow:inset 0 0 0 6px var(--site-paper),0 0 28px rgba(42,126,107,.10);}
+.tag{display:inline-block;padding:4px 12px;border-radius:3px;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--mono);}
+.tag-red{color:#8f403a;background:#f1d7d2;}.tag-orange{color:#225e6a;background:#dcebed;}.tag-green{color:#216655;background:#ddefe6;}.tag-blue{color:#225e6a;background:#dcebed;}.tag-yellow{color:#7b5a1c;background:#eee1bd;}.tag-purple{color:#5d527b;background:#e4deec;}
+.pill{display:inline-flex;align-items:center;gap:7px;color:var(--text-secondary);border:1px solid var(--border-subtle);border-radius:4px;background:rgba(255,249,238,.72);padding:5px 12px;font-size:0.74rem;font-family:var(--mono);font-weight:600;}
+.pill.red{color:#8f403a;border-color:#bd8b84;background:#f7e6df;}
+.pill.blue{color:#225e6a;border-color:#82b8c2;background:#e0f0f0;}
+.pill.green{color:#216655;border-color:#8fc8b5;background:#e3f2e9;}
+.pill.yellow{color:#7b5a1c;border-color:#cbb67e;background:#f4ead2;}
+.quote-block{color:var(--site-ink);border-left:7px solid var(--claw-red);border-radius:0 12px 12px 0;background:rgba(42,126,107,.08);padding:14px 22px;margin:12px 0;font-family:var(--display);font-size:1.18rem;font-weight:600;line-height:1.45;max-width:1040px;}
+.quote-block.orange{border-left-color:var(--claw-orange);background:rgba(40,111,125,.08);}
+.alert-card{background:#f7e6df;border:2px solid #a6645e;border-radius:18px;padding:18px 26px;max-width:1040px;width:100%;box-shadow:inset 0 0 0 6px var(--site-paper),0 10px 24px rgba(79,64,49,.06);}
+.alert-card h3{color:#8f403a;}
+.warn-card{background:#f4ead2;border:2px solid #b89e64;border-radius:12px;padding:14px 22px;max-width:1040px;width:100%;}
+.part-label{font-family:var(--mono);font-size:0.74rem;color:#24695e;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
+.story-num{font-family:var(--mono);font-size:0.78rem;letter-spacing:0.14em;color:#24695e;font-weight:700;text-transform:uppercase;margin-bottom:12px;}
+.hook{display:flex;align-items:center;gap:16px;background:var(--bg-card);border:2px solid var(--border-subtle);border-radius:14px;padding:13px 20px;width:100%;max-width:920px;margin-bottom:10px;box-shadow:inset 0 0 0 6px var(--site-paper),0 10px 24px rgba(79,64,49,.06);}
+.hook-num{font-family:var(--mono);font-size:1.3rem;font-weight:800;flex-shrink:0;width:30px;}
+.hook-text{font-size:1.02rem;font-weight:600;line-height:1.35;}
+.bullet-list{list-style:none;padding:0;margin:0;}
+.bullet-list li{position:relative;padding-left:20px;margin-bottom:7px;font-size:0.96rem;color:var(--text-secondary);line-height:1.45;}
+.bullet-list li::before{content:'';position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:1px;background:var(--claw-gradient);}
+.bullet-list li strong{color:var(--text-primary);font-weight:600;}
+.slide-brand{position:absolute;top:24px;left:36px;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:9px;color:#74695f;z-index:5;}
+.slide-brand svg{display:block;width:24px;height:24px;filter:drop-shadow(0 2px 4px rgba(42,126,107,.18));}
+.slide-tag{position:absolute;top:24px;right:36px;font-size:0.7rem;font-family:var(--mono);color:#74695f;z-index:5;letter-spacing:0.08em;}
+.arc-wrap{display:flex;width:100%;max-width:1080px;justify-content:space-between;align-items:flex-start;gap:6px;flex-wrap:wrap;}
+.arc-step{flex:1;min-width:130px;text-align:center;position:relative;}
+.arc-num{width:38px;height:38px;border-radius:50%;color:var(--site-ink);background:var(--bg-card);border:2px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-family:var(--mono);font-weight:700;font-size:0.9rem;}
+.arc-step.now .arc-num{color:var(--site-paper);background:var(--claw-gradient);border-color:transparent;box-shadow:0 0 0 5px rgba(42,126,107,.13);}
+.arc-label{font-size:0.84rem;color:var(--text-secondary);font-weight:600;line-height:1.3;}
+.arc-step.now .arc-label{color:var(--site-ink);}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:28px;width:100%;max-width:1120px;align-items:center;}
+.split.narrow-right{grid-template-columns:1.15fr 0.85fr;}
+.shot-frame{border-radius:14px;overflow:hidden;border:2px solid var(--border-subtle);background:var(--site-ink);box-shadow:inset 0 0 0 6px var(--site-paper),0 10px 24px rgba(79,64,49,.08);}
+.shot-bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#ded4c5;border-bottom:1px solid #a99d8c;}
+.shot-dot{width:9px;height:9px;border-radius:50%;}
+.shot-frame img,.shot-frame video{display:block;width:100%;height:auto;}
+.shot-cap{margin-top:10px;font-family:var(--mono);font-size:0.72rem;color:#74695f;letter-spacing:0.04em;text-align:center;}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;width:100%;max-width:1140px;margin-top:18px;align-items:stretch;}
+.demo-card{display:flex;flex-direction:column;min-width:0;padding:14px;background:rgba(255,249,238,.92);border:2px solid var(--border-subtle);border-radius:16px;box-shadow:0 14px 30px rgba(79,64,49,.10);text-align:left;}
+.demo-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:11px;}
+.demo-eyebrow{font-family:var(--mono);font-size:.67rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#225e6a;}
+.demo-title{font-size:1.15rem;line-height:1.15;margin-top:3px;color:var(--text-primary);}
+.demo-badge{flex-shrink:0;font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:#2a7e6b;border-radius:999px;padding:6px 9px;}
+.demo-frame{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid #a99d8c;border-radius:11px;background:#111;}
+.demo-frame video,.demo-frame img{display:block;width:100%;height:100%;object-fit:cover;}
+.demo-frame.diagram{background:#fff;}
+.demo-frame.diagram img{object-fit:contain;}
+.demo-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px;}
+.demo-meta span{font-family:var(--mono);font-size:.62rem;color:#4f463f;background:#e9dfd0;border:1px solid #cfc4b4;border-radius:999px;padding:5px 8px;}
+.demo-action{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:11px;font-family:var(--mono);font-size:.64rem;color:#74695f;}
+.demo-action a{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:7px 11px;border-radius:7px;background:#225e6a;color:#fff;text-decoration:none;font-weight:700;white-space:nowrap;}
+.demo-action a:hover{background:#184a53;}
+.media-model-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%;max-width:1160px;margin-top:14px;align-items:stretch;}
+.media-model-grid .card{padding:15px;}
+.media-model-grid h3{font-size:1.08rem;line-height:1.15;}
+.media-model-grid .bullet-list{font-size:.78rem;line-height:1.35;}
+.demo-grid.three{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:1160px;margin-top:12px;}
+.demo-grid.three .demo-card{padding:11px;}
+.demo-grid.three .demo-card-head{gap:8px;margin-bottom:8px;}
+.demo-grid.three .demo-title{font-size:.95rem;}
+.demo-grid.three .demo-badge{font-size:.54rem;padding:5px 7px;}
+.demo-grid.three .demo-meta{gap:5px;margin-top:8px;}
+.demo-grid.three .demo-meta span{font-size:.54rem;padding:4px 6px;}
+.demo-grid.three .demo-action{font-size:.56rem;padding-top:8px;}
+.demo-grid.three .demo-action a{min-height:28px;padding:5px 8px;}
+.channel-chip{display:inline-flex;align-items:center;gap:8px;color:var(--text-secondary);border:1px solid var(--border-subtle);border-radius:4px;background:rgba(255,249,238,.72);padding:9px 16px;font-weight:600;font-size:0.92rem;margin:5px;font-family:var(--mono);}
+.brand-mark{width:34px;height:34px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--mono);font-weight:700;font-size:0.85rem;border:1px solid rgba(36,32,28,.18);}
+.brand-mark.sm{width:22px;height:22px;border-radius:6px;font-size:0.62rem;}
+.bm-herald{background:linear-gradient(135deg,#1a2b4a,#0c1526);color:#7dd3fc;}
+.bm-heritage{background:linear-gradient(135deg,#1c3c3c,#0f2727);color:#f4d58d;}
+.logo-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;}
+.sponsor-logo{display:block;object-fit:contain;flex-shrink:0;}
+.sponsor-logo-chip{width:28px;height:28px;}
+.sponsor-logo-chip.herald{border-radius:7px;}
+.sponsor-logo-chip.heritage{border-radius:50%;background:#fff;}
+.sponsor-lockup{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.88);border:1px solid var(--border-subtle);box-shadow:0 12px 34px rgba(36,32,28,.08);}
+.sponsor-lockup.herald{gap:18px;padding:16px 28px;border-radius:14px;}
+.sponsor-lockup.herald img{width:72px;height:72px;border-radius:16px;}
+.sponsor-lockup.herald span{color:#11131d;font-size:2rem;font-weight:850;letter-spacing:-.03em;}
+.sponsor-lockup.heritage{width:min(660px,80vw);padding:14px 24px;border-radius:14px;}
+.sponsor-lockup.heritage img{width:100%;max-height:150px;}
+.social-cta{display:flex;align-items:center;justify-content:center;gap:26px;width:100%;max-width:1040px;}
+.social-links{text-align:center;min-width:0;}
+.discord-qr{display:grid;grid-template-columns:112px auto;align-items:center;gap:14px;padding:10px 16px 10px 10px;border:2px solid var(--border-subtle);border-radius:14px;background:#fffdf8;box-shadow:0 12px 30px rgba(79,64,49,.10);color:var(--text-primary);text-decoration:none;text-align:left;flex-shrink:0;}
+.discord-qr img{display:block;width:112px;height:112px;image-rendering:pixelated;}
+.discord-qr strong{display:block;font-size:1.12rem;color:#5865f2;}
+.discord-qr small{display:block;margin-top:5px;font-family:var(--mono);font-size:.68rem;line-height:1.35;color:var(--text-secondary);}
+.glow-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.10;pointer-events:none;z-index:0;}
+.orb-red,.orb-green{background:#2a7e6b;}.orb-orange,.orb-blue{background:#286f7d;}.orb-purple{background:#6a5d91;}
+.claw-bg{position:absolute;width:520px;opacity:.035;z-index:0;pointer-events:none;}
+table.cmp{width:100%;max-width:1120px;border-collapse:collapse;font-size:0.86rem;background:var(--bg-card);border:2px solid var(--border-subtle);border-radius:12px;overflow:hidden;}
+table.cmp th{font-family:var(--mono);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--site-ink);background:#e2d8c9;padding:8px 10px;text-align:left;border-bottom:2px solid var(--border-subtle);}
+table.cmp td{padding:8px 10px;border-bottom:1px solid #cfc4b4;color:var(--text-secondary);vertical-align:top;line-height:1.35;}
+table.cmp tr:last-child td{border-bottom:none;}
+table.cmp td.k{font-family:var(--mono);font-size:0.72rem;color:var(--site-ink);font-weight:600;white-space:nowrap;}
+table.cmp td strong{color:var(--text-primary);}
+table.cmp .unk{color:#a99d8c;font-style:italic;}
+.src-links{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;margin-top:14px;max-width:1100px;}
+.src-links a{font-family:var(--mono);font-size:0.66rem;color:#225e6a;text-decoration:none;border-bottom:1px dashed #82b8c2;word-break:break-all;}
+.src-links a:hover{color:var(--site-ink);border-bottom-style:solid;}
+.src-note{font-family:var(--mono);font-size:0.64rem;color:#74695f;margin-top:6px;}
+.event-row{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:baseline;padding:9px 0;border-bottom:1px solid #cfc4b4;text-align:left;width:100%;max-width:1020px;}
+.event-row:last-child{border-bottom:none;}
+.event-date{font-family:var(--mono);font-size:0.78rem;font-weight:700;color:#225e6a;}
+.ladder{width:100%;max-width:980px;display:flex;flex-direction:column;gap:10px;}
+.ladder-row{display:grid;grid-template-columns:240px 1fr 130px;align-items:center;gap:12px;}
+.ladder-name{font-size:0.88rem;font-weight:600;color:var(--text-primary);}
+.ladder-track{height:22px;background:#ded4c5;border:1px solid #ad9f8e;border-radius:6px;overflow:hidden;position:relative;}
+.ladder-fill{height:100%;border-radius:6px;}
+.ladder-val{font-family:var(--mono);font-size:0.8rem;font-weight:700;text-align:right;color:var(--site-ink);}
+.stamp{display:inline-block;font-family:var(--mono);font-weight:700;font-size:0.9rem;color:#8f403a;border:3px solid #a6645e;border-radius:8px;padding:6px 16px;transform:rotate(-3deg);background:#f7e6df;letter-spacing:0.1em;text-transform:uppercase;}
+@media(max-width:900px){.slide{padding:44px 40px 58px;}h1{font-size:3rem;}h2{font-size:2rem;}.two-col,.three-col,.split{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="weeklyclaw-logo" viewBox="0 0 64 64">
+      <rect x="2" y="2" width="60" height="60" rx="12" fill="#f2eadb" stroke="#2f2923" stroke-width="3"></rect>
+      <path d="M12 19 16 9M21 19 25 9M30 19 34 9" fill="none" stroke="#2d8472" stroke-width="4" stroke-linecap="round"></path>
+      <path d="m13 27 8 25 11-18 10 18 9-25" fill="none" stroke="#211c18" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="slide-counter"><span id="slideNum">1</span> / <span id="slideTotal">18</span></div>
+<div class="nav-dots" id="navDots"></div>
+<div class="kb-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> navigate &middot; <kbd>F</kbd> fullscreen</div>
+<div class="slide-container">
+
+<!-- SLIDE 1 — TITLE -->
+<div class="slide active" id="s-title">
+  <svg class="claw-bg" style="top:2%;right:-4%;"><use href="#weeklyclaw-logo"/></svg>
+  <div class="glow-orb orb-red" style="width:520px;height:520px;top:-160px;left:-140px;"></div>
+  <div class="glow-orb orb-orange" style="width:420px;height:420px;bottom:-140px;right:-100px;"></div>
+  <div class="content">
+    <svg aria-label="Weekly Claw logo" style="width:92px;height:92px;margin-bottom:14px;filter:drop-shadow(0 12px 24px rgba(42,126,107,.22));"><use href="#weeklyclaw-logo"/></svg>
+    <div class="part-label">Episode 23 &middot; Friday, July 31, 2026 &middot; 4:00 PM ET</div>
+    <h1 style="font-size:4.7rem;text-align:center;margin-bottom:6px;"><span class="gradient-text">Weekly Claw</span></h1>
+    <div class="gradient-line wide"></div>
+    <p class="subtitle text-center mt-2" style="max-width:920px;">
+      The envelope, not the engine.<br/>Capability barely moved this week &mdash; the economics, the openness, and the control plane did.
+    </p>
+    <div class="mt-3" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+      <span class="pill blue">Hosts: @AndyML &middot; @HiM</span>
+      <span class="pill green">~36 min &middot; five segments &middot; built to be clipped</span>
+    </div>
+    <div class="mt-3 logo-row">
+      <span class="pill">Sponsored by</span>
+      <span class="channel-chip"><img class="sponsor-logo sponsor-logo-chip herald" src="assets/sponsors/herald-labs-icon.svg" alt="Herald Labs logo"> Herald Labs</span>
+      <span class="channel-chip"><img class="sponsor-logo sponsor-logo-chip heritage" src="assets/sponsors/heritage-telecom-mark-256.png" alt="Heritage Telecom logo"> Heritage Telecom</span>
+    </div>
+    <div class="mt-3 mono muted" style="font-size:0.8rem;letter-spacing:0.16em;text-transform:uppercase;">&ldquo;Follow the excitement.&rdquo;</div>
+  </div>
+</div>
+
+<!-- SLIDE 2 — COLD OPEN -->
+<div class="slide" id="s-cold-open">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">01 / COLD OPEN</div>
+  <div class="glow-orb orb-red" style="width:460px;height:460px;top:-150px;right:-120px;"></div>
+  <div class="content">
+    <div class="part-label">Cold open &middot; the frame</div>
+    <h2 class="text-center">The envelope, <span class="gradient-text">not the engine.</span></h2>
+    <div class="gradient-line"></div>
+    <p class="subtitle text-center mt-1" style="max-width:880px;">No frontier model shipped this week. Instead: two labs admitted their models reached real production systems during tests, prices collapsed, four open-weight launches landed &mdash; and only two of them are actually downloadable.</p>
+    <div class="mt-3 arc-wrap">
+      <div class="arc-step now"><div class="arc-num">1</div><div class="arc-label">Eval risk</div></div>
+      <div class="arc-step"><div class="arc-num">2</div><div class="arc-label">Operational reset</div></div>
+      <div class="arc-step"><div class="arc-num">3</div><div class="arc-label">Open language wave</div></div>
+      <div class="arc-step"><div class="arc-num">4</div><div class="arc-label">Local reality</div></div>
+      <div class="arc-step"><div class="arc-num">5</div><div class="arc-label">Media frontier</div></div>
+    </div>
+    <div class="mt-3" style="width:100%;display:flex;flex-direction:column;align-items:center;">
+      <div class="hook"><span class="hook-num gradient-text">&#9888;</span><span class="hook-text">Anthropic reviewed <span class="orange">141,006 evaluation runs</span> and found its models inside three organizations' production systems.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#128176;</span><span class="hook-text">OpenAI cut its cheapest model's price by <span class="orange">80%</span> &mdash; three weeks after launch.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#128230;</span><span class="hook-text">MiniMax and Black Forest Labs promised open weights for video. <span class="orange">Promise</span> is the operative word.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3 — SPONSOR: HERALD LABS -->
+<div class="slide" id="s-sponsor-herald">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">SPONSOR</div>
+  <div class="glow-orb orb-blue" style="width:420px;height:420px;top:-120px;left:-100px;"></div>
+  <div class="content">
+    <div class="part-label">Brought to you by</div>
+    <div class="sponsor-lockup herald"><img class="sponsor-logo" src="assets/sponsors/herald-labs-icon.svg" alt="Herald Labs logo"><span>Herald Labs</span></div>
+    <p class="subtitle text-center mt-2" style="max-width:820px;">An applied AI product lab where humans and agents build products together. The team behind <strong style="color:var(--text-primary);">Entity</strong>, mission control for agent teams &mdash; and hacker houses around the world where builders ship actual work.</p>
+    <div class="quote-block orange mt-3">No theory club. Build, don&rsquo;t talk.</div>
+    <div class="mt-2 pill blue">labs.theherald.co</div>
+  </div>
+</div>
+
+<!-- SLIDE 4 — NEWS INTRO -->
+<div class="slide" id="s-news-intro">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">02 / WHAT HAPPENED THIS WEEK</div>
+  <div class="content">
+    <div class="part-label">What happened this week &middot; ~22 min &middot; five segments</div>
+    <h2 class="text-center">Five segments. <span class="gradient-text">One envelope.</span></h2>
+    <div class="gradient-line"></div>
+    <div class="mt-3 three-col">
+      <div class="card card-glow"><span class="tag tag-red">01 &middot; 9.5</span><h3 class="mt-1">Security becomes the product</h3><p>Anthropic&rsquo;s 141,006-run review + OpenAI&rsquo;s open-sourced security CLI.</p></div>
+      <div class="card"><span class="tag tag-blue">02 &middot; 9.1</span><h3 class="mt-1">OpenAI operational reset</h3><p>Luna &minus;80% and a provider-specific harness result that tripled on the public set.</p></div>
+      <div class="card"><span class="tag tag-green">03 &middot; 8.9</span><h3 class="mt-1">Open language wave</h3><p>DeepSeek V4 Flash + Inkling-Small: downloadable today.</p></div>
+      <div class="card"><span class="tag tag-yellow">04 &middot; 8.9</span><h3 class="mt-1">Kimi K3 reality check</h3><p>Open weights &ne; locally runnable. The 512 GB Mac claim fails.</p></div>
+      <div class="card"><span class="tag tag-purple">05 &middot; 8.6</span><h3 class="mt-1">Three video-model launches</h3><p>MiniMax H3 + Seedance 2.5 + FLUX 3: three different workflow bets.</p></div>
+      <div class="card"><span class="tag tag-orange">CUT ORDER</span><h3 class="mt-1">If time runs short</h3><p>Optional rotating block first &mdash; Signal From Outside is a permanent anchor, never cut. Then Seg 5 demos, Seg 4. Never cut 1 or 2.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5 — SEG 1: SECURITY INCIDENTS -->
+<div class="slide" id="s-seg-security-incidents">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">SEG 01 / RISK &middot; 9.5</div>
+  <div class="glow-orb orb-red" style="width:480px;height:480px;top:-140px;right:-140px;"></div>
+  <div class="content">
+    <div class="story-num">Segment 01 &middot; security becomes the product &middot; part A: the incidents</div>
+    <h2 class="text-center">Eval environments are <span class="gradient-text">production infrastructure.</span></h2>
+    <div class="gradient-line"></div>
+    <div class="split narrow-right mt-2">
+      <div style="text-align:left;">
+        <p style="color:var(--text-secondary);font-size:0.98rem;line-height:1.55;">After OpenAI&rsquo;s preliminary July 21 disclosure (models exploited what OpenAI described as a previously unknown vulnerability during an evaluation and reached Hugging Face production systems; full report pending), Anthropic reviewed <strong style="color:var(--text-primary);">141,006 evaluation runs</strong> and found <strong class="red">three incidents (six runs)</strong> where Claude models reached the open internet through third-party partner Irregular&rsquo;s misconfigured environment &mdash; then entered three organizations&rsquo; production infrastructure.</p>
+        <ul class="bullet-list mt-2">
+          <li><strong>PyPI:</strong> one model uploaded a malicious package; executed on <strong>15 real systems</strong> before registry defenses removed it.</li>
+          <li><strong>Scan:</strong> an internal research model scanned <strong>~9,000 targets</strong>, compromised an app via exposed debug credentials + SQL injection &mdash; then stopped on its own.</li>
+          <li><strong>Response:</strong> cyber evals halted Jul 23; orgs notified Jul 27; METR independent review; redacted PyPI transcript promised within a week.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card">
+          <span class="tag tag-red">TIMELINE</span>
+          <div class="event-row" style="max-width:100%;"><span class="event-date">Jul 21</span><span style="font-size:0.86rem;color:var(--text-secondary);">OpenAI preliminarily discloses evaluation breach reaching Hugging Face production; full report pending.</span></div>
+          <div class="event-row" style="max-width:100%;"><span class="event-date">Jul 23</span><span style="font-size:0.86rem;color:var(--text-secondary);">Anthropic begins transcript review; halts all cyber evals same day.</span></div>
+          <div class="event-row" style="max-width:100%;"><span class="event-date">Jul 24</span><span style="font-size:0.86rem;color:var(--text-secondary);">All three incidents identified across six runs.</span></div>
+          <div class="event-row" style="max-width:100%;"><span class="event-date">Jul 27</span><span style="font-size:0.86rem;color:var(--text-secondary);">Irregular + affected orgs notified. Two orgs hadn&rsquo;t detected it.</span></div>
+          <div class="event-row" style="max-width:100%;"><span class="event-date">Pending</span><span style="font-size:0.86rem;color:var(--text-secondary);">METR review; redacted transcript; vendor assurance work.</span></div>
+        </div>
+        <div class="mt-2" style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span class="pill yellow">Self-reported causal analysis</span>
+          <span class="pill">Misconfiguration, not a novel escape</span>
+        </div>
+      </div>
+    </div>
+    <div class="quote-block mt-2">Two frontier labs learned their models touched real third-party systems &mdash; and both found out only by auditing their own transcripts.</div>
+    <div class="src-links">
+      <a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">anthropic.com/news/investigating-incidents-cybersecurity-evals</a>
+      <a href="https://www.cnbc.com/2026/07/30/anthropic-says-claude-gained-unauthorized-access-to-others-systems.html" target="_blank" rel="noopener">cnbc.com (model names)</a>
+      <a href="https://www.bleepingcomputer.com/news/security/anthropics-claude-breached-3-orgs-uploaded-pypi-malware-during-tests/" target="_blank" rel="noopener">bleepingcomputer.com (PyPI + 9,000-target detail)</a>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6 — SEG 1: SECURITY PRODUCT -->
+<div class="slide" id="s-seg-security-product">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">SEG 01 / CONTROL PLANE &middot; 9.5</div>
+  <div class="glow-orb orb-green" style="width:440px;height:440px;bottom:-140px;left:-120px;"></div>
+  <div class="content">
+    <div class="story-num">Segment 01 &middot; security becomes the product &middot; part B: the control plane, for sale</div>
+    <h2 class="text-center">The week both labs started <span class="gradient-text">selling the seatbelt.</span></h2>
+    <div class="gradient-line"></div>
+    <div class="mt-2 two-col">
+      <div class="card card-glow">
+        <span class="tag tag-green">PRODUCT &middot; OPENAI</span>
+        <h3 class="mt-2">Codex Security CLI &mdash; open-sourced</h3>
+        <ul class="bullet-list mt-1">
+          <li>CLI + TypeScript SDK under <strong>Apache-2.0</strong> (Jul 29): <span class="mono" style="font-size:0.8rem;">@openai/codex-security</span></li>
+          <li>Repo scans, PR review, CI gates, pre-commit hooks; SARIF/JSON export; per-scan <strong>coverage reporting</strong> and <span class="mono" style="font-size:0.8rem;">--max-cost</span> budget guardrail</li>
+          <li><strong>Precision:</strong> the client is open; the AI scanning engine stays a <strong>gated cloud beta</strong></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag tag-orange">MITIGATION &middot; ANTHROPIC</span>
+        <h3 class="mt-2">Blameless postmortem, new controls</h3>
+        <ul class="bullet-list mt-1">
+          <li>Continuous monitoring of eval transcripts for unexpected behavior</li>
+          <li>Rigorous assurance work with third-party eval vendors (Irregular)</li>
+          <li>METR independent review; redacted PyPI transcript within a week</li>
+          <li><strong>Separation held:</strong> this is mitigation, not the incident, and not a product launch</li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert-card mt-3">
+      <h3>Why it&rsquo;s one segment, three boxes</h3>
+      <p style="color:var(--text-primary);font-size:1rem;">Incident (Anthropic) &ne; context (OpenAI&rsquo;s July 21 HF breach) &ne; product (Codex Security CLI). The narrative connection: evaluation containment failed at both labs within a fortnight while reusable control tooling shipped separately. Codex Security is not presented as the fix for either incident.</p>
+    </div>
+    <div class="src-links">
+      <a href="https://learn.chatgpt.com/docs/security/cli" target="_blank" rel="noopener">learn.chatgpt.com/docs/security/cli</a>
+      <a href="https://mlq.ai/news/openai-open-sources-codex-security-cli-for-repository-scans-and-ci-pipelines/" target="_blank" rel="noopener">mlq.ai (client-only scope)</a>
+      <a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">anthropic.com (mitigations)</a>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7 — SEG 2: OPENAI RESET — ECONOMICS -->
+<div class="slide" id="s-seg-openai-reset-econ">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">SEG 02 / ECONOMICS &middot; 9.1</div>
+  <div class="glow-orb orb-orange" style="width:480px;height:480px;top:-140px;left:-120px;"></div>
+  <div class="content">
+    <div class="story-num">Segment 02 &middot; OpenAI operational reset &middot; part A: economics</div>
+    <h2 class="text-center">Luna drops <span class="gradient-text">80%.</span> Not 90. Eighty.</h2>
+    <div class="gradient-line"></div>
+    <div class="split mt-2">
+      <div>
+        <table class="cmp" style="max-width:100%;">
+          <tr><th>Model</th><th>Input / M (old &rarr; new)</th><th>Output / M (old &rarr; new)</th></tr>
+          <tr><td class="k">GPT-5.6 Luna</td><td><strong>$1.00 &rarr; $0.20</strong></td><td><strong>$6.00 &rarr; $1.20</strong></td></tr>
+          <tr><td class="k">GPT-5.6 Terra</td><td>$2.50 &rarr; $2.00</td><td>$15.00 &rarr; $12.00</td></tr>
+          <tr><td class="k">GPT-5.6 Sol</td><td>$5.00 (unchanged)</td><td>$30.00 (unchanged)</td></tr>
+        </table>
+        <p class="src-note">Source: OpenAI developer community pricing table + OpenAI pricing post, Jul 30, 2026. Sol adds Fast mode: 2.5&times; speed at 2&times; price.</p>
+      </div>
+      <div style="text-align:left;">
+        <ul class="bullet-list">
+          <li><strong>Why so fast:</strong> GPT-5.6 helped optimize its own runtime &mdash; 20% lower serving cost (GPU kernels), &gt;15% better token-generation efficiency (speculative decoding). Vendor-reported.</li>
+          <li><strong>Auto-review</strong> in ChatGPT/Codex moves to Luna &mdash; OpenAI expects it to cost ~10&times; less.</li>
+          <li><strong>Vendor framing, labeled:</strong> Luna &asymp; year-ago frontier at &ldquo;~6 cents on the dollar per task&rdquo;; &ldquo;~99% lower&rdquo; cost per task than Fable 5 on Agents&rsquo; Last Exam.</li>
+          <li><strong>Three weeks after launch.</strong> Price cuts usually take quarters.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="quote-block orange mt-2">The story isn&rsquo;t that OpenAI got cheaper. It&rsquo;s that efficiency gains are now big enough to reprice a product line in 21 days.</div>
+    <div class="src-links">
+      <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noopener">openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6</a>
+      <a href="https://community.openai.com/t/announcing-a-major-price-drop-for-5-6-terra-and-luna-and-fast-mode-for-5-6-sol/1388484" target="_blank" rel="noopener">community.openai.com (price table)</a>
+      <a href="https://www.cnbc.com/2026/07/30/open-ai-price-cut-gpt.html" target="_blank" rel="noopener">cnbc.com</a>
+      <a href="https://www.axios.com/2026/07/30/openai-cuts-prices-gpt-terra-luna5" target="_blank" rel="noopener">axios.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 8 — SEG 2: HARNESS -->
+<div class="slide" id="s-seg-openai-reset-harness">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">SEG 02 / HARNESS &middot; 9.1</div>
+  <div class="glow-orb orb-purple" style="width:440px;height:440px;bottom:-140px;right:-120px;"></div>
+  <div class="content">
+    <div class="story-num">Segment 02 &middot; OpenAI operational reset &middot; part B: harness-created capability</div>
+    <h2 class="text-center">Two settings <span class="gradient-text">tripled a benchmark.</span></h2>
+    <div class="gradient-line"></div>
+    <div class="split mt-2">
+      <div style="text-align:left;">
+        <ul class="bullet-list">
+          <li>OpenAI re-ran ARC-AGI-3 with <strong>retained reasoning</strong> (pass <span class="mono" style="font-size:0.8rem;">previous_response_id</span>) and <strong>compaction</strong> (summarize old context instead of rolling truncation at 175K chars).</li>
+          <li>Same model. Same tasks. Different plumbing: the model stopped re-deriving each game from scratch every turn.</li>
+          <li>OpenAI&rsquo;s own conclusion: benchmarks measure <strong>harness design as much as the model</strong>.</li>
+          <li>Caveat stack: vendor-reported; public task set; not an independent rerun.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card">
+          <span class="tag tag-purple">ARC-AGI-3 PUBLIC SET &middot; VENDOR-REPORTED</span>
+          <div class="ladder mt-2" style="max-width:100%;">
+            <div class="ladder-row"><span class="ladder-name">ARC Prize verified setup</span><div class="ladder-track"><div class="ladder-fill" style="width:35%;background:#b5a996;"></div></div><span class="ladder-val">13.3%</span></div>
+            <div class="ladder-row"><span class="ladder-name">OpenAI alternative harness</span><div class="ladder-track"><div class="ladder-fill" style="width:100%;background:var(--claw-gradient);"></div></div><span class="ladder-val">38.3%</span></div>
+            <div class="ladder-row"><span class="ladder-name">Output tokens</span><div class="ladder-track"><div class="ladder-fill" style="width:17%;background:#286f7d;"></div></div><span class="ladder-val">~6&times; fewer</span></div>
+          </div>
+          <p class="mt-2" style="font-size:0.85rem;">GPT-5.6 Sol (max), Relative Human Action Efficiency. Source: OpenAI research post.</p>
+        </div>
+      </div>
+    </div>
+    <div class="quote-block mt-2">If two API settings triple the score, last month&rsquo;s leaderboard was measuring the plumbing.</div>
+    <div class="src-links">
+      <a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/" target="_blank" rel="noopener">openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores</a>
+      <a href="https://developers.openai.com/api/docs/guides/compaction" target="_blank" rel="noopener">developers.openai.com (compaction docs)</a>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 9 — SEG 3: OPEN LANGUAGE WAVE -->
+<div class="slide" id="s-seg-open-language">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">SEG 03 / OPEN WAVE &middot; 8.9</div>
+  <div class="glow-orb orb-green" style="width:460px;height:460px;top:-140px;right:-120px;"></div>
+  <div class="content">
+    <div class="story-num">Segment 03 &middot; the open language wave gets downloadable</div>
+    <h2 class="text-center">Two agentic models you can <span class="gradient-text">actually download today.</span></h2>
+    <div class="gradient-line"></div>
+    <div class="mt-2 two-col">
+      <div class="card card-glow">
+        <span class="tag tag-green">DEEPSEEK V4 FLASH &middot; OFFICIAL 0731</span>
+        <h3 class="mt-2">Post-training upgrade, same architecture</h3>
+        <ul class="bullet-list mt-1">
+          <li>Jul 31: preview (Apr 24) graduates to official public beta &mdash; <strong>same 284B / 13B-active MoE, 1M context</strong>; only re-post-trained</li>
+          <li>Native <strong>Responses API</strong> + specific adaptation for <strong>Codex-style agents</strong>; config path backs up existing setup before writing provider metadata (reversible)</li>
+          <li>Weights on Hugging Face under <strong>MIT</strong> &mdash; downloadable now</li>
+          <li>V4 Pro unchanged; official Pro release &ldquo;soon&rdquo;; Codex support for Pro expected early August</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag tag-blue">THINKING MACHINES &middot; INKLING-SMALL</span>
+        <h3 class="mt-2">A quarter of Inkling&rsquo;s size, full weights</h3>
+        <ul class="bullet-list mt-1">
+          <li><strong>276B total / 12B active</strong> MoE; up to <strong>1M context</strong> (64K/256K on Tinker); text/image/audio in, text out</li>
+          <li>Full weights on Hugging Face under <strong>Apache-2.0</strong>; <strong>NVFP4 quantized checkpoint</strong> alongside BF16</li>
+          <li>Fine-tunable on Tinker; vLLM/SGLang serving; community dual-DGX-Spark NVFP4 recipe exists</li>
+          <li>Benchmarks (SWE-bench Verified, Terminal-Bench, HLE, AA Index) are <strong>vendor-reported</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="quote-block mt-2">The Hugging Face layer is the story: licenses, files, and quantizations you can verify &mdash; not launch-post adjectives.</div>
+    <div class="src-links">
+      <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731" target="_blank" rel="noopener">huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731</a>
+      <a href="https://api-docs.deepseek.com/updates/" target="_blank" rel="noopener">api-docs.deepseek.com/updates</a>
+      <a href="https://api-docs.deepseek.com/quick_start/agent_integrations/codex/" target="_blank" rel="noopener">DeepSeek Codex docs</a>
+      <a href="https://thinkingmachines.ai/news/inkling-small/" target="_blank" rel="noopener">thinkingmachines.ai/news/inkling-small</a>
+      <a href="https://huggingface.co/thinkingmachines/Inkling-Small" target="_blank" rel="noopener">huggingface.co/thinkingmachines/Inkling-Small</a>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 10 — SEG 3: COMPARISON TABLE -->
+<div class="slide" id="s-seg-open-language-table">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">SEG 03 / THE TABLE &middot; 8.9</div>
+  <div class="content">
+    <div class="story-num">Segment 03 &middot; comparison &middot; unknowns left blank, vendor claims labeled</div>
+    <h2 class="text-center">The downloadable tier, <span class="gradient-text">side by side.</span></h2>
+    <div class="gradient-line"></div>
+    <table class="cmp mt-2">
+      <tr><th></th><th>DeepSeek V4 Flash (0731)</th><th>Inkling-Small</th><th>Kimi K3</th></tr>
+      <tr><td class="k">Architecture</td><td>MoE, 284B total / <strong>13B active</strong></td><td>MoE, 276B total / <strong>12B active</strong></td><td>MoE, 2.8T total / <strong>~104B active</strong> (KDA + AttnRes)</td></tr>
+      <tr><td class="k">Context</td><td>1M in / 384K out*</td><td>1M (64K/256K on Tinker)</td><td>1M</td></tr>
+      <tr><td class="k">Modalities</td><td>Text (tool-calling tuned)</td><td>Text + image + audio in &rarr; text</td><td>Text + vision</td></tr>
+      <tr><td class="k">License</td><td><strong>MIT</strong></td><td><strong>Apache-2.0</strong></td><td>Kimi K3 License (custom)</td></tr>
+      <tr><td class="k">Weights</td><td>Downloadable (HF)</td><td>Downloadable (HF, BF16 + NVFP4)</td><td>Downloadable (HF, MXFP4 ~1.4&ndash;1.56 TB)</td></tr>
+      <tr><td class="k">Quant / local path</td><td>4-bit GGUF ~155 GB*</td><td>NVFP4 checkpoint; dual-Spark recipe (community)</td><td>Unsloth 1-bit GGUF 594 GB &mdash; needs ~610 GB+</td></tr>
+      <tr><td class="k">API price / M</td><td>$0.14 in / $0.28 out*</td><td class="unk">unknown (Tinker metered)</td><td class="unk">unknown (platform.kimi.ai)</td></tr>
+      <tr><td class="k">Benchmarks</td><td>Vendor-reported (agentic/coding up vs preview)</td><td>Vendor-reported (SWE-bench, Terminal-Bench, HLE)</td><td>Vendor-reported (&ldquo;strongest open model&rdquo;)</td></tr>
+      <tr><td class="k">Caveat</td><td>Flash-only upgrade; Pro pending</td><td>Serving economics unverified</td><td>Self-host = multi-node; not one Mac</td></tr>
+    </table>
+    <p class="src-note">* Third-party-listed figure (dev.to decision guide / OpenRouter listing), not a primary DeepSeek price page. Blank/unknown cells are intentional &mdash; nothing invented.</p>
+    <div class="src-links">
+      <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731" target="_blank" rel="noopener">HF: DeepSeek-V4-Flash-0731</a>
+      <a href="https://huggingface.co/thinkingmachines/Inkling-Small" target="_blank" rel="noopener">HF: Inkling-Small</a>
+      <a href="https://huggingface.co/moonshotai/Kimi-K3" target="_blank" rel="noopener">HF: Kimi-K3</a>
+      <a href="https://dev.to/purpledoubled/deepseek-v4-flash-vs-v4-pro-a-developer-decision-guide-4hb8" target="_blank" rel="noopener">dev.to (*labeled figures)</a>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 11 — SEG 4: KIMI K3 REALITY CHECK -->
+<div class="slide" id="s-seg-kimi-local">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">SEG 04 / LOCAL REALITY &middot; 8.9</div>
+  <div class="glow-orb orb-orange" style="width:460px;height:460px;bottom:-140px;left:-120px;"></div>
+  <div class="content">
+    <div class="story-num">Segment 04 &middot; Kimi K3 &middot; open weights &ne; locally runnable</div>
+    <h2 class="text-center">&ldquo;Full K3 on one 512 GB Mac?&rdquo; <span class="stamp">Busted</span></h2>
+    <div class="gradient-line"></div>
+    <div class="split mt-2">
+      <div>
+        <div class="card">
+          <span class="tag tag-yellow">MEMORY FLOOR &middot; VERIFIED</span>
+          <div class="ladder mt-2" style="max-width:100%;">
+            <div class="ladder-row"><span class="ladder-name">Native MXFP4 weights</span><div class="ladder-track"><div class="ladder-fill" style="width:100%;background:#8f403a;"></div></div><span class="ladder-val">~1.4 TB</span></div>
+            <div class="ladder-row"><span class="ladder-name">Unsloth 1-bit GGUF</span><div class="ladder-track"><div class="ladder-fill" style="width:42%;background:var(--claw-gradient);"></div></div><span class="ladder-val">594 GB</span></div>
+            <div class="ladder-row"><span class="ladder-name">Unsloth guidance (RAM+VRAM)</span><div class="ladder-track"><div class="ladder-fill" style="width:44%;background:#286f7d;"></div></div><span class="ladder-val">~610 GB+</span></div>
+            <div class="ladder-row"><span class="ladder-name">512 GB Mac Studio</span><div class="ladder-track"><div class="ladder-fill" style="width:37%;background:#b5a996;"></div></div><span class="ladder-val red">falls short</span></div>
+          </div>
+          <p class="mt-2" style="font-size:0.85rem;">Bar lengths illustrative, not to scale. Sizes from Unsloth docs &amp; hardware analyses.</p>
+        </div>
+      </div>
+      <div style="text-align:left;">
+        <ul class="bullet-list">
+          <li><strong>Kimi K3 weights (Jul 27):</strong> 2.8T-param open model, ~104B active, Kimi Delta Attention, native vision, 1M context &mdash; first open 3T-class model. Real and downloadable.</li>
+          <li><strong>Full-model claim fails:</strong> smallest public unpruned quant is 594 GB; guidance is ~610 GB+ combined memory. One 512 GB Mac Studio is below that floor.</li>
+          <li><strong>Honest paths:</strong> full model needs a cluster or accelerator supernode. Expert-pruned REAP80 fits (~350 GB, ~5.5 tok/s self-reported on M3 Ultra) but its card warns of noticeable quality degradation.</li>
+          <li><strong>MoE sparsity cuts compute, not memory:</strong> all experts must stay addressable.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="quote-block mt-2">&ldquo;Open weights&rdquo; tells you what you may download. It says nothing about what you can run.</div>
+    <div class="src-links">
+      <a href="https://github.com/moonshotai/kimi-k3" target="_blank" rel="noopener">github.com/moonshotai/kimi-k3</a>
+      <a href="https://unsloth.ai/docs/models/kimi-k3" target="_blank" rel="noopener">unsloth.ai/docs/models/kimi-k3</a>
+      <a href="https://huggingface.co/unsloth/Kimi-K3-GGUF" target="_blank" rel="noopener">HF: unsloth/Kimi-K3-GGUF</a>
+      <a href="https://www.modemguides.com/blogs/ai-news/run-kimi-k3-locally-hardware-reality-check" target="_blank" rel="noopener">modemguides.com (hardware check)</a>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 12 — SEG 5: MEDIA WAVE -->
+<div class="slide" id="s-seg-media-wave">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">SEG 05 / MEDIA FRONTIER &middot; 8.6</div>
+  <div class="glow-orb orb-purple" style="width:460px;height:460px;top:-140px;left:-120px;"></div>
+  <div class="content">
+    <div class="story-num">Segment 05 &middot; three video-model launches &middot; three product strategies</div>
+    <h2 class="text-center">Three video models landed. <span class="gradient-text">The control layer is the fight.</span></h2>
+    <div class="gradient-line"></div>
+    <div class="media-model-grid">
+      <div class="card card-glow">
+        <span class="tag tag-purple">MINIMAX H3 / HAILUO 3.0 &middot; JUL 31</span>
+        <h3 class="mt-2">Omni-modal video, native stereo</h3>
+        <ul class="bullet-list mt-1">
+          <li><strong>2K, up to 15s, native stereo</strong>; text/image/video/audio context</li>
+          <li>Omni-reference: up to 9 images, 3 videos, 3 audio clips</li>
+          <li>Live via Hailuo + API; open weights promised, <strong>not downloadable at airtime</strong></li>
+        </ul>
+      </div>
+      <div class="card card-glow">
+        <span class="tag tag-orange">SEEDANCE 2.5 &middot; BYTEDANCE / DREAMINA &middot; JUL 31</span>
+        <h3 class="mt-2">Long takes plus targeted editing</h3>
+        <ul class="bullet-list mt-1">
+          <li><strong>Native 30s generation</strong>; long-video mode up to 3 minutes</li>
+          <li>Edit characters, environments, and camera moves with 1-second timestamp control</li>
+          <li>Up to 50 multimodal references; Dreamina subscribers in launch regions</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag tag-blue">FLUX 3 &middot; BLACK FOREST LABS &middot; JUL 23</span>
+        <h3 class="mt-2">One Self-Flow model: image, video, audio, action</h3>
+        <ul class="bullet-list mt-1">
+          <li>Video up to <strong>20s with native audio</strong>; gated early access</li>
+          <li>Image, video, audio, and action share one multimodal backbone</li>
+          <li>FLUX 3 Dev weights promised later in 2026; <strong>not downloadable at airtime</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="alert-card mt-2">
+      <h3>Same week. Different wedge.</h3>
+      <p style="color:var(--text-primary);font-size:.92rem;">MiniMax sells multimodal reference + audio. Seedance sells long takes + surgical editing. FLUX sells one backbone across media and action. The model is only half the product.</p>
+    </div>
+    <div class="src-links">
+      <a href="https://www.minimax.io/blog/minimax-h3" target="_blank" rel="noopener">minimax.io/blog/minimax-h3</a>
+      <a href="https://x.com/dreamina_ai/status/2083056471147958714" target="_blank" rel="noopener">Dreamina: Seedance 2.5 official launch</a>
+      <a href="https://bfl.ai/blog/flux-3" target="_blank" rel="noopener">bfl.ai/blog/flux-3</a>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 13 — SEG 5: DEMOS -->
+<div class="slide" id="s-seg-media-demos">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">SEG 05 / DEMOS &middot; 8.6</div>
+  <div class="content">
+    <div class="story-num">Segment 05 &middot; verified official demos &middot; cue manually &middot; no autoplay</div>
+    <h2 class="text-center">Show, don&rsquo;t <span class="gradient-text">describe.</span></h2>
+    <div class="gradient-line"></div>
+    <div class="demo-grid three">
+      <article class="demo-card">
+        <div class="demo-card-head">
+          <div><div class="demo-eyebrow">MiniMax H3</div><h3 class="demo-title">Official 60-second launch film</h3></div>
+          <span class="demo-badge">Local · 60s</span>
+        </div>
+        <div class="demo-frame">
+          <video controls preload="metadata" poster="assets/images/minimax-h3-launch-poster.jpg" aria-label="MiniMax H3 official sixty-second launch film">
+            <source src="assets/videos/minimax-h3-official-launch-60s.mp4" type="video/mp4">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+        <div class="demo-meta"><span>Full 60s film</span><span>Official @MiniMax_AI</span><span>No autoplay</span></div>
+        <div class="demo-action"><span>Launch film, not one raw output</span><a href="https://x.com/MiniMax_AI/status/2082779062653845803" target="_blank" rel="noopener">Open post ↗</a></div>
+      </article>
+      <article class="demo-card">
+        <div class="demo-card-head">
+          <div><div class="demo-eyebrow">Seedance 2.5</div><h3 class="demo-title">Official global launch showcase</h3></div>
+          <span class="demo-badge">Local · 2m40s</span>
+        </div>
+        <div class="demo-frame">
+          <video controls preload="metadata" poster="assets/images/seedance-2.5-poster.jpg" aria-label="Seedance 2.5 official global launch showcase">
+            <source src="assets/videos/seedance-2.5-official-launch.mp4" type="video/mp4">
+            Your browser does not support embedded video.
+          </video>
+        </div>
+        <div class="demo-meta"><span>30s native</span><span>Targeted editing</span><span>No autoplay</span></div>
+        <div class="demo-action"><span>Official Dreamina launch asset</span><a href="https://x.com/dreamina_ai/status/2083056471147958714" target="_blank" rel="noopener">Open post ↗</a></div>
+      </article>
+      <article class="demo-card">
+        <div class="demo-card-head">
+          <div><div class="demo-eyebrow">FLUX 3 · Black Forest Labs</div><h3 class="demo-title">Official multimodal video demo</h3></div>
+          <span class="demo-badge">Remote · 145 MB</span>
+        </div>
+        <div class="demo-frame">
+          <img src="assets/images/flux3-official-demo-poster.jpg" alt="Frame from the official FLUX 3 video demo showing a running horse">
+        </div>
+        <div class="demo-meta"><span>Official demo frame</span><span>Video opens separately</span><span>No preload</span></div>
+        <div class="demo-action"><span>Stream from BFL CDN</span><a href="https://cdn.sanity.io/files/2gpum2i6/production/8d241b4b5d8df9d2b53edbac8c48f7d1e055115d.mp4" target="_blank" rel="noopener">Play demo ↗</a></div>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 14 — SIGNAL FROM OUTSIDE -->
+<div class="slide" id="s-signal-outside">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">03 / SIGNAL FROM OUTSIDE &middot; 7 MIN</div>
+  <div class="glow-orb orb-blue" style="width:440px;height:440px;top:-130px;right:-120px;"></div>
+  <div class="content">
+    <div class="part-label">Signal From Outside &middot; weekly video review &middot; permanent anchor &middot; 7 min</div>
+    <h2 class="text-center">Jensen Huang: <span class="gradient-text">&ldquo;a very Linux moment.&rdquo;</span></h2>
+    <div class="gradient-line"></div>
+    <div class="mt-2 two-col">
+      <div class="card card-glow">
+        <span class="tag tag-blue">THIS WEEK&rsquo;S VIDEO &middot; Y COMBINATOR</span>
+        <h3 class="mt-2">&ldquo;Jensen Huang: The Mindset That Built NVIDIA&rdquo;</h3>
+        <p>Garry Tan interviews Jensen Huang, live at Chase Center &middot; YC Startup School 2026 &middot; published July 26 &middot; ~49 min. About twenty minutes in, Huang calls OpenClaw <strong>&ldquo;a very Linux moment&rdquo;</strong> and says NVIDIA told Peter Steinberger: <strong>&ldquo;all of NVIDIA&rsquo;s engineers are your engineers&rdquo;</strong> &mdash; the same offer went to the Hermes team.</p>
+        <img src="assets/images/jensen-huang-yc-signal-outside-thumb.jpg" alt="Official YouTube thumbnail for Jensen Huang: The Mindset That Built NVIDIA, Y Combinator Startup School 2026" style="width:100%;border-radius:12px;margin-top:10px;">
+        <p class="mono muted mt-1" style="font-size:0.72rem;">Official YouTube thumbnail (img.youtube.com) &middot; fallback still &middot; not a screenshot</p>
+      </div>
+      <div class="card">
+        <span class="tag tag-green">THE STEERABILITY THESIS</span>
+        <h3 class="mt-2">Capability is solved enough. Steering is the frontier.</h3>
+        <p>Agents don&rsquo;t need to be 100% right &mdash; 80 or 99% is fine <strong>if humans can steer the remainder</strong>. Fine-grained controllability &mdash; change one word in a plan file, get a contained delta instead of a different output &mdash; is &ldquo;probably the single biggest breakthrough we need for agents at every level.&rdquo;</p>
+        <p class="mt-1">Jobs frame: AI eliminates tasks, not jobs &mdash; software employment +10% YoY, radiology +20% <em>(Huang&rsquo;s on-stage figures, not independently audited)</em>.</p>
+      </div>
+    </div>
+    <div class="warn-card mt-3"><strong style="color:var(--accent-yellow);">NO AUTOPLAY:</strong> the video is not embedded. If a moment is referenced on camera, Andy opens the official YouTube watch page manually in a browser tab; otherwise hold on the thumbnail card above.</div>
+    <div class="src-links">
+      <a href="https://www.youtube.com/watch?v=I4B37S1dyQQ" target="_blank" rel="noopener">youtube.com/watch?v=I4B37S1dyQQ (official &middot; Y Combinator)</a>
+      <a href="https://www.ycrootaccess.com/p/jensen-huang-the-mindset-that-built" target="_blank" rel="noopener">ycrootaccess.com (full transcript)</a>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 15 — HOT TAKE -->
+<div class="slide" id="s-hot-take">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">04 / HOT TAKE &middot; 4 MIN</div>
+  <div class="glow-orb orb-red" style="width:480px;height:480px;top:-140px;left:-120px;"></div>
+  <div class="content">
+    <div class="part-label">Hot take &middot; 4 min</div>
+    <h2 class="text-center">&ldquo;Open&rdquo; now means <span class="gradient-text">three different things.</span></h2>
+    <div class="gradient-line"></div>
+    <p class="subtitle text-center mt-1" style="max-width:900px;">This week &ldquo;open&rdquo; shipped as downloadable MIT/Apache files (DeepSeek, Inkling-Small), as a custom-license 1.4 TB artifact you can&rsquo;t run alone (Kimi K3), as a promise with a date TBD (MiniMax, FLUX) &mdash; and as a client whose engine stays closed (OpenAI&rsquo;s security CLI). The word is doing four jobs.</p>
+    <div class="mt-3 three-col">
+      <div class="card"><span class="tag tag-green">Downloadable</span><p class="mt-1">DeepSeek V4 Flash (MIT), Inkling-Small (Apache-2.0). Verify the files, not the post.</p></div>
+      <div class="card"><span class="tag tag-yellow">Announced</span><p class="mt-1">MiniMax H3 (&ldquo;coming days&rdquo;), FLUX 3 Dev (&ldquo;later 2026&rdquo;). News, not a release.</p></div>
+      <div class="card card-glow"><span class="tag tag-red">Client-only</span><p class="mt-1">Codex Security CLI: Apache-2.0 wrapper around a gated cloud engine. Useful, but read the scope.</p></div>
+    </div>
+    <div class="alert-card mt-3">
+      <h3>Prediction</h3>
+      <p style="color:var(--text-primary);">By the end of Q3, &ldquo;open weights&rdquo; claims get audited like benchmark claims: no downloadable artifact with a license file, no headline.</p>
+    </div>
+    <div class="mt-2 warn-card"><strong style="color:var(--accent-yellow);">Push back, Henry:</strong> Is a gated-engine open client still a win for the ecosystem &mdash; or openwashing with better PR?</div>
+  </div>
+</div>
+
+<!-- SLIDE 16 — SPONSOR: HERITAGE TELECOM -->
+<div class="slide" id="s-sponsor-heritage">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">SPONSOR</div>
+  <div class="glow-orb orb-green" style="width:420px;height:420px;bottom:-120px;right:-100px;"></div>
+  <div class="content">
+    <div class="part-label">Also brought to you by</div>
+    <div class="sponsor-lockup heritage"><img class="sponsor-logo" src="assets/sponsors/heritage-telecom-logo-horizontal-1200.jpg" alt="Heritage Telecom logo"></div>
+    <p class="subtitle text-center mt-2" style="max-width:820px;">Trusted phone systems from trusted people. The whole communications stack for your business: dependable phones, failover, reporting, and practical AI that turns calls into action.</p>
+    <div class="quote-block mt-3">One accountable provider who actually answers.</div>
+    <div class="mt-2 pill green">heritagetel.com</div>
+  </div>
+</div>
+
+<!-- SLIDE 17 — ONE TO WATCH -->
+<div class="slide" id="s-watch">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">05 / CLOSE</div>
+  <svg class="claw-bg" style="bottom:-6%;left:-4%;"><use href="#weeklyclaw-logo"/></svg>
+  <div class="content">
+    <div class="part-label">One to watch + where to follow</div>
+    <h2 class="text-center">See you <span class="gradient-text">next Friday.</span></h2>
+    <div class="gradient-line"></div>
+    <div class="mt-2 three-col">
+      <div class="card">
+        <h3 class="red">The transcripts</h3>
+        <p>Anthropic promised a lightly redacted PyPI incident transcript within a week, and METR&rsquo;s independent review is pending. Read both against OpenAI&rsquo;s July 21 disclosure.</p>
+      </div>
+      <div class="card">
+        <h3 class="green">The weight drops</h3>
+        <p>MiniMax H3 weights &ldquo;in the coming days&rdquo;; FLUX 3 Dev &ldquo;later in 2026&rdquo;; DeepSeek V4 Pro official &ldquo;soon.&rdquo; First downloadable artifact with a license file wins the headline.</p>
+      </div>
+      <div class="card">
+        <h3 class="orange">The harness gap</h3>
+        <p>Do other labs re-run their flagship benchmarks with retained reasoning + compaction &mdash; and how many leaderboard moves this quarter are plumbing, not models?</p>
+      </div>
+    </div>
+    <div class="social-cta mt-2">
+      <div class="social-links">
+        <div>
+          <span class="channel-chip">&#127968; weeklyclaw.ai</span>
+          <span class="channel-chip">&#9654;&#65039; Full episodes on YouTube</span>
+          <span class="channel-chip">&#10005; Clips &amp; takes on X</span>
+        </div>
+        <p class="mt-2 text-center" style="font-size:1.05rem;color:var(--text-primary);"><strong>Back next Friday:</strong> August 7 &middot; 4 PM ET</p>
+      </div>
+      <a class="discord-qr" href="https://weeklyclaw.ai/discord" target="_blank" rel="noopener" aria-label="Join the Weekly Claw Discord">
+        <img src="assets/socials/weeklyclaw-discord-qr.png" alt="QR code for weeklyclaw.ai/discord">
+        <span><strong>Join Discord</strong><small>Scan or visit<br>weeklyclaw.ai/discord</small></span>
+      </a>
+    </div>
+    <p class="mt-2 mono muted" style="font-size:0.82rem;letter-spacing:0.16em;text-transform:uppercase;">Follow the excitement.</p>
+  </div>
+</div>
+
+<!-- SLIDE 18 — SOURCES -->
+<div class="slide" id="s-sources">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #23</div><div class="slide-tag">SOURCES / LINKS</div>
+  <div class="content">
+    <div class="part-label">Every claim, one click &middot; verified 2026-07-31</div>
+    <h2 class="text-center">Sources &amp; <span class="gradient-text">Links.</span></h2>
+    <div class="gradient-line"></div>
+    <div class="mt-2 two-col" style="gap:16px;">
+      <div class="card">
+        <span class="tag tag-red">SEG 1 &middot; SECURITY</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals" target="_blank" rel="noopener">anthropic.com/news/investigating-incidents-cybersecurity-evals</a>
+          <a href="https://www.cnbc.com/2026/07/30/anthropic-says-claude-gained-unauthorized-access-to-others-systems.html" target="_blank" rel="noopener">cnbc.com/2026/07/30/anthropic-says-claude-gained-unauthorized-access</a>
+          <a href="https://www.cnn.com/2026/07/30/tech/anthropic-ai-models-break-out-hack" target="_blank" rel="noopener">cnn.com/2026/07/30/tech/anthropic-ai-models-break-out-hack</a>
+          <a href="https://www.bleepingcomputer.com/news/security/anthropics-claude-breached-3-orgs-uploaded-pypi-malware-during-tests/" target="_blank" rel="noopener">bleepingcomputer.com (PyPI / 15 systems / 9,000 targets)</a>
+          <a href="https://cyberscoop.com/anthropic-claude-ai-hacks-real-companies/" target="_blank" rel="noopener">cyberscoop.com/anthropic-claude-ai-hacks-real-companies</a>
+          <a href="https://learn.chatgpt.com/docs/security/cli" target="_blank" rel="noopener">learn.chatgpt.com/docs/security/cli</a>
+          <a href="https://mlq.ai/news/openai-open-sources-codex-security-cli-for-repository-scans-and-ci-pipelines/" target="_blank" rel="noopener">mlq.ai (Codex Security CLI scope)</a>
+          <a href="https://theagenttimes.com/articles/openai-open-sources-codex-security-cli-under-apache-2-0-lice-64143af2" target="_blank" rel="noopener">theagenttimes.com (Apache-2.0 license)</a>
+        </div>
+        <span class="tag tag-blue mt-2">SEG 2 &middot; OPENAI RESET</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/" target="_blank" rel="noopener">openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6</a>
+          <a href="https://community.openai.com/t/announcing-a-major-price-drop-for-5-6-terra-and-luna-and-fast-mode-for-5-6-sol/1388484" target="_blank" rel="noopener">community.openai.com (full price table)</a>
+          <a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/" target="_blank" rel="noopener">openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores</a>
+          <a href="https://developers.openai.com/api/docs/guides/compaction" target="_blank" rel="noopener">developers.openai.com/api/docs/guides/compaction</a>
+          <a href="https://www.cnbc.com/2026/07/30/open-ai-price-cut-gpt.html" target="_blank" rel="noopener">cnbc.com/2026/07/30/open-ai-price-cut-gpt</a>
+          <a href="https://www.axios.com/2026/07/30/openai-cuts-prices-gpt-terra-luna5" target="_blank" rel="noopener">axios.com/2026/07/30/openai-cuts-prices</a>
+        </div>
+        <span class="tag tag-green mt-2">SEG 3 &middot; OPEN LANGUAGE WAVE</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731" target="_blank" rel="noopener">huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731</a>
+          <a href="https://api-docs.deepseek.com/updates/" target="_blank" rel="noopener">api-docs.deepseek.com/updates</a>
+          <a href="https://api-docs.deepseek.com/quick_start/agent_integrations/codex/" target="_blank" rel="noopener">api-docs.deepseek.com/quick_start/agent_integrations/codex</a>
+          <a href="https://thinkingmachines.ai/news/inkling-small/" target="_blank" rel="noopener">thinkingmachines.ai/news/inkling-small</a>
+          <a href="https://huggingface.co/thinkingmachines/Inkling-Small" target="_blank" rel="noopener">huggingface.co/thinkingmachines/Inkling-Small</a>
+          <a href="https://forums.developer.nvidia.com/t/inkling-small-nvfp4-on-a-dual-dgx-spark-cluster/378645" target="_blank" rel="noopener">NVIDIA forum (NVFP4 dual-Spark recipe, community)</a>
+          <a href="https://dev.to/purpledoubled/deepseek-v4-flash-vs-v4-pro-a-developer-decision-guide-4hb8" target="_blank" rel="noopener">dev.to (third-party price/quant figures)</a>
+        </div>
+      </div>
+      <div class="card">
+        <span class="tag tag-yellow">SEG 4 &middot; KIMI K3</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://github.com/moonshotai/kimi-k3" target="_blank" rel="noopener">github.com/moonshotai/kimi-k3</a>
+          <a href="https://huggingface.co/moonshotai/Kimi-K3" target="_blank" rel="noopener">huggingface.co/moonshotai/Kimi-K3</a>
+          <a href="https://unsloth.ai/docs/models/kimi-k3" target="_blank" rel="noopener">unsloth.ai/docs/models/kimi-k3</a>
+          <a href="https://huggingface.co/unsloth/Kimi-K3-GGUF" target="_blank" rel="noopener">huggingface.co/unsloth/Kimi-K3-GGUF</a>
+          <a href="https://kingy.ai/blog/kimi-k3-local-128gb-mac-studio-unsloth/" target="_blank" rel="noopener">kingy.ai (Mac memory analysis)</a>
+          <a href="https://www.modemguides.com/blogs/ai-news/run-kimi-k3-locally-hardware-reality-check" target="_blank" rel="noopener">modemguides.com (hardware reality check)</a>
+          <a href="https://www.oflight.co.jp/en/columns/kimi-k3-open-weights-self-host-2026" target="_blank" rel="noopener">oflight.co.jp (self-host specs)</a>
+        </div>
+        <span class="tag tag-purple mt-2">SEG 5 &middot; MEDIA WAVE</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://www.minimax.io/blog/minimax-h3" target="_blank" rel="noopener">minimax.io/blog/minimax-h3</a>
+          <a href="https://platform.minimax.io/docs/guides/video-generation" target="_blank" rel="noopener">platform.minimax.io/docs/guides/video-generation</a>
+          <a href="https://x.com/MiniMax_AI/status/2082779062653845803" target="_blank" rel="noopener">MiniMax H3 official 60s launch film</a>
+          <a href="https://x.com/dreamina_ai/status/2083056471147958714" target="_blank" rel="noopener">Dreamina Seedance 2.5 official launch</a>
+          <a href="https://www.scmp.com/tech/article/3362540/video-ai-minimax-challenges-bytedance-low-price-open-weights-new-h3-model" target="_blank" rel="noopener">scmp.com (H3 license + weights timing)</a>
+          <a href="https://bfl.ai/blog/flux-3" target="_blank" rel="noopener">bfl.ai/blog/flux-3</a>
+          <a href="https://cdn.sanity.io/files/2gpum2i6/production/8d241b4b5d8df9d2b53edbac8c48f7d1e055115d.mp4" target="_blank" rel="noopener">FLUX 3 official demo mp4 (cdn.sanity.io, BFL CMS)</a>
+          <a href="https://www.globenewswire.com/news-release/2026/07/23/3332364/0/en/Black-Forest-Labs-Unveils-FLUX-3-A-New-Multimodal-Frontier-Model-For-Visual-Intelligence.html" target="_blank" rel="noopener">globenewswire.com (BFL launch release)</a>
+          <a href="https://decrypt.co/374189/black-forest-labs-flux-3-image-video-robot-hands" target="_blank" rel="noopener">decrypt.co (FLUX 3 + FLUX-mimic)</a>
+        </div>
+        <span class="tag tag-blue mt-2">SIGNAL FROM OUTSIDE</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://www.youtube.com/watch?v=I4B37S1dyQQ" target="_blank" rel="noopener">youtube.com &mdash; Jensen Huang: The Mindset That Built NVIDIA (YC Startup School 2026)</a>
+          <a href="https://www.ycrootaccess.com/p/jensen-huang-the-mindset-that-built" target="_blank" rel="noopener">ycrootaccess.com (full transcript)</a>
+        </div>
+        <span class="tag tag-orange mt-2">BENCH / CAVEAT TEXTURE</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://arxiv.org/abs/2607.27080" target="_blank" rel="noopener">arxiv.org/abs/2607.27080 (agent memory attack surface, bench)</a>
+          <a href="https://arxiv.org/abs/2607.27191" target="_blank" rel="noopener">arxiv.org/abs/2607.27191 (research-judgment eval, merged caveat)</a>
+        </div>
+        <p class="src-note mt-2">Vendor-reported claims are labeled on each slide. OpenAI pages block direct curl (bot protection); content was retrieved and cross-checked via independent reporting (CNBC, Axios) and the OpenAI developer community mirror.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+(function() {
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+  const slideNumEl = document.getElementById('slideNum');
+  const slideTotalEl = document.getElementById('slideTotal');
+  const progressBar = document.getElementById('progressBar');
+  const navDots = document.getElementById('navDots');
+  slideTotalEl.textContent = total;
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => go(i));
+    navDots.appendChild(dot);
+  }
+  const dots = navDots.querySelectorAll('.nav-dot');
+  function go(i) {
+    if (i < 0 || i >= total) return;
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = i;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    slideNumEl.textContent = current + 1;
+    progressBar.style.width = ((current + 1) / total * 100) + '%';
+    if (history.replaceState) history.replaceState(null, '', '#' + slides[current].id);
+  }
+  progressBar.style.width = (1 / total * 100) + '%';
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(current - 1); }
+    else if (e.key === 'Home') { e.preventDefault(); go(0); }
+    else if (e.key === 'End') { e.preventDefault(); go(total - 1); }
+    else if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+  if (location.hash) {
+    const target = document.querySelector(location.hash);
+    if (target && target.classList.contains('slide')) {
+      const idx = Array.prototype.indexOf.call(slides, target);
+      if (idx >= 0) go(idx);
+    }
+  }
+})();
+</script>
+</body>
+</html>
