@@ -1,6 +1,9 @@
 import importlib.util
+import json
+import subprocess
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 
@@ -12,6 +15,27 @@ SPEC.loader.exec_module(SYNC)
 
 
 class SyncMetadataTests(unittest.TestCase):
+    def test_fetch_youtube_episodes_infers_unnumbered_long_form_uploads(self):
+        playlist = {
+            "entries": [
+                {"id": "EPISODE0023", "title": "AI Models Break Containment", "duration": 3096},
+                {"id": "EPISODE0022", "title": "The Sandbox Failed | Weekly Claw #22", "duration": 2800},
+                {"id": "SHORT000001", "title": "A short clip", "duration": 45},
+                {"id": "EPISODE0021", "title": "The workflow is the moat", "duration": 2600},
+                {"id": "EPISODE0020", "title": "Weekly Claw #20", "duration": 2500},
+            ]
+        }
+        completed = subprocess.CompletedProcess([], 0, stdout=json.dumps(playlist), stderr="")
+
+        with patch.object(SYNC.subprocess, "run", return_value=completed):
+            videos = SYNC.fetch_youtube_episodes()
+
+        self.assertEqual(videos[23]["id"], "EPISODE0023")
+        self.assertEqual(videos[22]["id"], "EPISODE0022")
+        self.assertEqual(videos[21]["id"], "EPISODE0021")
+        self.assertEqual(videos[20]["id"], "EPISODE0020")
+        self.assertNotIn(24, videos)
+
     def test_refresh_youtube_cards_preserves_episode_20_thumbnail_override(self):
         videos = {
             20: {

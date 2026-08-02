@@ -55,14 +55,37 @@ def fetch_youtube_episodes() -> dict[int, dict[str, str]]:
     except (FileNotFoundError, json.JSONDecodeError, subprocess.SubprocessError):
         return {}
 
+    entries = [
+        entry for entry in (playlist.get("entries") or [])
+        if entry.get("id") and (entry.get("duration") or 0) >= 15 * 60
+    ]
+    numbered: dict[int, int] = {}
+    for index, entry in enumerate(entries):
+        match = re.search(r"Weekly Claw\s*#(\d+)\b", entry.get("title") or "", re.I)
+        if match:
+            numbered[index] = int(match.group(1))
+
+    inferred = dict(numbered)
+    if numbered:
+        # YouTube titles do not always include the episode number. Long-form videos
+        # are newest-first, so infer only positions whose sequence agrees with every
+        # explicit anchor. This maps an unnumbered upload above #22 to #23 without
+        # relying on mutable title wording.
+        anchor_index = min(numbered)
+        anchor_episode = numbered[anchor_index]
+        for index in range(len(entries)):
+            candidate = anchor_episode + anchor_index - index
+            if all(episode == candidate + index - known_index for known_index, episode in numbered.items()):
+                inferred[index] = candidate
+
     episodes: dict[int, dict[str, str]] = {}
-    for entry in playlist.get("entries") or []:
+    for index, entry in enumerate(entries):
         video_id = entry.get("id")
         title = entry.get("title") or ""
         match = re.search(r"Weekly Claw\s*#(\d+)\b", title, re.I)
-        if not video_id or not match:
+        episode = int(match.group(1)) if match else inferred.get(index)
+        if not video_id or episode is None:
             continue
-        episode = int(match.group(1))
         episodes[episode] = {
             "id": video_id,
             "url": f"https://www.youtube.com/watch?v={video_id}",
