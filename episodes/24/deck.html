@@ -169,6 +169,11 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
 .ladder-val{font-family:var(--mono);font-size:0.8rem;font-weight:700;text-align:right;color:var(--site-ink);}
 .stamp{display:inline-block;font-family:var(--mono);font-weight:700;font-size:0.9rem;color:#8f403a;border:3px solid #a6645e;border-radius:8px;padding:6px 16px;transform:rotate(-3deg);background:#f7e6df;letter-spacing:0.1em;text-transform:uppercase;}
 @media(max-width:900px){.slide{padding:44px 40px 58px;}h1{font-size:3rem;}h2{font-size:2rem;}.two-col,.three-col,.split{grid-template-columns:1fr;}}
+
+.resource-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:1120px;text-align:left;}
+.resource-item{display:block;background:rgba(255,255,255,.04);border:1px solid var(--border-subtle,rgba(255,255,255,.12));border-radius:10px;padding:10px 12px;color:var(--text-primary,#eee);text-decoration:none;font-size:.78rem;line-height:1.3;overflow-wrap:anywhere;}
+.resource-item:hover{border-color:var(--claw-red,#e74c3c);}
+.resource-item strong{color:var(--claw-orange,#e67e22);display:block;margin-bottom:2px;}
 </style>
 </head>
 <body>
@@ -695,6 +700,33 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
     <p class="src-note mt-2">Vendor-reported claims labeled on slides. Black Hat details from OpenAI researchers Wallace and Dalton. Meta disclosure via Reuters/Guardian/CNN. Taalas perf claims vendor-reported (HC1 benchmark). Qwen benchmarks are Alibaba internal.</p>
   </div>
 </div>
+
+<!-- SLIDE — HOST-SHARED RESOURCES -->
+<div class="slide" id="s-host-resources">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #24</div><div class="slide-tag">HOST RESOURCES</div>
+  <div class="content">
+    <div class="part-label">Links Henry shared for this episode</div>
+    <h2 class="text-center">Primary demos, posts, <span class="gradient-text">and discussion receipts.</span></h2>
+    <div class="gradient-line"></div>
+    <div class="resource-list mt-2">
+      <a class="resource-item" href="https://x.com/ns123abc/status/2085474824424493087" target="_blank"><strong>AMD / Taalas</strong>@ns123abc acquisition + etched-silicon explainer</a>
+      <a class="resource-item" href="https://chatjimmy.ai" target="_blank"><strong>AMD / demo</strong>chatjimmy.ai</a>
+      <a class="resource-item" href="https://x.com/elonmusk/status/2085377974396752305" target="_blank"><strong>Terafab</strong>Elon Musk announcement + video</a>
+      <a class="resource-item" href="https://x.com/JoeTegtmeyer/status/2085497281021682076" target="_blank"><strong>Terafab</strong>Joe Tegtmeyer scale + cost breakdown</a>
+      <a class="resource-item" href="https://x.com/niccruzpatane/status/2085485425376760239" target="_blank"><strong>Terafab</strong>Nic Cruz Patane footprint comparison</a>
+      <a class="resource-item" href="https://www.youtube.com/watch?v=87DyyMV0kCY" target="_blank"><strong>Security</strong>OpenAI-Hugging Face incident, Black Hat USA 2026 (37:28)</a>
+      <a class="resource-item" href="https://x.com/ns123abc/status/2085135757992145382" target="_blank"><strong>Security</strong>Meta model-hack post + screenshots</a>
+      <a class="resource-item" href="https://x.com/finkd/status/2085080750034940201/photo/1" target="_blank"><strong>Models / Muse</strong>Zuckerberg: Muse Code beta + Muse Spark 1.2</a>
+      <a class="resource-item" href="https://www.youtube.com/watch?v=-Gj0-EIyx6g" target="_blank"><strong>Models / Muse</strong>Theo - t3.gg review + demo (44:42)</a>
+      <a class="resource-item" href="https://x.com/Alibaba_Qwen/status/2084100707423289643/photo/1" target="_blank"><strong>Models / Qwen</strong>Official Qwen3.8-Max + 27B announcement</a>
+      <a class="resource-item" href="https://x.com/iAmHenryMascot/status/2085498467384795158/photo/1" target="_blank"><strong>Harness / BB</strong>Henry BB + Liquid 2.5B hands-on</a>
+      <a class="resource-item" href="https://x.com/_can1357/status/2085502793679294947?s=20" target="_blank"><strong>Harness / Prime Agent</strong>Can Boluk critique + receipt</a>
+      <a class="resource-item" href="https://x.com/ycombinator/status/2083243960684908768" target="_blank"><strong>Harness / QM</strong>Official YC QM announcement</a>
+      <a class="resource-item" href="https://x.com/Cloudflare/status/2085003017590349918" target="_blank"><strong>Harness / Cloudflare OS</strong>Official Cloudflare announcement</a>
+    </div>
+  </div>
+</div>
+
 
 </div>
 <script>

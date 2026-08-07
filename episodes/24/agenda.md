@@ -180,6 +180,36 @@ Capability barely moved this week. The control plane did. The most consequential
 - Never cut the close below the 10-second sources hold; sponsor reads are contractual and never cut
 - All episode URLs verified 2026-08-07 (HTTP 200; IBM YouTube poster verified locally)
 
+## Host-shared resources and show links (not read on air)
+
+These exact links were supplied by Henry for presenter context, demos, visuals, and discussion receipts. They must remain in host-facing notes and the deck resources appendix. Community posts are supporting signal unless independently corroborated; official posts are primary launch receipts but numerical and causal claims still need verification.
+
+### AMD / Taalas
+- https://x.com/ns123abc/status/2085474824424493087
+- https://chatjimmy.ai
+
+### Terafab
+- https://x.com/elonmusk/status/2085377974396752305
+- https://x.com/JoeTegtmeyer/status/2085497281021682076
+- https://x.com/niccruzpatane/status/2085485425376760239
+
+### Security
+- https://www.youtube.com/watch?v=87DyyMV0kCY — Black Hat USA 2026, OpenAI–Hugging Face incident; 37:28; no autoplay
+- https://x.com/ns123abc/status/2085135757992145382
+
+### Models
+- https://x.com/finkd/status/2085080750034940201/photo/1 — official Muse Code / Muse Spark 1.2 post
+- https://www.youtube.com/watch?v=-Gj0-EIyx6g — Theo Muse Code review/demo; 44:42; no autoplay
+- https://x.com/Alibaba_Qwen/status/2084100707423289643/photo/1 — official naming: Qwen3.8-Max + Qwen3.8-27B
+
+### Harnesses
+- https://x.com/iAmHenryMascot/status/2085498467384795158/photo/1 — Henry's hands-on BB + Liquid 2.5B experience
+- https://x.com/_can1357/status/2085502793679294947?s=20 — Prime Agent community critique/receipt
+- https://x.com/ycombinator/status/2083243960684908768 — official YC QM post
+- https://x.com/Cloudflare/status/2085003017590349918 — official Cloudflare OS post
+
+Full retrieval notes: `sources/henry-shared-resources.md`.
+
 ## Build reference (not read on air)
 
 Runtime math by section:
