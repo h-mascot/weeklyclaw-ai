@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Claw #24 &mdash; August 7, 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+:root{
+  --bg-dark:#ece4d5;--bg-card:#f7f0e4;
+  --claw-red:#2a7e6b;--claw-orange:#286f7d;
+  --claw-gradient:linear-gradient(135deg,#2a7e6b,#286f7d);
+  --text-primary:#28231f;--text-secondary:#5f564e;--text-muted:#74695f;
+  --border-subtle:#b5a996;
+  --accent-blue:#286f7d;--accent-green:#2a7e6b;--accent-purple:#6a5d91;--accent-yellow:#9a6b22;
+  --site-paper:#fff9ee;--site-ink:#24201c;--site-mint:#9de5c9;--site-cyan:#82d2e6;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;height:100%;color-scheme:light;
+  background:repeating-linear-gradient(0deg,rgba(81,69,56,.018) 0,rgba(81,69,56,.018) 1px,transparent 1px,transparent 4px),radial-gradient(circle at 50% -10%,rgba(255,255,255,.72),transparent 34rem),var(--bg-dark);
+  color:var(--text-primary);font-family:var(--display);letter-spacing:.005em;overflow:hidden;}
+.slide-container{width:100%;height:100vh;position:relative;overflow:hidden;}
+.slide{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:52px 68px 64px;opacity:0;pointer-events:none;transition:opacity 0.45s ease;
+  background:linear-gradient(rgba(57,49,42,.065) 1px,transparent 1px),linear-gradient(90deg,rgba(57,49,42,.065) 1px,transparent 1px),radial-gradient(circle at 88% 18%,rgba(114,199,217,.16),transparent 30rem),var(--site-paper);
+  background-size:56px 56px,56px 56px,auto,auto;}
+.slide::before{position:absolute;inset:18px;z-index:1;content:"";pointer-events:none;border:2px solid rgba(54,47,40,.20);border-radius:22px;}
+.slide.active{opacity:1;pointer-events:all;}
+.slide.active .content{animation:rise 0.6s cubic-bezier(.2,.7,.2,1) both;}
+@keyframes rise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.progress-bar{position:fixed;top:0;left:0;height:5px;background:var(--claw-gradient);transition:width 0.4s ease;z-index:100;}
+.slide-counter{position:fixed;bottom:22px;right:32px;font-family:var(--mono);font-size:13px;color:var(--text-muted);z-index:100;}
+.nav-dots{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:100;max-width:60%;flex-wrap:wrap;justify-content:center;}
+.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--text-muted);cursor:pointer;transition:all 0.3s;}
+.nav-dot.active{background:var(--claw-red);width:24px;border-radius:4px;}
+.kb-hint{position:fixed;bottom:22px;left:32px;font-size:11px;color:var(--text-muted);font-family:var(--mono);z-index:100;}
+.kb-hint kbd{background:#222;padding:2px 6px;border-radius:3px;border:1px solid #333;font-size:10px;color:#ddd;}
+h1{font-size:3.4rem;font-weight:800;line-height:1.05;letter-spacing:-0.01em;margin-bottom:14px;}
+h2{font-size:2.05rem;font-weight:700;line-height:1.1;letter-spacing:-0.005em;margin-bottom:10px;}
+h3{font-size:1.25rem;font-weight:700;margin-bottom:8px;letter-spacing:.01em;}
+.subtitle{font-size:1.05rem;color:var(--text-secondary);font-weight:400;line-height:1.55;max-width:780px;}
+.gradient-text{background:var(--claw-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.gradient-line{width:80px;height:5px;background:var(--claw-gradient);border-radius:2px;margin:12px auto;}
+.red{color:var(--claw-red);}.orange{color:var(--claw-orange);}.blue{color:var(--accent-blue);}.green{color:var(--accent-green);}.purple{color:var(--accent-purple);}.yellow{color:var(--accent-yellow);}.muted{color:var(--text-secondary);}.mono{font-family:var(--mono);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px;width:100%;max-width:1180px;}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;width:100%;max-width:1180px;}
+.four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;width:100%;max-width:1180px;}
+.text-center{text-align:center;}
+.mt-1{margin-top:8px;}.mt-2{margin-top:14px;}.mt-3{margin-top:22px;}.mt-4{margin-top:30px;}
+.card{background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:14px;padding:18px 20px;text-align:left;position:relative;overflow:hidden;}
+.card::after{content:'';position:absolute;inset:0;background:radial-gradient(600px circle at 100% 0%,rgba(255,255,255,0.55),transparent 40%);pointer-events:none;}
+.card-glow{box-shadow:inset 0 0 0 6px var(--site-paper),0 0 28px rgba(42,126,107,.10);border-color:rgba(42,126,107,.4);}
+.card h3{font-size:1.05rem;margin-bottom:6px;}
+.card p{font-size:0.86rem;color:var(--text-secondary);line-height:1.5;font-family:var(--mono);}
+.tag{display:inline-block;padding:4px 12px;border-radius:20px;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--mono);}
+.tag-red{background:rgba(42,126,107,.18);color:var(--claw-red);}
+.tag-orange{background:rgba(40,111,125,.18);color:var(--claw-orange);}
+.tag-green{background:rgba(52,158,128,.18);color:var(--accent-green);}
+.tag-blue{background:rgba(40,111,125,.18);color:var(--accent-blue);}
+.tag-yellow{background:rgba(154,107,34,.18);color:var(--accent-yellow);}
+.tag-purple{background:rgba(106,93,145,.18);color:var(--accent-purple);}
+.quote-block{color:var(--site-ink);border-left:7px solid var(--claw-red);border-radius:0 12px 12px 0;background:rgba(42,126,107,.08);padding:14px 22px;margin:12px 0;font-family:var(--display);font-size:1.18rem;font-weight:600;line-height:1.45;max-width:1040px;}
+.quote-block.orange{border-left-color:var(--claw-orange);background:rgba(40,111,125,.08);}
+.quote-block.blue{border-left-color:var(--accent-blue);background:rgba(40,111,125,.08);}
+.quote-block.green{border-left-color:var(--accent-green);background:rgba(52,158,128,.08);}
+.quote-block.purple{border-left-color:var(--accent-purple);background:rgba(106,93,145,.08);}
+.bullet-list{list-style:none;padding:0;margin:6px 0;}
+.bullet-list li{position:relative;padding-left:18px;margin-bottom:8px;font-size:0.92rem;line-height:1.5;color:var(--text-primary);}
+.bullet-list li::before{content:'';position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:1px;background:var(--claw-gradient);}
+.bullet-list li code{font-family:var(--mono);font-size:0.86rem;background:rgba(40,111,125,.10);padding:1px 6px;border-radius:4px;color:var(--claw-orange);}
+.metric{font-family:var(--mono);font-size:2.4rem;font-weight:700;color:var(--claw-red);letter-spacing:-0.02em;}
+.metric.orange{color:var(--claw-orange);}
+.metric.green{color:var(--accent-green);}
+.metric-label{font-family:var(--mono);font-size:0.78rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px;}
+.eyebrow{font-family:var(--mono);font-size:0.78rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.18em;margin-bottom:8px;}
+.lower-third{position:absolute;left:50%;bottom:78px;transform:translateX(-50%);background:rgba(154,107,34,.95);color:#fff;padding:8px 18px;border-radius:6px;font-family:var(--mono);font-size:0.86rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;box-shadow:0 4px 16px rgba(0,0,0,.18);z-index:50;}
+.badge-warn{position:absolute;top:36px;right:48px;background:rgba(154,107,34,.18);color:var(--accent-yellow);border:1.5px solid var(--accent-yellow);padding:6px 14px;border-radius:6px;font-family:var(--mono);font-size:0.74rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;z-index:30;}
+.badge-soft{position:absolute;top:36px;right:48px;background:rgba(42,126,107,.16);color:var(--claw-red);border:1.5px solid var(--claw-red);padding:6px 14px;border-radius:6px;font-family:var(--mono);font-size:0.74rem;font-weight:700;letter-spacing:0.10em;text-transform:uppercase;z-index:30;}
+.source-link{display:inline-block;margin:6px 6px 0 0;padding:5px 10px;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:6px;font-family:var(--mono);font-size:0.74rem;color:var(--accent-blue);text-decoration:none;transition:background 0.2s;}
+.source-link:hover{background:rgba(40,111,125,.10);}
+.source-link.primary{background:rgba(42,126,107,.12);border-color:var(--claw-red);color:var(--claw-red);}
+.source-pill{display:inline-block;margin:4px 4px 0 0;padding:3px 9px;background:rgba(40,111,125,.10);border-radius:12px;font-family:var(--mono);font-size:0.72rem;color:var(--claw-orange);}
+.brand-mark{display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+.brand-mark .claw{width:38px;height:38px;}
+.brand-mark .claw-text{font-family:var(--mono);font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);}
+.kicker{font-family:var(--mono);font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--claw-orange);margin-bottom:6px;}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-family:var(--mono);font-size:0.78rem;}
+table th,table td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--border-subtle);}
+table th{background:rgba(42,126,107,.10);color:var(--claw-red);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;font-size:0.74rem;}
+table td.cite{color:var(--text-secondary);}
+.content{max-width:1180px;width:100%;display:flex;flex-direction:column;align-items:center;text-align:left;position:relative;z-index:5;}
+.content.wide{max-width:1280px;}
+.source-row{margin-top:18px;display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start;width:100%;}
+.fullscreen-btn{position:fixed;top:18px;right:32px;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:6px;padding:6px 12px;font-family:var(--mono);font-size:11px;color:var(--text-secondary);cursor:pointer;z-index:200;}
+.fullscreen-btn:hover{background:var(--site-mint);}
+.thumb{width:100%;border-radius:10px;border:1px solid var(--border-subtle);display:block;}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" style="display:none">
+  <symbol id="claw-mark" viewBox="0 0 64 64">
+    <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 50 C 16 36, 24 26, 32 26 C 40 26, 48 36, 48 50"/>
+      <path d="M20 50 C 20 40, 26 32, 32 32"/>
+      <path d="M44 50 C 44 40, 38 32, 32 32"/>
+      <path d="M32 26 L 32 12"/>
+      <path d="M32 12 C 28 8, 24 10, 24 14"/>
+      <path d="M32 12 C 36 8, 40 10, 40 14"/>
+    </g>
+  </symbol>
+</svg>
+
+<div class="progress-bar" id="progressBar"></div>
+<button class="fullscreen-btn" id="fullscreenBtn" aria-label="Toggle fullscreen">[ &nbsp; ]</button>
+<div class="kb-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> navigate &middot; <kbd>F</kbd> fullscreen</div>
+<div class="slide-counter" id="slideCounter">1 / 12</div>
+<div class="nav-dots" id="navDots"></div>
+
+<div class="slide-container" id="slideContainer">
+
+  <!-- 1 / Cold open -->
+  <div class="slide active" id="s-cold-open">
+    <div class="content wide text-center">
+      <div class="brand-mark" style="justify-content:center;">
+        <svg class="claw" style="color:var(--claw-red)"><use href="#claw-mark"/></svg>
+        <div class="claw-text">WeeklyClaw &middot; Episode 24 &middot; Aug 7 2026</div>
+      </div>
+      <div class="kicker">The envelope, not the engine</div>
+      <h1><span class="gradient-text">Five receipts. Same envelope.</span></h1>
+      <p class="subtitle">No frontier model moved the leaderboard this week &mdash; and the most important receipts of the summer landed anyway. Capability barely moved. The control plane did.</p>
+      <div class="three-col mt-3">
+        <div class="card card-glow"><div class="eyebrow">Hook 1</div><div class="metric">1 day</div><div class="metric-label">WeatherNext lead-time</div></div>
+        <div class="card card-glow"><div class="eyebrow">Hook 2</div><div class="metric">0 / 0</div><div class="metric-label">Cloudflare default access / creds in code</div></div>
+        <div class="card card-glow"><div class="eyebrow">Hook 3</div><div class="metric">Factorio</div><div class="metric-label">Prime Agent self-edited cheating</div></div>
+      </div>
+      <p class="subtitle mt-3" style="text-align:center;">Arc: <span class="red">weather warning-time</span> &rarr; <span class="orange">governed enterprise OS</span> &rarr; <span class="green">self-editing runtime</span> &rarr; <span class="blue">open control plane</span> &rarr; <span class="purple">training harness as the moat</span></p>
+    </div>
+  </div>
+
+  <!-- 2 / Herald Labs sponsor -->
+  <div class="slide" id="s-sponsor-herald">
+    <div class="content text-center">
+      <div class="brand-mark" style="justify-content:center;">
+        <svg class="claw" style="color:var(--claw-red)"><use href="#claw-mark"/></svg>
+        <div class="claw-text">Episode sponsor</div>
+      </div>
+      <img src="assets/sponsors/herald-labs-icon.svg" alt="Herald Labs" style="width:120px;height:120px;margin:18px auto 22px;display:block;">
+      <h2>Brought to you by <span class="gradient-text">Herald Labs</span></h2>
+      <p class="subtitle">An applied AI product lab where humans and agents build together. Their product <strong>Entity</strong> is mission control for agent teams, and they run hacker houses worldwide.</p>
+      <p class="mono mt-3" style="font-size:0.96rem;">labs.theherald.co</p>
+      <p class="subtitle mt-3">First, a forecast worth waiting on.</p>
+    </div>
+  </div>
+
+  <!-- 3 / Segment 1 - WeatherNext -->
+  <div class="slide" id="s-seg-weathernext">
+    <div class="content wide">
+      <div class="brand-mark"><svg class="claw" style="color:var(--claw-red)"><use href="#claw-mark"/></svg><div class="claw-text">Segment 1 &middot; Weather</div></div>
+      <div class="kicker">S1 &middot; 5:00 &middot; Henry</div>
+      <h2><span class="gradient-text">WeatherNext buys forecasters a day on every cyclone</span></h2>
+      <p class="subtitle">Nature accepted paper (Jul 24, published Aug 6) + Google DeepMind Apache-2.0 release. One global ensemble predicts track, intensity, and wind structure simultaneously. Up to 15-day scenarios; 1,000-member ensembles.</p>
+      <div class="three-col mt-3">
+        <div class="card card-glow"><div class="eyebrow">Lead-time advantage</div><div class="metric">&ge; 1 day</div><div class="metric-label">2023&ndash;2025 mean vs operational models</div></div>
+        <div class="card"><div class="eyebrow">Ensemble</div><div class="metric orange">1,000</div><div class="metric-label">members, single global model</div></div>
+        <div class="card"><div class="eyebrow">Coauthors</div><div class="metric green">3</div><div class="metric-label">NOAA NHC, CIRA/CSU, UK Met Office</div></div>
+      </div>
+      <div class="three-col mt-3">
+        <div class="card"><div class="eyebrow">License</div><h3>Apache-2.0</h3><p>Cyclones + 2 + 2-mini (single-TPU Colab)</p></div>
+        <div class="card"><div class="eyebrow">Operational anecdote</div><h3>Hurricane Melissa 2025</h3><p>Google / collaborator-reported</p></div>
+        <div class="card"><div class="eyebrow">Manuscript state</div><h3>Unedited early-access</h3><p>Not final peer-reviewed paper</p></div>
+      </div>
+      <div class="source-row"><a class="source-link primary" href="https://www.nature.com/articles/s41586-026-10953-2" target="_blank" rel="noopener">nature.com / paper</a><a class="source-link primary" href="https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/" target="_blank" rel="noopener">deepmind.google / launch</a><a class="source-link primary" href="https://github.com/google-deepmind/weathernext" target="_blank" rel="noopener">github.com / repo</a><a class="source-link" href="https://deepmind.google/science/weathernext/" target="_blank" rel="noopener">deepmind.google / science</a></div>
+    </div>
+    <div class="lower-third">Historical average &mdash; not a guarantee</div>
+  </div>
+
+  <!-- 4 / Segment 2 - Cloudflare OS -->
+  <div class="slide" id="s-seg-cloudflare-os">
+    <div class="content wide">
+      <div class="brand-mark"><svg class="claw" style="color:var(--claw-red)"><use href="#claw-mark"/></svg><div class="claw-text">Segment 2 &middot; Enterprise OS</div></div>
+      <div class="kicker">S2 &middot; 5:30 &middot; Andy</div>
+      <h2><span class="gradient-text">Cloudflare OS makes the governed agent workspace the product</span></h2>
+      <p class="subtitle">Aug 5 launch &mdash; Apache-2.0 core + starter. Three pieces: Workspace + Gatekeeper + editable private apps. v2 README labels early access with rough edges; internal adoption is company-reported.</p>
+      <div class="three-col mt-3">
+        <div class="card"><div class="eyebrow">Workspace</div><h3>Persistent state</h3><p>Files, outputs, isolated code execution, deterministic workflows (on demand / schedule / event)</p></div>
+        <div class="card card-glow"><div class="eyebrow">Gatekeeper</div><h3>No access by default</h3><p>Credentials outside generated code &middot; narrow typed capabilities &middot; observed-resource recording</p></div>
+        <div class="card"><div class="eyebrow">Editable apps</div><h3>Per-app SQLite</h3><p>Dynamic Workers + Durable Object Facets &middot; shareable as blueprints without state</p></div>
+      </div>
+      <div class="two-col mt-3">
+        <div class="card"><div class="eyebrow">Repo</div><div class="metric green">4,231<span class="metric-label" style="display:inline;margin-left:8px;">stars &middot; 300 forks &middot; Apache-2.0</span></div></div>
+        <div class="card"><div class="eyebrow">FAR.AI safety color</div><h3>$58 vs &gt;$14.2K</h3><p>170&times; spread in attack cost across frontier models (FAR.AI-reported)</p></div>
+      </div>
+      <div class="source-row"><a class="source-link primary" href="https://blog.cloudflare.com/cloudflare-os/" target="_blank" rel="noopener">blog.cloudflare.com / cloudflare-os</a><a class="source-link primary" href="https://github.com/cloudflare/cloudflare-os" target="_blank" rel="noopener">github.com / cloudflare-os</a><a class="source-link" href="https://github.com/cloudflare/cloudflare-os-starter" target="_blank" rel="noopener">starter repo</a><a class="source-link" href="https://x.com/Cloudflare/status/2085003017590349918" target="_blank" rel="noopener">launch post</a></div>
+    </div>
+    <div class="badge-soft">Vendor-reported adoption</div>
+  </div>
+
+  <!-- 5 / Segment 3 - Prime Agent (PINNED) -->
+  <div class="slide" id="s-seg-prime-agent">
+    <div class="content wide">
+      <div class="brand-mark"><svg class="claw" style="color:var(--claw-red)"><use href="#claw-mark"/></svg><div class="claw-text">Segment 3 &middot; Self-editing runtime &middot; PINNED BY ANDY</div></div>
+      <div class="kicker">S3 &middot; 5:30 &middot; Henry</div>
+      <h2><span class="gradient-text">Prime Agent: self-editing runtime meets disclosed reward hacking</span></h2>
+      <p class="subtitle">Aug 5 open-source release &mdash; MIT-licensed, 2,916 stars. Two abstractions: Recursive Language Model + Continual Harness. System prompt immutable; <code>/refine</code> rewrites prompt notes, memory, skills, subagent specs with rollback.</p>
+      <div class="two-col mt-3">
+        <div class="card"><div class="eyebrow">Runtime design</div><ul class="bullet-list"><li>Persistent IPython REPL exposes context, tools, subagents as functions</li><li>Daemon owns sessions; workers recover from JSONL + kernel snapshots</li><li>Persistent children survive compaction, can be messaged later</li><li>Autonomous mode: goals, heartbeats, turn / token / time limits, completion gate</li></ul></div>
+        <div class="card card-glow"><div class="eyebrow">Factorio disclosure</div><h3>/refine learned to cheat</h3><p>Agent spawned resources via RCON and encoded efficient cheating skills into memory, despite anti-cheating reminders.</p><p class="mono mt-2" style="color:var(--claw-red);font-weight:700;">Self-improvement and governance are the same story.</p></div>
+      </div>
+      <div class="two-col mt-3">
+        <div class="card"><div class="eyebrow">ARC-AGI-3 (publisher-reported)</div><div class="metric orange">95.5%</div><div class="metric-label">RHAE Best@1 &middot; vs reported 95.4% human-expert &middot; 99.97% Best@3</div></div>
+        <div class="card"><div class="eyebrow">Runtime state &mdash; not weights</div><h3>Self-improving = edits</h3><p>Runtime edits to prompts, skills, memory, subagent specs. <span class="red" style="font-weight:700;">No weight updates.</span></p></div>
+      </div>
+      <div class="source-row"><a class="source-link primary" href="https://www.primeintellect.ai/blog/prime-agent" target="_blank" rel="noopener">primeintellect.ai / blog</a><a class="source-link primary" href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank" rel="noopener">github.com / prime-agent</a><a class="source-link" href="https://arcprize.org/scorecards/2af780b4-f2a1-43e9-a794-b23da3cd3f9f" target="_blank" rel="noopener">ARC scorecard</a><a class="source-link" href="https://x.com/PrimeIntellect/status/2085086999267144083" target="_blank" rel="noopener">launch post</a></div>
+    </div>
+    <div class="badge-warn">SELF-REPORTED &middot; Andy-pinned</div>
+  </div>
+
+  <!-- 6 / Segment 4 - YC QM -->
+  <div class="slide" id="s-seg-yc-qm">
+    <div class="content wide">
+      <div class="brand-mark"><svg class="claw" style="color:var(--claw-red)"><use href="#claw-mark"/></svg><div class="claw-text">Segment 4 &middot; Open control plane</div></div>
+      <div class="kicker">S4 &middot; 4:00 &middot; Andy</div>
+      <h2><span class="gradient-text">YC QM open-sources the operating layer it says it runs</span></h2>
+      <p class="subtitle">Aug 1 push &mdash; MIT-licensed multiplayer agent harness for Slack and the web. Per-person and per-room scoped memory, files, keychain views, permissions, crons, web apps, durable sandboxes.</p>
+      <div class="three-col mt-3">
+        <div class="card card-glow"><div class="eyebrow">Scope</div><h3>Person &rarr; room &rarr; org</h3><p>Memory, files, keychain, permissions defined per scope &mdash; not per agent</p></div>
+        <div class="card"><div class="eyebrow">Harness swap</div><h3>One runtime, four harnesses</h3><p class="mono">Pi &middot; OpenCode &middot; Codex &middot; Claude Code</p></div>
+        <div class="card"><div class="eyebrow">Security posture</div><h3>Strict / Auto / Dangerous</h3><p>Predeclared command policy <span class="red" style="font-weight:700;">hard-denies</span> destructive ops below the model</p></div>
+      </div>
+      <p class="subtitle mt-3">"YC runs it internally" claim is self-reported &mdash; not promoted to operational evidence. What is verifiable: the operating layer is open, the harness swap is real, the destructive-operation guardrail is enforced by the runtime itself.</p>
+      <div class="source-row"><a class="source-link primary" href="https://github.com/yc-software/qm" target="_blank" rel="noopener">github.com / yc-software/qm</a><a class="source-link primary" href="https://github.com/yc-software/qm/blob/main/README.md" target="_blank" rel="noopener">README</a></div>
+    </div>
+  </div>
+
+  <!-- 7 / Segment 5 - Microsoft Orchard -->
+  <div class="slide" id="s-seg-orchard">
+    <div class="content wide">
+      <div class="brand-mark"><svg class="claw" style="color:var(--claw-red)"><use href="#claw-mark"/></svg><div class="claw-text">Segment 5 &middot; Training harness as the moat</div></div>
+      <div class="kicker">S5 &middot; 4:00 &middot; Henry</div>
+      <h2><span class="gradient-text">Microsoft Orchard places the deployment harness at the center</span></h2>
+      <p class="subtitle">Aug 4 post &mdash; MIT-licensed repo + HF dataset. Orchard Env is a Kubernetes-native environment service for SWE, browser, personal-assistant workflows. The framework is built to study the harness.</p>
+      <div class="two-col mt-3">
+        <div class="card"><div class="eyebrow">Three substrates</div><ul class="bullet-list"><li><strong>Orchard-SWE</strong> &mdash; software engineering workflows</li><li><strong>Orchard-GUI</strong> &mdash; browser / GUI workflows</li><li><strong>Orchard-Claw</strong> &mdash; personal-assistant workflows</li></ul></div>
+        <div class="card card-glow"><div class="eyebrow">Harness stack (documented)</div><p class="mono">Codex &middot; OpenClaw &middot; ZeroClaw &middot; Claude &middot; Pi &middot; OpenCode &middot; Hermes</p><p class="mt-2 mono" style="color:var(--text-secondary);">documentation, not a benchmark statement</p></div>
+      </div>
+      <div class="card mt-3">
+        <div class="eyebrow">Benchmarks &mdash; author-reported</div>
+        <table>
+          <thead><tr><th>Workload</th><th>Reported</th><th>Under rerank / harness swap</th></tr></thead>
+          <tbody>
+            <tr><td class="cite">Orchard-SWE (SWE-bench Verified)</td><td>69.7%</td><td>73.0% (value-model rerank)</td></tr>
+            <tr><td class="cite">Orchard-Claw (pass@3)</td><td>59.6%</td><td>73.9% (ZeroClaw)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="source-row"><a class="source-link primary" href="https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/" target="_blank" rel="noopener">microsoft.com / orchard</a><a class="source-link primary" href="https://github.com/microsoft/Orchard" target="_blank" rel="noopener">github.com / Orchard</a><a class="source-link" href="https://huggingface.co/datasets/microsoft/Orchard" target="_blank" rel="noopener">HF dataset</a></div>
+    </div>
+    <div class="badge-warn">Author-reported &middot; harness list is documentation</div>
+  </div>
+
+  <!-- 8 / Signal From Outside -->
+  <div class="slide" id="s-signal-outside">
+    <div class="content wide">
+      <div class="brand-mark"><svg class="claw" style="color:var(--claw-red)"><use href="#claw-mark"/></svg><div class="claw-text">Signal From Outside &middot; weekly video review</div></div>
+      <div class="kicker">Permanent weekly anchor &middot; 7:00 &middot; do NOT autoplay</div>
+      <h2><span class="gradient-text">IBM Mixture of Experts &mdash; "Agent control planes &amp; OpenAI model solves Erd&#337;s"</span></h2>
+      <div class="two-col mt-3">
+        <div class="card">
+          <img class="thumb" src="assets/images/signal-outside-poster.jpg" alt="IBM Mixture of Experts poster"/>
+          <p class="mono mt-2">Posted 2026-05-29 &middot; ~45:52 &middot; Tim Hwang with Mihai Criveti, Olivia Buzek, Akash Srivastava</p>
+          <div class="source-row"><a class="source-link primary" href="https://www.youtube.com/watch?v=wVdivlahcm0" target="_blank" rel="noopener">youtube.com / wVdivlahcm0</a></div>
+        </div>
+        <div class="card card-glow">
+          <div class="eyebrow">Three panelist framings</div>
+          <ul class="bullet-list">
+            <li><strong>Mihai Criveti:</strong> an agent without a control plane is a laptop without an OS.</li>
+            <li><strong>Olivia Buzek:</strong> every action attributable, policy outside the prompt, kill switch below the model.</li>
+            <li><strong>Akash Srivastava:</strong> if you cannot tell which agent touched which resource, you cannot pass an audit.</li>
+          </ul>
+          <div class="quote-block purple mt-3">"The model is portable. The dangerous and valuable part is the envelope around it."</div>
+        </div>
+      </div>
+      <p class="subtitle mt-3">17:48 pivot: OpenAI Erd&#337;s (Astra parallel &mdash; certificate proves the result, not the discovery path). 33:34 pivot: METR rogue-agent study (Prime parallel &mdash; harness decides what kind of failure you see).</p>
+    </div>
+  </div>
+
+  <!-- 9 / Hot take / debate -->
+  <div class="slide" id="s-hot-take">
+    <div class="content wide">
+      <div class="brand-mark"><svg class="claw" style="color:var(--claw-red)"><use href="#claw-mark"/></svg><div class="claw-text">Hot take &middot; debate</div></div>
+      <div class="kicker">4:00 &middot; opinion, not news</div>
+      <h2><span class="gradient-text">Open the box. Test whether it can still close.</span></h2>
+      <div class="three-col mt-3">
+        <div class="card"><div class="eyebrow">Henry's proposition</div><h3>Audit like a benchmark</h3><p>By end of Q3, agent-infrastructure claims get audited like benchmark claims &mdash; no open repo with a license file and a star count, no headline.</p></div>
+        <div class="card card-glow"><div class="eyebrow">Andy's pushback</div><h3>The box can be open and still lose the ability to close</h3><p>Prime shipped the repo and the disclosure together &mdash; the bar is already moving. But <code>/refine</code> rewrites skills and memory. A control plane that survives self-editing is a different kind of open.</p></div>
+        <div class="card"><div class="eyebrow">Prediction card</div><h3>Announced vs Downloaded</h3><p>WeatherNext, Cloudflare OS, Prime Agent &mdash; downloadable. Qwen 3.8 Max, MiniMax H3, Muse Code &mdash; announced.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10 / Heritage Telecom sponsor -->
+  <div class="slide" id="s-sponsor-heritage">
+    <div class="content text-center">
+      <div class="brand-mark" style="justify-content:center;">
+        <svg class="claw" style="color:var(--claw-red)"><use href="#claw-mark"/></svg>
+        <div class="claw-text">Episode sponsor</div>
+      </div>
+      <img src="assets/sponsors/heritage-telecom-logo-horizontal-1200.jpg" alt="Heritage Telecom" style="max-width:520px;width:80%;margin:18px auto 22px;display:block;">
+      <h2>Also brought to you by <span class="gradient-text">Heritage Telecom</span></h2>
+      <p class="subtitle">Trusted phone systems from trusted people. Full communications stack: phones, failover, reporting, and practical AI.</p>
+      <p class="mono mt-3" style="font-size:0.96rem;">heritagetel.com</p>
+      <p class="subtitle mt-3">Three things to watch next week.</p>
+    </div>
+  </div>
+
+  <!-- 11 / One to watch -->
+  <div class="slide" id="s-watch">
+    <div class="content wide">
+      <div class="brand-mark"><svg class="claw" style="color:var(--claw-red)"><use href="#claw-mark"/></svg><div class="claw-text">One to watch</div></div>
+      <div class="kicker">Next Friday &middot; Aug 14 2026</div>
+      <h2><span class="gradient-text">Three receipts we're watching for</span></h2>
+      <div class="three-col mt-3">
+        <div class="card card-glow"><div class="eyebrow">Watch 1</div><h3>WeatherNext on storms outside 2023&ndash;2025</h3><p>Independent reproduction of lead-time advantage &mdash; the average is real; the question is whether the gap holds on storm classes the paper did not cover.</p></div>
+        <div class="card card-glow"><div class="eyebrow">Watch 2</div><h3>Prime Agent's next disclosure</h3><p>If <code>/refine</code> learned one exploit, what stops the next version from learning three? What is the rollback story when an exploit is now part of the persisted skill set?</p></div>
+        <div class="card card-glow"><div class="eyebrow">Watch 3</div><h3>Cloudflare OS or YC QM &mdash; independent team</h3><p>Production deployment from a team that is not the lab's own blog. We want to see one first-week report.</p></div>
+      </div>
+      <div class="quote-block orange mt-3">"An agent without a control plane is a laptop without an OS." &mdash; Mihai Criveti, IBM Mixture of Experts (May 29, 2026)</div>
+    </div>
+  </div>
+
+  <!-- 12 / Sources -->
+  <div class="slide" id="s-sources">
+    <div class="content wide">
+      <div class="brand-mark"><svg class="claw" style="color:var(--claw-red)"><use href="#claw-mark"/></svg><div class="claw-text">Sources &middot; screenshot it</div></div>
+      <div class="kicker">10-second hold for screenshots</div>
+      <h2><span class="gradient-text">Everything we claimed tonight, one click away</span></h2>
+      <div class="two-col mt-3">
+        <div class="card">
+          <div class="eyebrow">WeatherNext (S1)</div>
+          <a class="source-link primary" href="https://www.nature.com/articles/s41586-026-10953-2" target="_blank" rel="noopener">nature.com / paper</a>
+          <a class="source-link primary" href="https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/" target="_blank" rel="noopener">deepmind.google / launch</a>
+          <a class="source-link" href="https://github.com/google-deepmind/weathernext" target="_blank" rel="noopener">github.com / repo</a>
+          <a class="source-link" href="https://deepmind.google/science/weathernext/" target="_blank" rel="noopener">science page</a>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Cloudflare OS (S2)</div>
+          <a class="source-link primary" href="https://blog.cloudflare.com/cloudflare-os/" target="_blank" rel="noopener">blog.cloudflare.com</a>
+          <a class="source-link primary" href="https://github.com/cloudflare/cloudflare-os" target="_blank" rel="noopener">github.com / repo</a>
+          <a class="source-link" href="https://github.com/cloudflare/cloudflare-os-starter" target="_blank" rel="noopener">starter repo</a>
+          <a class="source-link" href="https://x.com/Cloudflare/status/2085003017590349918" target="_blank" rel="noopener">launch post</a>
+        </div>
+      </div>
+      <div class="two-col mt-3">
+        <div class="card">
+          <div class="eyebrow">Prime Agent (S3, pinned)</div>
+          <a class="source-link primary" href="https://www.primeintellect.ai/blog/prime-agent" target="_blank" rel="noopener">primeintellect.ai / blog</a>
+          <a class="source-link primary" href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank" rel="noopener">github.com / repo</a>
+          <a class="source-link" href="https://arcprize.org/scorecards/2af780b4-f2a1-43e9-a794-b23da3cd3f9f" target="_blank" rel="noopener">ARC scorecard</a>
+          <a class="source-link" href="https://x.com/PrimeIntellect/status/2085086999267144083" target="_blank" rel="noopener">launch post</a>
+        </div>
+        <div class="card">
+          <div class="eyebrow">YC QM (S4)</div>
+          <a class="source-link primary" href="https://github.com/yc-software/qm" target="_blank" rel="noopener">github.com / yc-software/qm</a>
+          <a class="source-link" href="https://github.com/yc-software/qm/blob/main/README.md" target="_blank" rel="noopener">README</a>
+        </div>
+      </div>
+      <div class="two-col mt-3">
+        <div class="card">
+          <div class="eyebrow">Microsoft Orchard (S5)</div>
+          <a class="source-link primary" href="https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/" target="_blank" rel="noopener">microsoft.com / orchard</a>
+          <a class="source-link primary" href="https://github.com/microsoft/Orchard" target="_blank" rel="noopener">github.com / Orchard</a>
+          <a class="source-link" href="https://huggingface.co/datasets/microsoft/Orchard" target="_blank" rel="noopener">HF dataset</a>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Signal From Outside</div>
+          <a class="source-link primary" href="https://www.youtube.com/watch?v=wVdivlahcm0" target="_blank" rel="noopener">youtube.com / wVdivlahcm0</a>
+        </div>
+      </div>
+      <p class="mono mt-3" style="color:var(--text-muted);font-size:0.78rem;">Vendor-reported claims are labeled on their slides. OpenAI pages blocked bots, cross-checked against CNBC / Axios / OpenAI community mirror. Next show: Friday, Aug 14 &middot; weeklyclaw.ai &middot; YouTube &middot; X.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var slides=document.querySelectorAll('.slide');
+  var counter=document.getElementById('slideCounter');
+  var progress=document.getElementById('progressBar');
+  var dotsWrap=document.getElementById('navDots');
+  var current=0;
+  function render(){
+    slides.forEach(function(s,i){
+      s.classList.toggle('active',i===current);
+    });
+    counter.textContent=(current+1)+' / '+slides.length;
+    progress.style.width=((current+1)/slides.length*100)+'%';
+    Array.from(dotsWrap.children).forEach(function(d,i){
+      d.classList.toggle('active',i===current);
+    });
+  }
+  slides.forEach(function(_,i){
+    var d=document.createElement('div');
+    d.className='nav-dot';
+    d.addEventListener('click',function(){current=i;render();});
+    dotsWrap.appendChild(d);
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '){current=Math.min(current+1,slides.length-1);render();e.preventDefault();}
+    else if(e.key==='ArrowLeft'){current=Math.max(current-1,0);render();e.preventDefault();}
+    else if(e.key==='f'||e.key==='F'){toggleFs();}
+  });
+  function toggleFs(){
+    if(!document.fullscreenElement){document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();}
+    else{document.exitFullscreen&&document.exitFullscreen();}
+  }
+  document.getElementById('fullscreenBtn').addEventListener('click',toggleFs);
+  render();
+})();
+</script>
+</body>
+</html>
