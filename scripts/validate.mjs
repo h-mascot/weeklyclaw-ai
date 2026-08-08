@@ -25,6 +25,9 @@ const required = [
   'episodes/20/agenda.md',
   'episodes/20/agenda/index.html',
   'episodes/20/deck.html',
+  'episodes/24/agenda.md',
+  'episodes/24/agenda/index.html',
+  'episodes/24/deck.html',
   'episodes/23/agenda.md',
   'episodes/23/agenda/index.html',
   'episodes/23/deck.html',
@@ -151,7 +154,7 @@ if (changelogHtml.includes('Open changelog') || changelogHtml.includes('Host dec
 
 
 const episodesHtml = readFileSync(new URL('../episodes/index.html', import.meta.url), 'utf8');
-for (const needle of ['Weekly Claw Episodes', 'W23', 'The Sandbox Failed', '/episodes/22/deck', 'data-video-id="f2yugYwXOBo"', 'data-video-id="dquJyEBQWpE"', 'data-video-id="MSRFmpDfaTg"', '/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>14</strong>', 'archived episodes']) {
+for (const needle of ['Weekly Claw Episodes', 'W24', 'The Sandbox Failed', '/episodes/22/deck', 'data-video-id="f2yugYwXOBo"', 'data-video-id="dquJyEBQWpE"', 'data-video-id="MSRFmpDfaTg"', '/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>15</strong>', 'archived episodes']) {
   if (!episodesHtml.includes(needle)) {
     console.error(`Episodes index missing expected copy: ${needle}`);
     process.exit(1);
@@ -299,7 +302,7 @@ for (const [name, page] of [['homepage', html], ['episodes index', episodesHtml]
   }
 }
 
-for (const week of [10, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23]) {
+for (const week of [10, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23, 24]) {
   const mainDeck = readFileSync(new URL(`../episodes/${week}/deck.html`, import.meta.url), 'utf8');
   if (!mainDeck.includes('Weekly') && !mainDeck.includes('OpenClaw')) {
     console.error(`Week ${week} main deck does not look like a Weekly Claw deck`);
