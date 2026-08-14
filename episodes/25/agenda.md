@@ -19,11 +19,11 @@ The model is no longer the product — the operating layer is. This week DeepSee
 
 **Andy:** Five segments tonight. All between nine point six and nine point nine. We're going model and harness and dialect, then cyber as release gate, then speed as a tier, then harness cost cuts, then ambient work context. And we have a late-arriving Hot Take from Anthropic on what happens when you put one of these new agents in a room with forty-five other agents — coordination failure, turf wars, tacit collusion. Sponsor read first, then the map.
 
-## Sponsor: Herald Labs · 0:30
+## Sponsor: Heritage Telecom · 0:30
 
-*Hold card static; no animation. Sponsor copy as provided; no editorial claims.*
+*Hold card static; no animation. Draft copy pending Andy's tweak.*
 
-**Andy:** This episode is brought to you by Herald Labs — an applied AI product lab where humans and agents build together. Their product Entity is mission control for agent teams, and they run hacker houses worldwide. Find them at labs.theherald.co. Back to the operating layer.
+**Henry:** Heritage Telecom keeps the lights on while we keep the operating layer honest. Independent infrastructure for independent voices. Independent. Reliable. Quietly essential. Back to the operating layer.
 
 ## The map · 1:00
 
@@ -97,11 +97,11 @@ The model is no longer the product — the operating layer is. This week DeepSee
 
 **Andy:** Quote: the improvement curve that works on one agent in a benchmark does not predict what happens when that agent is one of a hundred. The dangerous and valuable part of the operating layer is what happens between agents. Open questions on screen: is a control plane the right substrate, or do we need an audit trail per agent? Who owns the cost when a multi-agent run is harder to attribute than a single trace? What governance prevents collusion from looking like efficient coordination? Source: anthropic.com/research/multiagent-systems.
 
-## Sponsor: Heritage Telecom · 0:30
+## Sponsor: Herald Labs · 0:30
 
-*Hold card static; no animation.*
+*Hold card static; no animation. Sponsor copy as provided; no editorial claims.*
 
-**Henry:** Heritage Telecom keeps the lights on while we keep the operating layer honest. Independent infrastructure for independent voices. Independent. Reliable. Quietly essential. Back to One to Watch.
+**Andy:** This episode is brought to you by Herald Labs — an applied AI product lab where humans and agents build together. Their product Entity is mission control for agent teams, and they run hacker houses worldwide. Find them at labs.theherald.co. Back to One to Watch.
 
 ## One to Watch · 1:00
 

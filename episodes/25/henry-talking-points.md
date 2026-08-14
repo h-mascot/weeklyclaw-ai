@@ -89,6 +89,8 @@ Delivery notes:
 
 ## Sponsor reads (Henry)
 
+**Position this week:** Heritage Telecom opens; Herald Labs runs in the later sponsor slot.
+
 **Herald Labs (30s):** Herald Labs is an applied AI product lab where humans and agents build products together. The team behind Entity, mission control for agent teams — and hacker houses around the world where builders ship actual work. No theory club. Build, don't talk. labs.theherald.co.
 
 **Heritage Telecom (30s):** Heritage Telecom keeps the lights on while we keep the operating layer honest. Independent infrastructure for independent voices. Independent. Reliable. Quietly essential.

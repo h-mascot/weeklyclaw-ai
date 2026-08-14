@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Weekly Claw #25 Host Cheat Sheet</title><style>body{margin:0;font:18px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#24201c;background:#ece4d5}a{color:#2a7e6b}.shell{width:min(920px,calc(100% - 36px));margin-inline:auto}header,footer{padding:22px 0}nav{display:flex;justify-content:space-between;gap:16px;align-items:center}.wordmark{font-weight:800;text-transform:uppercase;text-decoration:none;color:#24201c}.button{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid #2a7e6b;border-radius:6px;background:#2a7e6b;color:#fff9ee;text-decoration:none;font-weight:700}.button.secondary{color:#24201c;background:transparent;border-color:#b5a996}.intro{padding:56px 0 32px;border-block:1px solid #b5a996}.eyebrow{margin:0 0 10px;color:#2a7e6b;font:700 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase}h1{margin:0;font-size:clamp(42px,8vw,78px);line-height:.9;letter-spacing:-.05em;text-transform:uppercase}article{padding:36px 0 70px}h2,h3,h4{line-height:1.05;margin-top:2em}p,li{max-width:78ch}code{background:rgba(36,32,28,.08);padding:.1em .3em;border-radius:4px}</style></head>
+<body><header><nav class="shell"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/25/deck">Open slides</a></div></nav></header><main class="shell"><section class="intro"><p class="eyebrow">Episode 25 · Host Cheat Sheet</p><h1>The OS got built this week.</h1></section><article><h2>WeeklyClaw #25 — Host cheat sheet (one page, both hosts)</h2>
+<p><strong>Thesis:</strong> The model is no longer the product — the operating layer is. One lab shipped the whole stack; cyber became a release gate; speed became a tier; the harness rewrote the cost curve; the desktop started watching the workday.</p>
+<p><strong>Arc:</strong> model + harness + dialect → cyber release gate → speed as a tier → harness cost cuts → ambient work context.</p>
+<h3>Numbers to memorize</h3>
+<p>| Number | Meaning | Caveat |</p>
+<p>|---|---|---|</p>
+<p>| 1.65T / 66 | DeepSeek-V4-Pro-0813 params / safetensor shards | MIT, 1M context / 384K output |</p>
+<p>| 53 | OpenRouter Artificial Analysis index for V4-Pro-0813 | independent |</p>
+<p>| 805 | DeepSeek Harness GitHub stars | developer preview |</p>
+<p>| 24.4% → 54.4% | GLM-5.3 ExploitBench jump | Z.ai single-run, not reproduced |</p>
+<p>| +23.7 / +20.7 / +7.3pp / +30.0pp | GLM-5.3 deltas on Terminal-Bench 3.0 / DeepSWE / CyberGym / ExploitBench | Z.ai-reported |</p>
+<p>| 2,436 / 269 / 1,097 | GLM-5.3 findings / projects / critical-high | Z.ai-reported |</p>
+<p>| 53 / 2,383 | cvd.z.ai disclosed / under embargo | not independently counted |</p>
+<p>| two weeks | GLM-5.3 weights promised delay | no zai-org repo at cutoff |</p>
+<p>| 1,048,576 / 65,536 | Flash input / output tokens | AA verification pending |</p>
+<p>| 56 / 62.7% / 60% | Flash AA Intelligence / AutomationBench-AA / AA-AnalystAgent pass^5 | independent |</p>
+<p>| ~340 tok/s | Flash output speed | independent |</p>
+<p>| 750 tok/s / 14× | Ultrafast peak / vs Standard | OpenAI self-reported |</p>
+<p>| $0.75 / $3.75 → $1.50 / $7.50 | Flash intro → standard per M tok | Google intro pricing |</p>
+<p>| $2 / $8 | Palmyra X6 per M tok | GLM-5.2 base, 1M context |</p>
+<p>| 33–61% / 82% / 44% | Writer harness cost / quality-per-dollar / speed | Writer-run, n=22, 6 models |</p>
+<p>| 52% / 48% / 10% / ~$0.12 | Writer Palmyra X6 cost / speed / quality / per-task | Writer-reported |</p>
+<p>| 7,876 / 7,886 | Writer harness cache read | byte-stable prefix |</p>
+<p>| 45 / 2,383 / 53 | Anthropic multiagent swarm / embargo / disclosed | research published |</p>
+<p>| 8h | Writer write-ahead recovery objective | Writer spec |</p>
+<p>| ~46 min / May 29 | IBM Mixture of Experts podcast (Signal From Outside) | permanent anchor, no autoplay |</p>
+<h3>Quote beats</h3>
+<ul>
+<li>S2 — *If post-training can create exploit-chain capability faster than the lab expected, is a two-week weight delay a safety control — or merely a head start for the hosted gatekeeper?*</li>
+<li>S3 — *If the same frontier model can answer at 750 tokens per second, do agents become real-time collaborators — or do we just create much faster loops that fail before humans can intervene?*</li>
+<li>S4 — *If the same model becomes forty percent cheaper because the harness stops rebuying context and failure, should AI budgets be owned by model procurement — or systems engineering?*</li>
+<li>S5 — *When your agent remembers the workday and can edit the source files, is the product finally useful because it knows enough — or finally dangerous for the same reason?*</li>
+<li>Hot Take — *The improvement curve that works on one agent in a benchmark does not predict what happens when that agent is one of a hundred. The dangerous and valuable part of the operating layer is what happens between agents.*</li>
+</ul>
+<h3>On-air framing (vendor vs independent)</h3>
+<ul>
+<li>DeepSeek benchmarks: DeepSeek-reported.</li>
+<li>GLM-5.3 deltas: Z.ai-reported, single-run, not independently reproduced.</li>
+<li>Flash: AA Intelligence 56, AutomationBench-AA 62.7%, AA-AnalystAgent pass^5 60%, ~340 tok/s are independent. Vendor-reported otherwise.</li>
+<li>Ultrafast: throughput self-reported, no matched independent run, no public SLA, price undisclosed.</li>
+<li>Writer harness cost/quality: Writer-run, n=22 prompts, 6 models; figures are directional.</li>
+<li>OpenAI Computer History + Drive: this run did not inspect local event files, retention, deletion completeness, cross-workspace leakage, or recall quality.</li>
+<li>Anthropic multiagent: Anthropic-published research; not independently replicated at retrieval.</li>
+</ul>
+<h3>Sponsor order</h3>
+<ol>
+<li>Heritage Telecom, immediately after cold open. Draft copy pending Andy&#x27;s tweak.</li>
+<li>Herald Labs, later in show before One to Watch.</li>
+</ol>
+<h3>Cut order (if running long)</h3>
+<ol>
+<li>Hot Take compresses first.</li>
+<li>Segment 4 (Writer) compresses.</li>
+<li>Signal From Outside is a permanent anchor — never cut.</li>
+<li>Segments 1 and 2 are untouchable.</li>
+</ol>
+<h3>Mandatory sources on air</h3>
+<ul>
+<li>DeepSeek — <code>api-docs.deepseek.com/updates</code> · <code>github.com/deepseek-ai/deepseek-harness</code> · <code>huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813</code> · <code>openrouter.ai/deepseek/v4-pro-0813</code> · <code>npmjs.com/@deepseek-ai/dsh</code></li>
+<li>GLM-5.3 — <code>z.ai/blog/glm-5.3</code> · <code>cvd.z.ai</code> · <code>docs.z.ai/devpack</code></li>
+<li>Speed tier — <code>blog.google</code> (Flash) · <code>artificialanalysis.ai</code> (time chart) · <code>openai.com/index/previewing-ultrafast</code> · <code>ai.google.dev/gemini-api/docs/models/gemini-3.7-flash</code> · <code>github.blog</code> (Copilot rollout)</li>
+<li>Writer — <code>writer.com/blog/aug-roundup-new-at-writer</code> · <code>writer.com/engineering/harness-research-tokens-efficiency-cost-spend-ai</code> · <code>dev.writer.com/home/models</code> · VentureBeat corroboration</li>
+<li>OpenAI Computer History + Drive — <code>help.openai.com/en/articles/6825453-chatgpt-release-notes</code> · OpenAI X status <code>2087996496088297746</code></li>
+<li>Anthropic multiagent — <code>anthropic.com/research/multiagent-systems</code></li>
+<li>Signal From Outside — <code>youtube.com/watch?v=wVdivlahcm0</code> (IBM Mixture of Experts)</li>
+</ul>
+<h3>Handoff cues</h3>
+<ul>
+<li>Andy → Henry at S2 lead: *&quot;Henry, when a post-training run gains thirty points on ExploitBench, who decides whether the weights ship?&quot;*</li>
+<li>Henry → Andy at S3 close: *&quot;Andy, if Flash ships at three-forty and Ultrafast at seven-fifty on the same day, what does that do to your agent loops?&quot;*</li>
+<li>Andy → Henry at Hot Take: *&quot;Henry, if coordination failure is the default at forty-five agents, where does the control plane belong?&quot;*</li>
+<li>Henry → Andy at One to Watch: *&quot;Andy, what&#x27;s the trigger that tells us Z.ai actually published the weights?&quot;*</li>
+</ul></article></main><footer class="shell">Weekly Claw #25 · Host Cheat Sheet</footer></body></html>
