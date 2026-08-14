@@ -234,7 +234,7 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
     <div class="mt-3" style="width:100%;display:flex;flex-direction:column;align-items:center;">
       <div class="hook"><span class="hook-num gradient-text">&#9881;</span><span class="hook-text">DeepSeek-V4-Pro-0813 went GA with <span class="orange">1M context</span>, 384K output, Responses + Anthropic API dialects, and an MIT harness published the same day.</span></div>
       <div class="hook"><span class="hook-num gradient-text">&#128274;</span><span class="hook-text">Z.ai delayed GLM-5.3 weights two weeks after the same post-training pushed <span class="orange">ExploitBench from 24.4% to 54.4%</span>.</span></div>
-      <div class="hook"><span class="hook-num gradient-text">&#9889;</span><span class="hook-text">OpenAI's Ultrafast promises <span class="orange">up to 750 output tokens/sec</span> on GPT-5.6 Sol; Google shipped Gemini 3.7 Flash at ~340 tok/s on the same day.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#9889;</span><span class="hook-text">Qwen released <span class="orange">Qwen3.8-27B open weights</span> under Apache 2.0 as a compact multimodal agent model; Flash and Ultrafast made speed a service tier.</span></div>
     </div>
   </div>
 </div>
@@ -263,7 +263,7 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
       <tbody>
         <tr><td class="k">S1</td><td><strong>DeepSeek ships the model, the harness, and the Codex-compatible API</strong></td><td>9.9</td><td>Andy</td><td>Model + harness + dialect</td></tr>
         <tr><td class="k">S2</td><td><strong>GLM-5.3 cyber via post-training; weights delayed two weeks</strong></td><td>9.8</td><td>Henry</td><td>Cyber release gate</td></tr>
-        <tr><td class="k">S3</td><td><strong>Gemini 3.7 Flash + Ultrafast: speed becomes a product tier</strong></td><td>9.7</td><td>Henry</td><td>Work per second</td></tr>
+        <tr><td class="k">S3</td><td><strong>Qwen3.8-27B + Flash + Ultrafast: deployment becomes a product choice</strong></td><td>9.9</td><td>Henry</td><td>Local capability + work/sec</td></tr>
         <tr><td class="k">S4</td><td><strong>Writer cuts agent cost in the harness, not the model alone</strong></td><td>9.6</td><td>Andy</td><td>Operator economics</td></tr>
         <tr><td class="k">S5</td><td><strong>OpenAI turns Mac activity and Drive files into ambient work context</strong></td><td>9.8</td><td>Andy</td><td>Ambient memory</td></tr>
       </tbody>
@@ -368,43 +368,48 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
   </div>
 </div>
 
-<!-- SLIDE 7 — SEGMENT 3: Gemini 3.7 Flash + Ultrafast: speed as a tier -->
+<!-- SLIDE 7 — SEGMENT 3: Qwen3.8-27B + Flash + Ultrafast -->
 <div class="slide" id="s-seg-3">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #25</div><div class="slide-tag">S3 &middot; HENRY</div>
   <div class="glow-orb orb-orange" style="width:380px;height:380px;bottom:-100px;right:-80px;"></div>
   <div class="content">
-    <div class="story-num">SEG 3 &middot; WORK PER SECOND, NOT TOKENS PER DOLLAR</div>
-    <h2 class="text-center">Gemini 3.7 Flash + Ultrafast: <span class="gradient-text">speed becomes a product tier.</span></h2>
+    <div class="story-num">SEG 3 &middot; LOCAL CAPABILITY + WORK PER SECOND</div>
+    <h2 class="text-center">Qwen3.8-27B + Flash + Ultrafast: <span class="gradient-text">deployment becomes a product choice.</span></h2>
     <div class="gradient-line"></div>
-    <p class="subtitle text-center mt-1" style="max-width:900px;">Google's workhorse hit the intelligence-vs-time Pareto frontier at ~340 output tokens/sec independently; OpenAI launched Ultrafast on GPT-5.6 Sol at up to 750 tok/s behind a Cerebras route. Two vendors shipped the same idea on the same day: <strong>useful work per second</strong> is now a service-level choice.</p>
-    <div class="two-col mt-3">
+    <p class="subtitle text-center mt-1" style="max-width:960px;">Qwen put a 27B native multimodal agent model under Apache 2.0; Google hit ~340 output tok/s independently; OpenAI promised up to 750 tok/s. The buyer can now choose <strong>local control, hosted speed, or both</strong>.</p>
+    <div class="three-col mt-3">
+      <div class="card card-glow">
+        <h3>Qwen3.8-27B (Aug 14)</h3>
+        <ul class="bullet-list mt-2">
+          <li><strong>27B dense</strong>, native image + video understanding, Apache 2.0 open weights</li>
+          <li><strong>262,144</strong> native context, extensible to 1M; thinking on by default with <code>reasoning_effort</code></li>
+          <li>Official Transformers weights plus FP8; compatible with vLLM, SGLang and TokenSpeed</li>
+          <li>Qwen-reported: Terminal Bench 2.1 <strong>73.0</strong>, SWE-bench Pro <strong>61.7</strong>; independent validation pending</li>
+        </ul>
+      </div>
       <div class="card">
         <h3>Gemini 3.7 Flash (Aug 13)</h3>
         <ul class="bullet-list mt-2">
           <li><strong>1,048,576</strong>-token multimodal input / 65,536 output</li>
-          <li>Low/medium/high reasoning, tools, code execution, search, structured output, preview computer use, batch, flex, priority</li>
           <li><strong>Intro price:</strong> $0.75 in / $3.75 out per M tok through <strong>Dec 31</strong>, then $1.50/$7.50</li>
-          <li><strong>Day-one distribution:</strong> VS Code, CLI, cloud agent, app, JetBrains, Xcode, Eclipse via GitHub Copilot</li>
-          <li><strong>Independent (Artificial Analysis):</strong> Intelligence Index 56, ~340 tok/s, AutomationBench-AA 62.7%, AA-AnalystAgent pass^5 60%</li>
+          <li><strong>Independent AA:</strong> Intelligence 56, ~340 tok/s, AutomationBench-AA 62.7%</li>
         </ul>
       </div>
-      <div class="card card-glow">
-        <h3>OpenAI Ultrafast (Aug 13, limited preview)</h3>
+      <div class="card">
+        <h3>OpenAI Ultrafast (limited preview)</h3>
         <ul class="bullet-list mt-2">
-          <li><strong>Up to 14&times;</strong> Standard speed, <strong>up to 750 output tok/s</strong> on the same GPT-5.6 Sol weights</li>
-          <li>Cerebras-backed route; select-customer waitlist, capacity-gated expansion</li>
-          <li>Use cases: incident response, financial research, fraud analysis, live support/voice, commerce, coding, design, interactive experimentation</li>
-          <li><strong>Price undisclosed</strong> &mdash; do not infer from Standard or Fast tiers</li>
-          <li>Throughput self-reported; no matched independent run, no public Ultrafast SLA</li>
+          <li><strong>Up to 14&times;</strong> Standard speed, <strong>up to 750 output tok/s</strong> on GPT-5.6 Sol</li>
+          <li>Cerebras-backed; select-customer waitlist; price undisclosed</li>
+          <li>Throughput self-reported; no matched independent run or public SLA</li>
         </ul>
       </div>
     </div>
-    <div class="quote-block orange mt-3">If the same frontier model can answer at 750 tokens per second, do agents become real-time collaborators &mdash; or do we just create much faster loops that fail before humans can intervene?</div>
+    <div class="quote-block orange mt-3">If a 27B open model can run locally while hosted models race toward 750 tokens per second, which work should leave your machine at all?</div>
     <div class="mt-2" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+      <a class="pill blue" href="https://huggingface.co/Qwen/Qwen3.8-27B" target="_blank" rel="noopener">huggingface.co/Qwen &mdash; Qwen3.8-27B</a>
+      <a class="pill blue" href="https://x.com/Alibaba_Qwen/status/2088280182356611304" target="_blank" rel="noopener">@Alibaba_Qwen &mdash; release post</a>
       <a class="pill blue" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/" target="_blank" rel="noopener">blog.google &mdash; Gemini 3.7 Flash</a>
-      <a class="pill blue" href="https://artificialanalysis.ai/articles/gemini-3-7-time-frontier" target="_blank" rel="noopener">artificialanalysis.ai &mdash; independent time chart</a>
       <a class="pill blue" href="https://openai.com/index/previewing-ultrafast/" target="_blank" rel="noopener">openai.com &mdash; Ultrafast preview</a>
-      <a class="pill blue" href="https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash" target="_blank" rel="noopener">ai.google.dev &mdash; Flash model docs</a>
     </div>
   </div>
 </div>
@@ -625,13 +630,16 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
           <a href="https://docs.z.ai/devpack/overview" target="_blank" rel="noopener">docs.z.ai/devpack</a>
           <a href="https://huggingface.co/zai-org" target="_blank" rel="noopener">huggingface.co/zai-org</a>
         </div>
-        <span class="tag tag-blue mt-2">SEG 3 &middot; SPEED AS A TIER</span>
+        <span class="tag tag-blue mt-2">SEG 3 &middot; QWEN3.8-27B + SPEED TIERS</span>
         <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
           <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/" target="_blank" rel="noopener">blog.google &mdash; Gemini 3.7 Flash</a>
           <a href="https://artificialanalysis.ai/articles/gemini-3-7-time-frontier" target="_blank" rel="noopener">artificialanalysis.ai &mdash; independent time chart</a>
           <a href="https://openai.com/index/previewing-ultrafast/" target="_blank" rel="noopener">openai.com &mdash; Ultrafast preview</a>
           <a href="https://ai.google.dev/gemini-api/docs/models/gemini-3.7-flash" target="_blank" rel="noopener">ai.google.dev &mdash; Flash model docs</a>
           <a href="https://github.blog/changelog/2026-08-13-gemini-3-7-flash-is-now-available-in-github-copilot/" target="_blank" rel="noopener">github.blog &mdash; Copilot rollout</a>
+          <a href="https://huggingface.co/Qwen/Qwen3.8-27B" target="_blank" rel="noopener">huggingface.co/Qwen &mdash; Qwen3.8-27B</a>
+          <a href="https://huggingface.co/Qwen/Qwen3.8-27B-FP8" target="_blank" rel="noopener">huggingface.co/Qwen &mdash; Qwen3.8-27B-FP8</a>
+          <a href="https://x.com/Alibaba_Qwen/status/2088280182356611304" target="_blank" rel="noopener">@Alibaba_Qwen &mdash; official release</a>
         </div>
         <span class="tag tag-green mt-2">SEG 4 &middot; WRITER HARNESS + PALMYRA X6</span>
         <div class="src-links" style="justify-content:flex-start;margin-top:8px;">

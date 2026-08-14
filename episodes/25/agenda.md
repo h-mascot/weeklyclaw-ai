@@ -7,7 +7,7 @@
 
 ## Episode thesis
 
-The model is no longer the product — the operating layer is. This week DeepSeek shipped weights, harness, and Open Responses + Anthropic Messages API dialect together under one MIT umbrella; Z.ai pushed GLM-5.3 cyber capability through post-training alone, then delayed its own weights for two weeks of hardening; Gemini 3.7 Flash and OpenAI Ultrafast turned speed into a service tier you can buy; Writer cut agent cost 33–61% in the harness, not the model; and OpenAI quietly started remembering what you did on your Mac. The episode runs model + harness + dialect → cyber release gate → speed as a tier → harness cost cuts → ambient work context, and the through-line is that the control plane — observability, policy, kill switches, durable context — is where the next twelve months of product value will be decided. Every claim on air carries a source link; vendor-reported numbers are labeled as such, and unknowns stay blank.
+The model is no longer the product — the operating layer is. This week DeepSeek shipped weights, harness, and Open Responses + Anthropic Messages API dialect together under one MIT umbrella; Z.ai pushed GLM-5.3 cyber capability through post-training alone, then delayed its own weights for two weeks of hardening; Qwen released Qwen3.8-27B as Apache-2.0 open weights while Gemini 3.7 Flash and OpenAI Ultrafast turned hosted speed into a service tier; Writer cut agent cost 33–61% in the harness, not the model; and OpenAI quietly started remembering what you did on your Mac. The episode runs model + harness + dialect → cyber release gate → local capability + speed tiers → harness cost cuts → ambient work context. Every claim on air carries a source link; vendor-reported numbers are labeled as such, and unknowns stay blank.
 
 ## Cold open · 2:00
 
@@ -15,7 +15,7 @@ The model is no longer the product — the operating layer is. This week DeepSee
 
 **Andy:** It is Friday, August 14. Capability barely moved this week. Everything around capability did.
 
-**Henry:** Here's the frame. The operating layer got built this week. DeepSeek-V4-Pro-0813 reached GA on August 13 with one-million context, three-eighty-four-K output, OpenAI Responses and Anthropic Messages compatibility, and an MIT-licensed harness published the same day — model, harness, API dialect, one lab, same news cycle. Z.ai launched GLM-5.3 the next morning with every reported gain from post-training alone — Terminal-Bench plus twenty-three point seven, DeepSWE plus twenty point seven, ExploitBench from twenty-four point four to fifty-four point four — and then delayed the weights two weeks to harden them. And OpenAI shipped Ultrafast on GPT-5.6 Sol at up to seven-fifty output tokens per second via Cerebras the same day Google shipped Gemini 3.7 Flash at independently measured three-forty. Two labs, same idea, same day: useful work per second is now a service-level choice. Andy, if the model lab owns the harness and the API dialect and the cyber release gate all at once, who decides what the operating layer looks like?
+**Henry:** Here's the frame. The operating layer got built this week. DeepSeek shipped model, harness, and API dialect together. Z.ai gained a cyber model through post-training, then delayed the weights. Qwen released Qwen3.8-27B under Apache 2.0 — twenty-seven-billion dense parameters, native image and video understanding, two-sixty-two-K native context extensible to one million. At the hosted end, Gemini 3.7 Flash reached an independently measured three-forty output tokens per second and OpenAI promised up to seven-fifty on Ultrafast. Local control and hosted speed became product choices in the same news cycle. Andy, who decides which work should leave the machine at all?
 
 **Andy:** Five segments tonight. All between nine point six and nine point nine. We're going model and harness and dialect, then cyber as release gate, then speed as a tier, then harness cost cuts, then ambient work context. And we have a late-arriving Hot Take from Anthropic on what happens when you put one of these new agents in a room with forty-five other agents — coordination failure, turf wars, tacit collusion. Sponsor read first, then the map.
 
@@ -51,17 +51,17 @@ The model is no longer the product — the operating layer is. This week DeepSee
 
 **Henry (close):** Quote: if post-training can create exploit-chain capability faster than the lab expected, is a two-week weight delay a safety control — or merely a head start for the hosted gatekeeper? Source: z.ai/blog/glm-5.3, cvd.z.ai, docs.z.ai/devpack.
 
-## Segment 3 — Gemini 3.7 Flash + Ultrafast · ~5:00
+## Segment 3 — Qwen3.8-27B + Gemini 3.7 Flash + Ultrafast · ~5:30
 
-*Two-col layout: left Flash, right Ultrafast. Read each card, then the quote, then sources.*
+*Three-col layout: Qwen local/open, Flash hosted workhorse, Ultrafast hosted speed. Read each card, then the quote, then sources.*
 
-**Henry (lead):** Same day, two vendors, same idea. Google's Gemini three-point-seven Flash hit the intelligence-vs-time Pareto frontier at independently measured ~340 output tokens per second; OpenAI shipped Ultrafast on GPT-5.6 Sol at up to seven-fifty output tokens per second behind a Cerebras route. Useful work per second is now a service-level choice.
+**Henry (lead):** Qwen just released Qwen3.8-27B open weights under Apache 2.0. It is a twenty-seven-billion dense native vision-language model with image and video understanding, two-sixty-two-thousand-one-forty-four native context extensible to one million, and thinking on by default with reasoning-effort control. Official Transformers and FP8 weights are live. Qwen reports Terminal Bench two-point-one at seventy-three and SWE-bench Pro at sixty-one point seven; those numbers are vendor-run and not independently reproduced.
 
-**Andy:** Left card — Flash. One-million-forty-eight-thousand-five-seventy-six-token multimodal input, sixty-five-thousand-five-hundred-thirty-six output. Low/medium/high reasoning, tools, code execution, search, structured output, preview computer use, batch, flex, priority. Intro price seventy-five cents in, three-seventy-five out per million tokens through December thirty-one, then one-fifty and seven-fifty. Day-one distribution across VS Code, CLI, cloud agent, app, JetBrains, Xcode, and Eclipse via GitHub Copilot. Artificial Analysis independent — Intelligence Index fifty-six, ~340 tok/s, AutomationBench-AA sixty-two point seven percent, AA-AnalystAgent pass-to-the-fifth sixty percent.
+**Andy:** Flash is the hosted workhorse: one-million input, sixty-five-thousand output, intro price seventy-five cents in and three-seventy-five out per million tokens. Artificial Analysis measured Intelligence fifty-six and roughly three-forty output tokens per second independently.
 
-**Henry:** Right card — Ultrafast. Up to fourteen-x Standard speed, up to seven-fifty output tok/s on the same GPT-5.6 Sol weights. Cerebras-backed route. Select-customer waitlist. Capacity-gated expansion. Use cases: incident response, financial research, fraud analysis, live support and voice, commerce, coding, design, interactive experimentation. Price undisclosed — do not infer from Standard or Fast tiers. Throughput self-reported; no matched independent run, no public Ultrafast SLA.
+**Henry:** Ultrafast is the speed endpoint: up to fourteen-x Standard and up to seven-fifty output tokens per second on GPT-5.6 Sol via Cerebras. Select-customer waitlist, price undisclosed, throughput self-reported, no matched independent run or public SLA.
 
-**Henry (close):** Quote: if the same frontier model can answer at seven-fifty tokens per second, do agents become real-time collaborators — or do we just create much faster loops that fail before humans can intervene? Sources: blog.google — Gemini 3.7 Flash, artificialanalysis.ai — independent time chart, openai.com — Ultrafast preview, ai.google.dev — Flash model docs.
+**Henry (close):** Quote: if a twenty-seven-billion open model can run locally while hosted models race toward seven-fifty tokens per second, which work should leave your machine at all? Sources: huggingface.co/Qwen/Qwen3.8-27B, Qwen's official X release, blog.google, artificialanalysis.ai, and openai.com.
 
 ## Signal From Outside · ~3:00
 
@@ -128,7 +128,7 @@ The model is no longer the product — the operating layer is. This week DeepSee
 
 - DeepSeek: api-docs.deepseek.com/updates · github.com/deepseek-ai/deepseek-harness · huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813 · openrouter.ai/deepseek/v4-pro-0813 · npmjs.com/@deepseek-ai/dsh
 - GLM-5.3: z.ai/blog/glm-5.3 · cvd.z.ai · docs.z.ai/devpack
-- Speed: blog.google (Flash) · artificialanalysis.ai (independent time) · openai.com (Ultrafast) · ai.google.dev (Flash docs) · github.blog (Copilot rollout)
+- Qwen + speed tiers: huggingface.co/Qwen/Qwen3.8-27B · huggingface.co/Qwen/Qwen3.8-27B-FP8 · @Alibaba_Qwen status 2088280182356611304 · blog.google (Flash) · artificialanalysis.ai (independent time) · openai.com (Ultrafast)
 - Writer: writer.com · writer.com/engineering · dev.writer.com · VentureBeat corroboration
 - OpenAI Computer History + Drive: help.openai.com release notes · OpenAI X status 2087996496088297746
 - Anthropic multiagent: anthropic.com/research/multiagent-systems
@@ -140,6 +140,7 @@ The model is no longer the product — the operating layer is. This week DeepSee
 - GLM-5.3 benchmark deltas: Z.ai-reported, single-run, not independently reproduced.
 - Gemini 3.7 Flash: AA Intelligence Index fifty-six and ~340 tok/s are independent. Vendor-reported otherwise.
 - OpenAI Ultrafast: throughput self-reported, no matched independent run, no public SLA, price undisclosed.
+- Qwen3.8-27B benchmarks: Qwen-reported; open weights, config, license, and architecture independently inspectable, benchmark results not independently reproduced in this build.
 - Writer harness cost/quality: Writer-run, n=22 prompts, six models; figures are directional, not a general benchmark.
 - OpenAI Computer History + Drive: this run did not inspect local event files, server-side retention, deletion completeness, cross-workspace leakage, or real recall quality.
 - Anthropic multiagent: Anthropic-published research; not independently replicated at retrieval.

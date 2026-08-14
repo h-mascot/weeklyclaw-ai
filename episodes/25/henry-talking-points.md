@@ -1,11 +1,11 @@
 # WeeklyClaw #25 — Henry's segment deep-dive
 
-Henry owns: **Segment 2 (GLM-5.3 cyber release gate)**, **Segment 3 (speed as a tier)**.
+Henry owns: **Segment 2 (GLM-5.3 cyber release gate)**, **Segment 3 (Qwen3.8-27B + deployment tiers)**.
 Henry co-leads: cold open framing, Hot Take, One to Watch.
 
 ## Cold open (lead role)
 
-> **It is Friday, August 14. Capability barely moved this week. Everything around capability did.** Here's the frame. The operating layer got built this week. DeepSeek-V4-Pro-0813 reached GA on August 13 with one-million context, three-eighty-four-K output, OpenAI Responses and Anthropic Messages compatibility, and an MIT-licensed harness published the same day — model, harness, API dialect, one lab, same news cycle. Z.ai launched GLM-5.3 the next morning with every reported gain from post-training alone — Terminal-Bench plus twenty-three point seven, DeepSWE plus twenty point seven, ExploitBench from twenty-four point four to fifty-four point four — and then delayed the weights two weeks to harden them. And OpenAI shipped Ultrafast on GPT-5.6 Sol at up to seven-fifty output tokens per second via Cerebras the same day Google shipped Gemini 3.7 Flash at independently measured three-forty. Two labs, same idea, same day: useful work per second is now a service-level choice. Andy, if the model lab owns the harness and the API dialect and the cyber release gate all at once, who decides what the operating layer looks like?
+> **It is Friday, August 14. Capability barely moved this week. Everything around capability did.** DeepSeek shipped the model, harness, and API dialect. Z.ai gained a cyber model through post-training, then delayed the weights. Qwen released Qwen3.8-27B under Apache 2.0 — twenty-seven-billion dense parameters, native image and video understanding, two-sixty-two-K native context extensible to one million. Gemini 3.7 Flash reached an independently measured three-forty output tokens per second and OpenAI promised up to seven-fifty on Ultrafast. Local control and hosted speed became product choices in the same news cycle. Andy, which work should leave the machine at all?
 
 Delivery notes:
 - Pause on the three hooks; let them land.
@@ -42,31 +42,33 @@ Delivery notes:
 
 ---
 
-## Segment 3 — Gemini 3.7 Flash + Ultrafast (lead)
+## Segment 3 — Qwen3.8-27B + Gemini 3.7 Flash + Ultrafast (lead)
 
-**Frame:** Same day, two vendors, same idea. Useful work per second is now a service-level choice.
+**Frame:** Local control and hosted speed are now explicit deployment choices.
 
 **Anchor numbers:**
+- Qwen3.8-27B: **27B dense**, **262,144** native context, extensible to **1M**, Apache 2.0.
+- Qwen-reported: **73.0** Terminal Bench 2.1, **61.7** SWE-bench Pro.
 - Flash: **1,048,576** input / **65,536** output; **56** AA Intelligence; **62.7%** AutomationBench-AA; **60%** AA-AnalystAgent pass^5; **~340 tok/s**.
 - Flash pricing: **$0.75 / $3.75** per M tok through Dec 31, then **$1.50 / $7.50**.
 - Ultrafast: **up to 14×** Standard speed, **up to 750 output tok/s** on GPT-5.6 Sol, Cerebras-backed, price undisclosed, no public SLA.
 
 **On-air script (5 minutes target):**
 
-> Same day, two vendors, same idea. Google's Gemini three-point-seven Flash hit the intelligence-vs-time Pareto frontier at independently measured ~340 output tokens per second; OpenAI shipped Ultrafast on GPT-5.6 Sol at up to seven-fifty output tokens per second behind a Cerebras route. Useful work per second is now a service-level choice.
+> Qwen released Qwen3.8-27B open weights under Apache 2.0. It is a twenty-seven-billion dense native vision-language model with image and video understanding, two-sixty-two-thousand-one-forty-four native context extensible to one million, and thinking on by default with reasoning-effort control. Official Transformers and FP8 weights are live. Qwen reports Terminal Bench two-point-one at seventy-three and SWE-bench Pro at sixty-one point seven; those benchmark numbers are vendor-run and not independently reproduced.
 >
-> Left card — Flash. One-million-forty-eight-thousand-five-seventy-six-token multimodal input, sixty-five-thousand-five-hundred-thirty-six output. Low/medium/high reasoning, tools, code execution, search, structured output, preview computer use, batch, flex, priority. Intro price seventy-five cents in, three-seventy-five out per million tokens through December thirty-one, then one-fifty and seven-fifty. Day-one distribution across VS Code, CLI, cloud agent, app, JetBrains, Xcode, and Eclipse via GitHub Copilot. Artificial Analysis independent — Intelligence Index fifty-six, ~340 tok/s, AutomationBench-AA sixty-two point seven percent, AA-AnalystAgent pass-to-the-fifth sixty percent.
+> Flash is the hosted workhorse: one-million input, sixty-five-thousand output, intro price seventy-five cents in and three-seventy-five out per million tokens. Artificial Analysis measured Intelligence fifty-six and roughly three-forty output tokens per second independently.
 >
-> Right card — Ultrafast. Up to fourteen-x Standard speed, up to seven-fifty output tok/s on the same GPT-5.6 Sol weights. Cerebras-backed route. Select-customer waitlist. Capacity-gated expansion. Use cases: incident response, financial research, fraud analysis, live support and voice, commerce, coding, design, interactive experimentation. Price undisclosed — do not infer from Standard or Fast tiers. Throughput self-reported; no matched independent run, no public Ultrafast SLA.
+> Ultrafast is the speed endpoint: up to fourteen-x Standard and up to seven-fifty output tokens per second on GPT-5.6 Sol via Cerebras. Select-customer waitlist, price undisclosed, throughput self-reported, no matched independent run or public SLA.
 >
-> Quote: if the same frontier model can answer at seven-fifty tokens per second, do agents become real-time collaborators — or do we just create much faster loops that fail before humans can intervene? Sources: blog.google — Gemini 3.7 Flash, artificialanalysis.ai — independent time chart, openai.com — Ultrafast preview, ai.google.dev — Flash model docs.
+> Quote: if a twenty-seven-billion open model can run locally while hosted models race toward seven-fifty tokens per second, which work should leave your machine at all? Sources: huggingface.co/Qwen/Qwen3.8-27B, Qwen's official X release, blog.google, artificialanalysis.ai, and openai.com.
 
 Delivery notes:
-- Contrast "independent" (Flash AA) vs "self-reported" (Ultrafast) explicitly.
+- Contrast open artifacts (Qwen), independent speed measurement (Flash), and vendor-reported throughput (Ultrafast).
 - Don't speculate on Cerebras pricing — say "undisclosed" if asked.
 - Quote lands on the agent-loop framing — let it breathe.
 
-**Handoff to Andy:** *"Andy, when the same frontier model ships at three-forty and seven-fifty on the same day, what's the right tier for what use case?"*
+**Handoff to Andy:** *"Andy, with Qwen local and Flash or Ultrafast hosted, which work should leave the machine?"*
 
 ---
 
@@ -101,6 +103,7 @@ Delivery notes:
 
 - Don't put a number on the security impact of "23,830 under-embargo findings" — they are Z.ai's own audit queue, not an external red-team count.
 - Don't claim Ultrafast latency floor — the OpenAI disclosure is throughput-only.
+- Don't present Qwen's benchmark table as independent validation; the repo and license are inspectable, the scores are vendor-run.
 - Don't characterise cvd.z.ai as "public" without the "53 disclosed, 2,383 under embargo at retrieval" qualifier.
 - Don't compare Z.ai delay to OpenAI/Anthropic release gating — different frameworks, different incentives.
 - Don't extrapolate Writer's 33–61% cost reduction across all harnesses — n=6 models, directional only.

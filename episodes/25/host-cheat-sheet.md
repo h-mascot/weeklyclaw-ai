@@ -2,7 +2,7 @@
 
 **Thesis:** The model is no longer the product — the operating layer is. One lab shipped the whole stack; cyber became a release gate; speed became a tier; the harness rewrote the cost curve; the desktop started watching the workday.
 
-**Arc:** model + harness + dialect → cyber release gate → speed as a tier → harness cost cuts → ambient work context.
+**Arc:** model + harness + dialect → cyber release gate → local capability + speed tiers → harness cost cuts → ambient work context.
 
 ## Numbers to memorize
 
@@ -16,6 +16,8 @@
 | 2,436 / 269 / 1,097 | GLM-5.3 findings / projects / critical-high | Z.ai-reported |
 | 53 / 2,383 | cvd.z.ai disclosed / under embargo | not independently counted |
 | two weeks | GLM-5.3 weights promised delay | no zai-org repo at cutoff |
+| 27B / 262,144 / 1M | Qwen3.8-27B params / native / extended context | Apache 2.0 open weights |
+| 73.0 / 61.7 | Qwen Terminal Bench 2.1 / SWE-bench Pro | Qwen-reported, not independently reproduced |
 | 1,048,576 / 65,536 | Flash input / output tokens | AA verification pending |
 | 56 / 62.7% / 60% | Flash AA Intelligence / AutomationBench-AA / AA-AnalystAgent pass^5 | independent |
 | ~340 tok/s | Flash output speed | independent |
@@ -32,7 +34,7 @@
 ## Quote beats
 
 - S2 — *If post-training can create exploit-chain capability faster than the lab expected, is a two-week weight delay a safety control — or merely a head start for the hosted gatekeeper?*
-- S3 — *If the same frontier model can answer at 750 tokens per second, do agents become real-time collaborators — or do we just create much faster loops that fail before humans can intervene?*
+- S3 — *If a 27B open model can run locally while hosted models race toward 750 tokens per second, which work should leave your machine at all?*
 - S4 — *If the same model becomes forty percent cheaper because the harness stops rebuying context and failure, should AI budgets be owned by model procurement — or systems engineering?*
 - S5 — *When your agent remembers the workday and can edit the source files, is the product finally useful because it knows enough — or finally dangerous for the same reason?*
 - Hot Take — *The improvement curve that works on one agent in a benchmark does not predict what happens when that agent is one of a hundred. The dangerous and valuable part of the operating layer is what happens between agents.*
@@ -43,6 +45,7 @@
 - GLM-5.3 deltas: Z.ai-reported, single-run, not independently reproduced.
 - Flash: AA Intelligence 56, AutomationBench-AA 62.7%, AA-AnalystAgent pass^5 60%, ~340 tok/s are independent. Vendor-reported otherwise.
 - Ultrafast: throughput self-reported, no matched independent run, no public SLA, price undisclosed.
+- Qwen3.8-27B: weights, config, Apache-2.0 license, and architecture verified from the official Hugging Face repo; benchmark figures are Qwen-reported.
 - Writer harness cost/quality: Writer-run, n=22 prompts, 6 models; figures are directional.
 - OpenAI Computer History + Drive: this run did not inspect local event files, retention, deletion completeness, cross-workspace leakage, or recall quality.
 - Anthropic multiagent: Anthropic-published research; not independently replicated at retrieval.
@@ -63,7 +66,7 @@
 
 - DeepSeek — `api-docs.deepseek.com/updates` · `github.com/deepseek-ai/deepseek-harness` · `huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813` · `openrouter.ai/deepseek/v4-pro-0813` · `npmjs.com/@deepseek-ai/dsh`
 - GLM-5.3 — `z.ai/blog/glm-5.3` · `cvd.z.ai` · `docs.z.ai/devpack`
-- Speed tier — `blog.google` (Flash) · `artificialanalysis.ai` (time chart) · `openai.com/index/previewing-ultrafast` · `ai.google.dev/gemini-api/docs/models/gemini-3.7-flash` · `github.blog` (Copilot rollout)
+- Qwen + speed tiers — `huggingface.co/Qwen/Qwen3.8-27B` · `huggingface.co/Qwen/Qwen3.8-27B-FP8` · @Alibaba_Qwen status `2088280182356611304` · `blog.google` (Flash) · `artificialanalysis.ai` · `openai.com/index/previewing-ultrafast`
 - Writer — `writer.com/blog/aug-roundup-new-at-writer` · `writer.com/engineering/harness-research-tokens-efficiency-cost-spend-ai` · `dev.writer.com/home/models` · VentureBeat corroboration
 - OpenAI Computer History + Drive — `help.openai.com/en/articles/6825453-chatgpt-release-notes` · OpenAI X status `2087996496088297746`
 - Anthropic multiagent — `anthropic.com/research/multiagent-systems`
@@ -72,6 +75,6 @@
 ## Handoff cues
 
 - Andy → Henry at S2 lead: *"Henry, when a post-training run gains thirty points on ExploitBench, who decides whether the weights ship?"*
-- Henry → Andy at S3 close: *"Andy, if Flash ships at three-forty and Ultrafast at seven-fifty on the same day, what does that do to your agent loops?"*
+- Henry → Andy at S3 close: *"Andy, with Qwen local and Flash or Ultrafast hosted, which work should leave the machine?"*
 - Andy → Henry at Hot Take: *"Henry, if coordination failure is the default at forty-five agents, where does the control plane belong?"*
 - Henry → Andy at One to Watch: *"Andy, what's the trigger that tells us Z.ai actually published the weights?"*
