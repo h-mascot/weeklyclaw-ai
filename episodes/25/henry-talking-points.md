@@ -5,7 +5,7 @@ Henry co-leads: cold open framing, Hot Take, One to Watch.
 
 ## Cold open (lead role)
 
-> **It is Friday, August 14. Capability barely moved this week. Everything around capability did.** DeepSeek shipped the model, harness, and API dialect. Z.ai gained a cyber model through post-training, then delayed the weights. Qwen released Qwen3.8-27B under Apache 2.0 — twenty-seven-billion dense parameters, native image and video understanding, two-sixty-two-K native context extensible to one million. Gemini 3.7 Flash reached an independently measured three-forty output tokens per second and OpenAI promised up to seven-fifty on Ultrafast. Local control and hosted speed became product choices in the same news cycle. Andy, which work should leave the machine at all?
+> **It is Friday, August 14. Capability barely moved this week. Everything around capability did.** This week the operating layer became the product — what runs locally, what gets hardened before release, what speed costs, and what the harness remembers. Andy, which work should leave the machine at all?
 
 Delivery notes:
 - Pause on the three hooks; let them land.
@@ -57,7 +57,7 @@ Delivery notes:
 
 > Qwen released Qwen3.8-27B open weights under Apache 2.0. It is a twenty-seven-billion dense native vision-language model with image and video understanding, two-sixty-two-thousand-one-forty-four native context extensible to one million, and thinking on by default with reasoning-effort control. Official Transformers and FP8 weights are live. Qwen reports Terminal Bench two-point-one at seventy-three and SWE-bench Pro at sixty-one point seven; those benchmark numbers are vendor-run and not independently reproduced.
 >
-> Flash is the hosted workhorse: one-million input, sixty-five-thousand output, intro price seventy-five cents in and three-seventy-five out per million tokens. Artificial Analysis measured Intelligence fifty-six and roughly three-forty output tokens per second independently.
+> Why care about Flash? It combines 1M-token multimodal context with workhorse pricing and roughly three-forty output tokens per second independently. That makes a capable model fast enough for interactive agent loops, cheap enough for repetitive tool use, and broad enough to keep text, images, video, audio, PDFs, and long traces in one model. GitHub is rolling it out across VS Code, Visual Studio, Copilot CLI, the cloud agent, Copilot app, JetBrains, Xcode, and Eclipse, so distribution is broad but gradual. Intro price is seventy-five cents in and three-seventy-five out per million tokens through December thirty-first, then doubles. Artificial Analysis measured Intelligence fifty-six and roughly three-forty output tokens per second independently. Speed and benchmarks still do not prove production reliability.
 >
 > Ultrafast is the speed endpoint: up to fourteen-x Standard and up to seven-fifty output tokens per second on GPT-5.6 Sol via Cerebras. Select-customer waitlist, price undisclosed, throughput self-reported, no matched independent run or public SLA.
 >

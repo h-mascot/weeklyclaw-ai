@@ -2,7 +2,7 @@
 
 **Show date:** Friday, August 14, 2026 · 4:00 PM ET
 **Hosts:** [Henry](tg://user?id=855505513) and [Andy](tg://user?id=7615999206)
-**Scripted target:** 32–38 minutes (planned ~35:00)
+**Scripted target:** 38–44 minutes (planned ~41:00)
 **Hard stop:** 45 minutes
 
 ## Episode thesis
@@ -15,9 +15,9 @@ The model is no longer the product — the operating layer is. This week DeepSee
 
 **Andy:** It is Friday, August 14. Capability barely moved this week. Everything around capability did.
 
-**Henry:** Here's the frame. The operating layer got built this week. DeepSeek shipped model, harness, and API dialect together. Z.ai gained a cyber model through post-training, then delayed the weights. Qwen released Qwen3.8-27B under Apache 2.0 — twenty-seven-billion dense parameters, native image and video understanding, two-sixty-two-K native context extensible to one million. At the hosted end, Gemini 3.7 Flash reached an independently measured three-forty output tokens per second and OpenAI promised up to seven-fifty on Ultrafast. Local control and hosted speed became product choices in the same news cycle. Andy, who decides which work should leave the machine at all?
+**Henry:** Here's the frame: this week the operating layer became the product — what runs locally, what gets hardened before release, what speed costs, and what the harness remembers. Andy, which work should leave the machine at all?
 
-**Andy:** Five segments tonight. All between nine point six and nine point nine. We're going model and harness and dialect, then cyber as release gate, then speed as a tier, then harness cost cuts, then ambient work context. And we have a late-arriving Hot Take from Anthropic on what happens when you put one of these new agents in a room with forty-five other agents — coordination failure, turf wars, tacit collusion. Sponsor read first, then the map.
+**Andy:** Five stories tonight, but no benchmark parade. Sponsor first. Then we answer the only question that matters: who owns the operating layer?
 
 ## Sponsor: Heritage Telecom · 0:30
 
@@ -29,13 +29,13 @@ The model is no longer the product — the operating layer is. This week DeepSee
 
 *Five-card table on screen; gesture to the cut-order card once.*
 
-**Henry:** Five segments tonight, all scored nine point six or better on our rubric. Segment one leads at nine point nine — when a model lab owns the model, the harness, and the API dialect, that's the operating layer becoming a vertical. Segments three and four are really one story: when the harness stops rebuying context and failure, the same model gets forty percent cheaper. If we run long, the cut order is on screen — Signal From Outside is a permanent anchor now and is never cut; segment four compresses first; segments one and two are untouchable. Let's start with the model lab that shipped the whole stack in one day.
+**Henry:** The map is a deployment chain: stack ownership, release gates, local versus hosted execution, harness economics, then ambient context. If we run long, Segment four compresses first. Signal From Outside stays. Segments one and two are untouchable. Start with the lab that shipped the whole stack in one day.
 
 ## Segment 1 — DeepSeek ships the model, the harness, and the API dialect · ~5:00
 
 *Three-card layout on screen; warn-card at bottom. Walk through each card. Read the source list, then the warn-card.*
 
-**Andy (lead):** DeepSeek-V4-Pro-0813 reached GA on August 13. One lab, MIT license, three things at once: a model checkpoint, a harness, and an API dialect. Start with the model: one-point-six-five-T params, sixty-six safetensor shards live on Hugging Face under deepseek-ai/DeepSeek-V4-Pro-0813, and OpenRouter independently exposes it at one-million-forty-eight-thousand-five-seventy-six context and three-eighty-four-K completion. Artificial Analysis index fifty-three on the independent scale. Then the dialect: the API keeps the deepseek-v4-pro name and accepts OpenAI Responses and Anthropic Messages formats, so OpenClaw, Claude Code, and Codex clients connect without rewrites — same tool calls, same reasoning effort levels, one-click Codex route. And then the harness: the MIT-licensed DeepSeek Harness, everything-is-a-plugin TypeScript, with skills, MCP, persistent shells, subagents, jobs, scheduling, workflows, compaction, terminal, web, and Ralph tooling. The npm family @deepseek-ai/dsh ships an executable CLI. Eight-oh-five GitHub stars at retrieval. Developer preview — compatibility may break.
+**Andy (lead):** DeepSeek-V4-Pro-0813 reached GA on August 13. One lab, MIT license, three things at once: a model checkpoint, a harness, and an API dialect. Start with the model: **1.65T parameters**, split across 66 safetensor shards live on Hugging Face. OpenRouter independently lists a 1M-token context window, up to 384K output, and an Artificial Analysis index of 53. Then the dialect: the API keeps the deepseek-v4-pro name and accepts OpenAI Responses and Anthropic Messages formats, so OpenClaw, Claude Code, and Codex clients connect without rewrites — same tool calls, same reasoning effort levels, one-click Codex route. And then the harness: the MIT-licensed DeepSeek Harness, everything-is-a-plugin TypeScript, with skills, MCP, persistent shells, subagents, jobs, scheduling, workflows, compaction, terminal, web, and Ralph tooling. The npm family @deepseek-ai/dsh ships an executable CLI. Eight-oh-five GitHub stars at retrieval. Developer preview — compatibility may break.
 
 **Henry:** Benchmarks DeepSeek reported: Terminal Bench two-point-one eighty-seven point nine, NL2Repo sixty-one point five, DeepSWE sixty-two point seven, Toolathlon-Verified seventy-four point one. None independently reproduced. OpenRouter Artificial Analysis index fifty-three is independent but not a harness-matched run. The headline is not the benchmark number — it is that DeepSeek shipped weights, harness, and Open Responses + Anthropic Messages dialect on the same day, all under MIT. That is the model lab owning the operating layer.
 
@@ -57,17 +57,17 @@ The model is no longer the product — the operating layer is. This week DeepSee
 
 **Henry (lead):** Qwen just released Qwen3.8-27B open weights under Apache 2.0. It is a twenty-seven-billion dense native vision-language model with image and video understanding, two-sixty-two-thousand-one-forty-four native context extensible to one million, and thinking on by default with reasoning-effort control. Official Transformers and FP8 weights are live. Qwen reports Terminal Bench two-point-one at seventy-three and SWE-bench Pro at sixty-one point seven; those numbers are vendor-run and not independently reproduced.
 
-**Andy:** Flash is the hosted workhorse: one-million input, sixty-five-thousand output, intro price seventy-five cents in and three-seventy-five out per million tokens. Artificial Analysis measured Intelligence fifty-six and roughly three-forty output tokens per second independently.
+**Andy:** Why care about Flash? It combines 1M-token multimodal context with workhorse pricing and roughly three-forty output tokens per second independently. That makes a capable model fast enough for interactive agent loops, cheap enough for repetitive tool use, and broad enough to keep text, images, video, audio, PDFs, and long traces in one model. GitHub is rolling it out across VS Code, Visual Studio, Copilot CLI, the cloud agent, Copilot app, JetBrains, Xcode, and Eclipse, so distribution is broad but gradual. Intro price is seventy-five cents in and three-seventy-five out per million tokens through December thirty-first, then doubles. Artificial Analysis measured Intelligence fifty-six and roughly three-forty output tokens per second independently. Speed and benchmarks still do not prove production reliability.
 
 **Henry:** Ultrafast is the speed endpoint: up to fourteen-x Standard and up to seven-fifty output tokens per second on GPT-5.6 Sol via Cerebras. Select-customer waitlist, price undisclosed, throughput self-reported, no matched independent run or public SLA.
 
 **Henry (close):** Quote: if a twenty-seven-billion open model can run locally while hosted models race toward seven-fifty tokens per second, which work should leave your machine at all? Sources: huggingface.co/Qwen/Qwen3.8-27B, Qwen's official X release, blog.google, artificialanalysis.ai, and openai.com.
 
-## Signal From Outside · ~3:00
+## Signal From Outside · ~8–9:00
 
-*Permanent anchor; never cut. Split-screen with verified poster on the right; clickable source link only, no autoplay.*
+*Permanent anchor; never cut. Andy's full canonical talk track is in `sources/signal-outside.md`. Split-screen with verified YC poster on the right; clickable source link only, no autoplay.*
 
-**Andy (anchor):** Signal From Outside. Tim Hwang, Mihai Criveti, Olivia Buzek, and Akash Srivastava on IBM's Mixture of Experts podcast, episode titled "Agent control planes and OpenAI model solves Erdős." ~46 minutes, published May twenty-nine. The first seventeen minutes are the operating-layer conversation we have been trying to have since Episode twenty-two — observability, policy, kill switches, agentic control planes. The second half covers OpenAI's unit-distance result on the Erdős-seventy-eight puzzle and METR's rogue-agent findings. Timestamps on screen: zero-zero introduction, one-oh-three agentic control plane, seventeen-forty-eight Astra unit-distance result, thirty-three-thirty-four METR rogue-agent study. No autoplay — clickable source link only. Poster is the verified YouTube thumbnail.
+**Andy (anchor):** Use the full host-supplied talk track verbatim. Opening: "This week's video dropped four days ago, and if you've got commits in the OpenClaw repo you're going to want to watch this one yourself." Peter Steinberger at YC Startup School narrates OpenClaw's eight-month arc: the phone relay, group-chat product-market fit, the self-restarting launch daemon, viral attention, the Anthropic dependency, security hardening and 9,500 config permutations, burnout, and the return to "fun is velocity." Close on the contributor Q&A: twelve Codex sub-agents for testing, code review as risk management, and compute management as the unresolved infrastructure bottleneck. Source: youtube.com/watch?v=whcfSGN6CAU.
 
 ## Segment 4 — Writer cuts agent cost in the harness · ~5:00
 
@@ -132,7 +132,7 @@ The model is no longer the product — the operating layer is. This week DeepSee
 - Writer: writer.com · writer.com/engineering · dev.writer.com · VentureBeat corroboration
 - OpenAI Computer History + Drive: help.openai.com release notes · OpenAI X status 2087996496088297746
 - Anthropic multiagent: anthropic.com/research/multiagent-systems
-- Signal From Outside: youtube.com wVdivlahcm0 (IBM Mixture of Experts)
+- Signal From Outside: youtube.com/watch?v=whcfSGN6CAU (Peter Steinberger at YC Startup School 2026)
 
 ## Vendor-reported vs independent (on-air framing)
 

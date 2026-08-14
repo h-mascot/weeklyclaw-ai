@@ -29,10 +29,12 @@
 | 7,876 / 7,886 | Writer harness cache read | byte-stable prefix |
 | 45 / 2,383 / 53 | Anthropic multiagent swarm / embargo / disclosed | research published |
 | 8h | Writer write-ahead recovery objective | Writer spec |
-| ~46 min / May 29 | IBM Mixture of Experts podcast (Signal From Outside) | permanent anchor, no autoplay |
+| 41:53 / Aug 10 | Peter Steinberger at YC Startup School | Signal talk track runs 8–9 min; no autoplay |
 
 ## Quote beats
 
+- **Flash:** One model combines 1M multimodal context, independently measured ~340 tok/s, workhorse pricing, and a gradual rollout across major Copilot surfaces. Operator implication: fewer router/vision/long-context tiers. Caveat: intro price doubles after Dec 31; speed is not reliability.
+- **Signal:** "Your dependency's business model is your business model." "Hype is like weather." "Fun is velocity." Close on twelve Codex sub-agents, risk-based review, and compute management.
 - S2 — *If post-training can create exploit-chain capability faster than the lab expected, is a two-week weight delay a safety control — or merely a head start for the hosted gatekeeper?*
 - S3 — *If a 27B open model can run locally while hosted models race toward 750 tokens per second, which work should leave your machine at all?*
 - S4 — *If the same model becomes forty percent cheaper because the harness stops rebuying context and failure, should AI budgets be owned by model procurement — or systems engineering?*
@@ -70,7 +72,7 @@
 - Writer — `writer.com/blog/aug-roundup-new-at-writer` · `writer.com/engineering/harness-research-tokens-efficiency-cost-spend-ai` · `dev.writer.com/home/models` · VentureBeat corroboration
 - OpenAI Computer History + Drive — `help.openai.com/en/articles/6825453-chatgpt-release-notes` · OpenAI X status `2087996496088297746`
 - Anthropic multiagent — `anthropic.com/research/multiagent-systems`
-- Signal From Outside — `youtube.com/watch?v=wVdivlahcm0` (IBM Mixture of Experts)
+- Signal From Outside — `youtube.com/watch?v=whcfSGN6CAU` (Peter Steinberger at YC Startup School 2026)
 
 ## Handoff cues
 
