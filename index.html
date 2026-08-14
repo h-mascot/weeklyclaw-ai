@@ -1015,7 +1015,7 @@
       .host-photo.henry { background-size: 840px auto; background-position: -297px -218px; }
     }
   </style>
-  <style id="player-host-partner-refinement">
+  <style id="player-host-sponsor-refinement">
     .episode-player {
       grid-column: 1 / -1;
       min-height: 112px;
@@ -1068,11 +1068,11 @@
     }
     .host-card h3 { margin-bottom: 12px; }
 
-    .partners { padding: 74px 0 82px; border-top: 1px solid var(--line); background: rgba(255, 249, 238, .7); }
-    .partner-heading-row { display: flex; align-items: end; justify-content: space-between; gap: 32px; }
-    .partner-heading-row .section-copy { max-width: 460px; margin: 0; text-align: right; }
-    .partner-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 34px; }
-    .partner-card {
+    .sponsors { padding: 74px 0 82px; border-top: 1px solid var(--line); background: rgba(255, 249, 238, .7); }
+    .sponsor-heading-row { display: flex; align-items: end; justify-content: space-between; gap: 32px; }
+    .sponsor-heading-row .section-copy { max-width: 460px; margin: 0; text-align: right; }
+    .sponsor-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 34px; }
+    .sponsor-card {
       min-height: 144px;
       display: grid;
       grid-template-columns: auto minmax(0, 1fr);
@@ -1085,16 +1085,18 @@
       background: var(--panel);
       transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
     }
-    a.partner-card:hover { transform: translateY(-3px); border-color: var(--coral); background: var(--paper); }
-    .partner-symbol { width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 9px; color: var(--paper); background: var(--coral); font: 700 18px/1 var(--mono); }
-    .partner-symbol img { width: 38px; height: 38px; object-fit: contain; }
-    .partner-copy { min-width: 0; }
-    .partner-name { display: block; margin-bottom: 5px; font-size: 27px; font-weight: 800; line-height: .95; letter-spacing: -.01em; text-transform: uppercase; }
+    a.sponsor-card:hover { transform: translateY(-3px); border-color: var(--coral); background: var(--paper); }
+    .sponsor-symbol { width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 9px; background: var(--paper); }
+    .sponsor-symbol img { width: 38px; height: 38px; object-fit: contain; }
+    .sponsor-symbol.herald { color: var(--paper); border-color: #216655; background: var(--coral); font: 700 18px/1 var(--mono); }
+    .sponsor-copy { min-width: 0; }
+    .sponsor-name { display: block; margin-bottom: 5px; font-size: 27px; font-weight: 800; line-height: .95; letter-spacing: -.01em; text-transform: uppercase; }
+    .sponsor-copy small { display: block; color: var(--muted); font: 500 10px/1.4 var(--mono); }
 
     @media (max-width: 860px) {
-      .partner-heading-row { align-items: flex-start; flex-direction: column; gap: 12px; }
-      .partner-heading-row .section-copy { text-align: left; }
-      .partner-grid { grid-template-columns: 1fr; }
+      .sponsor-heading-row { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .sponsor-heading-row .section-copy { text-align: left; }
+      .sponsor-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 680px) {
       .episode-player { grid-template-columns: 58px minmax(0, 1fr); gap: 14px; padding: 16px; }
@@ -1103,25 +1105,28 @@
       .player-heading { align-items: flex-start; flex-direction: column; gap: 5px; }
       .host-card { min-height: 0; grid-template-columns: 56px minmax(0, 1fr); justify-items: stretch; gap: 16px; padding: 22px; text-align: left; }
       .host-index { width: 56px; height: 56px; }
-      .partners { padding-block: 62px; }
-      .partner-card { min-height: 120px; padding: 20px; }
+      .sponsors { padding-block: 62px; }
+      .sponsor-card { min-height: 120px; padding: 20px; }
     }
   </style>
   <style id="final-structure-refinement">
     .hero-art { border: 0; background: transparent; box-shadow: none; }
     .hero-art::before, .hero-art::after { display: none; }
-    .partners { padding: 38px 0 46px; border-block: 1px solid var(--line); background: rgba(255, 249, 238, .72); }
-    .partner-heading-row { display: block; }
-    .partner-title { margin: 0 0 26px; color: var(--muted); font: 600 11px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
-    .partner-grid { grid-template-columns: repeat(4, minmax(150px, 1fr)); gap: 24px; margin-top: 0; }
-    .partner-card { min-height: 96px; display: flex; justify-content: center; gap: 18px; padding: 0; border: 0; border-radius: 0; background: transparent; }
-    a.partner-card:hover { transform: none; border-color: transparent; background: transparent; }
-    a.partner-card:hover .partner-name { color: var(--wine); }
-    .partner-symbol { width: 72px; height: 72px; flex: 0 0 72px; border: 0; border-radius: 12px; color: var(--paper); background: var(--coral); font-size: 22px; }
-    .partner-symbol img { width: 66px; height: 66px; }
-    .partner-symbol .herald-logo { width: 72px; height: 72px; border-radius: 13px; }
-    .partner-copy { display: flex; align-items: center; }
-    .partner-name { margin: 0; font-size: 28px; transition: color 150ms ease; }
+    .sponsors { padding: 38px 0 46px; border-block: 1px solid var(--line); background: rgba(255, 249, 238, .72); }
+    .sponsor-heading-row { display: block; }
+    .sponsor-title { margin: 0 0 26px; color: var(--muted); font: 600 11px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+    .sponsor-grid { grid-template-columns: repeat(5, minmax(120px, 1fr)); gap: 24px; margin-top: 0; }
+    .sponsor-card { min-height: 96px; display: flex; justify-content: center; gap: 18px; padding: 0; border: 0; border-radius: 0; background: transparent; }
+    a.sponsor-card:hover { transform: none; border-color: transparent; background: transparent; }
+    a.sponsor-card:hover .sponsor-name { color: var(--wine); }
+    .sponsor-symbol { width: 72px; height: 72px; flex: 0 0 72px; border: 0; border-radius: 12px; background: transparent; font-size: 26px; }
+    .sponsor-symbol img { width: 66px; height: 66px; }
+    .sponsor-symbol.agent-avatar img { border-radius: 16px; object-fit: cover; box-shadow: 0 10px 28px rgba(33, 29, 26, .18); }
+    .sponsor-symbol .herald-logo { width: 72px; height: 72px; border-radius: 13px; }
+    .heritage-card { min-width: 170px; }
+    .heritage-logo { width: min(190px, 100%); height: auto; max-height: 58px; object-fit: contain; }
+    .sponsor-copy { display: flex; align-items: center; }
+    .sponsor-name { margin: 0; font-size: 32px; transition: color 150ms ease; }
     .theme-toggle {
       min-width: 44px;
       min-height: 44px;
@@ -1145,8 +1150,8 @@
     .theme-toggle.mobile { display: none; }
     [data-theme="dark"] .theme-toggle { color: var(--cream); }
     [data-theme="dark"] .theme-toggle:hover { background: rgba(157, 229, 201, .08); }
-    [data-theme="dark"] .partners { background: rgba(18, 17, 15, .82); }
-    [data-theme="dark"] .partner-name { color: var(--cream); }
+    [data-theme="dark"] .sponsors { background: rgba(18, 17, 15, .82); }
+    [data-theme="dark"] .sponsor-name { color: var(--cream); }
     @media (max-width: 1040px) {
       .theme-toggle.mobile { display: inline-flex; margin-left: auto; padding: 0; }
       .theme-toggle.mobile .theme-toggle-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
@@ -1158,11 +1163,11 @@
       .theme-toggle.mobile { min-width: 42px; min-height: 42px; }
       .menu-button { width: 42px; height: 42px; }
       .menu-button span, .menu-button::before, .menu-button::after { top: 20px; left: 10px; }
-      .partners { padding-block: 42px 48px; }
-      .partner-title { margin-bottom: 22px; }
-      .partner-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 14px; }
-      .partner-card {
-        min-height: 132px;
+      .sponsors { padding-block: 42px 48px; }
+      .sponsor-title { margin-bottom: 22px; }
+      .sponsor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; }
+      .sponsor-card {
+        min-height: 142px;
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;
@@ -1170,9 +1175,11 @@
         gap: 12px;
         text-align: center;
       }
-      .partner-symbol { width: 68px; height: 68px; flex-basis: 68px; }
-      .partner-symbol img, .partner-symbol .herald-logo { width: 68px; height: 68px; }
-      .partner-name { font-size: clamp(18px, 6vw, 25px); line-height: .92; }
+      .sponsor-symbol { width: 74px; height: 74px; flex-basis: 74px; }
+      .sponsor-symbol img, .sponsor-symbol .herald-logo { width: 74px; height: 74px; }
+      .sponsor-name { font-size: clamp(20px, 7vw, 28px); line-height: .9; }
+      .heritage-card { grid-column: 1 / -1; min-height: 116px; }
+      .heritage-logo { width: min(280px, 78vw); max-width: 100%; max-height: 76px; }
     }
   </style>
   <script>
@@ -1411,38 +1418,29 @@
       </div>
     </section>
 
-    <section class="partners" aria-labelledby="partners-title">
+    <section class="sponsors" aria-labelledby="sponsors-title">
       <div class="shell">
-        <div class="partner-heading-row"><h2 class="partner-title" id="partners-title">Partners</h2></div>
-        <div class="partner-grid">
-          <a class="partner-card" href="https://openclaw.ai/" target="_blank" rel="noopener" aria-label="OpenClaw">
-            <span class="partner-symbol"><img src="assets/sponsors/openclaw.svg" alt="OpenClaw logo"></span>
-            <span class="partner-copy"><strong class="partner-name">OpenClaw</strong></span>
+        <div class="sponsor-heading-row"><h2 class="sponsor-title" id="sponsors-title">Supported by</h2></div>
+        <div class="sponsor-grid">
+          <a class="sponsor-card agent-card" href="https://superada.ai/" target="_blank" rel="noopener" aria-label="Ada at Superada">
+            <span class="sponsor-symbol agent-avatar"><img src="assets/agents/ada-avatar.jpg" alt="Ada avatar"></span>
+            <span class="sponsor-copy"><strong class="sponsor-name">Ada</strong></span>
           </a>
-          <a class="partner-card" href="https://www.curacel.co/" target="_blank" rel="noopener" aria-label="Curacel">
-            <span class="partner-symbol" aria-hidden="true">CU</span>
-            <span class="partner-copy"><strong class="partner-name">Curacel</strong></span>
-          </a>
-          <a class="partner-card" href="https://weeklyclaw.ai/" aria-label="Weekly Claw">
-            <span class="partner-symbol" aria-hidden="true">WC</span>
-            <span class="partner-copy"><strong class="partner-name">WeeklyClaw</strong></span>
-          </a>
-          <a class="partner-card" href="https://labs.theherald.co/" target="_blank" rel="noopener" aria-label="Herald Labs">
-            <span class="partner-symbol"><img class="herald-logo" src="assets/sponsors/herald.jpg" alt="Herald Labs logo"></span>
-            <span class="partner-copy"><strong class="partner-name">Herald Labs</strong></span>
-          </a>
-          <div class="partner-card" aria-label="First Circle">
-            <span class="partner-symbol" aria-hidden="true">FC</span>
-            <span class="partner-copy"><strong class="partner-name">First Circle</strong></span>
+          <div class="sponsor-card agent-card">
+            <span class="sponsor-symbol agent-avatar"><img src="assets/agents/max-avatar.png" alt="Max avatar"></span>
+            <span class="sponsor-copy"><strong class="sponsor-name">Max</strong></span>
           </div>
-          <div class="partner-card" aria-label="Anchor">
-            <span class="partner-symbol" aria-hidden="true">AN</span>
-            <span class="partner-copy"><strong class="partner-name">Anchor</strong></span>
-          </div>
-          <div class="partner-card" aria-label="VoiceClaw Realtime">
-            <span class="partner-symbol" aria-hidden="true">VC</span>
-            <span class="partner-copy"><strong class="partner-name">VoiceClaw Realtime</strong></span>
-          </div>
+          <a class="sponsor-card heritage-card" href="https://heritagetel.com/" target="_blank" rel="noopener" aria-label="HeritageTel">
+            <img class="heritage-logo" src="assets/sponsors/heritage-logo.png" alt="HeritageTel">
+          </a>
+          <a class="sponsor-card" href="https://labs.theherald.co/" target="_blank" rel="noopener">
+            <span class="sponsor-symbol"><img class="herald-logo" src="assets/sponsors/herald.jpg" alt=""></span>
+            <span class="sponsor-copy"><strong class="sponsor-name">Herald Labs</strong></span>
+          </a>
+          <a class="sponsor-card" href="https://openclaw.ai/" target="_blank" rel="noopener">
+            <span class="sponsor-symbol"><img src="assets/sponsors/openclaw.svg" alt=""></span>
+            <span class="sponsor-copy"><strong class="sponsor-name">OpenClaw</strong></span>
+          </a>
         </div>
       </div>
     </section>
