@@ -87,6 +87,7 @@ for (const needle of [
   'aria-label="Follow Weekly Claw on X"',
   'aria-label="Watch Weekly Claw on YouTube"',
   'aria-label="Watch Weekly Claw on Bilibili"',
+  'rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="Watch Weekly Claw on Bilibili"',
   'aria-label="Weekly Claw on Apple Podcasts, coming soon"',
   'aria-label="Weekly Claw on Spotify, coming soon"',
 ]) {
