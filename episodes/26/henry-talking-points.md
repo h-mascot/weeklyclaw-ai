@@ -1,98 +1,82 @@
-# WeeklyClaw #26 — Henry section (own slides + shared transitions only)
+# Henry — Week 26 prep (rev4)
 
-Henry's on-air material is concise bullets, an optional line, and a handoff cue. He does not read a word-for-word script.
+## Cold open · 2:00
 
-## Cold open (shared with Andy)
+- "Here's the frame: speed, routing, payments, and supervised judgment are no longer features — they are the moat. Andy, which work should leave the machine now?"
+- "Start with the lab that shipped a 4.89 terabyte checkpoint and a $50M license cliff in the same release." → revise to "Start with the lab that trained a 27B supervisor to direct GPT-5.5." (Qwen off this week's lineup per Henry's standing rule.)
+- "Four stories tonight" not five.
 
-- Optional landing line: "Here's the frame: speed, routing, payments, supervision, and licensing thresholds are no longer features — they are the moat. Andy, which work should leave the machine now?"
-- Handoff: Andy → Herald Labs sponsor.
+## Map · 1:00
 
-## s-the-map
+- "The map is the deployment chain: supervisory judgment, wall-clock budget, gateway ownership plus an unattributed ghost, spend boundary. Qwen's Max-class checkpoint aired on Episode 25, so it is off this week's lineup by Henry's standing rule. If we run long, Segment three compresses first. Signal From Outside stays. Segments one and two are untouchable."
 
-- Five-card deployment chain: license thresholds, supervisory judgment, wall-clock budget, gateway ownership, spend boundary.
-- Cut order: Segment 4 first, then 5, then the hardware side of 3. Signal From Outside stays. Cold open stays. S1 and S2 untouchable.
-- Handoff: "Start with the lab that shipped a 4.89 terabyte checkpoint and a $50 million license cliff in the same release."
+## S1 — Faraday · ~5:30 (lead)
 
-## s-seg-qwen-open (Henry lead, Andy caveat)
+- "Inherent's Faraday, post-trained on Qwen3.6-27B, builds a scientific agent that can call GPT-5.5 Codex as a coding worker rather than encoding scientific workflow in a large hand-built multiagent harness."
+- 310 figure-replication tasks across 100 ML and AI-for-science papers. 242 training, 68 test.
+- Each agent: one figure redacted, 60 minutes, internet, 1/7 H200.
+- Faraday uses five ordinary tools plus a resumable Codex CLI wrapper. Can reset or parallelize coding-agent sessions.
+- Long-horizon GRPO + per-task rubrics + three judge samples + turn-level credit assignment.
+- Faraday beats Claude Opus 4.8 and GPT-5.5 on 60% of held-out AI-for-science tasks. Averages 6% above Claude, 8% above Codex on the test split.
+- Human experts preferred Faraday over both in 29 of 41 selected rollouts.
+- Same Codex model serves as the rubric judge. The 27B does not outperform the frontier model alone — it outperforms it by calling it.
+- "If a 27B supervisor can direct a model two orders of magnitude larger, should we spend the next dollar on a smarter worker — or on training the judgment that decides what the worker should do?"
+- Sources: arxiv.org/abs/2608.13331 · arxiv.org/html/2608.13331v1 · x.com/inherent_labs/status/2088290794092298655
+- Caveat: author-run; selected human study; no public weights, training code, or Replica dataset.
 
-- 2.446T BF16 parameters; 95B active per token; 92 layers; 512 routed experts.
-- 262,144 native context extensible to ~1.01M.
-- Repository is ungated, 224 files, ~4.89 TB; 6,381 downloads and 950 likes at retrieval.
-- The downloadable release is text-only with mandatory reasoning.
-- Hosted Qwen3.8-Max adds vision, non-thinking, tools, default 1M context.
-- Threshold A (100M MAU or $20M monthly revenue): prominent model naming.
-- Threshold B ($50M revenue in any consecutive 12-month period for model-service or AI work-assistant companies): separate Qwen license.
-- OpenRouter lists the route at $2 input / $6 output per M tokens, mandatory reasoning.
-- Caveat: vendor-run benchmarks, custom license, no Apache 2.0.
-- Optional landing line: "A 4.89 terabyte checkpoint can be inspectable and modifiable yet still economically centralized."
-- Question: "If the weights are downloadable but require five terabytes, serious inference infrastructure, and a separate license once your AI assistant reaches $50 million, did frontier capability become open — or merely inspectable?"
-- Handoff (to Andy caveat): "And the license cliff."
+## S2 — Speed · ~5:30 (lead)
 
-## s-seg-faraday (Henry lead, Andy support)
+- "Agent intelligence is now constrained by wall-clock time as much as model quality."
+- CS-4 = three WSE-3 Turbo wafers. 750 PFLOPS. 129.6 PB/s. 7.2 Tb/s I/O. 2 µs wafer-to-wafer. 4,400+ tok/s/user on GPT-OSS-120B. 30× GPU. 10× CS-3 per watt. First shipments this quarter. **Vendor-reported.**
+- DFlash 2: selector + local convolution. Lossless rejection sampling. 4.80 accepted vs 4.28 MTP vs 3.62 DSpark. 2.7–3.4× SGLang throughput. 16–25% more accepted output per verification pass for ~1% extra cycle latency. Apache 2.0. vLLM and llama.cpp PRs still open.
+- M5 128 GB Mac Pro: 76.8 tok/s. Configuration-specific.
+- "If an agent gets 30 times more tokens in the same minute, should we make the answer arrive faster — or spend the entire gain on more checking before anyone sees it?"
+- Sources: cerebras.ai/cs4 · investors.cerebras.ai · x.com/cerebras/status/2089870131291943228 · inco.ai/blog/dflash2 · huggingface.co/incoai/Qwen3.8-27B-DFlash2 · github.com/vllm-project/vllm/pull/52816 · github.com/ggml-org/llama.cpp/pull/27342
+- Caveat: all speed numbers vendor-reported or configuration-specific.
 
-- 27B supervisor, post-trained on Qwen3.6-27B, calls GPT-5.5 Codex as a coding worker.
-- Replica: 310 tasks across 100 ML/AI-for-science papers; 242 train / 68 test.
-- Each agent: 60 minutes, internet, 1/7 H200 GPU.
-- Beats Claude Opus 4.8 and GPT-5.5 on 60% of held-out AI-for-science tasks; +6% Claude / +8% Codex on test split.
-- Human experts preferred Faraday in 29 of 41 selected rollouts.
-- Same Codex model serves as rubric judge.
-- Caveat: author-run, no public weights, selected human study.
-- Henry recap beats: small model + judgment + the same Codex judge — the comparison is not "27B vs frontier."
-- Optional landing line: "If that transfer holds beyond one author-built benchmark, model routing becomes an org chart rather than a leaderboard."
-- Question: "If a 27B supervisor can direct a model two orders of magnitude larger, should we spend the next dollar on a smarter worker — or on training the judgment that decides what the worker should do?"
-- Handoff: "After the break: Signal From Outside."
+## S3 — Stripe–OpenRouter + Ox Alpha · ~5:00 (lead)
 
-## s-seg-speed (Henry lead, Andy DFlash 2)
+- "Both companies posted on August 19. Stripe's newsroom announcement says it has agreed to acquire OpenRouter to help businesses optimize token routing and usage."
+- Stripe describes a gateway that routes across 400+ models from more than 80 providers.
+- OpenRouter's same-day post: "joining Stripe," "same mission, same name, same product, same roadmap." Quote the neutrality line verbatim on air.
+- 10T+ tokens/day. 10M devs. 10× annual growth. Live API returned 414 catalog entries.
+- "Then on August 20 — the same week the router sells — an unattributed ghost shows up on the same rail." Ben Davis reported 80%+ on ten DeepSWE tasks vs 65% Fable / 52% GPT-5.6 Sol. Variance caveat.
+- On-air: "unattributed, unverified, ten tasks, take the 80% as signal not score."
+- Bloomberg >$7B figure remains anonymous-sourced. Deal signed, not closed — "subject to customary closing conditions. We expect to close in the coming weeks."
+- "OpenRouter wrote down 'routing decisions remain driven by what's best for the user' before the deal even closes — what would have to happen for us to say that promise failed?"
+- Sources: stripe.com/newsroom/news/stripe-agrees-to-acquire-openrouter · openrouter.ai/blog/announcements/openrouter-is-joining-stripe · openrouter.ai/api/v1/models · bloomberg.com/news/articles/2026-08-16/stripe-nears-deal-to-buy-ai-firm-openrouter-for-over-7-billion · openrouter.ai/stealth/ox-alpha · x.com/davis7/status/2090655207831298095
+- Caveat: signed, not closed; price undisclosed; terms undisclosed; do not generalize "400+ models from 80+ providers" beyond announcement copy.
 
-- CS-4: three WSE-3 Turbo wafers, 750 PFLOPS, 129.6 PB/s memory bandwidth, 7.2 Tb/s I/O, 2 μs wafer-to-wafer latency.
-- Cerebras claims >4,400 tok/s/user on GPT-OSS-120B, up to 30× production GPU, up to 10× CS-3/W. First shipments this quarter.
-- DFlash 2: selector + local convolution; Qwen3.8-27B drafter 4.80 accepted tokens vs 4.28 native MTP.
-- 2.7–3.4× SGLang throughput vs autoregressive; 16–25% more accepted output per verification pass at ~1% extra cycle latency.
-- Drafter weights live on HF under Apache 2.0; vLLM + llama.cpp PRs open.
-- Henry M5 128 GB Mac Pro: 76.8 tok/s, configuration-specific, host testimony.
-- Caveat: vendor-reported throughout.
-- Optional landing line: "A faster run can spend the same wall-clock budget on deeper search, verification, or parallel work."
-- Question: "If an agent gets 30 times more tokens in the same minute, should we make the answer arrive faster — or spend the entire gain on more checking before anyone sees it?"
-- Handoff: Andy opens Signal From Outside.
+## S4 — AgentCore Payments · ~5:00 (lead)
 
-## s-seg-agent-payments (Henry lead, Andy BNB)
+- "AWS Bedrock AgentCore Payments moved from May preview to GA on August 18."
+- Agents can discover and pay for APIs, MCP servers, inference, and content through x402 or Stripe and Tempo's MPP.
+- Coinbase and Stripe Privy provide stablecoin wallets; raw developer credentials stay in AgentCore Identity Secrets Manager.
+- Short-lived tokens. Each session enforces max amount and expiry below the agent loop.
+- x402 `upto` ceilings. CloudWatch logs and dashboards.
+- BNB alternative: Agent Studio v2 ships Altana wallet with scoped session keys, onchain spending limits, allowlists, time bounds; revocable without giving the agent the private key.
+- "When an agent can pay for the next API call without asking, which layer should own the veto — the model, the workflow, the wallet, or a policy the agent cannot rewrite?"
+- Sources: aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-payments-is-now-generally-available-enabling-agents-to-transact-safely-and-autonomously-at-scale · aws.amazon.com/about-aws/whats-new/2026/08/bedrock-agentcore-payments-ga · docs.aws.amazon.com/bedrock-agentcore/latest/devguide/payments.html · github.com/awslabs/agentcore-samples/tree/main/01-features/08-agents-that-transact · bnbchain.org/en/blog/altana-in-bnb-agent-studio-agents-with-limits-you-set
+- Caveat: no transaction attempted, no wallet funded; BNB onchain permission claims not independently audited; stablecoin + protocol risks remain.
 
-- AWS AgentCore Payments: preview → GA on 2026-08-18.
-- Agents discover and pay via x402 or Stripe/Tempo MPP.
-- Coinbase + Stripe Privy stablecoin wallets; raw credentials in AgentCore Identity Secrets Manager; short-lived tokens instruct wallet ops.
-- Per-session max spend + expiry below the agent loop; x402 `upto` for metered usage.
-- CloudWatch logs, spans, dashboards.
-- BNB Altana: scoped session keys carry spending limits, allowlists, time bounds registered onchain; revocable without giving the agent the private key.
-- Two designs: AWS = managed logs + policy; BNB = onchain permissions + self-custody.
-- Caveat: no transaction attempted, no wallet funded; BNB onchain claims not independently audited.
-- Optional landing line: "Probabilistic reasoning proposes a purchase; deterministic infrastructure decides whether money can move."
-- Question: "When an agent can pay for the next API call without asking, which layer should own the veto — the model, the workflow, the wallet, or a policy the agent cannot rewrite?"
-- Handoff: "Hot take: same question, different artifact."
+## Hot Take · ~3:00 (anchor)
 
-## s-hot-take (Henry anchor, Andy steelman)
-
-- Anthropic watermark changes the source of randomness in low-stakes word choices.
+- "Hot take, not the news. Anthropic's text watermark changes the source of randomness in low-stakes word choices."
 - Long passages get statistically consistent with a secret key.
-- Exact facts, code, proofreading, heavy edits leave little room for a mark.
-- Translation is more markable because Claude chooses every word.
-- Positive result = Claude likely processed some of the content, not that Claude authored it.
-- Detector API: "coming soon"; no false-positive curve published.
-- C2PA file credentials are a separate path.
-- Henry's three-beat close:
-  1. Detection is not authorship.
-  2. The model becomes the new plausible deniability.
-  3. The defensible posture is signed receipts — content-keyed, hash-chained — not a watermark guess.
-- Optional landing line: "What decision is the detector safe enough to make?"
-- Handoff: "Andy, that's the operating layer beneath the watermark."
+- Facts, code, proofreading, heavy edits leave little room for a mark.
+- Translation is more markable.
+- A positive result means Claude likely processed some of the content — not that Claude authored it.
+- Detector API "coming soon"; no false-positive curve published.
+- "What decision is the detector safe enough to make?"
+- Sources: anthropic.com/news/claude-text-watermark · nature.com/articles/s41586-024-08025-4 · digital-strategy.ec.europa.eu/en/news/strong-backing-code-practice-transparency-ai-generated-content
 
-## s-sponsor-heritage (Henry owns)
+## Heritage Telecom sponsor · 0:30
 
-- "Heritage Telecom keeps the lights on while we keep the operating layer honest. Independent infrastructure for independent voices. Independent. Reliable. Quietly essential. Back to One to Watch."
+- "Heritage Telecom keeps the lights on while we keep the operating layer honest."
+- "Independent. Reliable. Quietly essential."
 
-## Notes for Henry across the show
+## What changed rev3 → rev4
 
-- "Henry says" is the rule for vendor-reported figures, author-run benchmarks, and host testimony. Always attach the source tier.
-- S1 license thresholds are the segment's editorial core — name them both before any benchmark number.
-- S3 should always read as wall-clock budget, not tokens-per-second vanity.
-- S5's most quotable line is the AWS receipt's three-times-read sentence: "the model never holds the key."
-- Hot Take's production-layer fix (signed receipts) is the segment's defensible landing — hold it regardless of the steelman's pushback.
+- DROP S1 Qwen (aired pre-show 8/14). Henry standing rule.
+- PIN Ox Alpha into S3.
+- Renumbered 1–4; cold-open hook reframed; cut order re-prioritized.
