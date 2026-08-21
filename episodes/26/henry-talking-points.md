@@ -28,7 +28,7 @@ Henry's on-air material is concise bullets, an optional line, and a handoff cue.
 - Question: "If the weights are downloadable but require five terabytes, serious inference infrastructure, and a separate license once your AI assistant reaches $50 million, did frontier capability become open — or merely inspectable?"
 - Handoff (to Andy caveat): "And the license cliff."
 
-## s-seg-faraday (Andy lead, Henry recap)
+## s-seg-faraday (Henry lead, Andy support)
 
 - 27B supervisor, post-trained on Qwen3.6-27B, calls GPT-5.5 Codex as a coding worker.
 - Replica: 310 tasks across 100 ML/AI-for-science papers; 242 train / 68 test.

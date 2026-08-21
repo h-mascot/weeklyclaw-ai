@@ -45,7 +45,7 @@ The operating layer beneath the model became the company. Qwen released Max-clas
 
 *Inherent's official graphic on screen; Replica task anatomy and evaluation loop below. Read the worker-supervisor split, then the caveat card.*
 
-**Andy (lead):** Inherent's Faraday, post-trained on Qwen3.6-27B, builds a scientific agent that can call GPT-5.5 Codex as a coding worker rather than encoding scientific workflow in a large hand-built multiagent harness. The training corpus is Replica: 310 figure-replication tasks across 100 machine learning and AI-for-science papers, 242 training, 68 test. Each agent gets a paper with one results figure redacted, a 60-minute deadline, internet access, and 1/7 of an H200 GPU.
+**Henry (lead):** Inherent's Faraday, post-trained on Qwen3.6-27B, builds a scientific agent that can call GPT-5.5 Codex as a coding worker rather than encoding scientific workflow in a large hand-built multiagent harness. The training corpus is Replica: 310 figure-replication tasks across 100 machine learning and AI-for-science papers, 242 training, 68 test. Each agent gets a paper with one results figure redacted, a 60-minute deadline, internet access, and 1/7 of an H200 GPU.
 
 **Henry:** Faraday uses five ordinary tools plus a resumable Codex CLI wrapper. It can reset or parallelize coding-agent sessions. The training recipe is long-horizon GRPO with per-task rubrics, three judge samples, and turn-level credit assignment. The paper reports Faraday beating Claude Opus 4.8 and GPT-5.5 on 60% of held-out AI-for-science tasks, averaging 6% above Claude and 8% above Codex on the test split. Human experts preferred Faraday over both in 29 of 41 selected rollouts.
 
@@ -71,7 +71,7 @@ The operating layer beneath the model became the company. Qwen released Max-clas
 
 *Two-headline split screen; the 400+ models stack animates. Quote the neutrality line verbatim.*
 
-**Andy (lead):** Both companies posted on August 19. Stripe's newsroom announcement says it has agreed to acquire OpenRouter to help businesses optimize token routing and usage. Stripe describes a gateway that routes across 400+ models from more than 80 providers. OpenRouter's same-day post says it is "joining Stripe," commits to "same mission, same name, same product, same roadmap," and writes down the neutrality promise: "routing decisions will remain driven by one thing: what's best for you, the user."
+**Henry (lead):** Both companies posted on August 19. Stripe's newsroom announcement says it has agreed to acquire OpenRouter to help businesses optimize token routing and usage. Stripe describes a gateway that routes across 400+ models from more than 80 providers. OpenRouter's same-day post says it is "joining Stripe," commits to "same mission, same name, same product, same roadmap," and writes down the neutrality promise: "routing decisions will remain driven by one thing: what's best for you, the user."
 
 **Henry:** OpenRouter discloses current scale: 10+ trillion tokens per day for over 10 million developers. 10x annual inference-volume growth since founding. The live OpenRouter API returned 414 catalog entries at verification. Bloomberg's >$7B figure remains anonymous-sourced and the deal is signed, not closed — "subject to customary closing conditions. We expect to close in the coming weeks."
 

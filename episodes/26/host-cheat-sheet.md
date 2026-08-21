@@ -13,10 +13,10 @@
 | Herald Labs sponsor | Andy | 0:30 |
 | The map | Henry | 1:00 |
 | S1 Qwen open | Henry lead, Andy caveat | ~5:00 |
-| S2 Faraday | Andy lead, Henry recap | ~5:30 |
+| S2 Faraday | Henry lead, Andy support | ~5:30 |
 | S3 Speed tier | Henry lead, Andy DFlash 2 | ~5:30 |
 | Signal From Outside (Garry Tan) | Andy | ~7:00 |
-| S4 Stripe-OpenRouter | Andy lead, Henry recap | ~5:00 |
+| S4 Stripe-OpenRouter | Henry lead, Andy support | ~5:00 |
 | S5 AgentCore payments | Henry lead, Andy BNB | ~5:00 |
 | Hot Take (provenance) | Henry anchor, Andy steelman | ~3:00 |
 | Heritage Telecom sponsor | Henry | 0:30 |
