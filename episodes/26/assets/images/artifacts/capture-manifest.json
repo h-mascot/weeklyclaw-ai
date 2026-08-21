@@ -1,0 +1,50 @@
+{
+ "s1-artificial-analysis": {
+  "url": "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b",
+  "path": "assets/images/artifacts/s1-artificial-analysis.png",
+  "bytes": 140348,
+  "captured_at": "2026-08-21T00:27:57Z"
+ },
+ "s1-huggingface": {
+  "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+  "path": "assets/images/artifacts/s1-huggingface.png",
+  "bytes": 158558,
+  "captured_at": "2026-08-21T00:28:02Z"
+ },
+ "s2-arxiv-paper": {
+  "url": "https://arxiv.org/html/2608.13331v1",
+  "path": "assets/images/artifacts/s2-arxiv-paper.png",
+  "bytes": 119173,
+  "captured_at": "2026-08-21T00:28:06Z"
+ },
+ "s3-cerebras-cs4": {
+  "url": "https://www.cerebras.ai/cs4",
+  "path": "assets/images/artifacts/s3-cerebras-cs4.png",
+  "bytes": 173984,
+  "captured_at": "2026-08-21T00:28:17Z"
+ },
+ "s3-dflash2": {
+  "url": "https://inco.ai/blog/dflash2/",
+  "path": "assets/images/artifacts/s3-dflash2.png",
+  "bytes": 125814,
+  "captured_at": "2026-08-21T00:28:22Z"
+ },
+ "s4-stripe-newsroom": {
+  "url": "https://stripe.com/newsroom/news/stripe-agrees-to-acquire-openrouter",
+  "path": "assets/images/artifacts/s4-stripe-newsroom.png",
+  "bytes": 91898,
+  "captured_at": "2026-08-21T00:28:25Z"
+ },
+ "s4-openrouter-post": {
+  "url": "https://openrouter.ai/blog/announcements/openrouter-is-joining-stripe/",
+  "path": "assets/images/artifacts/s4-openrouter-post.png",
+  "bytes": 164813,
+  "captured_at": "2026-08-21T00:28:29Z"
+ },
+ "s5-aws-agentcore-payments": {
+  "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/payments.html",
+  "path": "assets/images/artifacts/s5-aws-agentcore-payments.png",
+  "bytes": 217159,
+  "captured_at": "2026-08-21T00:28:33Z"
+ }
+}
