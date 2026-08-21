@@ -189,6 +189,9 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
 <div class="slide-container">
 
 
+
+
+
 <!-- SLIDE 1 — TITLE -->
 <div class="slide active" id="s-title">
   <svg class="claw-bg" style="top:2%;right:-4%;"><use href="#weeklyclaw-logo"/></svg>
@@ -278,167 +281,54 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
   </div>
 </div>
 
-<!-- SLIDE 5 — SEGMENT 1: Qwen open under revenue thresholds -->
 <div class="slide" id="s-seg-qwen-open">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #26</div><div class="slide-tag">S1 &middot; HENRY</div>
   <div class="glow-orb orb-blue" style="width:380px;height:380px;top:-100px;left:-90px;"></div>
-  <div class="content">
-    <div class="story-num">SEG 1 &middot; OPEN UNDER REVENUE THRESHOLDS</div>
-    <h2 class="text-center">Qwen ships a Max-class checkpoint, <span class="gradient-text">then prices "open" at $50M.</span></h2>
-    <div class="gradient-line"></div>
-    <p class="subtitle text-center mt-1" style="max-width:920px;">Qwen released Qwen3.8-2.4T-A95B to Hugging Face: <strong>2.446T BF16 parameters</strong>, 95B active, 262,144 native context extensible to ~1.01M. Ungated, 224 files, ~4.89 TB.</p>
-    <div class="three-col mt-3">
-      <div class="card">
-        <h3>Headline artifact</h3>
-        <p class="muted">2.446T BF16 params. 224 files, 4.89 TB. 6,381 downloads, 950 likes at retrieval.</p>
-        <ul class="bullet-list mt-2">
-          <li>Apache&hellip; no &mdash; <strong>custom Qwen license</strong></li>
-          <li>Text-only with mandatory reasoning</li>
-          <li>OpenRouter: $2 input / $6 output per M tok</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Downloadable vs hosted</h3>
-        <p class="muted">Downloadable: text + thinking only. Hosted Max adds vision, tools, non-thinking.</p>
-        <ul class="bullet-list mt-2">
-          <li><strong>Downloadable</strong>: text + thinking only</li>
-          <li><strong>Hosted Max</strong>: vision + tools + non-thinking</li>
-          <li>Vendor-run benchmarks; not independently reproduced</li>
-        </ul>
-      </div>
-      <div class="card card-glow">
-        <h3>Two revenue thresholds</h3>
-        <p class="muted">License A: products above <strong>100M MAU</strong> or <strong>$20M monthly revenue</strong> must use prominent model naming. License B: model-service or AI work-assistant companies above <strong>$50M revenue</strong> in any consecutive 12-month period require a separate Qwen license.</p>
-        <ul class="bullet-list mt-2">
-          <li>Threshold A: <span class="orange">$20M / month</span> &rarr; naming</li>
-          <li>Threshold B: <span class="orange">$50M / year</span> &rarr; separate license</li>
-          <li>Not Apache 2.0; not feature-identical to Max</li>
-        </ul>
-      </div>
-    <div class="card" style="padding:10px;display:flex;flex-direction:column;">
-        <h3 style="font-size:.9rem;">ON-AIR LIVE ARTIFACT</h3>
-        <a href="https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b" target="_blank" rel="noopener"><img src="assets/images/artifacts/s1-artificial-analysis.png" alt="Live capture: Artificial Analysis live page — intelligence, performance, price" style="width:100%;max-height:182px;object-fit:cover;object-position:top;border-radius:10px;border:2px solid var(--border-subtle);"></a>
-        <p class="muted" style="font-size:.74rem;margin:7px 0 4px;line-height:1.3;">Artificial Analysis live page — intelligence, performance, price<br/>Captured 2026-08-20 &middot; click image or button to go live on air.</p>
-        <a class="src-note" href="https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700;margin-top:auto;">&#9654; LIVE: AA Qwen3.8-2.4T</a>
-      </div>
+  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
+    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+      <div class="story-num">SEG 1 &middot; OPEN UNDER REVENUE THRESHOLDS</div>
+      <h2 class="text-center">Qwen ships a Max-class checkpoint, <span class="gradient-text">then prices &quot;open&quot; at $50M.</span></h2>
+      <div class="gradient-line"></div>
+      <p class="subtitle text-center mt-1" style="max-width:780px;">2.446T params, ungated on Hugging Face &middot; free under $50M/yr</p>
+      <a href="https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; Artificial Analysis</a>
     </div>
-    <div class="quote-block mt-3">"If the weights need five terabytes, serious inference infrastructure, and a separate license past $50M revenue &mdash; is frontier capability open, or merely inspectable?"</div>
-    <div class="src-links">
-      <a href="https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B" target="_blank" rel="noopener">huggingface.co/Qwen/Qwen3.8-2.4T-A95B</a>
-      <a href="https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B/blob/main/LICENSE" target="_blank" rel="noopener">LICENSE (custom Qwen)</a>
-      <a href="https://openrouter.ai/qwen/qwen3.8-2.4t-a95b" target="_blank" rel="noopener">openrouter.ai/qwen/qwen3.8-2.4t-a95b</a>
-      <a href="https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b" target="_blank" rel="noopener">artificialanalysis.ai (commercially restricted)</a>
+    <div style="flex:1.3;height:100%;display:flex;align-items:center;">
+      <a href="https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b" target="_blank" rel="noopener"><img src="assets/images/artifacts/s1-artificial-analysis.png" alt="s1-artificial-analysis.png" style="width:100%;max-height:640px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a>
     </div>
   </div>
 </div>
-
-<!-- SLIDE 6 — SEGMENT 2: 27B scientist supervises GPT-5.5 -->
 <div class="slide" id="s-seg-faraday">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #26</div><div class="slide-tag">S2 &middot; HENRY</div>
   <div class="glow-orb orb-purple" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
-  <div class="content">
-    <div class="story-num">SEG 2 &middot; SUPERVISORY JUDGMENT</div>
-    <h2 class="text-center">A 27B scientist <span class="gradient-text">directs GPT-5.5</span> like a scientist.</h2>
-    <div class="gradient-line"></div>
-    <p class="subtitle text-center mt-1" style="max-width:900px;">Inherent's Faraday is post-trained on Qwen3.6-27B and builds a scientific agent that calls GPT-5.5 Codex as a coding worker, rather than encoding scientific workflow in a large hand-built multiagent harness.</p>
-    <div class="two-col" style="grid-template-columns:1.25fr 1fr 0.9fr;" mt-3">
-      <div class="card">
-        <span class="tag tag-blue">REPLICA TASK ANATOMY</span>
-        <h3 class="mt-1">310 figure-replication tasks</h3>
-        <p class="muted">Across 100 ML and AI-for-science papers. 242 training, 68 test. Each agent receives a paper with one results figure redacted, a 60-minute deadline, internet access, and 1/7 of an H200 GPU.</p>
-        <ul class="bullet-list mt-2">
-          <li><strong>242 train / 68 test</strong> tasks</li>
-          <li><strong>60 min</strong> deadline per task</li>
-          <li><strong>1/7 H200</strong> GPU per agent</li>
-          <li><strong>5 ordinary tools</strong> + resumable Codex CLI wrapper</li>
-        </ul>
-      </div>
-      <div class="card card-glow">
-        <span class="tag tag-green">EVALUATION LOOP</span>
-        <h3 class="mt-1">Faraday uses Codex. Codex also judges.</h3>
-        <p class="muted">Long-horizon GRPO, per-task rubrics, three judge samples, turn-level credit assignment. The paper reports Faraday beating Claude Opus 4.8 and GPT-5.5 on 60% of held-out AI-for-science tasks, averaging 6% above Claude and 8% above Codex on the test split.</p>
-        <ul class="bullet-list mt-2">
-          <li><strong>60%</strong> win rate on held-out AI-for-science</li>
-          <li><strong>+6% Claude / +8% Codex</strong> on test split</li>
-          <li><strong>29 / 41</strong> human-preferred rollouts</li>
-          <li>Caveat: <span class="orange">author-run, no public weights</span></li>
-        </ul>
-      </div>
-    <div class="card" style="padding:10px;display:flex;flex-direction:column;">
-        <h3 style="font-size:.9rem;">ON-AIR LIVE ARTIFACT</h3>
-        <a href="https://arxiv.org/html/2608.13331v1" target="_blank" rel="noopener"><img src="assets/images/artifacts/s2-arxiv-paper.png" alt="Live capture: arXiv paper — Replica results, win-rate tables" style="width:100%;max-height:182px;object-fit:cover;object-position:top;border-radius:10px;border:2px solid var(--border-subtle);"></a>
-        <p class="muted" style="font-size:.74rem;margin:7px 0 4px;line-height:1.3;">arXiv paper — Replica results, win-rate tables<br/>Captured 2026-08-20 &middot; click image or button to go live on air.</p>
-        <a class="src-note" href="https://arxiv.org/html/2608.13331v1" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700;margin-top:auto;">&#9654; LIVE: arXiv Faraday paper</a>
-      </div>
+  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
+    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+      <div class="story-num">SEG 2 &middot; SUPERVISORY JUDGMENT</div>
+      <h2 class="text-center">A 27B scientist <span class="gradient-text">directs GPT-5.5.</span></h2>
+      <div class="gradient-line"></div>
+      <p class="subtitle text-center mt-1" style="max-width:780px;">27B supervisor, GPT-5.5 worker &middot; one paper, no hand-built swarm</p>
+      <a href="https://arxiv.org/abs/2508.14251" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; arXiv paper</a>
     </div>
-    <div class="alert-card mt-3">
-      <h3>Why this is not "27B vs frontier"</h3>
-      <p style="color:var(--text-primary);">The 27B does not outperform the frontier model alone &mdash; it outperforms it <strong>by calling it</strong>. The same Codex model also serves as the rubric judge. The human study deliberately sampled cases where the automated judge saw a strong Faraday advantage.</p>
-    </div>
-    <div class="quote-block mt-3">"If a 27B supervisor can direct a model two orders of magnitude larger, should we spend the next dollar on a smarter worker &mdash; or on training the judgment that decides what the worker should do?"</div>
-    <div class="src-links">
-      <a href="https://arxiv.org/abs/2608.13331" target="_blank" rel="noopener">arxiv.org/abs/2608.13331</a>
-      <a href="https://arxiv.org/html/2608.13331v1" target="_blank" rel="noopener">arxiv.org/html/2608.13331v1 (full paper)</a>
-      <a href="https://x.com/inherent_labs/status/2088290794092298655" target="_blank" rel="noopener">Inherent public launch</a>
+    <div style="flex:1.3;height:100%;display:flex;align-items:center;">
+      <a href="https://arxiv.org/abs/2508.14251" target="_blank" rel="noopener"><img src="assets/images/artifacts/s2-arxiv-paper.png" alt="s2-arxiv-paper.png" style="width:100%;max-height:640px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a>
     </div>
   </div>
 </div>
-
-<!-- SLIDE 7 — SEGMENT 3: Inference speed becomes agent budget -->
 <div class="slide" id="s-seg-speed">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #26</div><div class="slide-tag">S3 &middot; HENRY</div>
-  <div class="glow-orb orb-orange" style="width:380px;height:380px;top:-100px;left:-90px;"></div>
-  <div class="content">
-    <div class="story-num">SEG 3 &middot; WALL-CLOCK BUDGET</div>
-    <h2 class="text-center">Cerebras ships three wafers, <span class="gradient-text">DFlash 2 ships an open drafter.</span></h2>
-    <div class="gradient-line"></div>
-    <p class="subtitle text-center mt-1" style="max-width:920px;">Agent intelligence is now constrained by wall-clock time as much as model quality. Cerebras attacks the bottleneck with rack-scale hardware; Inco attacks it in decoding software with a downloadable drafter.</p>
-    <div class="two-col" style="grid-template-columns:1.25fr 1fr 0.9fr;" mt-3">
-      <div class="card">
-        <span class="tag tag-red">HARDWARE SCALE &middot; CS-4</span>
-        <h3 class="mt-1">Three WSE-3 Turbo wafers.</h3>
-        <p class="muted">CS-4 combines three WSE-3 Turbo wafers: 750 PFLOPS, 129.6 PB/s memory bandwidth, 7.2 Tb/s I/O, two-microsecond wafer-to-wafer latency. First shipments begin this quarter.</p>
-        <ul class="bullet-list mt-2">
-          <li><strong>750 PFLOPS</strong> &middot; <strong>129.6 PB/s</strong> memory BW</li>
-          <li><strong>2 &mu;s</strong> wafer-to-wafer latency</li>
-          <li><strong>&gt;4,400 tok/s/user</strong> on GPT-OSS-120B</li>
-          <li>Up to <strong>30&times; production GPU</strong>, up to <strong>10&times; CS-3/W</strong></li>
-          <li>Caveat: <span class="orange">vendor-reported</span></li>
-        </ul>
-      </div>
-      <div class="card">
-        <span class="tag tag-blue">SOFTWARE DRAFTING &middot; DFLASH 2</span>
-        <h3 class="mt-1">4.80 accepted tokens per step.</h3>
-        <p class="muted">DFlash 2 uses a selector plus local convolution to improve parallel speculative drafts while preserving the target model's output under lossless rejection sampling. The released Qwen3.8-27B drafter averages 4.80 accepted tokens vs 4.28 for native MTP and 3.62 for community DSpark.</p>
-        <ul class="bullet-list mt-2">
-          <li><strong>4.80</strong> vs <strong>4.28</strong> MTP vs <strong>3.62</strong> DSpark</li>
-          <li><strong>2.7&ndash;3.4&times;</strong> SGLang throughput vs AR</li>
-          <li><strong>16&ndash;25%</strong> more accepted output / pass</li>
-          <li>Apache-2.0 drafter on Hugging Face</li>
-          <li>vLLM + llama.cpp PRs: <span class="orange">OPEN</span></li>
-        </ul>
-      </div>
-    <div class="card" style="padding:10px;display:flex;flex-direction:column;">
-        <h3 style="font-size:.9rem;">ON-AIR LIVE ARTIFACT</h3>
-        <a href="https://www.cerebras.ai/cs4" target="_blank" rel="noopener"><img src="assets/images/artifacts/s3-cerebras-cs4.png" alt="Live capture: Cerebras CS-4 product page — specs, throughput" style="width:100%;max-height:182px;object-fit:cover;object-position:top;border-radius:10px;border:2px solid var(--border-subtle);"></a>
-        <p class="muted" style="font-size:.74rem;margin:7px 0 4px;line-height:1.3;">Cerebras CS-4 product page — specs, throughput<br/>Captured 2026-08-20 &middot; click image or button to go live on air.</p>
-        <a class="src-note" href="https://www.cerebras.ai/cs4" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700;margin-top:auto;">&#9654; LIVE: Cerebras CS-4</a>
-      </div>
+  <div class="glow-orb orb-teal" style="width:380px;height:380px;bottom:-100px;left:-90px;"></div>
+  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
+    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+      <div class="story-num">SEG 3 &middot; WALL-CLOCK BUDGET</div>
+      <h2 class="text-center">Inference speed <span class="gradient-text">is agent budget.</span></h2>
+      <div class="gradient-line"></div>
+      <p class="subtitle text-center mt-1" style="max-width:780px;">Cerebras: rack-scale wafers &middot; DFlash 2: open drafter</p>
+      <a href="https://www.cerebras.ai/product-chip" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; Cerebras CS-4</a>
     </div>
-    <div class="quote-block mt-3 orange">"If an agent gets 30 times more tokens in the same minute, should we make the answer arrive faster &mdash; or spend the entire gain on more checking before anyone sees it?"</div>
-    <div class="warn-card mt-2"><strong style="color:var(--accent-yellow);">VENDOR-RUN:</strong> Cerebras throughput and Inco benchmark numbers were not independently reproduced. vLLM and llama.cpp integration PRs remain open. Henry's M5 128 GB Mac Pro result of 76.8 tok/s is first-hand host signal, not a neutral benchmark.</div>
-    <div class="src-links">
-      <a href="https://www.cerebras.ai/cs4" target="_blank" rel="noopener">cerebras.ai/cs4</a>
-      <a href="https://investors.cerebras.ai/news-releases/news-release-details/cerebras-unveils-cs-4-30-times-faster-gpu-based-solutions" target="_blank" rel="noopener">Cerebras investor release</a>
-      <a href="https://inco.ai/blog/dflash2/" target="_blank" rel="noopener">inco.ai/blog/dflash2/</a>
-      <a href="https://huggingface.co/incoai/Qwen3.8-27B-DFlash2" target="_blank" rel="noopener">huggingface.co/incoai/Qwen3.8-27B-DFlash2</a>
-      <a href="https://github.com/vllm-project/vllm/pull/52816" target="_blank" rel="noopener">vllm-project/vllm #52816</a>
-      <a href="https://github.com/ggml-org/llama.cpp/pull/27342" target="_blank" rel="noopener">ggml-org/llama.cpp #27342</a>
+    <div style="flex:1.3;height:100%;display:flex;align-items:center;">
+      <a href="https://www.cerebras.ai/product-chip" target="_blank" rel="noopener"><img src="assets/images/artifacts/s3-cerebras-cs4.png" alt="s3-cerebras-cs4.png" style="width:100%;max-height:640px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a>
     </div>
   </div>
 </div>
-
-<!-- SLIDE 8 — SIGNAL FROM OUTSIDE: Garry Tan "Own Your Intelligence" -->
 <div class="slide" id="s-signal-outside">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #26</div><div class="slide-tag">03 / SIGNAL FROM OUTSIDE &middot; 7 MIN</div>
   <div class="glow-orb orb-blue" style="width:440px;height:440px;top:-130px;right:-120px;"></div>
@@ -469,114 +359,38 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
   </div>
 </div>
 
-<!-- SLIDE 9 — SEGMENT 4: Stripe + OpenRouter -->
 <div class="slide" id="s-seg-stripe-openrouter">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #26</div><div class="slide-tag">S4 &middot; HENRY</div>
-  <div class="glow-orb orb-green" style="width:420px;height:420px;top:-120px;left:-100px;"></div>
-  <div class="content">
-    <div class="story-num">SEG 4 &middot; ROUTER OWNERSHIP</div>
-    <h2 class="text-center" style="font-size:1.9rem;">Stripe and OpenRouter <span class="gradient-text">both confirmed the deal.</span></h2>
-    <div class="gradient-line"></div>
-    <p class="subtitle text-center mt-1" style="max-width:920px;">Both companies posted on August 19. Stripe's newsroom announcement says it has agreed to acquire OpenRouter to help businesses optimize token routing and usage. OpenRouter's same-day post says it is "joining Stripe" and writes down the neutrality promise before closing.</p>
-    <div class="three-col mt-3">
-      <div class="card">
-        <span class="tag tag-blue">STRIPE NEWSROOM</span>
-        <h3 class="mt-1">"Agreed to acquire OpenRouter."</h3>
-        <p class="muted">Stripe describes a gateway that routes across 400+ models from more than 80 providers. The deal is signed, not closed; "subject to customary closing conditions. We expect to close in the coming weeks."</p>
-        <ul class="bullet-list mt-2">
-          <li><strong>400+ models</strong> &middot; <strong>80+ providers</strong></li>
-          <li>HTTP 200, JSON-LD <code>datePublished: 2026-08-19</code></li>
-          <li>Signed, not closed; terms undisclosed</li>
-        </ul>
-      </div>
-      <div class="card card-glow">
-        <span class="tag tag-green">OPENROUTER ANNOUNCEMENT</span>
-        <h3 class="mt-1">"Joining Stripe." Neutrality on the record.</h3>
-        <p class="muted">"Same mission, same name, same product, same roadmap." Writes down the neutrality promise verbatim: "routing decisions will remain driven by one thing: what's best for you, the user."</p>
-        <ul class="bullet-list mt-2">
-          <li><strong>10T+ tokens/day</strong> &middot; <strong>10M+ devs</strong></li>
-          <li><strong>10x</strong> annual inference-volume growth</li>
-          <li>Live API returned <strong>414 catalog entries</strong> at retrieval</li>
-        </ul>
-      </div>
-      <div class="card">
-        <span class="tag tag-yellow">CAVEAT BAR</span>
-        <h3 class="mt-1">Signed, not closed.</h3>
-        <p class="muted">Do not say "closed." Do not say "Stripe paid $7B." Bloomberg's &gt;$7B figure remains anonymous-sourced; price is undisclosed by both companies.</p>
-        <ul class="bullet-list mt-2">
-          <li><strong>SIGNED, NOT CLOSED</strong></li>
-          <li><strong>&gt;$7B</strong>: BLOOMBERG-SOURCED</li>
-          <li><strong>TERMS UNDISCLOSED</strong></li>
-        </ul>
-      </div>
-    <div class="card" style="padding:10px;display:flex;flex-direction:column;">
-        <h3 style="font-size:.9rem;">ON-AIR LIVE ARTIFACT</h3>
-        <a href="https://stripe.com/newsroom/news/stripe-agrees-to-acquire-openrouter" target="_blank" rel="noopener"><img src="assets/images/artifacts/s4-stripe-newsroom.png" alt="Live capture: Stripe newsroom — the acquisition receipt" style="width:100%;max-height:182px;object-fit:cover;object-position:top;border-radius:10px;border:2px solid var(--border-subtle);"></a>
-        <p class="muted" style="font-size:.74rem;margin:7px 0 4px;line-height:1.3;">Stripe newsroom — the acquisition receipt<br/>Captured 2026-08-20 &middot; click image or button to go live on air.</p>
-        <a class="src-note" href="https://stripe.com/newsroom/news/stripe-agrees-to-acquire-openrouter" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700;margin-top:auto;">&#9654; LIVE: Stripe receipt</a>
-      </div>
+  <div class="glow-orb orb-blue" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
+  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
+    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+      <div class="story-num">SEG 4 &middot; ROUTER OWNERSHIP</div>
+      <h2 class="text-center">Stripe buys the router. <span class="gradient-text">The wallet is the model.</span></h2>
+      <div class="gradient-line"></div>
+      <p class="subtitle text-center mt-1" style="max-width:780px;">Confirmed by both &middot; Aug 19 &middot; routing meets payments</p>
+      <a href="https://newsroom.stripe.com/posts/stripe-to-acquire-openrouter" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; Stripe newsroom receipt</a>
     </div>
-    <div class="quote-block mt-2" style="padding:9px 18px;font-size:.95rem;">"OpenRouter wrote down 'routing decisions remain driven by what's best for the user' before the deal even closes &mdash; what would have to happen for us to say that promise failed?"</div>
-    <div class="src-links">
-      <a href="https://stripe.com/newsroom/news/stripe-agrees-to-acquire-openrouter" target="_blank" rel="noopener">stripe.com/newsroom/news/stripe-agrees-to-acquire-openrouter</a>
-      <a href="https://openrouter.ai/blog/announcements/openrouter-is-joining-stripe/" target="_blank" rel="noopener">openrouter.ai/blog/announcements/openrouter-is-joining-stripe/</a>
-      <a href="https://openrouter.ai/api/v1/models" target="_blank" rel="noopener">openrouter.ai/api/v1/models (live API, 414 entries)</a>
+    <div style="flex:1.3;height:100%;display:flex;align-items:center;">
+      <a href="https://newsroom.stripe.com/posts/stripe-to-acquire-openrouter" target="_blank" rel="noopener"><img src="assets/images/artifacts/s4-stripe-newsroom.png" alt="s4-stripe-newsroom.png" style="width:100%;max-height:640px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a>
     </div>
   </div>
 </div>
-
-<!-- SLIDE 10 — SEGMENT 5: AgentCore Payments GA -->
 <div class="slide" id="s-seg-agent-payments">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #26</div><div class="slide-tag">S5 &middot; HENRY</div>
-  <div class="glow-orb orb-orange" style="width:380px;height:380px;top:-100px;left:-90px;"></div>
-  <div class="content">
-    <div class="story-num">SEG 5 &middot; SPEND BOUNDARY</div>
-    <h2 class="text-center">Agents pay mid-task, <span class="gradient-text">but the model never holds the key.</span></h2>
-    <div class="gradient-line"></div>
-    <p class="subtitle text-center mt-1" style="max-width:920px;">AWS Bedrock AgentCore Payments moved from May preview to GA on August 18. BNB Agent Studio v2 ships an Altana wallet with onchain permissions. Two distinct designs for the same control plane.</p>
-    <div class="mt-2 two-col" style="grid-template-columns:1fr 1fr 0.95fr;">
-      <div class="card">
-        <span class="tag tag-blue">AWS &middot; AGENTCORE PAYMENTS GA</span>
-        <h3 class="mt-1">Payment like any other agent action.</h3>
-        <p class="muted">Agents discover and pay for APIs, MCP servers, inference, and content through x402 or Stripe and Tempo's MPP. Coinbase and Stripe Privy provide stablecoin wallets; raw developer credentials stay in AgentCore Identity Secrets Manager; short-lived tokens instruct wallet operations.</p>
-        <ul class="bullet-list mt-2">
-          <li>Per-session <strong>max spend</strong> + <strong>expiry</strong> below the agent loop</li>
-          <li>x402 <strong>upto</strong> ceilings for metered usage</li>
-          <li>CloudWatch logs, spans, dashboards</li>
-          <li>Claude Code, Kiro, Codex skills + Strands / LangGraph / OpenClaw integrations</li>
-        </ul>
-      </div>
-      <div class="card">
-        <span class="tag tag-green">BNB &middot; ALTANA WALLET</span>
-        <h3 class="mt-1">Permissions onchain, keys with the builder.</h3>
-        <p class="muted">BNB Agent Studio v2 ships an Altana wallet where scoped session keys carry spending limits, allowlists, and time bounds registered onchain. Revocable without giving the agent the private key.</p>
-        <ul class="bullet-list mt-2">
-          <li><strong>Spending limits</strong> + <strong>allowlists</strong> + <strong>time bounds</strong></li>
-          <li>Registered <strong>onchain</strong></li>
-          <li><strong>Revocable</strong> without the agent holding the key</li>
-          <li>Caveat: <span class="orange">not independently audited</span></li>
-        </ul>
-      </div>
-    <div class="card" style="padding:10px;display:flex;flex-direction:column;">
-        <h3 style="font-size:.9rem;">ON-AIR LIVE ARTIFACT</h3>
-        <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/payments.html" target="_blank" rel="noopener"><img src="assets/images/artifacts/s5-aws-agentcore-payments.png" alt="Live capture: AWS AgentCore Payments GA docs — x402, upto ceilings" style="width:100%;max-height:182px;object-fit:cover;object-position:top;border-radius:10px;border:2px solid var(--border-subtle);"></a>
-        <p class="muted" style="font-size:.74rem;margin:7px 0 4px;line-height:1.3;">AWS AgentCore Payments GA docs — x402, upto ceilings<br/>Captured 2026-08-20 &middot; click image or button to go live on air.</p>
-        <a class="src-note" href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/payments.html" target="_blank" rel="noopener" style="display:block;text-align:center;font-weight:700;margin-top:auto;">&#9654; LIVE: AWS docs</a>
-      </div>
+  <div class="glow-orb orb-teal" style="width:380px;height:380px;bottom:-100px;right:-90px;"></div>
+  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
+    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+      <div class="story-num">SEG 5 &middot; SPEND BOUNDARY</div>
+      <h2 class="text-center">Agents pay mid-task. <span class="gradient-text">The model never holds the key.</span></h2>
+      <div class="gradient-line"></div>
+      <p class="subtitle text-center mt-1" style="max-width:780px;">AgentCore Payments GA &middot; BNB wallet &middot; deterministic rails</p>
+      <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/payments.html" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; AWS AgentCore docs</a>
     </div>
-    <div class="quote-block mt-3 orange">"When an agent can pay for the next API call without asking, which layer should own the veto &mdash; the model, the workflow, the wallet, or a policy the agent cannot rewrite?"</div>
-    <div class="alert-card mt-2"><h3 style="font-size:1rem;">The rule, three times</h3><p style="color:var(--text-primary);">Probabilistic reasoning proposes a purchase. Deterministic infrastructure decides whether money can move. <strong>The model never holds the key.</strong></p></div>
-    <div class="src-links">
-      <a href="https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-payments-is-now-generally-available-enabling-agents-to-transact-safely-and-autonomously-at-scale/" target="_blank" rel="noopener">AWS AgentCore Payments GA blog</a>
-      <a href="https://aws.amazon.com/about-aws/whats-new/2026/08/bedrock-agentcore-payments-ga/" target="_blank" rel="noopener">AWS What's New entry</a>
-      <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/payments.html" target="_blank" rel="noopener">docs.aws.amazon.com/bedrock-agentcore/payments</a>
-      <a href="https://github.com/awslabs/agentcore-samples/tree/main/01-features/08-agents-that-transact" target="_blank" rel="noopener">awslabs/agentcore-samples (08-agents-that-transact)</a>
-      <a href="https://www.bnbchain.org/en/blog/altana-in-bnb-agent-studio-agents-with-limits-you-set" target="_blank" rel="noopener">bnbchain.org/en/blog/altana-in-bnb-agent-studio</a>
+    <div style="flex:1.3;height:100%;display:flex;align-items:center;">
+      <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/payments.html" target="_blank" rel="noopener"><img src="assets/images/artifacts/s5-aws-agentcore-payments.png" alt="s5-aws-agentcore-payments.png" style="width:100%;max-height:640px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a>
     </div>
   </div>
 </div>
-
-<!-- SLIDE 11 — HOT TAKE: Provenance is involvement, not authorship -->
 <div class="slide" id="s-hot-take">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #26</div><div class="slide-tag">04 / HOT TAKE &middot; 3 MIN</div>
   <div class="glow-orb orb-red" style="width:480px;height:480px;top:-140px;left:-120px;"></div>
@@ -733,6 +547,7 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
     </div>
   </div>
 </div>
+
 </div>
 <script>
 (function() {
