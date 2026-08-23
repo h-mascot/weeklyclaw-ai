@@ -405,8 +405,14 @@
     }
     .featured-audio-panel[hidden],
     .featured-video-panel[hidden],
+    .featured-spotify-panel[hidden],
+    .featured-spotify-frame[hidden],
+    .featured-spotify-unavailable[hidden],
     .featured-audio[hidden],
     .featured-audio-unavailable[hidden] { display: none; }
+    .featured-spotify-panel { display: grid; place-items: center; gap: 18px; padding: 24px; background: var(--panel); }
+    .featured-spotify-frame { display: block; width: min(100%, 680px); height: 232px; border: 0; border-radius: 12px; }
+    .featured-spotify-unavailable { width: min(100%, 680px); text-align: center; }
     .featured-audio-card { width: min(100%, 660px); text-align: center; }
     .featured-audio-card h3 { margin-bottom: 9px; font-size: clamp(24px, 3vw, 34px); line-height: 1; }
     .featured-audio-card p { margin: 0 auto 20px; color: var(--muted); }
@@ -1243,6 +1249,7 @@
               <div class="featured-mode-switch" role="group" aria-label="Featured episode player mode">
                 <button class="featured-mode-button" type="button" data-featured-mode="video" aria-pressed="true">Video</button>
                 <button class="featured-mode-button" type="button" data-featured-mode="audio" aria-pressed="false">Audio</button>
+                <button class="featured-mode-button" type="button" data-featured-mode="spotify" aria-pressed="false">Spotify</button>
               </div>
             </div>
             <div class="featured-player-surface">
@@ -1259,6 +1266,14 @@
                     <p>This episode has no separate audio file. Its full audio remains available in the on-site video player.</p>
                     <button class="featured-return-video" type="button" data-featured-return-video>Return to video</button>
                   </div>
+                </div>
+              </div>
+              <div class="featured-spotify-panel" data-featured-panel="spotify" hidden>
+                <iframe class="featured-spotify-frame" id="featured-spotify-frame" src="about:blank" title="Featured Weekly Claw episode on Spotify" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media"></iframe>
+                <div class="featured-spotify-unavailable" id="featured-spotify-unavailable" hidden>
+                  <h3>Not on Spotify yet</h3>
+                  <p>This episode isn't published on Spotify yet. Follow <a href="https://open.spotify.com/show/033WWP2IOLy2T3SApjvw8v">the Weekly Claw show</a> to know the moment it lands.</p>
+                  <button class="featured-return-video" type="button" data-featured-return-video>Return to video</button>
                 </div>
               </div>
             </div>
@@ -1540,6 +1555,8 @@
     const featuredVideoFrame = document.getElementById('featured-video-frame');
     const featuredAudio = document.getElementById('featured-audio');
     const featuredAudioUnavailable = document.getElementById('featured-audio-unavailable');
+    const featuredSpotifyFrame = document.getElementById('featured-spotify-frame');
+    const featuredSpotifyUnavailable = document.getElementById('featured-spotify-unavailable');
     const featuredModeButtons = [...document.querySelectorAll('[data-featured-mode]')];
     const featuredPanels = [...document.querySelectorAll('[data-featured-panel]')];
     const featuredReturnVideo = document.querySelector('[data-featured-return-video]');
@@ -1552,13 +1569,16 @@
       featuredPanels.forEach(panel => {
         panel.hidden = panel.dataset.featuredPanel !== mode;
       });
-      if (mode === 'audio') {
+      if (mode === 'video') {
+        featuredAudio.pause();
+      } else {
         featuredVideoFrame.contentWindow?.postMessage(
           JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }),
           'https://www.youtube-nocookie.com',
         );
-      } else {
-        featuredAudio.pause();
+        if (mode !== 'audio') {
+          featuredAudio.pause();
+        }
       }
     }
 
@@ -1570,6 +1590,12 @@
         featuredAudio.src = featuredAudioSrc;
         featuredAudio.hidden = false;
         featuredAudioUnavailable.hidden = true;
+      }
+      const featuredSpotifyId = featuredCard.dataset.spotifyId;
+      if (featuredSpotifyId) {
+        featuredSpotifyFrame.src = `https://open.spotify.com/embed/episode/${featuredSpotifyId}?utm_source=weeklyclaw`;
+        featuredSpotifyFrame.hidden = false;
+        featuredSpotifyUnavailable.hidden = true;
       }
     } else {
       featuredPlayer.hidden = true;

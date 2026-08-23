@@ -263,11 +263,17 @@ const homepagePlayerMarkers = [
   'aria-label="Featured episode player mode"',
   'data-featured-mode="video"',
   'data-featured-mode="audio"',
+  'data-featured-mode="spotify"',
   'id="featured-video-frame"',
   'id="featured-audio"',
   'id="featured-audio-unavailable"',
+  'id="featured-spotify-frame"',
+  'id="featured-spotify-unavailable"',
   'https://www.youtube-nocookie.com/embed/${featuredVideoId}',
+  'https://open.spotify.com/embed/episode/${featuredSpotifyId}',
   'featuredCard?.dataset.videoId',
+  'featuredCard.dataset.spotifyId',
+  'Not on Spotify yet',
 ];
 for (const marker of homepagePlayerMarkers) {
   if (!html.includes(marker)) {

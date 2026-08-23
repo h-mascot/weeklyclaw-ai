@@ -448,7 +448,7 @@ def write_markdown_page(repo: Path, ep: int, source_name: str, route_name: str, 
 <body><header><nav class="shell"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/{ep}/deck">Open slides</a></div></nav></header><main class="shell"><section class="intro"><p class="eyebrow">Episode {ep} · {html.escape(title_suffix)}</p><h1>{html.escape(meta['headline'])}</h1></section><article>{body}</article></main><footer class="shell">Weekly Claw #{ep} · {html.escape(title_suffix)}</footer></body></html>
 """)
 
-def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[int, dict[str, str]], audio: dict[int, str] | None = None) -> None:
+def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[int, dict[str, str]], audio: dict[int, str] | None = None, spotify: dict[int, str] | None = None) -> None:
     path = repo / "index.html"
     text = path.read_text()
     existing_week_match = re.search(r'<div class="latest-number" aria-hidden="true">(\d+)</div>', text)
@@ -465,7 +465,8 @@ def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[
         opening = card_match.group(0)
         existing_video = re.search(r'\sdata-video-id="[^"]+"', opening)
         existing_audio = re.search(r'\sdata-audio-src="[^"]+"', opening)
-        opening = re.sub(r'\sdata-(?:video-id|audio-src)="[^"]*"', "", opening)
+        existing_spotify = re.search(r'\sdata-spotify-id="[^"]+"', opening)
+        opening = re.sub(r'\sdata-(?:video-id|audio-src|spotify-id)="[^"]*"', "", opening)
         video_attribute = (
             f' data-video-id="{videos[latest]["id"]}"'
             if latest in videos
@@ -477,7 +478,12 @@ def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[
             if rss_audio
             else existing_audio.group(0) if existing_week == latest and existing_audio else ""
         )
-        return f"{opening[:-1]}{video_attribute}{audio_attribute}>"
+        spotify_attribute = (
+            f' data-spotify-id="{spotify[latest]}"'
+            if spotify and latest in spotify
+            else existing_spotify.group(0) if existing_week == latest and existing_spotify else ""
+        )
+        return f"{opening[:-1]}{video_attribute}{audio_attribute}{spotify_attribute}>"
 
     text = re.sub(r'<div class="latest-card"[^>]*>', update_featured_media, text, count=1)
 
@@ -612,7 +618,7 @@ def main() -> int:
     download_youtube_thumbnails(repo, videos)
     write_agenda_html(repo, latest, meta)
     write_markdown_page(repo, latest, "host-cheat-sheet.md", "host-cheat-sheet", "Host Cheat Sheet", meta)
-    update_homepage(repo, latest, meta, videos, audio=audio)
+    update_homepage(repo, latest, meta, videos, audio=audio, spotify=spotify)
     update_episodes_index(repo, latest, meta, videos, spotify=spotify, audio=audio)
     update_validate(repo, latest)
 
