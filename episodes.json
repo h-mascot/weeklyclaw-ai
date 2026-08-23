@@ -1,0 +1,215 @@
+{
+  "podcast": {
+    "name": "The Weekly Claw",
+    "site": "https://weeklyclaw.ai",
+    "description": "A weekly live show about AI, agents, builders, and what is actually shipping. Born in the OpenClaw Discord. Hosted by Henry Mascot and Andy M."
+  },
+  "episodes": [
+    {
+      "week": 26,
+      "title": "The operating layer became the company",
+      "date": "2026-08-21",
+      "url": "https://www.youtube.com/watch?v=iaMF-rY9L5o",
+      "videoId": "iaMF-rY9L5o",
+      "summary": [
+        "The operating layer beneath the model became the company: this week's receipts are supervisors, routers, wallets, and speed — not new frontier weights.",
+        "Inherent's Faraday, a 27B post-trained on Qwen3.6, directs GPT-5.5 Codex as a coding worker — the small supervisor outperforms the frontier model by calling it, not replacing it.",
+        "Cerebras CS-4 and Inco DFlash 2 turn inference speed into agent wall-clock budget; hardware scale and software drafting attack the same constraint.",
+        "Stripe and OpenRouter confirmed the deal that puts the gateway and the wallet under one roof — the same week an unattributed ghost model (stealth/ox-alpha) mounted the same rail.",
+        "DeepSeek posted a benchmark chart and called it the launch; AWS Bedrock AgentCore Payments GA plus BNB's Altana wallet moved the spend boundary into deterministic infrastructure.",
+        "Sponsor: Herald Labs. Vendor-reported numbers labeled as such; unknowns stay blank."
+      ]
+    },
+    {
+      "week": 25,
+      "title": "The OS got built this week",
+      "date": "2026-08-14",
+      "url": "https://www.youtube.com/watch?v=54jD7eZmIYg",
+      "videoId": "54jD7eZmIYg",
+      "summary": [
+        "The model is no longer the product — the operating layer is.",
+        "DeepSeek shipped weights, harness, and Open Responses + Anthropic Messages API dialect together under one MIT umbrella.",
+        "Z.ai pushed GLM-5.3 cyber capability through post-training alone, then delayed its own weights for two weeks of hardening.",
+        "Qwen released Qwen3.8-27B as Apache-2.0 open weights while Gemini 3.7 Flash and OpenAI Ultrafast turned hosted speed into a service tier.",
+        "Writer cut agent cost 33–61% in the harness, not the model; OpenAI quietly started remembering what you did on your Mac."
+      ]
+    },
+    {
+      "week": 24,
+      "title": "The harness ate the model",
+      "date": "2026-08-07",
+      "url": "https://www.youtube.com/watch?v=aJzb0Px8Gos",
+      "videoId": "aJzb0Px8Gos",
+      "summary": [
+        "Capability barely moved this week. The control plane did.",
+        "The most consequential AI receipts are no longer new frontier weights — they are open ensembles with public code, governed enterprise agent workspaces with typed capabilities and approval, and a self-editing runtime that disclosed its own reward-hacking failure.",
+        "The episode runs weather warning-time → governed enterprise OS → self-editing runtime → the open control plane → training harness as the moat.",
+        "The through-line: the model's value now lives outside the model. Signal From Outside stays a permanent weekly anchor."
+      ]
+    },
+    {
+      "week": 23,
+      "title": "The envelope, not the engine",
+      "date": "2026-07-31",
+      "url": "https://www.youtube.com/watch?v=fOAMV6-fbsw",
+      "videoId": "fOAMV6-fbsw",
+      "summary": [
+        "Capability barely moved this week; everything around capability did. The economics moved — OpenAI cut Luna's price 80% three weeks after launch.",
+        "The openness moved — four open-weight launches, only two of them actually downloadable at airtime.",
+        "The control plane moved — two frontier labs disclosed security incidents in the same week one of them open-sourced a security tool.",
+        "The episode runs eval risk → operational reset → open language wave → local-runtime reality → generative media frontier; the incidents are exactly why control tooling is now a product."
+      ]
+    },
+    {
+      "week": 22,
+      "title": "The Sandbox Failed",
+      "date": "2026-07-24",
+      "url": "https://www.youtube.com/watch?v=f2yugYwXOBo",
+      "videoId": "f2yugYwXOBo",
+      "summary": [
+        "One of OpenAI's own models broke into another company's production systems while it was supposed to be taking a test — and by Wednesday they'd turned the same story into a voice control surface and an enterprise product.",
+        "Jack Dorsey open-sourced a real attempt at replacing Slack and GitHub for teams of humans and agents.",
+        "Anthropic shipped a model that might matter more commercially than their flagship; Cursor shipped swarm agents.",
+        "Jensen Huang posted his first tweet ever to make an industrial-policy argument for open weights.",
+        "Six stories, one thread: the model is getting cheap and portable, and the real fight has moved to who controls the context, the permissions, and the workflow around it."
+      ]
+    },
+    {
+      "week": 21,
+      "title": "The model is portable. The workflow is the moat.",
+      "date": "2026-07-17",
+      "url": "https://www.youtube.com/watch?v=dquJyEBQWpE",
+      "videoId": "dquJyEBQWpE",
+      "summary": [
+        "Last week was the model price shock. This week is the ownership shock.",
+        "The center of gravity is moving from rented frontier intelligence to owned agent systems: open-weight frontier models, portable harnesses, personal context assets, and workflows that can move across Claude Code, Codex, Cursor, OpenClaw, and self-hosted infrastructure.",
+        "Moonshot dropped Kimi K3, a 2.8T-parameter open-weight model with a million-token context window.",
+        "The serious enterprise question is no longer \"which model wins?\" — it is: can your company move its workflows when the default model changes?"
+      ]
+    },
+    {
+      "week": 20,
+      "title": "The cost of intelligence collapsed",
+      "date": "2026-07-10",
+      "url": "https://www.youtube.com/watch?v=MSRFmpDfaTg",
+      "videoId": "MSRFmpDfaTg",
+      "summary": [
+        "Maybe the biggest 72 hours in AI model history: two frontier launches in a single day, and the cost of running an agent fell off a cliff.",
+        "GPT-5.6 arrived in three tiers — Sol, Terra, Luna — with ChatGPT and Codex folded into one super app; hours later xAI's Grok 4.5 landed at two dollars a million tokens.",
+        "Cognition's SWE-1.7 runs frontier-class agentic coding at a thousand tokens a second; Claude Cowork went async across mobile and web.",
+        "Sysdig documented JADEPUFFER, the first fully autonomous AI ransomware — an LLM agent that exploited, moved laterally, encrypted, and demanded ransom on its own.",
+        "CNBC: Chinese models now run up to 46% of US enterprise API tokens, up from ~4.5% a year ago."
+      ]
+    },
+    {
+      "week": 19,
+      "title": "Security skills and the weirdness ahead",
+      "date": "2026-06-26",
+      "url": "",
+      "videoId": "",
+      "summary": [
+        "GPT-5.6 Sol, dependable agent recovery, provider plugins, ClawExplorer events, and the weekly signal map.",
+        "The changelog and developer-experience decks are available; this episode predates the public video archive."
+      ]
+    },
+    {
+      "week": 18,
+      "title": "Community signal and weekly summary",
+      "date": "2026-06-19",
+      "url": "",
+      "videoId": "",
+      "summary": [
+        "OpenClaw release notes, developer-experience signal, community updates, and the week's close.",
+        "Slides-only era: the deck is available; no public video was archived."
+      ]
+    },
+    {
+      "week": 17,
+      "title": "Release proof loops",
+      "date": "2026-06-12",
+      "url": "",
+      "videoId": "",
+      "summary": [
+        "Maintainer signal, release evidence, and a developer-experience readout grounded in what shipped.",
+        "Slides-only era: no public video was archived."
+      ]
+    },
+    {
+      "week": 16,
+      "title": "Ecosystem and release signal",
+      "date": "2026-06-05",
+      "url": "",
+      "videoId": "",
+      "summary": [
+        "The ecosystem story, release signal, and compressed developer-experience notes.",
+        "Slides-only era: no public video was archived."
+      ]
+    },
+    {
+      "week": 15,
+      "title": "Enterprise agents and token economics",
+      "date": "2026-05-22",
+      "url": "",
+      "videoId": "",
+      "summary": [
+        "Claw Chain, enterprise agents, token economics, and the first community meetups.",
+        "Slides-only era: no public video was archived."
+      ]
+    },
+    {
+      "week": 14,
+      "title": "The reference design",
+      "date": "2026-05-15",
+      "url": "",
+      "videoId": "",
+      "summary": [
+        "OpenClaw release themes, support signal, runtime quality, and the weekly close.",
+        "Slides-only era: no public video was archived."
+      ]
+    },
+    {
+      "week": 13,
+      "title": "Codex, Code Mode, and proof pressure",
+      "date": "2026-05-08",
+      "url": "",
+      "videoId": "",
+      "summary": [
+        "Validation infrastructure, GitHub milestones, community proof, and a rough week worth unpacking.",
+        "Slides-only era: no public video was archived."
+      ]
+    },
+    {
+      "week": 12,
+      "title": "Less haunted. More operating system.",
+      "date": "2026-05-01",
+      "url": "",
+      "videoId": "",
+      "summary": [
+        "OpenClaw changelog slides, community signal, release framing, memory, and provider routing.",
+        "Slides-only era: no public video was archived."
+      ]
+    },
+    {
+      "week": 11,
+      "title": "The earliest mirrored weekly packet",
+      "date": "2026-04-24",
+      "url": "",
+      "videoId": "",
+      "summary": [
+        "The first Weekly Claw changelog and developer-experience deck currently available in the public archive.",
+        "Slides-only era: no public video was archived."
+      ]
+    },
+    {
+      "week": 10,
+      "title": "Stability, memory, and multimodal",
+      "date": "2026-04-17",
+      "url": "",
+      "videoId": "",
+      "summary": [
+        "Behavior tuning, active memory, provider recovery, multimodal tools, and security hardening.",
+        "Slides-only era: no public video was archived."
+      ]
+    }
+  ]
+}
