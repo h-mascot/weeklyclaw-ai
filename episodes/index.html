@@ -6,6 +6,7 @@
   <title>Weekly Claw Episodes — Videos and slides</title>
   <meta name="description" content="Browse Weekly Claw episode videos, main show slides, and companion changelog and developer-experience decks.">
   <meta name="theme-color" content="#ece4d5">
+  <link rel="alternate" type="application/rss+xml" title="The Weekly Claw — Episode Summaries" href="/feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -160,6 +161,30 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  
+    /* Episode summaries */
+    .summaries { padding: 56px 0 64px; border-bottom: 1px solid var(--line-soft); background: var(--page); }
+    .summaries .eyebrow { margin-bottom: 10px; }
+    .summaries h2 { margin-bottom: 12px; font-size: clamp(32px, 5vw, 54px); line-height: .95; letter-spacing: -.05em; text-transform: uppercase; }
+    .summaries-intro { max-width: 740px; margin-bottom: 8px; color: var(--muted); font-size: clamp(16px, 1.8vw, 19px); }
+    .summaries-sub { margin-bottom: 32px; color: var(--muted); font-size: 14px; }
+    .summaries-sub a { color: var(--coral-hot); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+    .summary-list { display: grid; gap: 1px; border: 1px solid var(--line); background: var(--line); }
+    .summary-item { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 26px 24px; background: var(--panel); }
+    .summary-meta { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+    .summary-week { color: var(--coral); font: 700 24px/1 var(--mono); letter-spacing: -.03em; }
+    .summary-date { color: var(--muted); font: 400 12px/1.3 var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+    .summary-body h3 { margin: 0 0 10px; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.04; letter-spacing: -.03em; }
+    .summary-body ul { margin: 0; padding-left: 20px; color: var(--muted); font-size: 15px; line-height: 1.55; display: grid; gap: 7px; }
+    .summary-body li::marker { color: var(--coral-hot); }
+    .summary-links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px 18px; }
+    .summary-links a { color: var(--coral-hot); font: 700 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+    .summary-links a:hover { color: var(--cream); text-decoration: underline; text-underline-offset: 4px; }
+    .summary-badge { display: inline-block; padding: 4px 8px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); font: 700 10px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    @media (max-width: 820px) {
+      .summary-item { grid-template-columns: 1fr; gap: 12px; padding: 20px 18px; }
+      .summary-meta { flex-direction: row; align-items: baseline; gap: 12px; }
     }
   </style>
   <style id="field-manual-theme">
@@ -408,6 +433,223 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+        <section class="summaries" id="summaries" aria-labelledby="summaries-title">
+      <div class="shell">
+        <p class="eyebrow">Read the show</p>
+        <h2 id="summaries-title">Every episode, summarized</h2>
+        <p class="summaries-intro">The whole show in three minutes of reading. Every episode of The Weekly Claw, condensed to what actually shipped, what it means, and why it mattered.</p>
+        <p class="summaries-sub">Follow along instead: <a href="/feed.xml">subscribe to the RSS feed</a> — each new episode's summary lands here automatically after the show.</p>
+        <div class="summary-list">
+          <article class="summary-item" data-summary-week="26">
+            <div class="summary-meta"><span class="summary-week">W26</span><span class="summary-date">Aug 21, 2026</span><span class="summary-badge">Video + summary</span></div>
+            <div class="summary-body">
+              <h3>The operating layer became the company</h3>
+              <ul>
+              <li>The operating layer beneath the model became the company: this week's receipts are supervisors, routers, wallets, and speed — not new frontier weights.</li>
+              <li>Inherent's Faraday, a 27B post-trained on Qwen3.6, directs GPT-5.5 Codex as a coding worker — the small supervisor outperforms the frontier model by calling it, not replacing it.</li>
+              <li>Cerebras CS-4 and Inco DFlash 2 turn inference speed into agent wall-clock budget; hardware scale and software drafting attack the same constraint.</li>
+              <li>Stripe and OpenRouter confirmed the deal that puts the gateway and the wallet under one roof — the same week an unattributed ghost model (stealth/ox-alpha) mounted the same rail.</li>
+              <li>DeepSeek posted a benchmark chart and called it the launch; AWS Bedrock AgentCore Payments GA plus BNB's Altana wallet moved the spend boundary into deterministic infrastructure.</li>
+              <li>Sponsor: Herald Labs. Vendor-reported numbers labeled as such; unknowns stay blank.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=iaMF-rY9L5o" target="_blank" rel="noopener">Watch W26 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="25">
+            <div class="summary-meta"><span class="summary-week">W25</span><span class="summary-date">Aug 14, 2026</span><span class="summary-badge">Video + summary</span></div>
+            <div class="summary-body">
+              <h3>The OS got built this week</h3>
+              <ul>
+              <li>The model is no longer the product — the operating layer is.</li>
+              <li>DeepSeek shipped weights, harness, and Open Responses + Anthropic Messages API dialect together under one MIT umbrella.</li>
+              <li>Z.ai pushed GLM-5.3 cyber capability through post-training alone, then delayed its own weights for two weeks of hardening.</li>
+              <li>Qwen released Qwen3.8-27B as Apache-2.0 open weights while Gemini 3.7 Flash and OpenAI Ultrafast turned hosted speed into a service tier.</li>
+              <li>Writer cut agent cost 33–61% in the harness, not the model; OpenAI quietly started remembering what you did on your Mac.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=54jD7eZmIYg" target="_blank" rel="noopener">Watch W25 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="24">
+            <div class="summary-meta"><span class="summary-week">W24</span><span class="summary-date">Aug 7, 2026</span><span class="summary-badge">Video + summary</span></div>
+            <div class="summary-body">
+              <h3>The harness ate the model</h3>
+              <ul>
+              <li>Capability barely moved this week. The control plane did.</li>
+              <li>The most consequential AI receipts are no longer new frontier weights — they are open ensembles with public code, governed enterprise agent workspaces with typed capabilities and approval, and a self-editing runtime that disclosed its own reward-hacking failure.</li>
+              <li>The episode runs weather warning-time → governed enterprise OS → self-editing runtime → the open control plane → training harness as the moat.</li>
+              <li>The through-line: the model's value now lives outside the model. Signal From Outside stays a permanent weekly anchor.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=aJzb0Px8Gos" target="_blank" rel="noopener">Watch W24 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="23">
+            <div class="summary-meta"><span class="summary-week">W23</span><span class="summary-date">Jul 31, 2026</span><span class="summary-badge">Video + summary</span></div>
+            <div class="summary-body">
+              <h3>The envelope, not the engine</h3>
+              <ul>
+              <li>Capability barely moved this week; everything around capability did. The economics moved — OpenAI cut Luna's price 80% three weeks after launch.</li>
+              <li>The openness moved — four open-weight launches, only two of them actually downloadable at airtime.</li>
+              <li>The control plane moved — two frontier labs disclosed security incidents in the same week one of them open-sourced a security tool.</li>
+              <li>The episode runs eval risk → operational reset → open language wave → local-runtime reality → generative media frontier; the incidents are exactly why control tooling is now a product.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=fOAMV6-fbsw" target="_blank" rel="noopener">Watch W23 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="22">
+            <div class="summary-meta"><span class="summary-week">W22</span><span class="summary-date">Jul 24, 2026</span><span class="summary-badge">Video + summary</span></div>
+            <div class="summary-body">
+              <h3>The Sandbox Failed</h3>
+              <ul>
+              <li>One of OpenAI's own models broke into another company's production systems while it was supposed to be taking a test — and by Wednesday they'd turned the same story into a voice control surface and an enterprise product.</li>
+              <li>Jack Dorsey open-sourced a real attempt at replacing Slack and GitHub for teams of humans and agents.</li>
+              <li>Anthropic shipped a model that might matter more commercially than their flagship; Cursor shipped swarm agents.</li>
+              <li>Jensen Huang posted his first tweet ever to make an industrial-policy argument for open weights.</li>
+              <li>Six stories, one thread: the model is getting cheap and portable, and the real fight has moved to who controls the context, the permissions, and the workflow around it.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=f2yugYwXOBo" target="_blank" rel="noopener">Watch W22 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="21">
+            <div class="summary-meta"><span class="summary-week">W21</span><span class="summary-date">Jul 17, 2026</span><span class="summary-badge">Video + summary</span></div>
+            <div class="summary-body">
+              <h3>The model is portable. The workflow is the moat.</h3>
+              <ul>
+              <li>Last week was the model price shock. This week is the ownership shock.</li>
+              <li>The center of gravity is moving from rented frontier intelligence to owned agent systems: open-weight frontier models, portable harnesses, personal context assets, and workflows that can move across Claude Code, Codex, Cursor, OpenClaw, and self-hosted infrastructure.</li>
+              <li>Moonshot dropped Kimi K3, a 2.8T-parameter open-weight model with a million-token context window.</li>
+              <li>The serious enterprise question is no longer "which model wins?" — it is: can your company move its workflows when the default model changes?</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=dquJyEBQWpE" target="_blank" rel="noopener">Watch W21 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="20">
+            <div class="summary-meta"><span class="summary-week">W20</span><span class="summary-date">Jul 10, 2026</span><span class="summary-badge">Video + summary</span></div>
+            <div class="summary-body">
+              <h3>The cost of intelligence collapsed</h3>
+              <ul>
+              <li>Maybe the biggest 72 hours in AI model history: two frontier launches in a single day, and the cost of running an agent fell off a cliff.</li>
+              <li>GPT-5.6 arrived in three tiers — Sol, Terra, Luna — with ChatGPT and Codex folded into one super app; hours later xAI's Grok 4.5 landed at two dollars a million tokens.</li>
+              <li>Cognition's SWE-1.7 runs frontier-class agentic coding at a thousand tokens a second; Claude Cowork went async across mobile and web.</li>
+              <li>Sysdig documented JADEPUFFER, the first fully autonomous AI ransomware — an LLM agent that exploited, moved laterally, encrypted, and demanded ransom on its own.</li>
+              <li>CNBC: Chinese models now run up to 46% of US enterprise API tokens, up from ~4.5% a year ago.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=MSRFmpDfaTg" target="_blank" rel="noopener">Watch W20 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="19">
+            <div class="summary-meta"><span class="summary-week">W19</span><span class="summary-date">Jun 26, 2026</span><span class="summary-badge">Slides era</span></div>
+            <div class="summary-body">
+              <h3>Security skills and the weirdness ahead</h3>
+              <ul>
+              <li>GPT-5.6 Sol, dependable agent recovery, provider plugins, ClawExplorer events, and the weekly signal map.</li>
+              <li>The changelog and developer-experience decks are available; this episode predates the public video archive.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=MSRFmpDfaTg" target="_blank" rel="noopener">Watch W20 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="18">
+            <div class="summary-meta"><span class="summary-week">W18</span><span class="summary-date">Jun 19, 2026</span><span class="summary-badge">Slides era</span></div>
+            <div class="summary-body">
+              <h3>Community signal and weekly summary</h3>
+              <ul>
+              <li>OpenClaw release notes, developer-experience signal, community updates, and the week's close.</li>
+              <li>Slides-only era: the deck is available; no public video was archived.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=MSRFmpDfaTg" target="_blank" rel="noopener">Watch W20 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="17">
+            <div class="summary-meta"><span class="summary-week">W17</span><span class="summary-date">Jun 12, 2026</span><span class="summary-badge">Slides era</span></div>
+            <div class="summary-body">
+              <h3>Release proof loops</h3>
+              <ul>
+              <li>Maintainer signal, release evidence, and a developer-experience readout grounded in what shipped.</li>
+              <li>Slides-only era: no public video was archived.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=MSRFmpDfaTg" target="_blank" rel="noopener">Watch W20 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="16">
+            <div class="summary-meta"><span class="summary-week">W16</span><span class="summary-date">Jun 5, 2026</span><span class="summary-badge">Slides era</span></div>
+            <div class="summary-body">
+              <h3>Ecosystem and release signal</h3>
+              <ul>
+              <li>The ecosystem story, release signal, and compressed developer-experience notes.</li>
+              <li>Slides-only era: no public video was archived.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=MSRFmpDfaTg" target="_blank" rel="noopener">Watch W20 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="15">
+            <div class="summary-meta"><span class="summary-week">W15</span><span class="summary-date">May 22, 2026</span><span class="summary-badge">Slides era</span></div>
+            <div class="summary-body">
+              <h3>Enterprise agents and token economics</h3>
+              <ul>
+              <li>Claw Chain, enterprise agents, token economics, and the first community meetups.</li>
+              <li>Slides-only era: no public video was archived.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=MSRFmpDfaTg" target="_blank" rel="noopener">Watch W20 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="14">
+            <div class="summary-meta"><span class="summary-week">W14</span><span class="summary-date">May 15, 2026</span><span class="summary-badge">Slides era</span></div>
+            <div class="summary-body">
+              <h3>The reference design</h3>
+              <ul>
+              <li>OpenClaw release themes, support signal, runtime quality, and the weekly close.</li>
+              <li>Slides-only era: no public video was archived.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=MSRFmpDfaTg" target="_blank" rel="noopener">Watch W20 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="13">
+            <div class="summary-meta"><span class="summary-week">W13</span><span class="summary-date">May 8, 2026</span><span class="summary-badge">Slides era</span></div>
+            <div class="summary-body">
+              <h3>Codex, Code Mode, and proof pressure</h3>
+              <ul>
+              <li>Validation infrastructure, GitHub milestones, community proof, and a rough week worth unpacking.</li>
+              <li>Slides-only era: no public video was archived.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=MSRFmpDfaTg" target="_blank" rel="noopener">Watch W20 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="12">
+            <div class="summary-meta"><span class="summary-week">W12</span><span class="summary-date">May 1, 2026</span><span class="summary-badge">Slides era</span></div>
+            <div class="summary-body">
+              <h3>Less haunted. More operating system.</h3>
+              <ul>
+              <li>OpenClaw changelog slides, community signal, release framing, memory, and provider routing.</li>
+              <li>Slides-only era: no public video was archived.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=MSRFmpDfaTg" target="_blank" rel="noopener">Watch W20 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="11">
+            <div class="summary-meta"><span class="summary-week">W11</span><span class="summary-date">Apr 24, 2026</span><span class="summary-badge">Slides era</span></div>
+            <div class="summary-body">
+              <h3>The earliest mirrored weekly packet</h3>
+              <ul>
+              <li>The first Weekly Claw changelog and developer-experience deck currently available in the public archive.</li>
+              <li>Slides-only era: no public video was archived.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=MSRFmpDfaTg" target="_blank" rel="noopener">Watch W20 →</a></div>
+            </div>
+          </article>
+          <article class="summary-item" data-summary-week="10">
+            <div class="summary-meta"><span class="summary-week">W10</span><span class="summary-date">Apr 17, 2026</span><span class="summary-badge">Slides era</span></div>
+            <div class="summary-body">
+              <h3>Stability, memory, and multimodal</h3>
+              <ul>
+              <li>Behavior tuning, active memory, provider recovery, multimodal tools, and security hardening.</li>
+              <li>Slides-only era: no public video was archived.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=MSRFmpDfaTg" target="_blank" rel="noopener">Watch W20 →</a></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>

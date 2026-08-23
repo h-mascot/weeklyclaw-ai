@@ -9,6 +9,8 @@ const required = [
   'weeklyclaw-archive.html',
   'changelog/index.html',
   'episodes/index.html',
+  'episodes.json',
+  'feed.xml',
   'episodes/10/deck.html',
   'episodes/11/deck.html',
   'episodes/12/deck.html',
@@ -175,6 +177,55 @@ for (const needle of ['Weekly Claw Episodes', 'W26', 'The Sandbox Failed', '/epi
     console.error(`Episodes index missing expected copy: ${needle}`);
     process.exit(1);
   }
+}
+
+// --- Episode summaries section + RSS feed (2026-08-23) ---
+for (const needle of [
+  'id="summaries"',
+  'Every episode, summarized',
+  'subscribe to the RSS feed',
+  'data-summary-week="26"',
+  'data-summary-week="20"',
+  'data-summary-week="10"',
+  '<link rel="alternate" type="application/rss+xml" title="The Weekly Claw — Episode Summaries" href="/feed.xml">',
+]) {
+  if (!episodesHtml.includes(needle)) {
+    console.error(`Episodes index missing summaries marker: ${needle}`);
+    process.exit(1);
+  }
+}
+const summaryCount = (episodesHtml.match(/class="summary-item"/g) ?? []).length;
+if (summaryCount !== 17) {
+  console.error(`Episodes index should render 17 episode summaries, found ${summaryCount}`);
+  process.exit(1);
+}
+const feedXml = readFileSync(new URL('../feed.xml', import.meta.url), 'utf8');
+for (const needle of [
+  '<rss version="2.0"',
+  'The Weekly Claw — Episode Summaries',
+  '<atom:link href="https://weeklyclaw.ai/feed.xml"',
+  'weeklyclaw-episode-26',
+  'weeklyclaw-episode-10',
+]) {
+  if (!feedXml.includes(needle)) {
+    console.error(`RSS feed missing expected marker: ${needle}`);
+    process.exit(1);
+  }
+}
+const feedItemCount = (feedXml.match(/<item>/g) ?? []).length;
+if (feedItemCount !== 17) {
+  console.error(`RSS feed should contain 17 items, found ${feedItemCount}`);
+  process.exit(1);
+}
+const episodesJson = JSON.parse(readFileSync(new URL('../episodes.json', import.meta.url), 'utf8'));
+if (episodesJson.episodes.length !== 17) {
+  console.error(`episodes.json should contain 17 episodes, found ${episodesJson.episodes.length}`);
+  process.exit(1);
+}
+const latest = episodesJson.episodes[0];
+if (latest.week !== 26 || !latest.videoId || latest.summary.length < 3) {
+  console.error('episodes.json latest episode entry is incomplete');
+  process.exit(1);
 }
 
 const playerMarkers = [
