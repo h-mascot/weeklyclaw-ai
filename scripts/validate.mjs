@@ -172,21 +172,20 @@ if (changelogHtml.includes('Open changelog') || changelogHtml.includes('Host dec
 
 
 const episodesHtml = readFileSync(new URL('../episodes/index.html', import.meta.url), 'utf8');
-for (const needle of ['Weekly Claw Episodes', 'W26', 'The Sandbox Failed', '/episodes/22/deck', 'data-video-id="f2yugYwXOBo"', 'data-video-id="dquJyEBQWpE"', 'data-video-id="MSRFmpDfaTg"', '/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>17</strong>', 'archived episodes']) {
+for (const needle of ['Weekly Claw Episodes', 'W26', 'The Sandbox Failed', '/episodes/22/deck', 'data-video-id="f2yugYwXOBo"', 'data-video-id="dquJyEBQWpE"', 'data-video-id="MSRFmpDfaTg"', '/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>7</strong>', 'video episodes']) {
   if (!episodesHtml.includes(needle)) {
     console.error(`Episodes index missing expected copy: ${needle}`);
     process.exit(1);
   }
 }
 
-// --- Episode summaries section + RSS feed (2026-08-23) ---
+// --- Episode summaries section + RSS feed (video era, 2026-08-23 rev2) ---
 for (const needle of [
   'id="summaries"',
   'Every episode, summarized',
   'subscribe to the RSS feed',
   'data-summary-week="26"',
   'data-summary-week="20"',
-  'data-summary-week="10"',
   '<link rel="alternate" type="application/rss+xml" title="The Weekly Claw — Episode Summaries" href="/feed.xml">',
 ]) {
   if (!episodesHtml.includes(needle)) {
@@ -195,8 +194,12 @@ for (const needle of [
   }
 }
 const summaryCount = (episodesHtml.match(/class="summary-item"/g) ?? []).length;
-if (summaryCount !== 17) {
-  console.error(`Episodes index should render 17 episode summaries, found ${summaryCount}`);
+if (summaryCount !== 7) {
+  console.error(`Episodes index should render 7 video-era episode summaries, found ${summaryCount}`);
+  process.exit(1);
+}
+if (episodesHtml.includes('data-summary-week="19"')) {
+  console.error('Episodes index still renders slides-era summaries; summaries are video-era only now');
   process.exit(1);
 }
 const feedXml = readFileSync(new URL('../feed.xml', import.meta.url), 'utf8');
@@ -205,7 +208,7 @@ for (const needle of [
   'The Weekly Claw — Episode Summaries',
   '<atom:link href="https://weeklyclaw.ai/feed.xml"',
   'weeklyclaw-episode-26',
-  'weeklyclaw-episode-10',
+  'weeklyclaw-episode-20',
 ]) {
   if (!feedXml.includes(needle)) {
     console.error(`RSS feed missing expected marker: ${needle}`);
@@ -213,47 +216,25 @@ for (const needle of [
   }
 }
 const feedItemCount = (feedXml.match(/<item>/g) ?? []).length;
-if (feedItemCount !== 17) {
-  console.error(`RSS feed should contain 17 items, found ${feedItemCount}`);
+if (feedItemCount !== 7) {
+  console.error(`RSS feed should contain 7 items, found ${feedItemCount}`);
   process.exit(1);
 }
 const episodesJson = JSON.parse(readFileSync(new URL('../episodes.json', import.meta.url), 'utf8'));
-if (episodesJson.episodes.length !== 17) {
-  console.error(`episodes.json should contain 17 episodes, found ${episodesJson.episodes.length}`);
+if (episodesJson.episodes.length !== 7) {
+  console.error(`episodes.json should contain 7 episodes, found ${episodesJson.episodes.length}`);
   process.exit(1);
 }
-const latest = episodesJson.episodes[0];
-if (latest.week !== 26 || !latest.videoId || latest.summary.length < 3) {
-  console.error('episodes.json latest episode entry is incomplete');
-  process.exit(1);
+for (const episode of episodesJson.episodes) {
+  if (!episode.videoId || !Array.isArray(episode.summaryParagraphs) || episode.summaryParagraphs.length < 2) {
+    console.error(`episodes.json entry for W${episode.week} is incomplete (need videoId and 2+ summary paragraphs)`);
+    process.exit(1);
+  }
 }
-
-const playerMarkers = [
-  'class="episode-player"',
-  'aria-label="Episode player mode"',
-  'data-player-mode="video"',
-  'data-player-mode="audio"',
-  'data-player-mode="spotify"',
-  'id="episode-video-frame"',
-  'id="episode-audio"',
-  'id="audio-unavailable"',
-  'id="episode-spotify-frame"',
-  'id="spotify-unavailable"',
-  'https://open.spotify.com/embed/episode/${spotifyId}',
-  'card.dataset.spotifyId',
-  'card.dataset.audioSrc',
-  'data-spotify-id="2GywqAyfGJMXafRHRbdIa6"',
-  'data-audio-src="https://api.riverside.com/hosting-analytics/media/',
-  'data-play-video',
-  'https://www.youtube-nocookie.com/embed/',
-  'cards.find(card => card.dataset.videoId)',
-  "card === latestArchiveCard ? 'Latest episode' : 'From the archive'",
-  'if (!card || !loadEpisode(card)) return;',
-  'event.preventDefault()',
-];
-for (const marker of playerMarkers) {
-  if (!episodesHtml.includes(marker)) {
-    console.error(`Episodes index missing player integration marker: ${marker}`);
+// The on-page episode player embed was removed (2026-08-23): videos open on YouTube.
+for (const marker of ['class="episode-player"', 'data-play-video', 'https://www.youtube-nocookie.com/embed/', 'loadEpisode']) {
+  if (episodesHtml.includes(marker)) {
+    console.error(`Episodes index still contains removed player machinery: ${marker}`);
     process.exit(1);
   }
 }
@@ -327,11 +308,10 @@ if (episodesHtml.includes('autoplay=1')) {
   console.error('Episode player must not autoplay');
   process.exit(1);
 }
-const heroEnd = episodesHtml.indexOf('</section>', episodesHtml.indexOf('<section class="hero"'));
-const playerStart = episodesHtml.indexOf('<section class="episode-player"');
+const summariesStart = episodesHtml.indexOf('<section class="summaries"');
 const archiveStart = episodesHtml.indexOf('<section class="archive"');
-if (!(heroEnd < playerStart && playerStart < archiveStart)) {
-  console.error('Episode player must appear directly between the hero and archive');
+if (!(summariesStart > 0 && summariesStart < archiveStart)) {
+  console.error('Episode summaries section must appear before the archive');
   process.exit(1);
 }
 
