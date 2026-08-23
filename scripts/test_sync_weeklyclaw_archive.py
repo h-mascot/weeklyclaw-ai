@@ -51,6 +51,53 @@ class SyncMetadataTests(unittest.TestCase):
         refreshed_no_spotify = SYNC.refresh_youtube_cards(archive_html, videos, archive=True, spotify=None)
         self.assertNotIn("data-spotify-id", refreshed_no_spotify)
 
+    def test_refresh_youtube_cards_writes_audio_sources(self):
+        videos = {22: {"id": "f2yugYwXOBo", "url": "https://www.youtube.com/watch?v=f2yugYwXOBo", "thumbnail": "x"}}
+        audio = {22: "https://api.riverside.com/hosting-analytics/media/abc123"}
+        archive_html = """
+        <article class="week-card" data-kind="main">
+          <div class="thumb"><img src="/old.jpg"><span class="week-number">W22</span><span class="availability">Main slides</span></div>
+          <p class="card-kicker">Main slides</p>
+          <div class="card-actions"><button>Slides</button></div>
+        </article>
+        """
+        refreshed = SYNC.refresh_youtube_cards(archive_html, videos, archive=True, audio=audio)
+        self.assertIn('data-video-id="f2yugYwXOBo" data-audio-src="https://api.riverside.com/hosting-analytics/media/abc123"', refreshed)
+
+        refreshed_no_audio = SYNC.refresh_youtube_cards(archive_html, videos, archive=True, audio=None)
+        self.assertNotIn("data-audio-src", refreshed_no_audio)
+
+    def test_refresh_youtube_cards_replaces_stale_audio_source(self):
+        videos = {22: {"id": "f2yugYwXOBo", "url": "https://www.youtube.com/watch?v=f2yugYwXOBo", "thumbnail": "x"}}
+        audio = {22: "https://api.riverside.com/hosting-analytics/media/fresh"}
+        archive_html = """
+        <article class="week-card" data-kind="main" data-week="22" data-video-id="staleId00000" data-audio-src="https://api.riverside.com/hosting-analytics/media/stale">
+          <div class="thumb"><img src="/old.jpg"><span class="week-number">W22</span><span class="availability">Main slides</span></div>
+          <p class="card-kicker">Main slides</p>
+          <div class="card-actions"><button>Slides</button></div>
+        </article>
+        """
+        refreshed = SYNC.refresh_youtube_cards(archive_html, videos, archive=True, audio=audio)
+        self.assertIn('data-audio-src="https://api.riverside.com/hosting-analytics/media/fresh"', refreshed)
+        self.assertNotIn("media/stale", refreshed)
+
+    def test_fetch_audio_episodes_parses_rss_enclosures(self):
+        rss = """
+        <channel><item>
+          <title>The Sandbox Failed</title>
+          <itunes:episode>22</itunes:episode>
+          <enclosure url="https://api.riverside.com/hosting-analytics/media/ep22.mp3" type="audio/mpeg"/>
+        </item>
+        <item>
+          <title>Unnumbered item</title>
+          <enclosure url="https://api.riverside.com/hosting-analytics/media/other.mp3" type="audio/mpeg"/>
+        </item></channel>
+        """
+        audio = SYNC.fetch_audio_episodes(rss)
+        self.assertEqual(audio, {22: "https://api.riverside.com/hosting-analytics/media/ep22.mp3"})
+
+        self.assertEqual(SYNC.fetch_audio_episodes(""), {})
+
     def test_refresh_youtube_cards_preserves_episode_20_thumbnail_override(self):
         videos = {
             20: {

@@ -190,7 +190,9 @@ const playerMarkers = [
   'id="spotify-unavailable"',
   'https://open.spotify.com/embed/episode/${spotifyId}',
   'card.dataset.spotifyId',
+  'card.dataset.audioSrc',
   'data-spotify-id="2GywqAyfGJMXafRHRbdIa6"',
+  'data-audio-src="https://api.riverside.com/hosting-analytics/media/',
   'data-play-video',
   'https://www.youtube-nocookie.com/embed/',
   'cards.find(card => card.dataset.videoId)',
@@ -236,8 +238,9 @@ if (html.includes('autoplay=1')) {
   console.error('Homepage Featured Episode player must not autoplay');
   process.exit(1);
 }
-if (featuredAudioSrc && (!featuredAudioSrc.startsWith('/') || !existsSync(new URL(`..${featuredAudioSrc}`, import.meta.url)))) {
-  console.error(`Homepage Featured Episode audio source does not resolve to a local asset: ${featuredAudioSrc}`);
+const RIVERSIDE_MEDIA_PREFIX = 'https://api.riverside.com/hosting-analytics/media/';
+if (featuredAudioSrc && !featuredAudioSrc.startsWith(RIVERSIDE_MEDIA_PREFIX) && (!featuredAudioSrc.startsWith('/') || !existsSync(new URL(`..${featuredAudioSrc}`, import.meta.url)))) {
+  console.error(`Homepage Featured Episode audio source does not resolve to a local asset or the Riverside podcast feed: ${featuredAudioSrc}`);
   process.exit(1);
 }
 const featuredCopy = html.match(/<div class="latest-card"[\s\S]*?<div class="featured-player"/)?.[0] ?? '';

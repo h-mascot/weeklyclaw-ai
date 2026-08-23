@@ -96,13 +96,8 @@ def fetch_youtube_episodes() -> dict[int, dict[str, str]]:
     return episodes
 
 
-def fetch_spotify_episodes() -> dict[int, str]:
-    """Return Spotify episode IDs keyed by Weekly Claw episode number.
-
-    Uses the podcast RSS feed (authoritative episode titles/numbers) and the
-    Spotify show page (IDs). The show page is client-rendered, so a headless
-    Chromium pass is required; failures degrade to no Spotify wiring.
-    """
+def fetch_rss_text() -> str:
+    """Return the Riverside podcast RSS feed text, or '' when unreachable."""
     try:
         import urllib.request
 
@@ -111,8 +106,37 @@ def fetch_spotify_episodes() -> dict[int, str]:
             headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"},
         )
         with urllib.request.urlopen(request, timeout=30) as response:
-            rss = response.read().decode("utf-8", errors="ignore")
+            return response.read().decode("utf-8", errors="ignore")
     except OSError:
+        return ""
+
+
+def fetch_audio_episodes(rss: str) -> dict[int, str]:
+    """Return MP3 enclosure URLs keyed by Weekly Claw episode number.
+
+    The RSS enclosures live behind Riverside's hosting-analytics endpoint,
+    which 302s to hosting-media.riverside.com. The analytics URL embeds no
+    expiry token and serves audio/mpeg with Accept-Ranges to any client
+    (verified 2026-08-23), so it is safe to embed as an audio src.
+    """
+    audio: dict[int, str] = {}
+    for item in re.findall(r"<item>[\s\S]*?</item>", rss):
+        number = re.search(r"<itunes:episode>(\d+)</itunes:episode>", item)
+        enclosure = re.search(r'<enclosure url="([^"]+)"[^>]*type="audio/', item)
+        if number and enclosure:
+            audio[int(number.group(1))] = enclosure.group(1)
+    return audio
+
+
+def fetch_spotify_episodes() -> dict[int, str]:
+    """Return Spotify episode IDs keyed by Weekly Claw episode number.
+
+    Uses the podcast RSS feed (authoritative episode titles/numbers) and the
+    Spotify show page (IDs). The show page is client-rendered, so a headless
+    Chromium pass is required; failures degrade to no Spotify wiring.
+    """
+    rss = fetch_rss_text()
+    if not rss:
         return {}
 
     titles: dict[int, str] = {}
@@ -182,7 +206,7 @@ def download_youtube_thumbnails(repo: Path, videos: dict[int, dict[str, str]]) -
             destination.unlink(missing_ok=True)
 
 
-def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archive: bool, spotify: dict[int, str] | None = None) -> str:
+def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archive: bool, spotify: dict[int, str] | None = None, audio: dict[int, str] | None = None) -> str:
     """Convert cards for published videos to Video + Slides without touching other cards."""
     card_class = "week-card" if archive else "episode-card"
     week_class = "week-number" if archive else "episode-week"
@@ -200,9 +224,17 @@ def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archi
         local_thumbnail = f"/assets/youtube-thumbnails/{thumbnail_filename}"
         if archive:
             def add_player_data(article_match: re.Match[str]) -> str:
-                opening = re.sub(r'\sdata-(?:week|video-id|spotify-id)="[^"]*"', "", article_match.group(0))
+                opening_match = article_match.group(0)
+                existing_audio_attr = re.search(r'\sdata-audio-src="[^"]*"', opening_match)
+                opening = re.sub(r'\sdata-(?:week|video-id|spotify-id|audio-src)="[^"]*"', "", opening_match)
                 spotify_attribute = f' data-spotify-id="{spotify[episode]}"' if spotify and episode in spotify else ""
-                return f'{opening[:-1]} data-week="{episode}" data-video-id="{video["id"]}"{spotify_attribute}>'
+                if audio and episode in audio:
+                    audio_attribute = f' data-audio-src="{audio[episode]}"'
+                elif existing_audio_attr:
+                    audio_attribute = existing_audio_attr.group(0)
+                else:
+                    audio_attribute = ""
+                return f'{opening[:-1]} data-week="{episode}" data-video-id="{video["id"]}"{spotify_attribute}{audio_attribute}>'
 
             block = re.sub(r'<article class="week-card"[^>]*>', add_player_data, block, count=1)
             media = (
@@ -416,7 +448,7 @@ def write_markdown_page(repo: Path, ep: int, source_name: str, route_name: str, 
 <body><header><nav class="shell"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/{ep}/deck">Open slides</a></div></nav></header><main class="shell"><section class="intro"><p class="eyebrow">Episode {ep} · {html.escape(title_suffix)}</p><h1>{html.escape(meta['headline'])}</h1></section><article>{body}</article></main><footer class="shell">Weekly Claw #{ep} · {html.escape(title_suffix)}</footer></body></html>
 """)
 
-def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[int, dict[str, str]]) -> None:
+def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[int, dict[str, str]], audio: dict[int, str] | None = None) -> None:
     path = repo / "index.html"
     text = path.read_text()
     existing_week_match = re.search(r'<div class="latest-number" aria-hidden="true">(\d+)</div>', text)
@@ -439,7 +471,12 @@ def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[
             if latest in videos
             else existing_video.group(0) if existing_week == latest and existing_video else ""
         )
-        audio_attribute = existing_audio.group(0) if existing_week == latest and existing_audio else ""
+        rss_audio = audio.get(latest) if audio else None
+        audio_attribute = (
+            f' data-audio-src="{rss_audio}"'
+            if rss_audio
+            else existing_audio.group(0) if existing_week == latest and existing_audio else ""
+        )
         return f"{opening[:-1]}{video_attribute}{audio_attribute}>"
 
     text = re.sub(r'<div class="latest-card"[^>]*>', update_featured_media, text, count=1)
@@ -464,7 +501,7 @@ def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[
     path.write_text(text)
 
 
-def update_episodes_index(repo: Path, latest: int, meta: dict[str, str], videos: dict[int, dict[str, str]], *, spotify: dict[int, str] | None = None) -> None:
+def update_episodes_index(repo: Path, latest: int, meta: dict[str, str], videos: dict[int, dict[str, str]], *, spotify: dict[int, str] | None = None, audio: dict[int, str] | None = None) -> None:
     path = repo / "episodes" / "index.html"
     text = path.read_text()
     count = len([p for p in (repo / "episodes").iterdir() if p.is_dir() and p.name.isdigit() and (p / "deck.html").exists() or (p.is_dir() and p.name.isdigit() and (repo / f"w{p.name}" / "changelog" / "index.html").exists())])
@@ -480,7 +517,10 @@ def update_episodes_index(repo: Path, latest: int, meta: dict[str, str], videos:
     if existing_match:
         existing_block = existing_match.group(0)
         existing_audio = re.search(r'\sdata-audio-src="[^"]+"', existing_block)
-        if existing_audio:
+        rss_audio = audio.get(latest) if audio else None
+        if rss_audio:
+            card = card.replace('data-kind="main"', f'data-kind="main" data-audio-src="{rss_audio}"', 1)
+        elif existing_audio:
             card = card.replace('data-kind="main"', f'data-kind="main"{existing_audio.group(0)}', 1)
         existing_spotify = re.search(r'\sdata-spotify-id="[^"]+"', existing_block)
         if existing_spotify:
@@ -499,7 +539,7 @@ def update_episodes_index(repo: Path, latest: int, meta: dict[str, str], videos:
     else:
         text = text.replace('        <div class="gallery" id="gallery">\n', '        <div class="gallery" id="gallery">\n' + card + '\n')
     text = re.sub(r'W\d+ includes its original host slides and agenda;', f'W{latest} includes its original host slides;', text)
-    text = refresh_youtube_cards(text, videos, archive=True, spotify=spotify)
+    text = refresh_youtube_cards(text, videos, archive=True, spotify=spotify, audio=audio)
     path.write_text(text)
 
 
@@ -567,11 +607,13 @@ def main() -> int:
     meta = deck_meta(repo, latest)
     videos = fetch_youtube_episodes()
     spotify = fetch_spotify_episodes()
+    rss_text = fetch_rss_text()
+    audio = fetch_audio_episodes(rss_text)
     download_youtube_thumbnails(repo, videos)
     write_agenda_html(repo, latest, meta)
     write_markdown_page(repo, latest, "host-cheat-sheet.md", "host-cheat-sheet", "Host Cheat Sheet", meta)
-    update_homepage(repo, latest, meta, videos)
-    update_episodes_index(repo, latest, meta, videos, spotify=spotify)
+    update_homepage(repo, latest, meta, videos, audio=audio)
+    update_episodes_index(repo, latest, meta, videos, spotify=spotify, audio=audio)
     update_validate(repo, latest)
 
     print(f"SYNC_OK latest={latest} headline={meta['headline']!r}")
