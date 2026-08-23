@@ -36,6 +36,21 @@ class SyncMetadataTests(unittest.TestCase):
         self.assertEqual(videos[20]["id"], "EPISODE0020")
         self.assertNotIn(24, videos)
 
+    def test_refresh_youtube_cards_writes_spotify_ids(self):
+        videos = {22: {"id": "f2yugYwXOBo", "url": "https://www.youtube.com/watch?v=f2yugYwXOBo", "thumbnail": "x"}}
+        archive_html = """
+        <article class="week-card" data-kind="main">
+          <div class="thumb"><img src="/old.jpg"><span class="week-number">W22</span><span class="availability">Main slides</span></div>
+          <p class="card-kicker">Main slides</p>
+          <div class="card-actions"><button>Slides</button></div>
+        </article>
+        """
+        refreshed = SYNC.refresh_youtube_cards(archive_html, videos, archive=True, spotify={22: "2GywqAyfGJMXafRHRbdIa6"})
+        self.assertIn('data-video-id="f2yugYwXOBo" data-spotify-id="2GywqAyfGJMXafRHRbdIa6"', refreshed)
+
+        refreshed_no_spotify = SYNC.refresh_youtube_cards(archive_html, videos, archive=True, spotify=None)
+        self.assertNotIn("data-spotify-id", refreshed_no_spotify)
+
     def test_refresh_youtube_cards_preserves_episode_20_thumbnail_override(self):
         videos = {
             20: {
