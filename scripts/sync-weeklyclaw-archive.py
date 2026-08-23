@@ -21,6 +21,12 @@ from pathlib import Path
 MONTH_RE = r"(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)"
 SPOTIFY_SHOW_URL = "https://open.spotify.com/show/033WWP2IOLy2T3SApjvw8v"
 SPOTIFY_RSS_URL = "https://api.riverside.com/hosting/I17UHAUR.rss"
+# Spotify has published W25/W26 on a second catalog before the Riverside RSS
+# catches up. Keep these verified IDs so the Friday sync does not strip them.
+SPOTIFY_EPISODE_OVERRIDES = {
+    25: "58kOYSrhrMLArnNfVY41RQ",
+    26: "5t1xYX7e4DUv6l9DKUAi21",
+}
 YOUTUBE_THUMBNAIL_OVERRIDES = {
     20: "w20-v2-ai-got-cheap-approved-20260727.jpg",
     21: "w21-v2-approved-20260727.jpg",
@@ -135,9 +141,10 @@ def fetch_spotify_episodes() -> dict[int, str]:
     Spotify show page (IDs). The show page is client-rendered, so a headless
     Chromium pass is required; failures degrade to no Spotify wiring.
     """
+    episodes: dict[int, str] = dict(SPOTIFY_EPISODE_OVERRIDES)
     rss = fetch_rss_text()
     if not rss:
-        return {}
+        return episodes
 
     titles: dict[int, str] = {}
     for item in re.findall(r"<item>[\s\S]*?</item>", rss):
@@ -147,7 +154,7 @@ def fetch_spotify_episodes() -> dict[int, str]:
             titles[int(number.group(1))] = title.group(1).strip()
 
     if not titles:
-        return {}
+        return episodes
 
     try:
         from playwright.sync_api import sync_playwright
@@ -169,9 +176,8 @@ def fetch_spotify_episodes() -> dict[int, str]:
             )
             browser.close()
     except Exception:
-        return {}
+        return episodes
 
-    episodes: dict[int, str] = {}
     for href, label in links:
         match = re.search(r"/episode/([A-Za-z0-9]{22})", href or "")
         if not match:

@@ -36,6 +36,10 @@ class SyncMetadataTests(unittest.TestCase):
         self.assertEqual(videos[20]["id"], "EPISODE0020")
         self.assertNotIn(24, videos)
 
+    def test_fetch_spotify_episodes_keeps_verified_ids_when_rss_is_stale(self):
+        with patch.object(SYNC, "fetch_rss_text", return_value=""):
+            self.assertEqual(SYNC.fetch_spotify_episodes(), SYNC.SPOTIFY_EPISODE_OVERRIDES)
+
     def test_refresh_youtube_cards_writes_spotify_ids(self):
         videos = {22: {"id": "f2yugYwXOBo", "url": "https://www.youtube.com/watch?v=f2yugYwXOBo", "thumbnail": "x"}}
         archive_html = """
