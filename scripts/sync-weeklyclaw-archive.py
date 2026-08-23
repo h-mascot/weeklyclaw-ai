@@ -19,6 +19,8 @@ import subprocess
 from pathlib import Path
 
 MONTH_RE = r"(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)"
+SPOTIFY_SHOW_URL = "https://open.spotify.com/show/033WWP2IOLy2T3SApjvw8v"
+SPOTIFY_RSS_URL = "https://api.riverside.com/hosting/I17UHAUR.rss"
 YOUTUBE_THUMBNAIL_OVERRIDES = {
     20: "w20-v2-ai-got-cheap-approved-20260727.jpg",
     21: "w21-v2-approved-20260727.jpg",
@@ -94,6 +96,75 @@ def fetch_youtube_episodes() -> dict[int, dict[str, str]]:
     return episodes
 
 
+def fetch_spotify_episodes() -> dict[int, str]:
+    """Return Spotify episode IDs keyed by Weekly Claw episode number.
+
+    Uses the podcast RSS feed (authoritative episode titles/numbers) and the
+    Spotify show page (IDs). The show page is client-rendered, so a headless
+    Chromium pass is required; failures degrade to no Spotify wiring.
+    """
+    try:
+        import urllib.request
+
+        request = urllib.request.Request(
+            SPOTIFY_RSS_URL,
+            headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"},
+        )
+        with urllib.request.urlopen(request, timeout=30) as response:
+            rss = response.read().decode("utf-8", errors="ignore")
+    except OSError:
+        return {}
+
+    titles: dict[int, str] = {}
+    for item in re.findall(r"<item>[\s\S]*?</item>", rss):
+        number = re.search(r"<itunes:episode>(\d+)</itunes:episode>", item)
+        title = re.search(r"<!\[CDATA\[(.*?)\]\]></title>", item) or re.search(r"<title>(.*?)</title>", item)
+        if number and title:
+            titles[int(number.group(1))] = title.group(1).strip()
+
+    if not titles:
+        return {}
+
+    try:
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch(
+                executable_path="/usr/bin/chromium-browser",
+                args=["--no-sandbox", "--disable-dev-shm-usage"],
+            )
+            page = browser.new_page()
+            page.goto(SPOTIFY_SHOW_URL, timeout=45000, wait_until="domcontentloaded")
+            page.wait_for_timeout(6000)
+            for _ in range(6):
+                page.mouse.wheel(0, 2500)
+                page.wait_for_timeout(900)
+            links = page.eval_on_selector_all(
+                "a[href*='/episode/']",
+                "els => els.map(el => [el.getAttribute('href'), (el.textContent || '').trim()])",
+            )
+            browser.close()
+    except Exception:
+        return {}
+
+    episodes: dict[int, str] = {}
+    for href, label in links:
+        match = re.search(r"/episode/([A-Za-z0-9]{22})", href or "")
+        if not match:
+            continue
+        label = " ".join(label.split())
+        for episode, title in titles.items():
+            if episode in episodes:
+                continue
+            # Spotify card labels truncate long titles; require the full RSS
+            # title to appear in the card, else fall back to the #N pattern.
+            exact = title in label
+            numbered = re.search(rf"#\s*{episode}\b", label)
+            if exact or (numbered and len(label) < len(title)):
+                episodes[episode] = match.group(1)
+    return episodes
+
+
 def download_youtube_thumbnails(repo: Path, videos: dict[int, dict[str, str]]) -> None:
     asset_dir = repo / "assets" / "youtube-thumbnails"
     asset_dir.mkdir(parents=True, exist_ok=True)
@@ -111,7 +182,7 @@ def download_youtube_thumbnails(repo: Path, videos: dict[int, dict[str, str]]) -
             destination.unlink(missing_ok=True)
 
 
-def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archive: bool) -> str:
+def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archive: bool, spotify: dict[int, str] | None = None) -> str:
     """Convert cards for published videos to Video + Slides without touching other cards."""
     card_class = "week-card" if archive else "episode-card"
     week_class = "week-number" if archive else "episode-week"
@@ -129,8 +200,9 @@ def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archi
         local_thumbnail = f"/assets/youtube-thumbnails/{thumbnail_filename}"
         if archive:
             def add_player_data(article_match: re.Match[str]) -> str:
-                opening = re.sub(r'\sdata-(?:week|video-id)="[^"]*"', "", article_match.group(0))
-                return f'{opening[:-1]} data-week="{episode}" data-video-id="{video["id"]}">'
+                opening = re.sub(r'\sdata-(?:week|video-id|spotify-id)="[^"]*"', "", article_match.group(0))
+                spotify_attribute = f' data-spotify-id="{spotify[episode]}"' if spotify and episode in spotify else ""
+                return f'{opening[:-1]} data-week="{episode}" data-video-id="{video["id"]}"{spotify_attribute}>'
 
             block = re.sub(r'<article class="week-card"[^>]*>', add_player_data, block, count=1)
             media = (
@@ -392,7 +464,7 @@ def update_homepage(repo: Path, latest: int, meta: dict[str, str], videos: dict[
     path.write_text(text)
 
 
-def update_episodes_index(repo: Path, latest: int, meta: dict[str, str], videos: dict[int, dict[str, str]]) -> None:
+def update_episodes_index(repo: Path, latest: int, meta: dict[str, str], videos: dict[int, dict[str, str]], *, spotify: dict[int, str] | None = None) -> None:
     path = repo / "episodes" / "index.html"
     text = path.read_text()
     count = len([p for p in (repo / "episodes").iterdir() if p.is_dir() and p.name.isdigit() and (p / "deck.html").exists() or (p.is_dir() and p.name.isdigit() and (repo / f"w{p.name}" / "changelog" / "index.html").exists())])
@@ -410,6 +482,9 @@ def update_episodes_index(repo: Path, latest: int, meta: dict[str, str], videos:
         existing_audio = re.search(r'\sdata-audio-src="[^"]+"', existing_block)
         if existing_audio:
             card = card.replace('data-kind="main"', f'data-kind="main"{existing_audio.group(0)}', 1)
+        existing_spotify = re.search(r'\sdata-spotify-id="[^"]+"', existing_block)
+        if existing_spotify:
+            card = card.replace('data-kind="main"', f'data-kind="main"{existing_spotify.group(0)}', 1)
         if latest not in videos and 'data-video-id=' in existing_block:
             card = re.sub(
                 r'(<div class="card-copy"><p class="card-kicker">.*?</p>)<h3>.*?</h3><p>.*?</p>(</div>)',
@@ -424,7 +499,7 @@ def update_episodes_index(repo: Path, latest: int, meta: dict[str, str], videos:
     else:
         text = text.replace('        <div class="gallery" id="gallery">\n', '        <div class="gallery" id="gallery">\n' + card + '\n')
     text = re.sub(r'W\d+ includes its original host slides and agenda;', f'W{latest} includes its original host slides;', text)
-    text = refresh_youtube_cards(text, videos, archive=True)
+    text = refresh_youtube_cards(text, videos, archive=True, spotify=spotify)
     path.write_text(text)
 
 
@@ -491,11 +566,12 @@ def main() -> int:
     latest = max(episode_nums)
     meta = deck_meta(repo, latest)
     videos = fetch_youtube_episodes()
+    spotify = fetch_spotify_episodes()
     download_youtube_thumbnails(repo, videos)
     write_agenda_html(repo, latest, meta)
     write_markdown_page(repo, latest, "host-cheat-sheet.md", "host-cheat-sheet", "Host Cheat Sheet", meta)
     update_homepage(repo, latest, meta, videos)
-    update_episodes_index(repo, latest, meta, videos)
+    update_episodes_index(repo, latest, meta, videos, spotify=spotify)
     update_validate(repo, latest)
 
     print(f"SYNC_OK latest={latest} headline={meta['headline']!r}")

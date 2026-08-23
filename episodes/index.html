@@ -66,7 +66,7 @@
     .player-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 24px; }
     .player-heading .eyebrow { margin-bottom: 10px; }
     .player-heading h2 { max-width: 820px; margin-bottom: 0; font-size: clamp(32px, 5vw, 54px); line-height: .95; letter-spacing: -.05em; text-transform: uppercase; }
-    .player-mode-switch { display: inline-grid; grid-template-columns: repeat(2, minmax(88px, 1fr)); gap: 4px; padding: 4px; border: 1px solid var(--line); border-radius: 7px; background: var(--panel); }
+    .player-mode-switch { display: inline-grid; grid-template-columns: repeat(3, minmax(72px, 1fr)); gap: 4px; padding: 4px; border: 1px solid var(--line); border-radius: 7px; background: var(--panel); }
     .player-mode-button { min-height: 42px; padding: 0 16px; border: 0; border-radius: 4px; color: var(--muted); background: transparent; font: 700 11px/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; cursor: pointer; }
     .player-mode-button:hover { color: var(--cream); }
     .player-mode-button[aria-pressed="true"] { color: var(--ink); background: var(--coral); }
@@ -74,11 +74,13 @@
     .video-wrap { aspect-ratio: 16 / 9; }
     .episode-video-frame { display: block; width: 100%; height: 100%; border: 0; }
     .audio-panel { min-height: 280px; display: grid; place-items: center; padding: 32px; background: var(--panel); }
-    .audio-panel[hidden], .video-panel[hidden], .episode-audio[hidden], .audio-unavailable[hidden] { display: none; }
+    .audio-panel[hidden], .video-panel[hidden], .spotify-panel[hidden], .episode-audio[hidden], .audio-unavailable[hidden], .spotify-unavailable[hidden] { display: none; }
     .audio-card { width: min(100%, 680px); text-align: center; }
     .audio-card h3 { margin-bottom: 10px; font-size: clamp(26px, 4vw, 38px); line-height: 1; letter-spacing: -.035em; }
     .audio-card p { margin: 0 auto 22px; color: var(--muted); }
     .episode-audio { width: 100%; }
+    .spotify-panel .audio-card { width: min(100%, 660px); margin-inline: auto; text-align: center; }
+    .episode-spotify-frame { display: block; width: 100%; max-width: 660px; margin-inline: auto; border: 0; border-radius: 12px; }
     .return-video { min-height: 42px; padding: 0 15px; border: 1px solid var(--line); border-radius: 7px; color: var(--cream); background: var(--ink); font-weight: 700; cursor: pointer; }
     .return-video:hover { color: var(--ink); background: var(--cream); }
 
@@ -377,6 +379,7 @@
           <div class="player-mode-switch" role="group" aria-label="Episode player mode">
             <button class="player-mode-button" type="button" data-player-mode="video" aria-pressed="true">Video</button>
             <button class="player-mode-button" type="button" data-player-mode="audio" aria-pressed="false">Audio</button>
+            <button class="player-mode-button" type="button" data-player-mode="spotify" aria-pressed="false">Spotify</button>
           </div>
         </div>
         <div class="player-surface">
@@ -392,6 +395,16 @@
                 <h3>Audio edition not published yet</h3>
                 <p>This episode has no separate audio file. Its full audio remains available in the on-site video player.</p>
                 <button class="return-video" type="button" data-return-video>Return to video</button>
+              </div>
+            </div>
+          </div>
+          <div class="spotify-panel" data-player-panel="spotify" hidden>
+            <div class="audio-card">
+              <iframe class="episode-spotify-frame" id="episode-spotify-frame" src="about:blank" title="Weekly Claw episode on Spotify" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" height="152"></iframe>
+              <div class="spotify-unavailable" id="spotify-unavailable">
+                <h3>Not on Spotify yet</h3>
+                <p>This episode is not published to Spotify yet. Follow Weekly Claw on Spotify to get it when it lands.</p>
+                <a class="return-video" href="https://open.spotify.com/show/033WWP2IOLy2T3SApjvw8v" target="_blank" rel="noopener">Open Weekly Claw on Spotify</a>
               </div>
             </div>
           </div>
@@ -432,17 +445,17 @@
             <div class="card-copy"><p class="card-kicker">Video · main slides</p><h3>The envelope, not the engine.</h3><p>Capability barely moved this week; everything around capability did. The economics moved — OpenAI cut Luna&#x27;s price 80% three weeks after launch. The openness moved —…</p></div>
             <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=fOAMV6-fbsw" data-play-video="23" aria-label="Play Weekly Claw episode 23 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="23" data-deck="main" data-title="W23 · Main show slides" data-url="/episodes/23/deck">Slides</button></div>
           </article>
-          <article class="week-card" data-kind="main" data-week="22" data-video-id="f2yugYwXOBo">
+          <article class="week-card" data-kind="main" data-week="22" data-video-id="f2yugYwXOBo" data-spotify-id="2GywqAyfGJMXafRHRbdIa6">
             <a class="thumb youtube-thumb" href="https://www.youtube.com/watch?v=f2yugYwXOBo" data-play-video="22" aria-label="Play Weekly Claw episode 22 on this page"><img src="/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg" alt="YouTube thumbnail for Weekly Claw episode 22"><span class="week-number">W22</span><span class="availability">Video + slides</span></a>
             <div class="card-copy"><p class="card-kicker">Video · main slides</p><h3>The Sandbox Failed</h3><p>Welcome back to Weekly Claw. Today&#x27;s episode has a shape to it, so let&#x27;s name it up front: risk, then control, then architecture, then a new place to work, then who…</p></div>
             <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=f2yugYwXOBo" data-play-video="22" aria-label="Play Weekly Claw episode 22 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="22" data-deck="main" data-title="W22 · Main show slides" data-url="/episodes/22/deck">Slides</button></div>
           </article>
-          <article class="week-card" data-kind="main" data-week="21" data-video-id="dquJyEBQWpE">
+          <article class="week-card" data-kind="main" data-week="21" data-video-id="dquJyEBQWpE" data-spotify-id="1rzUjx7BfqL07H5fYDqr9e">
             <a class="thumb youtube-thumb" href="https://www.youtube.com/watch?v=dquJyEBQWpE" data-play-video="21" aria-label="Play Weekly Claw episode 21 on this page"><img src="/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg" alt="YouTube thumbnail for Weekly Claw episode 21"><span class="week-number">W21</span><span class="availability">Video + slides</span></a>
             <div class="card-copy"><p class="card-kicker">Video · main slides</p><h3>The model is portable. The workflow is the moat.</h3><p>Last week was the model price shock. This week is the ownership shock. The story is not just “another big model launched.” The story is that the center of gravity is…</p></div>
             <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=dquJyEBQWpE" data-play-video="21" aria-label="Play Weekly Claw episode 21 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="21" data-deck="main" data-title="W21 · Main show slides" data-url="/episodes/21/deck">Slides</button></div>
           </article>
-          <article class="week-card" data-kind="main" data-week="20" data-video-id="MSRFmpDfaTg">
+          <article class="week-card" data-kind="main" data-week="20" data-video-id="MSRFmpDfaTg" data-spotify-id="3LqMk9YFrbHkQhR3s7exJI">
             <a class="thumb youtube-thumb" href="https://www.youtube.com/watch?v=MSRFmpDfaTg" data-play-video="20" aria-label="Play Weekly Claw episode 20 on this page"><img src="/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg" alt="YouTube thumbnail for Weekly Claw episode 20"><span class="week-number">W20</span><span class="availability">Video + slides</span></a>
             <div class="card-copy"><p class="card-kicker">Video · main slides</p><h3>The cost of intelligence collapsed</h3><p>GPT‑5.6, Grok 4.5, agentic ransomware, and a Fable-vs-GPT Tool Fight with Andy and Henry.</p></div>
             <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=MSRFmpDfaTg" data-play-video="20" aria-label="Play Weekly Claw episode 20 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="20" data-deck="main" data-title="W20 · Main show slides" data-url="/episodes/20/deck">Slides</button></div>
@@ -557,6 +570,8 @@
     const videoFrame = document.getElementById('episode-video-frame');
     const episodeAudio = document.getElementById('episode-audio');
     const audioUnavailable = document.getElementById('audio-unavailable');
+    const spotifyFrame = document.getElementById('episode-spotify-frame');
+    const spotifyUnavailable = document.getElementById('spotify-unavailable');
     const returnVideoButton = document.querySelector('[data-return-video]');
     const playVideoLinks = [...document.querySelectorAll('[data-play-video]')];
     const viewer = document.getElementById('deck-viewer');
@@ -593,6 +608,17 @@
       videoFrame.src = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&enablejsapi=1`;
       videoFrame.title = `Weekly Claw episode ${week}: ${title}`;
       episodeAudio.setAttribute('aria-label', `Weekly Claw episode ${week} audio`);
+      const spotifyId = card.dataset.spotifyId;
+      if (spotifyId) {
+        spotifyFrame.src = `https://open.spotify.com/embed/episode/${spotifyId}?utm_source=weeklyclaw`;
+        spotifyFrame.title = `Weekly Claw episode ${week} on Spotify: ${title}`;
+        spotifyFrame.hidden = false;
+        spotifyUnavailable.hidden = true;
+      } else {
+        spotifyFrame.removeAttribute('src');
+        spotifyFrame.hidden = true;
+        spotifyUnavailable.hidden = false;
+      }
       const audioSrc = card.dataset.audioSrc;
       if (audioSrc) {
         episodeAudio.src = audioSrc;
@@ -614,6 +640,10 @@
       if (mode === 'audio') {
         videoFrame.contentWindow?.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), 'https://www.youtube-nocookie.com');
       } else {
+        episodeAudio.pause();
+      }
+      if (mode === 'spotify') {
+        videoFrame.contentWindow?.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), 'https://www.youtube-nocookie.com');
         episodeAudio.pause();
       }
     }

@@ -91,13 +91,20 @@ for (const needle of [
   'aria-label="Watch Weekly Claw on YouTube"',
   'aria-label="Watch Weekly Claw on Bilibili"',
   'rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="Watch Weekly Claw on Bilibili"',
-  'aria-label="Weekly Claw on Apple Podcasts, coming soon"',
-  'aria-label="Weekly Claw on Spotify, coming soon"',
+  'href="https://podcasts.apple.com/us/podcast/weekly-claw/id6795290527"',
+  'href="https://open.spotify.com/show/033WWP2IOLy2T3SApjvw8v"',
+  'aria-label="Listen to Weekly Claw on Apple Podcasts"',
+  'aria-label="Listen to Weekly Claw on Spotify"',
 ]) {
   if (!html.includes(needle)) {
     console.error(`Missing expected homepage copy: ${needle}`);
     process.exit(1);
   }
+}
+
+if (html.includes('platform-link-pending') || html.includes('>Soon<')) {
+  console.error('Homepage still renders pending platform placeholders');
+  process.exit(1);
 }
 
 const desktopNav = html.match(/<nav class="desktop-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
@@ -175,9 +182,15 @@ const playerMarkers = [
   'aria-label="Episode player mode"',
   'data-player-mode="video"',
   'data-player-mode="audio"',
+  'data-player-mode="spotify"',
   'id="episode-video-frame"',
   'id="episode-audio"',
   'id="audio-unavailable"',
+  'id="episode-spotify-frame"',
+  'id="spotify-unavailable"',
+  'https://open.spotify.com/embed/episode/${spotifyId}',
+  'card.dataset.spotifyId',
+  'data-spotify-id="2GywqAyfGJMXafRHRbdIa6"',
   'data-play-video',
   'https://www.youtube-nocookie.com/embed/',
   'cards.find(card => card.dataset.videoId)',
