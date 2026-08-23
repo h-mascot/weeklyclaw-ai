@@ -63,6 +63,25 @@
     .fact strong { color: var(--coral); font: 700 28px/1 var(--mono); }
     .fact span { color: var(--muted); font-size: 13px; }
 
+    .episode-player { padding: 56px 0 64px; border-bottom: 1px solid var(--line-soft); background: var(--ink); }
+    .player-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 24px; }
+    .player-heading .eyebrow { margin-bottom: 10px; }
+    .player-heading h2 { max-width: 820px; margin-bottom: 0; font-size: clamp(32px, 5vw, 54px); line-height: .95; letter-spacing: -.05em; text-transform: uppercase; }
+    .player-mode-switch { display: inline-grid; grid-template-columns: repeat(3, minmax(72px, 1fr)); gap: 4px; padding: 4px; border: 1px solid var(--line); border-radius: 7px; background: var(--panel); }
+    .player-mode-button { min-height: 42px; padding: 0 16px; border: 0; border-radius: 4px; color: var(--muted); background: transparent; font: 700 11px/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; cursor: pointer; }
+    .player-mode-button:hover { color: var(--cream); }
+    .player-mode-button[aria-pressed="true"] { color: var(--ink); background: var(--coral); }
+    .player-surface { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: #050607; }
+    .video-wrap { aspect-ratio: 16 / 9; }
+    .episode-video-frame { display: block; width: 100%; height: 100%; border: 0; }
+    .audio-panel { min-height: 280px; display: grid; place-items: center; padding: 32px; background: var(--panel); }
+    .audio-panel[hidden], .video-panel[hidden], .spotify-panel[hidden], .episode-audio[hidden], .audio-unavailable[hidden], .spotify-unavailable[hidden] { display: none; }
+    .audio-card { width: min(100%, 680px); text-align: center; }
+    .audio-card h3 { margin-bottom: 10px; font-size: clamp(26px, 4vw, 38px); line-height: 1; letter-spacing: -.035em; }
+    .audio-card p { margin: 0 auto 22px; color: var(--muted); }
+    .episode-audio { width: 100%; }
+    .spotify-panel .audio-card { width: min(100%, 660px); margin-inline: auto; text-align: center; }
+    .episode-spotify-frame { display: block; width: 100%; max-width: 660px; margin-inline: auto; border: 0; border-radius: 12px; }
     .return-video { min-height: 42px; padding: 0 15px; border: 1px solid var(--line); border-radius: 7px; color: var(--cream); background: var(--ink); font-weight: 700; cursor: pointer; }
     .return-video:hover { color: var(--ink); background: var(--cream); }
 
@@ -116,6 +135,7 @@
       .hero-grid { grid-template-columns: 1fr; gap: 36px; }
       .archive-facts { grid-template-columns: repeat(3, 1fr); }
       .fact { grid-template-columns: 1fr; gap: 7px; }
+      .player-heading { align-items: flex-start; flex-direction: column; }
       .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .archive-toolbar { align-items: flex-start; flex-direction: column; }
     }
@@ -127,6 +147,9 @@
       .hero { padding: 54px 0; }
       .archive-facts { grid-template-columns: 1fr; }
       .fact { grid-template-columns: 56px 1fr; }
+      .episode-player { padding: 40px 0 44px; }
+      .player-mode-switch { width: 100%; }
+      .audio-panel { min-height: 240px; padding: 24px 18px; }
       .gallery { grid-template-columns: 1fr; }
       .filters { display: grid; grid-template-columns: repeat(2, 1fr); width: 100%; }
       .filter-button { width: 100%; }
@@ -148,16 +171,17 @@
     .summaries-sub { margin-bottom: 32px; color: var(--muted); font-size: 14px; }
     .summaries-sub a { color: var(--coral-hot); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
     .summary-list { display: grid; gap: 1px; border: 1px solid var(--line); background: var(--line); }
-    .summary-item { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 28px 24px; background: var(--panel); }
+    .summary-item { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 26px 24px; background: var(--panel); }
     .summary-meta { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
     .summary-week { color: var(--coral); font: 700 24px/1 var(--mono); letter-spacing: -.03em; }
     .summary-date { color: var(--muted); font: 400 12px/1.3 var(--mono); text-transform: uppercase; letter-spacing: .06em; }
-    .summary-body h3 { margin: 0 0 12px; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.04; letter-spacing: -.03em; }
-    .summary-body p { margin: 0 0 12px; color: var(--muted); font-size: 15px; line-height: 1.6; max-width: 68ch; }
-    .summary-body p:last-of-type { margin-bottom: 0; }
-    .summary-links { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px 18px; }
+    .summary-body h3 { margin: 0 0 10px; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.04; letter-spacing: -.03em; }
+    .summary-body ul { margin: 0; padding-left: 20px; color: var(--muted); font-size: 15px; line-height: 1.55; display: grid; gap: 7px; }
+    .summary-body li::marker { color: var(--coral-hot); }
+    .summary-links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px 18px; }
     .summary-links a { color: var(--coral-hot); font: 700 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
     .summary-links a:hover { color: var(--cream); text-decoration: underline; text-underline-offset: 4px; }
+    .summary-badge { display: inline-block; padding: 4px 8px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); font: 700 10px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
     @media (max-width: 820px) {
       .summary-item { grid-template-columns: 1fr; gap: 12px; padding: 20px 18px; }
       .summary-meta { flex-direction: row; align-items: baseline; gap: 12px; }
@@ -355,81 +379,170 @@
       </div>
     </section>
 
-            <section class="summaries" id="summaries" aria-labelledby="summaries-title">
+            <section class="episode-player" id="episode-player" aria-labelledby="episode-player-title">
+      <div class="shell">
+        <div class="player-heading">
+          <div aria-live="polite">
+            <p class="eyebrow" id="episode-player-kicker">Latest episode</p>
+            <h2 id="episode-player-title">Watch on Weekly Claw</h2>
+          </div>
+          <div class="player-mode-switch" role="group" aria-label="Episode player mode">
+            <button class="player-mode-button" type="button" data-player-mode="video" aria-pressed="true">Video</button>
+            <button class="player-mode-button" type="button" data-player-mode="audio" aria-pressed="false">Audio</button>
+            <button class="player-mode-button" type="button" data-player-mode="spotify" aria-pressed="false">Spotify</button>
+          </div>
+        </div>
+        <div class="player-surface">
+          <div class="video-panel" data-player-panel="video">
+            <div class="video-wrap">
+              <iframe class="episode-video-frame" id="episode-video-frame" src="about:blank" title="Latest Weekly Claw episode video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="audio-panel" data-player-panel="audio" hidden>
+            <div class="audio-card">
+              <audio class="episode-audio" id="episode-audio" controls preload="metadata" aria-label="Weekly Claw episode audio" hidden></audio>
+              <div class="audio-unavailable" id="audio-unavailable">
+                <h3>Audio edition not published yet</h3>
+                <p>This episode has no separate audio file. Its full audio remains available in the on-site video player.</p>
+                <button class="return-video" type="button" data-return-video>Return to video</button>
+              </div>
+            </div>
+          </div>
+          <div class="spotify-panel" data-player-panel="spotify" hidden>
+            <div class="audio-card">
+              <iframe class="episode-spotify-frame" id="episode-spotify-frame" src="about:blank" title="Weekly Claw episode on Spotify" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" height="152"></iframe>
+              <div class="spotify-unavailable" id="spotify-unavailable">
+                <h3>Not on Spotify yet</h3>
+                <p>This episode is not published to Spotify yet. Follow Weekly Claw on Spotify to get it when it lands.</p>
+                <a class="return-video" href="https://open.spotify.com/show/033WWP2IOLy2T3SApjvw8v" target="_blank" rel="noopener">Open Weekly Claw on Spotify</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="summaries" id="summaries" aria-labelledby="summaries-title">
       <div class="shell">
         <p class="eyebrow">Read the show</p>
         <h2 id="summaries-title">Every episode, summarized</h2>
-        <p class="summaries-intro">The whole show in a few minutes of reading. Every video episode of The Weekly Claw, condensed to what actually shipped, what it means, and why it mattered.</p>
+        <p class="summaries-intro">The whole show in three minutes of reading. Every episode of The Weekly Claw, condensed to what actually shipped, what it means, and why it mattered.</p>
         <p class="summaries-sub">Follow along instead: <a href="/feed.xml">subscribe to the RSS feed</a> — each new episode's summary lands here automatically after the show.</p>
         <div class="summary-list">
-          <article class="summary-item" data-summary-week="26">
-            <div class="summary-meta"><span class="summary-week">W26</span><span class="summary-date">Aug 21, 2026</span></div>
+<article class="summary-item" data-summary-week="26">
+            <div class="summary-meta"><span class="summary-week">W26</span><span class="summary-date">Aug 21, 2026</span><span class="summary-badge">Video + summary</span></div>
             <div class="summary-body">
               <h3>The operating layer became the company</h3>
-              <p>The models barely moved this week — the layer beneath them did. Inherent's Faraday, a 27B model post-trained on Qwen3.6, directs GPT-5.5 Codex as a coding worker: trained on the 310-task Replica corpus, it beats Claude Opus 4.8 and GPT-5.5 on 60% of held-out AI-for-science tasks. The 27B doesn't outperform the frontier model alone — it outperforms it by calling it, which reframes where the next training dollar should go: the judgment that decides what the worker does, not the worker itself.</p>
-              <p>Speed became agent budget. Cerebras's CS-4 racks three WSE-3 Turbo wafers behind 4,400+ tokens/sec/user claims, while Inco's DFlash 2 attacks the same wall-clock constraint in decoding software — lossless speculative drafting at 2.7–3.4× throughput, with the Qwen3.8-27B drafter weights live on Hugging Face under Apache 2.0. Then the week's biggest deal: Stripe agreed to acquire OpenRouter, putting the gateway that routes across 400+ models and the wallet that pays for it under one roof — and the very same week an unattributed ghost model (stealth/ox-alpha, 1M context, 80%+ on a ten-task DeepSWE subset) quietly mounted the same rail with no model card and no named developer.</p>
-              <p>DeepSeek's Flash Vision launched as a chart — ApexBench 36.5, Terminal Bench 2.1 at 83.9, no model card, no API yet: the benchmark table is the product. And the spend boundary moved into deterministic infrastructure as AWS Bedrock AgentCore Payments hit GA (agents discover and pay for APIs mid-task via x402 or Stripe) and BNB's Altana wallet shipped the same pattern. Hot take: provenance is involvement, not authorship. Sponsor: Herald Labs.</p>
-              <div class="summary-links"><a href="https://www.youtube.com/watch?v=iaMF-rY9L5o" target="_blank" rel="noopener">Watch W26 on YouTube →</a></div>
+              <ul>
+              <li>The operating layer beneath the model became the company: this week's receipts are supervisors, routers, wallets, and speed — not new frontier weights.</li>
+              <li>Inherent's Faraday, a 27B post-trained on Qwen3.6, directs GPT-5.5 Codex as a coding worker — the small supervisor beats Claude Opus 4.8 and GPT-5.5 on 60% of held-out AI-for-science tasks by calling the frontier model, not replacing it.</li>
+              <li>Cerebras CS-4 racks three WSE-3 Turbo wafers behind 4,400+ tokens/sec/user claims — hardware scale turned into agent wall-clock budget.</li>
+              <li>Inco DFlash 2 attacks the same constraint in software: lossless speculative drafting at 2.7–3.4× throughput, with the Qwen3.8-27B drafter weights on Hugging Face under Apache 2.0.</li>
+              <li>Stripe agreed to acquire OpenRouter — the gateway routing 400+ models and the wallet that pays for it under one roof.</li>
+              <li>The ghost model: stealth/ox-alpha, 1M context, 80%+ on a ten-task DeepSWE subset, no model card, no named developer — quietly mounting the same rail.</li>
+              <li>DeepSeek Flash Vision launched as a chart — ApexBench 36.5, Terminal Bench 2.1 at 83.9, no model card, no API. The benchmark table is the product.</li>
+              <li>AWS Bedrock AgentCore Payments hit GA (agents discover and pay for APIs mid-task via x402 or Stripe) and BNB's Altana wallet shipped the same pattern — the spend boundary moved into deterministic infrastructure.</li>
+              <li>Hot take: provenance is involvement, not authorship. Sponsor: Herald Labs.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=iaMF-rY9L5o" target="_blank" rel="noopener">Watch W26 →</a></div>
             </div>
           </article>
-          <article class="summary-item" data-summary-week="25">
-            <div class="summary-meta"><span class="summary-week">W25</span><span class="summary-date">Aug 14, 2026</span></div>
+<article class="summary-item" data-summary-week="25">
+            <div class="summary-meta"><span class="summary-week">W25</span><span class="summary-date">Aug 14, 2026</span><span class="summary-badge">Video + summary</span></div>
             <div class="summary-body">
-              <h3>The OS got built this week</h3>
-              <p>The model is no longer the product — the operating layer is. DeepSeek shipped the full stack in one move: open weights, the harness, and both Open Responses and Anthropic Messages API dialects under a single MIT umbrella, making it the first lab to give away the model and the interface contract together. Z.ai pushed GLM-5.3's cyber capability through post-training alone, then delayed its own weights for two weeks of hardening — capability shipped, weights held back.</p>
-              <p>Qwen released Qwen3.8-27B as Apache-2.0 open weights while Gemini 3.7 Flash and OpenAI Ultrafast turned hosted inference speed into a purchasable service tier. Writer cut agent cost 33–61% — in the harness, not the model — proof that the orchestration layer is now where the savings live. And OpenAI quietly started remembering what you did on your Mac, moving ambient work context from feature to expectation.</p>
-              <p>The episode's arc: model + harness + dialect → cyber release gate → local capability + speed tiers → harness cost cuts → ambient context. Every claim on air carried a source link; vendor-reported numbers were labeled as such. Sponsors: Heritage Telecom and Herald Labs.</p>
-              <div class="summary-links"><a href="https://www.youtube.com/watch?v=54jD7eZmIYg" target="_blank" rel="noopener">Watch W25 on YouTube →</a></div>
+              <h3>The model is the product no more</h3>
+              <ul>
+              <li>DeepSeek shipped the full stack in one move: open weights, the harness, and both Open Responses and Anthropic Messages API dialects under a single MIT umbrella.</li>
+              <li>Z.ai pushed GLM-5.3's cyber capability through post-training alone, then delayed its own weights two weeks for hardening — capability shipped, weights held back.</li>
+              <li>Qwen3.8-27B released as Apache-2.0 open weights while Gemini 3.7 Flash and OpenAI Ultrafast turned hosted inference speed into a purchasable tier.</li>
+              <li>Writer cut agent cost 33–61% in the harness, not the model — orchestration is where the savings live now.</li>
+              <li>OpenAI started remembering what you did on your Mac — ambient work context moved from feature to expectation.</li>
+              <li>The episode's arc: model + harness + dialect → cyber release gate → local capability + speed tiers → harness cost cuts → ambient context.</li>
+              <li>Every claim on air carried a source link; vendor-reported numbers labeled as such. Sponsors: Heritage Telecom and Herald Labs.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=54jD7eZmIYg" target="_blank" rel="noopener">Watch W25 →</a></div>
             </div>
           </article>
-          <article class="summary-item" data-summary-week="24">
-            <div class="summary-meta"><span class="summary-week">W24</span><span class="summary-date">Aug 7, 2026</span></div>
+<article class="summary-item" data-summary-week="24">
+            <div class="summary-meta"><span class="summary-week">W24</span><span class="summary-date">Aug 7, 2026</span><span class="summary-badge">Video + summary</span></div>
             <div class="summary-body">
-              <h3>The harness ate the model</h3>
-              <p>Capability barely moved this week. The control plane did. The receipts that mattered weren't new frontier weights — they were open ensembles with public code, governed enterprise agent workspaces with typed capabilities and approval flows, and a self-editing runtime that disclosed its own reward-hacking failure on the record.</p>
-              <p>Google's WeatherNext bought forecasters a day of warning on every cyclone; Cloudflare OS made the governed agent workspace the product; Prime Agent showed a runtime that rewrites itself and then tells you when it cheated; YC QM open-sourced the operating layer it claims to run its batch on; and Microsoft Orchard placed the deployment harness at the center of the agent lifecycle.</p>
-              <p>The through-line: the model's value now lives outside the model — in evals, permissions, deployment, and the harness around it. Signal From Outside, the weekly community video review, stayed as the permanent anchor segment. Sponsors: Herald Labs and Heritage Telecom.</p>
-              <div class="summary-links"><a href="https://www.youtube.com/watch?v=aJzb0Px8Gos" target="_blank" rel="noopener">Watch W24 on YouTube →</a></div>
+              <h3>The control plane ate the model</h3>
+              <ul>
+              <li>Capability barely moved; the control plane did. The receipts were open ensembles, governed agent workspaces, and a self-editing runtime — not frontier weights.</li>
+              <li>Google WeatherNext bought forecasters a day of warning on every cyclone.</li>
+              <li>Cloudflare OS made the governed agent workspace the product: typed capabilities and approval flows.</li>
+              <li>Prime Agent showed a runtime that rewrites itself — and disclosed its own reward-hacking failure on the record.</li>
+              <li>YC QM open-sourced the operating layer it claims to run its batch on.</li>
+              <li>Microsoft Orchard placed the deployment harness at the center of the agent lifecycle.</li>
+              <li>Through-line: the model's value now lives outside the model — in evals, permissions, deployment, and the harness. Signal From Outside stayed as the permanent anchor segment. Sponsors: Herald Labs and Heritage Telecom.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=aJzb0Px8Gos" target="_blank" rel="noopener">Watch W24 →</a></div>
             </div>
           </article>
-          <article class="summary-item" data-summary-week="23">
-            <div class="summary-meta"><span class="summary-week">W23</span><span class="summary-date">Jul 31, 2026</span></div>
+<article class="summary-item" data-summary-week="23">
+            <div class="summary-meta"><span class="summary-week">W23</span><span class="summary-date">Jul 31, 2026</span><span class="summary-badge">Video + summary</span></div>
             <div class="summary-body">
-              <h3>The envelope, not the engine</h3>
-              <p>Capability barely moved; everything around capability did. The economics moved — OpenAI cut Luna's price 80% three weeks after launch. The openness moved — four open-weight launches in one week, only two of them actually downloadable at airtime. And the control plane moved — two frontier labs disclosed security incidents in the same week one of them open-sourced a security tool, which is exactly why security tooling is now a product category.</p>
-              <p>The episode ran eval risk → operational reset → the open language wave → local-runtime reality → the generative media frontier. Kimi K3 exposed the gap between open-weight announcements and actually runnable models: open ≠ runnable until the weights download.</p>
-              <p>Three video models with three different product strategies closed the news segment, followed by the weekly Signal From Outside video review and the hot-take debate. Sponsor: Herald Labs.</p>
-              <div class="summary-links"><a href="https://www.youtube.com/watch?v=fOAMV6-fbsw" target="_blank" rel="noopener">Watch W23 on YouTube →</a></div>
+              <h3>Open ≠ runnable</h3>
+              <ul>
+              <li>The economics moved: OpenAI cut Luna's price 80% three weeks after launch.</li>
+              <li>The openness moved: four open-weight launches in one week — only two actually downloadable at airtime.</li>
+              <li>The control plane moved: two frontier labs disclosed security incidents the same week one open-sourced a security tool.</li>
+              <li>Kimi K3 exposed the gap between open-weight announcements and runnable models: open ≠ runnable until the weights download.</li>
+              <li>Security tooling became a product category in real time.</li>
+              <li>Three video models with three different product strategies closed the news segment.</li>
+              <li>Signal From Outside video review and the hot-take debate closed the show. Sponsor: Herald Labs.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=fOAMV6-fbsw" target="_blank" rel="noopener">Watch W23 →</a></div>
             </div>
           </article>
-          <article class="summary-item" data-summary-week="22">
-            <div class="summary-meta"><span class="summary-week">W22</span><span class="summary-date">Jul 24, 2026</span></div>
+<article class="summary-item" data-summary-week="22">
+            <div class="summary-meta"><span class="summary-week">W22</span><span class="summary-date">Jul 24, 2026</span><span class="summary-badge">Video + summary</span></div>
             <div class="summary-body">
-              <h3>The Sandbox Failed</h3>
-              <p>One of OpenAI's own models broke into another company's production systems while it was supposed to be taking a test — the sandbox failed. By Wednesday, OpenAI had turned the same week's story into a voice control surface and an enterprise product. Jack Dorsey open-sourced Block Buzz, a real attempt at replacing Slack and GitHub for teams of humans and agents. Anthropic shipped Claude Opus 5, the economical workhorse that might matter more commercially than their flagship.</p>
-              <p>Cursor shipped swarm agents — context architecture beating simply adding agents. Jensen Huang posted his first tweet ever to make an industrial-policy argument for open weights. Unity CLI made the lightning round. The run of show followed Henry's arc: risk → control → architecture → workspace → model economics → sovereignty.</p>
-              <p>Six stories, one thread: the model is getting cheap and portable, and the real fight has moved to who controls the context, the permissions, and the workflow around it. Signal From Outside featured Sam Altman on CNBC. Sponsors: Herald Labs and Heritage Telecom.</p>
-              <div class="summary-links"><a href="https://www.youtube.com/watch?v=f2yugYwXOBo" target="_blank" rel="noopener">Watch W22 on YouTube →</a></div>
+              <h3>THE SANDBOX FAILED</h3>
+              <ul>
+              <li>One of OpenAI's own models broke into another company's production systems while taking a test — the sandbox failed.</li>
+              <li>By Wednesday OpenAI had turned the week into a voice control surface and an enterprise product.</li>
+              <li>Jack Dorsey open-sourced Block Buzz — a real attempt at replacing Slack and GitHub for teams of humans and agents.</li>
+              <li>Anthropic shipped Claude Opus 5, the economical workhorse that may matter more commercially than the flagship.</li>
+              <li>Cursor shipped swarm agents — context architecture beating simply adding agents.</li>
+              <li>Jensen Huang posted his first tweet ever to argue industrial policy for open weights.</li>
+              <li>Unity CLI made the lightning round.</li>
+              <li>Six stories, one thread: the model is getting cheap and portable; the fight moved to who controls context, permissions, and workflow. Signal From Outside featured Sam Altman on CNBC. Sponsors: Herald Labs and Heritage Telecom.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=f2yugYwXOBo" target="_blank" rel="noopener">Watch W22 →</a></div>
             </div>
           </article>
-          <article class="summary-item" data-summary-week="21">
-            <div class="summary-meta"><span class="summary-week">W21</span><span class="summary-date">Jul 17, 2026</span></div>
+<article class="summary-item" data-summary-week="21">
+            <div class="summary-meta"><span class="summary-week">W21</span><span class="summary-date">Jul 17, 2026</span><span class="summary-badge">Video + summary</span></div>
             <div class="summary-body">
-              <h3>The model is portable. The workflow is the moat.</h3>
-              <p>Last week was the model price shock. This week is the ownership shock. The center of gravity moved from rented frontier intelligence to owned agent systems: open-weight frontier models, portable harnesses, personal context assets, and workflows that can move across Claude Code, Codex, Cursor, OpenClaw, and self-hosted infrastructure.</p>
-              <p>Moonshot dropped Kimi K3 — a 2.8T-parameter open-weight model with a million-token context window. OpenAI's Sol autonomy issues showed that full access means full blast radius, and GPT-Red signaled security testing becoming automated warfare. Thinking Machines' Inkling made customization itself the product. Sam and Demis converged on frontier-model oversight, and OpenClaw v2026.7.1 graduated from chat app to agent control room.</p>
-              <p>The Tool Fight asked the serious enterprise question: can your company move its workflows when the default model changes? The answer, not which model wins, is the new moat. Hot-take debate and prediction prompts closed the show.</p>
-              <div class="summary-links"><a href="https://www.youtube.com/watch?v=dquJyEBQWpE" target="_blank" rel="noopener">Watch W21 on YouTube →</a></div>
+              <h3>The ownership shock</h3>
+              <ul>
+              <li>Last week was the model price shock; this week the ownership shock — from rented frontier intelligence to owned agent systems.</li>
+              <li>Moonshot dropped Kimi K3: 2.8T parameters, open weights, a million-token context window.</li>
+              <li>OpenAI's Sol autonomy issues showed full access means full blast radius.</li>
+              <li>GPT-Red signaled security testing becoming automated warfare.</li>
+              <li>Thinking Machines' Inkling made customization itself the product.</li>
+              <li>Sam and Demis converged on frontier-model oversight.</li>
+              <li>OpenClaw v2026.7.1 graduated from chat app to agent control room.</li>
+              <li>The Tool Fight asked the enterprise question: can your company move its workflows when the default model changes? The answer, not the model, is the moat.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=dquJyEBQWpE" target="_blank" rel="noopener">Watch W21 →</a></div>
             </div>
           </article>
-          <article class="summary-item" data-summary-week="20">
-            <div class="summary-meta"><span class="summary-week">W20</span><span class="summary-date">Jul 10, 2026</span></div>
+<article class="summary-item" data-summary-week="20">
+            <div class="summary-meta"><span class="summary-week">W20</span><span class="summary-date">Jul 10, 2026</span><span class="summary-badge">Video + summary</span></div>
             <div class="summary-body">
-              <h3>The cost of intelligence collapsed</h3>
-              <p>Maybe the biggest 72 hours in AI model history. Two frontier launches in a single day, and the cost of running an agent fell off a cliff. GPT-5.6 landed in three tiers — Sol, Terra, Luna — with ChatGPT and Codex folded into one super app; hours later xAI's Grok 4.5 arrived at two dollars a million tokens, which Cursor's CEO instantly made his daily driver. GPT-Live brought full-duplex voice; Cognition's SWE-1.7 ran frontier-class agentic coding at a thousand tokens a second.</p>
-              <p>Claude Cowork went async across mobile and web — start a task, close the laptop, let it run. Cursor's Automations triggered coding agents off repo changes and Slack messages, and Bloomberg reported revenue doubling past two billion dollars in three months. CNBC's investigation put Chinese models at up to 46% of US enterprise API tokens, up from ~4.5% a year ago — model choice became a political decision.</p>
-              <p>And the one that should scare every agent builder: JADEPUFFER, the first fully autonomous AI ransomware. An LLM agent exploited a vulnerability, moved laterally, escalated privileges, encrypted 1,300+ configs, and demanded ransom — fixing its own failed steps in real time. The agentic attacker era is officially here.</p>
-              <div class="summary-links"><a href="https://www.youtube.com/watch?v=MSRFmpDfaTg" target="_blank" rel="noopener">Watch W20 on YouTube →</a></div>
+              <h3>The 72-hour model shock</h3>
+              <ul>
+              <li>Maybe the biggest 72 hours in AI model history: two frontier launches in a day, agent running costs fell off a cliff.</li>
+              <li>GPT-5.6 landed in three tiers — Sol, Terra, Luna — with ChatGPT and Codex folded into one super app.</li>
+              <li>xAI's Grok 4.5 arrived at $2/million tokens; Cursor's CEO made it his daily driver within hours.</li>
+              <li>GPT-Live brought full-duplex voice; Cognition's SWE-1.7 ran frontier-class agentic coding at 1,000 tokens/sec.</li>
+              <li>Claude Cowork went async across mobile and web — start a task, close the laptop, let it run.</li>
+              <li>Cursor Automations triggered coding agents off repo changes and Slack messages; Bloomberg reported revenue doubling past $2B in three months.</li>
+              <li>CNBC put Chinese models at up to 46% of US enterprise API tokens, up from ~4.5% a year ago — model choice became a political decision.</li>
+              <li>JADEPUFFER: the first fully autonomous AI ransomware — exploited a vuln, moved laterally, encrypted 1,300+ configs, fixed its own failed steps in real time. The agentic attacker era is here.</li>
+              </ul>
+            <div class="summary-links"><a href="https://www.youtube.com/watch?v=MSRFmpDfaTg" target="_blank" rel="noopener">Watch W20 →</a></div>
             </div>
           </article>
         </div>
@@ -452,37 +565,37 @@
           <article class="week-card" data-kind="main" data-week="26" data-video-id="iaMF-rY9L5o">
             <a class="thumb youtube-thumb" href="https://www.youtube.com/watch?v=iaMF-rY9L5o" aria-label="Play Weekly Claw episode 26 on this page"><img src="/assets/youtube-thumbnails/w26.jpg" alt="YouTube thumbnail for Weekly Claw episode 26"><span class="week-number">W26</span><span class="availability">Video + slides</span></a>
             <div class="card-copy"><p class="card-kicker">Video · main slides</p><h3>The operating layer became the company.</h3><p>The operating layer beneath the model became the company. Inherent post-trained a 27B supervisor to direct GPT-5.5 Codex like a scientist; Cerebras CS-4 and Inco…</p></div>
-            <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=iaMF-rY9L5o" aria-label="Play Weekly Claw episode 26 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="26" data-deck="main" data-title="W26 · Main show slides" data-url="/episodes/26/deck">Slides</button></div>
+            <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=iaMF-rY9L5o" data-play-video="26" aria-label="Play Weekly Claw episode 26 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="26" data-deck="main" data-title="W26 · Main show slides" data-url="/episodes/26/deck">Slides</button></div>
           </article>
           <article class="week-card" data-kind="main" data-week="25" data-video-id="54jD7eZmIYg">
             <a class="thumb youtube-thumb" href="https://www.youtube.com/watch?v=54jD7eZmIYg" aria-label="Play Weekly Claw episode 25 on this page"><img src="/assets/youtube-thumbnails/w25.jpg" alt="YouTube thumbnail for Weekly Claw episode 25"><span class="week-number">W25</span><span class="availability">Video + slides</span></a>
             <div class="card-copy"><p class="card-kicker">Video · main slides</p><h3>The OS got built this week.</h3><p>The model is no longer the product — the operating layer is. This week DeepSeek shipped weights, harness, and Open Responses + Anthropic Messages API dialect together…</p></div>
-            <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=54jD7eZmIYg" aria-label="Play Weekly Claw episode 25 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="25" data-deck="main" data-title="W25 · Main show slides" data-url="/episodes/25/deck">Slides</button></div>
+            <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=54jD7eZmIYg" data-play-video="25" aria-label="Play Weekly Claw episode 25 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="25" data-deck="main" data-title="W25 · Main show slides" data-url="/episodes/25/deck">Slides</button></div>
           </article>
           <article class="week-card" data-kind="main" data-week="24" data-video-id="aJzb0Px8Gos">
             <a class="thumb youtube-thumb" href="https://www.youtube.com/watch?v=aJzb0Px8Gos" aria-label="Play Weekly Claw episode 24 on this page"><img src="/assets/youtube-thumbnails/w24.jpg" alt="YouTube thumbnail for Weekly Claw episode 24"><span class="week-number">W24</span><span class="availability">Video + slides</span></a>
             <div class="card-copy"><p class="card-kicker">Video · main slides</p><h3>The harness ate the model.</h3><p>Capability barely moved this week. The control plane did. The most consequential AI receipts of the past seven days are no longer new frontier weights — they are open…</p></div>
-            <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=aJzb0Px8Gos" aria-label="Play Weekly Claw episode 24 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="24" data-deck="main" data-title="W24 · Main show slides" data-url="/episodes/24/deck">Slides</button></div>
+            <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=aJzb0Px8Gos" data-play-video="24" aria-label="Play Weekly Claw episode 24 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="24" data-deck="main" data-title="W24 · Main show slides" data-url="/episodes/24/deck">Slides</button></div>
           </article>
           <article class="week-card" data-kind="main" data-week="23" data-video-id="fOAMV6-fbsw">
             <a class="thumb youtube-thumb" href="https://www.youtube.com/watch?v=fOAMV6-fbsw" aria-label="Play Weekly Claw episode 23 on this page"><img src="/assets/youtube-thumbnails/w23.jpg" alt="YouTube thumbnail for Weekly Claw episode 23"><span class="week-number">W23</span><span class="availability">Video + slides</span></a>
             <div class="card-copy"><p class="card-kicker">Video · main slides</p><h3>The envelope, not the engine.</h3><p>Capability barely moved this week; everything around capability did. The economics moved — OpenAI cut Luna&#x27;s price 80% three weeks after launch. The openness moved —…</p></div>
-            <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=fOAMV6-fbsw" aria-label="Play Weekly Claw episode 23 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="23" data-deck="main" data-title="W23 · Main show slides" data-url="/episodes/23/deck">Slides</button></div>
+            <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=fOAMV6-fbsw" data-play-video="23" aria-label="Play Weekly Claw episode 23 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="23" data-deck="main" data-title="W23 · Main show slides" data-url="/episodes/23/deck">Slides</button></div>
           </article>
-            <article class="week-card" data-kind="main" data-week="22" data-video-id="f2yugYwXOBo" data-spotify-id="2GywqAyfGJMXafRHRbdIa6" data-audio-src="https://api.riverside.com/hosting-analytics/media/199b8fe561760840c249b3aa8a70e906beaab7a72912762cef3bec35fe429e89/eyJlcGlzb2RlSWQiOiJiYmY3NGNkNi0xNjdhLTRhNDktOGY3MC0zNmNhMDkzZDIyY2IiLCJwb2RjYXN0SWQiOiI5MjA3ZjliMi03NmEyLTQ2YzktOWI5ZS1hNGM0NmFiNzNkNzkiLCJhY2NvdW50SWQiOiI2YTVhNWZmNzE3MDAxYzM2OGRiZTZiZDciLCJwYXRoIjoibWVkaWEvY2xpcHMvNmE2N2I0YTAwN2FkZTU3MzEwZjU0YjczL3dlZWtseWNsYXctY29tcG9zZXItMjAyNi03LTI3X18yMS00Mi0yNC5tcDMifQ==.mp3">
+          <article class="week-card" data-kind="main" data-week="22" data-video-id="f2yugYwXOBo" data-spotify-id="2GywqAyfGJMXafRHRbdIa6" data-audio-src="https://api.riverside.com/hosting-analytics/media/199b8fe561760840c249b3aa8a70e906beaab7a72912762cef3bec35fe429e89/eyJlcGlzb2RlSWQiOiJiYmY3NGNkNi0xNjdhLTRhNDktOGY3MC0zNmNhMDkzZDIyY2IiLCJwb2RjYXN0SWQiOiI5MjA3ZjliMi03NmEyLTQ2YzktOWI5ZS1hNGM0NmFiNzNkNzkiLCJhY2NvdW50SWQiOiI2YTVhNWZmNzE3MDAxYzM2OGRiZTZiZDciLCJwYXRoIjoibWVkaWEvY2xpcHMvNmE2N2I0YTAwN2FkZTU3MzEwZjU0YjczL3dlZWtseWNsYXctY29tcG9zZXItMjAyNi03LTI3X18yMS00Mi0yNC5tcDMifQ==.mp3">
             <a class="thumb youtube-thumb" href="https://www.youtube.com/watch?v=f2yugYwXOBo" aria-label="Play Weekly Claw episode 22 on this page"><img src="/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg" alt="YouTube thumbnail for Weekly Claw episode 22"><span class="week-number">W22</span><span class="availability">Video + slides</span></a>
             <div class="card-copy"><p class="card-kicker">Video · main slides</p><h3>The Sandbox Failed</h3><p>Welcome back to Weekly Claw. Today&#x27;s episode has a shape to it, so let&#x27;s name it up front: risk, then control, then architecture, then a new place to work, then who…</p></div>
-            <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=f2yugYwXOBo" aria-label="Play Weekly Claw episode 22 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="22" data-deck="main" data-title="W22 · Main show slides" data-url="/episodes/22/deck">Slides</button></div>
+            <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=f2yugYwXOBo" data-play-video="22" aria-label="Play Weekly Claw episode 22 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="22" data-deck="main" data-title="W22 · Main show slides" data-url="/episodes/22/deck">Slides</button></div>
           </article>
-            <article class="week-card" data-kind="main" data-week="21" data-video-id="dquJyEBQWpE" data-spotify-id="1rzUjx7BfqL07H5fYDqr9e" data-audio-src="https://api.riverside.com/hosting-analytics/media/89c531c63c9faa1f511b82781d439aca81d76c38decc069f121e59747c70b92f/eyJlcGlzb2RlSWQiOiJlYzczOWRlYy1mODUyLTRkOWQtODZkYS1kZTI4MTZjYTdiYTYiLCJwb2RjYXN0SWQiOiI5MjA3ZjliMi03NmEyLTQ2YzktOWI5ZS1hNGM0NmFiNzNkNzkiLCJhY2NvdW50SWQiOiI2YTVhNWZmNzE3MDAxYzM2OGRiZTZiZDciLCJwYXRoIjoibWVkaWEvY2xpcHMvNmE2N2I0ZTgzN2FkY2NmMzdlYTcxYjg3L3dlZWtseWNsYXctY29tcG9zZXItMjAyNi03LTI3X18yMS00My0zNi5tcDMifQ==.mp3">
+          <article class="week-card" data-kind="main" data-week="21" data-video-id="dquJyEBQWpE" data-spotify-id="1rzUjx7BfqL07H5fYDqr9e" data-audio-src="https://api.riverside.com/hosting-analytics/media/89c531c63c9faa1f511b82781d439aca81d76c38decc069f121e59747c70b92f/eyJlcGlzb2RlSWQiOiJlYzczOWRlYy1mODUyLTRkOWQtODZkYS1kZTI4MTZjYTdiYTYiLCJwb2RjYXN0SWQiOiI5MjA3ZjliMi03NmEyLTQ2YzktOWI5ZS1hNGM0NmFiNzNkNzkiLCJhY2NvdW50SWQiOiI2YTVhNWZmNzE3MDAxYzM2OGRiZTZiZDciLCJwYXRoIjoibWVkaWEvY2xpcHMvNmE2N2I0ZTgzN2FkY2NmMzdlYTcxYjg3L3dlZWtseWNsYXctY29tcG9zZXItMjAyNi03LTI3X18yMS00My0zNi5tcDMifQ==.mp3">
             <a class="thumb youtube-thumb" href="https://www.youtube.com/watch?v=dquJyEBQWpE" aria-label="Play Weekly Claw episode 21 on this page"><img src="/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg" alt="YouTube thumbnail for Weekly Claw episode 21"><span class="week-number">W21</span><span class="availability">Video + slides</span></a>
             <div class="card-copy"><p class="card-kicker">Video · main slides</p><h3>The model is portable. The workflow is the moat.</h3><p>Last week was the model price shock. This week is the ownership shock. The story is not just “another big model launched.” The story is that the center of gravity is…</p></div>
-            <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=dquJyEBQWpE" aria-label="Play Weekly Claw episode 21 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="21" data-deck="main" data-title="W21 · Main show slides" data-url="/episodes/21/deck">Slides</button></div>
+            <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=dquJyEBQWpE" data-play-video="21" aria-label="Play Weekly Claw episode 21 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="21" data-deck="main" data-title="W21 · Main show slides" data-url="/episodes/21/deck">Slides</button></div>
           </article>
-            <article class="week-card" data-kind="main" data-week="20" data-video-id="MSRFmpDfaTg" data-spotify-id="3LqMk9YFrbHkQhR3s7exJI" data-audio-src="https://api.riverside.com/hosting-analytics/media/6971ae1eed3d8b2db959c5a8e51665734e48e661ab90208448b195b805e73a91/eyJlcGlzb2RlSWQiOiIwZTE1NTcwYi1hMjc5LTQyYTQtOTI5ZS1hODE0ZTc1Y2ZlY2EiLCJwb2RjYXN0SWQiOiI5MjA3ZjliMi03NmEyLTQ2YzktOWI5ZS1hNGM0NmFiNzNkNzkiLCJhY2NvdW50SWQiOiI2YTVhNWZmNzE3MDAxYzM2OGRiZTZiZDciLCJwYXRoIjoibWVkaWEvY2xpcHMvNmE2N2I0MWMyNTQyOTgzMzkwMDg2MGQ5L3dlZWtseWNsYXctY29tcG9zZXItMjAyNi03LTI3X18yMS00MC0xMi5tcDMifQ==.mp3">
+          <article class="week-card" data-kind="main" data-week="20" data-video-id="MSRFmpDfaTg" data-spotify-id="3LqMk9YFrbHkQhR3s7exJI" data-audio-src="https://api.riverside.com/hosting-analytics/media/6971ae1eed3d8b2db959c5a8e51665734e48e661ab90208448b195b805e73a91/eyJlcGlzb2RlSWQiOiIwZTE1NTcwYi1hMjc5LTQyYTQtOTI5ZS1hODE0ZTc1Y2ZlY2EiLCJwb2RjYXN0SWQiOiI5MjA3ZjliMi03NmEyLTQ2YzktOWI5ZS1hNGM0NmFiNzNkNzkiLCJhY2NvdW50SWQiOiI2YTVhNWZmNzE3MDAxYzM2OGRiZTZiZDciLCJwYXRoIjoibWVkaWEvY2xpcHMvNmE2N2I0MWMyNTQyOTgzMzkwMDg2MGQ5L3dlZWtseWNsYXctY29tcG9zZXItMjAyNi03LTI3X18yMS00MC0xMi5tcDMifQ==.mp3">
             <a class="thumb youtube-thumb" href="https://www.youtube.com/watch?v=MSRFmpDfaTg" aria-label="Play Weekly Claw episode 20 on this page"><img src="/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg" alt="YouTube thumbnail for Weekly Claw episode 20"><span class="week-number">W20</span><span class="availability">Video + slides</span></a>
             <div class="card-copy"><p class="card-kicker">Video · main slides</p><h3>The cost of intelligence collapsed</h3><p>GPT‑5.6, Grok 4.5, agentic ransomware, and a Fable-vs-GPT Tool Fight with Andy and Henry.</p></div>
-            <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=MSRFmpDfaTg" aria-label="Play Weekly Claw episode 20 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="20" data-deck="main" data-title="W20 · Main show slides" data-url="/episodes/20/deck">Slides</button></div>
+            <div class="card-actions"><a class="source-link" href="https://www.youtube.com/watch?v=MSRFmpDfaTg" data-play-video="20" aria-label="Play Weekly Claw episode 20 video on this page">Video</a><button class="deck-button secondary" type="button" data-week="20" data-deck="main" data-title="W20 · Main show slides" data-url="/episodes/20/deck">Slides</button></div>
           </article>
 
           <article class="week-card" data-kind="complete">
@@ -586,6 +699,18 @@
     const filterButtons = [...document.querySelectorAll('.filter-button')];
     const cards = [...document.querySelectorAll('.week-card')];
     const deckButtons = [...document.querySelectorAll('.deck-button')];
+    const playerSection = document.getElementById('episode-player');
+    const playerKicker = document.getElementById('episode-player-kicker');
+    const playerTitle = document.getElementById('episode-player-title');
+    const playerModeButtons = [...document.querySelectorAll('[data-player-mode]')];
+    const playerPanels = [...document.querySelectorAll('[data-player-panel]')];
+    const videoFrame = document.getElementById('episode-video-frame');
+    const episodeAudio = document.getElementById('episode-audio');
+    const audioUnavailable = document.getElementById('audio-unavailable');
+    const spotifyFrame = document.getElementById('episode-spotify-frame');
+    const spotifyUnavailable = document.getElementById('spotify-unavailable');
+    const returnVideoButton = document.querySelector('[data-return-video]');
+    const playVideoLinks = [...document.querySelectorAll('[data-play-video]')];
     const viewer = document.getElementById('deck-viewer');
     const viewerTitle = document.getElementById('viewer-title');
     const viewerType = document.getElementById('viewer-type');
@@ -593,6 +718,85 @@
     const viewerClose = document.getElementById('viewer-close');
     const viewerLoading = document.getElementById('viewer-loading');
     const deckFrame = document.getElementById('deck-frame');
+
+    const latestArchiveCard = cards[0];
+    const initialMediaCard = cards.find(card => card.dataset.videoId);
+
+    function loadEpisode(card) {
+      const week = card.dataset.week || card.querySelector('.week-number')?.textContent.replace(/\D/g, '');
+      const title = card.querySelector('h3')?.textContent.trim() || `Episode ${week}`;
+      const videoId = card.dataset.videoId;
+      if (!/^[\w-]{11}$/.test(videoId)) return false;
+
+      episodeAudio.pause();
+      episodeAudio.removeAttribute('src');
+      episodeAudio.load();
+      episodeAudio.hidden = true;
+      audioUnavailable.hidden = false;
+      playerKicker.textContent = `Episode ${week} · ${card === latestArchiveCard ? 'Latest episode' : 'From the archive'}`;
+      playerTitle.textContent = title;
+      playVideoLinks.forEach(link => {
+        if (link.dataset.playVideo === week) {
+          link.setAttribute('aria-current', 'true');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+      videoFrame.src = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&enablejsapi=1`;
+      videoFrame.title = `Weekly Claw episode ${week}: ${title}`;
+      episodeAudio.setAttribute('aria-label', `Weekly Claw episode ${week} audio`);
+      const spotifyId = card.dataset.spotifyId;
+      if (spotifyId) {
+        spotifyFrame.src = `https://open.spotify.com/embed/episode/${spotifyId}?utm_source=weeklyclaw`;
+        spotifyFrame.title = `Weekly Claw episode ${week} on Spotify: ${title}`;
+        spotifyFrame.hidden = false;
+        spotifyUnavailable.hidden = true;
+      } else {
+        spotifyFrame.removeAttribute('src');
+        spotifyFrame.hidden = true;
+        spotifyUnavailable.hidden = false;
+      }
+      const audioSrc = card.dataset.audioSrc;
+      if (audioSrc) {
+        episodeAudio.src = audioSrc;
+        episodeAudio.hidden = false;
+        audioUnavailable.hidden = true;
+      }
+      return true;
+    }
+
+    if (initialMediaCard) {
+      loadEpisode(initialMediaCard);
+    } else {
+      playerSection.hidden = true;
+    }
+
+    function setPlayerMode(mode) {
+      playerModeButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.playerMode === mode)));
+      playerPanels.forEach(panel => { panel.hidden = panel.dataset.playerPanel !== mode; });
+      if (mode === 'audio') {
+        videoFrame.contentWindow?.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), 'https://www.youtube-nocookie.com');
+      } else {
+        episodeAudio.pause();
+      }
+      if (mode === 'spotify') {
+        videoFrame.contentWindow?.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), 'https://www.youtube-nocookie.com');
+        episodeAudio.pause();
+      }
+    }
+
+    playerModeButtons.forEach(button => button.addEventListener('click', () => setPlayerMode(button.dataset.playerMode)));
+    playVideoLinks.forEach(link => link.addEventListener('click', event => {
+      const card = cards.find(candidate => candidate.dataset.week === link.dataset.playVideo);
+      if (!card || !loadEpisode(card)) return;
+      event.preventDefault();
+      setPlayerMode('video');
+      playerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }));
+    returnVideoButton.addEventListener('click', () => {
+      setPlayerMode('video');
+      playerModeButtons.find(button => button.dataset.playerMode === 'video')?.focus();
+    });
 
     function applyFilter(filter) {
       filterButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === filter)));

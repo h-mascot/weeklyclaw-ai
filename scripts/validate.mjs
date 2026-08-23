@@ -226,15 +226,8 @@ if (episodesJson.episodes.length !== 7) {
   process.exit(1);
 }
 for (const episode of episodesJson.episodes) {
-  if (!episode.videoId || !Array.isArray(episode.summaryParagraphs) || episode.summaryParagraphs.length < 2) {
-    console.error(`episodes.json entry for W${episode.week} is incomplete (need videoId and 2+ summary paragraphs)`);
-    process.exit(1);
-  }
-}
-// The on-page episode player embed was removed (2026-08-23): videos open on YouTube.
-for (const marker of ['class="episode-player"', 'data-play-video', 'https://www.youtube-nocookie.com/embed/', 'loadEpisode']) {
-  if (episodesHtml.includes(marker)) {
-    console.error(`Episodes index still contains removed player machinery: ${marker}`);
+  if (!episode.videoId || !Array.isArray(episode.summary) || episode.summary.length < 5) {
+    console.error(`episodes.json entry for W${episode.week} is incomplete (need videoId and 5+ summary topics)`);
     process.exit(1);
   }
 }

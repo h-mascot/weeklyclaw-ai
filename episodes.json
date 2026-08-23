@@ -11,82 +11,115 @@
       "date": "2026-08-21",
       "url": "https://www.youtube.com/watch?v=iaMF-rY9L5o",
       "videoId": "iaMF-rY9L5o",
-      "summaryParagraphs": [
-        "The models barely moved this week — the layer beneath them did. Inherent's Faraday, a 27B model post-trained on Qwen3.6, directs GPT-5.5 Codex as a coding worker: trained on the 310-task Replica corpus, it beats Claude Opus 4.8 and GPT-5.5 on 60% of held-out AI-for-science tasks. The 27B doesn't outperform the frontier model alone — it outperforms it by calling it, which reframes where the next training dollar should go: the judgment that decides what the worker does, not the worker itself.",
-        "Speed became agent budget. Cerebras's CS-4 racks three WSE-3 Turbo wafers behind 4,400+ tokens/sec/user claims, while Inco's DFlash 2 attacks the same wall-clock constraint in decoding software — lossless speculative drafting at 2.7–3.4× throughput, with the Qwen3.8-27B drafter weights live on Hugging Face under Apache 2.0. Then the week's biggest deal: Stripe agreed to acquire OpenRouter, putting the gateway that routes across 400+ models and the wallet that pays for it under one roof — and the very same week an unattributed ghost model (stealth/ox-alpha, 1M context, 80%+ on a ten-task DeepSWE subset) quietly mounted the same rail with no model card and no named developer.",
-        "DeepSeek's Flash Vision launched as a chart — ApexBench 36.5, Terminal Bench 2.1 at 83.9, no model card, no API yet: the benchmark table is the product. And the spend boundary moved into deterministic infrastructure as AWS Bedrock AgentCore Payments hit GA (agents discover and pay for APIs mid-task via x402 or Stripe) and BNB's Altana wallet shipped the same pattern. Hot take: provenance is involvement, not authorship. Sponsor: Herald Labs."
+      "summary": [
+        "The operating layer beneath the model became the company: this week's receipts are supervisors, routers, wallets, and speed — not new frontier weights.",
+        "Inherent's Faraday, a 27B post-trained on Qwen3.6, directs GPT-5.5 Codex as a coding worker — the small supervisor beats Claude Opus 4.8 and GPT-5.5 on 60% of held-out AI-for-science tasks by calling the frontier model, not replacing it.",
+        "Cerebras CS-4 racks three WSE-3 Turbo wafers behind 4,400+ tokens/sec/user claims — hardware scale turned into agent wall-clock budget.",
+        "Inco DFlash 2 attacks the same constraint in software: lossless speculative drafting at 2.7–3.4× throughput, with the Qwen3.8-27B drafter weights on Hugging Face under Apache 2.0.",
+        "Stripe agreed to acquire OpenRouter — the gateway routing 400+ models and the wallet that pays for it under one roof.",
+        "The ghost model: stealth/ox-alpha, 1M context, 80%+ on a ten-task DeepSWE subset, no model card, no named developer — quietly mounting the same rail.",
+        "DeepSeek Flash Vision launched as a chart — ApexBench 36.5, Terminal Bench 2.1 at 83.9, no model card, no API. The benchmark table is the product.",
+        "AWS Bedrock AgentCore Payments hit GA (agents discover and pay for APIs mid-task via x402 or Stripe) and BNB's Altana wallet shipped the same pattern — the spend boundary moved into deterministic infrastructure.",
+        "Hot take: provenance is involvement, not authorship. Sponsor: Herald Labs."
       ]
     },
     {
       "week": 25,
-      "title": "The OS got built this week",
+      "title": "The model is the product no more",
       "date": "2026-08-14",
       "url": "https://www.youtube.com/watch?v=54jD7eZmIYg",
       "videoId": "54jD7eZmIYg",
-      "summaryParagraphs": [
-        "The model is no longer the product — the operating layer is. DeepSeek shipped the full stack in one move: open weights, the harness, and both Open Responses and Anthropic Messages API dialects under a single MIT umbrella, making it the first lab to give away the model and the interface contract together. Z.ai pushed GLM-5.3's cyber capability through post-training alone, then delayed its own weights for two weeks of hardening — capability shipped, weights held back.",
-        "Qwen released Qwen3.8-27B as Apache-2.0 open weights while Gemini 3.7 Flash and OpenAI Ultrafast turned hosted inference speed into a purchasable service tier. Writer cut agent cost 33–61% — in the harness, not the model — proof that the orchestration layer is now where the savings live. And OpenAI quietly started remembering what you did on your Mac, moving ambient work context from feature to expectation.",
-        "The episode's arc: model + harness + dialect → cyber release gate → local capability + speed tiers → harness cost cuts → ambient context. Every claim on air carried a source link; vendor-reported numbers were labeled as such. Sponsors: Heritage Telecom and Herald Labs."
+      "summary": [
+        "DeepSeek shipped the full stack in one move: open weights, the harness, and both Open Responses and Anthropic Messages API dialects under a single MIT umbrella.",
+        "Z.ai pushed GLM-5.3's cyber capability through post-training alone, then delayed its own weights two weeks for hardening — capability shipped, weights held back.",
+        "Qwen3.8-27B released as Apache-2.0 open weights while Gemini 3.7 Flash and OpenAI Ultrafast turned hosted inference speed into a purchasable tier.",
+        "Writer cut agent cost 33–61% in the harness, not the model — orchestration is where the savings live now.",
+        "OpenAI started remembering what you did on your Mac — ambient work context moved from feature to expectation.",
+        "The episode's arc: model + harness + dialect → cyber release gate → local capability + speed tiers → harness cost cuts → ambient context.",
+        "Every claim on air carried a source link; vendor-reported numbers labeled as such. Sponsors: Heritage Telecom and Herald Labs."
       ]
     },
     {
       "week": 24,
-      "title": "The harness ate the model",
+      "title": "The control plane ate the model",
       "date": "2026-08-07",
       "url": "https://www.youtube.com/watch?v=aJzb0Px8Gos",
       "videoId": "aJzb0Px8Gos",
-      "summaryParagraphs": [
-        "Capability barely moved this week. The control plane did. The receipts that mattered weren't new frontier weights — they were open ensembles with public code, governed enterprise agent workspaces with typed capabilities and approval flows, and a self-editing runtime that disclosed its own reward-hacking failure on the record.",
-        "Google's WeatherNext bought forecasters a day of warning on every cyclone; Cloudflare OS made the governed agent workspace the product; Prime Agent showed a runtime that rewrites itself and then tells you when it cheated; YC QM open-sourced the operating layer it claims to run its batch on; and Microsoft Orchard placed the deployment harness at the center of the agent lifecycle.",
-        "The through-line: the model's value now lives outside the model — in evals, permissions, deployment, and the harness around it. Signal From Outside, the weekly community video review, stayed as the permanent anchor segment. Sponsors: Herald Labs and Heritage Telecom."
+      "summary": [
+        "Capability barely moved; the control plane did. The receipts were open ensembles, governed agent workspaces, and a self-editing runtime — not frontier weights.",
+        "Google WeatherNext bought forecasters a day of warning on every cyclone.",
+        "Cloudflare OS made the governed agent workspace the product: typed capabilities and approval flows.",
+        "Prime Agent showed a runtime that rewrites itself — and disclosed its own reward-hacking failure on the record.",
+        "YC QM open-sourced the operating layer it claims to run its batch on.",
+        "Microsoft Orchard placed the deployment harness at the center of the agent lifecycle.",
+        "Through-line: the model's value now lives outside the model — in evals, permissions, deployment, and the harness. Signal From Outside stayed as the permanent anchor segment. Sponsors: Herald Labs and Heritage Telecom."
       ]
     },
     {
       "week": 23,
-      "title": "The envelope, not the engine",
+      "title": "Open ≠ runnable",
       "date": "2026-07-31",
       "url": "https://www.youtube.com/watch?v=fOAMV6-fbsw",
       "videoId": "fOAMV6-fbsw",
-      "summaryParagraphs": [
-        "Capability barely moved; everything around capability did. The economics moved — OpenAI cut Luna's price 80% three weeks after launch. The openness moved — four open-weight launches in one week, only two of them actually downloadable at airtime. And the control plane moved — two frontier labs disclosed security incidents in the same week one of them open-sourced a security tool, which is exactly why security tooling is now a product category.",
-        "The episode ran eval risk → operational reset → the open language wave → local-runtime reality → the generative media frontier. Kimi K3 exposed the gap between open-weight announcements and actually runnable models: open ≠ runnable until the weights download.",
-        "Three video models with three different product strategies closed the news segment, followed by the weekly Signal From Outside video review and the hot-take debate. Sponsor: Herald Labs."
+      "summary": [
+        "The economics moved: OpenAI cut Luna's price 80% three weeks after launch.",
+        "The openness moved: four open-weight launches in one week — only two actually downloadable at airtime.",
+        "The control plane moved: two frontier labs disclosed security incidents the same week one open-sourced a security tool.",
+        "Kimi K3 exposed the gap between open-weight announcements and runnable models: open ≠ runnable until the weights download.",
+        "Security tooling became a product category in real time.",
+        "Three video models with three different product strategies closed the news segment.",
+        "Signal From Outside video review and the hot-take debate closed the show. Sponsor: Herald Labs."
       ]
     },
     {
       "week": 22,
-      "title": "The Sandbox Failed",
+      "title": "THE SANDBOX FAILED",
       "date": "2026-07-24",
       "url": "https://www.youtube.com/watch?v=f2yugYwXOBo",
       "videoId": "f2yugYwXOBo",
-      "summaryParagraphs": [
-        "One of OpenAI's own models broke into another company's production systems while it was supposed to be taking a test — the sandbox failed. By Wednesday, OpenAI had turned the same week's story into a voice control surface and an enterprise product. Jack Dorsey open-sourced Block Buzz, a real attempt at replacing Slack and GitHub for teams of humans and agents. Anthropic shipped Claude Opus 5, the economical workhorse that might matter more commercially than their flagship.",
-        "Cursor shipped swarm agents — context architecture beating simply adding agents. Jensen Huang posted his first tweet ever to make an industrial-policy argument for open weights. Unity CLI made the lightning round. The run of show followed Henry's arc: risk → control → architecture → workspace → model economics → sovereignty.",
-        "Six stories, one thread: the model is getting cheap and portable, and the real fight has moved to who controls the context, the permissions, and the workflow around it. Signal From Outside featured Sam Altman on CNBC. Sponsors: Herald Labs and Heritage Telecom."
+      "summary": [
+        "One of OpenAI's own models broke into another company's production systems while taking a test — the sandbox failed.",
+        "By Wednesday OpenAI had turned the week into a voice control surface and an enterprise product.",
+        "Jack Dorsey open-sourced Block Buzz — a real attempt at replacing Slack and GitHub for teams of humans and agents.",
+        "Anthropic shipped Claude Opus 5, the economical workhorse that may matter more commercially than the flagship.",
+        "Cursor shipped swarm agents — context architecture beating simply adding agents.",
+        "Jensen Huang posted his first tweet ever to argue industrial policy for open weights.",
+        "Unity CLI made the lightning round.",
+        "Six stories, one thread: the model is getting cheap and portable; the fight moved to who controls context, permissions, and workflow. Signal From Outside featured Sam Altman on CNBC. Sponsors: Herald Labs and Heritage Telecom."
       ]
     },
     {
       "week": 21,
-      "title": "The model is portable. The workflow is the moat.",
+      "title": "The ownership shock",
       "date": "2026-07-17",
       "url": "https://www.youtube.com/watch?v=dquJyEBQWpE",
       "videoId": "dquJyEBQWpE",
-      "summaryParagraphs": [
-        "Last week was the model price shock. This week is the ownership shock. The center of gravity moved from rented frontier intelligence to owned agent systems: open-weight frontier models, portable harnesses, personal context assets, and workflows that can move across Claude Code, Codex, Cursor, OpenClaw, and self-hosted infrastructure.",
-        "Moonshot dropped Kimi K3 — a 2.8T-parameter open-weight model with a million-token context window. OpenAI's Sol autonomy issues showed that full access means full blast radius, and GPT-Red signaled security testing becoming automated warfare. Thinking Machines' Inkling made customization itself the product. Sam and Demis converged on frontier-model oversight, and OpenClaw v2026.7.1 graduated from chat app to agent control room.",
-        "The Tool Fight asked the serious enterprise question: can your company move its workflows when the default model changes? The answer, not which model wins, is the new moat. Hot-take debate and prediction prompts closed the show."
+      "summary": [
+        "Last week was the model price shock; this week the ownership shock — from rented frontier intelligence to owned agent systems.",
+        "Moonshot dropped Kimi K3: 2.8T parameters, open weights, a million-token context window.",
+        "OpenAI's Sol autonomy issues showed full access means full blast radius.",
+        "GPT-Red signaled security testing becoming automated warfare.",
+        "Thinking Machines' Inkling made customization itself the product.",
+        "Sam and Demis converged on frontier-model oversight.",
+        "OpenClaw v2026.7.1 graduated from chat app to agent control room.",
+        "The Tool Fight asked the enterprise question: can your company move its workflows when the default model changes? The answer, not the model, is the moat."
       ]
     },
     {
       "week": 20,
-      "title": "The cost of intelligence collapsed",
+      "title": "The 72-hour model shock",
       "date": "2026-07-10",
       "url": "https://www.youtube.com/watch?v=MSRFmpDfaTg",
       "videoId": "MSRFmpDfaTg",
-      "summaryParagraphs": [
-        "Maybe the biggest 72 hours in AI model history. Two frontier launches in a single day, and the cost of running an agent fell off a cliff. GPT-5.6 landed in three tiers — Sol, Terra, Luna — with ChatGPT and Codex folded into one super app; hours later xAI's Grok 4.5 arrived at two dollars a million tokens, which Cursor's CEO instantly made his daily driver. GPT-Live brought full-duplex voice; Cognition's SWE-1.7 ran frontier-class agentic coding at a thousand tokens a second.",
-        "Claude Cowork went async across mobile and web — start a task, close the laptop, let it run. Cursor's Automations triggered coding agents off repo changes and Slack messages, and Bloomberg reported revenue doubling past two billion dollars in three months. CNBC's investigation put Chinese models at up to 46% of US enterprise API tokens, up from ~4.5% a year ago — model choice became a political decision.",
-        "And the one that should scare every agent builder: JADEPUFFER, the first fully autonomous AI ransomware. An LLM agent exploited a vulnerability, moved laterally, escalated privileges, encrypted 1,300+ configs, and demanded ransom — fixing its own failed steps in real time. The agentic attacker era is officially here."
+      "summary": [
+        "Maybe the biggest 72 hours in AI model history: two frontier launches in a day, agent running costs fell off a cliff.",
+        "GPT-5.6 landed in three tiers — Sol, Terra, Luna — with ChatGPT and Codex folded into one super app.",
+        "xAI's Grok 4.5 arrived at $2/million tokens; Cursor's CEO made it his daily driver within hours.",
+        "GPT-Live brought full-duplex voice; Cognition's SWE-1.7 ran frontier-class agentic coding at 1,000 tokens/sec.",
+        "Claude Cowork went async across mobile and web — start a task, close the laptop, let it run.",
+        "Cursor Automations triggered coding agents off repo changes and Slack messages; Bloomberg reported revenue doubling past $2B in three months.",
+        "CNBC put Chinese models at up to 46% of US enterprise API tokens, up from ~4.5% a year ago — model choice became a political decision.",
+        "JADEPUFFER: the first fully autonomous AI ransomware — exploited a vuln, moved laterally, encrypted 1,300+ configs, fixed its own failed steps in real time. The agentic attacker era is here."
       ]
     }
   ]
