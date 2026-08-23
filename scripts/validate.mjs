@@ -236,11 +236,8 @@ const homepagePlayerMarkers = [
   'id="featured-player"',
   'aria-label="Featured episode player mode"',
   'data-featured-mode="video"',
-  'data-featured-mode="audio"',
   'data-featured-mode="spotify"',
   'id="featured-video-frame"',
-  'id="featured-audio"',
-  'id="featured-audio-unavailable"',
   'id="featured-spotify-frame"',
   'id="featured-spotify-unavailable"',
   'https://www.youtube-nocookie.com/embed/${featuredVideoId}',
@@ -255,6 +252,18 @@ for (const marker of homepagePlayerMarkers) {
     console.error(`Homepage missing Featured Episode player marker: ${marker}`);
     process.exit(1);
   }
+}
+if (html.includes('data-featured-mode="audio"') || html.includes('id="featured-audio"')) {
+  console.error('Homepage featured player must not expose the removed raw-audio mode');
+  process.exit(1);
+}
+if (episodesHtml.includes('data-player-mode="audio"') || episodesHtml.includes('id="episode-audio"')) {
+  console.error('Episodes page player must not expose the removed raw-audio mode');
+  process.exit(1);
+}
+if (!episodesHtml.includes('data-player-mode="spotify"')) {
+  console.error('Episodes page missing spotify player mode');
+  process.exit(1);
 }
 const featuredEpisode = html.match(/<div class="latest-card"[^>]*>/)?.[0] ?? '';
 const featuredVideoId = featuredEpisode.match(/data-video-id="([\w-]{11})"/)?.[1];
