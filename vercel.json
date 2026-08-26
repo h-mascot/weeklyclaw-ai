@@ -32,6 +32,17 @@
       ],
       "destination": "https://weeklyclaw.ai/:path*",
       "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.weeklyclaw.ai"
+        }
+      ],
+      "destination": "https://weeklyclaw.ai/",
+      "permanent": true
     }
   ]
 }
