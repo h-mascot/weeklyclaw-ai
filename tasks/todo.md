@@ -78,3 +78,28 @@
 - Codex review: accepted and fixed a hard-coded Episode 22 validation finding; the final pass reported no accepted/actionable findings.
 - ✅ Jeff Dean review: the audio URL remains on the existing Featured Episode record and is cleared by the normal sync when the latest episode advances, preventing stale media.
 - ✅ Luke W + Ryan Singer review: the Featured hierarchy has one clear player, the misleading slides action is gone, and the unavailable podcast platforms are visibly labeled “Soon” instead of behaving like broken links.
+
+# WeeklyClaw social promo thumbnails
+
+- [x] Inspect the thumbnail skill, verified host sources, and approved visual references.
+- [x] Build six distinct 1280×720 social promo cards.
+- [x] QA every card at full size and 160×90 for likeness, text, mark order, palette, and variation.
+- [x] Build and verify the six-card contact sheet.
+- [x] Attempt the requested OpenClaw completion event and record the remote gateway blocker.
+
+## Review
+
+- Source grounding: PASS — all faces are direct crops from the two verified source assets; no generated likenesses.
+- Participant count: PASS — both-host cards show two verified hosts; Henry cards show only the supplied Henry portrait.
+- Likeness quality: PASS — faces remain natural, flattering, large, and recognisable at full size and 160×90.
+- Headline accuracy: PASS — exact requested headline and subhead appear on all six cards.
+- Mark order and palette: PASS — red claw mark precedes `WEEKLY`; cream, near-black, and red system is consistent.
+- Badge containment: PASS — no episode badge was used for these social promos.
+- Variation: PASS — split portraits, portrait-led layouts, palette shifts, panel hierarchy, and urgent live treatments avoid template-copy repetition.
+- Mobile readability: PASS — all headlines remain readable in the rendered 160×90 QA grid.
+- Contact sheet: PASS — six 640×360 previews arranged in a 3×2, 1920×720 PNG.
+- Render verification: PASS — shell syntax is valid and exactly seven final PNGs are present.
+- Codex review: BLOCKED by the local sandbox (`failed to initialize in-process app-server client: Operation not permitted`); focused verification passed.
+- OpenClaw event: BLOCKED after two attempts by remote gateway closure `1006`; no destructive gateway restart was attempted.
+- ✅ Jeff Dean review: the output is reproducible from one focused renderer script and verified source assets, with no generated identity drift.
+- ✅ Luke W + Ryan Singer review: each card has one dominant claim, obvious urgency progression, strong mobile hierarchy, and readable 160×90 output.
