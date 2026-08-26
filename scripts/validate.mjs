@@ -45,7 +45,10 @@ const required = [
   'episodes/21/agenda.md',
   'episodes/21/agenda/index.html',
   'episodes/21/deck.html',
-  'w18/changelog/index.html', 'w19/changelog/index.html'];
+  'w18/changelog/index.html', 'w19/changelog/index.html',
+  'sitemap.xml',
+  'assets/og-image.jpg',
+];
 
 const weeks = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 for (const week of weeks) {
@@ -97,6 +100,11 @@ for (const needle of [
   'href="https://open.spotify.com/show/033WWP2IOLy2T3SApjvw8v"',
   'aria-label="Listen to Weekly Claw on Apple Podcasts"',
   'aria-label="Listen to Weekly Claw on Spotify"',
+  '<link rel="canonical" href="https://weeklyclaw.ai/">',
+  '<meta property="og:image" content="https://weeklyclaw.ai/assets/og-image.jpg">',
+  '<meta name="twitter:card" content="summary_large_image">',
+  'application/ld+json',
+  'PodcastSeries',
 ]) {
   if (!html.includes(needle)) {
     console.error(`Missing expected homepage copy: ${needle}`);
@@ -422,4 +430,39 @@ for (const source of ['/episodes/:episode/agenda', '/episodes/:episode/agenda.md
   }
 }
 
-console.log(`weeklyclaw-ai static validation passed (${weeks.length} changelog routes)`);
+console.log(`weeklyclaw-ai static validation passed (${weeks.length} changelog routes)`);// SEO integrity checks
+const seoPages = [
+  ['index.html', 'https://weeklyclaw.ai/'],
+  ['episodes/index.html', 'https://weeklyclaw.ai/episodes'],
+  ['feedback.html', 'https://weeklyclaw.ai/feedback'],
+  ['changelog/index.html', 'https://weeklyclaw.ai/changelog'],
+];
+for (const [f, canon] of seoPages) {
+  const h = readFileSync(new URL(`../${f}`, import.meta.url), 'utf8');
+  if (!h.includes(`<link rel="canonical" href="${canon}">`)) {
+    console.error(`${f} missing canonical ${canon}`);
+    process.exit(1);
+  }
+  if (!h.includes('og:image')) {
+    console.error(`${f} missing og:image`);
+    process.exit(1);
+  }
+  if (!h.includes('summary_large_image')) {
+    console.error(`${f} missing summary_large_image card`);
+    process.exit(1);
+  }
+}
+const sitemap = readFileSync(new URL('../sitemap.xml', import.meta.url), 'utf8');
+for (const route of ['https://weeklyclaw.ai/', 'https://weeklyclaw.ai/episodes', 'https://weeklyclaw.ai/feedback', 'https://weeklyclaw.ai/changelog', 'https://weeklyclaw.ai/w20/changelog']) {
+  if (!sitemap.includes(route)) {
+    console.error(`sitemap.xml missing ${route}`);
+    process.exit(1);
+  }
+}
+const vj = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
+if (!vj.redirects.some((r) => r.has && r.has.some((h) => h.value === 'www.weeklyclaw.ai'))) {
+  console.error('vercel.json missing www.weeklyclaw.ai redirect');
+  process.exit(1);
+}
+
+
