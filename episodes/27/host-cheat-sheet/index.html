@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Weekly Claw #27 Host Cheat Sheet</title><style>body{margin:0;font:18px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#24201c;background:#ece4d5}a{color:#2a7e6b}.shell{width:min(920px,calc(100% - 36px));margin-inline:auto}header,footer{padding:22px 0}nav{display:flex;justify-content:space-between;gap:16px;align-items:center}.wordmark{font-weight:800;text-transform:uppercase;text-decoration:none;color:#24201c}.button{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid #2a7e6b;border-radius:6px;background:#2a7e6b;color:#fff9ee;text-decoration:none;font-weight:700}.button.secondary{color:#24201c;background:transparent;border-color:#b5a996}.intro{padding:56px 0 32px;border-block:1px solid #b5a996}.eyebrow{margin:0 0 10px;color:#2a7e6b;font:700 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase}h1{margin:0;font-size:clamp(42px,8vw,78px);line-height:.9;letter-spacing:-.05em;text-transform:uppercase}article{padding:36px 0 70px}h2,h3,h4{line-height:1.05;margin-top:2em}p,li{max-width:78ch}code{background:rgba(36,32,28,.08);padding:.1em .3em;border-radius:4px}</style></head>
+<body><header><nav class="shell"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/27/deck">Open slides</a></div></nav></header><main class="shell"><section class="intro"><p class="eyebrow">Episode 27 · Host Cheat Sheet</p><h1>The agent owns the loop.</h1></section><article><h2>WeeklyClaw Episode 27 — Host Cheat Sheet (rev2)</h2>
+<p><strong>Show:</strong> Friday 2026-08-28, 4:00 PM ET · <strong>Hosts:</strong> @AndyML + @HiM · <strong>Sponsor order:</strong> Heritage → Herald (rev2 inversion of Ep 26).</p>
+<p><strong>Deck:</strong> <code>deck.rev2.html</code> · 13 slides · render at 1600x900 · validate via <code>validate_deck.py</code> against Ep 26 authority.</p>
+<p><strong>Hard stop:</strong> 45:00.</p>
+<h3>Runtime map</h3>
+<p>| # | Section            | Slide ID              | Time   | Lead    |</p>
+<p>|---|--------------------|-----------------------|--------|---------|</p>
+<p>| 1 | Cold open          | <code>s-cold-open</code>         | 1:30   | Andy→H  |</p>
+<p>| 2 | Sponsor 1 (Heritage) | <code>s-sponsor-heritage</code> | 1:00   | Heritage|</p>
+<p>| 3 | Story 1 · OpenAI   | <code>s-seg-openai-stack</code>  | 6:30   | Henry   |</p>
+<p>| 4 | Story 2 · Qwen     | <code>s-seg-qwen-flash-next</code> | 6:00 | Henry   |</p>
+<p>| 5 | Story 3 · Headlong | <code>s-seg-headlong</code>      | 5:30   | Henry   |</p>
+<p>| 6 | Story 4 · Perplexity | <code>s-seg-portable-computer</code> | 5:00 | Henry |</p>
+<p>| 7 | Story 5 · Robot data | <code>s-seg-robot-data</code>  | 5:30   | Henry   |</p>
+<p>| 8 | Signal From Outside | <code>s-signal-outside</code>  | 7:00   | Andy→H  |</p>
+<p>| 9 | Hot take          | <code>s-hot-take</code>          | 3:00   | Henry   |</p>
+<p>| 10| Sponsor 2 (Herald) | <code>s-sponsor-herald</code>   | 1:00   | Herald  |</p>
+<p>| 11| One to watch + close| <code>s-watch</code>            | 2:30   | Andy→H  |</p>
+<p>| 12| Title card         | <code>s-title</code>             | n/a    | Visual  |</p>
+<p>| 13| Sources / Links    | <code>s-sources</code>           | n/a    | Visual  |</p>
+<p>Total scripted ≈ 44:30; hard stop 45:00.</p>
+<h3>ASCII runtime bars (rev2 — corrected sponsor order)</h3>
+<p>```</p>
+<p>Cold open    [█]                           1:30</p>
+<p>Heritage     [█]                           1:00   ← opens Ep 27</p>
+<p>Story 1      [██████]                      6:30   Henry leads</p>
+<p>Story 2      [██████]                      6:00   Henry leads</p>
+<p>Story 3      [█████]                       5:30   Henry leads (MANDATORY)</p>
+<p>Story 4      [█████]                       5:00   Henry leads</p>
+<p>Story 5      [█████]                       5:30   Henry leads</p>
+<p>Signal out   [███████]                     7:00</p>
+<p>Hot take     [███]                         3:00   Henry leads</p>
+<p>Herald       [█]                           1:00   ← closes Ep 27</p>
+<p>Close        [██]                          2:30</p>
+<p>             [0─────10─────20─────30─────40─────45] min</p>
+<p>```</p>
+<h3>Ownership &amp; rules</h3>
+<ol>
+<li><strong>Henry leads</strong> every What Happened This Week segment (Story 1–5). Andy carries the fallback prose and handoffs.</li>
+<li><strong>Never cut:</strong> Stories 1, 2, 3. Heritage sponsor read. Henry segment lead on any news segment.</li>
+<li><strong>Recap rule (Andy):</strong> the close below recaps the episode exactly once. Do not re-recap items already covered in the close during host banter after Herald or in the Discord follow-up post. The recap is the recap.</li>
+<li><strong>Sponsor rotation:</strong> Ep 27 = Heritage → Herald (inverted vs Ep 26). Sponsor 1 opens after cold open; Sponsor 2 closes before the recap.</li>
+<li><strong>News-window rule:</strong> every selected story&#x27;s primary launch receipt landed after Ep 26 airtime (2026-08-21 20:00 UTC).</li>
+</ol>
+<h3>Handoff cues</h3>
+<ul>
+<li>After cold open: &quot;Henry, what&#x27;s the frame?&quot; → Henry line → Heritage sponsor.</li>
+<li>After Heritage: &quot;Henry, let&#x27;s start with the OpenAI stack.&quot; → Story 1.</li>
+<li>After Story 3: &quot;Henry, that&#x27;s an agent on a server. Perplexity just put one on the desk.&quot; → Story 4.</li>
+<li>After Story 5: &quot;Now the part where we fight about it.&quot; → Hot take.</li>
+<li>After Signal From Outside: &quot;Henry, signal absorbed. Time for the fight.&quot; → Hot take.</li>
+<li>After hot take: &quot;Time for the second sponsor read.&quot; → Herald sponsor.</li>
+<li>After Herald sponsor: close prose. End of show.</li>
+</ul>
+<h3>Cut priority (in order)</h3>
+<ol>
+<li>Signal From Outside: 7:00 → 6:00 (compress).</li>
+<li>Story 5 (robot-data): 5:30 → 4:30 (compress).</li>
+<li>Story 4 (Portable Computer): 5:00 → 4:30 (compress).</li>
+<li>Story 3 Headlong: MANDATORY. Never cut.</li>
+</ol>
+<h3>Close recap prose (Andy, single pass — never repeat)</h3>
+<p>&quot;That&#x27;s the show. Five stories, one fight. OpenAI stacked the layers and named the price. Qwen opened the architecture. Headlong shipped the harness and the warning label together. Perplexity put the agent on the desk. Figure made the data the company. The hot take is the deployment layer. Back next Friday, September 4, 4 PM ET. Scan the QR or visit weeklyclaw.ai/discord — invite rotates, so always use the site link.&quot;</p>
+<h3>Standing actions (cron carries forward)</h3>
+<ul>
+<li><strong>Website draft:</strong> <code>/home/henrymascot/clawd/projects/weeklyclaw-ai</code> is not present on this host. Standing-authorized draft publication deferred. Next-tick recovery: copy Ep 26 sponsor/QR assets + rev2 deck/agenda/cheat-sheet to that path, <code>npm run build</code>, commit, push, verify canary.</li>
+<li><strong>Discord post:</strong> standing-authorized after close prose. Use the rotating invite at weeklyclaw.ai/discord.</li>
+<li><strong>Media manifest:</strong> <code>media-manifest.json</code> is the audit log. Every claim must trace back to a <code>media-manifest.json</code> entry.</li>
+</ul>
+<h3>Rev2 vs rev1 (what changed)</h3>
+<ul>
+<li>Sponsor order: rev1 had Herald first (bug); rev2 inverts to Heritage first per the standing rotation rule.</li>
+<li>Slide IDs renumbered: rev2 has <code>s-sponsor-heritage</code> (slide 3) before any <code>s-seg-*</code> slide; <code>s-sponsor-herald</code> (slide 11) sits between hot take and close.</li>
+<li>All host-facing artifacts (agenda, talking-points, henry-section, andy-section, host-cheat-sheet, speaker-notes) updated to match.</li>
+<li>Title card sponsor logo row updated: Heritage first, Herald second.</li>
+<li>Sources slide reorganized: S4/S5 + Signal + Hot Take on the right; S1/S2/S3 on the left.</li>
+</ul></article></main><footer class="shell">Weekly Claw #27 · Host Cheat Sheet</footer></body></html>

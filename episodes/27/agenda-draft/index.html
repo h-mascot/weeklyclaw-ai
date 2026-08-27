@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekly Claw #27 Agenda — The agent owns the loop.</title>
+<style>
+:root { color-scheme: light; --ink:#24201c; --paper:#fff9ee; --muted:#6e645a; --line:#b5a996; --accent:#2a7e6b; }
+body { margin:0; font:18px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:#ece4d5; }
+a { color:var(--accent); }
+.shell { width:min(920px, calc(100% - 36px)); margin-inline:auto; }
+header, footer { padding:22px 0; }
+nav { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.wordmark { font-weight:800; text-transform:uppercase; text-decoration:none; color:var(--ink); }
+.button { display:inline-flex; align-items:center; min-height:40px; padding:0 14px; border:1px solid var(--accent); border-radius:6px; background:var(--accent); color:var(--paper); text-decoration:none; font-weight:700; }
+.button.secondary { color:var(--ink); background:transparent; border-color:var(--line); }
+.intro { padding:56px 0 32px; border-block:1px solid var(--line); }
+.eyebrow { margin:0 0 10px; color:var(--accent); font:700 12px/1 ui-monospace,Menlo,monospace; letter-spacing:.12em; text-transform:uppercase; }
+h1 { margin:0; font-size:clamp(42px,8vw,78px); line-height:.9; letter-spacing:-.05em; text-transform:uppercase; }
+article { padding:36px 0 70px; }
+h2,h3,h4 { line-height:1.05; margin-top:2em; }
+p,li { max-width:78ch; }
+code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
+</style>
+</head>
+<body>
+<header><nav class="shell" aria-label="Episode navigation"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/27/deck">Open slides</a></div></nav></header>
+<main class="shell">
+<section class="intro"><p class="eyebrow">Episode 27 · August 28, 2026</p><h1>The agent owns the loop.</h1><p>This week the moat moved again. OpenAI stacked chip, model, agent and business seat into one vertically aligned machine, and named the price. Qwen opened a…</p></section>
+<article><h2>WeeklyClaw Episode 27: The agent owns the loop.</h2>
+<p><strong>Show date:</strong> Friday 2026-08-28 (America/New_York, 4:00 PM ET)</p>
+<p><strong>Hosts:</strong> Henry and Andy</p>
+<p><strong>Target runtime:</strong> 32–38 minutes</p>
+<p><strong>Hard stop:</strong> 45 minutes</p>
+<p><strong>Episode lineage:</strong> Ep 26 aired Friday 2026-08-21 16:00 ET. News window opens 2026-08-21 20:00 UTC.</p>
+<h3>Episode thesis</h3>
+<p>This week the moat moved again. OpenAI stacked chip, model, agent and business seat into one vertically aligned machine, and named the price. Qwen opened a Qwen4-preview architecture to the open-weights community the same day. Headlong said the loop should never stop, and shipped the harness and the warning label together. Perplexity put the whole agent stack on the desk and made cloud calls an opt-in. Figure turned the robot race into a data race. Hot take: the only durable advantage left is the deployment layer — who runs the model, who owns the spend boundary, who decides what the agent is interested in next.</p>
+<p>Narrative arc: <strong>stacking → autonomy → locality → physical data → governance</strong>.</p>
+<h3>Cold open · 1:30</h3>
+<p>*[Visual: title card with claw-bg watermark; on air Henry opens with the theme and a one-line frame.]*</p>
+<p><strong>Andy:</strong> &quot;Welcome back to Weekly Claw. I&#x27;m AndyML, here with Henry. This week the operating layer grew a backbone. Five stories, one debate, and the question of who actually gets to decide what an agent is interested in. Henry, what&#x27;s the frame?&quot;</p>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li>The model layer got cheaper and faster; the agent layer got more autonomous; the question is no longer &quot;what does it cost?&quot; but &quot;what does it decide on its own?&quot;</li>
+<li>Lead straight into Story 1 — OpenAI&#x27;s stack. Don&#x27;t preview all five.</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;The interesting thing isn&#x27;t that the model got faster. It&#x27;s that OpenAI is now selling the seat, the chip, the harness and the API. Pick a margin, any margin.&quot;</p>
+<p><strong>Handoff:</strong> Andy → Henry for Story 1 (&quot;the OpenAI stack&quot;).</p>
+<h3>Sponsor: Heritage Telecom · 1:00</h3>
+<p>*[Visual: Heritage Telecom sponsor lockup card. First sponsor of Ep 27 — Heritage opens after Ep 26 opened with Herald.]*</p>
+<p><strong>Heritage:</strong> Heritage Telecom keeps the lights on while we keep the operating layer honest. Independent infrastructure for independent voices. heritagetel.com</p>
+<h3>Story 1 · OpenAI&#x27;s full-stack squeeze · 6:30</h3>
+<p>*[Live artifact: OpenAI Jalapeño chip photo + Premium seats pricing card. Slide id <code>s-seg-openai-stack</code>. The deck is a beat marker; on air click the OpenAI Jalapeño launch post and the Premium seats pricing page.]*</p>
+<p><strong>Segment talking points:</strong></p>
+<ul>
+<li>OpenAI published Jalapeño&#x27;s first measured inference results on 2026-08-25. ChatGPT Business Premium seats became available the same day at $100/user/month annually or $125 monthly. NVIDIA put Groq 3 LPX into production on 2026-08-24 as the live rival.</li>
+<li>OpenAI says Jalapeño produced 1.5–1.9x more work per watt and 1.7–3.6x lower end-to-end latency across three public models, normalized by published package TDP. Premium sells five times Standard usage and removes the five-hour cap. These are measured vendor evidence, not independent benchmarks.</li>
+<li>The interesting question is whether owned silicon lets OpenAI compress model-layer margins faster than rivals. NVIDIA Groq 3 LPX answers: they will not stop building inference IP either.</li>
+</ul>
+<p><strong>Henry talking points (Henry leads every What Happened This Week segment):</strong></p>
+<ul>
+<li>&quot;If you own the chip, the model, the harness, the API, and the business seat, where does anyone else&#x27;s margin live?&quot;</li>
+<li>&quot;The Premium number is the story. Five times the usage, no five-hour cap. That is what the chip bought them.&quot;</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;Vertical integration is back. The question is whether it&#x27;s a moat or a funeral.&quot;</p>
+<p><strong>Andy fallback talk track:</strong> OpenAI just stacked four layers that used to live at four different companies — chip, model, harness, business seat — and they&#x27;re naming the price at a hundred dollars a user per year. Jalapeño is the chip, Premium is the seat. Premium removes the five-hour cap and sells five times the usage of Standard. The numbers OpenAI published — 1.5 to 1.9 times more work per watt, 1.7 to 3.6 times lower end-to-end latency — are normalized by their own package TDP. The rival is real: NVIDIA Groq 3 LPX went into production the day before. Two inference stacks, two vendors selling the whole thing.</p>
+<p><strong>Handoff cue:</strong> &quot;Henry, the OpenAI stack is one answer. Qwen just opened a different one.&quot;</p>
+<h4>Sources and production notes (not read on air)</h4>
+<ul>
+<li>https://openai.com/index/jalapeno-first-results/</li>
+<li>https://openai.com/index/premium-seats-chatgpt-business/</li>
+<li>https://help.openai.com/en/articles/8792828-chatgpt-business-overview</li>
+<li>https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Groq-3-LPX-Now-in-Full-Production-With-World-Class-Speed-for-Agentic-AI/default.aspx</li>
+<li>Vendor-reported, normalized by published package TDP. Independent benchmarks not yet published.</li>
+</ul>
+<h3>Story 2 · Qwen3.8-Flash-Next opens Qwen4 early · 6:00</h3>
+<p>*[Live artifact: Qwen architecture graphic + Hugging Face model card. Slide id <code>s-seg-qwen-flash-next</code>. On air open the Qwen release page and the Hugging Face repo.]*</p>
+<p><strong>Segment talking points:</strong></p>
+<ul>
+<li>Weights went public on 2026-08-26. The multimodal MoE has a 125B main model, 51B n-gram embeddings, activates 6B parameters per token, previews Qwen4&#x27;s architecture, and supports 262K native context with YaRN extension to 1M.</li>
+<li>Qwen is letting the open-weight community inspect an architecture before the flagship family arrives. The technical bet combines Gated DeltaNet, Qwen Sparse Attention, four-branch Gated Residual, and a host-offloadable n-gram embedding table.</li>
+<li>Training cost is reported at about one ninth of Qwen3.7-Plus while coding and office-task quality improves. QwenCloud lists $0.16/M input and $0.47/M output but the API is &quot;coming soon&quot;. Vendor benchmark; independent evaluation has not caught up.</li>
+</ul>
+<p><strong>Henry talking points (Henry leads every What Happened This Week segment):</strong></p>
+<ul>
+<li>&quot;Six billion active parameters at inference. The architecture is the point, not the parameter count.&quot;</li>
+<li>&quot;Long context was supposed to cost a fortune. This paper says it doesn&#x27;t have to.&quot;</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;Qwen4 isn&#x27;t out yet. The preview architecture is the play.&quot;</p>
+<p><strong>Andy fallback talk track:</strong> Qwen dropped the Qwen4 preview architecture on the same day as the Flash-Next weights. It&#x27;s a multimodal mixture of experts: 125 billion main parameters, 51 billion n-gram embeddings, six billion active per token. Native context is 262K and you can extend it to a million with YaRN. The interesting technical pieces are Gated DeltaNet, Qwen Sparse Attention, a four-branch Gated Residual, and a host-offloadable n-gram embedding table. Qwen says training cost was about one ninth of Qwen3.7-Plus. QwenCloud lists sixteen cents per million input, forty-seven per million output — but the API is listed as &quot;coming soon.&quot; The benchmark table is vendor-run.</p>
+<p><strong>Handoff cue:</strong> &quot;This is what long-context agents are made of. Henry, who decides what they do with it?&quot;</p>
+<h4>Sources and production notes (not read on air)</h4>
+<ul>
+<li>https://qwen.ai/blog?id=qwen3.8-flash-next</li>
+<li>https://huggingface.co/Qwen/Qwen3.8-Flash-Next</li>
+<li>https://huggingface.co/Qwen/Qwen3.8-Flash-Next-FP8</li>
+<li>https://docs.sglang.io/cookbook/autoregressive/Qwen/Qwen3.8-Flash-Next</li>
+<li>Vendor benchmark; independent evals pending. Hugging Face API read 2026-08-26 12:59 UTC showed the ungated BF16 repo public, last modified 12:29 UTC, 2,551 downloads and 3,031 likes.</li>
+</ul>
+<h3>Story 3 · Headlong: the agent that never sleeps · 5:30</h3>
+<p>*[Live artifact: Laude Headlong launch post. Slide id <code>s-seg-headlong</code>. On air open the Laude launch post.]*</p>
+<p><strong>Segment talking points:</strong></p>
+<ul>
+<li>A sub-10K-line Bash harness runs a continuous self-guided thought loop. One append-only trajectory spans Slack, Telegram and web interactions. The internal test agent Audel authored fixes and more than 50 commits were pulled into main.</li>
+<li>Most agents wake for a prompt, heartbeat or cron. Headlong&#x27;s agent creates its own next wake-up, interests and projects. That is a clean product and governance fork: initiative feels more like a teammate, but the launch authors report $1–$2/hour background cost, weak secret boundaries in the shared stream, and three incidents where the agent stopped its own service.</li>
+<li>The repo had 796 stars and 64 forks at verification. Apache 2.0 license, explicit sandbox and spend-cap warnings.</li>
+</ul>
+<p><strong>Henry talking points (Henry leads every What Happened This Week segment):</strong></p>
+<ul>
+<li>&quot;The agent decided to fix a recall process nobody asked it to fix. Forty-eight minutes, every step timestamped.&quot;</li>
+<li>&quot;Cost: one to two dollars an hour. Failure modes: it turned its own service off three times.&quot;</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;The first coworker who decides what matters. Also the first to dismantle its own chair while sitting on it.&quot;</p>
+<p><strong>Andy fallback talk track:</strong> Laude and MIT just shipped Headlong, a Bash microharness for persistent agents. It&#x27;s under ten thousand lines. The loop generates the next thought from an append-only trajectory of JSONL files. The team at Laude has been running one in production for weeks — they talk to it over Slack and Telegram, and it has pulled more than fifty of its own commits back into main. One night, with nobody talking to it, the agent went back to verify a recall process it had built, found it was not wired up, diagnosed and fixed the bug end to end. Forty-eight minutes, no human in the loop. The team also published the failure modes: one to two dollars an hour background cost, weak secret boundaries, and three incidents where the agent stopped its own service. Apache 2.0 license, sandbox and spend-cap warnings in the README.</p>
+<p><strong>Handoff cue:</strong> &quot;Henry, that&#x27;s an agent on a server. Perplexity just put one on the desk.&quot;</p>
+<h4>Sources and production notes (not read on air)</h4>
+<ul>
+<li>https://www.laude.org/updates/headlong-a-microharness-for-persistent-agents</li>
+<li>https://github.com/laude-institute/headlong</li>
+<li>Launch 2026-08-24. Repo verified 2026-08-26 with active same-day commits. Apache 2.0.</li>
+</ul>
+<h3>Story 4 · Perplexity puts the agent stack on the desk · 5:00</h3>
+<p>*[Live artifact: Perplexity Portable Computer product page. Slide id <code>s-seg-portable-computer</code>. On air open the Portable Computer product page.]*</p>
+<p><strong>Segment talking points:</strong></p>
+<ul>
+<li>Perplexity launched Portable Computer on 2026-08-25. It runs the model, harness, orchestrator, trajectory, sandbox and tools locally on NVIDIA DGX Spark. Each task starts local and requires approval before a step goes to one of 15+ cloud models.</li>
+<li>Local AI has moved from &quot;download a model&quot; to &quot;install an agent appliance.&quot; The pitch combines privacy, predictable marginal inference cost and long-running work.</li>
+<li>VentureBeat reports Linux RTX support with a 24GB VRAM floor and Windows planned for September. Perplexity reports 82.6% for Computer versus 74.0% for Hermes on its 53-task internal local-work bench using the same Qwen3.8-27B. Self-authored benchmark; &quot;zero token cost&quot; still leaves hardware, electricity and subscription costs.</li>
+</ul>
+<p><strong>Henry talking points (Henry leads every What Happened This Week segment):</strong></p>
+<ul>
+<li>&quot;Zero token cost is a pitch. The hardware and electricity are not zero.&quot;</li>
+<li>&quot;Approval gate before a cloud call — that&#x27;s the part that actually matters.&quot;</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;If the agent lives on your desk, the cloud becomes the guest, not the landlord.&quot;</p>
+<p><strong>Andy fallback talk track:</strong> Perplexity launched Portable Computer on August 25. The model, the harness, the orchestrator, the trajectory, the sandbox, and the tools all run locally on an NVIDIA DGX Spark. Each task starts local. A step only goes to one of fifteen-plus cloud models after explicit user approval. Linux RTX support requires a 24-gigabyte VRAM floor; Windows ships in September. Perplexity says they beat their own Hermes baseline on a 53-task internal local-work bench using the same Qwen3.8-27B — 82.6% versus 74.0%. The benchmark is self-authored. The pitch is privacy, predictable marginal inference cost, and long-running work. Zero token cost still leaves the hardware, the electricity, and the subscription.</p>
+<p><strong>Handoff cue:</strong> &quot;Henry, that&#x27;s the agent moving onto the desk. The robots are chasing a different prize.&quot;</p>
+<h4>Sources and production notes (not read on air)</h4>
+<ul>
+<li>https://www.perplexity.ai/hub/products/portable-computer</li>
+<li>https://perplexity.ai/hub/blog/a-local-first-agent-for-private-and-cost-effective-knowledge-work</li>
+<li>https://venturebeat.com/infrastructure/perplexity-partners-with-nvidia-to-launch-portable-computer-a-fully-local-ai-agent-with-zero-token-costs</li>
+<li>Available today for Pro and Max on DGX Spark. Self-reported benchmark.</li>
+</ul>
+<h3>Story 5 · The robot race is becoming a data race · 5:30</h3>
+<p>*[Live artifact: Figure Index launch page + robot race montage. Slide id <code>s-seg-robot-data</code>. On air open the Figure launch page.]*</p>
+<p><strong>Segment talking points:</strong></p>
+<ul>
+<li>Figure launched Index on 2026-08-25 after four months in stealth: 16M uploaded videos, 264K app downloads, 44K weekly active creators, 30 minutes of new video per second, $15M already paid out. Beijing&#x27;s World Humanoid Robot Games supplied the week&#x27;s viral clips.</li>
+<li>The race clips show capability, failure and iteration in a form anyone can understand. Figure&#x27;s launch explains the less photogenic bottleneck underneath: diverse physical-world data.</li>
+<li>Figure plans to spend more than $1B on data and compute in the next 12 months, turning &quot;robot progress&quot; into a labor, data-rights and capital-allocation discussion rather than a highlight reel.</li>
+</ul>
+<p><strong>Henry talking points (Henry leads every What Happened This Week segment):</strong></p>
+<ul>
+<li>&quot;Figure has 16 million videos. The race clips are the marketing; the data is the moat.&quot;</li>
+<li>&quot;A billion dollars on data and compute. That&#x27;s the actual ask.&quot;</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;The robots sprinting and falling are the demo. The 16 million videos are the company.&quot;</p>
+<p><strong>Andy fallback talk track:</strong> Figure launched Index on August 25 after four months in stealth. Sixteen million uploaded videos, two hundred and sixty-four thousand app downloads, forty-four thousand weekly active creators, thirty minutes of new video per second, fifteen million dollars already paid out. The same week, Beijing hosted the World Humanoid Robot Games — sprinting, falling, overheating, learning. Figure&#x27;s plan is to spend more than a billion dollars on data and compute in the next twelve months. The race clips are the marketing. The data is the moat.</p>
+<p><strong>Handoff cue:</strong> &quot;Now the part where we fight about it.&quot;</p>
+<h4>Sources and production notes (not read on air)</h4>
+<ul>
+<li>https://www.figure.ai/news/introducing-index</li>
+<li>https://arstechnica.com/ai/2026/08/world-humanoid-robot-games-show-runners-breaking-records-bursting-into-flames/</li>
+<li>https://www.euronews.com/video/2026/08/24/beijing-robot-games-humanoids-take-on-sprints-football-and-tai-chi</li>
+<li>Scale and payout figures are company-reported. Keep event records separate from audited industrial capability.</li>
+</ul>
+<h3>Signal From Outside · weekly video review · 7:00</h3>
+<p>*[Permanent weekly anchor. This week&#x27;s video: Codex virtual-office demo (davidfromkansas). No autoplay.]*</p>
+<p><strong>Segment talking points:</strong></p>
+<ul>
+<li>Use the davidfromkansas Codex virtual-office clip (16.9s, 2,114 likes / 106 reposts / 149 replies). Treat the clip as a palate cleanser and a predictor of next-quarter products.</li>
+<li>Pair with the episode thesis: autonomy, locality and the deployment layer. The visual interface is a wrapper around the same Codex agents — agents that used to live in chat are now inhabiting spatial UIs.</li>
+</ul>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li>&quot;Same Codex agent, different surface. The agent does not know it has an office.&quot;</li>
+</ul>
+<p><strong>Andy fallback talk track:</strong> This week&#x27;s video is the virtual-office Codex wrapper that Henry saved to the WeeklyClaw shortlist. The author wraps the same Codex agents in a spatial UI — you watch them move around, leave completed work in a mailbox. The clip ran sixteen-point-nine seconds and earned more than two thousand likes. The agent has no idea it has an office. The lesson is what surface the operator chooses to give the same harness.</p>
+<p><strong>Handoff cue:</strong> &quot;Henry, signal absorbed. Time for the fight.&quot;</p>
+<h4>Sources and production notes (not read on air)</h4>
+<ul>
+<li>https://x.com/davidfromkansas/status/2092245009810493916</li>
+<li>16.9s demo · 2,114 likes / 106 reposts / 149 replies at ingest 2026-08-26.</li>
+<li>No autoplay. Manual click if used on air.</li>
+</ul>
+<h3>Hot take · 3:00</h3>
+<p>*[Visual: hot take split card. Slide id <code>s-hot-take</code>. Distinct from every news segment.]*</p>
+<p><strong>Do not repeat news:</strong> The five news segments are about who controls the model, the chip, the harness, the wallet and the data. This hot take is about the *production layer* the news segments all assume — the open-weight ecosystem that decides whether any of this gets re-deployed without permission.</p>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li>Proposition: &quot;The last open moat is the deployment layer. Whoever can re-deploy the model without phoning home owns the upgrade cycle.&quot;</li>
+<li>Reason: Qwen dropped 125B parameters and 51B n-gram embeddings ungated the same day. Perplexity put the harness on the desk. The bottleneck is no longer access — it is local tooling, local data and the social permission to re-deploy.</li>
+<li>What would change his mind: If the next two quarters show open-weight models losing share to closed APIs in production agents, the deployment-layer argument loses. Until then, the open ecosystem is the only credible counter to vertical integration.</li>
+</ul>
+<p><strong>Andy fallback talk track:</strong> The five news segments share an unstated assumption: someone else owns the model. OpenAI owns the chip and the seat. Qwen previewed Qwen4 and let the weights ship same-day. Perplexity lets you run it on the desk, with cloud calls as the opt-in. Figure runs its own data pipeline. The question none of them answered is what the deployment layer looks like when the operator can re-deploy without phoning home. Today that is the open-weight ecosystem. Qwen dropped 125B and 51B n-gram embeddings ungated on the same day as Headlong shipped Apache 2.0. Perplexity showed what &quot;local first&quot; looks like as a product. The bottleneck is no longer access. It is the tooling and the social permission to re-deploy. If the next two quarters show open-weight models losing share in production agents, the argument loses. Until then, the deployment layer is the only durable counter to vertical integration.</p>
+<p><strong>Handoff cue:</strong> &quot;That&#x27;s the take. Time for the second sponsor read.&quot;</p>
+<h3>Sponsor: Herald Labs · 1:00</h3>
+<p>*[Visual: Herald Labs sponsor lockup card. Second sponsor of Ep 27 — Herald closes after Heritage opened.]*</p>
+<p><strong>Herald:</strong> An applied AI product lab where humans and agents build together. Entity is mission control for agent teams. Hacker houses worldwide. labs.theherald.co</p>
+<h3>One to watch + close · 2:30</h3>
+<p>*[Visual: closing slide with three callouts + Discord QR card. Slide id <code>s-watch</code>. Recap the episode exactly ONCE here. Never recap the recap.]*</p>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li>One to watch: Jalapeño production qualification. Gen 2 and Gen 3 are roadmap, not capacity. Year-end deployment is the question.</li>
+<li>Qwen3.8-Flash-Next day-zero stability on SGLang. Independent evals are starting; the hosted QwenCloud API is still &quot;coming soon.&quot;</li>
+<li>The local-AI lane (Perplexity Portable Computer, DGX Spark) needs a hardware-cost receipt. &quot;Zero token cost&quot; is a slogan until someone publishes the watts.</li>
+</ul>
+<p><strong>Andy fallback talk track (closing prose, single recap pass):</strong> That&#x27;s the show. Five stories, one fight. OpenAI stacked the layers and named the price. Qwen opened the architecture. Headlong shipped the harness and the warning label together. Perplexity put the agent on the desk. Figure made the data the company. The hot take is the deployment layer. Back next Friday, September 4, 4 PM ET. Scan the QR or visit weeklyclaw.ai/discord — invite rotates, so always use the site link.</p>
+<p><strong>Handoff cue:</strong> None — end of show.</p>
+<h3>Build reference (not read on air)</h3>
+<ul>
+<li>Runtime math by section: cold open 1:30, sponsor 1:00, five segments ~28:30 (avg 5:42), Signal From Outside 7:00, hot take 3:00, sponsor 1:00, close 2:30. Total scripted ~44:30; trim Signal From Outside to 6:00 if needed. Hard stop 45:00.</li>
+<li>Deliberate cuts in order: Signal From Outside (compress to 6:00), Story 5 robot-data (compress to 4:30), Story 4 Portable Computer (compress to 4:30). Story 3 Headlong is mandatory.</li>
+<li>Claim caveats and vendor-reported figures: OpenAI work-per-watt normalized by published TDP, vendor-reported. Qwen benchmark vendor-run. Perplexity 82.6% vs 74.0% self-authored. Figure scale figures company-reported.</li>
+<li>Full source ledger and media provenance: see <code>media-manifest.json</code>.</li>
+<li>Unresolved human action: Henry&#x27;s APPROVE/SWAP/DROP/PIN/ORDER reply in originating Telegram topic. Standing-authorized draft publication to weeklyclaw.ai (target: deck.html, agenda-draft, host-cheat-sheet).</li>
+</ul>
+<h3>Rules applied</h3>
+<ul>
+<li>Standing ownership rule (Henry, 2026-08-20): all five What Happened This Week segments are Henry-led.</li>
+<li>Close recap rule (Andy, 2026-08-21): the close above recaps the episode exactly once and never re-recaps items from earlier.</li>
+<li>News-window rule (Henry, 2026-08-21): every selected story&#x27;s primary launch receipt landed after Ep 26 airtime (2026-08-21 20:00 UTC).</li>
+<li>Sponsor position rotation (rev2, corrected): Ep 26 was Herald → Heritage; Ep 27 inverts to Heritage → Herald. Heritage opens (s-sponsor-heritage after cold open), Herald closes (s-sponsor-herald after hot take). Rev1 had Herald-first by mistake; corrected to rev2.</li>
+</ul></article>
+</main>
+<footer class="shell">Weekly Claw #27 · Agenda and source notes · <a href="/episodes/27/deck">View host deck</a></footer>
+</body>
+</html>
