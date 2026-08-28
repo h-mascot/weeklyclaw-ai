@@ -8,7 +8,7 @@
 
 ## Rev3 note (2026-08-28, Henry)
 
-"A lot more that happened" — four stories added (Nvidia×Hugging Face, Ox Alpha=GLM-5.3-Flash, Instinct raise, OpenAI AGI claim); every news segment compressed to ~2:30. Nine stories, faster cuts, more of the week.
+"A lot more that happened" — four stories added (Nvidia×Hugging Face, Ox Alpha=GLM-5.3-Flash, Instinct raise, OpenAI AGI claim); every news segment compressed to ~2:30. Eight stories, faster cuts, more of the week.
 
 ## Episode thesis
 
@@ -18,7 +18,7 @@ Narrative arc: **consolidation → sovereign compute → agent capital → AGI c
 
 ## Cold open · 1:20
 
-- "Welcome back to Weekly Claw. Huge week. Nine stories on two grids this time — cards, not marathons. Chips buying commons, stealth models on domestic silicon, agents worth $2.5B at four months old, AGI dates with footnotes."
+- "Welcome back to Weekly Claw. Huge week. Eight stories on two grids this time — cards, not marathons. Chips buying commons, stealth models on domestic silicon, agents worth $2.5B at four months old, AGI dates with footnotes."
 
 ## What happened this week — Grid 1 · 8:00
 

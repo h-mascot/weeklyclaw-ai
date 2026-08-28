@@ -10,8 +10,8 @@
 | # | Section | Slide ID | Time | Lead |
 |---|---------|----------|------|------|
 | 1 | Cold open | `s-cold-open` | 1:20 | Andy→H |
-| 2 | Grid 1 · six stories | `s-seg-grid-a` | 8:00 | Henry |
-| 3 | Grid 2 · three stories | `s-seg-grid-b` | 6:00 | Henry |
+| 2 | Grid 1 · four stories | `s-seg-grid-a` | 8:00 | Henry |
+| 3 | Grid 2 · three stories + Instinct | `s-seg-grid-b` | 6:00 | Henry |
 | 4 | Sponsor: Heritage | `s-sponsor-heritage` | 1:00 | Andy |
 | 5 | Signal From Outside · Dwarkesh/Dylan | `s-signal-outside` | 6:00 | Andy |
 | 6 | Hot take: the fight | `s-hot-take` | 3:00 | Henry+Andy |
@@ -25,7 +25,7 @@ Total scripted ≈ 38:15; hard stop 45:00 — roughly 7 minutes of buffer for th
 
 ```
 Cold open    [█]                            1:20
-Grid 1 (6)   [██████]                       8:00
+Grid 1 (4)   [██████]                       8:00
 Grid 2 (3)   [████]                         6:00
 Heritage     [█]                            1:00
 Signal       [████]                         6:00
