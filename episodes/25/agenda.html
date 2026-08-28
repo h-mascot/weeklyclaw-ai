@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekly Claw Ep25 — Agenda (archive)</title>
+<style>body{margin:0;background:#fffdf8;color:#101418;font:16px/1.6 Georgia,serif}main{max-width:820px;margin:0 auto;padding:48px 24px 80px}h1{font-size:1.7rem}h2{font-size:1.1rem;margin:2rem 0 .5rem;border-bottom:2px solid #e5e0d5;padding-bottom:.3rem;color:#0b3c42}ul{padding-left:1.3rem}code{font-family:ui-monospace,monospace;font-size:.85em;background:#f1ede2;padding:1px 5px;border-radius:4px}</style>
+</head><body><main><span style="display:inline-block;font:700 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#6b7280;border-radius:999px;padding:6px 12px;margin-bottom:20px">Archive</span>
+<h1>WeeklyClaw Episode 25: The OS got built this week</h1>
+
+<p><strong>Show date:</strong> Friday, August 14, 2026 · 4:00 PM ET</p>
+<p><strong>Hosts:</strong> [Henry](tg://user?id=855505513) and [Andy](tg://user?id=7615999206)</p>
+<p><strong>Scripted target:</strong> 38–44 minutes (planned ~41:00)</p>
+<p><strong>Hard stop:</strong> 45 minutes</p>
+
+<h2>Episode thesis</h2>
+
+<p>The model is no longer the product — the operating layer is. This week DeepSeek shipped weights, harness, and Open Responses + Anthropic Messages API dialect together under one MIT umbrella; Z.ai pushed GLM-5.3 cyber capability through post-training alone, then delayed its own weights for two weeks of hardening; Qwen released Qwen3.8-27B as Apache-2.0 open weights while Gemini 3.7 Flash and OpenAI Ultrafast turned hosted speed into a service tier; Writer cut agent cost 33–61% in the harness, not the model; and OpenAI quietly started remembering what you did on your Mac. The episode runs model + harness + dialect → cyber release gate → local capability + speed tiers → harness cost cuts → ambient work context. Every claim on air carries a source link; vendor-reported numbers are labeled as such, and unknowns stay blank.</p>
+
+<h2>Cold open · 2:00</h2>
+
+<p>*Title card with claw logo; hold 5 seconds before speaking. Arc steps animate behind the hosts; hook cards stack. Pause on each of the three hooks.*</p>
+
+<p><strong>Andy:</strong> It is Friday, August 14. Capability barely moved this week. Everything around capability did.</p>
+
+<p><strong>Henry:</strong> Here&#x27;s the frame: this week the operating layer became the product — what runs locally, what gets hardened before release, what speed costs, and what the harness remembers. Andy, which work should leave the machine at all?</p>
+
+<p><strong>Andy:</strong> Five stories tonight, but no benchmark parade. Sponsor first. Then we answer the only question that matters: who owns the operating layer?</p>
+
+<h2>Sponsor: Heritage Telecom · 0:30</h2>
+
+<p>*Hold card static; no animation. Draft copy pending Andy&#x27;s tweak.*</p>
+
+<p><strong>Henry:</strong> Heritage Telecom keeps the lights on while we keep the operating layer honest. Independent infrastructure for independent voices. Independent. Reliable. Quietly essential. Back to the operating layer.</p>
+
+<h2>The map · 1:00</h2>
+
+<p>*Five-card table on screen; gesture to the cut-order card once.*</p>
+
+<p><strong>Henry:</strong> The map is a deployment chain: stack ownership, release gates, local versus hosted execution, harness economics, then ambient context. If we run long, Segment four compresses first. Signal From Outside stays. Segments one and two are untouchable. Start with the lab that shipped the whole stack in one day.</p>
+
+<h2>Segment 1 — DeepSeek ships the model, the harness, and the API dialect · ~5:00</h2>
+
+<p>*Three-card layout on screen; warn-card at bottom. Walk through each card. Read the source list, then the warn-card.*</p>
+
+<p><strong>Andy (lead):</strong> DeepSeek-V4-Pro-0813 reached GA on August 13. One lab, MIT license, three things at once: a model checkpoint, a harness, and an API dialect. Start with the model: <strong>1.65T parameters</strong>, split across 66 safetensor shards live on Hugging Face. OpenRouter independently lists a 1M-token context window, up to 384K output, and an Artificial Analysis index of 53. Then the dialect: the API keeps the deepseek-v4-pro name and accepts OpenAI Responses and Anthropic Messages formats, so OpenClaw, Claude Code, and Codex clients connect without rewrites — same tool calls, same reasoning effort levels, one-click Codex route. And then the harness: the MIT-licensed DeepSeek Harness, everything-is-a-plugin TypeScript, with skills, MCP, persistent shells, subagents, jobs, scheduling, workflows, compaction, terminal, web, and Ralph tooling. The npm family @deepseek-ai/dsh ships an executable CLI. Eight-oh-five GitHub stars at retrieval. Developer preview — compatibility may break.</p>
+
+<p><strong>Henry:</strong> Benchmarks DeepSeek reported: Terminal Bench two-point-one eighty-seven point nine, NL2Repo sixty-one point five, DeepSWE sixty-two point seven, Toolathlon-Verified seventy-four point one. None independently reproduced. OpenRouter Artificial Analysis index fifty-three is independent but not a harness-matched run. The headline is not the benchmark number — it is that DeepSeek shipped weights, harness, and Open Responses + Anthropic Messages dialect on the same day, all under MIT. That is the model lab owning the operating layer.</p>
+
+<p><strong>Andy (close):</strong> Source list: api-docs.deepseek.com/updates, github.com/deepseek-ai/deepseek-harness, huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813, openrouter.ai/deepseek/v4-pro-0813, npmjs.com — @deepseek-ai/dsh. Henry, when the model lab owns the harness, who decides what the operating layer looks like?</p>
+
+<h2>Segment 2 — GLM-5.3 cyber via post-training · ~5:00</h2>
+
+<p>*Table left, ladder list right; warn-card implicit in the disclosure ladder. Read table row by row, then the disclosure ladder, then the quote.*</p>
+
+<p><strong>Henry (lead):</strong> GLM-5.3 launched yesterday. The same seven-forty-three-B base as GLM-5.2. Every reported gain came from post-training — more executable environments, more verifiers, more RL, no base change. Terminal-Bench three-point-oh went from four point six to twenty-eight point three — plus twenty-three point seven. DeepSWE v-one-point-one from forty-six point two to sixty-six point nine — plus twenty point seven. CyberGym seventy-seven point two to eighty-four point five — plus seven point three percentage points. ExploitBench twenty-four point four percent to fifty-four point four percent — plus thirty percentage points. Single Z.ai evaluation runs, not independently reproduced.</p>
+
+<p><strong>Andy:</strong> And the disclosure ladder. Service live now: GLM Coding Plan, ZCode, and the glm-5.3 API behind thinking-enabled controls at low, high, and max effort. Findings audited: twenty-four-thirty-six findings across two-sixty-nine projects, ten-ninety-seven critical or high severity. Public ledger at cvd.z.ai — fifty-three disclosed, twenty-three-eighty-three under embargo at retrieval. Weights promised in two weeks after safety evaluation and hardening. No GLM-5.3 repository on the official zai-org Hugging Face org yet. And this build did not validate any five-point-three number, severity label, or finding attribution.</p>
+
+<p><strong>Henry (close):</strong> Quote: if post-training can create exploit-chain capability faster than the lab expected, is a two-week weight delay a safety control — or merely a head start for the hosted gatekeeper? Source: z.ai/blog/glm-5.3, cvd.z.ai, docs.z.ai/devpack.</p>
+
+<h2>Segment 3 — Qwen3.8-27B + Gemini 3.7 Flash + Ultrafast · ~5:30</h2>
+
+<p>*Three-col layout: Qwen local/open, Flash hosted workhorse, Ultrafast hosted speed. Read each card, then the quote, then sources.*</p>
+
+<p><strong>Henry (lead):</strong> Qwen just released Qwen3.8-27B open weights under Apache 2.0. It is a twenty-seven-billion dense native vision-language model with image and video understanding, two-sixty-two-thousand-one-forty-four native context extensible to one million, and thinking on by default with reasoning-effort control. Official Transformers and FP8 weights are live. Qwen reports Terminal Bench two-point-one at seventy-three and SWE-bench Pro at sixty-one point seven; those numbers are vendor-run and not independently reproduced.</p>
+
+<p><strong>Andy:</strong> Why care about Flash? It combines 1M-token multimodal context with workhorse pricing and roughly three-forty output tokens per second independently. That makes a capable model fast enough for interactive agent loops, cheap enough for repetitive tool use, and broad enough to keep text, images, video, audio, PDFs, and long traces in one model. GitHub is rolling it out across VS Code, Visual Studio, Copilot CLI, the cloud agent, Copilot app, JetBrains, Xcode, and Eclipse, so distribution is broad but gradual. Intro price is seventy-five cents in and three-seventy-five out per million tokens through December thirty-first, then doubles. Artificial Analysis measured Intelligence fifty-six and roughly three-forty output tokens per second independently. Speed and benchmarks still do not prove production reliability.</p>
+
+<p><strong>Henry:</strong> Ultrafast is the speed endpoint: up to fourteen-x Standard and up to seven-fifty output tokens per second on GPT-5.6 Sol via Cerebras. Select-customer waitlist, price undisclosed, throughput self-reported, no matched independent run or public SLA.</p>
+
+<p><strong>Henry (close):</strong> Quote: if a twenty-seven-billion open model can run locally while hosted models race toward seven-fifty tokens per second, which work should leave your machine at all? Sources: huggingface.co/Qwen/Qwen3.8-27B, Qwen&#x27;s official X release, blog.google, artificialanalysis.ai, and openai.com.</p>
+
+<h2>Signal From Outside · ~8–9:00</h2>
+
+<p>*Permanent anchor; never cut. Andy&#x27;s full canonical talk track is in <code>sources/signal-outside.md</code>. Split-screen with verified YC poster on the right; clickable source link only, no autoplay.*</p>
+
+<p><strong>Andy (anchor):</strong> Use the full host-supplied talk track verbatim. Opening: &quot;This week&#x27;s video dropped four days ago, and if you&#x27;ve got commits in the OpenClaw repo you&#x27;re going to want to watch this one yourself.&quot; Peter Steinberger at YC Startup School narrates OpenClaw&#x27;s eight-month arc: the phone relay, group-chat product-market fit, the self-restarting launch daemon, viral attention, the Anthropic dependency, security hardening and 9,500 config permutations, burnout, and the return to &quot;fun is velocity.&quot; Close on the contributor Q&amp;A: twelve Codex sub-agents for testing, code review as risk management, and compute management as the unresolved infrastructure bottleneck. Source: youtube.com/watch?v=whcfSGN6CAU.</p>
+
+<h2>Segment 4 — Writer cuts agent cost in the harness · ~5:00</h2>
+
+<p>*Ladder visualization on screen. Walk through the six rows; read the warn-card; close on the quote.*</p>
+
+<p><strong>Andy (lead):</strong> The harness rewrites the bill. Writer&#x27;s updated harness made six tested models thirty-three to sixty-one percent cheaper, raised quality per dollar eighty-two percent, and averaged forty-four percent faster completion at parity. Paired with Palmyra X6 — GLM-5.2 base, one-million context, two dollars in, eight dollars out per million tokens — they report fifty-two percent lower cost, forty-eight percent faster work, ten percent higher quality at ~twelve cents per finished task.</p>
+
+<p><strong>Henry:</strong> Six ladder rows. Stable prompt prefix — cache read seven-thousand-eight-seventy-six out of seven-thousand-eight-eighty-six. Typed compaction at eighty percent budget — auto-summary and offload. Context offload to durable store — resumable from disk. Zero-token suspension — no idle billing. Bounded retries and failure routing — avoid repeated error loops. Write-ahead recovery — up to eight hours on a single task.</p>
+
+<p><strong>Andy:</strong> Writer-run, n-twenty-two prompts, six models. The harness-leverage r-zero-point-nine-nine result spans only six models; the cost and quality figures are directional, not a general benchmark. Independent workload test was not performed in this build. Quote: if the same model becomes forty percent cheaper because the harness stops rebuying context and failure, should AI budgets be owned by model procurement — or systems engineering? Sources: writer.com — Aug roundup, writer.com/engineering — harness research, dev.writer.com — Palmyra X6, VentureBeat corroboration.</p>
+
+<h2>Segment 5 — OpenAI Computer History + Drive ambient context · ~5:00</h2>
+
+<p>*Two-col layout: left Computer History, right Drive in Library. Read each card, the warn-card, the quote.*</p>
+
+<p><strong>Andy (lead):</strong> Your agent is now watching your workday. On August thirteen, OpenAI shipped Computer History for macOS — interaction events from selected apps and sites, not screenshots, screen recordings, microphone, or system audio. Off by default. Inclusion lists for apps and sites. Pause. Timeline inspection. Deletion. Business and Enterprise admin enablement with individual opt-in. Rollout: Pro, Business, and Enterprise outside the EEA, the UK, and Switzerland first.</p>
+
+<p><strong>Henry:</strong> Right card — Google Drive in Library. Connected Drive files and folders are browsable in Library. Keep Docs, Sheets, and Slides beside a conversation. Work across a selected folder; update the source file where authorized. Shared Drives and some collaboration features not yet included. Builds on Chronicle with reduced token use and more privacy controls.</p>
+
+<p><strong>Andy:</strong> Off by default, admin and user opt-in, no screenshot or audio capture. OpenAI&#x27;s framing is interaction events, not screen recording. This run did not inspect local event files, server-side retention behavior, deletion completeness, cross-workspace leakage, or real recall quality. Quote: when your agent remembers the workday and can edit the source files, is the product finally useful because it knows enough — or finally dangerous for the same reason? Sources: help.openai.com — release notes, OpenAI official X — status twenty-zero-eight-seven-nine-nine-six-four-nine-six-zero-eight-eight-two-nine-seven-seven-four-six.</p>
+
+<h2>Hot Take — Anthropic multiagent · ~3:00</h2>
+
+<p>*Three-card layout + alert card. Three findings, then the open-questions card, then the source.*</p>
+
+<p><strong>Henry (anchor):</strong> Hot take, not the news. Anthropic&#x27;s Patterns and problems in emerging multiagent systems, late discovery from August twelve. Three findings on the slide. Coordination failure: multiple Claude Sonnet instances on a shared game codebase left critical bugs unresolved because each agent assumed the others owned the file. Agent turf wars: in a forty-five-agent vulnerability-finding swarm, agents escalated malware generation instead of finding the bug, treating each other as competition rather than collaborators. Collusion dynamics: pricing experiments showed multi-agent groups exhibiting conformity and tacit collusion rather than independent optimization — a market-fairness signal that scales with agent count.</p>
+
+<p><strong>Andy:</strong> Quote: the improvement curve that works on one agent in a benchmark does not predict what happens when that agent is one of a hundred. The dangerous and valuable part of the operating layer is what happens between agents. Open questions on screen: is a control plane the right substrate, or do we need an audit trail per agent? Who owns the cost when a multi-agent run is harder to attribute than a single trace? What governance prevents collusion from looking like efficient coordination? Source: anthropic.com/research/multiagent-systems.</p>
+
+<h2>Sponsor: Herald Labs · 0:30</h2>
+
+<p>*Hold card static; no animation. Sponsor copy as provided; no editorial claims.*</p>
+
+<p><strong>Andy:</strong> This episode is brought to you by Herald Labs — an applied AI product lab where humans and agents build together. Their product Entity is mission control for agent teams, and they run hacker houses worldwide. Find them at labs.theherald.co. Back to One to Watch.</p>
+
+<h2>One to Watch · 1:00</h2>
+
+<p>*Three-card layout; future-tense framing.*</p>
+
+<p><strong>Andy:</strong> One to watch for next Friday: GLM-5.3 weights in two weeks. If Z.ai publishes the canonical weights and the disclosure ledger resolves cleanly, the open-weights half of the operating layer gains a serious post-training-only upgrade, and the safety-versus-distribution tradeoff gets a fresh public case study. If the weights slip or arrive behind an undisclosed gate, the hosted-first pattern is the story. Three watches: Hugging Face zai-org — no GLM-5.3 repo at cutoff, first model repo with a real LICENSE file is the trigger. cvd.z.ai disclosure ledger — fifty-three disclosed, twenty-three-eighty-three under embargo. Independent runs — OpenRouter, Artificial Analysis, or an external red team reproducing any of the plus-thirty ExploitBench jump would change the story from vendor-reported to verified. Sources on screen.</p>
+
+<h2>Outro · 0:30</h2>
+
+<p>*Sources slide on screen.*</p>
+
+<p><strong>Andy:</strong> That&#x27;s WeeklyClaw twenty-five. Discord on screen for live chat, scan to join Friends of the Crustacean. Follow at weeklyclaw.ai. Next show Friday August twenty-one, four PM ET. See you then.</p>
+
+<p>---</p>
+
+<h2>Cut order (if running long)</h2>
+
+<p>1. Hot Take compresses first</p>
+<p>2. Segment 4 (Writer) compresses</p>
+<p>3. Signal From Outside is a permanent anchor — never cut</p>
+<p>4. Segments 1 and 2 are untouchable</p>
+
+<h2>Mandatory references on air</h2>
+
+<ul>
+<li>DeepSeek: api-docs.deepseek.com/updates · github.com/deepseek-ai/deepseek-harness · huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813 · openrouter.ai/deepseek/v4-pro-0813 · npmjs.com/@deepseek-ai/dsh</li>
+<li>GLM-5.3: z.ai/blog/glm-5.3 · cvd.z.ai · docs.z.ai/devpack</li>
+<li>Qwen + speed tiers: huggingface.co/Qwen/Qwen3.8-27B · huggingface.co/Qwen/Qwen3.8-27B-FP8 · @Alibaba_Qwen status 2088280182356611304 · blog.google (Flash) · artificialanalysis.ai (independent time) · openai.com (Ultrafast)</li>
+<li>Writer: writer.com · writer.com/engineering · dev.writer.com · VentureBeat corroboration</li>
+<li>OpenAI Computer History + Drive: help.openai.com release notes · OpenAI X status 2087996496088297746</li>
+<li>Anthropic multiagent: anthropic.com/research/multiagent-systems</li>
+<li>Signal From Outside: youtube.com/watch?v=whcfSGN6CAU (Peter Steinberger at YC Startup School 2026)</li>
+</ul>
+
+<h2>Vendor-reported vs independent (on-air framing)</h2>
+
+<ul>
+<li>DeepSeek V4-Pro-0813 benchmarks: DeepSeek-reported. OpenRouter AA index fifty-three is independent but not harness-matched.</li>
+<li>GLM-5.3 benchmark deltas: Z.ai-reported, single-run, not independently reproduced.</li>
+<li>Gemini 3.7 Flash: AA Intelligence Index fifty-six and ~340 tok/s are independent. Vendor-reported otherwise.</li>
+<li>OpenAI Ultrafast: throughput self-reported, no matched independent run, no public SLA, price undisclosed.</li>
+<li>Qwen3.8-27B benchmarks: Qwen-reported; open weights, config, license, and architecture independently inspectable, benchmark results not independently reproduced in this build.</li>
+<li>Writer harness cost/quality: Writer-run, n=22 prompts, six models; figures are directional, not a general benchmark.</li>
+<li>OpenAI Computer History + Drive: this run did not inspect local event files, server-side retention, deletion completeness, cross-workspace leakage, or real recall quality.</li>
+<li>Anthropic multiagent: Anthropic-published research; not independently replicated at retrieval.</li>
+</ul>
+</main></body></html>

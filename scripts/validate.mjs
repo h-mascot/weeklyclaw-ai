@@ -422,10 +422,18 @@ for (const week of weeks) {
 }
 
 const vercelConfig = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
-for (const source of ['/episodes/:episode/agenda', '/episodes/:episode/agenda.md']) {
-  const redirect = vercelConfig.redirects?.find((item) => item.source === source);
-  if (!redirect || redirect.destination !== '/episodes?week=:episode&deck=main' || redirect.permanent !== true) {
-    console.error(`Missing permanent agenda redirect: ${source}`);
+for (const week of weeks) {
+  for (const suffix of ['agenda', 'agenda.md']) {
+    const redirect = vercelConfig.redirects?.find((item) => item.source === `/episodes/:episode/${suffix}`);
+    if (redirect) {
+      console.error(`Stale agenda redirect still present: ${redirect.source}`);
+      process.exit(1);
+    }
+  }
+  const agendaPage = join('episodes', String(week), 'agenda.html');
+  const agendaMd = join('episodes', String(week), 'agenda.md');
+  if (existsSync(agendaMd) && !existsSync(agendaPage)) {
+    console.error(`agenda.md exists but no agenda.html page: episodes/${week}`);
     process.exit(1);
   }
 }

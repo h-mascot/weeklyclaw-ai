@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekly Claw Ep20 — Agenda (archive)</title>
+<style>body{margin:0;background:#fffdf8;color:#101418;font:16px/1.6 Georgia,serif}main{max-width:820px;margin:0 auto;padding:48px 24px 80px}h1{font-size:1.7rem}h2{font-size:1.1rem;margin:2rem 0 .5rem;border-bottom:2px solid #e5e0d5;padding-bottom:.3rem;color:#0b3c42}ul{padding-left:1.3rem}code{font-family:ui-monospace,monospace;font-size:.85em;background:#f1ede2;padding:1px 5px;border-radius:4px}</style>
+</head><body><main><span style="display:inline-block;font:700 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#6b7280;border-radius:999px;padding:6px 12px;margin-bottom:20px">Archive</span>
+<h1>🦞 Weekly Claw — Episode 20 Rundown</h1>
+
+<p><strong>Date:</strong> Friday, July 10, 2026 · 4:00 PM ET</p>
+<p><strong>A live builder show about AI, agents, devtools, startups, and the weird edge of software.</strong></p>
+<p><strong>Host:</strong> Andy (@AndyML) · <strong>Featuring:</strong> @HiM · possible guest builder</p>
+<p><strong>Target runtime:</strong> ~43 min (~48 with a guest) · built to be clipped</p>
+
+<p>---</p>
+
+<h2>Cold Open — The Frame (2 min)</h2>
+
+<p>Welcome to Weekly Claw. The last seven days might be the most important week in AI all year, so I&#x27;m not going to waste the top of the show — here&#x27;s what actually mattered. Two frontier models launched in a single day. The cost of running an agent just fell off a cliff. And the first fully autonomous AI ransomware showed up in the wild. That&#x27;s the episode. Let&#x27;s get into it.</p>
+
+<p>---</p>
+
+<h2>What Happened This Week (14 min)</h2>
+
+<p><strong>The headline: this wasn&#x27;t a launch, it was a pile-up — maybe the biggest 72 hours in AI model history.</strong> Run the tape. July 8th, OpenAI drops <strong>GPT-Live</strong> — a full-duplex voice model that listens and talks at the same time, backchannels &quot;mhmm&quot; at you like a person, and hands off to a frontier model when it needs to actually think. Same day, <strong>Cognition ships SWE-1.7</strong>, their best coding model yet, running in Devin at a thousand tokens a second on Cerebras — frontier-class agentic coding at a fraction of the cost. <strong>Perplexity&#x27;s</strong> in the mix too, rolling out local-cloud routing on Perplexity Computer that keeps your sensitive stuff on-device and ships the heavy lifting to the cloud automatically. And then July 9th is the real earthquake: <strong>GPT-5.6</strong> in three tiers — Sol, Terra, Luna — with ChatGPT and Codex folded into one super app, and hours later <strong>xAI&#x27;s Grok 4.5</strong> at two dollars a million tokens, which Cursor&#x27;s CEO instantly made his daily driver at roughly a quarter of Opus 4.8&#x27;s token count.</p>
+
+<p>The takeaway — and it&#x27;s the theme of the whole episode: the cost of intelligence just collapsed, and it&#x27;s coming from everywhere at once. Voice, coding, routing, frontier — four different fronts in three days. What was expensive six months ago is commodity infrastructure now, and that changes what&#x27;s worth building. (And if OpenClaw&#x27;s your harness — it already wired up the full GPT-5.6 family, day one.)</p>
+
+<p><strong>Second: Claude Cowork went mobile and web.</strong> Anthropic made Cowork sessions run remotely — start a task on your laptop, close the lid, check it from your phone, and scheduled tasks run when nothing&#x27;s even online. That&#x27;s the real shift: from &quot;AI tool you sit in front of&quot; to &quot;AI teammate working in the background.&quot; They doubled usage limits through August 5th to get you hooked. Watch this pattern — async agents are becoming the default, not the novelty.</p>
+
+<p><strong>Third: Cursor had an absurd week.</strong> They launched Automations — coding agents that trigger themselves off repo changes, Slack messages, or a timer. Code review, security audits, incident response, all running with nobody pressing a button. They shipped an iOS app. And Bloomberg says revenue doubled to over two billion dollars in three months, sixty-billion valuation. Devtools just became always-on infrastructure, and the money says it&#x27;s real.</p>
+
+<p><strong>Fourth, and this one&#x27;s strategic: Chinese models now run up to 46% of US enterprise API tokens.</strong> CNBC&#x27;s investigation — up from about four and a half percent a year ago. DeepSeek V4 Flash is fourteen cents per million tokens against GPT-5.5&#x27;s five dollars. Coinbase runs twelve hundred agents on Chinese models and halved its bill. The House Committee opened a probe. Your model choice is now a strategic and political decision, not just a technical one.</p>
+
+<p><strong>And the one that should scare you a little: JADEPUFFER.</strong> Sysdig documented the first fully autonomous AI ransomware attack. An LLM agent exploited a vulnerability, moved laterally, escalated privileges, encrypted over thirteen hundred configs, and demanded ransom — all on its own, fixing its own failed steps in real time. This is not a demo. If you build agents, that&#x27;s your threat model now. The age of agentic attackers is officially here.</p>
+
+<p>---</p>
+
+<h2>Hot Takes / Debate (7 min)</h2>
+
+<p>Alright, takes. Two big ones this week.</p>
+
+<p><strong>Take one: the frontier-model moat is basically gone.</strong> When Grok 4.5 lands at two dollars and DeepSeek&#x27;s at fourteen cents and Cursor&#x27;s CEO swaps daily drivers in an afternoon — the model isn&#x27;t the moat anymore. The moat is moving up the stack: the harness, the routing, the workflows, the distribution. My prediction: within a year, &quot;which model&quot; becomes a config setting most builders barely think about, and the companies that win are the ones that own the layer *above* the model, not the model itself. If you&#x27;re betting your product on having access to the single best model, I think you&#x27;re betting on the wrong thing.</p>
+
+<p><strong>Take two, the spicy one: are you actually going to run DeepSeek in production?</strong> Because the cost math says yes and the politics say maybe not. I think most builders quietly will, congressional probe or not — the price gap is too big to ignore for background agent work where the data isn&#x27;t sensitive. But I&#x27;d bet we see the first &quot;company got burned running Chinese models&quot; headline within a couple months, and then everyone pretends they were always careful about it. Where do you land — pragmatist or hard no? Drop it in chat, I want the disagreement.</p>
+
+<p>---</p>
+
+<h2>Tool Fight — Grok 4.5 vs the Frontier for Agent Work (6 min)</h2>
+
+<p>So let&#x27;s actually put yesterday&#x27;s launches in the ring, because this is the question everyone&#x27;s going to be arguing about all weekend: what&#x27;s your agent daily driver now — Grok 4.5, GPT-5.6, or Claude Opus 4.8?</p>
+
+<p>Here&#x27;s my read. On raw cost-per-outcome, Grok 4.5 is the story — two bucks a million and, if the token-efficiency claims hold, roughly a quarter of the tokens Opus burns for the same job. For long-running agent loops where you&#x27;re paying per step, that compounds fast; the Cursor endorsement isn&#x27;t nothing. GPT-5.6 Luna is the sleeper — a dollar in, and now it lives inside a merged Codex-plus-ChatGPT app, so the distribution is brutal. And Opus 4.8 is still, for my money, the best when the task needs judgment and long-horizon coherence — but it&#x27;s now the premium option you reach for deliberately, not the default you leave running.</p>
+
+<p>The real move, though — and this is what the smart teams are already doing — isn&#x27;t picking one. It&#x27;s routing: cheap fast model for the ninety percent of agent steps that are grunt work, frontier model for the ten percent that actually need taste. Which, funny enough, is exactly what the guy in our next segment spends twenty minutes arguing. So let&#x27;s go there.</p>
+
+<p>---</p>
+
+<h2>Signal From Outside — Jensen Huang on Open Agent Systems (7 min)</h2>
+
+<p>The one video worth your time this week dropped two days ago: Jensen Huang, NVIDIA&#x27;s CEO, sitting down with Harrison Chase from LangChain. Title&#x27;s &quot;Why companies need open agent systems.&quot; Sounds like an all-hands snoozer. It is not — it&#x27;s the sharpest framing I&#x27;ve heard of exactly the thing we were just talking about.</p>
+
+<p>Chase asks what changed in the last six months to make AI actually *useful*. And Jensen&#x27;s answer isn&#x27;t about the models — it&#x27;s about what he calls the <strong>harness</strong>. The scaffolding around the model: tools, memory, domain context, the learning loop. AI got useful, he says, when people stopped treating it as raw capability and started wrapping it in a harness they own and control. That&#x27;s agent frameworks. That&#x27;s the whole game.</p>
+
+<p>Then he gets to model selection, and it&#x27;s the same take I just gave in the tool fight — start with the frontier model to find the ceiling of what&#x27;s possible in your domain, then build <strong>specialized sub-agents</strong> for your critical workflows, and *that&#x27;s* where cheap open-weight models shine because you can fine-tune them and run them yourself. His line is that when intelligence is cheap, you use *more* of it — more agents in parallel, bigger search, faster iteration. Which is precisely the world yesterday&#x27;s launches just dropped us into.</p>
+
+<p>The part that stuck with me: he says most companies treat agents like a software-procurement decision when it&#x27;s actually a strategy decision — that a company is &quot;a collection of proprietary, super-important workflows,&quot; and whoever encodes those into agent systems on infrastructure they control wins. He and Chase announce a Deep Agents plus OpenShell reference architecture to go do exactly that. And he throws in, without hedging, that more AI means more jobs — the AI-native roles just aren&#x27;t invented yet.</p>
+
+<p>Why I&#x27;m showing you this: it&#x27;s a CEO of a three-trillion-dollar company describing the open-harness, route-between-models, own-your-infrastructure playbook as *the* winning architecture. That&#x27;s not fringe anymore. It&#x27;s the consensus forming in real time. Video&#x27;s linked — the Nemotron and LangChain middle section gets usefully technical if you want to go deeper.</p>
+
+<p>---</p>
+
+<h2>Close — One To Watch + Where To Follow (2 min)</h2>
+
+<p>One thing to watch next week: the next shoe. Two frontier models launched in a day, so keep an eye on how Anthropic responds and whether that House probe on Chinese models turns into anything real — that&#x27;s the story with legs.</p>
+
+<p>If you want to travel for something: the AGI Summit is at the Palace of Fine Arts in San Francisco July 18–19, and there&#x27;s a sharp little &quot;Loop Engineering&quot; night at Frontier Labs in SF on the 14th if last week&#x27;s Steinberger talk landed for you.</p>
+
+<p>And the housekeeping that actually matters now: this show lives on <strong>X</strong> first — that&#x27;s where the clips and the live takes go, so follow the show and follow me, <strong>@AndyML</strong>. Full episodes and highlights land on <strong>YouTube</strong>, and everything&#x27;s archived with sources at <strong>weeklyclaw.ai</strong>.</p>
+
+<p>Next episode is Friday, July 17th, 4 PM ET. New format, same time. We follow the excitement — see you then.</p>
+
+<p>---</p>
+
+<p>*Weekly Claw #20 · July 10, 2026 · 🦞*</p>
+<p>*&quot;Follow the excitement.&quot;*</p>
+</main></body></html>
