@@ -38,7 +38,7 @@ Narrative arc: **consolidation → sovereign compute → agent capital → AGI c
 
 ## Sponsor: Heritage Telecom · 1:00
 
-Tonight's sponsor read: "This episode is brought to you by vertical integration's least favorite company. While everyone else bundles your chip, your model, and your monthly seat, Heritage Telecom sells you the one thing nobody thought to rent back: the pipe. Independent infrastructure, boring reliability, zero telemetry. heritagetel.com"
+Tonight's sponsor read: "This episode is brought to you by vertical integration's least favorite company. While everyone else bundles your chip, your model, and your monthly seat, Heritage Telecom does the thing it's actually good at: UCaaS and VoIP phone service for businesses that just need their calls to work. Independent, boring reliability, zero telemetry. heritagetel.com"
 
 ## Story 5 · Instinct raises at $2.5B · 1:30 (Grid 2, slide `s-seg-grid-b` card 1)
 
