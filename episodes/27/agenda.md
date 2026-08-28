@@ -1,4 +1,4 @@
-# WeeklyClaw Episode 27: The agent owns the loop. (rev4)
+# WeeklyClaw Episode 27: The agent owns the loop. (rev5)
 
 **Show date:** Friday 2026-08-28 (America/New_York, 4:00 PM ET)
 **Hosts:** Henry and Andy
@@ -12,7 +12,7 @@
 
 ## Episode thesis
 
-This week was the consolidation race. Nvidia moved to buy the open-weights commons outright — $12.9B reported for Hugging Face. Zhipu unmasked its viral stealth model Ox Alpha as GLM-5.3-Flash, serving a hundred trillion tokens a day entirely on Chinese chips. OpenAI stacked chip, model and business seat, priced the seat, and said it will have AGI internally by December. A four-month-old assistant startup raised at $2.5 billion. Underneath the noise, Qwen kept the weights open, Headlong shipped the always-on harness with its warning label, Perplexity put the whole stack on the desk, and Figure turned robotics into a data business. Hot take stands: the only durable advantage left is the deployment layer.
+This week was the consolidation race. Nvidia moved to buy the open-weights commons outright — $12.9B reported for Hugging Face. Zhipu unmasked its viral stealth model Ox Alpha as GLM-5.3-Flash, serving a hundred trillion tokens a day entirely on Chinese chips. OpenAI stacked chip, model and business seat, priced the seat, and said it will have AGI internally by December. A four-month-old assistant startup raised at $2.5 billion. Underneath the noise, Qwen kept the weights open, Headlong shipped the always-on harness with its warning label, Perplexity put the whole stack on the desk, and Figure turned robotics into a data business. The hot take fights over the biggest one: Nvidia buying Hugging Face — good or bad for open source.
 
 Narrative arc: **consolidation → sovereign compute → agent capital → AGI claims → operating layer**.
 
@@ -83,9 +83,9 @@ Heritage Telecom keeps the lights on while we keep the operating layer honest. h
 
 Codex agents inhabit a virtual office (davidfromkansas clip). Same agent, different surface — the harness is the product. NO AUTOPLAY.
 
-## Hot take · 3:00
+## Hot take: the fight · 3:00
 
-The last open moat is the deployment layer. Nine stories, one pattern: everyone tried to own a layer. The one thing nobody can buy is the operator's right to re-deploy.
+Motion: "Nvidia buying Hugging Face is bad for open source." Henry argues BAD (the commons gets a landlord — the referee sells jerseys; Microsoft-GitHub precedent; ToS beats licenses when the hub is single). Andy argues GOOD (validation, not capture — open source just got priced as the strategic layer; openness is Nvidia's TAM; open weights can't be unshipped). One rebuttal each, then Henry's closer: the question is who sets the rent — which is why the right to re-deploy is the moat still open.
 
 ## Sponsor: Herald Labs · 1:00
 

@@ -1,7 +1,7 @@
-# WeeklyClaw Episode 27 — Host Cheat Sheet (rev4)
+# WeeklyClaw Episode 27 — Host Cheat Sheet (rev5)
 
 **Show:** Friday 2026-08-28, 4:00 PM ET · **Hosts:** @AndyML + @HiM · **Sponsor order:** Heritage → Herald (unchanged).
-**Deck:** `deck.rev4.html` · 17 slides · render at 1600x900 · validate via `validate_deck.py` against Ep 26 authority.
+**Deck:** `deck.rev5.html` · 17 slides · render at 1600x900 · validate via `validate_deck.py` against Ep 26 authority.
 **Rev3 change:** nine news segments (4 added: Nvidia×HF, GLM-5.3-Flash/Ox Alpha, Instinct raise, OpenAI AGI claim), each ~2:30. Faster cuts, more week.
 **Hard stop:** 45:00.
 
@@ -29,7 +29,7 @@
 
 Total scripted ≈ 38:15; hard stop 45:00 — roughly 7 minutes of buffer for the clustered-format pace.
 
-## ASCII runtime bars (rev4)
+## ASCII runtime bars (rev5)
 
 ```
 Cold open    [█]                          1:20
@@ -66,7 +66,7 @@ Close        [██]                         3:00
 
 - After Story 2 → Heritage sponsor.
 - After Story 5 → "Open weights didn't wait — story six."
-- After Story 9 → "Now the part where we fight about it." (Hot take)
+- After Story 9 → "Now the fight. Motion: Nvidia buying Hugging Face is bad for open source. I'm bad, Andy's good. Two minutes each." (Hot take)
 - Hot take close → Herald sponsor → One to watch.
 
 ## Never cut
