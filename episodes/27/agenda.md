@@ -1,4 +1,4 @@
-# WeeklyClaw Episode 27: The agent owns the loop. (rev3)
+# WeeklyClaw Episode 27: The agent owns the loop. (rev4)
 
 **Show date:** Friday 2026-08-28 (America/New_York, 4:00 PM ET)
 **Hosts:** Henry and Andy

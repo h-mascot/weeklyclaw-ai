@@ -1,8 +1,8 @@
-# WeeklyClaw Episode 27 — Henry's Section (rev3)
+# WeeklyClaw Episode 27 — Henry's Section (rev4)
 
 **Show:** Friday 2026-08-28, 4:00 PM ET · **Co-host:** @AndyML · **Sponsor order:** Heritage → Herald (unchanged).
 
-**Your standing role:** Lead all NINE What Happened This Week segments (rev3: four added, all compressed to ~2:30). Frame the cold open. Lead the hot take. Close with one-to-watch callouts.
+**Your standing role:** Lead all NINE What Happened This Week segments (rev4: four added, all compressed to ~2:30). Frame the cold open. Lead the hot take. Close with one-to-watch callouts.
 
 **Rev3 pace note:** ~2:30 per story. Land the anchor line, one number, one take, hand off. Don't deep-dive on air — the receipts are on the slide.
 

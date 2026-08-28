@@ -1,7 +1,7 @@
-# WeeklyClaw Episode 27 — Host Cheat Sheet (rev3)
+# WeeklyClaw Episode 27 — Host Cheat Sheet (rev4)
 
 **Show:** Friday 2026-08-28, 4:00 PM ET · **Hosts:** @AndyML + @HiM · **Sponsor order:** Heritage → Herald (unchanged).
-**Deck:** `deck.rev3.html` · 17 slides · render at 1600x900 · validate via `validate_deck.py` against Ep 26 authority.
+**Deck:** `deck.rev4.html` · 17 slides · render at 1600x900 · validate via `validate_deck.py` against Ep 26 authority.
 **Rev3 change:** nine news segments (4 added: Nvidia×HF, GLM-5.3-Flash/Ox Alpha, Instinct raise, OpenAI AGI claim), each ~2:30. Faster cuts, more week.
 **Hard stop:** 45:00.
 
@@ -27,9 +27,9 @@
 | 16 | Title card | `s-title` | n/a | Visual |
 | 17 | Sources / Links | `s-sources` | n/a | Visual |
 
-Total scripted ≈ 38:15; hard stop 45:00 — roughly 7 minutes of buffer for the nine-story pace.
+Total scripted ≈ 38:15; hard stop 45:00 — roughly 7 minutes of buffer for the clustered-format pace.
 
-## ASCII runtime bars (rev3)
+## ASCII runtime bars (rev4)
 
 ```
 Cold open    [█]                          1:20
