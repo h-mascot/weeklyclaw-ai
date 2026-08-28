@@ -183,6 +183,11 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
 </svg>
 
 <div class="progress-bar" id="progressBar"></div>
+<div class="slide-counter"><span id="slideNum">1</span> / <span id="slideTotal">17</span></div>
+<div class="nav-dots" id="navDots"></div>
+<div class="kb-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> navigate &middot; scroll / swipe &middot; <kbd>F</kbd> fullscreen</div>
+<div class="slide-container">
+
 <div class="slide active" id="s-title">
   <svg class="claw-bg" style="top:2%;right:-4%;"><use href="#weeklyclaw-logo"/></svg>
   <div class="glow-orb orb-red" style="width:520px;height:520px;top:-160px;left:-140px;"></div>
@@ -586,6 +591,8 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
 </div>
 
 </div>
+</div>
+
 <script>
 (function() {
   const slides = document.querySelectorAll('.slide');
