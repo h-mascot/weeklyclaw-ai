@@ -172,11 +172,12 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
 </style>
 
 <style>
-.story-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:18px;flex:1;min-height:0;margin-top:16px;}
-.story-grid.cols-2{grid-template-columns:repeat(2,1fr);}
+#s-seg-grid-a .content,#s-seg-grid-b .content{height:100%;max-height:100%;}
+#s-seg-grid-a .content > div:first-child,#s-seg-grid-b .content > div:first-child{flex:0 0 auto;}
+.story-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:18px;flex:1;min-height:0;margin-top:16px;overflow:hidden;}
 .story-card{display:flex;flex-direction:column;background:rgba(255,255,255,.03);border:1.5px solid var(--border-subtle);border-radius:16px;overflow:hidden;min-height:0;transition:border-color .2s;}
 .story-card:hover{border-color:var(--accent);}
-.story-card .thumb{height:150px;min-height:110px;overflow:hidden;position:relative;background:#0d1117;}
+.story-card .thumb{flex:1 1 0;min-height:0;overflow:hidden;position:relative;background:#0d1117;}
 .story-card a.thumb{position:relative;}
 .story-card .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;}
 .story-card .thumb .glyph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3.2rem;font-weight:800;}
@@ -265,19 +266,19 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
     </div>
     <div class="story-grid cols-2">
       <div class="story-card">
-        <a class="thumb" href="https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s-nvidia-hf-cologo.png" alt="Nvidia acquires Hugging Face"></a>
+        <a class="thumb" href="https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-nvidia-hf.png" alt="Nvidia acquires Hugging Face"></a>
         <div class="meta"><h3>Nvidia is buying Hugging Face.</h3><p>$12.9B reported, unconfirmed. The GPU vendor would own the model commons.</p><a href="https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html" target="_blank" rel="noopener">cnbc.com</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://x.com/ZixuanLi_/status/2088135213930905623" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s-glm53-full-results.jpg" alt="GLM-5.3 full benchmark results"></a>
+        <a class="thumb" href="https://x.com/ZixuanLi_/status/2088135213930905623" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-glm-flash.png" alt="GLM-5.3 full benchmark results"></a>
         <div class="meta"><h3>Ox Alpha is GLM-5.3-Flash.</h3><p>Serving ~100T tokens/day on ~100K Chinese GPUs (Zhipu-reported). Benchmarks over press.</p><a href="https://x.com/ZixuanLi_/status/2088135213930905623" target="_blank" rel="noopener">benchmarks (x.com)</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s-jalapeno-semi.png" alt="OpenAI Jalapeno vs Nvidia Blackwell analysis"></a>
+        <a class="thumb" href="https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-jalapeno.png" alt="OpenAI Jalapeno vs Nvidia Blackwell analysis"></a>
         <div class="meta"><h3>OpenAI ships Jalape&ntilde;o.</h3><p>First custom inference chip; vendor-reported wins vs Blackwell on perf/watt.</p><a href="https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia" target="_blank" rel="noopener">semianalysis</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://time.com/article/2026/08/26/openai-sam-altman-interview/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s-openai-time-cover.png" alt="TIME cover story on OpenAI reboot"></a>
+        <a class="thumb" href="https://time.com/article/2026/08/26/openai-sam-altman-interview/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-openai-agi.png" alt="TIME cover story on OpenAI reboot"></a>
         <div class="meta"><h3>OpenAI says AGI by December.</h3><p>Altman in TIME: internal system he'd call AGI by end of 2026 — his definition.</p><a href="https://time.com/article/2026/08/26/openai-sam-altman-interview/" target="_blank" rel="noopener">time.com</a></div>
       </div>
     </div>
@@ -296,19 +297,19 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
     </div>
     <div class="story-grid cols-2">
       <div class="story-card">
-        <a class="thumb" href="https://qwen.ai/blog?id=qwen3.8-flash-next" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s2-qwen-architecture.png" alt="Qwen Flash-Next architecture"></a>
+        <a class="thumb" href="https://qwen.ai/blog?id=qwen3.8-flash-next" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-qwen-flash.png" alt="Qwen Flash-Next architecture"></a>
         <div class="meta"><h3>Qwen opens Flash-Next.</h3><p>Qwen4-preview architecture ungated: 125B params, 6B active, 250K context.</p><a href="https://qwen.ai/blog?id=qwen3.8-flash-next" target="_blank" rel="noopener">qwen.ai</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://www.laude.org/updates/headlong-a-microharness" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s3-headlong-loop.svg" alt="Headlong always-on loop"></a>
+        <a class="thumb" href="https://www.laude.org/updates/headlong-a-microharness" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-headlong.png" alt="Headlong always-on loop"></a>
         <div class="meta"><h3>Laude ships Headlong.</h3><p>The agent that never sleeps — fixed a recall bug in 48 min, no human in the loop.</p><a href="https://www.laude.org/updates/headlong-a-microharness" target="_blank" rel="noopener">laude.org</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://www.perplexity.ai/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s4-portable-computer.png" alt="Perplexity Portable Computer"></a>
+        <a class="thumb" href="https://www.perplexity.ai/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-perplexity.png" alt="Perplexity Portable Computer"></a>
         <div class="meta"><h3>Perplexity puts the stack on the desk.</h3><p>Portable Computer runs model, harness, sandbox locally on DGX Spark.</p><a href="https://www.perplexity.ai/" target="_blank" rel="noopener">perplexity.ai</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://techcrunch.com/2026/08/27/instinct-ai-valuation-2-5b/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s-instinct-collage.png" alt="Posts about Instinct raise"></a>
+        <a class="thumb" href="https://techcrunch.com/2026/08/27/instinct-ai-valuation-2-5b/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-instinct.png" alt="Posts about Instinct raise"></a>
         <div class="meta"><h3>Instinct raised at $2.5B.</h3><p>$250M new at a $2.5B valuation, four months old. Agent capital is hot.</p><a href="https://techcrunch.com/2026/08/27/instinct-ai-valuation-2-5b/" target="_blank" rel="noopener">techcrunch</a></div>
       </div>
     </div>
