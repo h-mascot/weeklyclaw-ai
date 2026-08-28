@@ -6,9 +6,8 @@
 **Hard stop:** 45 minutes
 **Episode lineage:** Ep 26 aired Friday 2026-08-21 16:00 ET. News window opens 2026-08-21 20:00 UTC.
 
-## Rev3 note (2026-08-28, Henry)
-
-"A lot more that happened" — four stories added (Nvidia×Hugging Face, Ox Alpha=GLM-5.3-Flash, Instinct raise, OpenAI AGI claim); every news segment compressed to ~2:30. Eight stories, faster cuts, more of the week.
+## Rev6 note (2026-08-28)
+News redesigned as card grids: two slides of four stories each (2x2), one AI-generated banner thumbnail per card. Signal From Outside is now Andy's pick: GitHub's OpenClaw maintainers video. Deck commit f50c040.
 
 ## Episode thesis
 
@@ -22,57 +21,21 @@ Narrative arc: **consolidation → sovereign compute → agent capital → AGI c
 
 ## What happened this week — Grid 1 · 8:00
 
-Six cards, 2 rows x 3 cols, ~80s each: Nvidia buys Hugging Face, Ox Alpha = GLM-5.3-Flash, OpenAI Jalapeño, OpenAI AGI date, Instinct raise, Figure Index. Henry walks the grid left-to-right.
+Four cards, 2 rows x 2 cols, ~2:00 each (slide `s-seg-grid-a`): Nvidia buys Hugging Face · Ox Alpha = GLM-5.3-Flash · OpenAI ships Jalapeño · OpenAI says AGI by December. AI-gen banner thumbnails on every card. Henry walks the grid left-to-right, top-to-bottom.
 
 ## What happened this week — Grid 2 · 6:00
 
-Three cards, one row: Qwen Flash-Next, Headlong, Perplexity Portable Computer. The operating-layer story.
+Four cards, 2 rows x 2 cols (slide `s-seg-grid-b`): Instinct raised at $2.5B · Qwen opens Flash-Next · Laude ships Headlong · Perplexity puts the stack on the desk. The operating-layer + agent-capital story.
+
+Story facts stay in the source links on each card (CNBC, x.com benchmarks, SemiAnalysis, TIME, TechCrunch, qwen.ai, laude.org, perplexity.ai). Figure Index (16M videos, $15M paid out, robots-as-data-business) is folded into "One to watch".
+
+## Signal From Outside · 6:00 (slide `s-signal-outside`)
+
+Andy leads: GitHub's "OpenClaw Went Viral. Meet the Maintainers Building and Securing It." (46:00, youtu.be/5VSwaUXtPIE). Not an OpenClaw overview — takeaways that apply to all agentic AI builders: agent-contributor saturation, prompt requests + the 10-PR cap, the evidence standard (transcripts/screenshots, "we care if you actually thought about this feature"), inverted review economics, dependency hygiene + zero telemetry, code mode. NO AUTOPLAY; clip cues in Andy's talk track (timestamps approximate — spot-check before air).
 
 ## Sponsor: Heritage Telecom · 1:00
 
 Heritage Telecom keeps the lights on while we keep the operating layer honest. heritagetel.com
-
-## Story 3 · OpenAI's full-stack squeeze · 2:45 (Slide `s-seg-openai-stack`)
-
-- Jalapeño first results: 1.5–1.9x work/watt, 1.7–3.6x lower latency (vendor-reported). Premium: 5x usage, no five-hour cap.
-- NVIDIA Groq 3 LPX in production since Aug 24 as the live rival.
-- LIVE: openai.com/index/jalapeno-first-results/
-
-## Story 4 · Instinct raises at $2.5B · 2:30 (Slide `s-seg-instinct-raise`)
-
-- $250M round at $2.5B co-led by Index and Benchmark; $350M total; founder Noah Shinn (23, ex-Sierra).
-- Up 5x from $500M in weeks. Consumer agent assistants = the funding gravity well.
-- LIVE: techcrunch.com (Instinct raises at $2.5B)
-
-## Story 5 · OpenAI says AGI by December · 2:30 (Slide `s-seg-openai-agi`)
-
-- Altman in TIME (Aug 26): internal system he'd call AGI by end of 2026. Mark Chen: "80% of the way."
-- The footnote is the story: internal, self-defined, unverifiable. Pairs with the same-month safety-crisis reporting.
-- LIVE: the-decoder.com (Altman AGI claim analysis)
-
-## Story 6 · Qwen3.8-Flash-Next · 2:30 (Slide `s-seg-qwen-flash-next`)
-
-- 125B main + 51B n-gram, 6B active, 262K context (YaRN 1M). Training ~1/9 of Qwen3.7-Plus. Ungated.
-- LIVE: qwen.ai/blog?id=qwen3.8-flash-next
-
-## Story 7 · Headlong · 2:30 (Slide `s-seg-headlong`)
-
-- Sub-10K-line Bash microharness; 50+ commits into main by the Audel agent; $1–$2/hr; three self-shutdown incidents. Apache 2.0.
-- LIVE: laude.org/updates/headlong-a-microharness-for-persistent-agents
-
-## Story 8 · Perplexity Portable Computer · 2:30 (Slide `s-seg-portable-computer`)
-
-- Full agent stack local on DGX Spark; cloud calls opt-in; 24GB VRAM floor; self-authored 82.6% vs 74.0% bench.
-- LIVE: perplexity.ai/hub/products/portable-computer
-
-## Story 9 · Figure Index · 2:30 (Slide `s-seg-robot-data`)
-
-- 16M videos, 44K weekly creators, $15M paid out, $1B+ planned for data/compute. Beijing robot games clips.
-- LIVE: figure.ai/news/introducing-index
-
-## Signal From Outside · 6:00
-
-Codex agents inhabit a virtual office (davidfromkansas clip). Same agent, different surface — the harness is the product. NO AUTOPLAY.
 
 ## Hot take: the fight · 3:00
 
