@@ -4,10 +4,7 @@
 **Hosts:** Henry and Andy
 **Target runtime:** 36–40 minutes
 **Hard stop:** 45 minutes
-**Episode lineage:** Ep 26 aired Friday 2026-08-21 16:00 ET. News window opens 2026-08-21 20:00 UTC.
-
-## Rev6 note (2026-08-28)
-News redesigned as card grids: two slides of four stories each (2x2), one AI-generated banner thumbnail per card. Signal From Outside is now Andy's pick: GitHub's OpenClaw maintainers video. Deck commit f50c040.
+**Format:** News runs as two grid slides — four story cards each (2 rows x 2 cols), one AI-generated banner thumbnail per card, ~2:00 per card. Henry walks each grid left-to-right, top-to-bottom.
 
 ## Episode thesis
 
@@ -19,23 +16,53 @@ Narrative arc: **consolidation → sovereign compute → agent capital → AGI c
 
 - "Welcome back to Weekly Claw. Huge week. Eight stories on two grids this time — cards, not marathons. Chips buying commons, stealth models on domestic silicon, agents worth $2.5B at four months old, AGI dates with footnotes."
 
-## What happened this week — Grid 1 · 8:00
+## Story 1 · Nvidia buys Hugging Face · 2:00 (Grid 1, slide `s-seg-grid-a` card 1)
 
-Four cards, 2 rows x 2 cols, ~2:00 each (slide `s-seg-grid-a`): Nvidia buys Hugging Face · Ox Alpha = GLM-5.3-Flash · OpenAI ships Jalapeño · OpenAI says AGI by December. AI-gen banner thumbnails on every card. Henry walks the grid left-to-right, top-to-bottom.
+- $12.9B reported acquisition. The chip vendor buying the open-weights commons.
+- Source: CNBC. Banner: Nvidia x HF co-logo card.
 
-## What happened this week — Grid 2 · 6:00
+## Story 2 · Ox Alpha was GLM-5.3-Flash · 2:00 (Grid 1, slide `s-seg-grid-a` card 2)
 
-Four cards, 2 rows x 2 cols (slide `s-seg-grid-b`): Instinct raised at $2.5B · Qwen opens Flash-Next · Laude ships Headlong · Perplexity puts the stack on the desk. The operating-layer + agent-capital story.
+- Zhipu unmasked the viral stealth model; 100T tokens/day served entirely on Chinese chips.
+- Sources: x.com benchmarks, SemiAnalysis. Banner: benchmark-chart treatment.
 
-Story facts stay in the source links on each card (CNBC, x.com benchmarks, SemiAnalysis, TIME, TechCrunch, qwen.ai, laude.org, perplexity.ai). Figure Index (16M videos, $15M paid out, robots-as-data-business) is folded into "One to watch".
+## Story 3 · OpenAI ships Jalapeño · 2:00 (Grid 1, slide `s-seg-grid-a` card 3)
+
+- Own-silicon inference chip in production; the vertically aligned stack gets its bottom layer.
+- Source: openai.com. Banner: Jalapeño chip art.
+
+## Story 4 · OpenAI says AGI by December · 2:00 (Grid 1, slide `s-seg-grid-a` card 4)
+
+- Internal AGI claim with footnotes. Priced the business seat the same week.
+- Source: TIME. Banner: AGI countdown editorial art.
+
+## Sponsor: Heritage Telecom · 1:00
+
+Tonight's sponsor read: "This episode is brought to you by vertical integration's least favorite company. While everyone else bundles your chip, your model, and your monthly seat, Heritage Telecom sells you the one thing nobody thought to rent back: the pipe. Independent infrastructure, boring reliability, zero telemetry. heritagetel.com"
+
+## Story 5 · Instinct raises at $2.5B · 1:30 (Grid 2, slide `s-seg-grid-b` card 1)
+
+- Four-month-old assistant startup, $2.5B valuation. Agent capital is still hot.
+- Source: TechCrunch. Banner: tweet-collage treatment.
+
+## Story 6 · Qwen opens Flash-Next · 1:30 (Grid 2, slide `s-seg-grid-b` card 2)
+
+- Qwen4-preview architecture open to the community; the open-weights counterweight.
+- Source: qwen.ai. Banner: architecture graphic.
+
+## Story 7 · Laude ships Headlong · 1:30 (Grid 2, slide `s-seg-grid-b` card 3)
+
+- The always-on agent harness, shipped with its own warning label.
+- Source: laude.org. Banner: harness/warning-label art.
+
+## Story 8 · Perplexity puts the stack on the desk · 1:30 (Grid 2, slide `s-seg-grid-b` card 4)
+
+- Whole agent stack on-device, cloud calls opt-in. The operating-layer story.
+- Source: perplexity.ai. Banner: desk-device editorial art.
 
 ## Signal From Outside · 6:00 (slide `s-signal-outside`)
 
 Andy leads: GitHub's "OpenClaw Went Viral. Meet the Maintainers Building and Securing It." (46:00, youtu.be/5VSwaUXtPIE). Not an OpenClaw overview — takeaways that apply to all agentic AI builders: agent-contributor saturation, prompt requests + the 10-PR cap, the evidence standard (transcripts/screenshots, "we care if you actually thought about this feature"), inverted review economics, dependency hygiene + zero telemetry, code mode. NO AUTOPLAY; clip cues in Andy's talk track (timestamps approximate — spot-check before air).
-
-## Sponsor: Heritage Telecom · 1:00
-
-Heritage Telecom keeps the lights on while we keep the operating layer honest. heritagetel.com
 
 ## Hot take: the fight · 3:00
 
@@ -50,4 +77,5 @@ An applied AI product lab where humans and agents build together. labs.theherald
 - Nvidia×HF: confirmed, renegotiated, or challenged?
 - Jalapeño production qualification by year-end.
 - Independent numbers on GLM-5.3-Flash Chinese-chip capacity.
+- Figure Index (16M videos, $15M paid out, robots-as-data-business) — the watch item that didn't fit the grids.
 - Back September 4, 4 PM ET. weeklyclaw.ai/discord.
