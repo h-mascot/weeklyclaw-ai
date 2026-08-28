@@ -625,6 +625,22 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
       else document.exitFullscreen();
     }
   });
+  let wheelLock = false;
+  document.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    if (wheelLock) return;
+    const delta = e.deltaY || e.deltaX;
+    if (Math.abs(delta) < 12) return;
+    wheelLock = true; setTimeout(() => wheelLock = false, 650);
+    go(delta > 0 ? current + 1 : current - 1);
+  }, { passive: false });
+  let touchX = 0, touchY = 0;
+  document.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; touchY = e.touches[0].clientY; }, { passive: true });
+  document.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - touchX;
+    const dy = e.changedTouches[0].clientY - touchY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? current + 1 : current - 1);
+  }, { passive: true });
   if (location.hash) {
     const target = document.querySelector(location.hash);
     if (target && target.classList.contains('slide')) {
