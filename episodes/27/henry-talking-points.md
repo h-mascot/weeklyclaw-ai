@@ -1,4 +1,4 @@
-# WeeklyClaw Episode 27 — Talking Points (rev5)
+# WeeklyClaw Episode 27 — Talking Points (rev6)
 
 **Show:** Friday 2026-08-28, 4:00 PM ET · **Hosts:** @AndyML + @HiM · **Sponsor order:** Heritage → Herald.
 **Rev3:** nine stories at ~2:30 each. Anchor line + one number + one take per story.

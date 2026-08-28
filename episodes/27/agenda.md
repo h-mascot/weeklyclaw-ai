@@ -1,4 +1,4 @@
-# WeeklyClaw Episode 27: The agent owns the loop. (rev5)
+# WeeklyClaw Episode 27: The agent owns the loop. (rev6)
 
 **Show date:** Friday 2026-08-28 (America/New_York, 4:00 PM ET)
 **Hosts:** Henry and Andy
@@ -18,24 +18,15 @@ Narrative arc: **consolidation → sovereign compute → agent capital → AGI c
 
 ## Cold open · 1:20
 
-**Andy:** "Welcome back to Weekly Claw. I'm AndyML, here with Henry. Huge week. Nine stories, less time on each, more of the week. Nvidia buying the commons, China unmasking its stealth model, OpenAI naming an AGI date, and a four-month-old startup worth $2.5 billion. Henry, set the frame."
+- "Welcome back to Weekly Claw. Huge week. Nine stories on two grids this time — cards, not marathons. Chips buying commons, stealth models on domestic silicon, agents worth $2.5B at four months old, AGI dates with footnotes."
 
-**Henry line:** "The frame is consolidation. Everyone is trying to own a whole layer this week — the chips, the weights, the seat, even the definition of AGI."
+## What happened this week — Grid 1 · 8:00
 
-**Handoff:** straight into Story 1.
+Six cards, 2 rows x 3 cols, ~80s each: Nvidia buys Hugging Face, Ox Alpha = GLM-5.3-Flash, OpenAI Jalapeño, OpenAI AGI date, Instinct raise, Figure Index. Henry walks the grid left-to-right.
 
-## Story 1 · Nvidia buys Hugging Face · 2:30 (Slide `s-seg-nvidia-hf`)
+## What happened this week — Grid 2 · 6:00
 
-- $12.9B reported (The Information via CNBC, Aug 27). Neither side confirmed. Last known HF valuation ~$7B.
-- The strategic read: GPU vendor owning the open-weights commons — distribution channel for CUDA-aligned tooling; antitrust is the watch item.
-- LIVE: cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html
-
-## Story 2 · Ox Alpha was GLM-5.3-Flash · 2:30 (Slide `s-seg-glm-flash`)
-
-- Zhipu (Z.ai) unmasked viral stealth model as GLM-5.3-Flash, first native multimodal in GLM-5 series.
-- ~100,000 domestic Chinese GPUs; trial-week capacity ~100T tokens/day; $0.15/M in, $0.50/M out.
-- Caveat on air: scale is Zhipu-reported; training still reportedly needs non-Chinese silicon.
-- LIVE: scmp.com (Zhipu shares jump / Ox Alpha revealed)
+Three cards, one row: Qwen Flash-Next, Headlong, Perplexity Portable Computer. The operating-layer story.
 
 ## Sponsor: Heritage Telecom · 1:00
 

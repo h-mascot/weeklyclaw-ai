@@ -170,6 +170,21 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
 .stamp{display:inline-block;font-family:var(--mono);font-weight:700;font-size:0.9rem;color:#8f403a;border:3px solid #a6645e;border-radius:8px;padding:6px 16px;transform:rotate(-3deg);background:#f7e6df;letter-spacing:0.1em;text-transform:uppercase;}
 @media(max-width:900px){.slide{padding:44px 40px 58px;}h1{font-size:3rem;}h2{font-size:2rem;}.two-col,.three-col,.split{grid-template-columns:1fr;}}
 </style>
+
+<style>
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:18px;flex:1;min-height:0;margin-top:16px;}
+.story-grid.cols-2{grid-template-columns:repeat(2,1fr);}
+.story-card{display:flex;flex-direction:column;background:rgba(255,255,255,.03);border:1.5px solid var(--border-subtle);border-radius:16px;overflow:hidden;min-height:0;transition:border-color .2s;}
+.story-card:hover{border-color:var(--accent);}
+.story-card .thumb{height:150px;min-height:110px;overflow:hidden;position:relative;background:#0d1117;}
+.story-card a.thumb{position:relative;}
+.story-card .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.story-card .thumb .glyph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3.2rem;font-weight:800;}
+.story-card .meta{padding:12px 16px 14px;display:flex;flex-direction:column;gap:4px;min-height:0;}
+.story-card .meta h3{font-size:1.06rem;line-height:1.25;margin:0;color:var(--text);}
+.story-card .meta p{font-size:.82rem;line-height:1.35;margin:0;color:var(--muted);}
+.story-card .meta a{font-family:var(--mono);font-size:.72rem;color:var(--accent);text-decoration:none;margin-top:2px;}
+</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -183,7 +198,7 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
 </svg>
 
 <div class="progress-bar" id="progressBar"></div>
-<div class="slide-counter"><span id="slideNum">1</span> / <span id="slideTotal">13</span></div>
+<div class="slide-counter"><span id="slideNum">1</span> / <span id="slideTotal">10</span></div>
 <div class="nav-dots" id="navDots"></div>
 <div class="kb-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> navigate &middot; scroll / swipe &middot; <kbd>F</kbd> fullscreen</div>
 <div class="slide-container">
@@ -221,7 +236,7 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
     <div class="part-label">Cold open &middot; the frame</div>
     <h2 class="text-center">The agent <span class="gradient-text">owns the loop.</span></h2>
     <div class="gradient-line"></div>
-    <p class="subtitle text-center mt-1" style="max-width:880px;">Nine stories, one frame: the consolidation race. Chips buying commons, stealth models on domestic silicon, four-month-old agents at $2.5B, AGI dates with footnotes. The moat is no longer the model. It is the operating layer.</p>
+    <p class="subtitle text-center mt-1" style="max-width:880px;">Nine stories, two grids: the consolidation race. Chips buying commons, stealth models on domestic silicon, four-month-old agents at $2.5B, AGI dates with footnotes. The moat is no longer the model. It is the operating layer.</p>
     <div class="mt-3 arc-wrap">
       <div class="arc-step now"><div class="arc-num">1</div><div class="arc-label">Consolidation</div></div>
       <div class="arc-step"><div class="arc-num">2</div><div class="arc-label">Sovereign compute</div></div>
@@ -238,6 +253,72 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
 </div>
 
 
+<div class="slide" id="s-seg-grid-a">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
+  <div class="glow-orb orb-green" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
+  <div class="content">
+    <div>
+      <div class="part-label">What happened this week &middot; part 1</div>
+      <h2>Consolidation, sovereign compute, <span class="gradient-text">agent capital.</span></h2>
+      <div class="gradient-line"></div>
+      <p class="subtitle mt-1" style="max-width:1000px;">Six moves that defined the week. Each card links to the primary source.</p>
+    </div>
+    <div class="story-grid">
+      <div class="story-card">
+        <a class="thumb" href="https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s-nvidia-hf-cologo.png" alt="Nvidia acquires Hugging Face"></a>
+        <div class="meta"><h3>Nvidia is buying Hugging Face.</h3><p>$12.9B reported, unconfirmed. The GPU vendor would own the model commons.</p><a href="https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html" target="_blank" rel="noopener">cnbc.com</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://x.com/ZixuanLi_/status/2088135213930905623" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s-glm53-full-results.jpg" alt="GLM-5.3 full benchmark results"></a>
+        <div class="meta"><h3>Ox Alpha is GLM-5.3-Flash.</h3><p>Serving ~100T tokens/day on ~100K Chinese GPUs (Zhipu-reported). Benchmarks over press.</p><a href="https://x.com/ZixuanLi_/status/2088135213930905623" target="_blank" rel="noopener">benchmarks (x.com)</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s-jalapeno-semi.png" alt="OpenAI Jalapeno vs Nvidia Blackwell analysis"></a>
+        <div class="meta"><h3>OpenAI ships Jalape&ntilde;o.</h3><p>First custom inference chip; vendor-reported wins vs Blackwell on perf/watt.</p><a href="https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia" target="_blank" rel="noopener">semianalysis</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://time.com/article/2026/08/26/openai-sam-altman-interview/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s-openai-time-cover.png" alt="TIME cover story on OpenAI reboot"></a>
+        <div class="meta"><h3>OpenAI says AGI by December.</h3><p>Altman in TIME: internal system he'd call AGI by end of 2026 — his definition.</p><a href="https://time.com/article/2026/08/26/openai-sam-altman-interview/" target="_blank" rel="noopener">time.com</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://techcrunch.com/2026/08/27/instinct-ai-valuation-2-5b/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s-instinct-collage.png" alt="Posts about Instinct raise"></a>
+        <div class="meta"><h3>Instinct raised at $2.5B.</h3><p>$250M new at a $2.5B valuation, four months old. Agent capital is hot.</p><a href="https://techcrunch.com/2026/08/27/instinct-ai-valuation-2-5b/" target="_blank" rel="noopener">techcrunch</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://www.figure.ai/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s5-figure-pipeline.png" alt="Figure Index data pipeline"></a>
+        <div class="meta"><h3>Figure launches Index.</h3><p>16M videos, 44K creators, $15M paid out. Robots are a data business.</p><a href="https://www.figure.ai/" target="_blank" rel="noopener">figure.ai</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="s-seg-grid-b">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
+  <div class="glow-orb orb-green" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
+  <div class="content">
+    <div>
+      <div class="part-label">What happened this week &middot; part 2</div>
+      <h2>The operating layer <span class="gradient-text">ships.</span></h2>
+      <div class="gradient-line"></div>
+      <p class="subtitle mt-1" style="max-width:1000px;">Open weights, always-on agents, local-first stacks — the deployment story.</p>
+    </div>
+    <div class="story-grid">
+      <div class="story-card">
+        <a class="thumb" href="https://qwen.ai/blog?id=qwen3.8-flash-next" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s2-qwen-architecture.png" alt="Qwen Flash-Next architecture"></a>
+        <div class="meta"><h3>Qwen opens Flash-Next.</h3><p>Qwen4-preview architecture ungated: 125B params, 6B active, 250K context.</p><a href="https://qwen.ai/blog?id=qwen3.8-flash-next" target="_blank" rel="noopener">qwen.ai</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://www.laude.org/updates/headlong-a-microharness" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s3-headlong-loop.svg" alt="Headlong always-on loop"></a>
+        <div class="meta"><h3>Laude ships Headlong.</h3><p>The agent that never sleeps — fixed a recall bug in 48 min, no human in the loop.</p><a href="https://www.laude.org/updates/headlong-a-microharness" target="_blank" rel="noopener">laude.org</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://www.perplexity.ai/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/s4-portable-computer.png" alt="Perplexity Portable Computer"></a>
+        <div class="meta"><h3>Perplexity puts the stack on the desk.</h3><p>Portable Computer runs model, harness, sandbox locally on DGX Spark.</p><a href="https://www.perplexity.ai/" target="_blank" rel="noopener">perplexity.ai</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="slide" id="s-sponsor-heritage">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">SPONSOR</div>
   <div class="glow-orb orb-green" style="width:420px;height:420px;bottom:-120px;right:-100px;"></div>
@@ -247,83 +328,6 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
     <p class="subtitle text-center mt-2" style="max-width:820px;">Heritage Telecom keeps the lights on while we keep the operating layer honest. Independent infrastructure for independent voices.</p>
     <div class="quote-block mt-3">Independent. Reliable. Quietly essential.</div>
     <div class="mt-2 pill green">heritagetel.com</div>
-  </div>
-</div>
-
-
-<div class="slide" id="s-seg-nvidia-hf">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
-  <div class="glow-orb orb-green" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
-  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
-    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
-      <h2 class="text-center">Nvidia is buying <span class="gradient-text">Hugging Face.</span></h2>
-      <div class="gradient-line"></div>
-      <p class="subtitle text-center mt-1" style="max-width:780px;">$12.9B reported &middot; deal not confirmed by either side &middot; the GPU vendor would own the model commons</p>
-      <a href="https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; CNBC report (cnbc.com)</a>
-    </div>
-    <div style="flex:1.3;height:100%;display:flex;align-items:center;justify-content:center;">
-      <a href="https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html" target="_blank" rel="noopener"><img src="assets/images/artifacts/s5-nvidia-hf-deal.png" alt="Nvidia to acquire Hugging Face for 12.9 billion dollars, report" style="width:100%;max-height:640px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a>
-    </div>
-  </div>
-</div>
-
-
-<div class="slide" id="s-seg-models-flash">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
-  <div class="glow-orb orb-green" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
-  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
-    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
-      <h2 class="text-center">GLM-5.3-Flash and Qwen <span class="gradient-text">Flash-Next.</span></h2>
-      <div class="gradient-line"></div>
-      <p class="subtitle text-center mt-1" style="max-width:780px;">Ox Alpha revealed &middot; ~100K domestic GPUs, ~100T tokens/day (Zhipu-reported) &middot; benchmarks over press</p>
-      <a href="https://x.com/ZixuanLi_/status/2088135213930905623" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; GLM-5.3 benchmarks (x.com)</a>
-    </div>
-    <div style="flex:1.5;height:100%;display:flex;align-items:center;justify-content:center;gap:14px;"><div style="flex:1;min-width:0;"><a href="https://x.com/ZixuanLi_/status/2088135213930905623" target="_blank" rel="noopener"><img src="assets/images/artifacts/s-glm53-full-results.jpg" alt="GLM-5.3 full benchmark results" style="width:100%;max-height:620px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a></div><div style="flex:1;min-width:0;"><a href="https://www.scmp.com/tech/tech-trends/article/3314696/zhipu-ai-shares-jump-viral-ox-alpha-model-revealed-glm-53" target="_blank" rel="noopener"><img src="assets/images/artifacts/s2-glm-flash-ox-alpha.png" alt="Zhipu shares jump on Ox Alpha reveal" style="width:100%;max-height:620px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a></div></div>
-  </div>
-</div>
-
-
-<div class="slide" id="s-seg-openai-cluster">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
-  <div class="glow-orb orb-orange" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
-  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
-    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
-      <h2 class="text-center">OpenAI ships Jalape&ntilde;o and says <span class="gradient-text">AGI by December.</span></h2>
-      <div class="gradient-line"></div>
-      <p class="subtitle text-center mt-1" style="max-width:780px;">First custom chip beats Blackwell on perf/watt (OpenAI-published) &middot; TIME: internal AGI this year, per Altman</p>
-      <a href="https://time.com/article/2026/08/26/openai-sam-altman-interview/" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; TIME cover story (time.com)</a>
-    </div>
-    <div style="flex:1.5;height:100%;display:flex;align-items:center;justify-content:center;gap:14px;"><div style="flex:1;min-width:0;"><a href="https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia" target="_blank" rel="noopener"><img src="assets/images/artifacts/s-jalapeno-semi.png" alt="Jalapeño vs Blackwell benchmark analysis" style="width:100%;max-height:620px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a></div><div style="flex:1;min-width:0;"><a href="https://time.com/article/2026/08/26/openai-sam-altman-interview/" target="_blank" rel="noopener"><img src="assets/images/artifacts/s-openai-time-cover.png" alt="TIME cover story — Sam Altman" style="width:100%;max-height:620px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a></div></div>
-  </div>
-</div>
-
-
-<div class="slide" id="s-seg-instinct-raise">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
-  <div class="glow-orb orb-red" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
-  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
-    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
-      <h2 class="text-center">Instinct raised at <span class="gradient-text">$2.5 billion.</span></h2>
-      <div class="gradient-line"></div>
-      <p class="subtitle text-center mt-1" style="max-width:780px;">$250M Series B &middot; Index + Benchmark co-lead &middot; four months old &middot; the reaction was the story</p>
-      <a href="https://techcrunch.com/2026/08/28/instinct-ai-2-5b-valuation/" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; TechCrunch report (techcrunch.com)</a>
-    </div>
-    <div style="flex:1.3;height:100%;display:flex;align-items:center;justify-content:center;"><a href="https://techcrunch.com/2026/08/28/instinct-ai-2-5b-valuation/" target="_blank" rel="noopener"><img src="assets/images/artifacts/s-instinct-collage.png" alt="X reaction collage — Instinct raise" style="width:100%;max-height:620px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a></div>
-  </div>
-</div>
-
-
-<div class="slide" id="s-seg-robot-cluster">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
-  <div class="glow-orb orb-green" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
-  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
-    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
-      <h2 class="text-center">Figure launches Index while Beijing hosts <span class="gradient-text">the robot games.</span></h2>
-      <div class="gradient-line"></div>
-      <p class="subtitle text-center mt-1" style="max-width:780px;">2,056 robots &middot; 666 teams &middot; 51 events &middot; the robot race is a data race</p>
-      <a href="https://en.wikipedia.org/wiki/World_Humanoid_Robot_Games" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; Robot Games (wikipedia.org)</a>
-    </div>
-    <div style="flex:1.5;height:100%;display:flex;align-items:center;justify-content:center;gap:14px;"><div style="flex:1;min-width:0;"><a href="https://en.wikipedia.org/wiki/World_Humanoid_Robot_Games" target="_blank" rel="noopener"><img src="assets/images/artifacts/s-robot-games.png" alt="World Humanoid Robot Games, Beijing 2026" style="width:100%;max-height:620px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a></div><div style="flex:1;min-width:0;"><a href="https://www.figure.ai/news/index" target="_blank" rel="noopener"><img src="assets/images/artifacts/s5-figure-pipeline.png" alt="Figure Index data pipeline" style="width:100%;max-height:620px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a></div></div>
   </div>
 </div>
 

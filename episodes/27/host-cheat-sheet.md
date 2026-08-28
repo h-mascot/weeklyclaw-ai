@@ -1,7 +1,7 @@
-# WeeklyClaw Episode 27 — Host Cheat Sheet (rev5)
+# WeeklyClaw Episode 27 — Host Cheat Sheet (rev6)
 
 **Show:** Friday 2026-08-28, 4:00 PM ET · **Hosts:** @AndyML + @HiM · **Sponsor order:** Heritage → Herald (unchanged).
-**Deck:** `deck.rev5.html` · 17 slides · render at 1600x900 · validate via `validate_deck.py` against Ep 26 authority.
+**Deck:** `deck.rev6.html` · 17 slides · render at 1600x900 · validate via `validate_deck.py` against Ep 26 authority.
 **Rev3 change:** nine news segments (4 added: Nvidia×HF, GLM-5.3-Flash/Ox Alpha, Instinct raise, OpenAI AGI claim), each ~2:30. Faster cuts, more week.
 **Hard stop:** 45:00.
 
@@ -10,44 +10,29 @@
 | # | Section | Slide ID | Time | Lead |
 |---|---------|----------|------|------|
 | 1 | Cold open | `s-cold-open` | 1:20 | Andy→H |
-| 2 | Story 1 · Nvidia buys Hugging Face | `s-seg-nvidia-hf` | 2:30 | Henry |
-| 3 | Story 2 · Ox Alpha = GLM-5.3-Flash | `s-seg-glm-flash` | 2:30 | Henry |
-| 4 | Sponsor 1 (Heritage) | `s-sponsor-heritage` | 1:00 | Heritage |
-| 5 | Story 3 · OpenAI stack | `s-seg-openai-stack` | 2:45 | Henry |
-| 6 | Story 4 · Instinct $2.5B | `s-seg-instinct-raise` | 2:30 | Henry |
-| 7 | Story 5 · OpenAI AGI claim | `s-seg-openai-agi` | 2:30 | Henry |
-| 8 | Story 6 · Qwen Flash-Next | `s-seg-qwen-flash-next` | 2:30 | Henry |
-| 9 | Story 7 · Headlong | `s-seg-headlong` | 2:30 | Henry |
-| 10 | Story 8 · Perplexity desk agent | `s-seg-portable-computer` | 2:30 | Henry |
-| 11 | Story 9 · Figure robot data | `s-seg-robot-data` | 2:30 | Henry |
-| 12 | Signal From Outside | `s-signal-outside` | 6:00 | Andy→H |
-| 13 | Hot take | `s-hot-take` | 3:00 | Henry |
-| 14 | Sponsor 2 (Herald) | `s-sponsor-herald` | 1:00 | Herald |
-| 15 | One to watch + close | `s-watch` | 3:00 | Andy→H |
-| 16 | Title card | `s-title` | n/a | Visual |
-| 17 | Sources / Links | `s-sources` | n/a | Visual |
+| 2 | Grid 1 · six stories | `s-seg-grid-a` | 8:00 | Henry |
+| 3 | Grid 2 · three stories | `s-seg-grid-b` | 6:00 | Henry |
+| 4 | Sponsor: Heritage | `s-sponsor-heritage` | 1:00 | Andy |
+| 5 | Signal From Outside · Dwarkesh/Dylan | `s-signal-outside` | 6:00 | Andy |
+| 6 | Hot take: the fight | `s-hot-take` | 3:00 | Henry+Andy |
+| 7 | Sponsor: Herald | `s-sponsor-herald` | 1:00 | Andy |
+| 8 | One to watch | `s-watch` | 1:30 | Henry |
+| 9 | Sources | `s-sources` | — | — |
 
 Total scripted ≈ 38:15; hard stop 45:00 — roughly 7 minutes of buffer for the clustered-format pace.
 
-## ASCII runtime bars (rev5)
+## ASCII runtime bars (rev6)
 
 ```
-Cold open    [█]                          1:20
-Nvidia×HF    [██]                         2:30
-Ox Alpha     [██]                         2:30
-Heritage     [█]                          1:00
-OpenAI stack [██]                         2:45
-Instinct     [██]                         2:30
-AGI claim    [██]                         2:30
-Qwen         [██]                         2:30
-Headlong     [██]                         2:30
-Perplexity   [██]                         2:30
-Figure data  [██]                         2:30
-Signal       [████]                       6:00
-Hot take     [██]                         3:00
-Herald       [█]                          1:00
-Close        [██]                         3:00
-             ~38 min · 9 stories · hard stop 45:00
+Cold open    [█]                            1:20
+Grid 1 (6)   [██████]                       8:00
+Grid 2 (3)   [████]                         6:00
+Heritage     [█]                            1:00
+Signal       [████]                         6:00
+Fight        [██]                           3:00
+Herald       [█]                            1:00
+Watch        [█]                            1:30
+Sources      [.]                            —
 ```
 
 ## Story cheat lines (one breath each)
@@ -64,9 +49,9 @@ Close        [██]                         3:00
 
 ## Handoff lines
 
-- After Story 2 → Heritage sponsor.
-- After Story 5 → "Open weights didn't wait — story six."
-- After Story 9 → "Now the fight. Motion: Nvidia buying Hugging Face is bad for open source. I'm bad, Andy's good. Two minutes each." (Hot take)
+- After Grid 2 → Heritage sponsor.
+- Inside Grid 2: "Open weights didn't wait — Qwen first."
+- After grids → "Now the fight. Motion: Nvidia buying Hugging Face is bad for open source. I'm bad, Andy's good. Two minutes each." (Hot take)
 - Hot take close → Herald sponsor → One to watch.
 
 ## Never cut
