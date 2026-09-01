@@ -36,6 +36,26 @@ class SyncMetadataTests(unittest.TestCase):
         self.assertEqual(videos[20]["id"], "EPISODE0020")
         self.assertNotIn(24, videos)
 
+    def test_fetch_youtube_episodes_uses_verified_override_when_playlist_omits_episode(self):
+        # A newly-public video can be absent from @weeklyclaw/videos while
+        # direct watch-page verification already proves the canonical ID.
+        playlist = {
+            "entries": [
+                {"id": "EPISODE0026", "title": "Weekly Claw #26", "duration": 1800},
+            ]
+        }
+        completed = subprocess.CompletedProcess([], 0, stdout=json.dumps(playlist), stderr="")
+
+        with patch.object(SYNC.subprocess, "run", return_value=completed):
+            videos = SYNC.fetch_youtube_episodes()
+
+        self.assertEqual(videos[27]["id"], "L8uQgN-xWcA")
+        self.assertEqual(videos[27]["url"], "https://www.youtube.com/watch?v=L8uQgN-xWcA")
+        self.assertEqual(
+            videos[27]["thumbnail"],
+            "https://i.ytimg.com/vi/L8uQgN-xWcA/maxresdefault.jpg",
+        )
+
     def test_fetch_spotify_episodes_keeps_verified_ids_when_rss_is_stale(self):
         with patch.object(SYNC, "fetch_rss_text", return_value=""):
             self.assertEqual(SYNC.fetch_spotify_episodes(), SYNC.SPOTIFY_EPISODE_OVERRIDES)
