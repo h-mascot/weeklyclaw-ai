@@ -32,6 +32,14 @@ YOUTUBE_THUMBNAIL_OVERRIDES = {
     21: "w21-v2-approved-20260727.jpg",
     22: "w22-v2-the-sandbox-failed-approved-20260727.jpg",
 }
+# YouTube can lag publication in the channel playlist. These IDs are added only
+# after direct public-video verification, so archive sync remains deterministic.
+YOUTUBE_EPISODE_OVERRIDES = {
+    27: {
+        "id": "L8uQgN-xWcA",
+        "title": "NVIDIA to Buy Hugging Face? OpenClaw at Scale, Local Models, AGI Claims",
+    },
+}
 
 
 def repo_root_from_script() -> Path:
@@ -61,7 +69,9 @@ def fetch_youtube_episodes() -> dict[int, dict[str, str]]:
         )
         playlist = json.loads(result.stdout)
     except (FileNotFoundError, json.JSONDecodeError, subprocess.SubprocessError):
-        return {}
+        # Continue with verified direct-video overrides when the optional playlist
+        # probe is unavailable in the cron environment.
+        playlist = {}
 
     entries = [
         entry for entry in (playlist.get("entries") or [])
@@ -94,6 +104,13 @@ def fetch_youtube_episodes() -> dict[int, dict[str, str]]:
         episode = int(match.group(1)) if match else inferred.get(index)
         if not video_id or episode is None:
             continue
+        episodes[episode] = {
+            "id": video_id,
+            "url": f"https://www.youtube.com/watch?v={video_id}",
+            "thumbnail": f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg",
+        }
+    for episode, override in YOUTUBE_EPISODE_OVERRIDES.items():
+        video_id = override["id"]
         episodes[episode] = {
             "id": video_id,
             "url": f"https://www.youtube.com/watch?v={video_id}",
