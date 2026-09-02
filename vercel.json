@@ -21,6 +21,28 @@
       "source": "/episodes/:episode/agenda.md",
       "destination": "/episodes?week=:episode&deck=main",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.weeklyclaw.ai"
+        }
+      ],
+      "destination": "https://weeklyclaw.ai/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.weeklyclaw.ai"
+        }
+      ],
+      "destination": "https://weeklyclaw.ai/",
+      "permanent": true
     }
   ]
 }
