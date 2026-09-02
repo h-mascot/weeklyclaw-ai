@@ -300,6 +300,11 @@ if (featuredCopy.includes('Open episode') || featuredCopy.includes('class="lates
   console.error('Homepage Featured Episode still exposes the obsolete slides-opening action');
   process.exit(1);
 }
+const latestCtas = [...html.matchAll(/href="(https:\/\/www\.youtube\.com\/watch\?v=[\w-]{11})"[^>]*>Watch the latest/g)].map((match) => match[1]);
+if (latestCtas.length !== 3 || latestCtas.some((url) => url !== 'https://www.youtube.com/watch?v=vqUkh8w2L8g')) {
+  console.error('Homepage latest-episode CTAs do not all target the verified current episode');
+  process.exit(1);
+}
 
 const episode22Card = episodesHtml.match(/<article class="week-card"[^>]*data-week="22"[^>]*>[\s\S]*?<\/article>/)?.[0] ?? '';
 if (!episode22Card.includes('data-video-id="f2yugYwXOBo"')) {
