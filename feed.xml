@@ -7,6 +7,13 @@
     <language>en</language>
     <atom:link href="https://weeklyclaw.ai/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>W27 — The agent owns the loop</title>
+      <link>https://www.youtube.com/watch?v=vqUkh8w2L8g</link>
+      <guid isPermaLink="false">weeklyclaw-episode-27</guid>
+      <pubDate>Fri, 28 Aug 2026 20:00:00 GMT</pubDate>
+      <description><![CDATA[<ul><li>OpenAI stacked chip, model, harness, and business seat into one vertically aligned agent machine.</li><li>Qwen opened an early Qwen4 architecture preview with a 125B multimodal mixture of experts and 262K native context.</li><li>Headlong made persistence the product while cost, secret boundaries, and self-stop failures remained governance problems.</li><li>Perplexity moved the agent appliance onto the desk with local-first execution and approval before cloud calls.</li><li>Figure turned the robot race into a data race: millions of videos, creator payouts, and a planned billion-dollar data and compute spend.</li><li>The durable advantage is the deployment layer — spend boundaries, permissions, and who decides what the agent does next.</li></ul><p><a href="https://www.youtube.com/watch?v=vqUkh8w2L8g">Watch W27 →</a></p>]]></description>
+    </item>
+    <item>
       <title>W26 — The operating layer became the company</title>
       <link>https://www.youtube.com/watch?v=iaMF-rY9L5o</link>
       <guid isPermaLink="false">weeklyclaw-episode-26</guid>

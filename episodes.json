@@ -6,6 +6,21 @@
   },
   "episodes": [
     {
+      "week": 27,
+      "title": "The agent owns the loop",
+      "date": "2026-08-28",
+      "url": "https://www.youtube.com/watch?v=vqUkh8w2L8g",
+      "videoId": "vqUkh8w2L8g",
+      "summary": [
+        "OpenAI stacked chip, model, harness, and business seat into one vertically aligned agent machine.",
+        "Qwen opened an early Qwen4 architecture preview with a 125B multimodal mixture of experts and 262K native context.",
+        "Headlong made persistence the product while cost, secret boundaries, and self-stop failures remained governance problems.",
+        "Perplexity moved the agent appliance onto the desk with local-first execution and approval before cloud calls.",
+        "Figure turned the robot race into a data race: millions of videos, creator payouts, and a planned billion-dollar data and compute spend.",
+        "The durable advantage is the deployment layer — spend boundaries, permissions, and who decides what the agent does next."
+      ]
+    },
+    {
       "week": 26,
       "title": "The operating layer became the company",
       "date": "2026-08-21",
