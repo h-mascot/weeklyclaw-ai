@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekly Claw Ep15 — Agenda (archive)</title>
+<style>body{margin:0;background:#fffdf8;color:#101418;font:16px/1.6 Georgia,serif}main{max-width:820px;margin:0 auto;padding:48px 24px 80px}h1{font-size:1.7rem}h2{font-size:1.1rem;margin:2rem 0 .5rem;border-bottom:2px solid #e5e0d5;padding-bottom:.3rem;color:#0b3c42}ul{padding-left:1.3rem}code{font-family:ui-monospace,monospace;font-size:.85em;background:#f1ede2;padding:1px 5px;border-radius:4px}</style>
+</head><body><main><span style="display:inline-block;font:700 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#6b7280;border-radius:999px;padding:6px 12px;margin-bottom:20px">Archive</span>
+<h1>The Weekly Claw — Episode 15 Agenda</h1>
+
+<p><strong>Date:</strong> Friday, May 22, 2026 · 4:00 PM Eastern  </p>
+<p><strong>Platform:</strong> OpenClaw Discord · Voice Channel  </p>
+<p><strong>Focus:</strong> News and events only  </p>
+<p><strong>Source deck:</strong> <code>episode-15-slides.html</code></p>
+
+<p>---</p>
+
+<h2>1. OpenClaw in the News</h2>
+
+<p>This week is a pure news week. The useful framing is that OpenClaw is now being covered from every angle at once: security, token economics, platform competition, enterprise governance, startup alternatives, consumer experiments, robotics, and AI-code quality.</p>
+
+<p>### The week in six signals</p>
+
+<p><strong>Security: Claw Chain became the dominant story.</strong>  </p>
+<p>Cyera disclosed four patched vulnerabilities affecting OpenClaw versions before the April 23, 2026 fixes. The coverage treats them less as isolated bugs and more as a chain: sandbox escape, secret leakage, owner escalation, and persistence. The strongest host angle is operational: agents have broad privileges, so patching needs to come with secret rotation, exposure inventory, auth/firewall review, and blast-radius thinking.</p>
+
+<p><strong>Economics: the $1.3M token bill put numbers on autonomy.</strong>  </p>
+<p>Peter Steinberger’s posted OpenAI usage screenshot gave the press a concrete cost story: $1.305M over 30 days, 603B tokens, 7.6M requests, and roughly 100 Codex instances. The important point is not outrage over the number. It is that autonomous coding fleets do not behave like human-speed chat subscriptions.</p>
+
+<p><strong>Platforms: Google answered the form factor.</strong>  </p>
+<p>WIRED and The Verge both frame Gemini Spark as Google’s OpenClaw-shaped response: an always-on, cloud-hosted agent connected to Workspace, personal data, third-party apps through MCP, and eventually local files, Chrome, text, and email.</p>
+
+<p><strong>Enterprise: governance became a product category.</strong>  </p>
+<p>CIO’s EnterpriseClaw story, Times of India’s MightyClaw story, and the NanoClaw funding coverage all point in the same direction: companies want OpenClaw-like capability with centralized control, observability, auditability, isolation, and data sovereignty.</p>
+
+<p><strong>Consumer culture: OpenClaw moved into lifestyle press.</strong>  </p>
+<p>GQ tested cloning yourself with OpenClaw. WIRED put an OpenClaw agent on a robot arm. These are not just novelty pieces. They show that agent risk is becoming social and physical, not only technical.</p>
+
+<p><strong>Code quality: vibe coding is under review.</strong>  </p>
+<p>The WSJ link is useful as a quality-debate frame: generation speed is not the hard part anymore. Review, testing, security boundaries, maintainability, and ownership decide whether agent-built code is software or slop.</p>
+
+<p>---</p>
+
+<h2>2. News Slide Notes</h2>
+
+<p>### 1. Cyber Security News — Claw Chain exposes public OpenClaw servers</p>
+
+<p>Source: <code>https://cybersecuritynews.com/openclaw-chain-vulnerabilities/</code></p>
+
+<p>Takeaway: Four patched vulnerabilities are framed as one chain: sandbox escape, secret leakage, owner escalation, and persistence.</p>
+
+<p>Host angle: Use this as the broadest security headline. Public exposure plus agent privileges turns a patch story into an operations story.</p>
+
+<p>Key points:</p>
+<ul>
+<li>245,000 exposed instances cited across Shodan and ZoomEye scans.</li>
+<li>Highest CVSS: 9.6 for TOCTOU write escape in OpenShell.</li>
+<li>Recommended response: patch, rotate secrets, inventory exposed hosts, tighten auth and firewall controls.</li>
+</ul>
+
+<p>### 2. Cyera Research — the primary Claw Chain write-up</p>
+
+<p>Source: <code>https://www.cyera.com/blog/claw-chain-cyera-research-unveil-four-chainable-vulnerabilities-in-openclaw</code></p>
+
+<p>Takeaway: The primary research write-up anchors the story: four CVEs across isolation, execution validation, and identity can be chained from one foothold.</p>
+
+<p>Host angle: Treat this as the receipt slide for the security cluster.</p>
+
+<p>Key points:</p>
+<ul>
+<li>Affected versions: OpenClaw before the April 23 patches.</li>
+<li>Attack vector: malicious plugin, prompt injection, or supply-chain input.</li>
+<li>Core claim: agent behavior can make hostile actions look normal.</li>
+</ul>
+
+<p>### 3. The Hacker News — data theft, escalation, persistence</p>
+
+<p>Source: <code>https://thehackernews.com/2026/05/four-openclaw-flaws-enable-data-theft.html</code></p>
+
+<p>Takeaway: The Hacker News compresses the chain into the classic attacker path: foothold, secrets, owner-level control, and backdoor persistence.</p>
+
+<p>Host angle: Good slide for a technically literate audience: specific CVEs, concrete fix language, and a clean four-step exploit path.</p>
+
+<p>Key points:</p>
+<ul>
+<li>CVE-2026-44112 and CVE-2026-44113 hit OpenShell TOCTOU paths.</li>
+<li>CVE-2026-44115 leaks environment variables through heredoc expansion.</li>
+<li>CVE-2026-44118 fixes centered on owner/non-owner bearer tokens.</li>
+</ul>
+
+<p>### 4. Zentera — patching is necessary, not sufficient</p>
+
+<p>Source: <code>https://www.zentera.net/blog/ai-agent-isolation-openclaw-claw-chain</code></p>
+
+<p>Takeaway: Zentera turns Claw Chain into an isolation argument: a patched agent can still have too much reach if the trust model is flat.</p>
+
+<p>Host angle: Bridge from vulnerability news to enterprise deployment design.</p>
+
+<p>Key points:</p>
+<ul>
+<li>Recommended controls: enclave isolation, credential substitution, process-level visibility.</li>
+<li>Blast radius should be bounded by architecture, not healthy-agent behavior.</li>
+<li>Question for CISOs: what can a compromised agent reach after the patch?</li>
+</ul>
+
+<p>### 5. HackRead — plain-English risk framing</p>
+
+<p>Source: <code>https://hackread.com/claw-chain-vulnerabilities-openclaw-ai-servers-risk/</code></p>
+
+<p>Takeaway: HackRead explains the same chain for a broader audience, emphasizing admin-level takeover and secret exposure across thousands of servers.</p>
+
+<p>Host angle: Use this when you want less CVE density and more operator-risk language.</p>
+
+<p>### 6. Tom’s Hardware — $1.3M in tokens</p>
+
+<p>Source: <code>https://www.tomshardware.com/tech-industry/artificial-intelligence/openclaw-creator-burns-through-1-3-million-in-openai-api-tokens-in-a-single-month</code></p>
+
+<p>Takeaway: Peter Steinberger posted a 30-day OpenAI usage screenshot: $1.305M, 603B tokens, 7.6M requests, and roughly 100 Codex instances.</p>
+
+<p>Host angle: This is not just a “big bill” story. It makes autonomous development costs legible.</p>
+
+<p>### 7. SC Media — security brief</p>
+
+<p>Source: <code>https://www.scworld.com/brief/four-vulnerabilities-in-openclaw-ai-agent-put-thousands-of-servers-at-risk</code></p>
+
+<p>Takeaway: SC Media recaps Claw Chain as a security-ops brief: patch levels, secret leakage, admin bypass, and public exposure.</p>
+
+<p>Host angle: Short and practical. Use it as the executive-summary version of the advisory.</p>
+
+<p>### 8. Dark Reading — security trade press connects risk to growth</p>
+
+<p>Source: <code>https://www.darkreading.com/application-security/claw-chain-vulnerabilities-threaten-openclaw</code></p>
+
+<p>Takeaway: Dark Reading puts the vulnerabilities inside OpenClaw’s rapid adoption curve and recurring security scrutiny.</p>
+
+<p>Host angle: Breakout adoption means security stories no longer stay inside the repo.</p>
+
+<p>### 9. Business Insider — tokenmaxxing reaches OpenClaw</p>
+
+<p>Source: <code>https://www.businessinsider.com/openclaw-peter-steinberger-ai-token-bill-2026-5</code></p>
+
+<p>Takeaway: Business Insider frames the $1.3M usage as both AI talent perk and Silicon Valley token-spend spectacle.</p>
+
+<p>Host angle: The compute bill became a labor, perks, and status story.</p>
+
+<p>### 10. The Next Web — cost model for agentic coding</p>
+
+<p>Source: <code>https://thenextweb.com/news/openclaw-peter-steinberger-1-3-million-openai-token-bill</code></p>
+
+<p>Takeaway: TNW treats the bill as a rare public cost model for 100 always-running coding agents overseen by a three-person team.</p>
+
+<p>Host angle: Use this to make the pricing discussion sober: autonomy changes usage shape.</p>
+
+<p>### 11. PC Gamer — mainstream compute-cost story</p>
+
+<p>Source: <code>https://www.pcgamer.com/software/ai/the-creator-of-openclaw-used-usd1-300-000-of-openai-tokens-in-30-days-which-is-a-hell-of-a-perk/</code></p>
+
+<p>Takeaway: PC Gamer turns the token story into mainstream culture coverage.</p>
+
+<p>Host angle: OpenClaw is no longer only in AI newsletters. It is showing up wherever computing costs are interesting.</p>
+
+<p>### 12. BankInfoSecurity — hijacking AI agents</p>
+
+<p>Source: <code>https://www.bankinfosecurity.com/patched-openclaw-flaw-let-hackers-hijack-ai-agents-a-31720</code></p>
+
+<p>Takeaway: BankInfoSecurity emphasizes the enterprise and personal-device risk: a compromised agent can operate through trusted permissions.</p>
+
+<p>Host angle: This is the strongest “personal agent meets corporate device” slide.</p>
+
+<p>### 13. CIO — EnterpriseClaw packages governance</p>
+
+<p>Source: <code>https://www.cio.com/article/4173405/enterpriseclaw-wants-to-bring-governance-to-the-openclaw-era.html</code></p>
+
+<p>Takeaway: Automation Anywhere launched EnterpriseClaw with Cisco, Nvidia, Okta, and OpenAI to sell centralized control around autonomous agent fleets.</p>
+
+<p>Host angle: Enterprises want OpenClaw-like capability with admin surfaces.</p>
+
+<p>### 14. WIRED — Gemini Spark as Google’s OpenClaw response</p>
+
+<p>Source: <code>https://www.wired.com/story/googles-response-to-openclaws-24-7-ai-agent/</code></p>
+
+<p>Takeaway: WIRED frames Gemini Spark as Google’s always-running agent for personal data, emails, calendars, purchases, and proactive tasks.</p>
+
+<p>Host angle: Google wants OpenClaw behavior inside Google’s account surface.</p>
+
+<p>### 15. The Verge — Google launches its version of OpenClaw</p>
+
+<p>Source: <code>https://www.theverge.com/tech/932996/google-gemini-spark-antigravity-io-2026</code></p>
+
+<p>Takeaway: The Verge covers Gemini Spark as a 24/7 Google Cloud agent with Workspace integrations and MCP-connected third-party apps.</p>
+
+<p>Host angle: Pair this with WIRED: one slide is product feel, this one is platform mechanics.</p>
+
+<p>### 16. TechCrunch — NanoClaw raises $12M</p>
+
+<p>Source: <code>https://techcrunch.com/2026/05/20/nanoclaw-creator-turns-down-20m-buyout-offer-raises-12m-seed-instead/</code></p>
+
+<p>Takeaway: NanoCo raised a $12M seed after NanoClaw’s viral launch and declined a roughly $20M acquisition offer.</p>
+
+<p>Host angle: The alternative ecosystem is now fundable. Security posture is part of the pitch.</p>
+
+<p>### 17. Business Insider — Cohen brothers and NanoClaw</p>
+
+<p>Source: <code>https://www.businessinsider.com/cohen-brothers-raised-millions-openclaw-competitor-nanoclaw-agentic-ai-enterprise-2026-5</code></p>
+
+<p>Takeaway: Business Insider profiles NanoClaw’s origin as a secure, lightweight OpenClaw alternative.</p>
+
+<p>Host angle: This is the human/startup version of the TechCrunch funding slide.</p>
+
+<p>### 18. WIRED — OpenClaw gets a robot arm</p>
+
+<p>Source: <code>https://www.wired.com/story/i-gave-my-openclaw-agent-physical-body-robot/</code></p>
+
+<p>Takeaway: WIRED tests OpenClaw and Codex against a LeRobot 101 arm, moving the agent from software automation into physical manipulation.</p>
+
+<p>Host angle: Agents are starting to operate in the physical world, but supervision still matters.</p>
+
+<p>### 19. GQ — cloning yourself with OpenClaw</p>
+
+<p>Source: <code>https://www.gq.com/story/what-happened-when-i-cloned-myself-with-openclaw-ai</code></p>
+
+<p>Takeaway: GQ’s experiment puts OpenClaw into personal-life automation: texts, delegation, awkward failures, and token-cost reality.</p>
+
+<p>Host angle: Agents are weird because humans are weird.</p>
+
+<p>### 20. Times of India — M37Labs launches MightyClaw</p>
+
+<p>Source: <code>https://timesofindia.indiatimes.com/technology/tech-news/indian-startup-m37labs-releases-governed-agentic-ai-platform-based-on-nemoclaw-and-openclaw/articleshow/131262598.cms</code></p>
+
+<p>Takeaway: M37Labs launched MightyClaw, a governed enterprise agent platform built around Nvidia NemoClaw and OpenAI OpenClaw.</p>
+
+<p>Host angle: Governance language is traveling fast.</p>
+
+<p>### 21. Wall Street Journal — vibe coding versus AI slop</p>
+
+<p>Source: <code>https://www.wsj.com/tech/ai/vibe-coding-slop-ai-tools-e6a99394</code></p>
+
+<p>Takeaway: Use this as the broader quality-debate frame around AI coding tools.</p>
+
+<p>Host angle: Generation speed is no longer the only metric. Review, tests, security boundaries, and ownership decide whether agent-built code survives.</p>
+
+<p>---</p>
+
+<h2>3. ClawExplorer Events — Next 14 Days</h2>
+
+<p>Source: <code>https://clawexplorer.ai/feed.xml</code>  </p>
+<p>Pulled: Friday, May 22, 2026  </p>
+<p>Window: May 22 through June 5, 2026  </p>
+
+<p>Corrected count: <strong>42 listings</strong> total — <strong>30</strong> in the upcoming week and <strong>12</strong> in the following week.</p>
+
+<p>### Upcoming Week — May 22-28</p>
+
+<p>#### Friday, May 22</p>
+
+<ul>
+<li><strong>Fri May 22 — Milano</strong> — ClawCon Milan — 5:00 PM - 9:00 PM GMT+2 — <code>https://luma.com/cy303ytc</code></li>
+<li><strong>Fri May 22 — Online</strong> — AI Agent Builder Masterclass — 6:00 PM - 7:00 PM CDT — <code>https://www.meetup.com/city-freelance-peers-remote-networking-group/events/314844810/</code></li>
+<li><strong>Fri May 22 — Brooklyn</strong> — NYC Personal AI Agents Meetup 🦞 : Beyond the Single Agent — 6:00 PM - 8:45 PM EDT — <code>https://luma.com/2itoszun</code></li>
+</ul>
+
+<p>#### Saturday, May 23</p>
+
+<ul>
+<li><strong>Sat May 23 — Đống Đa</strong> — ClawUp Workshop: Build Your First AI Agent — 2:00 PM - 5:00 PM GMT+7 — <code>https://luma.com/skarl8x2</code></li>
+<li><strong>Sat May 23 — Washington</strong> — Outdoor Discussion Walk: OpenClaw and Autonomous Agents — 3:00 PM - 5:00 PM EDT — <code>https://luma.com/uk22t7r2</code></li>
+<li><strong>Sat May 23 — Nangang District</strong> — Meet-a-Claw - Taipei — 4:00 PM - 8:00 PM GMT+8 — <code>https://luma.com/nvidia-claw-taipei</code></li>
+<li><strong>Sat May 23 — Online</strong> — Create AI Agents in One Session — 6:00 PM - 7:00 PM EDT — <code>https://www.meetup.com/local-remote-professionals-and-nomad-network/events/314844131/</code></li>
+</ul>
+
+<p>#### Sunday, May 24</p>
+
+<ul>
+<li><strong>Sun May 24 — Kuala Lumpur</strong> — Lovable Vibeathon KL (ft. OpenClaw KL) — 8:30 AM - 6:30 PM GMT+8 — <code>https://luma.com/giop8lkh</code></li>
+<li><strong>Sun May 24 — Online</strong> — Agent Mode: OpenClaw Workshop — 10:00 AM - 2:00 PM GMT+5:30 — <code>https://luma.com/67tncidl</code></li>
+<li><strong>Sun May 24 — Vancouver</strong> — OpenClaw / Local Agent Demo and Install Day — 12:00 PM - 6:00 PM PDT — <code>https://luma.com/ns82u324</code></li>
+<li><strong>Sun May 24 — Online</strong> — AI Automation Workshop — OpenClaw — 6:00 PM - 7:00 PM GMT+1 — <code>https://www.meetup.com/circle-of-freelance-nomads-co-working-connect/events/314844819/</code></li>
+<li><strong>Sun May 24 — Online</strong> — Your First AI Agent — OpenClaw — 6:00 PM - 7:00 PM EDT — <code>https://www.meetup.com/sunday-connect-global-nomads-through-coworking-sessions/events/314844794/</code></li>
+</ul>
+
+<p>#### Monday, May 25</p>
+
+<ul>
+<li><strong>Mon May 25 — Singapore</strong> — OpenClaw Singapore Happy Hours - Agentic Night — 6:00 PM - 9:00 PM GMT+8 — <code>https://luma.com/kobpm6gr</code></li>
+<li><strong>Mon May 25 — Roma</strong> — OpenClaw vs Claude #BattleoftheAgentics — 6:00 PM - 9:00 PM GMT+2 — <code>https://luma.com/AI-Salon-Rome-May-2026</code></li>
+<li><strong>Mon May 25 — Kuala Lumpur</strong> — Openclaw KL x Codex Meetup (May Edition) — 7:00 PM - 9:00 PM GMT+8 — <code>https://luma.com/h9fqpbjf</code></li>
+</ul>
+
+<p>#### Tuesday, May 26</p>
+
+<ul>
+<li><strong>Tue May 26 — Online</strong> — Build an expert agentic Slack bot with OpenClaw, Nebius Token Factory, and Tavily — 9:00 AM - 10:00 AM PDT — <code>https://luma.com/82ompy1u</code></li>
+<li><strong>Tue May 26 — Toronto</strong> — 🦞 OpenClaw Hack Toronto Students &amp; Alumni - Win Mac Mini &amp; Interships (In Person Only) — 10:00 AM - 9:00 PM EDT — <code>https://luma.com/2bntw4vd</code></li>
+<li><strong>Tue May 26 — Toronto</strong> — ClawCon Toronto — 6:00 PM - 9:00 PM EDT — <code>https://luma.com/clawcontoronto</code></li>
+</ul>
+
+<p>#### Wednesday, May 27</p>
+
+<ul>
+<li><strong>Wed May 27 — Speicherstraße 1</strong> — OpenClaw Meetup Frankfurt: Offener Austausch — 5:30 PM - 8:30 PM GMT+2 — <code>https://luma.com/yfwflxek</code></li>
+<li><strong>Wed May 27 — Philadelphia</strong> — ClawCon Philadelphia — 6:00 PM - 9:00 PM EDT — <code>https://luma.com/clawconphiladelphia</code></li>
+<li><strong>Wed May 27 — Toronto</strong> — Agents After Dark  —  OpenClaw x Kuvi — 7:00 PM - 11:30 PM EDT — <code>https://luma.com/rcccrk6s</code></li>
+<li><strong>Wed May 27 — Los Angeles</strong> — OpenClaw LA #6 — 7:00 PM - 9:30 PM PDT — <code>https://www.meetup.com/openclaw-la/events/314754342/</code></li>
+</ul>
+
+<p>#### Thursday, May 28</p>
+
+<ul>
+<li><strong>Thu May 28 — Singapore</strong> — OpenClaw SG CMO Lunch — 11:30 AM - 1:30 PM GMT+8 — <code>https://luma.com/8es7i5k4</code></li>
+<li><strong>Thu May 28 — Athina</strong> — OpenClaw Greece: Build Your First Agent (Hands-On Workshop) @ Panathēnea — 5:00 PM - 7:00 PM GMT+3 — <code>https://luma.com/d55ljt9k</code></li>
+<li><strong>Thu May 28 — Kensington</strong> — Building Agents with OpenClaw and Hermes — 5:30 PM - 7:30 PM GMT+10 — <code>https://www.meetup.com/en-au/dsai-syd/events/314813807/</code></li>
+<li><strong>Thu May 28 — Buenos Aires</strong> — ClawCon Buenos Aires — 6:00 PM - 9:00 PM GMT-3 — <code>https://luma.com/clawconbuenosaires</code></li>
+<li><strong>Thu May 28 — Hürth</strong> — OpenClaw Showcase — 6:00 PM - 9:00 PM GMT+2 — <code>https://luma.com/vwpxvn7p</code></li>
+<li><strong>Thu May 28 — Cary</strong> — OpenClaw Triangle Meetup - Third Edition — 6:00 PM - 8:30 PM EDT — <code>https://luma.com/8x5d70r9</code></li>
+<li><strong>Thu May 28 — Los Angeles</strong> — Practical PM AI Workflows -OpenClaw — 6:00 PM - 9:00 PM PDT — <code>https://luma.com/lc6l7i55</code></li>
+<li><strong>Thu May 28 — Granger Bay Blvd</strong> — Clawd &amp; Claws 2.0 — 6:30 PM - 9:30 PM GMT+2 — <code>https://www.meetup.com/zatech/events/314767145/</code></li>
+</ul>
+
+<p>### Following Week — May 29-June 5</p>
+
+<p>#### Saturday, May 30</p>
+
+<ul>
+<li><strong>Sat May 30 — Nashville</strong> — CLAWS &amp; COFFEE - Nashville — 9:00 AM - 10:30 AM CDT — <code>https://luma.com/iranbxr9</code></li>
+<li><strong>Sat May 30 — Kreta Ayer</strong> — Build Your First and Very Own AI Employee (OpenClaw) Hands On (The AI Burrow x first AIde x The AI Capitol) — 10:00 AM - 1:00 PM GMT+8 — <code>https://luma.com/ilbdpj1k</code></li>
+<li><strong>Sat May 30 — The Venetian Macao</strong> — ClawCon Macao @BEYOND Expo 2026 — 1:00 PM - 5:00 PM GMT+8 — <code>https://luma.com/clawconmacao</code></li>
+<li><strong>Sat May 30 — Shenzhen</strong> — OpenSchool AI Claw Demo Day · 深圳站 5.30 — 2:00 PM - 6:00 PM GMT+8 — <code>https://luma.com/a2ylyu0w</code></li>
+</ul>
+
+<p>#### Sunday, May 31</p>
+
+<ul>
+<li><strong>Sun May 31 — Los Angeles</strong> — OpenClaw Meetup LA: Demos &amp; Networking — 2:00 PM - 5:00 PM PDT — <code>https://luma.com/f087jlip</code></li>
+</ul>
+
+<p>#### Monday, June 1</p>
+
+<ul>
+<li><strong>Mon Jun 1 — Ocala</strong> — Openclaw: AI for Small Businesses — 4:00 PM - 5:00 PM EDT — <code>https://luma.com/1tt35fxm</code></li>
+<li><strong>Mon Jun 1 — Bentonville</strong> — OpenClaw NWA Meetup — 5:30 PM - 7:00 PM CDT — <code>https://luma.com/li9q8pr2</code></li>
+</ul>
+
+<p>#### Tuesday, June 2</p>
+
+<ul>
+<li><strong>Tue Jun 2 — Singapore</strong> — OpenClaw Singapore — eCommerce Edition — 6:00 PM - 9:00 PM GMT+8 — <code>https://luma.com/u57e5vds</code></li>
+</ul>
+
+<p>#### Wednesday, June 3</p>
+
+<ul>
+<li><strong>Wed Jun 3 — San Francisco</strong> — OpenClaw: After Hours @ GitHub — 5:15 PM - 8:45 PM PDT — <code>https://luma.com/OpenClaw-GitHub</code></li>
+<li><strong>Wed Jun 3 — Austin</strong> — OpenClaw and Agentic Workflows Demystified: Sleep While It Ships — 6:30 PM - 8:30 PM CDT — <code>https://www.meetup.com/ai-automation-and-marketing/events/314755354/</code></li>
+</ul>
+
+<p>#### Thursday, June 4</p>
+
+<ul>
+<li><strong>Thu Jun 4 — Provincia di Treviso</strong> — ClawCon Venice — 6:00 PM - 9:00 PM GMT+2 — <code>https://luma.com/clawcon-6g3t</code></li>
+<li><strong>Thu Jun 4 — San Francisco</strong> — OpenClaw User Group Meetup — 6:30 PM - 8:00 PM PDT — <code>https://luma.com/bslydhj8</code></li>
+</ul>
+
+<p>---</p>
+
+<h2>Link Roundup</h2>
+
+<ul>
+<li><code>https://clawexplorer.ai/</code></li>
+<li><code>https://clawexplorer.ai/feed.xml</code></li>
+<li><code>https://cybersecuritynews.com/openclaw-chain-vulnerabilities/</code></li>
+<li><code>https://www.cyera.com/blog/claw-chain-cyera-research-unveil-four-chainable-vulnerabilities-in-openclaw</code></li>
+<li><code>https://thehackernews.com/2026/05/four-openclaw-flaws-enable-data-theft.html</code></li>
+<li><code>https://www.zentera.net/blog/ai-agent-isolation-openclaw-claw-chain</code></li>
+<li><code>https://hackread.com/claw-chain-vulnerabilities-openclaw-ai-servers-risk/</code></li>
+<li><code>https://www.tomshardware.com/tech-industry/artificial-intelligence/openclaw-creator-burns-through-1-3-million-in-openai-api-tokens-in-a-single-month</code></li>
+<li><code>https://www.scworld.com/brief/four-vulnerabilities-in-openclaw-ai-agent-put-thousands-of-servers-at-risk</code></li>
+<li><code>https://www.darkreading.com/application-security/claw-chain-vulnerabilities-threaten-openclaw</code></li>
+<li><code>https://www.businessinsider.com/openclaw-peter-steinberger-ai-token-bill-2026-5</code></li>
+<li><code>https://thenextweb.com/news/openclaw-peter-steinberger-1-3-million-openai-token-bill</code></li>
+<li><code>https://www.pcgamer.com/software/ai/the-creator-of-openclaw-used-usd1-300-000-of-openai-tokens-in-30-days-which-is-a-hell-of-a-perk/</code></li>
+<li><code>https://www.bankinfosecurity.com/patched-openclaw-flaw-let-hackers-hijack-ai-agents-a-31720</code></li>
+<li><code>https://www.cio.com/article/4173405/enterpriseclaw-wants-to-bring-governance-to-the-openclaw-era.html</code></li>
+<li><code>https://www.wired.com/story/googles-response-to-openclaws-24-7-ai-agent/</code></li>
+<li><code>https://www.theverge.com/tech/932996/google-gemini-spark-antigravity-io-2026</code></li>
+<li><code>https://techcrunch.com/2026/05/20/nanoclaw-creator-turns-down-20m-buyout-offer-raises-12m-seed-instead/</code></li>
+<li><code>https://www.businessinsider.com/cohen-brothers-raised-millions-openclaw-competitor-nanoclaw-agentic-ai-enterprise-2026-5</code></li>
+<li><code>https://www.wired.com/story/i-gave-my-openclaw-agent-physical-body-robot/</code></li>
+<li><code>https://www.gq.com/story/what-happened-when-i-cloned-myself-with-openclaw-ai</code></li>
+<li><code>https://timesofindia.indiatimes.com/technology/tech-news/indian-startup-m37labs-releases-governed-agentic-ai-platform-based-on-nemoclaw-and-openclaw/articleshow/131262598.cms</code></li>
+<li><code>https://www.wsj.com/tech/ai/vibe-coding-slop-ai-tools-e6a99394</code></li>
+</ul>
+
+<p>---</p>
+
+<p>*The Weekly Claw #15 · May 22, 2026*</p>
+</main></body></html>

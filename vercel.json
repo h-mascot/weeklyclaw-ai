@@ -13,16 +13,6 @@
       "permanent": true
     },
     {
-      "source": "/episodes/:episode/agenda",
-      "destination": "/episodes?week=:episode&deck=main",
-      "permanent": true
-    },
-    {
-      "source": "/episodes/:episode/agenda.md",
-      "destination": "/episodes?week=:episode&deck=main",
-      "permanent": true
-    },
-    {
       "source": "/:path*",
       "has": [
         {

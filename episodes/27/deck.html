@@ -170,6 +170,22 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
 .stamp{display:inline-block;font-family:var(--mono);font-weight:700;font-size:0.9rem;color:#8f403a;border:3px solid #a6645e;border-radius:8px;padding:6px 16px;transform:rotate(-3deg);background:#f7e6df;letter-spacing:0.1em;text-transform:uppercase;}
 @media(max-width:900px){.slide{padding:44px 40px 58px;}h1{font-size:3rem;}h2{font-size:2rem;}.two-col,.three-col,.split{grid-template-columns:1fr;}}
 </style>
+
+<style>
+#s-seg-grid-a .content,#s-seg-grid-b .content{height:100%;max-height:100%;}
+#s-seg-grid-a .content > div:first-child,#s-seg-grid-b .content > div:first-child{flex:0 0 auto;}
+.story-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:18px;flex:1;min-height:0;margin-top:16px;overflow:hidden;}
+.story-card{display:flex;flex-direction:column;background:rgba(255,255,255,.03);border:1.5px solid var(--border-subtle);border-radius:16px;overflow:hidden;min-height:0;transition:border-color .2s;}
+.story-card:hover{border-color:var(--accent);}
+.story-card .thumb{flex:1 1 0;min-height:0;overflow:hidden;position:relative;background:#0d1117;}
+.story-card a.thumb{position:relative;}
+.story-card .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.story-card .thumb .glyph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3.2rem;font-weight:800;}
+.story-card .meta{padding:12px 16px 14px;display:flex;flex-direction:column;gap:4px;min-height:0;}
+.story-card .meta h3{font-size:1.06rem;line-height:1.25;margin:0;color:var(--text);}
+.story-card .meta p{font-size:.82rem;line-height:1.35;margin:0;color:var(--muted);}
+.story-card .meta a{font-family:var(--mono);font-size:.72rem;color:var(--accent);text-decoration:none;margin-top:2px;}
+</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -183,6 +199,11 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
 </svg>
 
 <div class="progress-bar" id="progressBar"></div>
+<div class="slide-counter"><span id="slideNum">1</span> / <span id="slideTotal">10</span></div>
+<div class="nav-dots" id="navDots"></div>
+<div class="kb-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> navigate &middot; scroll / swipe &middot; <kbd>F</kbd> fullscreen</div>
+<div class="slide-container">
+
 <div class="slide active" id="s-title">
   <svg class="claw-bg" style="top:2%;right:-4%;"><use href="#weeklyclaw-logo"/></svg>
   <div class="glow-orb orb-red" style="width:520px;height:520px;top:-160px;left:-140px;"></div>
@@ -193,11 +214,11 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
     <h1 style="font-size:4.7rem;text-align:center;margin-bottom:6px;"><span class="gradient-text">Weekly Claw</span></h1>
     <div class="gradient-line wide"></div>
     <p class="subtitle text-center mt-2" style="max-width:920px;">
-      The agent owns the loop.<br/>OpenAI stacked chip, model, harness and business seat into one vertically aligned machine; Qwen opened a Qwen4-preview architecture the same day; Headlong shipped the harness and the warning label together; Perplexity put the whole agent stack on the desk and made cloud calls an opt-in; Figure turned the robot race into a data race.
+      The agent owns the loop.<br/>Nvidia moved to buy the open-weights commons; Zhipu unmasked Ox Alpha as GLM-5.3-Flash serving 100T tokens a day on Chinese chips; OpenAI stacked chip, model, seat and said AGI by December; a four-month-old assistant raised at $2.5B. Eight stories, less time on each, more of the week.
     </p>
     <div class="mt-3" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
       <span class="pill blue">Hosts: @AndyML &middot; @HiM</span>
-      <span class="pill green">~38 min &middot; five segments &middot; built to be clipped</span>
+      <span class="pill green">~40 min &middot; nine stories &middot; faster cuts &middot; built to be clipped</span>
     </div>
     <div class="mt-3 logo-row">
       <span class="pill">Sponsored by</span>
@@ -208,6 +229,7 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
   </div>
 </div>
 
+
 <div class="slide" id="s-cold-open">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">01 / COLD OPEN</div>
   <div class="glow-orb orb-red" style="width:460px;height:460px;top:-150px;right:-120px;"></div>
@@ -215,18 +237,81 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
     <div class="part-label">Cold open &middot; the frame</div>
     <h2 class="text-center">The agent <span class="gradient-text">owns the loop.</span></h2>
     <div class="gradient-line"></div>
-    <p class="subtitle text-center mt-1" style="max-width:880px;">The models barely moved. The layer beneath them did &mdash; chip, model, harness, business seat, deployment surface, and the data feeding physical autonomy. The moat is no longer the model. It is the operating layer.</p>
+    <p class="subtitle text-center mt-1" style="max-width:880px;">Eight stories, one frame: the consolidation race. Chips buying commons, stealth models on domestic silicon, four-month-old agents at $2.5B, AGI dates with footnotes. The moat is no longer the model. It is the operating layer.</p>
     <div class="mt-3 arc-wrap">
-      <div class="arc-step now"><div class="arc-num">1</div><div class="arc-label">Stacking</div></div>
-      <div class="arc-step"><div class="arc-num">2</div><div class="arc-label">Autonomy</div></div>
-      <div class="arc-step"><div class="arc-num">3</div><div class="arc-label">Locality</div></div>
-      <div class="arc-step"><div class="arc-num">4</div><div class="arc-label">Physical data</div></div>
-      <div class="arc-step"><div class="arc-num">5</div><div class="arc-label">Governance</div></div>
+      <div class="arc-step now"><div class="arc-num">1</div><div class="arc-label">Consolidation</div></div>
+      <div class="arc-step"><div class="arc-num">2</div><div class="arc-label">Sovereign compute</div></div>
+      <div class="arc-step"><div class="arc-num">3</div><div class="arc-label">Agent capital</div></div>
+      <div class="arc-step"><div class="arc-num">4</div><div class="arc-label">AGI claims</div></div>
+      <div class="arc-step"><div class="arc-num">5</div><div class="arc-label">Operating layer</div></div>
     </div>
     <div class="mt-3" style="width:100%;display:flex;flex-direction:column;align-items:center;">
-      <div class="hook"><span class="hook-num gradient-text">&#9881;</span><span class="hook-text">OpenAI stacked <span class="orange">chip, model, harness, business seat</span>; Premium removes the five-hour cap and sells five times the usage.</span></div>
-      <div class="hook"><span class="hook-num gradient-text">&#9889;</span><span class="hook-text">Qwen opened the <span class="orange">Qwen4-preview architecture</span> ungated; 125B main, 51B n-gram embeddings, 6B active per token.</span></div>
-      <div class="hook"><span class="hook-num gradient-text">&#128176;</span><span class="hook-text">Headlong shipped the harness and the <span class="orange">warning label</span>; $1&ndash;$2/hour background cost, three incidents where the agent stopped its own service.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#127793;</span><span class="hook-text">Nvidia is buying <span class="orange">Hugging Face for $12.9B</span>; the GPU vendor would own the open-weights commons.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#128052;</span><span class="hook-text">Ox Alpha was <span class="orange">GLM-5.3-Flash</span>: 100 trillion tokens a day served on 100% Chinese chips.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#128176;</span><span class="hook-text">Altman says OpenAI has <span class="orange">AGI internally by year-end</span>; Mark Chen calls it 80% of the way there.</span></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="slide" id="s-seg-grid-a">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
+  <div class="glow-orb orb-green" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
+  <div class="content">
+    <div>
+      <div class="part-label">What happened this week &middot; part 1</div>
+      <h2>Consolidation, sovereign compute, <span class="gradient-text">agent capital.</span></h2>
+      <div class="gradient-line"></div>
+      <p class="subtitle mt-1" style="max-width:1000px;">Four moves that defined the week. Each card links to the primary source.</p>
+    </div>
+    <div class="story-grid cols-2">
+      <div class="story-card">
+        <a class="thumb" href="https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-nvidia-hf.png" alt="Nvidia acquires Hugging Face"></a>
+        <div class="meta"><h3>Nvidia is buying Hugging Face.</h3><p>$12.9B reported, unconfirmed. The GPU vendor would own the model commons.</p><a href="https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html" target="_blank" rel="noopener">cnbc.com</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://x.com/ZixuanLi_/status/2088135213930905623" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-glm-flash.png" alt="GLM-5.3 full benchmark results"></a>
+        <div class="meta"><h3>Ox Alpha is GLM-5.3-Flash.</h3><p>Serving ~100T tokens/day on ~100K Chinese GPUs (Zhipu-reported). Benchmarks over press.</p><a href="https://x.com/ZixuanLi_/status/2088135213930905623" target="_blank" rel="noopener">benchmarks (x.com)</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-jalapeno.png" alt="OpenAI Jalapeno vs Nvidia Blackwell analysis"></a>
+        <div class="meta"><h3>OpenAI ships Jalape&ntilde;o.</h3><p>First custom inference chip; vendor-reported wins vs Blackwell on perf/watt.</p><a href="https://newsletter.semianalysis.com/p/openai-jalapeno-better-than-nvidia" target="_blank" rel="noopener">semianalysis</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://time.com/article/2026/08/26/openai-sam-altman-interview/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-openai-agi.png" alt="TIME cover story on OpenAI reboot"></a>
+        <div class="meta"><h3>OpenAI says AGI by December.</h3><p>Altman in TIME: internal system he'd call AGI by end of 2026 — his definition.</p><a href="https://time.com/article/2026/08/26/openai-sam-altman-interview/" target="_blank" rel="noopener">time.com</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="s-seg-grid-b">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
+  <div class="glow-orb orb-green" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
+  <div class="content">
+    <div>
+      <div class="part-label">What happened this week &middot; part 2</div>
+      <h2>The operating layer <span class="gradient-text">ships.</span></h2>
+      <div class="gradient-line"></div>
+      <p class="subtitle mt-1" style="max-width:1000px;">Agent capital, open weights, always-on agents, local-first stacks — the deployment story.</p>
+    </div>
+    <div class="story-grid cols-2">
+      <div class="story-card">
+        <a class="thumb" href="https://qwen.ai/blog?id=qwen3.8-flash-next" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-qwen-flash.png" alt="Qwen Flash-Next architecture"></a>
+        <div class="meta"><h3>Qwen opens Flash-Next.</h3><p>Qwen4-preview architecture ungated: 125B params, 6B active, 250K context.</p><a href="https://qwen.ai/blog?id=qwen3.8-flash-next" target="_blank" rel="noopener">qwen.ai</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://www.laude.org/updates/headlong-a-microharness" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-headlong.png" alt="Headlong always-on loop"></a>
+        <div class="meta"><h3>Laude ships Headlong.</h3><p>The agent that never sleeps — fixed a recall bug in 48 min, no human in the loop.</p><a href="https://www.laude.org/updates/headlong-a-microharness" target="_blank" rel="noopener">laude.org</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://www.perplexity.ai/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-perplexity.png" alt="Perplexity Portable Computer"></a>
+        <div class="meta"><h3>Perplexity puts the stack on the desk.</h3><p>Portable Computer runs model, harness, sandbox locally on DGX Spark.</p><a href="https://www.perplexity.ai/" target="_blank" rel="noopener">perplexity.ai</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://techcrunch.com/2026/08/27/instinct-ai-valuation-2-5b/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-instinct.png" alt="Posts about Instinct raise"></a>
+        <div class="meta"><h3>Instinct raised at $2.5B.</h3><p>$250M new at a $2.5B valuation, four months old. Agent capital is hot.</p><a href="https://techcrunch.com/2026/08/27/instinct-ai-valuation-2-5b/" target="_blank" rel="noopener">techcrunch</a></div>
+      </div>
     </div>
   </div>
 </div>
@@ -243,110 +328,24 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
   </div>
 </div>
 
-<div class="slide" id="s-seg-openai-stack">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
-  <div class="glow-orb orb-blue" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
-  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
-    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
-      <h2 class="text-center">OpenAI launches Jalapeño <span class="gradient-text">and Business Premium.</span></h2>
-      <div class="gradient-line"></div>
-      <p class="subtitle text-center mt-1" style="max-width:780px;">Jalapeño first inference results &middot; Premium at $100/user/yr, 5x usage, no five-hour cap</p>
-      <a href="https://openai.com/index/jalapeno-first-results/" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; Jalapeño first results (openai.com)</a>
-    </div>
-    <div style="flex:1.3;height:100%;display:flex;align-items:center;justify-content:center;">
-      <a href="https://openai.com/index/jalapeno-first-results/" target="_blank" rel="noopener"><img src="assets/images/artifacts/s1-jalapeno-chip.jpg" alt="OpenAI Jalapeño chip photo from the first inference results post" style="width:100%;max-height:640px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a>
-    </div>
-  </div>
-</div>
-
-<div class="slide" id="s-seg-qwen-flash-next">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
-  <div class="glow-orb orb-teal" style="width:380px;height:380px;bottom:-100px;left:-90px;"></div>
-  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
-    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
-      <h2 class="text-center">Qwen opens the Qwen4 architecture: <span class="gradient-text">Flash-Next.</span></h2>
-      <div class="gradient-line"></div>
-      <p class="subtitle text-center mt-1" style="max-width:780px;">125B main &middot; 51B n-gram embeddings &middot; 6B active &middot; 262K context, YaRN to 1M</p>
-      <a href="https://qwen.ai/blog?id=qwen3.8-flash-next" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; Qwen3.8-Flash-Next release (qwen.ai)</a>
-    </div>
-    <div style="flex:1.3;height:100%;display:flex;align-items:center;justify-content:center;">
-      <a href="https://huggingface.co/Qwen/Qwen3.8-Flash-Next" target="_blank" rel="noopener"><img src="assets/images/artifacts/s2-qwen-architecture.png" alt="Qwen3.8-Flash-Next architecture graphic — Gated DeltaNet, Qwen Sparse Attention, four-branch Gated Residual, host-offloadable n-gram embedding" style="width:100%;max-height:640px;object-fit:contain;background:#fff;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a>
-    </div>
-  </div>
-</div>
-
-<div class="slide" id="s-seg-headlong">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
-  <div class="glow-orb orb-purple" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
-  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
-    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
-      <h2 class="text-center">Laude launches Headlong: <span class="gradient-text">the agent that never sleeps.</span></h2>
-      <div class="gradient-line"></div>
-      <p class="subtitle text-center mt-1" style="max-width:780px;">Sub-10K-line Bash harness &middot; continuous self-guided loop &middot; $1&ndash;$2/hour background cost</p>
-      <a href="https://www.laude.org/updates/headlong-a-microharness-for-persistent-agents" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; Headlong launch post (laude.org)</a>
-    </div>
-    <div style="flex:1.3;height:100%;display:flex;align-items:center;justify-content:center;">
-      <a href="https://github.com/laude-institute/headlong" target="_blank" rel="noopener"><img src="assets/images/artifacts/s3-headlong-loop.svg" alt="Headlong persistent-agent loop diagram — reactive versus cron versus continuous self-guided wake-up" style="width:100%;max-height:640px;object-fit:contain;background:#fff;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a>
-    </div>
-  </div>
-</div>
-
-<div class="slide" id="s-seg-portable-computer">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
-  <div class="glow-orb orb-blue" style="width:380px;height:380px;top:-100px;left:-90px;"></div>
-  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
-    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
-      <h2 class="text-center">Perplexity launches the Portable Computer: <span class="gradient-text">the agent on your desk.</span></h2>
-      <div class="gradient-line"></div>
-      <p class="subtitle text-center mt-1" style="max-width:780px;">Model, harness, sandbox, tools all local on DGX Spark &middot; cloud calls need approval</p>
-      <a href="https://www.perplexity.ai/hub/products/portable-computer" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; Portable Computer product page (perplexity.ai)</a>
-    </div>
-    <div style="flex:1.3;height:100%;display:flex;align-items:center;justify-content:center;">
-      <a href="https://www.perplexity.ai/hub/products/portable-computer" target="_blank" rel="noopener"><img src="assets/images/artifacts/s4-portable-computer.png" alt="Perplexity Portable Computer product page — local execution, cloud approval gate" style="width:100%;max-height:640px;object-fit:cover;object-position:top;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a>
-    </div>
-  </div>
-</div>
-
-<div class="slide" id="s-seg-robot-data">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
-  <div class="glow-orb orb-orange" style="width:380px;height:380px;bottom:-100px;left:-90px;"></div>
-  <div class="content" style="display:flex;flex-direction:row;gap:36px;align-items:center;">
-    <div style="flex:1.1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
-      <h2 class="text-center">Figure launches Index: <span class="gradient-text">the robot race is a data race.</span></h2>
-      <div class="gradient-line"></div>
-      <p class="subtitle text-center mt-1" style="max-width:780px;">16M uploaded videos &middot; 44K weekly active creators &middot; $15M paid out &middot; $1B+ planned for data</p>
-      <a href="https://www.figure.ai/news/introducing-index" target="_blank" rel="noopener" style="margin-top:18px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; LIVE &middot; Figure Index launch post (figure.ai)</a>
-    </div>
-    <div style="flex:1.3;height:100%;display:flex;align-items:center;justify-content:center;">
-      <a href="https://www.figure.ai/news/introducing-index" target="_blank" rel="noopener"><img src="assets/images/artifacts/s5-figure-pipeline.png" alt="Figure Index pipeline diagram — submission to filtering, fraud review, deduplication, rebalancing, annotation" style="width:100%;max-height:640px;object-fit:contain;background:#fff;border-radius:14px;border:3px solid var(--border-subtle);box-shadow:0 20px 60px rgba(0,0,0,.35);"></a>
-    </div>
-  </div>
-</div>
 
 <div class="slide" id="s-signal-outside">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">03 / SIGNAL FROM OUTSIDE &middot; 7 MIN</div>
   <div class="glow-orb orb-blue" style="width:440px;height:440px;top:-130px;right:-120px;"></div>
   <div class="content">
     <div class="part-label">Signal From Outside &middot; weekly video review &middot; permanent anchor &middot; 7 min</div>
-    <h2 class="text-center">Codex moves into a <span class="gradient-text">virtual office.</span></h2>
+    <h2 class="text-center">When agents contribute, <span class="gradient-text">everything breaks.</span></h2>
     <div class="gradient-line"></div>
     <div class="mt-2 two-col">
       <div class="card card-glow">
-        <span class="tag tag-blue">THIS WEEK&rsquo;S VIDEO &middot; PRACTITIONER DEMO</span>
-        <h3 class="mt-2">&ldquo;Codex agents inhabit a virtual office&rdquo;</h3>
-        <p>A 16.9-second demo from @davidfromkansas. Codex agents move around a spatial UI, pick up tasks, and leave completed work in a shared mailbox. 2,114 likes / 106 reposts / 149 replies at ingest 2026-08-26. The agent has no idea it has an office &mdash; the harness is unchanged.</p>
-        <p class="mono muted mt-1" style="font-size:0.72rem;">X clip (x.com) &middot; no autoplay &middot; manual open on air if used</p>
+        <span class="tag tag-blue">THIS WEEK&rsquo;S VIDEO &middot; GITHUB</span>
+        <h3 class="mt-2">&ldquo;OpenClaw Went Viral. Meet the Maintainers Building and Securing It.&rdquo;</h3>
+        <p>Four maintainers on the couch &middot; 46:00 &middot; 388K stars, 80K+ commits, ~100K issues and PRs from 2,000+ contributors in nine months. The first codebase at full agent-contributor saturation: prompt requests, badge gaming, edited-not-bounced PRs, agent review, zero telemetry. A field report from the front, not OpenClaw news.</p>
+        <a href="https://youtu.be/5VSwaUXtPIE" target="_blank" rel="noopener" style="margin-top:12px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; PLAY &middot; youtu.be/5VSwaUXtPIE</a>
       </div>
       <div class="card">
-        <span class="tag tag-green">PAIR WITH THE EPISODE THESIS</span>
-        <h3 class="mt-2">The deployment layer decides the surface.</h3>
-        <p>Stories 1 through 5 argued that the model is no longer the moat. The Signal From Outside demo shows the same point from the operator&rsquo;s side: the surface the user touches is independent of the agent underneath. The harness is the surface. The harness is the product.</p>
-        <p class="mt-1">Pair them: if the harness decides what the agent sees, the operator has more control than the model owner.</p>
+        <a href="https://youtu.be/5VSwaUXtPIE" target="_blank" rel="noopener"><img src="assets/images/artifacts/s-openclaw-github.jpg" alt="OpenClaw Went Viral — Meet the Maintainers Building and Securing It (GitHub)" style="width:100%;border-radius:10px;border:2px solid var(--border-subtle);"></a>
       </div>
-    </div>
-    <div class="warn-card mt-3"><strong style="color:var(--accent-yellow);">NO AUTOPLAY:</strong> the video is not embedded. Andy opens the X post manually in a browser tab if a moment is referenced on camera; otherwise hold on the card above.</div>
-    <div class="src-links">
-      <a href="https://x.com/davidfromkansas/status/2092245009810493916" target="_blank" rel="noopener">x.com/davidfromkansas/status/2092245009810493916</a>
     </div>
   </div>
 </div>
@@ -355,35 +354,33 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">04 / HOT TAKE &middot; 3 MIN</div>
   <div class="glow-orb orb-red" style="width:480px;height:480px;top:-140px;left:-120px;"></div>
   <div class="content">
-    <div class="part-label">Hot take &middot; 3 min &middot; distinct from every news segment</div>
-    <h2 class="text-center">The last open moat is <span class="gradient-text">the deployment layer.</span></h2>
+    <div class="part-label">Hot take &middot; the fight &middot; two sides, one verdict</div>
+    <h2 class="text-center">Nvidia buying Hugging Face is <span class="gradient-text">bad for open source.</span></h2>
     <div class="gradient-line"></div>
-    <p class="subtitle text-center mt-1" style="max-width:900px;">Whichever operator can re-deploy the model without phoning home owns the upgrade cycle. Qwen dropped 125B parameters and 51B n-gram embeddings ungated the same day. Perplexity put the harness on the desk. The bottleneck is no longer access &mdash; it is local tooling, local data, and the social permission to re-deploy.</p>
+    <p class="subtitle text-center mt-1" style="max-width:900px;">The motion. Twelve point nine billion dollars, still unconfirmed, for the hub where the open-weights world ships. Henry argues it is bad for open source. Andy argues it is good. Two minutes each, then the verdict.</p>
     <div class="mt-3 two-col">
       <div class="card">
-        <span class="tag tag-blue">WHAT CLOSED THIS WEEK</span>
-        <h3 class="mt-1">Access used to be the moat.</h3>
-        <p class="muted">Open weights closed that gap long ago. Headlong closed a different gap: persistent initiative, no human in the loop. Perplexity closed another: the local agent is now a product, not a hobby.</p>
+        <span class="tag tag-red">HENRY &middot; BAD FOR OPEN SOURCE</span>
+        <h3 class="mt-1">The commons gets a landlord.</h3>
+        <p class="muted">The biggest GPU vendor now owns the hub its own competitors ship on. Every neutral surface &mdash; model hosting, benchmarks, Spaces &mdash; now has an owner with a dog in the fight.</p>
         <ul class="bullet-list mt-2">
-          <li><strong>Open weights:</strong> closed</li>
-          <li><strong>Persistent initiative:</strong> shipped (Apache 2.0)</li>
-          <li><strong>Local-first product:</strong> shipped</li>
-          <li><strong>Long-context at low cost:</strong> previewed</li>
+          <li><strong>Conflict of interest:</strong> the referee sells jerseys</li>
+          <li><strong>Microsoft-GitHub precedent:</strong> openness survives, neutrality does not</li>
+          <li><strong>The rent:</strong> terms of service beat licenses when the hub is single</li>
         </ul>
       </div>
       <div class="card card-glow">
-        <span class="tag tag-red">WHAT IS STILL OPEN</span>
-        <h3 class="mt-1">Whose deploy wins?</h3>
-        <p class="muted">The defensive answer is the deployment layer. The operator who can change the harness, the prompt, the spend boundary, and the data without asking the model owner &mdash; and can do it on the device under their desk &mdash; is the operator who survives the next two quarters.</p>
+        <span class="tag tag-blue">ANDY &middot; GOOD FOR OPEN SOURCE</span>
+        <h3 class="mt-1">Validation, not capture.</h3>
+        <p class="muted">Nobody pays twelve point nine billion for a charity. Open source just got priced as the strategic layer of AI &mdash; and Nvidia sells GPUs to everyone, so walling the garden shrinks its own market.</p>
         <ul class="bullet-list mt-2">
-          <li><strong>Harness control &gt; model choice</strong></li>
-          <li><strong>Spend boundary &gt; benchmark</strong></li>
-          <li><strong>Local data &gt; training data</strong></li>
-          <li><strong>Re-deploy without phoning home</strong></li>
+          <li><strong>Capital:</strong> the commons stops living donation to donation</li>
+          <li><strong>Incentive:</strong> locking HF hurts Nvidia&rsquo;s own TAM</li>
+          <li><strong>Fork discipline:</strong> open weights cannot be unshipped</li>
         </ul>
       </div>
     </div>
-    <div class="quote-block mt-3">"If you can re-deploy the model without phoning home, you own the upgrade cycle."</div>
+    <div class="quote-block mt-3">"The question is not whether the hub stays open. It is who sets the rent &mdash; and that is why your right to re-deploy is the moat that is still open."</div>
     <div class="src-links">
       <a href="https://qwen.ai/blog?id=qwen3.8-flash-next" target="_blank" rel="noopener">qwen.ai/blog?id=qwen3.8-flash-next</a>
       <a href="https://www.laude.org/updates/headlong-a-microharness-for-persistent-agents" target="_blank" rel="noopener">laude.org/updates/headlong-a-microharness-for-persistent-agents</a>
@@ -406,6 +403,7 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
   </div>
 </div>
 
+
 <div class="slide" id="s-watch">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">05 / CLOSE</div>
   <svg class="claw-bg" style="bottom:-6%;left:-4%;"><use href="#weeklyclaw-logo"/></svg>
@@ -420,7 +418,7 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
       </div>
       <div class="card">
         <h3 class="green">The deployment layer</h3>
-        <p>Qwen3.8-Flash-Next day-zero stability on SGLang will determine whether the open-weight ecosystem actually wins a quarter. The hosted QwenCloud API is still &ldquo;coming soon.&rdquo; Independent evals are the next test.</p>
+        <p>Qwen3.8-Flash-Next day-zero stability on SGLang will determine whether the open-weight ecosystem actually wins a quarter. The hosted QwenCloud API is still &ldquo;coming soon.&rdquo; Independent evals are the next test. Figure's Index — 16M videos, $15M paid to creators — doubles down on robots as a data business.</p>
       </div>
       <div class="card">
         <h3 class="orange">The watts</h3>
@@ -445,29 +443,35 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
   </div>
 </div>
 
+
 <div class="slide" id="s-sources">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #27</div><div class="slide-tag">SOURCES / LINKS</div>
   <div class="content">
-    <div class="part-label">Every claim, one click &middot; verified 2026-08-27</div>
+    <div class="part-label">Every claim, one click &middot; verified 2026-08-28</div>
     <h2 class="text-center">Sources &amp; <span class="gradient-text">Links.</span></h2>
     <div class="gradient-line"></div>
     <div class="mt-2 two-col" style="gap:16px;">
       <div class="card">
-        <span class="tag tag-red">S1 &middot; OPENAI STACK</span>
+        <span class="tag tag-green">S1 &middot; NVIDIA &times; HUGGING FACE</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html" target="_blank" rel="noopener">cnbc.com: Nvidia buys Hugging Face $12.9B</a>
+          <a href="https://arstechnica.com/ai/2026/08/report-nvidia-to-acquire-ai-model-repository-hugging-face-for-13-billion/" target="_blank" rel="noopener">arstechnica.com: Nvidia to acquire Hugging Face</a>
+        </div>
+        <span class="tag tag-red mt-2">S2 &middot; OPENAI STACK</span>
         <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
           <a href="https://openai.com/index/jalapeno-first-results/" target="_blank" rel="noopener">openai.com/index/jalapeno-first-results/</a>
           <a href="https://openai.com/index/premium-seats-chatgpt-business/" target="_blank" rel="noopener">openai.com/index/premium-seats-chatgpt-business/</a>
           <a href="https://help.openai.com/en/articles/8792828-chatgpt-business-overview" target="_blank" rel="noopener">help.openai.com ChatGPT Business overview</a>
           <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Groq-3-LPX-Now-in-Full-Production-With-World-Class-Speed-for-Agentic-AI/default.aspx" target="_blank" rel="noopener">NVIDIA investor: Groq 3 LPX in production</a>
         </div>
-        <span class="tag tag-blue mt-2">S2 &middot; QWEN FLASH-NEXT</span>
+        <span class="tag tag-blue mt-2">S3 &middot; QWEN FLASH-NEXT</span>
         <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
           <a href="https://qwen.ai/blog?id=qwen3.8-flash-next" target="_blank" rel="noopener">qwen.ai/blog?id=qwen3.8-flash-next</a>
           <a href="https://huggingface.co/Qwen/Qwen3.8-Flash-Next" target="_blank" rel="noopener">huggingface.co/Qwen/Qwen3.8-Flash-Next (BF16)</a>
           <a href="https://huggingface.co/Qwen/Qwen3.8-Flash-Next-FP8" target="_blank" rel="noopener">huggingface.co/Qwen/Qwen3.8-Flash-Next-FP8</a>
           <a href="https://docs.sglang.io/cookbook/autoregressive/Qwen/Qwen3.8-Flash-Next" target="_blank" rel="noopener">docs.sglang.io cookbook: Qwen3.8-Flash-Next</a>
         </div>
-        <span class="tag tag-green mt-2">S3 &middot; HEADLONG</span>
+        <span class="tag tag-green mt-2">S4 &middot; HEADLONG</span>
         <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
           <a href="https://www.laude.org/updates/headlong-a-microharness-for-persistent-agents" target="_blank" rel="noopener">laude.org/updates/headlong</a>
           <a href="https://github.com/laude-institute/headlong" target="_blank" rel="noopener">github.com/laude-institute/headlong (Apache 2.0)</a>
@@ -475,13 +479,27 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
         </div>
       </div>
       <div class="card">
-        <span class="tag tag-yellow">S4 &middot; PERPLEXITY PORTABLE COMPUTER</span>
+        <span class="tag tag-yellow">S5 &middot; PERPLEXITY PORTABLE COMPUTER</span>
         <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
           <a href="https://www.perplexity.ai/hub/products/portable-computer" target="_blank" rel="noopener">perplexity.ai/hub/products/portable-computer</a>
           <a href="https://perplexity.ai/hub/blog/a-local-first-agent-for-private-and-cost-effective-knowledge-work" target="_blank" rel="noopener">perplexity.ai hub: local-first agent</a>
           <a href="https://venturebeat.com/infrastructure/perplexity-partners-with-nvidia-to-launch-portable-computer-a-fully-local-ai-agent-with-zero-token-costs" target="_blank" rel="noopener">VentureBeat launch coverage (Aug 25)</a>
         </div>
-        <span class="tag tag-purple mt-2">S5 &middot; FIGURE INDEX</span>
+        <span class="tag tag-purple mt-2">S6 &middot; FIGURE INDEX</span>
+        <span class="tag tag-red mt-2">S7 &middot; GLM-5.3-FLASH / OX ALPHA</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://www.scmp.com/tech/big-tech/article/3365433/zhipu-ai-shares-jump-viral-ox-alpha-model-revealed-glm-53-flash-chinese-chips" target="_blank" rel="noopener">scmp.com: Ox Alpha = GLM-5.3-Flash</a>
+          <a href="https://wccftech.com/zhipu-z-ai-unmasks-the-mystery-ox-alpha-model-as-glm-5-3-flash-revealing-that-it-was-run-entirely-on-chinese-gpus-while-serving-100-trillion-tokens-day/" target="_blank" rel="noopener">wccftech.com: GLM-5.3-Flash on Chinese GPUs</a>
+        </div>
+        <span class="tag tag-blue mt-2">S8 &middot; INSTINCT RAISE</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://techcrunch.com/2026/08/26/viral-ai-startup-instinct-has-raised-350-million-at-a-2-5-billion-valuation/" target="_blank" rel="noopener">techcrunch.com: Instinct raises at $2.5B valuation</a>
+        </div>
+        <span class="tag tag-purple mt-2">S9 &middot; OPENAI AGI CLAIM</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://the-decoder.com/sam-altman-says-openai-will-have-agi-by-the-end-of-2026-if-you-accept-his-definition/" target="_blank" rel="noopener">the-decoder.com: Altman AGI claim</a>
+          <a href="https://felloai.com/openai-agi-2026/" target="_blank" rel="noopener">felloai.com: what Altman actually promised</a>
+        </div>
         <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
           <a href="https://www.figure.ai/news/introducing-index" target="_blank" rel="noopener">figure.ai/news/introducing-index</a>
           <a href="https://arstechnica.com/ai/2026/08/world-humanoid-robot-games-show-runners-breaking-records-bursting-into-flames/" target="_blank" rel="noopener">Ars Technica: World Humanoid Robot Games</a>
@@ -496,13 +514,15 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
           <a href="https://qwen.ai/blog?id=qwen3.8-flash-next" target="_blank" rel="noopener">qwen.ai Qwen3.8-Flash-Next release</a>
           <a href="https://www.laude.org/updates/headlong-a-microharness-for-persistent-agents" target="_blank" rel="noopener">laude.org Headlong launch</a>
         </div>
-        <p class="src-note mt-2">Vendor-reported claims are labeled on each slide (OpenAI work-per-watt normalized by published TDP; Qwen benchmark vendor-run; Perplexity 82.6% vs 74.0% self-authored; Figure scale figures company-reported). The hosted QwenCloud API is &ldquo;coming soon.&rdquo;</p>
+        <p class="src-note mt-2">Vendor-reported claims are labeled on each slide (OpenAI work-per-watt by published TDP; Qwen benchmark vendor-run; Perplexity 82.6% vs 74.0% self-authored; Figure scale company-reported; Nvidia&times;HF price press-reported, unconfirmed; GLM-5.3-Flash scale Zhipu-reported; AGI date is Altman&rsquo;s own definition, not independently validated). The hosted QwenCloud API is &ldquo;coming soon.&rdquo;</p>
       </div>
     </div>
   </div>
 </div>
 
+
 </div>
+
 <script>
 (function() {
   const slides = document.querySelectorAll('.slide');
@@ -542,6 +562,22 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
       else document.exitFullscreen();
     }
   });
+  let wheelLock = false;
+  document.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    if (wheelLock) return;
+    const delta = e.deltaY || e.deltaX;
+    if (Math.abs(delta) < 12) return;
+    wheelLock = true; setTimeout(() => wheelLock = false, 650);
+    go(delta > 0 ? current + 1 : current - 1);
+  }, { passive: false });
+  let touchX = 0, touchY = 0;
+  document.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; touchY = e.touches[0].clientY; }, { passive: true });
+  document.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - touchX;
+    const dy = e.changedTouches[0].clientY - touchY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? current + 1 : current - 1);
+  }, { passive: true });
   if (location.hash) {
     const target = document.querySelector(location.hash);
     if (target && target.classList.contains('slide')) {
@@ -551,5 +587,3 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
   }
 })();
 </script>
-</body>
-</html>

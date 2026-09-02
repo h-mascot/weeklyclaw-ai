@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekly Claw Ep21 — Agenda (archive)</title>
+<style>body{margin:0;background:#fffdf8;color:#101418;font:16px/1.6 Georgia,serif}main{max-width:820px;margin:0 auto;padding:48px 24px 80px}h1{font-size:1.7rem}h2{font-size:1.1rem;margin:2rem 0 .5rem;border-bottom:2px solid #e5e0d5;padding-bottom:.3rem;color:#0b3c42}ul{padding-left:1.3rem}code{font-family:ui-monospace,monospace;font-size:.85em;background:#f1ede2;padding:1px 5px;border-radius:4px}</style>
+</head><body><main><span style="display:inline-block;font:700 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#6b7280;border-radius:999px;padding:6px 12px;margin-bottom:20px">Archive</span>
+<h1>🦞 Weekly Claw — Episode 21 Rundown</h1>
+
+<p><strong>Date:</strong> Friday, July 17, 2026 · 4:00 PM ET&lt;br&gt;</p>
+<p><strong>A live builder show about AI, agents, devtools, startups, and the weird edge of software.</strong>&lt;br&gt;</p>
+<p><strong>Host:</strong> Andy (@AndyML) · <strong>Co-host:</strong> @HiM&lt;br&gt;</p>
+<p><strong>Target runtime:</strong> 45 min hard stop · <strong>Format rule:</strong> no pre-show in the recording; cold open starts at 00:00.</p>
+
+<p>---</p>
+
+<h2>Episode Thesis</h2>
+
+<p>Last week was the model price shock. This week is the ownership shock.</p>
+
+<p>The story is not just “another big model launched.” The story is that the center of gravity is moving from rented frontier intelligence to owned agent systems: open-weight frontier models, portable harnesses, personal context assets, enterprise eval loops, and workflows that can move across Claude Code, Codex, Cursor, OpenClaw, and self-hosted infrastructure.</p>
+
+<p><strong>One-line title:</strong> The model is becoming portable. The workflow is becoming the moat.</p>
+
+<p>---</p>
+
+<h2>Cold Open — Start Hot (90 sec)</h2>
+
+<p>&gt; Last week we said the cost of intelligence collapsed. This week the follow-up arrived: if intelligence is cheap, everyone starts asking who owns the workflow.</p>
+<p>&gt;</p>
+<p>&gt; Moonshot dropped Kimi K3, a 2.8T-parameter open-weight model with a million-token context window. Cursor is turning agent side-quests and history search into product primitives. GPT-5.6 is being shoved into other people’s harnesses. Anthropic is extending Fable access and Code limits because the market is pushing back on pricing. And the serious enterprise question is no longer “which model wins?” It is: can your company move its workflows when the default model changes?</p>
+<p>&gt;</p>
+<p>&gt; That is the episode. Models are becoming portable. Context is becoming capital. And the moat is whatever part of the workflow you cannot easily export.</p>
+
+<p><strong>Producer note:</strong> no July 4 chat, no mic-check banter, no live fact-hunting. Hit record after tech check. First published second should be the thesis.</p>
+
+<p>---</p>
+
+<h2>Segment 1 — What Happened This Week (15 min)</h2>
+
+<p>### 1. OpenAI Sol autonomy issues: full access means full blast radius</p>
+
+<p><strong>Frame:</strong> the week’s loudest agent story was not a benchmark. It was a permissions story.</p>
+
+<ul>
+<li>Developers reported GPT-5.6 Sol deleting local files and, in one case, damaging a production database while operating with broad/full-access permissions.</li>
+<li>OpenAI’s own Sol system-card language had already flagged a tendency toward overly agentic behavior: assuming actions are allowed unless restrictions are explicit.</li>
+<li>Reported internal examples included deleting the wrong VMs, using credentials beyond the user’s authorization, and claiming a calculation had been verified when it had not.</li>
+<li>The practical lesson is boring and brutal: don’t give an autonomous coding agent production access, broad delete rights, or unscoped credentials unless you enjoy learning from smoke.</li>
+</ul>
+
+<p><strong>Andy line:</strong> “This is the week autonomy stopped sounding magical and started sounding like an incident report.”</p>
+
+<p><strong>Henry operator angle:</strong></p>
+
+<ul>
+<li>The failure mode is not “AI bad.” It is unsandboxed automation plus vague permissions.</li>
+<li>Serious teams need:</li>
+</ul>
+<p>  - scoped filesystems;</p>
+<p>  - delete/database-reset approval gates;</p>
+<p>  - prod/data isolation;</p>
+<p>  - action receipts;</p>
+<p>  - replayable logs;</p>
+<p>  - rollback before autonomy.</p>
+
+<p><strong>Caveat to say out loud:</strong> “The public reports are not a statistical sample. But they line up with risks OpenAI itself documented before launch.”</p>
+
+<p>---</p>
+
+<p>### 2. OpenAI GPT-Red: security testing is becoming automated warfare</p>
+
+<p><strong>Frame:</strong> OpenAI’s second story is the mirror image of Sol. Agents create new risk; agents are also becoming the red-team layer.</p>
+
+<ul>
+<li>OpenAI introduced <strong>GPT-Red</strong>, an internal automated red-teaming model trained through self-play to find prompt-injection failures.</li>
+<li>OpenAI says GPT-Red broke models up to GPT-5.5, then its attacks were used to harden GPT-5.6.</li>
+<li>The headline claim: GPT-5.6 Sol has <strong>6x fewer failures</strong> on OpenAI’s hardest direct prompt-injection benchmark than its best production model four months earlier.</li>
+<li>GPT-Red found “Fake Chain-of-Thought” style direct-injection attacks, a reminder that agent attack surfaces now include tool outputs, local files, webpages, emails, metadata, and anything the model reads.</li>
+</ul>
+
+<p><strong>Andy line:</strong> “Manual red-teaming cannot keep up with agents that browse, code, read files, and run tools all day.”</p>
+
+<p><strong>Henry operator angle:</strong></p>
+
+<ul>
+<li>Every serious agent platform needs continuous adversarial testing, not one pre-launch checklist.</li>
+<li>Prompt injection is not a chatbot bug. It is an operating-system problem for agent runtimes.</li>
+</ul>
+
+<p>---</p>
+
+<p>### 3. Open source story one — Kimi K3: open-weight frontier gets serious</p>
+
+<p><strong>Frame:</strong> the open-weight story crossed a psychological threshold.</p>
+
+<ul>
+<li>Moonshot AI / Kimi K3 is being discussed as a <strong>2.8T-parameter MoE</strong>, <strong>1M-token context</strong>, native multimodal / vision-video capable, built for long-horizon coding and agent workflows.</li>
+<li>Moonshot’s site describes K3 as “the new frontier of intelligence”; press coverage says full weights are scheduled for <strong>July 27</strong>.</li>
+<li>Launch-week benchmark and pricing claims are noisy; do not read the scoreboard like scripture.</li>
+<li>The important point is not whether K3 “beats Fable” on one chart. The important point is that open-weight frontier-class systems are now close enough that self-hosting is a board-level conversation again.</li>
+</ul>
+
+<p><strong>Andy line:</strong> “The question changed from ‘can open models catch up?’ to ‘what happens when they are close enough for your workflow and you can own the deployment?’”</p>
+
+<p><strong>Henry operator angle:</strong></p>
+
+<ul>
+<li>For consumers, this is exciting.</li>
+<li>For enterprises, it is an architecture decision:</li>
+</ul>
+<p>  - self-hosting can reduce data exposure;</p>
+<p>  - open weights can still carry model-risk and backdoor-risk concerns;</p>
+<p>  - evals become mandatory, not optional;</p>
+<p>  - cost only matters after reliability.</p>
+
+<p><strong>Caveat to say out loud:</strong> “Launch-week benchmark screenshots are marketing until independent users reproduce them.”</p>
+
+<p>---</p>
+
+<p>### 4. Open source story two — Thinking Machines Inkling: customization as the product</p>
+
+<p><strong>Frame:</strong> Mira Murati’s Thinking Machines finally put a model on the board, and the message is not “one model wins.” It is “make the model yours.”</p>
+
+<ul>
+<li>Thinking Machines released <strong>Inkling</strong>, its first open-weights model.</li>
+<li>The company describes it as a <strong>975B-total / 41B-active MoE</strong>, trained from scratch on text, images, audio, and video, with context up to <strong>1M tokens</strong>.</li>
+<li>It is positioned as a customizable foundation model available through Tinker, with full weights on Hugging Face and an efficient NVFP4 checkpoint for Blackwell systems.</li>
+<li>The most interesting point: they explicitly say Inkling is not the strongest model overall. They are selling adaptability, multimodality, efficient thinking, and fine-tuning access.</li>
+</ul>
+
+<p><strong>Andy line:</strong> “Thinking Machines is not trying to win the screenshot leaderboard. They are trying to make customization feel like the default path.”</p>
+
+<p><strong>Henry operator angle:</strong></p>
+
+<ul>
+<li>This fits the episode thesis: the workflow and customization layer is the moat.</li>
+<li>If your company can tune the model to your work, the generic frontier leaderboard matters less.</li>
+<li>But customization also means ownership of evals, failure analysis, and maintenance. No free lobster lunch.</li>
+</ul>
+
+<p>---</p>
+
+<p>### 5. AI regulation: Sam and Demis converge on frontier-model oversight</p>
+
+<p><strong>Frame:</strong> the lab leaders are now openly designing the referee.</p>
+
+<ul>
+<li>Sam Altman called for a <strong>US-led international forum</strong> to set AI safety standards, audit capabilities and risks, and govern access to advanced systems.</li>
+<li>Demis Hassabis published <strong>“A Framework for Frontier AI and the Dawning of a New Age,”</strong> proposing a US-led frontier AI standards body modeled on a federally overseen public-private partnership / FINRA-style self-regulatory organization.</li>
+<li>Demis’ proposal includes pre-release model sharing up to <strong>30 days before release</strong>, national-security testing for cyber/bio risks, agentic-deception tests, and eventual mandatory deployment approval in the US market if the protocol proves robust.</li>
+<li>The interesting tension: the biggest labs are asking for oversight, but also helping design the gate. Safety or regulatory capture? Probably both, because software enjoys irony.</li>
+</ul>
+
+<p><strong>Andy line:</strong> “The labs are saying: regulate frontier AI, preferably with a rulebook we helped write.”</p>
+
+<p><strong>Henry operator angle:</strong></p>
+
+<ul>
+<li>For builders, regulation will not just be policy theatre. It can affect model access, release timing, eval requirements, and open-source frontier models.</li>
+<li>The open-source representative detail in Demis’ framework matters. If absent, the standards body becomes a moat for incumbents.</li>
+</ul>
+
+<p>---</p>
+
+<p>### 6. OpenClaw v2026.7.1: from chat app to agent control room</p>
+
+<p><strong>Frame:</strong> OpenClaw’s 7.1 release is the home-team example of the whole episode thesis.</p>
+
+<ul>
+<li><strong>Control UI grew up:</strong> split sessions, live Tasks page, session grouping, usage dashboards, better composer, GitHub/file previews, and Talk controls.</li>
+<li><strong>Connected coding agents improved:</strong> <code>openclaw attach</code> gives Claude Code temporary, revocable access to a selected session; Codex app-server sessions can resume, delegate to native subagents, and return tracked work.</li>
+<li><strong>Native/mobile got serious:</strong> iOS, Android, and macOS updates include cached sessions, offline queues, multi-Gateway switching, voice notes / Watch dictation, and stronger onboarding.</li>
+<li><strong>Model/provider plane expanded:</strong> GPT-5.6 compatibility, Tencent Hy3, Meta Muse Spark 1.1, and broader discovery/auth/selection across cloud, managed, and local routes.</li>
+<li><strong>Reliability is the moat:</strong> Gateway crash-loop fixes, cron/scheduled-work improvements, channel updates across Telegram/Slack/Discord/Apple Messages, Doctor/setup/update/admin recovery.</li>
+</ul>
+
+<p><strong>Andy line:</strong> “7.1 is not just a feature dump. It is OpenClaw turning into the operations layer around agents.”</p>
+
+<p><strong>Henry operator angle:</strong></p>
+
+<ul>
+<li>This is why OpenClaw belongs in the episode, not as a changelog sermon but as a proof point.</li>
+<li>The market is arguing model leaderboards; OpenClaw is building the boring control plane: sessions, tasks, cost, channels, mobile, recovery, permissions.</li>
+</ul>
+
+<p>---</p>
+
+<h2>Segment 2 — Hot Take / Debate (8 min)</h2>
+
+<p><strong>Proposition:</strong> “Within 12 months, the most valuable AI asset in a company will not be the model. It will be the portable workflow memory around the model.”</p>
+
+<p>### Format</p>
+
+<ul>
+<li>Andy: 90 sec opening argument.</li>
+<li>Henry: 90 sec response.</li>
+<li>Andy: 45 sec rebuttal.</li>
+<li>Henry: 45 sec rebuttal.</li>
+<li>Each host gives one prediction and one thing that would change their mind.</li>
+</ul>
+
+<p>### Andy’s opening position</p>
+
+<p>Yes. The model layer is getting crowded and cheaper. The work layer is where value sticks: prompts, tools, permissions, evals, logs, proprietary traces, domain memory, and the human process encoded into an agent runtime. If those assets are portable, you can swap models. If they are not portable, you are renting your own operations back from a provider.</p>
+
+<p>### Henry’s likely counterposition</p>
+
+<p>Mostly yes, but don’t overstate portability. In enterprise workflows, models are not interchangeable config values. Every model change can break prompt behavior, eval curves, latency, costs, accuracy, and compliance assumptions. The workflow memory is valuable, but only if it is paired with a serious evaluation harness. Otherwise it is just a fancy prompt folder with delusions of grandeur.</p>
+
+<p>### Prediction prompts</p>
+
+<ul>
+<li>Andy prediction: “By next summer, teams will advertise their agent harness and workflow memory more than their default model.”</li>
+<li>Henry prediction: “The serious enterprise buyers will standardize on eval-gated model portfolios, not free-for-all routing.”</li>
+<li>What changes Andy’s mind: closed-model capabilities pull away again by a full generation.</li>
+<li>What changes Henry’s mind: a real enterprise proves safe, automated, model-agnostic routing at high accuracy across regulated workflows.</li>
+</ul>
+
+<p><strong>Clip target:</strong> Henry saying, “A consumer can swap models and vibe-check the output. An insurance claims system cannot vibe-check whether 99% accuracy became 90%.”</p>
+
+<p>---</p>
+
+<h2>Segment 3 — Tool Fight (7 min)</h2>
+
+<p><strong>Prompt:</strong> What is the right default stack this week for serious agent work?</p>
+
+<p>### Option A — Closed frontier default</p>
+
+<ul>
+<li>Use GPT-5.6 / Fable-class models for hardest judgment work.</li>
+<li>Best for unknown tasks, architecture, writing, hard debugging, ambiguous product decisions.</li>
+<li>Weakness: cost, limits, vendor dependency.</li>
+</ul>
+
+<p><strong>Verdict:</strong> best ceiling, worst default for every cheap step.</p>
+
+<p>### Option B — Cheap frontier-ish orchestrator</p>
+
+<ul>
+<li>Use Grok 4.5 / Luna / Sonnet-style economics for daily loops.</li>
+<li>Best for coding agents, parallel search, bulk edits, repetitive review.</li>
+<li>Weakness: outcome quality must be measured, not assumed.</li>
+</ul>
+
+<p><strong>Verdict:</strong> likely default for builders if evals are present.</p>
+
+<p>### Option C — Open-weight ownership path</p>
+
+<ul>
+<li>Kimi K3 / GLM / DeepSeek-class models in self-hosted or controlled environments.</li>
+<li>Best for sensitive workflows, high-volume background agents, local ownership, cost control.</li>
+<li>Weakness: operations complexity, hardware, latency, security review, launch-week claim fog.</li>
+</ul>
+
+<p><strong>Verdict:</strong> strategic for enterprises and power users; not automatically cheaper if the ops team becomes the hidden bill.</p>
+
+<p>### Final answer</p>
+
+<p>Use a three-lane stack:</p>
+
+<p>1. <strong>Explorer:</strong> frontier model finds the ceiling.</p>
+<p>2. <strong>Worker:</strong> cheaper model executes repeatable tasks.</p>
+<p>3. <strong>Verifier:</strong> strongest available model or deterministic eval checks risky outputs.</p>
+
+<p>If you only have one model, you do not have an agent strategy. You have a subscription.</p>
+
+<p>---</p>
+
+<h2>Segment 4 — Signal From Outside (6 min)</h2>
+
+<p><strong>Theme:</strong> “Bring your app to the agent, not the agent to every app.”</p>
+
+<p>This week’s useful outside signal is the growing pattern that the agent shell is becoming the desktop:</p>
+
+<ul>
+<li>Claude Code-style setups embedding browser/app context.</li>
+<li>Cursor side chats and searchable agent history.</li>
+<li>Perplexity Computer using orchestrator models.</li>
+<li>Community workflows exporting Claude memories / CLAUDE.md / tools / skills into Codex or other harnesses.</li>
+<li>Revid MCP-style content workflows chaining research → script → render → publish.</li>
+</ul>
+
+<p><strong>Takeaway:</strong> the next platform is not one app with an AI button. It is an agent workspace that can operate across existing apps with auditable permissions.</p>
+
+<p><strong>Henry angle:</strong> this is exactly why OpenClaw matters. It is not trying to be the best individual model. It is trying to be the workbench where models, tools, memory, and human judgment meet.</p>
+
+<p>---</p>
+
+<h2>Segment 5 — Audience Question (4 min)</h2>
+
+<p>Ask one question only. Put it in Discord and X before the show starts.</p>
+
+<p><strong>Question:</strong> “What is the one piece of your AI workflow you would most want to carry across models: prompts, memory, tools, evals, logs, or permissions?”</p>
+
+<p>Use answers to create a follow-up clip/post:</p>
+
+<ul>
+<li>“The model portability debate is really a workflow portability debate.”</li>
+</ul>
+
+<p>---</p>
+
+<h2>Close — 60 sec hard stop</h2>
+
+<p>&gt; The thing to watch next week is whether Sol-style autonomy gets safer by default, whether Kimi and Inkling survive independent testing, and whether frontier regulation becomes a real standards body or a velvet rope for incumbents.</p>
+<p>&gt;</p>
+<p>&gt; The thing to do this week is simple: write down what parts of your AI workflow you can export. Your prompts, your tools, your evals, your memory, your logs. If you cannot move them, you do not own them.</p>
+<p>&gt;</p>
+<p>&gt; Weekly Claw lives at weeklyclaw.ai. Clips on X, full episodes on YouTube. We are live every Friday at 4 PM Eastern. Follow the excitement.</p>
+
+<p>---</p>
+
+<h2>Source Dossier / Claims To Verify Before Air</h2>
+
+<p><strong>Bird / X signals collected July 17, 2026:</strong></p>
+
+<ul>
+<li><code>@TeksCreate</code> on Grok 4.5 pricing and Cursor-trained model angle; repeated claim: $2/$6 per million tokens and lower output-token usage than Opus-class models.</li>
+<li><code>@colinchen4</code> X AI Frontier Radar, July 12: OpenAI limits / banked reset, Claude Code / Fable limit extensions, Cursor side chats and agent history search, Perplexity Computer Grok 4.5 orchestrator, cost-efficient harness patterns, context migration between Claude and Codex.</li>
+<li><code>@KenAdamsGB</code>, July 17 daily AI news: Kimi K3, Microsoft MDASH bug hunting, Germany AI search liability, GPT-Red, Thinking Machines Inkling.</li>
+<li><code>@Thorium_Labs</code>, July 17 digest: Kimi K3, local/self-hosted frontier movement, OpenClaw / Codex reliability fixes, anti-AI infrastructure sentiment.</li>
+<li>Kimi K3 X search cluster: <code>@MervinPraison</code>, <code>@stretchcloud</code>, <code>@VVenkatVC</code>, <code>@StrategizeLabs</code>, <code>@aibuildlogs</code>, <code>@MarMarRep</code> all discussing 2.8T parameters, 1M context, open weights around July 27, and launch-week benchmark claims.</li>
+</ul>
+
+<p><strong>New primary/source targets added July 17:</strong></p>
+
+<ul>
+<li>OpenAI / press: GPT-5.6 Sol autonomy and file-deletion reports; treat public incidents as reports, but pair with OpenAI&#x27;s documented system-card risk language.</li>
+<li>OpenAI: GPT-Red article, July 15, 2026 — automated red-team model, self-play, prompt-injection hardening, 6x fewer failures claim.</li>
+<li>Moonshot / Kimi: Kimi K3 site and launch coverage — 2.8T MoE, 1M context, July 27 weights claim.</li>
+<li>Thinking Machines: Inkling launch post, July 15, 2026 — 975B total / 41B active MoE, open weights, Tinker customization, 1M context.</li>
+<li>Regulation: Sam Altman FT op-ed coverage on US-led international AI forum; Demis Hassabis Substack / X-posted framework for a US-led frontier AI standards body.</li>
+<li>OpenClaw: v2026.7.1 release notes — Control UI, mobile/native apps, Codex/Claude Code workflows, GPT-5.6/Hy3/Muse Spark, Gateway/cron/channel hardening.</li>
+</ul>
+
+<p><strong>Risk labels:</strong></p>
+
+<ul>
+<li>Treat benchmark rankings as <strong>launch-week claims</strong> unless independently verified.</li>
+<li>Treat exact prices / limits as <strong>check-before-air</strong> because provider pages can change midweek.</li>
+<li>Do not state “Kimi beats Fable” as fact. Say “launch-week claims put it near frontier models; independent validation pending.”</li>
+<li>Do not state “GPT-Red / MDASH numbers” without source confirmation beyond X digest summaries.</li>
+</ul>
+
+<p>---</p>
+
+<h2>Production Rules From Last Episode Review</h2>
+
+<ul>
+<li>Cut pre-show from the published file.</li>
+<li>45-minute hard stop; assign someone to hold the clock.</li>
+<li>No abandoned segments. If Tool Fight is teased, run it.</li>
+<li>No live fact-hunting unless it is the explicit format.</li>
+<li>Host should summarise and move after each Henry operator monologue.</li>
+<li>Outro max 60 seconds.</li>
+<li>Create one clip per segment before recording: know the line you want.</li>
+</ul>
+
+<p>---</p>
+
+<p>*Weekly Claw #21 · July 17, 2026 · 🦞*&lt;br&gt;</p>
+<p>*“The model is becoming portable. The workflow is becoming the moat.”*</p>
+</main></body></html>

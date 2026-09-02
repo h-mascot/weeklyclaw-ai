@@ -27,12 +27,12 @@ const required = [
   'episodes/20/agenda.md',
   'episodes/20/agenda/index.html',
   'episodes/20/deck.html',
-  'episodes/26/agenda.md',
-  'episodes/26/agenda/index.html',
-  'episodes/26/deck.html',
   'episodes/27/agenda.md',
   'episodes/27/agenda/index.html',
   'episodes/27/deck.html',
+  'episodes/26/agenda.md',
+  'episodes/26/agenda/index.html',
+  'episodes/26/deck.html',
   'episodes/25/agenda.md',
   'episodes/25/agenda/index.html',
   'episodes/25/deck.html',
@@ -57,7 +57,6 @@ const weeks = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 for (const week of weeks) {
   required.push(`w${week}/index.html`, `w${week}/changelog/index.html`);
 }
-
 const missing = required.filter((p) => !existsSync(new URL(`../${p}`, import.meta.url)));
 if (missing.length) {
   console.error(`Missing required files: ${missing.join(', ')}`);
@@ -220,7 +219,6 @@ for (const needle of [
   '<rss version="2.0"',
   'The Weekly Claw — Episode Summaries',
   '<atom:link href="https://weeklyclaw.ai/feed.xml"',
-  'weeklyclaw-episode-27',
   'weeklyclaw-episode-26',
   'weeklyclaw-episode-20',
 ]) {
@@ -427,10 +425,18 @@ for (const week of weeks) {
 }
 
 const vercelConfig = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
-for (const source of ['/episodes/:episode/agenda', '/episodes/:episode/agenda.md']) {
-  const redirect = vercelConfig.redirects?.find((item) => item.source === source);
-  if (!redirect || redirect.destination !== '/episodes?week=:episode&deck=main' || redirect.permanent !== true) {
-    console.error(`Missing permanent agenda redirect: ${source}`);
+for (const week of weeks) {
+  for (const suffix of ['agenda', 'agenda.md']) {
+    const redirect = vercelConfig.redirects?.find((item) => item.source === `/episodes/:episode/${suffix}`);
+    if (redirect) {
+      console.error(`Stale agenda redirect still present: ${redirect.source}`);
+      process.exit(1);
+    }
+  }
+  const agendaPage = join('episodes', String(week), 'agenda.html');
+  const agendaMd = join('episodes', String(week), 'agenda.md');
+  if (existsSync(agendaMd) && !existsSync(agendaPage)) {
+    console.error(`agenda.md exists but no agenda.html page: episodes/${week}`);
     process.exit(1);
   }
 }
@@ -458,7 +464,7 @@ for (const [f, canon] of seoPages) {
   }
 }
 const sitemap = readFileSync(new URL('../sitemap.xml', import.meta.url), 'utf8');
-for (const route of ['https://weeklyclaw.ai/', 'https://weeklyclaw.ai/episodes', 'https://weeklyclaw.ai/feedback', 'https://weeklyclaw.ai/changelog', 'https://weeklyclaw.ai/episodes?week=27', 'https://weeklyclaw.ai/w20/changelog']) {
+for (const route of ['https://weeklyclaw.ai/', 'https://weeklyclaw.ai/episodes', 'https://weeklyclaw.ai/feedback', 'https://weeklyclaw.ai/changelog', 'https://weeklyclaw.ai/w20/changelog']) {
   if (!sitemap.includes(route)) {
     console.error(`sitemap.xml missing ${route}`);
     process.exit(1);

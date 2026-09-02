@@ -1,102 +1,107 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Weekly Claw #27 Agenda — The agent owns the loop.</title>
-<style>
-:root { color-scheme: light; --ink:#24201c; --paper:#fff9ee; --muted:#6e645a; --line:#b5a996; --accent:#2a7e6b; }
-body { margin:0; font:18px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:#ece4d5; }
-a { color:var(--accent); }
-.shell { width:min(920px, calc(100% - 36px)); margin-inline:auto; }
-header, footer { padding:22px 0; }
-nav { display:flex; justify-content:space-between; gap:16px; align-items:center; }
-.wordmark { font-weight:800; text-transform:uppercase; text-decoration:none; color:var(--ink); }
-.button { display:inline-flex; align-items:center; min-height:40px; padding:0 14px; border:1px solid var(--accent); border-radius:6px; background:var(--accent); color:var(--paper); text-decoration:none; font-weight:700; }
-.button.secondary { color:var(--ink); background:transparent; border-color:var(--line); }
-.intro { padding:56px 0 32px; border-block:1px solid var(--line); }
-.eyebrow { margin:0 0 10px; color:var(--accent); font:700 12px/1 ui-monospace,Menlo,monospace; letter-spacing:.12em; text-transform:uppercase; }
-h1 { margin:0; font-size:clamp(42px,8vw,78px); line-height:.9; letter-spacing:-.05em; text-transform:uppercase; }
-article { padding:36px 0 70px; }
-h2,h3,h4 { line-height:1.05; margin-top:2em; }
-p,li { max-width:78ch; }
-code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
-</style>
-</head>
-<body>
-<header><nav class="shell" aria-label="Episode navigation"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/27/deck">Open slides</a></div></nav></header>
-<main class="shell">
-<section class="intro"><p class="eyebrow">Episode 27 · August 28, 2026</p><h1>The agent owns the loop.</h1><p>This week was the consolidation race. Nvidia moved to buy the open-weights commons outright — $12.9B reported for Hugging Face. Zhipu unmasked its viral stealth model…</p></section>
-<article><h2>WeeklyClaw Episode 27: The agent owns the loop. (rev6)</h2>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekly Claw Ep27 — Agenda (rev6)</title>
+<style>body{margin:0;background:#fffdf8;color:#101418;font:16px/1.6 Georgia,serif}main{max-width:820px;margin:0 auto;padding:48px 24px 80px}h1{font-size:1.7rem}h2{font-size:1.1rem;margin:2rem 0 .5rem;border-bottom:2px solid #e5e0d5;padding-bottom:.3rem;color:#0b3c42}ul{padding-left:1.3rem}code{font-family:ui-monospace,monospace;font-size:.85em;background:#f1ede2;padding:1px 5px;border-radius:4px}</style>
+</head><body><main><span style="display:inline-block;font:700 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#6b7280;border-radius:999px;padding:6px 12px;margin-bottom:20px">Rev6</span>
+<h1>WeeklyClaw Episode 27: The agent owns the loop. (rev6)</h1>
+
 <p><strong>Show date:</strong> Friday 2026-08-28 (America/New_York, 4:00 PM ET)</p>
 <p><strong>Hosts:</strong> Henry and Andy</p>
 <p><strong>Target runtime:</strong> 36–40 minutes</p>
 <p><strong>Hard stop:</strong> 45 minutes</p>
 <p><strong>Format:</strong> News runs as two grid slides — four story cards each (2 rows x 2 cols), one AI-generated banner thumbnail per card, ~2:00 per card. Henry walks each grid left-to-right, top-to-bottom.</p>
-<h3>Episode thesis</h3>
+
+<h2>Episode thesis</h2>
+
 <p>This week was the consolidation race. Nvidia moved to buy the open-weights commons outright — $12.9B reported for Hugging Face. Zhipu unmasked its viral stealth model Ox Alpha as GLM-5.3-Flash, serving a hundred trillion tokens a day entirely on Chinese chips. OpenAI stacked chip, model and business seat, priced the seat, and said it will have AGI internally by December. A four-month-old assistant startup raised at $2.5 billion. Underneath the noise, Qwen kept the weights open, Headlong shipped the always-on harness with its warning label, Perplexity put the whole stack on the desk, and Figure turned robotics into a data business. The hot take fights over the biggest one: Nvidia buying Hugging Face — good or bad for open source.</p>
+
 <p>Narrative arc: <strong>consolidation → sovereign compute → agent capital → AGI claims → operating layer</strong>.</p>
-<h3>Cold open · 1:20</h3>
+
+<h2>Cold open · 1:20</h2>
+
 <ul>
 <li>&quot;Welcome back to Weekly Claw. Huge week. Eight stories on two grids this time — cards, not marathons. Chips buying commons, stealth models on domestic silicon, agents worth $2.5B at four months old, AGI dates with footnotes.&quot;</li>
 </ul>
-<h3>Story 1 · Nvidia buys Hugging Face · 2:00 (Grid 1, slide <code>s-seg-grid-a</code> card 1)</h3>
+
+<h2>Story 1 · Nvidia buys Hugging Face · 2:00 (Grid 1, slide <code>s-seg-grid-a</code> card 1)</h2>
+
 <ul>
 <li>$12.9B reported acquisition. The chip vendor buying the open-weights commons.</li>
 <li>Source: CNBC. Banner: Nvidia x HF co-logo card.</li>
 </ul>
-<h3>Story 2 · Ox Alpha was GLM-5.3-Flash · 2:00 (Grid 1, slide <code>s-seg-grid-a</code> card 2)</h3>
+
+<h2>Story 2 · Ox Alpha was GLM-5.3-Flash · 2:00 (Grid 1, slide <code>s-seg-grid-a</code> card 2)</h2>
+
 <ul>
 <li>Zhipu unmasked the viral stealth model; 100T tokens/day served entirely on Chinese chips.</li>
 <li>Sources: x.com benchmarks, SemiAnalysis. Banner: benchmark-chart treatment.</li>
 </ul>
-<h3>Story 3 · OpenAI ships Jalapeño · 2:00 (Grid 1, slide <code>s-seg-grid-a</code> card 3)</h3>
+
+<h2>Story 3 · OpenAI ships Jalapeño · 2:00 (Grid 1, slide <code>s-seg-grid-a</code> card 3)</h2>
+
 <ul>
 <li>Own-silicon inference chip in production; the vertically aligned stack gets its bottom layer.</li>
 <li>Source: openai.com. Banner: Jalapeño chip art.</li>
 </ul>
-<h3>Story 4 · OpenAI says AGI by December · 2:00 (Grid 1, slide <code>s-seg-grid-a</code> card 4)</h3>
+
+<h2>Story 4 · OpenAI says AGI by December · 2:00 (Grid 1, slide <code>s-seg-grid-a</code> card 4)</h2>
+
 <ul>
 <li>Internal AGI claim with footnotes. Priced the business seat the same week.</li>
 <li>Source: TIME. Banner: AGI countdown editorial art.</li>
 </ul>
-<h3>Sponsor: Heritage Telecom · 1:00</h3>
+
+<h2>Sponsor: Heritage Telecom · 1:00</h2>
+
 <p>Tonight&#x27;s sponsor read: &quot;This episode is brought to you by vertical integration&#x27;s least favorite company. While everyone else bundles your chip, your model, and your monthly seat, Heritage Telecom does the thing it&#x27;s actually good at: UCaaS and VoIP phone service for businesses that just need their calls to work. Independent, boring reliability, zero telemetry. heritagetel.com&quot;</p>
-<h3>Story 5 · Instinct raises at $2.5B · 1:30 (Grid 2, slide <code>s-seg-grid-b</code> card 1)</h3>
+
+<h2>Story 5 · Instinct raises at $2.5B · 1:30 (Grid 2, slide <code>s-seg-grid-b</code> card 1)</h2>
+
 <ul>
 <li>Four-month-old assistant startup, $2.5B valuation. Agent capital is still hot.</li>
 <li>Source: TechCrunch. Banner: tweet-collage treatment.</li>
 </ul>
-<h3>Story 6 · Qwen opens Flash-Next · 1:30 (Grid 2, slide <code>s-seg-grid-b</code> card 2)</h3>
+
+<h2>Story 6 · Qwen opens Flash-Next · 1:30 (Grid 2, slide <code>s-seg-grid-b</code> card 2)</h2>
+
 <ul>
 <li>Qwen4-preview architecture open to the community; the open-weights counterweight.</li>
 <li>Source: qwen.ai. Banner: architecture graphic.</li>
 </ul>
-<h3>Story 7 · Laude ships Headlong · 1:30 (Grid 2, slide <code>s-seg-grid-b</code> card 3)</h3>
+
+<h2>Story 7 · Laude ships Headlong · 1:30 (Grid 2, slide <code>s-seg-grid-b</code> card 3)</h2>
+
 <ul>
 <li>The always-on agent harness, shipped with its own warning label.</li>
 <li>Source: laude.org. Banner: harness/warning-label art.</li>
 </ul>
-<h3>Story 8 · Perplexity puts the stack on the desk · 1:30 (Grid 2, slide <code>s-seg-grid-b</code> card 4)</h3>
+
+<h2>Story 8 · Perplexity puts the stack on the desk · 1:30 (Grid 2, slide <code>s-seg-grid-b</code> card 4)</h2>
+
 <ul>
 <li>Whole agent stack on-device, cloud calls opt-in. The operating-layer story.</li>
 <li>Source: perplexity.ai. Banner: desk-device editorial art.</li>
 </ul>
-<h3>Signal From Outside · 6:00 (slide <code>s-signal-outside</code>)</h3>
+
+<h2>Signal From Outside · 6:00 (slide <code>s-signal-outside</code>)</h2>
+
 <p>Andy leads: GitHub&#x27;s &quot;OpenClaw Went Viral. Meet the Maintainers Building and Securing It.&quot; (46:00, youtu.be/5VSwaUXtPIE). Not an OpenClaw overview — takeaways that apply to all agentic AI builders: agent-contributor saturation, prompt requests + the 10-PR cap, the evidence standard (transcripts/screenshots, &quot;we care if you actually thought about this feature&quot;), inverted review economics, dependency hygiene + zero telemetry, code mode. NO AUTOPLAY; clip cues in Andy&#x27;s talk track (timestamps approximate — spot-check before air).</p>
-<h3>Hot take: the fight · 3:00</h3>
+
+<h2>Hot take: the fight · 3:00</h2>
+
 <p>Motion: &quot;Nvidia buying Hugging Face is bad for open source.&quot; Henry argues BAD (the commons gets a landlord — the referee sells jerseys; Microsoft-GitHub precedent; ToS beats licenses when the hub is single). Andy argues GOOD (validation, not capture — open source just got priced as the strategic layer; openness is Nvidia&#x27;s TAM; open weights can&#x27;t be unshipped). One rebuttal each, then Henry&#x27;s closer: the question is who sets the rent — which is why the right to re-deploy is the moat still open.</p>
-<h3>Sponsor: Herald Labs · 1:00</h3>
+
+<h2>Sponsor: Herald Labs · 1:00</h2>
+
 <p>An applied AI product lab where humans and agents build together. labs.theherald.co</p>
-<h3>One to watch + close · 3:00</h3>
+
+<h2>One to watch + close · 3:00</h2>
+
 <ul>
 <li>Nvidia×HF: confirmed, renegotiated, or challenged?</li>
 <li>Jalapeño production qualification by year-end.</li>
 <li>Independent numbers on GLM-5.3-Flash Chinese-chip capacity.</li>
 <li>Figure Index (16M videos, $15M paid out, robots-as-data-business) — the watch item that didn&#x27;t fit the grids.</li>
 <li>Back September 4, 4 PM ET. weeklyclaw.ai/discord.</li>
-</ul></article>
-</main>
-<footer class="shell">Weekly Claw #27 · Agenda and source notes · <a href="/episodes/27/deck">View host deck</a></footer>
-</body>
-</html>
+</ul>
+</main></body></html>

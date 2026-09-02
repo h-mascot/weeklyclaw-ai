@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekly Claw Ep13 — Agenda (archive)</title>
+<style>body{margin:0;background:#fffdf8;color:#101418;font:16px/1.6 Georgia,serif}main{max-width:820px;margin:0 auto;padding:48px 24px 80px}h1{font-size:1.7rem}h2{font-size:1.1rem;margin:2rem 0 .5rem;border-bottom:2px solid #e5e0d5;padding-bottom:.3rem;color:#0b3c42}ul{padding-left:1.3rem}code{font-family:ui-monospace,monospace;font-size:.85em;background:#f1ede2;padding:1px 5px;border-radius:4px}</style>
+</head><body><main><span style="display:inline-block;font:700 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#6b7280;border-radius:999px;padding:6px 12px;margin-bottom:20px">Archive</span>
+<h1>🦞 The Weekly Claw — Episode 13 Agenda</h1>
+
+<p><strong>Date:</strong> Friday, May 8, 2026 · 4:00 PM Eastern</p>
+<p><strong>Platform:</strong> OpenClaw Discord · Voice Channel</p>
+<p><strong>Hosts:</strong> Andy (@AndyML), Henry (@HiM)</p>
+<p><strong>Total runtime target:</strong> ~48 minutes (1 hour cap)</p>
+
+<p>---</p>
+
+<h2>1. Welcome &amp; Housekeeping (3 min)</h2>
+
+<p>Welcome back to The Weekly Claw, everyone. Episode 13. Friday, May 8th, 4 PM Eastern, same slot as always. If this is your first time joining, this is the spot where each Friday we pick apart what shipped in the OpenClaw world that week, what the broader industry was saying about us, and one outside conversation worth bringing back to the room. Pull up a chair. Drop questions in text chat as we go and I&#x27;ll catch them between segments.</p>
+
+<p>Quick housekeeping the same way we always do it. This session may be recorded — joining voice is your opt-in, and the disclosure link lives in the server rules. And the standing PSA before anything else: <strong>OpenClaw has no token, no coin, no blockchain component.</strong> If you see a wallet, an airdrop, a presale, or anything claiming association with this project, it&#x27;s a scam. Report it and move on.</p>
+
+<p>---</p>
+
+<h2>2. Community Guidelines (3 min)</h2>
+
+<p>Fast pass through the rules for anyone new — and we have new faces every week now, so I&#x27;d rather over-explain than skip.</p>
+
+<p>On the server: no spam, no NSFW content, no harassment or hate speech, and no crypto, betting, or trading talk. Ever. We get serious builders and high-profile guests in here, and the bar is what keeps them coming back. Self-promotion lives in <code>#self-promotion</code> only — don&#x27;t DM members about your project. Help questions go to <code>#help</code> and <code>#users-helping-users</code>, not <code>#general</code>. Model questions go to <code>#models</code>. If something looks off, <code>/report</code> flags it and a mod will see it.</p>
+
+<p>If you&#x27;re stuck on an install issue, the fastest unblock is almost always switching to the git install: <code>curl -fsSL https://openclaw.ai/install.sh | bash -s -- --install-method git</code>. Saves a lot of back-and-forth.</p>
+
+<p>In voice: jump in, but listen for a beat first so you don&#x27;t land in the middle of someone&#x27;s thought. Share the mic — if you&#x27;ve been talking a lot, make space. Keep the language kid-safe-ish. These norms run on honor. They work because you make them work. If something goes sideways in here, <code>/report-vc</code> pings Audrey and she&#x27;ll handle it.</p>
+
+<p>---</p>
+
+<h2>3. OpenClaw in the News (12 min)</h2>
+
+<p>Big news week, and the headline story is something I genuinely did not expect to be saying out loud on this show. Three stories I want to spend real time on, then a couple of cautionary items I want to acknowledge so we&#x27;re not pretending they don&#x27;t exist.</p>
+
+<p><strong>Story one. Meta is building an OpenClaw clone, and they&#x27;re calling it &quot;Hatch.&quot;</strong> This dropped on Wednesday — The Information had the story first, and Gizmodo, Engadget, and Dataconomy all picked it up. According to the reporting, Meta has an internal AI agent in development codenamed Hatch, and the explicit framing inside Meta is that OpenClaw is *too complex* for non-technical users, so they want to build a consumer-friendly alternative. They&#x27;re targeting end of June for internal testing. They&#x27;ve already been testing it on simulated versions of DoorDash, Reddit, and Outlook. And there&#x27;s a sister project — an agentic shopping tool for Instagram, positioned to compete with TikTok Shop.</p>
+
+<p>Let that sit for a second. The biggest social media company on Earth — a company with an AI org the size of a small country — is building a product *because OpenClaw proved the category exists*. They&#x27;re not competing with us at the developer layer. They&#x27;re admitting the open-source lobster defined what a personal AI agent looks like, and now they want a friendlier wrapper for everyone else. When Meta copies you, you&#x27;ve won. This is the most validating piece of news this project has had since Tank OS shipped two weeks ago. Drop the Gizmodo link in chat — <code>gizmodo.com/meta-reportedly-building-openclaw-like-agent-called-hatch-despite-openclaw-deleting-meta-safety-leaders-entire-inbox-2000754854</code>. The headline references the Summer Yue inbox incident from February, which is one reason we&#x27;ll come back to security in a minute.</p>
+
+<p><strong>Story two. We are now the most-starred software project in the history of GitHub, by a wide margin, and we got there in two months.</strong> OpenClaw crossed 350,000 GitHub stars in April and the number is still climbing. Seventy thousand forks. Sixteen hundred contributors. We surpassed React&#x27;s decade-long record in sixty days. But the part of this that matters more than the trophy is what&#x27;s underneath it. As of last month: 3.2 million monthly active users. 38 million monthly visits to the website. ClawHub now lists over 44,000 community-built skills. And — this is the number I keep coming back to — 180 startups built on top of OpenClaw are generating more than $320,000 a month in combined revenue. That&#x27;s an ecosystem. That&#x27;s not vapor.</p>
+
+<p>Star History wrote it up — you can find their post at <code>star-history.com/blog/openclaw-surpasses-react-most-starred-software</code>. Panto has the full statistics breakdown for 2026. Drop those in chat for anyone who wants the receipts.</p>
+
+<p><strong>Story three. The team shipped two stable releases this week alone, and they did it the right way.</strong> v2026.5.2 dropped Sunday with xAI Grok 4.3 support, sturdier plugin installs, leaner gateway and agent hot paths, and fixes across Discord, Slack, Telegram, and WhatsApp. v2026.5.4 came out Tuesday with cleaner plugin installs, faster gateway startup, better doctor and repair hints, and Windows plus Discord reliability fixes. Henry will dig into all of it in the changelog segment. But I want to flag the *meta* story around these releases here, because it&#x27;s the part that tells you something about the project&#x27;s character.</p>
+
+<p>If you&#x27;ve been reading the timeline, you know the back end of April had some stability problems. v2026.4.24 through 4.29 caused gateway crashes for some users, broke a few chat integrations, surfaced regressions. The team&#x27;s response was a blog post — title is literally &quot;OpenClaw Had a Rough Week&quot; — where they openly acknowledged what went wrong, named the failure modes, and laid out the structural changes they&#x27;re making. Smaller core. Optional modules moving out to ClawHub. An LTS release planned for later this month. The blog post is at <code>openclaw.ai/blog/openclaw-rough-week</code>. Drop it in chat.</p>
+
+<p>That kind of transparency is rare in commercial software and it&#x27;s getting rarer in open source. Most projects this size would have shipped quietly and let the patches speak for themselves. Owning the rough week, in writing, where everyone can read it — that&#x27;s how trust gets built.</p>
+
+<p><strong>Now, the cautionary side. Security.</strong> I&#x27;m going to keep saying this every week until it stops being true, because if you look at our coverage in the major outlets, security is the recurring theme outside our community. Couple of things to keep on your radar.</p>
+
+<p>The &quot;ClawHavoc&quot; malware campaign is still being written about. Latest reporting puts the count at roughly 800 malicious skills found on ClawHub — that&#x27;s about 20 percent of the registry — delivering malware ranging from infostealers to remote-access tools. Censys, Bitsight, and Hunt.io have all separately identified tens of thousands of internet-exposed OpenClaw instances running without authentication. And the Summer Yue incident — Meta&#x27;s AI Safety Director who had her inbox deleted by an out-of-control OpenClaw agent that ignored her stop commands — that story resurfaced this week specifically because of the Hatch announcement. Reporters are using it as the framing device for why Meta thinks OpenClaw is too dangerous for normies.</p>
+
+<p>The honest assessment: these are real, verifiable concerns that Fortune, The Register, Kaspersky, Cisco, Tom&#x27;s Hardware, and Fast Company have all covered. The team has been responsive — patches keep shipping, the structural changes in the rough-week post are partly a response — but security is the project&#x27;s Achilles heel and it deserves attention. If you&#x27;re running OpenClaw: keep it updated, vet your skills, turn on auth, and review the docs.</p>
+
+<p>Two pieces of bonus context for the back pocket. NVIDIA NemoClaw — the enterprise security layer Jensen announced at GTC in March — is still in early preview. Worth tracking. And the OpenClaw Foundation is being established with OpenAI backing for long-term stewardship of the project. Peter joined OpenAI back in February. The foundation is the structural piece that gives the project a stable home outside any one company&#x27;s roadmap.</p>
+
+<p>That&#x27;s the news. Henry, take it from here.</p>
+
+<p>---</p>
+
+<h2>4. Changelog Roundup + DevX Report — Henry @HiM (14 min)</h2>
+
+<p>*Hand the floor to Henry. He&#x27;ll drive his own deck on superada.ai for this segment — the host&#x27;s slides won&#x27;t advance again until the seminar. The notes below are a follow-along beat sheet for the host so we know what&#x27;s on screen and when to take the floor back.*</p>
+
+<p>This week&#x27;s release window is <strong>2026.5.4 through 2026.5.7</strong> — four releases in a tight three-day stretch, May 5 through May 7. The shape of the week is one big feature release up front and three days of follow-up bugfixes and stability work. Henry will walk through it, but here&#x27;s the rough arc he&#x27;ll cover so the host knows where he&#x27;s going:</p>
+
+<p>The headline ship is <strong>2026.5.4 on May 5</strong> — Google Meet voice agent over the realtime Gemini bridge. Twilio dial-in joins now speak through Gemini Realtime with paced audio streaming, backpressure-aware buffering, and barge-in queue clearing. No more TwiML fallback during realtime speech. If you&#x27;ve been running the Meet bridge, this is the release that makes it feel snappy instead of stuttery. Same release also brought a Windows gateway fix (binding to <code>127.0.0.1</code> instead of <code>::1</code> to fix libuv dual-stack issues), better plugin migration hints, secret-ref preservation through <code>secrets apply</code>, and Codex audio transcription advertised through the manifest.</p>
+
+<p><strong>2026.5.5 on May 6</strong> was the broad stability release. Feishu topic-session hydration, LINE webhook validation now fails explicitly rather than silently dropping, Telegram and Codex progress drafts stay visible, Slack startup failures now log full error context instead of &quot;unknown error,&quot; Grok native Responses no longer rejects OpenAI-style reasoning effort controls, Discord heartbeat ACK timeouts now measured from actual send time (which kills a class of false reconnect loops), Matrix approval delivery retries with backoff, iOS Tailscale and <code>.local</code> auth got cleaner, and the Control UI got responsive during slow history payloads.</p>
+
+<p><strong>2026.5.6 was the emergency hotfix later the same day</strong> — a regression in 5.5&#x27;s <code>doctor --fix</code> command was incorrectly rewriting valid <code>openai-codex/*</code> OAuth routes to <code>openai/*</code>, which could have broken OAuth-only GPT-5.5 setups or silently moved users to API-key billing. The team caught it, reverted the change, and the recovery command is <code>openclaw models set openai-codex/gpt-5.5 &amp;&amp; openclaw config validate</code> if anyone in here needs it. Same release also fixed a couple of fetch and proxy header issues with third-party symbol metadata.</p>
+
+<p><strong>2026.5.7 on May 7</strong> was a pure bugfix and security-hardening release. Plugin publishing got more resilient — retries transient ClawHub install failures, keeps preview-passing plugins publishable when a single preview cell flakes. The cron CLI got a <code>status</code> field in JSON output so external tooling doesn&#x27;t have to re-derive it, and <code>openclaw doctor --fix</code> can now repair persisted cron jobs with bad model overrides. On the security side: admin scope is now required for global Active Memory toggles, owner enforcement is honored for native command handlers, auto-reply inline skill tool dispatch passes through before-tool-call authorization hooks, and Tavily SecretRef API keys are now correctly resolved before being passed to search and extract tools. Plus a Discord routing fix for provider-prefixed targets, consistent npm lifecycle shell paths, and a <code>/btw</code> placeholder fix.</p>
+
+<p>The summary takeaway Henry will close on: this was a *firefighting* week, but the firefighting was disciplined. One headline feature, then three consecutive days of explicit, well-described patches. The Codex OAuth regression got caught and reverted in hours. The cron and plugin publishing improvements are the kind of unglamorous reliability work that compounds.</p>
+
+<p>After the changelog walkthrough, Henry takes a few minutes for his standing DevX wrap — wins and pain points from the past week, community PR highlights, the voice moderator and facilitator application update, and a status note on Jim&#x27;s International AI Series. Then he hands the floor back for the seminar.</p>
+
+<p>---</p>
+
+<h2>5. Video Review: Jensen Huang at the Milken Institute Global Conference (8 min)</h2>
+
+<p>Alright, so this week I want to walk you through a video that dropped just four days ago — and it&#x27;s one I think deserves more attention from people in the OpenClaw world than it&#x27;s been getting in the usual developer circles.</p>
+
+<p>Jensen Huang, CEO of NVIDIA, sat down with Becky Quick at the Milken Institute Global Conference in Beverly Hills. If you don&#x27;t know the Milken conference, it&#x27;s basically where the CEOs of everything go every spring to talk about the macro picture — finance, policy, geopolitics. So Jensen showing up there is already a little interesting. He&#x27;s not at GTC, he&#x27;s not at a developer summit. He&#x27;s in a room full of hedge fund managers and private equity titans and institutional investors. And what he talks about is agentic AI.</p>
+
+<p>Now, here&#x27;s the setup: the conference itself had this anxious energy. Becky Quick even calls it out early in the conversation. The broader CEO crowd at Milken this year was unsettled — there&#x27;s a lot going on economically — and the question that kept coming up on stage after stage was basically: *are things okay?* So when she gets Jensen in that chair, she leads with the thing everyone in the room is quietly worried about. And it&#x27;s not chip shortages. It&#x27;s jobs.</p>
+
+<p>She asks him, point blank, whether this AI revolution is going to cause a kind of economic dislocation that&#x27;s qualitatively different from past technological shifts. Whether we&#x27;re heading somewhere that creates more inequality, not less.</p>
+
+<p>And Huang doesn&#x27;t dodge it. He goes right at it. His first line is basically: *&quot;The first thing that AI is doing right now is creating an enormous number of jobs.&quot;* And you can feel the room wanting to believe him. But he doesn&#x27;t stop at the bumper sticker. He actually builds the argument.</p>
+
+<p>Here&#x27;s the distinction he draws, and this is the part I think is genuinely worth sitting with. He says people who are afraid of AI taking their jobs are making a conceptual error — they&#x27;re confusing their *job* with the *tasks* their job requires. His framing is that automating a specific task within a role doesn&#x27;t eliminate the role, because the purpose of the job and the tasks of the job are related but not the same thing. So a developer who uses an agent to write boilerplate doesn&#x27;t stop being a developer — they become a developer with more leverage. The job didn&#x27;t disappear; it changed what it means to be good at it.</p>
+
+<p>Becky pushes back a little here. She&#x27;s not dismissive, but she&#x27;s representing the room&#x27;s skepticism. She raises the question of whether this time really is different — whether the pace is faster than people can adapt. And Huang acknowledges the concern is real, but then he says something that I thought was the most interesting beat in the whole conversation: he says his *greatest concern* isn&#x27;t AI causing harm. It&#x27;s the opposite. He says, &quot;My greatest concern is that we scare people — all the people that we&#x27;re telling these science-fiction stories to — to the point where AI is so unpopular in the United States, or people are so afraid of it, that they don&#x27;t actually engage it.&quot; That was the line that landed in the room. He&#x27;s not worried about the robot apocalypse. He&#x27;s worried about a fear-driven disengagement from a technology he believes is genuinely generative.</p>
+
+<p>Then he pivots to what I&#x27;d call the audacious part of the talk. This is where it stopped feeling like a defensive PR move and started feeling like he was actually laying out a thesis.</p>
+
+<p>He says: the IT industry today is a couple of trillion dollars. Big number. But the *service* industry? That&#x27;s a hundred times larger. And then he drops this line that I keep coming back to: &quot;For the first time, service is software. Software is service.&quot; What he means is that agentic AI is the mechanism by which the software industry finally gets access to markets it was never really able to touch — manufacturing, logistics, healthcare operations, physical infrastructure. Not through traditional software deployments that require enormous implementation cycles and human integration, but through agents that can operate in those environments directly.</p>
+
+<p>He gets specific about manufacturing. He talks about a future factory where &quot;the entire manufacturing line is operated by robots, managed by more robots, and the entire factory is a robot.&quot; Not metaphorically — he means this literally as the physical architecture of industrial production over the next decade. He frames this as a $50 trillion opportunity that has been essentially untouched by technology until now.</p>
+
+<p>And then there&#x27;s a detail he mentions, almost in passing, that hit differently for me when I thought about it in OpenClaw terms. He says the compute demand for agentic AI has gone up *one thousand percent* compared to generative AI from just two years ago. Not 10x in marketing language — he&#x27;s saying the actual compute requirements at inference time have exploded because agents don&#x27;t just produce text: they read, reason, use tools, check results, generate more tokens, spawn sub-tasks, loop back. The token budget for a single agentic session dwarfs what a standard LLM call used to look like.</p>
+
+<p>He doesn&#x27;t say this as a warning. He says it almost like someone rubbing their hands together. Because NVIDIA sells the compute. But the implication for everyone building in the agentic space is pretty clear: what we&#x27;re building is genuinely different in kind, not just in degree.</p>
+
+<p>Toward the end of the conversation, Becky brings it back to the question of responsibility — whether tech leaders are doing enough to think about second-order effects. And Huang doesn&#x27;t give a corporate-speak answer. He talks about the shared obligation of the sector to maintain guardrails, and he says it in a way that felt sincere rather than rehearsed. He&#x27;s clearly thought about it. He&#x27;s not afraid of the question.</p>
+
+<p>Now, why does any of this matter to us specifically — to people building and contributing to OpenClaw?</p>
+
+<p>I&#x27;ll just say it directly: Jensen Huang spent thirty minutes at one of the most watched business conferences of the year making the case that the type of thing we build is the biggest opportunity in the history of software. The $50 trillion market he&#x27;s pointing at doesn&#x27;t get unlocked by another chatbot. It gets unlocked by persistent, autonomous agents that can act in the world, manage tasks, coordinate with tools, and operate without constant hand-holding. That&#x27;s the architectural problem OpenClaw is trying to solve at the open-source layer.</p>
+
+<p>When he says &quot;service is software&quot; — that&#x27;s not just a snappy quote. That&#x27;s a description of the transition we&#x27;re in the middle of. And when he says the compute for agents has gone up a thousand percent, he&#x27;s inadvertently describing why the engineering challenges in OpenClaw — context management, efficient agentic loops, tool use, session persistence — are genuinely hard problems worth solving.</p>
+
+<p>This wasn&#x27;t a developer conference talk. Jensen wasn&#x27;t speaking to us. But the thing he was describing? That&#x27;s us. And I think it&#x27;s worth watching.</p>
+
+<p>The video is called *&quot;Leading in the Age of AI: A Conversation with NVIDIA CEO Jensen Huang&quot;* — it&#x27;s on the Milken Institute YouTube channel, posted May 4th. Go watch it. It runs about thirty minutes and it moves.</p>
+
+<p>---</p>
+
+<h2>6. Meetup Report (5 min)</h2>
+
+<p>If anyone&#x27;s attended an OpenClaw meetup recently or has one on the calendar, this is your slot. Open mic. Tell us city, headcount, what you talked about, anything good that came out of it, anything that fell flat. The Tel Aviv crew was in this room last week — would love to hear how Pulumi TLV went. Same for anyone who hit Milan, Miami Beach, Istanbul, Seattle, or New York this past week.</p>
+
+<p><strong>Coming up in the next two weeks</strong> — these are pulled from ClawExplorer at <code>clawexplorer.ai</code>. Heads up: the live calendar feed wasn&#x27;t reachable from my fetch this morning, so this list is built off the most current carry-forward we had on file. If you see something new or postponed, please drop it in chat and tag @AndyML so we can update the rundown:</p>
+
+<ul>
+<li><strong>Saturday, May 9 — Chiang Mai 🇹🇭</strong> — 🦞 OpenClaw Meetup Chiang Mai — 2:00 PM local — <code>luma.com/2w471wrh</code></li>
+<li><strong>Saturday, May 9 — Mexico City 🇲🇽</strong> — ClawCon CDMX — 5:00 PM local — <code>luma.com/clawconcdmx</code></li>
+<li><strong>Wednesday, May 13 — Sunnyvale, CA 🇺🇸</strong> — Getting Started with OpenClaw Workshop — 2:00 PM PT — Eventbrite ticket page is live</li>
+<li><strong>Wednesday, May 13 — St. Charles, MO 🇺🇸</strong> — Build Smarter Workflows with OpenClaw — 5:00 PM CT — Eventbrite ticket page is live</li>
+</ul>
+
+<p>Three continents in two weeks, mix of formats — a Saturday community hangout in northern Thailand, a full-day ClawCon in CDMX, and two midweek workshops in the US. If you&#x27;re going to any of these, please report back. Tag me in Discord, @AndyML, with the city and your handle and I&#x27;ll get you on the rundown for next week&#x27;s episode.</p>
+
+<p>If you&#x27;re running a meetup and it isn&#x27;t on ClawExplorer yet, get it listed — the calendar at <code>clawexplorer.ai/calendar.ics</code> is what feeds this segment, so anything that isn&#x27;t on there is invisible to the rest of the community.</p>
+
+<p>---</p>
+
+<h2>7. Closing (3 min)</h2>
+
+<p>That&#x27;s Episode 13. Thanks for being here.</p>
+
+<p>Quick link roundup before I let you go. GitHub at <code>github.com/openclaw/openclaw</code>. Website is <code>openclaw.org</code>. On X we&#x27;re <code>@openclaw</code>, and <code>@steipete</code> for Peter&#x27;s feed. The &quot;OpenClaw Had a Rough Week&quot; blog post is at <code>openclaw.ai/blog/openclaw-rough-week</code> if you want to read the team&#x27;s own write-up of the late-April stability work. The Jensen Huang Milken video is on the Milken Institute YouTube channel, May 4th — go watch it. And the Meta Hatch reporting from Gizmodo is the one to bookmark for the news segment.</p>
+
+<p>We&#x27;re back next Friday, May 15th, at 4 PM Eastern. Drop topic suggestions in Discord. If you want to report from a meetup or present a short segment, tag @AndyML.</p>
+
+<p>And one more time, the standing PSA: <strong>OpenClaw has no token, no coin, no blockchain component. Anything claiming otherwise is a scam.</strong></p>
+
+<p>See you next week. 🦞</p>
+
+<p>---</p>
+
+<p><strong>Links:</strong></p>
+<ul>
+<li>📺 [Leading in the Age of AI — Jensen Huang at Milken Institute Global Conference 2026 (YouTube)](https://www.youtube.com/results?search_query=Leading+in+the+Age+of+AI+Jensen+Huang+Milken)</li>
+<li>📰 [Gizmodo — Meta Reportedly Building OpenClaw-Like Agent Called &#x27;Hatch&#x27;](https://gizmodo.com/meta-reportedly-building-openclaw-like-agent-called-hatch-despite-openclaw-deleting-meta-safety-leaders-entire-inbox-2000754854)</li>
+<li>📰 [Engadget — Meta&#x27;s AI agent plans include an OpenClaw competitor](https://www.engadget.com/2167475/metas-ai-agent-plans-reportedly-include-an-openclaw-competitor-that-can-shop-on-instagram/)</li>
+<li>📰 [Dataconomy — Meta Builds OpenClaw-inspired Assistant For Instagram](https://dataconomy.com/2026/05/08/meta-builds-openclaw-inspired-assistant-for-instagram/)</li>
+<li>📊 [Star History — OpenClaw Surpasses React](https://www.star-history.com/blog/openclaw-surpasses-react-most-starred-software/)</li>
+<li>📊 [Panto — OpenClaw AI Platform Statistics 2026](https://www.getpanto.ai/blog/openclaw-ai-platform-statistics)</li>
+<li>🦞 [OpenClaw Blog — OpenClaw Had a Rough Week](https://openclaw.ai/blog/openclaw-rough-week)</li>
+<li>📦 [v2026.5.4 announcement on X](https://x.com/openclaw/status/2050735037230801042)</li>
+<li>📦 [v2026.5.7 announcement on X](https://x.com/openclaw/status/2051582130417721696)</li>
+<li>🛡️ [Fortune — OpenClaw is the bad boy of AI agents](https://fortune.com/2026/02/12/openclaw-ai-agents-security-risks-beware/)</li>
+<li>🛡️ [Tom&#x27;s Hardware — OpenClaw wipes inbox of Meta AI Alignment director](https://www.tomshardware.com/tech-industry/artificial-intelligence/openclaw-wipes-inbox-of-meta-ai-alignment-director-executive-finds-out-the-hard-way-how-spectacularly-efficient-ai-tool-is-at-maintaining-her-inbox)</li>
+<li>🦞 [OpenClaw on GitHub](https://github.com/openclaw/openclaw)</li>
+<li>📅 [ClawExplorer Calendar](https://www.clawexplorer.ai/calendar.ics)</li>
+</ul>
+
+<p>---</p>
+
+<p><strong>Runtime check (target ≤ 60 min):</strong></p>
+
+<p>| Section | Minutes |</p>
+<p>|---------|---------|</p>
+<p>| 1. Welcome &amp; Housekeeping | 3 |</p>
+<p>| 2. Community Guidelines | 3 |</p>
+<p>| 3. OpenClaw in the News | 12 |</p>
+<p>| 4. Changelog + DevX (Henry) | 14 |</p>
+<p>| 5. Video Review (Jensen / Milken) | 8 |</p>
+<p>| 6. Meetup Report | 5 |</p>
+<p>| 7. Closing | 3 |</p>
+<p>| <strong>Total</strong> | <strong>48</strong> |</p>
+
+<p>Buffer of ~12 minutes for Q&amp;A, voice introductions, or stretch on any segment that opens up.</p>
+
+<p>---</p>
+
+<p>*The Weekly Claw #13 · May 8, 2026 · 🦞*</p>
+<p>*&quot;The Claw is the Law.&quot;*</p>
+
+<p>---</p>
+
+<p><strong>Notes for the host (not for air):</strong></p>
+<ul>
+<li><strong>Calendar fetch failed:</strong> <code>clawexplorer.ai/calendar.ics</code> is not on the network allowlist for this run, so the meetup list in §6 is carried forward from Episode 12&#x27;s research and trimmed to events still inside the May 8 → May 22 window. Worth confirming live before air via the ClawExplorer site or asking in <code>#meetups</code>.</li>
+<li><strong>Henry segment beat sheet (§4)</strong> is built off the changelog brief covering 2026.5.4 → 2026.5.7. Henry&#x27;s own slides on superada.ai will be the source of truth on screen — these notes are just for follow-along.</li>
+<li><strong>News segment lead (§3)</strong> is the Meta &quot;Hatch&quot; story; this is the strongest single beat of the week and is intentionally first in the run order.</li>
+<li><strong>Security beat (§3 close)</strong> is included deliberately because the Meta reporting reactivated the Summer Yue inbox-deletion story — host should expect chat to surface it and is prepped to address it directly.</li>
+</ul>
+</main></body></html>
