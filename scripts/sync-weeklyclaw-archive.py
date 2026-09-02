@@ -36,7 +36,7 @@ YOUTUBE_THUMBNAIL_OVERRIDES = {
 # after direct public-video verification, so archive sync remains deterministic.
 YOUTUBE_EPISODE_OVERRIDES = {
     27: {
-        "id": "L8uQgN-xWcA",
+        "id": "vqUkh8w2L8g",
         "title": "NVIDIA to Buy Hugging Face? OpenClaw at Scale, Local Models, AGI Claims",
     },
 }

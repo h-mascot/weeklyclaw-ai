@@ -1,5 +1,7 @@
 import importlib.util
 import json
+import re
+import shutil
 import subprocess
 import tempfile
 import unittest
@@ -49,12 +51,34 @@ class SyncMetadataTests(unittest.TestCase):
         with patch.object(SYNC.subprocess, "run", return_value=completed):
             videos = SYNC.fetch_youtube_episodes()
 
-        self.assertEqual(videos[27]["id"], "L8uQgN-xWcA")
-        self.assertEqual(videos[27]["url"], "https://www.youtube.com/watch?v=L8uQgN-xWcA")
+        self.assertEqual(videos[27]["id"], "vqUkh8w2L8g")
+        self.assertEqual(videos[27]["url"], "https://www.youtube.com/watch?v=vqUkh8w2L8g")
         self.assertEqual(
             videos[27]["thumbnail"],
-            "https://i.ytimg.com/vi/L8uQgN-xWcA/maxresdefault.jpg",
+            "https://i.ytimg.com/vi/vqUkh8w2L8g/maxresdefault.jpg",
         )
+
+    def test_update_homepage_keeps_latest_card_on_verified_reupload(self):
+        playlist = {"entries": [{"id": "EPISODE0026", "title": "Weekly Claw #26", "duration": 1800}]}
+        completed = subprocess.CompletedProcess([], 0, stdout=json.dumps(playlist), stderr="")
+        with patch.object(SYNC.subprocess, "run", return_value=completed):
+            videos = SYNC.fetch_youtube_episodes()
+
+        with tempfile.TemporaryDirectory() as tmp:
+            repo = Path(tmp)
+            shutil.copy2(SYNC.repo_root_from_script() / "index.html", repo / "index.html")
+            SYNC.update_homepage(
+                repo,
+                27,
+                {"headline": "The agent owns the loop", "date": "August 28, 2026", "desc": "Episode 27"},
+                videos,
+            )
+            html = (repo / "index.html").read_text()
+
+        latest_card = re.search(r'<div class="latest-card"[\s\S]*?</div>\s*</div>\s*</section>', html)
+        self.assertIsNotNone(latest_card)
+        self.assertIn('data-video-id="vqUkh8w2L8g"', latest_card.group(0))
+        self.assertNotIn("L8uQgN-xWcA", latest_card.group(0))
 
     def test_fetch_spotify_episodes_keeps_verified_ids_when_rss_is_stale(self):
         with patch.object(SYNC, "fetch_rss_text", return_value=""):
