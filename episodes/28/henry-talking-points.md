@@ -1,4 +1,4 @@
-# WeeklyClaw Episode 28 Henry view (rev1)
+# WeeklyClaw Episode 28 Henry view (rev2)
 
 ## Shared frame
 
@@ -79,16 +79,17 @@
 - $10M pre-seed reported; closed source and vendor-led evals.
 - Demand latency, persistence, control, failure, cost.
 - **Landing:** “A good demo is not yet a medium.”
-- **Handoff:** ChatGPT teaser.
+- **Handoff:** OpenAI launches GPT-6 Astra.
 
-### B3 ChatGPT teaser
+### B3 OpenAI launches GPT-6 Astra
 
-- Official text only: “The stars are almost aligned.”
-- No name, date, or specs.
-- GPT-6 is community inference, not confirmed.
-- Henry’s Astra post is color, not receipt.
-- **Landing:** “The launch-event economy now runs on cryptograms.”
-- **Handoff:** sentiment card.
+- Released Thursday; “stars” teaser resolved same day into the launch.
+- 100k+ GPUs at Stargate TX, largest run ever; models supervising models.
+- Brockman: “Welcome to the AGI era” — his framing. AGI now a “mission concept,” not a contract trigger.
+- First “critical” cyber model: finds and exploits unknown vulnerabilities without step-by-step human guidance; gated access for defenders.
+- Henry angle: OpenAI itself says the model is harder to monitor and calls the decline serious.
+- Vendor benchmark caveat: ExploitBench 100% is an aggregate coverage score, not a pass rate.
+
 
 ### B4 Sentience sentiment
 
@@ -121,7 +122,7 @@
 
 ## s-watch / close handoff
 
-- Watch whether the ChatGPT teaser resolves into a named product/date.
+- Watch when Astra reaches Plus/Pro/API users and what independent benchmarks show.
 - Watch the first regulatory response before the Nvidia/HF agreement’s expected 2027 close.
 - Watch Orbis outside the launch reel and NYC’s measurements after the pause.
 - **Optional line:** “Next week we will have receipts, not just signals.”

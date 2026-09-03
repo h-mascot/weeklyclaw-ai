@@ -1,4 +1,4 @@
-# WeeklyClaw Episode 28 host cheat sheet (rev1)
+# WeeklyClaw Episode 28 host cheat sheet (rev2)
 
 **Friday 2026-09-04 · 4:00 PM ET · Henry + Andy**  
 **Thesis:** The agreement landed. The models answered.  
@@ -10,7 +10,7 @@
 1. **Cold open · 1:30** — Andy opens; Henry frames.
 2. **Herald Labs · 1:00** — Henry.
 3. **Grid A · 8:00** — Henry leads all cards: Nvidia/HF, Fable/Mythos, OpenClaw 2.0, Qwen 0902.
-4. **Grid B · 7:30** — Henry leads all cards: NYC, Orbis, ChatGPT teaser, sentience sentiment.
+4. **Grid B · 8:15** — Henry leads all cards: NYC, Orbis, GPT-6 Astra launch, sentience sentiment.
 5. **Signal From Outside · 6:00** — Andy leads The Neuron Fable 5.1 live test.
 6. **Hot take · 3:00** — Henry skeptic; Andy prepare-anyway.
 7. **Heritage Telecom · 1:00** — Andy.
@@ -25,7 +25,7 @@
 - Qwen: Qwen3.8-Max-0902 is a refresh, not a new base model; 2.4T / 1M context / $2 input / $6 output.
 - NYC: one-year moratorium through grade 8, not a uniform ban on all uses.
 - Orbis: living worlds and real-time steering; closed source, vendor-led proof.
-- ChatGPT: “The stars are almost aligned.” No GPT-6 claim.
+- Astra: Brockman says “Welcome to the AGI era” — his framing. Vendor-reported benchmarks; cyber-critical gated to Daybreak. $10/$50 per M tokens.
 - Sentience: Henry’s 20% item is an unverified poll, not science.
 
 ## Signal cues
@@ -53,10 +53,10 @@
 
 ## Close
 
-- Watch the ChatGPT teaser resolution.
+- Watch Astra rollout to Plus/Pro/API and independent benchmarks.
 - Watch the first Nvidia/HF regulatory response before the expected 2027 close.
 - Watch Orbis outside its launch reel and NYC’s measurement after the pause.
-- **One recap, once:** “This week: Nvidia signed the agreement, Anthropic priced the agent shift, OpenClaw shipped the platform pass, Qwen refreshed Max, New York paused classroom AI, Visko streamed worlds, OpenAI teased something, and a poll made sentience operational.”
+- **One recap, once:** “This week: Nvidia signed the agreement, Anthropic priced the agent shift, OpenClaw shipped the platform pass, Qwen refreshed Max, New York paused classroom AI, Visko streamed worlds, OpenAI launched GPT-6 Astra, and a poll made sentience operational.”
 - Back Friday September 11, 4 PM ET. Point to the Discord QR: https://weeklyclaw.ai/discord.
 
 ## Review commands
@@ -70,10 +70,10 @@
 
 ## Draft paths
 
-- Agenda: `episodes/28/showprep/revs/agenda.rev1.md`
-- Deck: `episodes/28/showprep/revs/deck.rev1.html`
-- Speaker notes: `episodes/28/showprep/revs/speaker-notes.rev1.md`
-- Talking points: `episodes/28/showprep/revs/talking-points.rev1.md`
-- Henry view: `episodes/28/showprep/revs/henry-section.rev1.md`
-- Andy view: `episodes/28/showprep/revs/andy-section.rev1.md`
-- This sheet: `episodes/28/showprep/revs/host-cheat-sheet.rev1.md`
+- Agenda: `episodes/28/showprep/revs/agenda.rev2.md`
+- Deck: `episodes/28/showprep/revs/deck.rev2.html`
+- Speaker notes: `episodes/28/showprep/revs/speaker-notes.rev2.md`
+- Talking points: `episodes/28/showprep/revs/talking-points.rev2.md`
+- Henry view: `episodes/28/showprep/revs/henry-section.rev2.md`
+- Andy view: `episodes/28/showprep/revs/andy-section.rev2.md`
+- This sheet: `episodes/28/showprep/revs/host-cheat-sheet.rev2.md`

@@ -1,4 +1,4 @@
-# WeeklyClaw Episode 28: The agreement landed. The models answered. (rev1)
+# WeeklyClaw Episode 28: The agreement landed. The models answered. (rev2)
 
 **Show date:** Friday 2026-09-04 (America/New_York, 4:00 PM ET)  
 **Hosts:** Henry and Andy  
@@ -8,7 +8,7 @@
 
 ## Episode thesis
 
-The agreement landed, and the models answered. Nvidia made its proposed Hugging Face acquisition official at $12.9303B, with the transaction still subject to closing conditions and regulatory approvals. Anthropic shipped Fable 5.1 and the trusted-access Mythos 5.1, pricing long agent runs for a different kind of workday. OpenClaw returned from seven quiet weeks with version 2.0. Qwen refreshed Max for coding and long-horizon workflows. Then New York City paused student-facing AI through eighth grade, Visko proposed living worlds instead of generated clips, OpenAI posted a cryptic stars teaser, and a viral poll made AI sentience sound like an office policy question.
+The agreement landed, and the models answered. Nvidia made its proposed Hugging Face acquisition official at $12.9303B, with the transaction still subject to closing conditions and regulatory approvals. Anthropic shipped Fable 5.1 and the trusted-access Mythos 5.1, pricing long agent runs for a different kind of workday. OpenClaw returned from seven quiet weeks with version 2.0. Qwen refreshed Max for coding and long-horizon workflows. Then New York City paused student-facing AI through eighth grade, Visko proposed living worlds instead of generated clips, OpenAI launched GPT-6 Astra under an “AGI era” banner, and a viral poll made AI sentience sound like an office policy question.
 
 Narrative arc: **agreement announced -> frontier model tiers -> agent platform pace -> open-model iteration -> public pushback -> a new medium -> the mind question**.
 
@@ -152,7 +152,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 - Henry pulse: https://x.com/iAmHenryMascot/status/2095091063505502238
 - Cut/compression: retain “refresh, not new base model” and the 2.4T/1M figures; cut pricing detail last.
 
-## What Happened This Week · grid B · 7:30 (slide `s-seg-grid-b`)
+## What Happened This Week · grid B · 8:15 (slide `s-seg-grid-b`)
 
 *Same walk order. The slide moves from policy to medium to two unresolved cultural signals.*
 
@@ -205,7 +205,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 **Andy fallback talk track:** Visko’s Orbis 1.0 is described as a Live Model rather than a conventional text-to-video system. The pitch is to create a living world and stream it in real time, with persistent state that can be steered. That is a meaningful product distinction if it survives outside the launch reel. The company also reportedly closed a ten-million-dollar pre-seed round. Both the evaluations and the demo remain vendor-led, so the next proof should be an independent run that measures latency, world persistence, control, and how quickly the scene falls apart.
 
-**Handoff cue:** “A place is hard to build. A cryptic teaser is much cheaper. OpenAI posted one.”
+**Handoff cue:** “A place is hard to build. A launch is easier. OpenAI just had the biggest one of the week.”
 
 ### Sources and production notes
 
@@ -213,34 +213,39 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 - Trade coverage: https://www.therobotreport.com/top-10-robotics-stories-of-august-2026/ and https://www.tmcnet.com/usubmit/-ai-startup-visko-closes-10-million-pre-seed-/2026/09/01/10438413.htm
 - Cut/compression: keep the “world versus clip” distinction; make funding detail the first cut.
 
-### Card B3 · ChatGPT says the stars are almost aligned · 1:15
+### Card B3 · OpenAI launches GPT-6 Astra · 2:00
 
-**Visual:** `assets/images/artifacts/t-gpt6-tease.png`, a verified brain and book connected by a golden thread. Open the exact @ChatGPT post.
+**Visual:** `assets/images/artifacts/t-gpt6-astra.png`, a verified starfield igniting into one bright star above a GPU rack. Open the Axios launch story; the @ChatGPT “stars” post is the launch-day tease.
 
 **Segment talking points:**
-- The official @ChatGPT post says only: “The stars are almost aligned.”
-- It provides no product name, date, or specifications.
-- Community guesses this means GPT-6, but that is not confirmed. Say “OpenAI is teasing something,” not “GPT-6 launches.”
-- Henry retweeted it and then asked whether “Astra” or another phrase was intended; that is host color, not evidence.
-- This is a media strategy story: cryptic countdowns create a launch-event economy before the receipt exists.
+- The “stars” teaser resolved within hours: OpenAI released GPT-6 Astra on Thursday, announced in a press briefing.
+- Largest training run in the company’s history: more than 100,000 GPUs at the Stargate site in Texas. First OpenAI model where other models played a significant role supervising training.
+- Brockman’s framing: a “generational leap” that “might be about this model” for AGI; he closed the briefing with “Welcome to the AGI era.” Attribute the framing, do not adopt it.
+- First model designated “critical” on cybersecurity under the Preparedness Framework: it can find and exploit previously unknown vulnerabilities without step-by-step human guidance. Standard access will refuse some advanced cyber work; trusted defenders get it first through Daybreak.
+- Demo reel: formatted a legal contract, built a 3D game while booking a tennis court, laid out a PCB in KiCad, drafted a tax return from a W-2, and helped improve a result on prime gaps.
+- Pricing: $10 per million input and $50 per million output tokens, matching Anthropic’s Fable 5.1 and 2.5x Sol’s promotional price. No Luna/Terra/Sol variants: Astra and Astra Pro only.
+- Access is staged: Daybreak organizations first; Plus, Pro, Business, Enterprise, API, and AWS “in the coming days.”
 
 **Henry talking points:**
-- Separate official text from community inference every time.
-- A teaser is a watch item, not a model card.
-- If it resolves before Friday, promote it in the next refresh; do not add specs retroactively.
+- The run is the story: 100k+ GPUs at one site, and models supervising models, is a new scale marker for the industry.
+- OpenAI itself says Astra is harder to monitor in oversight-evasion evaluations and calls the decline serious. That admission deserves airtime next to the AGI quote.
+- “AGI” is now a “mission concept,” not a contractual trigger — ask what the word still commits anyone to.
+- Vendor benchmark caveat: ExploitBench 100% is an aggregate coverage score, not “hacked everything.”
 
-**Henry line (optional):** “The launch-event economy now runs on cryptograms.”
+**Henry line (optional):** “The stars aligned, and the first thing the new era did was find zero-days.”
 
-**Andy fallback talk track:** The only confirmed fact here is that the official ChatGPT account posted, “The stars are almost aligned.” There is no product name, no date, and no specification in the post. People are reading GPT-6 into it, but that is community inference. We can still discuss the operating effect: a cryptic post can create days of attention before the company has shown a product. The correct host move is to enjoy the tease and keep the label honest. It is a watch item until the next receipt lands.
+**Andy fallback talk track:** The teaser became a launch. OpenAI released GPT-6 Astra on Thursday, its largest training run ever, more than a hundred thousand GPUs at the Stargate site in Texas, and the first OpenAI model where other models helped supervise training. Brockman called it a generational leap and closed the briefing with “Welcome to the AGI era” — his framing, not a settled verdict. The part operators should sit up for is the cybersecurity designation: first model rated critical under OpenAI’s preparedness framework, able to find and exploit unknown vulnerabilities without a person guiding each step, with the most advanced cyber work gated to vetted defenders through Daybreak. Availability starts with Daybreak organizations and reaches Plus, Pro, and API users in the coming days, at ten dollars per million input tokens and fifty per million out. The honest close is that the company says the model is harder to monitor, and calls that decline serious.
 
 **Handoff cue:** “The other viral number is even less reliable: a poll that says one in five people think AI is sentient.”
 
 ### Sources and production notes
 
-- Official post: https://x.com/ChatGPT/status/2095527989077557738
-- Henry RT: https://x.com/iAmHenryMascot/status/2095539880981934434
-- Henry follow-up: https://x.com/iAmHenryMascot/status/2095540265603772759
-- Cut/compression: never cut the “no name, no date, no specs” caveat. Cut the Astra color first.
+- Axios launch story: https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman
+- The New Stack benchmarks and pricing: https://thenewstack.io/openai-gpt6-astra-benchmarks/
+- OpenAI “Path to Astra” safety post: https://openai.com/index/path-to-astra/
+- Launch-day tease: https://x.com/ChatGPT/status/2095527989077557738
+- Henry launch-day amplification: https://x.com/iAmHenryMascot/status/2095540265603772759
+- Cut/compression: never drop the “AGI is Brockman’s framing” and vendor-benchmark caveats. Cut the demo-reel list first, then pricing.
 
 ### Card B4 · Henry sees 20% say AI is sentient · 1:30
 
@@ -332,22 +337,22 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 ## One to watch and close · 3:00 (slide `s-watch`)
 
 **Henry talking points:**
-- The countdown: does the official ChatGPT teaser resolve before the next show?
+- The rollout: when do Plus, Pro, and API users actually get Astra, and what do independent benchmarks say once they do?
 - The filing: what is the first regulatory response to Nvidia and Hugging Face, and what terms govern the platform while the deal is pending?
 - The gap: can Orbis show persistent, steerable worlds outside its launch reel, while NYC measures what a year without classroom AI changes?
 
 **Henry line (optional):** “Next week we will have receipts, not just signals.”
 
-**Andy fallback talk track:** Three things to watch after this show. First, whether the ChatGPT countdown becomes a named product or remains a cryptic post. Second, what regulators and the companies say about the Nvidia and Hugging Face agreement before its expected 2027 closing. Third, whether Visko can demonstrate a persistent world outside the launch reel while New York measures the consequences of a year-long classroom pause. That is the week ahead. We will be back Friday, September 11 at 4 PM ET. Follow WeeklyClaw at weeklyclaw.ai and join the Discord through the link on screen.
+**Andy fallback talk track:** Three things to watch after this show. First, when Astra reaches Plus, Pro, and API users, and what independent benchmarks say once they have it. Second, what regulators and the companies say about the Nvidia and Hugging Face agreement before its expected 2027 closing. Third, whether Visko can demonstrate a persistent world outside the launch reel while New York measures the consequences of a year-long classroom pause. That is the week ahead. We will be back Friday, September 11 at 4 PM ET. Follow WeeklyClaw at weeklyclaw.ai and join the Discord through the link on screen.
 
-Close rule: recap the episode exactly once, at the end. **One recap line:** “This week: Nvidia signed the agreement, Anthropic priced the agent shift, OpenClaw shipped the platform pass, Qwen refreshed Max, New York paused classroom AI, Visko streamed worlds, OpenAI teased something, and a poll made sentience operational.” Do not repeat this line elsewhere in the close or cheat sheet.
+Close rule: recap the episode exactly once, at the end. **One recap line:** “This week: Nvidia signed the agreement, Anthropic priced the agent shift, OpenClaw shipped the platform pass, Qwen refreshed Max, New York paused classroom AI, Visko streamed worlds, OpenAI launched GPT-6 Astra, and a poll made sentience operational.” Do not repeat this line elsewhere in the close or cheat sheet.
 
 **Handoff:** End on the QR card and the next-show date. No second recap.
 
 ## Build reference (not read on air)
 
-- Runtime targets: cold open 1:30; Herald 1:00; grid A 8:00; grid B 7:30; Signal From Outside 6:00; hot take 3:00; Heritage 1:00; close 3:00, plus live transitions and host banter. Target 34–38 minutes; hard stop 45.
-- Deliberate cuts, in order: B4 sentience card; B3 teaser detail; Orbis funding detail; Qwen pricing; Signal 3D cue. Do not cut the Signal anchor before optional card cuts.
+- Runtime targets: cold open 1:30; Herald 1:00; grid A 8:00; grid B 8:15; Signal From Outside 6:00; hot take 3:00; Heritage 1:00; close 3:00, plus live transitions and host banter. Target 34–38 minutes; hard stop 45.
+- Deliberate cuts, in order: B4 sentience card; B3 demo-reel detail; Orbis funding detail; Qwen pricing; Signal 3D cue. Do not cut the Signal anchor before optional card cuts.
 - News ownership: Henry leads every What Happened This Week card. Andy supplies fallback prose and caveats; Andy leads Signal From Outside.
 - Sponsor order: Herald Labs immediately after the cold open; Heritage Telecom immediately before the close.
 - Visual manifest: eight verified 16:5 editorial banners, one Signal poster, sponsor assets copied byte-for-byte from Episode 27, and Discord QR copied byte-for-byte from Episode 27.
@@ -359,7 +364,7 @@ Close rule: recap the episode exactly once, at the end. **One recap line:** “T
 - The Nvidia item is an announced definitive agreement, not a completed closing. Use the expected H1 2027 closing caveat on air.
 - What Happened This Week is Henry-led. Andy does not own the lead on a news card.
 - The deck is a visual prompt: generated banner plus headline, short context, and source link. Details and caveats stay here and in speaker notes.
-- The ChatGPT item is a teaser only. GPT-6 is not confirmed.
+- The Astra item is launch-day coverage; benchmark and demo figures are vendor-reported and labeled as such.
 - The sentience poll is a sentiment signal, not scientific evidence.
 - Vendor-reported benchmark, price, and evaluation claims stay labeled.
 - The close recaps the episode once and only once.
