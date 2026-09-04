@@ -1,4 +1,4 @@
-# WeeklyClaw Episode 28: The agreement landed. The models answered. (rev4)
+# WeeklyClaw Episode 28: The agreement landed. The models answered. (rev5)
 
 **Show date:** Friday 2026-09-04 (America/New_York, 4:00 PM ET)  
 **Hosts:** Henry and Andy  
@@ -8,7 +8,7 @@
 
 ## Episode thesis
 
-The agreement landed, and the models answered. Nvidia made its proposed Hugging Face acquisition official at $12.9303B, with the transaction still subject to closing conditions and regulatory approvals. Anthropic shipped Fable 5.1 and the trusted-access Mythos 5.1, pricing long agent runs for a different kind of workday. OpenClaw returned from seven quiet weeks with version 2.0. Qwen refreshed Max for coding and long-horizon workflows. Then New York City paused student-facing AI through eighth grade, Visko proposed living worlds instead of generated clips, OpenAI launched GPT-6 Astra under an “AGI era” banner, and a viral poll made AI sentience sound like an office policy question.
+The agreement landed, and the models answered. Nvidia made its proposed Hugging Face acquisition official at $12.9303B, with the transaction still subject to closing conditions and regulatory approvals. Anthropic shipped Fable 5.1 and the trusted-access Mythos 5.1, pricing long agent runs for a different kind of workday. OpenClaw returned from seven quiet weeks with version 2.0. Qwen refreshed Max for coding and long-horizon workflows. Then New York City paused student-facing AI through eighth grade, Visko proposed living worlds instead of generated clips, OpenAI launched GPT-6 Astra under an “AGI era” banner, and Qwen3.8 27B hit ~1,500 tokens/sec on Cerebras.
 
 Narrative arc: **agreement announced -> frontier model tiers -> agent platform pace -> open-model iteration -> public pushback -> a new medium -> the mind question**.
 
@@ -236,7 +236,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 **Andy fallback talk track:** The teaser became a launch. OpenAI released GPT-6 Astra on Thursday, its largest training run ever, more than a hundred thousand GPUs at the Stargate site in Texas, and the first OpenAI model where other models helped supervise training. Brockman called it a generational leap and closed the briefing with “Welcome to the AGI era” — his framing, not a settled verdict. The part operators should sit up for is the cybersecurity designation: first model rated critical under OpenAI’s preparedness framework, able to find and exploit unknown vulnerabilities without a person guiding each step, with the most advanced cyber work gated to vetted defenders through Daybreak. Availability starts with Daybreak organizations and reaches Plus, Pro, and API users in the coming days, at ten dollars per million input tokens and fifty per million out. The honest close is that the company says the model is harder to monitor, and calls that decline serious.
 
-**Handoff cue:** “The other viral number is even less reliable: a poll that says one in five people think AI is sentient.”
+**Handoff cue:** “And the quiet headline of the week: a 27B open model now streams at 1,500 tokens a second.”
 
 ### Sources and production notes
 
@@ -247,37 +247,28 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 - Henry launch-day amplification: https://x.com/iAmHenryMascot/status/2095540265603772759
 - Cut/compression: never drop the “AGI is Brockman’s framing” and vendor-benchmark caveats. Cut the demo-reel list first, then pricing.
 
-### Card B4 · Henry sees 20% say AI is sentient · 1:30
+### Card B4 · Qwen3.8 27B hits ~1,500 tok/s on Cerebras · 1:30
 
-**Visual:** `assets/images/artifacts/b4-henry-sentience.png`, a captured Henry Mascot post showing the 20% reaction. It is a social-signal artifact only; the poll's sample and provenance remain unverified.
+**Visual:** `assets/videos/artifacts/b4-cerebras-clip.mp4` (official Qwen3.8-on-Cerebras demo, poster `assets/images/artifacts/b4-cerebras-poster-1080.jpg`), plus `assets/images/artifacts/b4-cerebras-limits.png` (Henry's tier-limits screenshot) in backup. Non-autoplay; Andy or Henry plays 2-3 seconds on cue.
 
-**Segment talking points:**
-- Henry posted: “20% is such a high number. We are so fckd.” The underlying graphic asks “Is AI sentient?”
-- The original poll is attributed to Austen Allred, but provenance and sampling are unconfirmed.
-- Present this as timeline sentiment, not a population statistic or evidence of consciousness.
-- The serious bridge is operational: labs are already funding AI-welfare work, so uncertainty can become policy before philosophy settles.
-- Keep the hot take separate. This card reports the sentiment spike; the debate asks what operators should do under uncertainty.
-
-**Henry talking points:**
-- “Twenty percent” is not a scientific result, but it is a signal about what people now believe.
-- People assign agency to systems that run long enough, speak well enough, and keep working after the prompt.
-- The operator response should be less anthropomorphic and more explicit about evidence thresholds.
-
-**Henry line (optional):** “Whether or not it is true, a fifth of the room now believes it. That is an operating condition.”
-
-**Andy fallback talk track:** Henry reacted to a viral “Is AI sentient?” poll by saying that 20 percent was a high number. We should not turn that graphic into a scientific statistic. The poll’s origin and sample are not verified, and it tells us what a slice of the timeline answered, not whether a model has subjective experience. It is still useful as an operating signal. People are starting to make decisions and policies around the possibility, while the labs are already funding AI-welfare work. That is why this item leads naturally into the debate, but the debate must not pretend the poll settled the science.
-
-**Handoff cue:** “We have the signal. Now Andy brings us an actual live test of what the new agent tier does.”
-
+- Qwen3.8 27B is now available on the Cerebras Shared Tier at ~1,500 tokens/sec (announced Sep 3 by Daniel Ou; limits screenshot shared by Henry Sep 4).
+- Shared tier (free trial): 5 requests/min, 30K uncached TPM (~500 uncached tok/s average), 90K total TPM (~1,500 tok/s average), 1M tokens/day.
+- Developer / pay-as-you-go: 300 requests/min, 150K uncached TPM (~2,500 tok/s average), 450K total TPM (~7,500 tok/s average), no daily token cap.
+- Enterprise: custom org-specific limits / dedicated capacity.
+- Henry's line: he had an agent watching for this for 2-3 weeks since the announcement; the joy when it landed. "Damn what would one use this for?"
+- Caveats: speed and limits are vendor/tier numbers as of launch day; shared-tier averages are throttled well below peak ~1,500 tok/s.
+- **Sources:**
+  - https://x.com/iAmHenryMascot/status/2095896792038588456
+  - https://x.com/imnotchalk/status/2095637567979114654
 ### Sources and production notes
 
-- Henry post: https://x.com/iAmHenryMascot/status/2094468984171114741
-- Attributed original: https://x.com/Austen/status/2094364342221467941
-- Caveat: poll provenance, sample, and methodology are unconfirmed. Do not label 20% as a studied statistic.
-- Cut/compression: this is the first optional cut if runtime or evidence standards tighten. Keep the sentiment in the hot-take setup only if the host wants it.
+- Henry limits screenshot and post: https://x.com/iAmHenryMascot/status/2095896792038588456
+- Cerebras shared-tier announcement: https://x.com/imnotchalk/status/2095637567979114654
+- Caveat: speed and tier limits are vendor numbers as of launch day; shared-tier averages sit below the ~1,500 tok/s peak.
+- Cut/compression: trim the tier-limits list first if running long.
 
 
-### What happened this week — part 3: the ones we nearly missed (C1–C3, Henry-flagged rev4)
+### What happened this week — part 3: the ones we nearly missed (C1–C3, Henry-flagged in rev3)
 
 - **C1 · Google ships Gemini 3.8 Flash + Flash Cyber** — third Flash in six weeks; "best reasoning & coding" Flash at 3.7's intro price ($0.75/$3.75 per M tokens); Flash Cyber does vulnerability detection and automated patching for trusted defenders via the new Fairwind Program. Receipts: blog.google launch post, DeepMind model card.
 - **C2 · Meta releases Muse Spark 1.3** — agentic/coding model in Muse Code and Meta Model API; ~20% fewer tool calls and ~25% fewer tokens vs 1.2 in Meta engineer comparisons; stronger prompt-injection resistance; open weights teased; max reasoning pending safety testing. Receipts: research.meta.ai release post, @AIatMeta.
@@ -305,7 +296,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 **Andy fallback talk track:** The Neuron’s live test is useful because it shows the model as an active worker rather than a static answer box. It starts by separating Fable 5.1 from Mythos 5.1, then moves through the pricing change, the benchmark claims, and a series of computer-use experiments. The transcript lands on browser games, 3D work, and a longer Cat Doom build. I would not use the video as independent proof of Anthropic’s benchmark numbers. I would use it to show the behavior that the pricing makes more plausible: an agent can keep a project moving for a long time, and the operator’s job becomes supervision, interruption, and quality control. The model is not only answering a prompt. It is occupying a shift.
 
-**Handoff cue:** “That is the frontier capability. Henry, is sentience a serious workplace question or just a very effective way to anthropomorphize autocomplete?”
+**Handoff cue:** “That is the frontier capability. Henry, when inference is this fast, what breaks first: the workflow or the wallet?”
 
 **Sources and production notes:**
 
@@ -315,9 +306,9 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 ## Hot take / debate · 3:00 (slide `s-hot-take`)
 
-**Motion:** “AI sentience is a workplace question now, not a philosophy-dorm question.”
+**Motion:** "1,500 tokens a second changes what agents are for."
 
-**Do not repeat news:** B4 reports an unverified poll and the beliefs it reveals. This block does not use the poll as evidence. It debates operating policy under uncertainty: whether documenting a welfare trigger is worth doing before there is a settled science.
+**Do not repeat news:** B4 already covered the launch; this block debates what changes for operators. It debates operating policy under uncertainty: whether documenting a welfare trigger is worth doing before there is a settled science.
 
 **Henry talking points:**
 - Skeptic case: the poll measures vibes, not experience; there is no agreed test for subjective experience.
@@ -333,7 +324,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 **Sources and production notes:**
 
-- Henry’s sentiment post: https://x.com/iAmHenryMascot/status/2094468984171114741
+- Henry’s sentiment post:
 - Anthropic system card and welfare context: https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card
 - Keep this as the operator debate, not a claim that the poll is representative.
 
@@ -352,14 +343,14 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 **Andy fallback talk track:** Three things to watch after this show. First, when Astra reaches Plus, Pro, and API users, and what independent benchmarks say once they have it. Second, what regulators and the companies say about the Nvidia and Hugging Face agreement before its expected 2027 closing. Third, whether Visko can demonstrate a persistent world outside the launch reel while New York measures the consequences of a year-long classroom pause. That is the week ahead. We will be back Friday, September 11 at 4 PM ET. Follow WeeklyClaw at weeklyclaw.ai and join the Discord through the link on screen.
 
-Close rule: recap the episode exactly once, at the end. **One recap line:** “This week: Nvidia signed the agreement, Anthropic priced the agent shift, OpenClaw shipped the platform pass, Qwen refreshed Max, New York paused classroom AI, Visko streamed worlds, OpenAI launched GPT-6 Astra, and a poll made sentience operational.” Do not repeat this line elsewhere in the close or cheat sheet.
+Close rule: recap the episode exactly once, at the end. **One recap line:** “This week: Nvidia signed the agreement, Anthropic priced the agent shift, OpenClaw shipped the platform pass, Qwen refreshed Max, New York paused classroom AI, Visko streamed worlds, OpenAI launched GPT-6 Astra, and Qwen3.8 27B ran at ~1,500 tok/s on Cerebras.” Do not repeat this line elsewhere in the close or cheat sheet.
 
 **Handoff:** End on the QR card and the next-show date. No second recap.
 
 ## Build reference (not read on air)
 
 - Runtime targets: cold open 1:30; Herald 1:00; grid A 8:00; grid B 8:15; grid C 3:00; Signal From Outside 6:00; hot take 3:00; Heritage 1:00; close 3:00, plus live transitions and host banter. Target 34–38 minutes; hard stop 45.
-- Deliberate cuts, in order: B4 sentience card; B3 demo-reel detail; Orbis funding detail; Qwen pricing; Signal 3D cue. Do not cut the Signal anchor before optional card cuts.
+- Deliberate cuts, in order: B3 demo-reel detail; Orbis funding detail; Qwen pricing; Signal 3D cue. Do not cut the Signal anchor before optional card cuts.
 - News ownership: Henry leads every What Happened This Week card. Andy supplies fallback prose and caveats; Andy leads Signal From Outside.
 - Sponsor order: Herald Labs immediately after the cold open; Heritage Telecom immediately before the close.
 - Visual manifest: twelve real source artifacts across the three news grids, including four benchmark/chart captures, five receipt/social captures, one official OpenAI receipt, one official Orbis video clip with poster, sponsor assets copied byte-for-byte from Episode 27, and Discord QR copied byte-for-byte from Episode 27.
@@ -372,6 +363,6 @@ Close rule: recap the episode exactly once, at the end. **One recap line:** “T
 - What Happened This Week is Henry-led. Andy does not own the lead on a news card.
 - The deck is a visual prompt: real source capture or playable clip plus headline, short context, and source link. Details and caveats stay here and in speaker notes.
 - The Astra item is launch-day coverage; benchmark and demo figures are vendor-reported and labeled as such.
-- The sentience poll is a sentiment signal, not scientific evidence.
+- Cerebras speed and tier limits are vendor numbers as of launch day, not independent benchmarks.
 - Vendor-reported benchmark, price, and evaluation claims stay labeled.
 - The close recaps the episode once and only once.

@@ -12,8 +12,8 @@
 - “The agreement landed. The models answered.”
 - Nvidia made Hugging Face official, but the transaction is pending.
 - Fable/Mythos bring price plus safeguards; OpenClaw brings platform pace.
-- NYC is the public boundary; the sentience item is a signal, not science.
-- **Optional line:** “The operating question is who gets to set the conditions.”
+- NYC is the public boundary; Cerebras speed is a vendor/tier number, not a benchmark.
+- **Optional line:** “The operating question is what you do when tokens are effectively free.”
 - **Handoff:** Andy reads Herald Labs.
 
 ## s-sponsor-herald
@@ -91,50 +91,9 @@
 - Vendor benchmark caveat: ExploitBench 100% is an aggregate coverage score, not a pass rate.
 
 
-### B4 Sentience sentiment
+### B4 Cerebras speed
 
-- Henry: “20% is such a high number. We are so fckd.”
-- Austen poll origin attributed, but method/provenance unconfirmed.
-- Timeline sentiment, not scientific evidence.
-- Use as the bridge into an operator-policy debate, not as proof.
-- **Landing:** “A fifth of the room believes it. That is an operating condition.”
-- **Handoff:** Andy’s Signal From Outside.
-
-## Part 3 — The ones we nearly missed (C1–C3)
-
-One slide, three launches. Don't linger card-by-card — sell the cadence, then drop one receipt per card.
-
-- **Gemini 3.8 Flash / Flash Cyber (C1).** Google's third Flash in six weeks. Same intro price as 3.7: 75 cents in, 3.75 out. The interesting half is Cyber — vulnerability detection and automated patching, and it's gated: trusted defenders only, through the new Fairwind Program. The safety tier IS the product here.
-- **Muse Spark 1.3 (C2).** Meta's agent workhorse. 20% fewer tool calls, 25% fewer tokens in their engineers' comparisons — that's agent economics, not vibes. Prompt-injection resistance and calibration on irreversible actions got better. Open weights are teased. Note: max reasoning mode isn't out yet — pending safety testing. Don't crown it king off partial benchmarks.
-- **fal H3 Max (C3).** The "fal H3 Max" you flagged. Post-trained MiniMax H3 — fal took open weights, retrained for prompt adherence, rebuilt the inference stack. 5-second clip in 3 seconds of wall time, #1 on Design Arena image-to-video and Artificial Analysis I2V-with-audio. Launch promo runs through Sep 7.
-
-On-air artifacts if you want them: the Google benchmark capture, the Meta benchmark capture, the official fal benchmark chart, and the Artificial Analysis chart. All are source captures and clickable from the slide.
-
-## s-signal-outside reaction
-
-- Let Andy lead the video.
-- React to the behavior: a cheaper agent that continues working creates a supervision problem.
-- Keep benchmark claims attributed to Anthropic / the video maker.
-- **Optional line:** “The next bottleneck is not getting the agent started. It is knowing when to stop it.”
-- Ask whether supervision, not raw capability, is the next product layer.
-- **Handoff:** Hot take: poll versus policy.
-
-## s-hot-take / skeptic
-
-- Motion: AI sentience is a workplace question now, not a philosophy-dorm question.
-- The poll measures vibes, not experience.
-- No agreed test for subjective experience.
-- Anthropomorphism can hide ordinary product defects and create safety theater.
-- Mind-changer: reproducible welfare-relevant behavior across models and conditions.
-- **Optional line:** “Taking the question seriously does not mean taking the poll literally.”
-- **Closer:** “The morally hard part is not the model. It is that we now have to take the poll seriously.”
-- **Handoff:** Andy reads Heritage.
-
-## s-watch / close handoff
-
-- Watch when Astra reaches Plus/Pro/API users and what independent benchmarks show.
-- Watch the first regulatory response before the Nvidia/HF agreement’s expected 2027 close.
-- Watch Orbis outside the launch reel and NYC’s measurements after the pause.
-- **Optional line:** “Next week we will have receipts, not just signals.”
-- Hand the one recap to Andy. Do not add a second recap.
-- Point to Discord QR and next Friday, September 11, 4 PM ET.
+- Qwen3.8 27B live on Cerebras Shared Tier at ~1,500 tok/s. Free trial: 5 req/min, 1M tokens/day. Dev tier: 300 req/min, no daily cap.
+- Henry: agent watched for this 2-3 weeks. The joy when it landed. "Damn what would one use this for?"
+- Vendor/tier numbers as of launch day; shared-tier averages sit below peak.
+- https://x.com/iAmHenryMascot/status/2095896792038588456
