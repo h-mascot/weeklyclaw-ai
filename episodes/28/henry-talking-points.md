@@ -1,10 +1,10 @@
-# WeeklyClaw Episode 28 Henry view (rev6)
+# WeeklyClaw Episode 28 Henry view (rev7)
 
 ## Shared frame
 
 - **Title:** The agreement landed. The models answered.
 - Keep the Nvidia wording exact: signed definitive agreement, expected H1 2027 close pending approvals. Never say the acquisition has closed.
-- Narrative: agreement -> model tiers -> platform pace -> open-model iteration -> public pushback -> new medium -> runtime orchestration -> mind question.
+- Narrative: agreement -> model tiers -> platform pace -> open-model iteration -> public pushback -> living worlds -> spatial intelligence -> mind question.
 - Henry leads every What Happened This Week card. Andy supports with caveats and fallback prose.
 
 ## s-title / s-cold-open
@@ -118,12 +118,13 @@
 - fal reports five-second video in about three seconds and two launch-day leaderboard leads.
 - **Landing:** “At this point, generation speed is a pricing problem.”
 
-### C4 GitHub HydraFusion
+### C4 World Labs Atlas
 
-- Research preview inside Copilot CLI. All plans can enable it through `/experimental`.
-- Runtime chooses single, cascade, or cross-family critique instead of making the user pick one model.
-- GitHub controlled offline eval: TerminalBench 2.1 +4.9 quality points at 67% lower estimated cost than Opus 5. DeepSWE is -1.5 / 36% lower; CheckpointBench -0.1 / 65% lower.
-- Caveat: vendor-run, medium-reasoning offline tests, not production outcomes. Preview behavior and model pool can change.
-- Henry signal: “Router Wars continue.”
-- **Landing:** “Cadence is no longer the story. Orchestration is.”
-- **Handoff:** “Andy, the runtime just became the product.”
+- Omni world model trained across text, images, video, camera poses, and 3D depth maps.
+- Native camera control, up to one minute of 1440p video.
+- Sparse-view 3D reconstruction into point clouds and Gaussian splats.
+- Real-to-Sim robotics and space-time video reframing.
+- Early access only. World Labs benchmarks are vendor-run; camera comparisons give Atlas native camera geometry while competitors receive text prompts.
+- Play the official 14-second launch clip manually; poster is the fallback.
+- **Landing:** “Video models generate the frame. World models try to remember the room.”
+- **Handoff:** “Andy, the video is no longer the output. It is a view into the world.”
