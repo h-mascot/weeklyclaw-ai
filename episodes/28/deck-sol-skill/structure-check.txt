@@ -1,0 +1,40 @@
+COMMAND
+python3 input/validate_deck.py output/deck.html input/speaker-notes.rev3.md input/authority-deck-ep23.html
+
+EXIT 0
+
+PASS: slide-ID parity (11 slides <-> notes)
+PASS: JS syntax (node --check -)
+PASS: no autoplay
+PASS: 25 clickable source links
+PASS: final Sources slide present
+PASS: close-slide Discord QR (assets/socials/weeklyclaw-discord-qr.png -> weeklyclaw.ai/discord)
+PASS: theme markers: ['cream_paper', 'teal_cyan', 'weeklyclaw_logo_symbol', 'barlow_condensed', 'ibm_plex_mono']
+PASS: 17 local media paths resolved
+PASS: segment IDs found: ['grid-a', 'grid-b', 'grid-c']
+PASS: CSS custom properties match authority deck (15 checked)
+PASS: SVG symbols match authority deck (['weeklyclaw-logo'])
+PASS: no invented brand/logo symbols
+PASS: core layout classes present (16 checked)
+PASS: 3 sponsor assets resolved and provenance-checked
+PASS: deck size 49391 bytes (authority: 74261 bytes)
+
+=== ALL CHECKS PASSED ===
+
+STRUCTURE
+PASS: DOM slide order = s-title, s-cold-open, s-sponsor-herald, s-seg-grid-a, s-seg-grid-b, s-seg-grid-c, s-signal-outside, s-hot-take, s-sponsor-heritage, s-close, s-sources
+PASS: grid card counts = A:4, B:4, C:4, total:12
+PASS: s-close carries data-notes-id="s-watch"
+PASS: authority <style>, <script>, and SVG <defs> blocks are byte-identical
+PASS: input/assets and output/assets are byte-identical
+
+RENDER QA — 1600x900
+PASS: 11/11 slides rendered and visually inspected
+PASS: zero content scroll overflow
+PASS: zero elements outside slide viewport
+PASS: zero unintended pairwise overlaps
+PASS: all 17 rendered local images complete with nonzero natural dimensions
+PASS: no failed localhost asset requests
+PASS: ArrowRight navigation advanced s-title -> s-cold-open
+PASS: source QR decoded to https://weeklyclaw.ai/discord
+PASS: rendered s-close QR decoded to https://weeklyclaw.ai/discord
