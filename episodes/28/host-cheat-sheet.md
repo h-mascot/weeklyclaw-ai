@@ -1,4 +1,4 @@
-# WeeklyClaw Episode 28 host cheat sheet (rev3)
+# WeeklyClaw Episode 28 host cheat sheet (rev4)
 
 **Friday 2026-09-04 · 4:00 PM ET · Henry + Andy**  
 **Thesis:** The agreement landed. The models answered.  
@@ -11,11 +11,12 @@
 2. **Herald Labs · 1:00** — Henry.
 3. **Grid A · 8:00** — Henry leads all cards: Nvidia/HF, Fable/Mythos, OpenClaw 2.0, Qwen 0902.
 4. **Grid B · 8:15** — Henry leads all cards: NYC, Orbis, GPT-6 Astra launch, sentience sentiment.
-5. **Signal From Outside · 6:00** — Andy leads The Neuron Fable 5.1 live test.
-6. **Hot take · 3:00** — Henry skeptic; Andy prepare-anyway.
-7. **Heritage Telecom · 1:00** — Andy.
-8. **Close · 3:00** — Henry watch items; Andy gives the only recap and CTA.
-9. **Sources / Links** — non-air appendix.
+5. **Grid C · 3:00** — Henry leads all cards: Gemini 3.8, Muse Spark 1.3, fal H3 Max, independent receipts.
+6. **Signal From Outside · 6:00** — Andy leads The Neuron Fable 5.1 live test.
+7. **Hot take · 3:00** — Henry skeptic; Andy prepare-anyway.
+8. **Heritage Telecom · 1:00** — Andy.
+9. **Close · 3:00** — Henry watch items; Andy gives the only recap and CTA.
+10. **Sources / Links** — non-air appendix.
 
 ## Do not miss
 
@@ -46,7 +47,7 @@
 - **A4:** “Weights stay open, and the gap stays closed.”
 - **B1:** “The gap is the experiment.”
 - **B2:** “A good demo is not yet a medium.”
-- **B3:** “The launch-event economy now runs on cryptograms.”
+- **B3:** “The stars aligned, and the first thing the new era did was find zero-days.”
 - **B4:** “A fifth of the room believes it. That is an operating condition.”
 - **Signal:** “The next bottleneck is knowing when to stop the agent.”
 - **Hot take closer:** “The morally hard part is not the model. It is that we now have to take the poll seriously.”
@@ -76,10 +77,10 @@
 
 ## Draft paths
 
-- Agenda: `episodes/28/showprep/revs/agenda.rev3.md`
-- Deck: `episodes/28/showprep/revs/deck.rev3.html`
-- Speaker notes: `episodes/28/showprep/revs/speaker-notes.rev3.md`
-- Talking points: `episodes/28/showprep/revs/talking-points.rev3.md`
-- Henry view: `episodes/28/showprep/revs/henry-section.rev3.md`
-- Andy view: `episodes/28/showprep/revs/andy-section.rev3.md`
-- This sheet: `episodes/28/showprep/revs/host-cheat-sheet.rev3.md`
+- Agenda: `episodes/28/showprep/revs/agenda.rev4.md`
+- Deck: `episodes/28/showprep/revs/deck.rev4.html`
+- Speaker notes: `episodes/28/showprep/revs/speaker-notes.rev4.md`
+- Talking points: `episodes/28/showprep/revs/talking-points.rev4.md`
+- Henry view: `episodes/28/showprep/revs/henry-section.rev4.md`
+- Andy view: `episodes/28/showprep/revs/andy-section.rev4.md`
+- This sheet: `episodes/28/showprep/revs/host-cheat-sheet.rev4.md`

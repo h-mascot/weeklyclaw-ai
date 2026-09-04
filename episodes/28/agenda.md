@@ -1,10 +1,10 @@
-# WeeklyClaw Episode 28: The agreement landed. The models answered. (rev3)
+# WeeklyClaw Episode 28: The agreement landed. The models answered. (rev4)
 
 **Show date:** Friday 2026-09-04 (America/New_York, 4:00 PM ET)  
 **Hosts:** Henry and Andy  
 **Target runtime:** 34–38 minutes  
 **Hard stop:** 45 minutes  
-**Format:** News runs as two grid slides, four story cards each (2 rows x 2 cols), one verified editorial banner per card, about 2 minutes per card. Henry walks each grid left-to-right, top-to-bottom. The Nvidia item is a signed definitive agreement, not a completed legal closing; expected close is H1 2027 pending approvals.
+**Format:** News runs as three grid slides, four story cards each (2 rows x 2 cols), one verified source capture or playable video per card, about 2 minutes per card. Henry walks each grid left-to-right, top-to-bottom. The Nvidia item is a signed definitive agreement, not a completed legal closing; expected close is H1 2027 pending approvals.
 
 ## Episode thesis
 
@@ -33,11 +33,11 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 ## What Happened This Week · grid A · 8:00 (slide `s-seg-grid-a`)
 
-*Four cards. Walk left-to-right, then top-to-bottom. The banners are visual prompts; click the card source when a live receipt or source page is useful.*
+*Four cards. Walk left-to-right, then top-to-bottom. Each card carries a real source capture; use the linked receipt or launch post when a live follow-up is useful.*
 
 ### Card A1 · Nvidia signs the Hugging Face acquisition agreement · 2:00
 
-**Visual:** `assets/images/artifacts/t-nvidia-hf-official.png`, a verified editorial handshake. Open the Register receipt if needed.
+**Visual:** `assets/images/artifacts/a1-nvidia-hf-register.png`, a captured The Register receipt with the agreement headline and H1 2027 closing language. Open the official Delangue/Jensen posts if needed.
 
 **Segment talking points:**
 - Hugging Face and Nvidia announced a definitive agreement on September 3; the agreement was signed September 2.
@@ -66,7 +66,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 ### Card A2 · Anthropic launches Fable 5.1 and Mythos 5.1 · 2:00
 
-**Visual:** `assets/images/artifacts/t-fable-mythos.png`, a verified orb with two paths. Live link: Anthropic announcement.
+**Visual:** `assets/images/artifacts/a2-fable-mythos-official.png`, a captured Anthropic announcement naming Claude Fable 5.1 and Mythos 5.1. Live link: Anthropic announcement.
 
 **Segment talking points:**
 - Fable 5.1 is generally available; Mythos 5.1 is trusted-access only, with safeguards tailored to cyber and life sciences.
@@ -95,7 +95,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 ### Card A3 · OpenClaw ships version 2.0 · 2:00
 
-**Visual:** `assets/images/artifacts/t-openclaw2.png`, a verified rising paw/sun. Open the official blog or release notes live.
+**Visual:** `assets/images/artifacts/a3-openclaw2-release.png`, a captured OpenClaw release page showing v2026.8.1 / OpenClaw 2.0 and release scale. Open the official blog or release notes live.
 
 **Segment talking points:**
 - OpenClaw 2.0 arrived as v2026.8.1 after about seven quiet weeks.
@@ -125,7 +125,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 ### Card A4 · Qwen upgrades Qwen3.8-Max to 0902 · 1:45
 
-**Visual:** `assets/images/artifacts/t-qwen-max.png`, a verified open book made of circuit traces joined to a neural network. Live link: the official Qwen post.
+**Visual:** `assets/images/artifacts/a4-qwen-benchmark.png`, a crop from Qwen's official benchmark table naming Qwen3.8-Max-0902 and peer model rows. Live link: the official Qwen post.
 
 **Segment talking points:**
 - Qwen3.8-Max-0902 is a refresh, not a new base model.
@@ -158,7 +158,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 ### Card B1 · New York City pauses student-facing AI · 2:00
 
-**Visual:** `assets/images/artifacts/t-nyc-schools.png`, a verified question mark in a school hallway. Open the Reuters or city source live.
+**Visual:** `assets/images/artifacts/b1-nyc-chalkbeat.png`, a captured Chalkbeat receipt with the NYC school AI-ban headline. Reuters and the city source remain in the receipts below.
 
 **Segment talking points:**
 - New York City announced a one-year moratorium on student-facing generative AI through eighth grade, affecting about 600,000 students.
@@ -189,7 +189,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 ### Card B2 · Visko launches Orbis 1.0 · 1:45
 
-**Visual:** `assets/images/artifacts/t-orbis.png`, a verified living world inside a glowing orb. Open the Visko launch post or trade receipt.
+**Visual:** poster `assets/images/artifacts/b2-visko-orbis-poster.jpg` plus the 20-second trimmed official launch clip `assets/videos/b2-visko-orbis-clip.mp4`. Start manually; open the Visko launch post for the full source.
 
 **Segment talking points:**
 - Visko calls Orbis 1.0 its first Live Model: create living worlds and stream them in real time, with persistent state.
@@ -215,7 +215,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 ### Card B3 · OpenAI launches GPT-6 Astra · 2:00
 
-**Visual:** `assets/images/artifacts/t-gpt6-astra.png`, a verified starfield igniting into one bright star above a GPU rack. Open the Axios launch story; the @ChatGPT “stars” post is the launch-day tease.
+**Visual:** `assets/images/artifacts/b3-astra-openai.png`, a captured OpenAI Path to Astra page showing the critical cybersecurity capability. Open the official safety post; Axios remains the independent launch receipt.
 
 **Segment talking points:**
 - The “stars” teaser resolved within hours: OpenAI released GPT-6 Astra on Thursday, announced in a press briefing.
@@ -249,7 +249,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 ### Card B4 · Henry sees 20% say AI is sentient · 1:30
 
-**Visual:** `assets/images/artifacts/t-sentience.png`, a verified thermometer and figures. The poll origin is attributed to @Austen but remains unverified as research.
+**Visual:** `assets/images/artifacts/b4-henry-sentience.png`, a captured Henry Mascot post showing the 20% reaction. It is a social-signal artifact only; the poll's sample and provenance remain unverified.
 
 **Segment talking points:**
 - Henry posted: “20% is such a high number. We are so fckd.” The underlying graphic asks “Is AI sentient?”
@@ -277,12 +277,12 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 - Cut/compression: this is the first optional cut if runtime or evidence standards tighten. Keep the sentiment in the hot-take setup only if the host wants it.
 
 
-### What happened this week — part 3: the ones we nearly missed (C1–C3, Henry-flagged rev3)
+### What happened this week — part 3: the ones we nearly missed (C1–C3, Henry-flagged rev4)
 
 - **C1 · Google ships Gemini 3.8 Flash + Flash Cyber** — third Flash in six weeks; "best reasoning & coding" Flash at 3.7's intro price ($0.75/$3.75 per M tokens); Flash Cyber does vulnerability detection and automated patching for trusted defenders via the new Fairwind Program. Receipts: blog.google launch post, DeepMind model card.
 - **C2 · Meta releases Muse Spark 1.3** — agentic/coding model in Muse Code and Meta Model API; ~20% fewer tool calls and ~25% fewer tokens vs 1.2 in Meta engineer comparisons; stronger prompt-injection resistance; open weights teased; max reasoning pending safety testing. Receipts: research.meta.ai release post, @AIatMeta.
 - **C3 · fal launches H3 Max** — post-trained MiniMax H3 video model with co-designed inference: ~5s clip in ~3s wall time, ~35x official endpoint throughput; #1 Design Arena image-to-video (1,341 Elo), #1 Artificial Analysis I2V-with-audio (1,201 Elo); promo pricing through Sep 7. Receipts: PRNewswire launch release, fal.ai model page.
-
+- **Visual receipts:** C1 `assets/images/artifacts/c1-gemini38-benchmark.png` (Google benchmark capture); C2 `assets/images/artifacts/c2-muse-spark-benchmark.png` (Meta benchmark capture); C3 `assets/images/artifacts/c3-h3max-benchmark.jpg` (official fal benchmark chart); C4 `assets/images/artifacts/c4-muse-spark-artificial-analysis.png` (independent Artificial Analysis chart).
 ## Signal From Outside / weekly video review · 6:00 (slide `s-signal-outside`)
 
 *Permanent weekly anchor. Use the poster as the fallback still and open the video manually. Never autoplay. Cues were selected from the downloaded English transcript and are approximate enough to spot-check before air.*
@@ -358,11 +358,11 @@ Close rule: recap the episode exactly once, at the end. **One recap line:** “T
 
 ## Build reference (not read on air)
 
-- Runtime targets: cold open 1:30; Herald 1:00; grid A 8:00; grid B 8:15; Signal From Outside 6:00; hot take 3:00; Heritage 1:00; close 3:00, plus live transitions and host banter. Target 34–38 minutes; hard stop 45.
+- Runtime targets: cold open 1:30; Herald 1:00; grid A 8:00; grid B 8:15; grid C 3:00; Signal From Outside 6:00; hot take 3:00; Heritage 1:00; close 3:00, plus live transitions and host banter. Target 34–38 minutes; hard stop 45.
 - Deliberate cuts, in order: B4 sentience card; B3 demo-reel detail; Orbis funding detail; Qwen pricing; Signal 3D cue. Do not cut the Signal anchor before optional card cuts.
 - News ownership: Henry leads every What Happened This Week card. Andy supplies fallback prose and caveats; Andy leads Signal From Outside.
 - Sponsor order: Herald Labs immediately after the cold open; Heritage Telecom immediately before the close.
-- Visual manifest: eight verified 16:5 editorial banners, one Signal poster, sponsor assets copied byte-for-byte from Episode 27, and Discord QR copied byte-for-byte from Episode 27.
+- Visual manifest: twelve real source artifacts across the three news grids, including four benchmark/chart captures, five receipt/social captures, one official OpenAI receipt, one official Orbis video clip with poster, sponsor assets copied byte-for-byte from Episode 27, and Discord QR copied byte-for-byte from Episode 27.
 - Approval state remains `UNVALIDATED` until Henry or Andy issues `APPROVE`. Do not promote root episode artifacts before approval.
 - Review commands: `APPROVE`, `SWAP <slot> <candidate>`, `DROP <slot>`, `PIN <candidate>`, `ORDER <n1,n2,n3,n4,n5>`, or free-text feedback.
 
@@ -370,7 +370,7 @@ Close rule: recap the episode exactly once, at the end. **One recap line:** “T
 
 - The Nvidia item is an announced definitive agreement, not a completed closing. Use the expected H1 2027 closing caveat on air.
 - What Happened This Week is Henry-led. Andy does not own the lead on a news card.
-- The deck is a visual prompt: generated banner plus headline, short context, and source link. Details and caveats stay here and in speaker notes.
+- The deck is a visual prompt: real source capture or playable clip plus headline, short context, and source link. Details and caveats stay here and in speaker notes.
 - The Astra item is launch-day coverage; benchmark and demo figures are vendor-reported and labeled as such.
 - The sentience poll is a sentiment signal, not scientific evidence.
 - Vendor-reported benchmark, price, and evaluation claims stay labeled.

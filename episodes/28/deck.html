@@ -172,8 +172,8 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
 </style>
 
 <style>
-#s-seg-grid-a .content,#s-seg-grid-b .content{height:100%;max-height:100%;}
-#s-seg-grid-a .content > div:first-child,#s-seg-grid-b .content > div:first-child{flex:0 0 auto;}
+#s-seg-grid-a .content,#s-seg-grid-b .content,#s-seg-grid-c .content{height:100%;max-height:100%;}
+#s-seg-grid-a .content > div:first-child,#s-seg-grid-b .content > div:first-child,#s-seg-grid-c .content > div:first-child{flex:0 0 auto;}
 .story-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:18px;flex:1;min-height:0;margin-top:16px;overflow:hidden;}
 .story-card{display:flex;flex-direction:column;background:rgba(255,255,255,.03);border:1.5px solid var(--border-subtle);border-radius:16px;overflow:hidden;min-height:0;transition:border-color .2s;}
 .story-card:hover{border-color:var(--accent);}
@@ -185,6 +185,12 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
 .story-card .meta h3{font-size:1.06rem;line-height:1.25;margin:0;color:var(--text);}
 .story-card .meta p{font-size:.82rem;line-height:1.35;margin:0;color:var(--muted);}
 .story-card .meta a{font-family:var(--mono);font-size:.72rem;color:var(--accent);text-decoration:none;margin-top:2px;}
+
+#s-sources .card{padding:12px 16px;}
+#s-sources .tag{font-size:.58rem;padding:2px 8px;}
+#s-sources .src-links{gap:3px 8px;margin-top:4px;}
+#s-sources .mt-2{margin-top:7px;}
+#s-sources .src-note{font-size:.54rem;line-height:1.2;}
 </style>
 </head>
 <body>
@@ -279,19 +285,19 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
     </div>
     <div class="story-grid cols-2">
       <div class="story-card">
-        <a class="thumb" href="https://www.theregister.com/ai-and-ml/2026/09/03/nvidia-buys-hugging-face-for-129b-promises-not-to-squeeze-too-hard/5294208" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-nvidia-hf-official.png" alt="Editorial handshake representing Nvidia and Hugging Face deal"></a>
+        <a class="thumb" href="https://www.theregister.com/ai-and-ml/2026/09/03/nvidia-buys-hugging-face-for-129b-promises-not-to-squeeze-too-hard/5294208" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/a1-nvidia-hf-register.png" alt="The Register article capture: Nvidia buys Hugging Face for $12.9B"></a>
         <div class="meta"><h3>Nvidia signs the Hugging Face agreement.</h3><p>Definitive agreement signed; about $13B, expected to close in H1 2027 pending approvals.</p><a href="https://www.theregister.com/ai-and-ml/2026/09/03/nvidia-buys-hugging-face-for-129b-promises-not-to-squeeze-too-hard/5294208" target="_blank" rel="noopener">theregister.com</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-fable-mythos.png" alt="Editorial glowing orb with two paths representing Claude Fable and Mythos 5.1"></a>
+        <a class="thumb" href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/a2-fable-mythos-official.png" alt="Anthropic announcement capture: Claude Fable 5.1 and Mythos 5.1"></a>
         <div class="meta"><h3>Anthropic launches Fable 5.1 and Mythos 5.1.</h3><p>One model, two safeguard tiers; cache reads are 75% cheaper.</p><a href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener">anthropic.com</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://openclaw.ai/blog/openclaw-2-accidentally" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-openclaw2.png" alt="Editorial sunrise paw representing OpenClaw 2.0"></a>
+        <a class="thumb" href="https://openclaw.ai/blog/openclaw-2-accidentally" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/a3-openclaw2-release.png" alt="OpenClaw release capture: v2026.8.1, AKA OpenClaw 2.0"></a>
         <div class="meta"><h3>OpenClaw ships version 2.0.</h3><p>Seven quiet weeks, then v2026.8.1 touches the whole platform.</p><a href="https://openclaw.ai/blog/openclaw-2-accidentally" target="_blank" rel="noopener">openclaw.ai</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://x.com/Alibaba_Qwen/status/2094968708288680276" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-qwen-max.png" alt="Editorial open book made of circuit traces representing Qwen3.8-Max-0902"></a>
+        <a class="thumb" href="https://x.com/Alibaba_Qwen/status/2094968708288680276" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/a4-qwen-benchmark.png" alt="Qwen official benchmark capture naming Qwen3.8-Max-0902"></a>
         <div class="meta"><h3>Qwen upgrades Qwen3.8-Max to 0902.</h3><p>2.4T parameters, 1M context, same price; post-trained for Coding and Cowork.</p><a href="https://x.com/Alibaba_Qwen/status/2094968708288680276" target="_blank" rel="noopener">@Alibaba_Qwen</a></div>
       </div>
     </div>
@@ -310,19 +316,19 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
     </div>
     <div class="story-grid cols-2">
       <div class="story-card">
-        <a class="thumb" href="https://www.reuters.com/technology/mamdani-imposes-one-year-ban-ai-most-nyc-students-2026-09-02/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-nyc-schools.png" alt="Editorial question mark in a school hallway representing New York City student AI moratorium"></a>
-        <div class="meta"><h3>New York City pauses student-facing AI.</h3><p>One-year moratorium through eighth grade; about 600,000 students are affected.</p><a href="https://www.reuters.com/technology/mamdani-imposes-one-year-ban-ai-most-nyc-students-2026-09-02/" target="_blank" rel="noopener">reuters.com</a></div>
+        <a class="thumb" href="https://www.chalkbeat.org/newyork/2026/09/02/what-to-know-about-nyc-public-schools-generative-ai-ban-screen-time-limits/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/b1-nyc-chalkbeat.png" alt="Chalkbeat article capture: NYC's new school AI ban explained"></a>
+        <div class="meta"><h3>New York City pauses student-facing AI.</h3><p>One-year moratorium through eighth grade; about 600,000 students are affected.</p><a href="https://www.chalkbeat.org/newyork/2026/09/02/what-to-know-about-nyc-public-schools-generative-ai-ban-screen-time-limits/" target="_blank" rel="noopener">chalkbeat.org</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://www.therobotreport.com/top-10-robotics-stories-of-august-2026/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-orbis.png" alt="Editorial living world inside a glowing orb representing Visko Orbis 1.0"></a>
-        <div class="meta"><h3>Visko launches Orbis 1.0.</h3><p>A Live Model for interactive worlds, with a $10M pre-seed round reported.</p><a href="https://www.therobotreport.com/top-10-robotics-stories-of-august-2026/" target="_blank" rel="noopener">therobotreport.com</a></div>
+        <div class="thumb"><video controls preload="metadata" poster="assets/images/artifacts/b2-visko-orbis-poster.jpg" src="assets/videos/b2-visko-orbis-clip.mp4" style="display:block;width:100%;height:100%;object-fit:cover;" aria-label="Visko Orbis 1.0 official launch video"></video></div>
+        <div class="meta"><h3>Visko launches Orbis 1.0.</h3><p>A Live Model for interactive worlds, with a $10M pre-seed round reported.</p><a href="https://x.com/viskoai/status/2094817592754291173" target="_blank" rel="noopener">&#9654; LIVE &middot; @viskoai launch</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-gpt6-astra.png" alt="Editorial starfield igniting into one bright star above a GPU rack representing the GPT-6 Astra launch"></a>
-        <div class="meta"><h3>OpenAI launches GPT-6 Astra.</h3><p>Largest run yet on 100k+ GPUs; Brockman: &ldquo;Welcome to the AGI era.&rdquo;</p><a href="https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman" target="_blank" rel="noopener">axios.com</a></div>
+        <a class="thumb" href="https://openai.com/index/path-to-astra/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/b3-astra-openai.png" alt="OpenAI Path to Astra capture: critical cybersecurity capability"></a>
+        <div class="meta"><h3>OpenAI launches GPT-6 Astra.</h3><p>Largest run yet on 100k+ GPUs; Brockman: &ldquo;Welcome to the AGI era.&rdquo;</p><a href="https://openai.com/index/path-to-astra/" target="_blank" rel="noopener">openai.com</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://x.com/iAmHenryMascot/status/2094468984171114741" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-sentience.png" alt="Editorial thermometer and figures representing a viral AI sentience poll"></a>
+        <a class="thumb" href="https://x.com/iAmHenryMascot/status/2094468984171114741" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/b4-henry-sentience.png" alt="Henry Mascot X post capture: 20% is such a high number"></a>
         <div class="meta"><h3>Henry sees 20% say AI is sentient.</h3><p>Viral poll graphic, provenance unconfirmed; sentiment is not a scientific result.</p><a href="https://x.com/iAmHenryMascot/status/2094468984171114741" target="_blank" rel="noopener">Henry&rsquo;s post</a></div>
       </div>
     </div>
@@ -342,19 +348,19 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
     </div>
     <div class="story-grid cols-2">
       <div class="story-card">
-        <a class="thumb" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-gemini38.png" alt="Editorial lightning bolts racing across a circuit field representing Gemini 3.8 Flash"></a>
+        <a class="thumb" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/c1-gemini38-benchmark.png" alt="Google benchmark capture: Gemini 3.8 Flash and Flash Cyber"></a>
         <div class="meta"><h3>Google ships Gemini 3.8 Flash + Flash Cyber.</h3><p>Third Flash in six weeks; same price as 3.7. Flash Cyber does vulnerability detection for trusted defenders.</p><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/" target="_blank" rel="noopener">blog.google</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://research.meta.ai/blog/introducing-muse-spark-1-3" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-musespark.png" alt="Editorial spark orbiting a neural lattice representing Muse Spark 1.3"></a>
+        <a class="thumb" href="https://research.meta.ai/blog/introducing-muse-spark-1-3" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/c2-muse-spark-benchmark.png" alt="Meta benchmark capture: Muse Spark 1.3 agentic-workflow results"></a>
         <div class="meta"><h3>Meta releases Muse Spark 1.3.</h3><p>Agentic and coding gains; about 20% fewer tool calls and 25% fewer tokens than 1.2 in Meta comparisons.</p><a href="https://research.meta.ai/blog/introducing-muse-spark-1-3" target="_blank" rel="noopener">research.meta.ai</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://www.prnewswire.com/news-releases/fal-launches-h3-max-a-new-post-trained-video-model-with-frontier-quality-and-faster-than-real-time-generation-302866462.html" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-h3max.png" alt="Editorial film strip turning into a stream of light representing fal H3 Max"></a>
-        <div class="meta"><h3>fal launches H3 Max.</h3><p>Post-trained MiniMax H3; #1 image-to-video on Design Arena; five-second clip in about three seconds.</p><a href="https://www.prnewswire.com/news-releases/fal-launches-h3-max-a-new-post-trained-video-model-with-frontier-quality-and-faster-than-real-time-generation-302866462.html" target="_blank" rel="noopener">prnewswire.com</a></div>
+        <a class="thumb" href="https://x.com/fal/status/2092710676431020376" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/c3-h3max-benchmark.jpg" alt="Artificial Analysis benchmark capture: fal H3 Max video rankings"></a>
+        <div class="meta"><h3>fal launches H3 Max.</h3><p>Post-trained MiniMax H3; #1 image-to-video on Design Arena; five-second clip in about three seconds.</p><a href="https://x.com/fal/status/2092710676431020376" target="_blank" rel="noopener">&#9654; LIVE &middot; @fal benchmark</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://artificialanalysis.ai/models/releases/muse-spark-1-3" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-musespark.png" alt="Editorial abstract benchmark dial representing independent release coverage"></a>
+        <a class="thumb" href="https://artificialanalysis.ai/models/releases/muse-spark-1-3" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/c4-muse-spark-artificial-analysis.png" alt="Artificial Analysis chart capture with Muse Spark 1.3"></a>
         <div class="meta"><h3>The receipts are independent too.</h3><p>Artificial Analysis and Design Arena leaderboards back the claims above; rankings can move.</p><a href="https://artificialanalysis.ai/models/releases/muse-spark-1-3" target="_blank" rel="noopener">artificialanalysis.ai</a></div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-# WeeklyClaw Episode 28 Henry view (rev2)
+# WeeklyClaw Episode 28 Henry view (rev4)
 
 ## Shared frame
 
@@ -106,9 +106,9 @@ One slide, three launches. Don't linger card-by-card — sell the cadence, then 
 
 - **Gemini 3.8 Flash / Flash Cyber (C1).** Google's third Flash in six weeks. Same intro price as 3.7: 75 cents in, 3.75 out. The interesting half is Cyber — vulnerability detection and automated patching, and it's gated: trusted defenders only, through the new Fairwind Program. The safety tier IS the product here.
 - **Muse Spark 1.3 (C2).** Meta's agent workhorse. 20% fewer tool calls, 25% fewer tokens in their engineers' comparisons — that's agent economics, not vibes. Prompt-injection resistance and calibration on irreversible actions got better. Open weights are teased. Note: max reasoning mode isn't out yet — pending safety testing. Don't crown it king off partial benchmarks.
-- **fal H3 Max (C3).** The "Fals H3 Max" you flagged. Post-trained MiniMax H3 — fal took open weights, retrained for prompt adherence, rebuilt the inference stack. 5-second clip in 3 seconds of wall time, #1 on Design Arena image-to-video and Artificial Analysis I2V-with-audio. Launch promo runs through Sep 7.
+- **fal H3 Max (C3).** The "fal H3 Max" you flagged. Post-trained MiniMax H3 — fal took open weights, retrained for prompt adherence, rebuilt the inference stack. 5-second clip in 3 seconds of wall time, #1 on Design Arena image-to-video and Artificial Analysis I2V-with-audio. Launch promo runs through Sep 7.
 
-On-air artifacts if you want them: the blog.google eval chart, the Meta benchmark scorecard, the Design Arena leaderboard row. All clickable from the slide.
+On-air artifacts if you want them: the Google benchmark capture, the Meta benchmark capture, the official fal benchmark chart, and the Artificial Analysis chart. All are source captures and clickable from the slide.
 
 ## s-signal-outside reaction
 
