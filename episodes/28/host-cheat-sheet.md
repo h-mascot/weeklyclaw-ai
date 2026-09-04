@@ -1,4 +1,4 @@
-# WeeklyClaw Episode 28 host cheat sheet (rev2)
+# WeeklyClaw Episode 28 host cheat sheet (rev3)
 
 **Friday 2026-09-04 · 4:00 PM ET · Henry + Andy**  
 **Thesis:** The agreement landed. The models answered.  
@@ -51,6 +51,12 @@
 - **Signal:** “The next bottleneck is knowing when to stop the agent.”
 - **Hot take closer:** “The morally hard part is not the model. It is that we now have to take the poll seriously.”
 
+## News part 3 — the ones we nearly missed (after part 2, ~3 min)
+
+- C1 Gemini 3.8 Flash + Flash Cyber — Google, Sep 2. Third Flash in six weeks. $0.75/$3.75 per M (3.7 intro price). Cyber = vuln detection + auto-patching, Fairwind Program, trusted defenders only.
+- C2 Muse Spark 1.3 — Meta, Sep 2. Agent/coding model. ~20% fewer tool calls, ~25% fewer tokens vs 1.2 (Meta comparisons). Open weights teased; max reasoning pending safety tests.
+- C3 fal H3 Max — Sep 1. Post-trained MiniMax H3. 5s video in ~3s. #1 Design Arena I2V (1,341) + #1 Artificial Analysis I2V-audio (1,201). Promo through Sep 7, then $0.08/s list.
+
 ## Close
 
 - Watch Astra rollout to Plus/Pro/API and independent benchmarks.
@@ -70,10 +76,10 @@
 
 ## Draft paths
 
-- Agenda: `episodes/28/showprep/revs/agenda.rev2.md`
-- Deck: `episodes/28/showprep/revs/deck.rev2.html`
-- Speaker notes: `episodes/28/showprep/revs/speaker-notes.rev2.md`
-- Talking points: `episodes/28/showprep/revs/talking-points.rev2.md`
-- Henry view: `episodes/28/showprep/revs/henry-section.rev2.md`
-- Andy view: `episodes/28/showprep/revs/andy-section.rev2.md`
-- This sheet: `episodes/28/showprep/revs/host-cheat-sheet.rev2.md`
+- Agenda: `episodes/28/showprep/revs/agenda.rev3.md`
+- Deck: `episodes/28/showprep/revs/deck.rev3.html`
+- Speaker notes: `episodes/28/showprep/revs/speaker-notes.rev3.md`
+- Talking points: `episodes/28/showprep/revs/talking-points.rev3.md`
+- Henry view: `episodes/28/showprep/revs/henry-section.rev3.md`
+- Andy view: `episodes/28/showprep/revs/andy-section.rev3.md`
+- This sheet: `episodes/28/showprep/revs/host-cheat-sheet.rev3.md`

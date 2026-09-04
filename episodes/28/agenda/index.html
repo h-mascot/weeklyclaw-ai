@@ -1,58 +1,51 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Weekly Claw #28 Agenda — The agreement landed. The models answered.</title>
-<style>
-:root { color-scheme: light; --ink:#24201c; --paper:#fff9ee; --muted:#6e645a; --line:#b5a996; --accent:#2a7e6b; }
-body { margin:0; font:18px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:#ece4d5; }
-a { color:var(--accent); }
-.shell { width:min(920px, calc(100% - 36px)); margin-inline:auto; }
-header, footer { padding:22px 0; }
-nav { display:flex; justify-content:space-between; gap:16px; align-items:center; }
-.wordmark { font-weight:800; text-transform:uppercase; text-decoration:none; color:var(--ink); }
-.button { display:inline-flex; align-items:center; min-height:40px; padding:0 14px; border:1px solid var(--accent); border-radius:6px; background:var(--accent); color:var(--paper); text-decoration:none; font-weight:700; }
-.button.secondary { color:var(--ink); background:transparent; border-color:var(--line); }
-.intro { padding:56px 0 32px; border-block:1px solid var(--line); }
-.eyebrow { margin:0 0 10px; color:var(--accent); font:700 12px/1 ui-monospace,Menlo,monospace; letter-spacing:.12em; text-transform:uppercase; }
-h1 { margin:0; font-size:clamp(42px,8vw,78px); line-height:.9; letter-spacing:-.05em; text-transform:uppercase; }
-article { padding:36px 0 70px; }
-h2,h3,h4 { line-height:1.05; margin-top:2em; }
-p,li { max-width:78ch; }
-code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
-</style>
-</head>
-<body>
-<header><nav class="shell" aria-label="Episode navigation"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/28/deck">Open slides</a></div></nav></header>
-<main class="shell">
-<section class="intro"><p class="eyebrow">Episode 28 · September 4, 2026</p><h1>The agreement landed. The models answered.</h1><p>Nvidia makes Hugging Face official, Anthropic prices agents, OpenClaw ships 2.0, and OpenAI launches GPT-6 Astra.</p></section>
-<article><h2>WeeklyClaw Episode 28: The agreement landed. The models answered. (rev2)</h2>
-<p><strong>Show date:</strong> Friday 2026-09-04 (America/New_York, 4:00 PM ET)</p>
-<p><strong>Hosts:</strong> Henry and Andy</p>
-<p><strong>Target runtime:</strong> 34–38 minutes</p>
-<p><strong>Hard stop:</strong> 45 minutes</p>
+<style>body{margin:0;background:#fffdf8;color:#101418;font:16px/1.6 Georgia,serif}main{max-width:820px;margin:0 auto;padding:48px 24px 80px}h1{font-size:1.7rem}h2{font-size:1.1rem;margin:2rem 0 .5rem;border-bottom:2px solid #e5e0d5;padding-bottom:.3rem;color:#0b3c42}ul{padding-left:1.3rem}code{font-family:ui-monospace,monospace;font-size:.85em;background:#f1ede2;padding:1px 5px;border-radius:4px}</style>
+</head><body><main><span style="display:inline-block;font:700 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:#6b7280;border-radius:999px;padding:6px 12px;margin-bottom:20px">AGENDA · EPISODE 28</span>
+<h1>WeeklyClaw Episode 28: The agreement landed. The models answered. (rev3)</h1>
+
+<p><strong>Show date:</strong> Friday 2026-09-04 (America/New_York, 4:00 PM ET)  </p>
+<p><strong>Hosts:</strong> Henry and Andy  </p>
+<p><strong>Target runtime:</strong> 34–38 minutes  </p>
+<p><strong>Hard stop:</strong> 45 minutes  </p>
 <p><strong>Format:</strong> News runs as two grid slides, four story cards each (2 rows x 2 cols), one verified editorial banner per card, about 2 minutes per card. Henry walks each grid left-to-right, top-to-bottom. The Nvidia item is a signed definitive agreement, not a completed legal closing; expected close is H1 2027 pending approvals.</p>
-<h3>Episode thesis</h3>
+
+<h2>Episode thesis</h2>
+
 <p>The agreement landed, and the models answered. Nvidia made its proposed Hugging Face acquisition official at $12.9303B, with the transaction still subject to closing conditions and regulatory approvals. Anthropic shipped Fable 5.1 and the trusted-access Mythos 5.1, pricing long agent runs for a different kind of workday. OpenClaw returned from seven quiet weeks with version 2.0. Qwen refreshed Max for coding and long-horizon workflows. Then New York City paused student-facing AI through eighth grade, Visko proposed living worlds instead of generated clips, OpenAI launched GPT-6 Astra under an “AGI era” banner, and a viral poll made AI sentience sound like an office policy question.</p>
+
 <p>Narrative arc: <strong>agreement announced -&gt; frontier model tiers -&gt; agent platform pace -&gt; open-model iteration -&gt; public pushback -&gt; a new medium -&gt; the mind question</strong>.</p>
-<h3>Cold open · 1:30 (slide <code>s-cold-open</code>)</h3>
+
+<h2>Cold open · 1:30 (slide <code>s-cold-open</code>)</h2>
+
 <p>*Open on the five-step arc. The three hooks are the beats, not a briefing.*</p>
-<p><strong>Andy:</strong> “Welcome back to Weekly Claw. The agreement landed and the models answered. Nvidia made Hugging Face official, Anthropic shipped two safeguard tiers, OpenClaw came back from seven quiet weeks, and New York decided the classroom was not ready. Eight cards, two grids. Let’s go.”</p>
+
+<p><strong>Andy:</strong> “Welcome back to Weekly Claw. The agreement landed and the models answered. Nvidia made Hugging Face official, Anthropic shipped two safeguard tiers, OpenClaw came back from seven quiet weeks, and New York decided the classroom was not ready. Eleven cards, three grids: the third grid adds Google&#x27;s Gemini 3.8 Flash pair, Meta&#x27;s Muse Spark 1.3, and fal&#x27;s H3 Max. Let’s go.”</p>
+
 <p><strong>Henry talking points:</strong></p>
 <ul>
 <li>The transaction is agreed, not closed: about $13B, with approvals still ahead.</li>
 <li>The model story is not only capability; it is price, safeguards, and supervision.</li>
 <li>The public reaction splits the week: deploy faster, or put a boundary around the classroom.</li>
 </ul>
+
 <p><strong>Henry line (optional):</strong> “The operating question is no longer whether the models move. It is who gets to set the conditions.”</p>
+
 <p><strong>Handoff:</strong> Andy opens the first sponsor read, then Henry takes the two news grids.</p>
-<h3>Sponsor: Herald Labs · 1:00 (slide <code>s-sponsor-herald</code>)</h3>
+
+<h2>Sponsor: Herald Labs · 1:00 (slide <code>s-sponsor-herald</code>)</h2>
+
 <p><strong>Henry:</strong> This episode is brought to you by Herald Labs, an applied AI product lab where humans and agents build together. Entity is mission control for agent teams, and the lab is building the practical layer behind the hype. Build with humans. Ship with agents. Find it at labs.theherald.co.</p>
-<h3>What Happened This Week · grid A · 8:00 (slide <code>s-seg-grid-a</code>)</h3>
+
+<h2>What Happened This Week · grid A · 8:00 (slide <code>s-seg-grid-a</code>)</h2>
+
 <p>*Four cards. Walk left-to-right, then top-to-bottom. The banners are visual prompts; click the card source when a live receipt or source page is useful.*</p>
-<h4>Card A1 · Nvidia signs the Hugging Face acquisition agreement · 2:00</h4>
+
+<p>### Card A1 · Nvidia signs the Hugging Face acquisition agreement · 2:00</p>
+
 <p><strong>Visual:</strong> <code>assets/images/artifacts/t-nvidia-hf-official.png</code>, a verified editorial handshake. Open the Register receipt if needed.</p>
+
 <p><strong>Segment talking points:</strong></p>
 <ul>
 <li>Hugging Face and Nvidia announced a definitive agreement on September 3; the agreement was signed September 2.</li>
@@ -61,24 +54,33 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>Clement Delangue said independence became expensive and described Nvidia as a home that would keep the platform open, independent, and compute agnostic.</li>
 <li>Henry’s operator question: does the hub remain neutral when the new owner sells the compute beneath the models?</li>
 </ul>
+
 <p><strong>Henry talking points:</strong></p>
 <ul>
 <li>“Nvidia signs the Hugging Face agreement. The referee now owns the field.”</li>
 <li>Keep “signed agreement” and “expected to close” in the same breath.</li>
 <li>The real test is future Terms of Service, hosting policy, model access, and competitors’ ability to redeploy.</li>
 </ul>
+
 <p><strong>Henry line (optional):</strong> “Watch the ToS, not the press release.”</p>
+
 <p><strong>Andy fallback talk track:</strong> Nvidia has not completed the purchase yet, but it has made the transaction official. Hugging Face and Nvidia signed a definitive agreement worth $12.9303B, and the expected closing is in the first half of 2027 if regulators and the other closing conditions are satisfied. That distinction matters because the strategic question starts before the legal closing: Hugging Face is a neutral-looking home for models, datasets, and demos, while Nvidia supplies much of the compute those models need. The optimistic read is that Nvidia gives the open ecosystem more resources. The skeptical read is that the referee now has a stake in the teams on the field. The next receipt is not another congratulations post. It is the operating policy.</p>
+
 <p><strong>Handoff cue:</strong> “Henry, if the deal closes, who is the landlord and who is still allowed to build?”</p>
-<h4>Sources and production notes</h4>
+
+<p>### Sources and production notes</p>
+
 <ul>
 <li>Primary/official social receipts: https://x.com/ClementDelangue/status/2095482998674112733 and https://x.com/JensenHuang/status/2095482647355244762</li>
 <li>Independent coverage: https://www.theregister.com/ai-and-ml/2026/09/03/nvidia-buys-hugging-face-for-129b-promises-not-to-squeeze-too-hard/5294208 and https://www.techtimes.com/articles/326450/20260903/nvidia-buys-hugging-face-1293b-openai-hack-prompted-ceo-sell.htm</li>
 <li>Price caveat: https://qz.com/nvidia-hugging-face-acquisition-12-billion-082726. Use “about $13B”; never say the transaction has closed.</li>
 <li>Cut/compression: if late, remove regulator detail, not the signed-versus-closed distinction.</li>
 </ul>
-<h4>Card A2 · Anthropic launches Fable 5.1 and Mythos 5.1 · 2:00</h4>
+
+<p>### Card A2 · Anthropic launches Fable 5.1 and Mythos 5.1 · 2:00</p>
+
 <p><strong>Visual:</strong> <code>assets/images/artifacts/t-fable-mythos.png</code>, a verified orb with two paths. Live link: Anthropic announcement.</p>
+
 <p><strong>Segment talking points:</strong></p>
 <ul>
 <li>Fable 5.1 is generally available; Mythos 5.1 is trusted-access only, with safeguards tailored to cyber and life sciences.</li>
@@ -87,24 +89,33 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>Anthropic reports Terminal-Bench-Science at 52.6% for Mythos 5.1 versus 24.7% for Fable 5, using its own harness. Label this vendor-reported.</li>
 <li>EFS is the privacy story: customer-controlled storage and a zero-retention-like posture, phased from fall.</li>
 </ul>
+
 <p><strong>Henry talking points:</strong></p>
 <ul>
 <li>This is pricing for the eight-hour agent shift, not the chat session.</li>
 <li>Separate capability claims from the economic change: cheaper cache reads make persistence easier to justify.</li>
 <li>Ask whether the safeguard split is a product surface or a liability boundary.</li>
 </ul>
+
 <p><strong>Henry line (optional):</strong> “Anthropic is not only selling a smarter answer. It is selling a cheaper workday.”</p>
+
 <p><strong>Andy fallback talk track:</strong> Anthropic’s Fable 5.1 is the general-availability model, while Mythos 5.1 is the restricted version for trusted access in sensitive areas such as cybersecurity and life sciences. Anthropic says they share the underlying model and differ in safeguards. The pricing move is the practical part: cache reads are 75% cheaper, Anthropic estimates a typical workload is about 25% cheaper, and highly agentic work can be up to roughly 45% cheaper. The benchmark story is promising but must stay labeled as Anthropic’s own harness. The bigger operator change is that an agent can run for hours without every repeated context token feeling like a fresh purchase.</p>
+
 <p><strong>Handoff cue:</strong> “That is the model answer. Henry, show us what happens when the platform gets seven weeks of silence and then ships.”</p>
-<h4>Sources and production notes</h4>
+
+<p>### Sources and production notes</p>
+
 <ul>
 <li>Official announcement: https://www.anthropic.com/claude-fable-and-mythos-5-1</li>
 <li>Official system card: https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card</li>
 <li>Corroboration: https://venturebeat.com/technology/anthropics-claude-fable-5-1-and-mythos-5-1-arrive-with-a-75-cost-reduction-for-fable-cache-reads and https://simonwillison.net/2026/Sep/1/claude-fable-5-1/</li>
 <li>Cut/compression: keep the two-tier distinction and 75% cache-read claim; cut benchmark names first.</li>
 </ul>
-<h4>Card A3 · OpenClaw ships version 2.0 · 2:00</h4>
+
+<p>### Card A3 · OpenClaw ships version 2.0 · 2:00</p>
+
 <p><strong>Visual:</strong> <code>assets/images/artifacts/t-openclaw2.png</code>, a verified rising paw/sun. Open the official blog or release notes live.</p>
+
 <p><strong>Segment talking points:</strong></p>
 <ul>
 <li>OpenClaw 2.0 arrived as v2026.8.1 after about seven quiet weeks.</li>
@@ -113,16 +124,22 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>The unofficial release recap counts 106 releases in 230 days and more than 16,000 merged pull requests. Treat those scale figures as noncanonical corroboration, not an official counter.</li>
 <li>Henry’s own operator signal: “The new openclaw control ui is fire, can’t lie.”</li>
 </ul>
+
 <p><strong>Henry talking points:</strong></p>
 <ul>
 <li>The silence was not a retreat; it was a platform consolidation pass.</li>
 <li>This is the first pace-car story of the week: the open-source agent layer is shipping across the stack.</li>
 <li>The question is whether the new interface makes agents easier to supervise, not only easier to launch.</li>
 </ul>
+
 <p><strong>Henry line (optional):</strong> “The platform race now has an open-source pace car.”</p>
+
 <p><strong>Andy fallback talk track:</strong> OpenClaw 2.0 is the week’s platform story. The official release notes for v2026.8.1 touch almost every part of the product, from install and messaging through memory, skills, models, automations, browser, native apps, and plugins. The surrounding coverage says the browser app was rebuilt and that shared multiplayer cloud sessions are part of the change. The scale claims about 106 releases in 230 days and more than 16,000 pull requests come from an unofficial recap, so I would not present them as an audited official total. The useful fact is the shape of the release: after seven quiet weeks, the project returned with a platform pass rather than a single shiny feature.</p>
+
 <p><strong>Handoff cue:</strong> “From platform pace to model iteration: Qwen shipped another Max checkpoint.”</p>
-<h4>Sources and production notes</h4>
+
+<p>### Sources and production notes</p>
+
 <ul>
 <li>Official blog: https://openclaw.ai/blog/openclaw-2-accidentally</li>
 <li>Official release notes: https://docs.openclaw.ai/releases/2026.8.1</li>
@@ -130,8 +147,11 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>Henry’s post: https://x.com/iAmHenryMascot/status/2094551848086573063</li>
 <li>Cut/compression: remove the unofficial release-count figures before removing the product-surface list.</li>
 </ul>
-<h4>Card A4 · Qwen upgrades Qwen3.8-Max to 0902 · 1:45</h4>
+
+<p>### Card A4 · Qwen upgrades Qwen3.8-Max to 0902 · 1:45</p>
+
 <p><strong>Visual:</strong> <code>assets/images/artifacts/t-qwen-max.png</code>, a verified open book made of circuit traces joined to a neural network. Live link: the official Qwen post.</p>
+
 <p><strong>Segment talking points:</strong></p>
 <ul>
 <li>Qwen3.8-Max-0902 is a refresh, not a new base model.</li>
@@ -140,26 +160,37 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>The interesting development is cadence: open-weight Max now iterates like a product rather than a paper.</li>
 <li>Henry’s framing: Qwen’s business incentives include internal Alibaba deployment, not only inference sales.</li>
 </ul>
+
 <p><strong>Henry talking points:</strong></p>
 <ul>
 <li>Keep the exact model name: Qwen3.8-Max-0902.</li>
 <li>“Same architecture and price” means this is a capability and post-training refresh, not a new parameter-count headline.</li>
 <li>The open-weight ecosystem is getting a repeated product loop.</li>
 </ul>
+
 <p><strong>Henry line (optional):</strong> “Weights stay open, and the gap stays closed.”</p>
+
 <p><strong>Andy fallback talk track:</strong> Qwen’s 0902 release is easy to misstate as a brand-new model, but it is better described as a refreshed snapshot of Qwen3.8-Max. Qwen lists 2.4 trillion parameters and a one-million-token context, then points to post-training on Coding and Cowork and stronger performance on complex enterprise and long-horizon workflows. The listed input and output prices stay at two and six dollars per million tokens. That stability is part of the story: open models are starting to arrive on a product cadence, with new checkpoints and post-training updates instead of waiting for one grand architecture announcement.</p>
+
 <p><strong>Handoff cue:</strong> “That is the frontier iterating. Now let’s see what the public sector does with the result.”</p>
-<h4>Sources and production notes</h4>
+
+<p>### Sources and production notes</p>
+
 <ul>
 <li>Official post: https://x.com/Alibaba_Qwen/status/2094968708288680276</li>
 <li>Independent explainers: https://www.datacamp.com/blog/qwen3-8-max and https://aireiter.com/blog/qwen3-8-max-0902-api</li>
 <li>Henry pulse: https://x.com/iAmHenryMascot/status/2095091063505502238</li>
 <li>Cut/compression: retain “refresh, not new base model” and the 2.4T/1M figures; cut pricing detail last.</li>
 </ul>
-<h3>What Happened This Week · grid B · 8:15 (slide <code>s-seg-grid-b</code>)</h3>
+
+<h2>What Happened This Week · grid B · 8:15 (slide <code>s-seg-grid-b</code>)</h2>
+
 <p>*Same walk order. The slide moves from policy to medium to two unresolved cultural signals.*</p>
-<h4>Card B1 · New York City pauses student-facing AI · 2:00</h4>
+
+<p>### Card B1 · New York City pauses student-facing AI · 2:00</p>
+
 <p><strong>Visual:</strong> <code>assets/images/artifacts/t-nyc-schools.png</code>, a verified question mark in a school hallway. Open the Reuters or city source live.</p>
+
 <p><strong>Segment talking points:</strong></p>
 <ul>
 <li>New York City announced a one-year moratorium on student-facing generative AI through eighth grade, affecting about 600,000 students.</li>
@@ -168,16 +199,22 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>Henry’s concern is access inequality: a pause in one district may leave its students behind while other families keep using the tools.</li>
 <li>Treat “ban” as a shorthand; the operational policy is a moratorium with exceptions and grade-level differences.</li>
 </ul>
+
 <p><strong>Henry talking points:</strong></p>
 <ul>
 <li>Electricity is the right analogy for the operator question: dangerous, invisible, and eventually a commodity.</li>
 <li>“Human connection” is not a deployment plan. Ask what the replacement learning system is.</li>
 <li>The gap is the experiment: does restricting classroom use protect children or remove a tool they need to learn?</li>
 </ul>
+
 <p><strong>Henry line (optional):</strong> “The nation’s largest school district just opted out for a year. The gap is the experiment.”</p>
+
 <p><strong>Andy fallback talk track:</strong> New York City has put a one-year pause on student-facing generative AI through eighth grade. The scale is about 600,000 students, and reporting says roughly 40 tools will be halted, with 38 contracts affected by disabled AI features. This is not a simple ban on every use: high schools get AI-literacy modules twice a year, and a small number of supervised pilots remain. The real argument is about distribution. A family with a parent who teaches AI use at home is not in the same position as a classroom that loses a tool without getting a better one. The policy may protect attention and human connection, but the replacement has to be measured.</p>
+
 <p><strong>Handoff cue:</strong> “While one city puts a boundary around the classroom, Visko is trying to turn video into a place.”</p>
-<h4>Sources and production notes</h4>
+
+<p>### Sources and production notes</p>
+
 <ul>
 <li>AP: https://apnews.com/article/zohran-mamdani-ai-ban-nyc-schools-647f6a968eea0399521b7934418b1aff</li>
 <li>Reuters: https://www.reuters.com/technology/mamdani-imposes-one-year-ban-ai-most-nyc-students-2026-09-02/</li>
@@ -186,8 +223,11 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>Henry posts: https://x.com/iAmHenryMascot/status/2095532322607010178 and https://x.com/iAmHenryMascot/status/2095539880981934434</li>
 <li>Cut/compression: preserve moratorium scope and exception detail; cut the contract count if time is tight.</li>
 </ul>
-<h4>Card B2 · Visko launches Orbis 1.0 · 1:45</h4>
+
+<p>### Card B2 · Visko launches Orbis 1.0 · 1:45</p>
+
 <p><strong>Visual:</strong> <code>assets/images/artifacts/t-orbis.png</code>, a verified living world inside a glowing orb. Open the Visko launch post or trade receipt.</p>
+
 <p><strong>Segment talking points:</strong></p>
 <ul>
 <li>Visko calls Orbis 1.0 its first Live Model: create living worlds and stream them in real time, with persistent state.</li>
@@ -196,22 +236,30 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>Closed source and vendor-reported evaluations. Do not present the launch reel as an independent benchmark.</li>
 <li>The question is whether a world can remain coherent and controllable after the demo ends.</li>
 </ul>
+
 <p><strong>Henry talking points:</strong></p>
 <ul>
 <li>If video models are becoming commodities, Visko is betting the next unit is a place.</li>
 <li>Demand the boring receipts: latency, persistence, control, failure rate, and cost.</li>
 <li>A good demo is not yet a medium.</li>
 </ul>
+
 <p><strong>Andy fallback talk track:</strong> Visko’s Orbis 1.0 is described as a Live Model rather than a conventional text-to-video system. The pitch is to create a living world and stream it in real time, with persistent state that can be steered. That is a meaningful product distinction if it survives outside the launch reel. The company also reportedly closed a ten-million-dollar pre-seed round. Both the evaluations and the demo remain vendor-led, so the next proof should be an independent run that measures latency, world persistence, control, and how quickly the scene falls apart.</p>
+
 <p><strong>Handoff cue:</strong> “A place is hard to build. A launch is easier. OpenAI just had the biggest one of the week.”</p>
-<h4>Sources and production notes</h4>
+
+<p>### Sources and production notes</p>
+
 <ul>
 <li>Launch post: https://x.com/viskoai/status/2094817592754291173</li>
 <li>Trade coverage: https://www.therobotreport.com/top-10-robotics-stories-of-august-2026/ and https://www.tmcnet.com/usubmit/-ai-startup-visko-closes-10-million-pre-seed-/2026/09/01/10438413.htm</li>
 <li>Cut/compression: keep the “world versus clip” distinction; make funding detail the first cut.</li>
 </ul>
-<h4>Card B3 · OpenAI launches GPT-6 Astra · 2:00</h4>
+
+<p>### Card B3 · OpenAI launches GPT-6 Astra · 2:00</p>
+
 <p><strong>Visual:</strong> <code>assets/images/artifacts/t-gpt6-astra.png</code>, a verified starfield igniting into one bright star above a GPU rack. Open the Axios launch story; the @ChatGPT “stars” post is the launch-day tease.</p>
+
 <p><strong>Segment talking points:</strong></p>
 <ul>
 <li>The “stars” teaser resolved within hours: OpenAI released GPT-6 Astra on Thursday, announced in a press briefing.</li>
@@ -222,6 +270,7 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>Pricing: $10 per million input and $50 per million output tokens, matching Anthropic’s Fable 5.1 and 2.5x Sol’s promotional price. No Luna/Terra/Sol variants: Astra and Astra Pro only.</li>
 <li>Access is staged: Daybreak organizations first; Plus, Pro, Business, Enterprise, API, and AWS “in the coming days.”</li>
 </ul>
+
 <p><strong>Henry talking points:</strong></p>
 <ul>
 <li>The run is the story: 100k+ GPUs at one site, and models supervising models, is a new scale marker for the industry.</li>
@@ -229,10 +278,15 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>“AGI” is now a “mission concept,” not a contractual trigger — ask what the word still commits anyone to.</li>
 <li>Vendor benchmark caveat: ExploitBench 100% is an aggregate coverage score, not “hacked everything.”</li>
 </ul>
+
 <p><strong>Henry line (optional):</strong> “The stars aligned, and the first thing the new era did was find zero-days.”</p>
+
 <p><strong>Andy fallback talk track:</strong> The teaser became a launch. OpenAI released GPT-6 Astra on Thursday, its largest training run ever, more than a hundred thousand GPUs at the Stargate site in Texas, and the first OpenAI model where other models helped supervise training. Brockman called it a generational leap and closed the briefing with “Welcome to the AGI era” — his framing, not a settled verdict. The part operators should sit up for is the cybersecurity designation: first model rated critical under OpenAI’s preparedness framework, able to find and exploit unknown vulnerabilities without a person guiding each step, with the most advanced cyber work gated to vetted defenders through Daybreak. Availability starts with Daybreak organizations and reaches Plus, Pro, and API users in the coming days, at ten dollars per million input tokens and fifty per million out. The honest close is that the company says the model is harder to monitor, and calls that decline serious.</p>
+
 <p><strong>Handoff cue:</strong> “The other viral number is even less reliable: a poll that says one in five people think AI is sentient.”</p>
-<h4>Sources and production notes</h4>
+
+<p>### Sources and production notes</p>
+
 <ul>
 <li>Axios launch story: https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman</li>
 <li>The New Stack benchmarks and pricing: https://thenewstack.io/openai-gpt6-astra-benchmarks/</li>
@@ -241,8 +295,11 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>Henry launch-day amplification: https://x.com/iAmHenryMascot/status/2095540265603772759</li>
 <li>Cut/compression: never drop the “AGI is Brockman’s framing” and vendor-benchmark caveats. Cut the demo-reel list first, then pricing.</li>
 </ul>
-<h4>Card B4 · Henry sees 20% say AI is sentient · 1:30</h4>
+
+<p>### Card B4 · Henry sees 20% say AI is sentient · 1:30</p>
+
 <p><strong>Visual:</strong> <code>assets/images/artifacts/t-sentience.png</code>, a verified thermometer and figures. The poll origin is attributed to @Austen but remains unverified as research.</p>
+
 <p><strong>Segment talking points:</strong></p>
 <ul>
 <li>Henry posted: “20% is such a high number. We are so fckd.” The underlying graphic asks “Is AI sentient?”</li>
@@ -251,25 +308,44 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>The serious bridge is operational: labs are already funding AI-welfare work, so uncertainty can become policy before philosophy settles.</li>
 <li>Keep the hot take separate. This card reports the sentiment spike; the debate asks what operators should do under uncertainty.</li>
 </ul>
+
 <p><strong>Henry talking points:</strong></p>
 <ul>
 <li>“Twenty percent” is not a scientific result, but it is a signal about what people now believe.</li>
 <li>People assign agency to systems that run long enough, speak well enough, and keep working after the prompt.</li>
 <li>The operator response should be less anthropomorphic and more explicit about evidence thresholds.</li>
 </ul>
+
 <p><strong>Henry line (optional):</strong> “Whether or not it is true, a fifth of the room now believes it. That is an operating condition.”</p>
+
 <p><strong>Andy fallback talk track:</strong> Henry reacted to a viral “Is AI sentient?” poll by saying that 20 percent was a high number. We should not turn that graphic into a scientific statistic. The poll’s origin and sample are not verified, and it tells us what a slice of the timeline answered, not whether a model has subjective experience. It is still useful as an operating signal. People are starting to make decisions and policies around the possibility, while the labs are already funding AI-welfare work. That is why this item leads naturally into the debate, but the debate must not pretend the poll settled the science.</p>
+
 <p><strong>Handoff cue:</strong> “We have the signal. Now Andy brings us an actual live test of what the new agent tier does.”</p>
-<h4>Sources and production notes</h4>
+
+<p>### Sources and production notes</p>
+
 <ul>
 <li>Henry post: https://x.com/iAmHenryMascot/status/2094468984171114741</li>
 <li>Attributed original: https://x.com/Austen/status/2094364342221467941</li>
 <li>Caveat: poll provenance, sample, and methodology are unconfirmed. Do not label 20% as a studied statistic.</li>
 <li>Cut/compression: this is the first optional cut if runtime or evidence standards tighten. Keep the sentiment in the hot-take setup only if the host wants it.</li>
 </ul>
-<h3>Signal From Outside / weekly video review · 6:00 (slide <code>s-signal-outside</code>)</h3>
+
+
+<p>### What happened this week — part 3: the ones we nearly missed (C1–C3, Henry-flagged rev3)</p>
+
+<ul>
+<li><strong>C1 · Google ships Gemini 3.8 Flash + Flash Cyber</strong> — third Flash in six weeks; &quot;best reasoning &amp; coding&quot; Flash at 3.7&#x27;s intro price ($0.75/$3.75 per M tokens); Flash Cyber does vulnerability detection and automated patching for trusted defenders via the new Fairwind Program. Receipts: blog.google launch post, DeepMind model card.</li>
+<li><strong>C2 · Meta releases Muse Spark 1.3</strong> — agentic/coding model in Muse Code and Meta Model API; ~20% fewer tool calls and ~25% fewer tokens vs 1.2 in Meta engineer comparisons; stronger prompt-injection resistance; open weights teased; max reasoning pending safety testing. Receipts: research.meta.ai release post, @AIatMeta.</li>
+<li><strong>C3 · fal launches H3 Max</strong> — post-trained MiniMax H3 video model with co-designed inference: ~5s clip in ~3s wall time, ~35x official endpoint throughput; #1 Design Arena image-to-video (1,341 Elo), #1 Artificial Analysis I2V-with-audio (1,201 Elo); promo pricing through Sep 7. Receipts: PRNewswire launch release, fal.ai model page.</li>
+</ul>
+
+<h2>Signal From Outside / weekly video review · 6:00 (slide <code>s-signal-outside</code>)</h2>
+
 <p>*Permanent weekly anchor. Use the poster as the fallback still and open the video manually. Never autoplay. Cues were selected from the downloaded English transcript and are approximate enough to spot-check before air.*</p>
+
 <p><strong>Video:</strong> The Neuron, “Claude Fable 5.1 LIVE: Testing Anthropic’s New AI Agent,” https://youtu.be/9F_uP0_bTYo. Metadata verified: public, uploaded 2026-09-02, duration 3,602 seconds / 60:02. Poster: <code>assets/images/signal-outside-poster.jpg</code>.</p>
+
 <p><strong>Cue set:</strong></p>
 <ul>
 <li>01:22–02:45: introduces Fable 5.1 and Mythos 5.1.</li>
@@ -278,24 +354,34 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>08:31–09:15: computer-use test and the move toward 3D work.</li>
 <li>11:18–12:24: Cat Doom browser-game build and agent self-testing.</li>
 </ul>
+
 <p><strong>Henry talking points:</strong></p>
 <ul>
 <li>The important visual is not “look, another benchmark.” It is an agent continuing to work after the initial request.</li>
 <li>Fable’s price curve turns supervision and context management into the limiting factors.</li>
 <li>Ask whether the operator is watching progress or merely waiting for a completion notification.</li>
 </ul>
+
 <p><strong>Henry line (optional):</strong> “The next bottleneck is not getting the agent started. It is knowing when to stop it.”</p>
+
 <p><strong>Andy fallback talk track:</strong> The Neuron’s live test is useful because it shows the model as an active worker rather than a static answer box. It starts by separating Fable 5.1 from Mythos 5.1, then moves through the pricing change, the benchmark claims, and a series of computer-use experiments. The transcript lands on browser games, 3D work, and a longer Cat Doom build. I would not use the video as independent proof of Anthropic’s benchmark numbers. I would use it to show the behavior that the pricing makes more plausible: an agent can keep a project moving for a long time, and the operator’s job becomes supervision, interruption, and quality control. The model is not only answering a prompt. It is occupying a shift.</p>
+
 <p><strong>Handoff cue:</strong> “That is the frontier capability. Henry, is sentience a serious workplace question or just a very effective way to anthropomorphize autocomplete?”</p>
+
 <p><strong>Sources and production notes:</strong></p>
+
 <ul>
 <li>YouTube source and poster: https://youtu.be/9F_uP0_bTYo</li>
 <li>Keep video on manual start/end cues. No autoplay. If YouTube is unavailable, use <code>assets/images/signal-outside-poster.jpg</code> and talk through the verified transcript beats.</li>
 <li>Cut/compression: cut the 3D cue first; preserve the price, benchmark caveat, and Cat Doom supervision beat.</li>
 </ul>
-<h3>Hot take / debate · 3:00 (slide <code>s-hot-take</code>)</h3>
+
+<h2>Hot take / debate · 3:00 (slide <code>s-hot-take</code>)</h2>
+
 <p><strong>Motion:</strong> “AI sentience is a workplace question now, not a philosophy-dorm question.”</p>
+
 <p><strong>Do not repeat news:</strong> B4 reports an unverified poll and the beliefs it reveals. This block does not use the poll as evidence. It debates operating policy under uncertainty: whether documenting a welfare trigger is worth doing before there is a settled science.</p>
+
 <p><strong>Henry talking points:</strong></p>
 <ul>
 <li>Skeptic case: the poll measures vibes, not experience; there is no agreed test for subjective experience.</li>
@@ -303,29 +389,44 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>A policy should not be built from a viral percentage.</li>
 <li>What would change his mind: reproducible welfare-relevant behavior across models and conditions.</li>
 </ul>
+
 <p><strong>Henry line (optional):</strong> “Taking the question seriously does not mean taking the poll literally.”</p>
+
 <p><strong>Andy fallback talk track:</strong> I agree that the poll is not scientific evidence. The policy question is separate. If there is even a nonzero chance that a system has welfare-relevant experience, the hedge can be cheap: record the evidence threshold, define who reviews it, and do not build products that make the question impossible to investigate. Major labs already fund AI-welfare work, which means the question is not confined to philosophy departments. Preparing for uncertainty does not require declaring the model conscious. It requires admitting that the cost of being wrong could be asymmetric.</p>
+
 <p><strong>Handoff cue:</strong> One rebuttal each. Henry’s closer: “The morally hard part is not the model. It is that we now have to take the poll seriously.” Then move to the final sponsor.</p>
+
 <p><strong>Sources and production notes:</strong></p>
+
 <ul>
 <li>Henry’s sentiment post: https://x.com/iAmHenryMascot/status/2094468984171114741</li>
 <li>Anthropic system card and welfare context: https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card</li>
 <li>Keep this as the operator debate, not a claim that the poll is representative.</li>
 </ul>
-<h3>Sponsor: Heritage Telecom · 1:00 (slide <code>s-sponsor-heritage</code>)</h3>
+
+<h2>Sponsor: Heritage Telecom · 1:00 (slide <code>s-sponsor-heritage</code>)</h2>
+
 <p><strong>Andy:</strong> This episode is also brought to you by Heritage Telecom. While the AI industry bundles chips, models, and seats, Heritage does the thing it is actually good at: UCaaS and VoIP phone service for businesses that just need their calls to work. Independent, boring reliability, zero telemetry. Find them at heritagetel.com.</p>
-<h3>One to watch and close · 3:00 (slide <code>s-watch</code>)</h3>
+
+<h2>One to watch and close · 3:00 (slide <code>s-watch</code>)</h2>
+
 <p><strong>Henry talking points:</strong></p>
 <ul>
 <li>The rollout: when do Plus, Pro, and API users actually get Astra, and what do independent benchmarks say once they do?</li>
 <li>The filing: what is the first regulatory response to Nvidia and Hugging Face, and what terms govern the platform while the deal is pending?</li>
 <li>The gap: can Orbis show persistent, steerable worlds outside its launch reel, while NYC measures what a year without classroom AI changes?</li>
 </ul>
+
 <p><strong>Henry line (optional):</strong> “Next week we will have receipts, not just signals.”</p>
+
 <p><strong>Andy fallback talk track:</strong> Three things to watch after this show. First, when Astra reaches Plus, Pro, and API users, and what independent benchmarks say once they have it. Second, what regulators and the companies say about the Nvidia and Hugging Face agreement before its expected 2027 closing. Third, whether Visko can demonstrate a persistent world outside the launch reel while New York measures the consequences of a year-long classroom pause. That is the week ahead. We will be back Friday, September 11 at 4 PM ET. Follow WeeklyClaw at weeklyclaw.ai and join the Discord through the link on screen.</p>
+
 <p>Close rule: recap the episode exactly once, at the end. <strong>One recap line:</strong> “This week: Nvidia signed the agreement, Anthropic priced the agent shift, OpenClaw shipped the platform pass, Qwen refreshed Max, New York paused classroom AI, Visko streamed worlds, OpenAI launched GPT-6 Astra, and a poll made sentience operational.” Do not repeat this line elsewhere in the close or cheat sheet.</p>
+
 <p><strong>Handoff:</strong> End on the QR card and the next-show date. No second recap.</p>
-<h3>Build reference (not read on air)</h3>
+
+<h2>Build reference (not read on air)</h2>
+
 <ul>
 <li>Runtime targets: cold open 1:30; Herald 1:00; grid A 8:00; grid B 8:15; Signal From Outside 6:00; hot take 3:00; Heritage 1:00; close 3:00, plus live transitions and host banter. Target 34–38 minutes; hard stop 45.</li>
 <li>Deliberate cuts, in order: B4 sentience card; B3 demo-reel detail; Orbis funding detail; Qwen pricing; Signal 3D cue. Do not cut the Signal anchor before optional card cuts.</li>
@@ -335,7 +436,9 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>Approval state remains <code>UNVALIDATED</code> until Henry or Andy issues <code>APPROVE</code>. Do not promote root episode artifacts before approval.</li>
 <li>Review commands: <code>APPROVE</code>, <code>SWAP &lt;slot&gt; &lt;candidate&gt;</code>, <code>DROP &lt;slot&gt;</code>, <code>PIN &lt;candidate&gt;</code>, <code>ORDER &lt;n1,n2,n3,n4,n5&gt;</code>, or free-text feedback.</li>
 </ul>
-<h3>Rules</h3>
+
+<h2>Rules</h2>
+
 <ul>
 <li>The Nvidia item is an announced definitive agreement, not a completed closing. Use the expected H1 2027 closing caveat on air.</li>
 <li>What Happened This Week is Henry-led. Andy does not own the lead on a news card.</li>
@@ -344,8 +447,5 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>The sentience poll is a sentiment signal, not scientific evidence.</li>
 <li>Vendor-reported benchmark, price, and evaluation claims stay labeled.</li>
 <li>The close recaps the episode once and only once.</li>
-</ul></article>
-</main>
-<footer class="shell">Weekly Claw #28 · Agenda and source notes · <a href="/episodes/28/deck">View host deck</a></footer>
-</body>
-</html>
+</ul>
+</main></body></html>

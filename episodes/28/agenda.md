@@ -1,4 +1,4 @@
-# WeeklyClaw Episode 28: The agreement landed. The models answered. (rev2)
+# WeeklyClaw Episode 28: The agreement landed. The models answered. (rev3)
 
 **Show date:** Friday 2026-09-04 (America/New_York, 4:00 PM ET)  
 **Hosts:** Henry and Andy  
@@ -16,7 +16,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 *Open on the five-step arc. The three hooks are the beats, not a briefing.*
 
-**Andy:** “Welcome back to Weekly Claw. The agreement landed and the models answered. Nvidia made Hugging Face official, Anthropic shipped two safeguard tiers, OpenClaw came back from seven quiet weeks, and New York decided the classroom was not ready. Eight cards, two grids. Let’s go.”
+**Andy:** “Welcome back to Weekly Claw. The agreement landed and the models answered. Nvidia made Hugging Face official, Anthropic shipped two safeguard tiers, OpenClaw came back from seven quiet weeks, and New York decided the classroom was not ready. Eleven cards, three grids: the third grid adds Google's Gemini 3.8 Flash pair, Meta's Muse Spark 1.3, and fal's H3 Max. Let’s go.”
 
 **Henry talking points:**
 - The transaction is agreed, not closed: about $13B, with approvals still ahead.
@@ -275,6 +275,13 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 - Attributed original: https://x.com/Austen/status/2094364342221467941
 - Caveat: poll provenance, sample, and methodology are unconfirmed. Do not label 20% as a studied statistic.
 - Cut/compression: this is the first optional cut if runtime or evidence standards tighten. Keep the sentiment in the hot-take setup only if the host wants it.
+
+
+### What happened this week — part 3: the ones we nearly missed (C1–C3, Henry-flagged rev3)
+
+- **C1 · Google ships Gemini 3.8 Flash + Flash Cyber** — third Flash in six weeks; "best reasoning & coding" Flash at 3.7's intro price ($0.75/$3.75 per M tokens); Flash Cyber does vulnerability detection and automated patching for trusted defenders via the new Fairwind Program. Receipts: blog.google launch post, DeepMind model card.
+- **C2 · Meta releases Muse Spark 1.3** — agentic/coding model in Muse Code and Meta Model API; ~20% fewer tool calls and ~25% fewer tokens vs 1.2 in Meta engineer comparisons; stronger prompt-injection resistance; open weights teased; max reasoning pending safety testing. Receipts: research.meta.ai release post, @AIatMeta.
+- **C3 · fal launches H3 Max** — post-trained MiniMax H3 video model with co-designed inference: ~5s clip in ~3s wall time, ~35x official endpoint throughput; #1 Design Arena image-to-video (1,341 Elo), #1 Artificial Analysis I2V-with-audio (1,201 Elo); promo pricing through Sep 7. Receipts: PRNewswire launch release, fal.ai model page.
 
 ## Signal From Outside / weekly video review · 6:00 (slide `s-signal-outside`)
 
