@@ -1,19 +1,19 @@
-# WeeklyClaw Episode 28 Henry view (rev7)
+# WeeklyClaw Episode 28 Henry view (rev8)
 
 ## Shared frame
 
 - **Title:** The agreement landed. The models answered.
 - Keep the Nvidia wording exact: signed definitive agreement, expected H1 2027 close pending approvals. Never say the acquisition has closed.
-- Narrative: agreement -> model tiers -> platform pace -> open-model iteration -> public pushback -> living worlds -> spatial intelligence -> mind question.
+- Narrative: agreement -> model tiers -> platform pace -> open-model iteration -> public pushback -> living worlds -> spatial intelligence -> NYC moratorium debate.
 - Henry leads every What Happened This Week card. Andy supports with caveats and fallback prose.
 
 ## s-title / s-cold-open
 
-- “The agreement landed. The models answered.”
+- "The agreement landed. The models answered."
 - Nvidia made Hugging Face official, but the transaction is pending.
 - Fable/Mythos bring price plus safeguards; OpenClaw brings platform pace.
 - NYC is the public boundary; Cerebras speed is a vendor/tier number, not a benchmark.
-- **Optional line:** “The operating question is what you do when tokens are effectively free.”
+- **Optional line:** "The operating question is what you do when tokens are effectively free."
 - **Handoff:** Andy reads Herald Labs.
 
 ## s-sponsor-herald
@@ -31,16 +31,16 @@
 - $12.9303B; say about $13B, with press figures up to about $14B.
 - Expected H1 2027 close, subject to approvals and closing conditions.
 - Open, independent, compute-agnostic is the promise; Terms of Service are the test.
-- **Landing:** “Watch the ToS, not the press release.”
-- **Handoff:** “Who is still allowed to build?”
+- **Landing:** "Watch the ToS, not the press release."
+- **Handoff:** "Who is still allowed to build?"
 
 ### A2 Fable + Mythos 5.1
 
 - Fable is generally available; Mythos is trusted access.
 - Same model, different safeguard tiers.
 - Cache reads down 75%; Anthropic estimates 25% typical savings and up to about 45% on highly agentic work.
-- Terminal-Bench-Science 52.6% is Anthropic’s own harness.
-- **Landing:** “Anthropic is pricing the eight-hour agent shift.”
+- Terminal-Bench-Science 52.6% is Anthropic's own harness.
+- **Landing:** "Anthropic is pricing the eight-hour agent shift."
 - **Handoff:** OpenClaw platform pass.
 
 ### A3 OpenClaw 2.0
@@ -48,8 +48,8 @@
 - v2026.8.1 after seven quiet weeks.
 - Install, messaging, memory, skills, models, automations, browser, native apps, plugins all move.
 - Browser app rebuild and shared cloud sessions are independent coverage; 16K+ PRs is unofficial.
-- “The new openclaw control ui is fire.”
-- **Landing:** “The open-source agent platform has a pace car.”
+- "The new openclaw control ui is fire."
+- **Landing:** "The open-source agent platform has a pace car."
 - **Handoff:** Qwen refresh.
 
 ### A4 Qwen3.8-Max-0902
@@ -58,8 +58,8 @@
 - 2.4T parameters; 1M context; same listed $2/$6 input/output per million.
 - Coding and Cowork post-training.
 - Open models now iterate like products.
-- **Landing:** “Weights stay open, and the gap stays closed.”
-- **Handoff:** “What does the public sector do with the result?”
+- **Landing:** "Weights stay open, and the gap stays closed."
+- **Handoff:** "What does the public sector do with the result?"
 
 ## s-seg-grid-b / four cards
 
@@ -69,27 +69,26 @@
 - About 600K students; roughly 40 tools / 38 contracts reported.
 - No AI grading; literacy modules and five supervised pilots remain.
 - Electricity analogy: dangerous, invisible, then a commodity.
-- **Landing:** “The gap is the experiment.”
+- **Landing:** "The gap is the experiment."
 - **Handoff:** Orbis.
 
 ### B2 Visko Orbis 1.0
 
-- “Live Model”: create and stream living worlds in real time.
+- "Live Model": create and stream living worlds in real time.
 - World persistence and steerability, not another clip.
 - $10M pre-seed reported; closed source and vendor-led evals.
 - Demand latency, persistence, control, failure, cost.
-- **Landing:** “A good demo is not yet a medium.”
+- **Landing:** "A good demo is not yet a medium."
 - **Handoff:** OpenAI launches GPT-6 Astra.
 
 ### B3 OpenAI launches GPT-6 Astra
 
-- Released Thursday; “stars” teaser resolved same day into the launch.
+- Released Thursday; "stars" teaser resolved same day into the launch.
 - 100k+ GPUs at Stargate TX, largest run ever; models supervising models.
-- Brockman: “Welcome to the AGI era” — his framing. AGI now a “mission concept,” not a contract trigger.
-- First “critical” cyber model: finds and exploits unknown vulnerabilities without step-by-step human guidance; gated access for defenders.
+- Brockman: "Welcome to the AGI era" — his framing. AGI now a "mission concept," not a contract trigger.
+- First "critical" cyber model: finds and exploits unknown vulnerabilities without step-by-step human guidance; gated access for defenders.
 - Henry angle: OpenAI itself says the model is harder to monitor and calls the decline serious.
 - Vendor benchmark caveat: ExploitBench 100% is an aggregate coverage score, not a pass rate.
-
 
 ### B4 Cerebras speed
 
@@ -116,7 +115,7 @@
 
 - Post-trained MiniMax H3 for faster-than-real-time video.
 - fal reports five-second video in about three seconds and two launch-day leaderboard leads.
-- **Landing:** “At this point, generation speed is a pricing problem.”
+- **Landing:** "At this point, generation speed is a pricing problem."
 
 ### C4 World Labs Atlas
 
@@ -126,5 +125,40 @@
 - Real-to-Sim robotics and space-time video reframing.
 - Early access only. World Labs benchmarks are vendor-run; camera comparisons give Atlas native camera geometry while competitors receive text prompts.
 - Play the official 14-second launch clip manually; poster is the fallback.
-- **Landing:** “Video models generate the frame. World models try to remember the room.”
-- **Handoff:** “Andy, the video is no longer the output. It is a view into the world.”
+- **Landing:** "Video models generate the frame. World models try to remember the room."
+- **Handoff:** "Andy, the video is no longer the output. It is a view into the world."
+
+## s-hot-take — Henry's NYC moratorium case
+
+**Motion:** NYC's one-year AI moratorium is a mistake.
+
+**Henry's position: the moratorium is the wrong default.**
+
+### The case against
+
+- A classroom ban does not remove AI from students' lives — it removes it from the *classroom*. Families with resources keep teaching it at home; families without resources do not. The ban outsources AI literacy to the private sphere.
+- About 600,000 students in NYC public schools through grade 8 lose school-supervised access. The students most likely to fall behind are the ones who lack home alternatives — the exact students a public school system exists to serve.
+- Schools should be the place where judgment, verification, and supervised use are taught alongside the tool. Removing the tool removes the teaching opportunity.
+- "Human connection" is a value, not a deployment plan. What is the measurable replacement? If the answer is "nothing yet," the moratorium is a pause that benefits families who do not need the school's help.
+- The moratorium does not pause the technology. It pauses *equitable access* to instruction about the technology.
+
+### Mind-changer
+
+Evidence that the one-year pause actually improves learning outcomes and equity — specifically, that students in NYC public schools close the access gap with privately-educated peers — without widening the private-access differential.
+
+### Source cues (use verified B1 facts only)
+
+- One-year moratorium on student-facing generative AI through grade 8 (AP, Reuters, NYC official).
+- About 600,000 students affected; roughly 40 tools / 38 contracts; no AI grading (Chalkbeat).
+- High-school AI-literacy modules twice a year and five supervised pilots remain.
+- "Ban" is shorthand; the policy has scope and exceptions.
+
+**Henry fast line:** "Banning it in the classroom doesn't ban it at home. It just decides who learns."
+
+### Verdict line (read after Andy's rebuttal)
+
+The moratorium is the wrong default. Restricting classroom access does not restrict access — it restricts equitable access. The right answer is supervised use, judgment, verification instruction, and procurement that protects student privacy. Not a pause that leaves the learning gap to the market.
+
+### Handoff to Heritage
+
+After verdict: hand to Andy for Heritage Telecom read.

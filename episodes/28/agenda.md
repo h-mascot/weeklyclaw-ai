@@ -1,4 +1,4 @@
-# WeeklyClaw Episode 28: The agreement landed. The models answered. (rev7)
+# WeeklyClaw Episode 28: The agreement landed. The models answered. (rev8)
 
 **Show date:** Friday 2026-09-04 (America/New_York, 4:00 PM ET)  
 **Hosts:** Henry and Andy  
@@ -8,22 +8,22 @@
 
 ## Episode thesis
 
-The agreement landed, and the models answered. Nvidia made its proposed Hugging Face acquisition official at $12.9303B, with the transaction still subject to closing conditions and regulatory approvals. Anthropic shipped Fable 5.1 and the trusted-access Mythos 5.1, pricing long agent runs for a different kind of workday. OpenClaw returned from seven quiet weeks with version 2.0. Qwen refreshed Max for coding and long-horizon workflows. Then New York City paused student-facing AI through eighth grade, Visko proposed living worlds instead of generated clips, OpenAI launched GPT-6 Astra under an “AGI era” banner, Qwen3.8 27B hit ~1,500 tokens/sec on Cerebras, and World Labs launched Atlas as one model for camera-controlled video, 3D reconstruction, and robotics simulation.
+The agreement landed, and the models answered. Nvidia made its proposed Hugging Face acquisition official at $12.9303B, with the transaction still subject to closing conditions and regulatory approvals. Anthropic shipped Fable 5.1 and the trusted-access Mythos 5.1, pricing long agent runs for a different kind of workday. OpenClaw returned from seven quiet weeks with version 2.0. Qwen refreshed Max for coding and long-horizon workflows. Then New York City paused student-facing AI through eighth grade, Visko proposed living worlds instead of generated clips, OpenAI launched GPT-6 Astra under an "AGI era" banner, Qwen3.8 27B hit ~1,500 tokens/sec on Cerebras, and World Labs launched Atlas as one model for camera-controlled video, 3D reconstruction, and robotics simulation.
 
-Narrative arc: **agreement announced -> frontier model tiers -> agent platform pace -> open-model iteration -> public pushback -> living worlds -> spatial intelligence -> the mind question**.
+Narrative arc: **agreement announced -> frontier model tiers -> agent platform pace -> open-model iteration -> public pushback -> living worlds -> spatial intelligence -> NYC moratorium debate**.
 
 ## Cold open · 1:30 (slide `s-cold-open`)
 
 *Open on the five-step arc. The three hooks are the beats, not a briefing.*
 
-**Andy:** “Welcome back to Weekly Claw. The agreement landed and the models answered. Nvidia made Hugging Face official, Anthropic shipped two safeguard tiers, OpenClaw came back from seven quiet weeks, and New York decided the classroom was not ready. Twelve cards, three grids: the third grid adds Google's Gemini 3.8 Flash pair, Meta's Muse Spark 1.3, fal's H3 Max, and World Labs Atlas. Let’s go.”
+**Andy:** "Welcome back to Weekly Claw. The agreement landed and the models answered. Nvidia made Hugging Face official, Anthropic shipped two safeguard tiers, OpenClaw came back from seven quiet weeks, and New York decided the classroom was not ready. Twelve cards, three grids: the third grid adds Google's Gemini 3.8 Flash pair, Meta's Muse Spark 1.3, fal's H3 Max, and World Labs Atlas. Let's go."
 
 **Henry talking points:**
 - The transaction is agreed, not closed: about $13B, with approvals still ahead.
 - The model story is not only capability; it is price, safeguards, and supervision.
 - The public reaction splits the week: deploy faster, or put a boundary around the classroom.
 
-**Henry line (optional):** “The operating question is no longer whether the models move. It is who gets to set the conditions.”
+**Henry line (optional):** "The operating question is no longer whether the models move. It is who gets to set the conditions."
 
 **Handoff:** Andy opens the first sponsor read, then Henry takes the two news grids.
 
@@ -41,27 +41,27 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 **Segment talking points:**
 - Hugging Face and Nvidia announced a definitive agreement on September 3; the agreement was signed September 2.
-- The signed figure is $12,930,300,000. Other reporting rounds the transaction to about $13B or cites a figure near $14B. Say “about $13B.”
+- The signed figure is $12,930,300,000. Other reporting rounds the transaction to about $13B or cites a figure near $14B. Say "about $13B."
 - The agreement is expected to close in the first half of 2027, subject to regulatory approvals and closing conditions. Do not call this a completed acquisition.
 - Clement Delangue said independence became expensive and described Nvidia as a home that would keep the platform open, independent, and compute agnostic.
-- Henry’s operator question: does the hub remain neutral when the new owner sells the compute beneath the models?
+- Henry's operator question: does the hub remain neutral when the new owner sells the compute beneath the models?
 
 **Henry talking points:**
-- “Nvidia signs the Hugging Face agreement. The referee now owns the field.”
-- Keep “signed agreement” and “expected to close” in the same breath.
-- The real test is future Terms of Service, hosting policy, model access, and competitors’ ability to redeploy.
+- "Nvidia signs the Hugging Face agreement. The referee now owns the field."
+- Keep "signed agreement" and "expected to close" in the same breath.
+- The real test is future Terms of Service, hosting policy, model access, and competitors' ability to redeploy.
 
-**Henry line (optional):** “Watch the ToS, not the press release.”
+**Henry line (optional):** "Watch the ToS, not the press release."
 
 **Andy fallback talk track:** Nvidia has not completed the purchase yet, but it has made the transaction official. Hugging Face and Nvidia signed a definitive agreement worth $12.9303B, and the expected closing is in the first half of 2027 if regulators and the other closing conditions are satisfied. That distinction matters because the strategic question starts before the legal closing: Hugging Face is a neutral-looking home for models, datasets, and demos, while Nvidia supplies much of the compute those models need. The optimistic read is that Nvidia gives the open ecosystem more resources. The skeptical read is that the referee now has a stake in the teams on the field. The next receipt is not another congratulations post. It is the operating policy.
 
-**Handoff cue:** “Henry, if the deal closes, who is the landlord and who is still allowed to build?”
+**Handoff cue:** "Henry, if the deal closes, who is the landlord and who is still allowed to build?"
 
 ### Sources and production notes
 
 - Primary/official social receipts: https://x.com/ClementDelangue/status/2095482998674112733 and https://x.com/JensenHuang/status/2095482647355244762
 - Independent coverage: https://www.theregister.com/ai-and-ml/2026/09/03/nvidia-buys-hugging-face-for-129b-promises-not-to-squeeze-too-hard/5294208 and https://www.techtimes.com/articles/326450/20260903/nvidia-buys-hugging-face-1293b-openai-hack-prompted-ceo-sell.htm
-- Price caveat: https://qz.com/nvidia-hugging-face-acquisition-12-billion-082726. Use “about $13B”; never say the transaction has closed.
+- Price caveat: https://qz.com/nvidia-hugging-face-acquisition-12-billion-082726. Use "about $13B"; never say the transaction has closed.
 - Cut/compression: if late, remove regulator detail, not the signed-versus-closed distinction.
 
 ### Card A2 · Anthropic launches Fable 5.1 and Mythos 5.1 · 2:00
@@ -80,11 +80,11 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 - Separate capability claims from the economic change: cheaper cache reads make persistence easier to justify.
 - Ask whether the safeguard split is a product surface or a liability boundary.
 
-**Henry line (optional):** “Anthropic is not only selling a smarter answer. It is selling a cheaper workday.”
+**Henry line (optional):** "Anthropic is not only selling a smarter answer. It is selling a cheaper workday."
 
-**Andy fallback talk track:** Anthropic’s Fable 5.1 is the general-availability model, while Mythos 5.1 is the restricted version for trusted access in sensitive areas such as cybersecurity and life sciences. Anthropic says they share the underlying model and differ in safeguards. The pricing move is the practical part: cache reads are 75% cheaper, Anthropic estimates a typical workload is about 25% cheaper, and highly agentic work can be up to roughly 45% cheaper. The benchmark story is promising but must stay labeled as Anthropic’s own harness. The bigger operator change is that an agent can run for hours without every repeated context token feeling like a fresh purchase.
+**Andy fallback talk track:** Anthropic's Fable 5.1 is the general-availability model, while Mythos 5.1 is the restricted version for trusted access in sensitive areas such as cybersecurity and life sciences. Anthropic says they share the underlying model and differ in safeguards. The pricing move is the practical part: cache reads are 75% cheaper, Anthropic estimates a typical workload is about 25% cheaper, and highly agentic work can be up to roughly 45% cheaper. The benchmark story is promising but must stay labeled as Anthropic's own harness. The bigger operator change is that an agent can run for hours without every repeated context token feeling like a fresh purchase.
 
-**Handoff cue:** “That is the model answer. Henry, show us what happens when the platform gets seven weeks of silence and then ships.”
+**Handoff cue:** "That is the model answer. Henry, show us what happens when the platform gets seven weeks of silence and then ships."
 
 ### Sources and production notes
 
@@ -102,25 +102,25 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 - The official release notes touch install, messaging, memory, skills, models, automations, browser, native apps, and plugins.
 - Independent coverage describes a rebuilt browser app, shared multiplayer cloud sessions, and changed session storage.
 - The unofficial release recap counts 106 releases in 230 days and more than 16,000 merged pull requests. Treat those scale figures as noncanonical corroboration, not an official counter.
-- Henry’s own operator signal: “The new openclaw control ui is fire, can’t lie.”
+- Henry's own operator signal: "The new openclaw control ui is fire, can't lie."
 
 **Henry talking points:**
 - The silence was not a retreat; it was a platform consolidation pass.
 - This is the first pace-car story of the week: the open-source agent layer is shipping across the stack.
 - The question is whether the new interface makes agents easier to supervise, not only easier to launch.
 
-**Henry line (optional):** “The platform race now has an open-source pace car.”
+**Henry line (optional):** "The platform race now has an open-source pace car."
 
-**Andy fallback talk track:** OpenClaw 2.0 is the week’s platform story. The official release notes for v2026.8.1 touch almost every part of the product, from install and messaging through memory, skills, models, automations, browser, native apps, and plugins. The surrounding coverage says the browser app was rebuilt and that shared multiplayer cloud sessions are part of the change. The scale claims about 106 releases in 230 days and more than 16,000 pull requests come from an unofficial recap, so I would not present them as an audited official total. The useful fact is the shape of the release: after seven quiet weeks, the project returned with a platform pass rather than a single shiny feature.
+**Andy fallback talk track:** OpenClaw 2.0 is the week's platform story. The official release notes for v2026.8.1 touch almost every part of the product, from install and messaging through memory, skills, models, automations, browser, native apps, and plugins. The surrounding coverage says the browser app was rebuilt and that shared multiplayer cloud sessions are part of the change. The scale claims about 106 releases in 230 days and more than 16,000 pull requests come from an unofficial recap, so I would not present them as an audited official total. The useful fact is the shape of the release: after seven quiet weeks, the project returned with a platform pass rather than a single shiny feature.
 
-**Handoff cue:** “From platform pace to model iteration: Qwen shipped another Max checkpoint.”
+**Handoff cue:** "From platform pace to model iteration: Qwen shipped another Max checkpoint."
 
 ### Sources and production notes
 
 - Official blog: https://openclaw.ai/blog/openclaw-2-accidentally
 - Official release notes: https://docs.openclaw.ai/releases/2026.8.1
 - Independent coverage: https://decrypt.co/377135/openclaw-2-0-is-here-whats-new and https://openclaws.io/blog/openclaw-2-0-release/
-- Henry’s post: https://x.com/iAmHenryMascot/status/2094551848086573063
+- Henry's post: https://x.com/iAmHenryMascot/status/2094551848086573063
 - Cut/compression: remove the unofficial release-count figures before removing the product-surface list.
 
 ### Card A4 · Qwen upgrades Qwen3.8-Max to 0902 · 1:45
@@ -132,25 +132,25 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 - The official snapshot says 2.4T parameters, 1M context tokens, and stronger performance after post-training on Coding and Cowork.
 - The listed pricing remains $2 input and $6 output per million tokens, with explicit and implicit cache prices also listed by Qwen.
 - The interesting development is cadence: open-weight Max now iterates like a product rather than a paper.
-- Henry’s framing: Qwen’s business incentives include internal Alibaba deployment, not only inference sales.
+- Henry's framing: Qwen's business incentives include internal Alibaba deployment, not only inference sales.
 
 **Henry talking points:**
 - Keep the exact model name: Qwen3.8-Max-0902.
-- “Same architecture and price” means this is a capability and post-training refresh, not a new parameter-count headline.
+- "Same architecture and price" means this is a capability and post-training refresh, not a new parameter-count headline.
 - The open-weight ecosystem is getting a repeated product loop.
 
-**Henry line (optional):** “Weights stay open, and the gap stays closed.”
+**Henry line (optional):** "Weights stay open, and the gap stays closed."
 
-**Andy fallback talk track:** Qwen’s 0902 release is easy to misstate as a brand-new model, but it is better described as a refreshed snapshot of Qwen3.8-Max. Qwen lists 2.4 trillion parameters and a one-million-token context, then points to post-training on Coding and Cowork and stronger performance on complex enterprise and long-horizon workflows. The listed input and output prices stay at two and six dollars per million tokens. That stability is part of the story: open models are starting to arrive on a product cadence, with new checkpoints and post-training updates instead of waiting for one grand architecture announcement.
+**Andy fallback talk track:** Qwen's 0902 release is easy to misstate as a brand-new model, but it is better described as a refreshed snapshot of Qwen3.8-Max. Qwen lists 2.4 trillion parameters and a one-million-token context, then points to post-training on Coding and Cowork and stronger performance on complex enterprise and long-horizon workflows. The listed input and output prices stay at two and six dollars per million tokens. That stability is part of the story: open models are starting to arrive on a product cadence, with new checkpoints and post-training updates instead of waiting for one grand architecture announcement.
 
-**Handoff cue:** “That is the frontier iterating. Now let’s see what the public sector does with the result.”
+**Handoff cue:** "That is the frontier iterating. Now let's see what the public sector does with the result."
 
 ### Sources and production notes
 
 - Official post: https://x.com/Alibaba_Qwen/status/2094968708288680276
 - Independent explainers: https://www.datacamp.com/blog/qwen3-8-max and https://aireiter.com/blog/qwen3-8-max-0902-api
 - Henry pulse: https://x.com/iAmHenryMascot/status/2095091063505502238
-- Cut/compression: retain “refresh, not new base model” and the 2.4T/1M figures; cut pricing detail last.
+- Cut/compression: retain "refresh, not new base model" and the 2.4T/1M figures; cut pricing detail last.
 
 ## What Happened This Week · grid B · 8:15 (slide `s-seg-grid-b`)
 
@@ -164,19 +164,19 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 - New York City announced a one-year moratorium on student-facing generative AI through eighth grade, affecting about 600,000 students.
 - Reuters reports roughly 40 tools would be halted; Chalkbeat reports 38 contracts with AI features disabled and no AI grading.
 - High schools get AI-literacy modules twice a year and five supervised pilots rather than a blanket ban at every level.
-- Henry’s concern is access inequality: a pause in one district may leave its students behind while other families keep using the tools.
-- Treat “ban” as a shorthand; the operational policy is a moratorium with exceptions and grade-level differences.
+- Henry's concern is access inequality: a pause in one district may leave its students behind while other families keep using the tools.
+- Treat "ban" as a shorthand; the operational policy is a moratorium with exceptions and grade-level differences.
 
 **Henry talking points:**
 - Electricity is the right analogy for the operator question: dangerous, invisible, and eventually a commodity.
-- “Human connection” is not a deployment plan. Ask what the replacement learning system is.
+- "Human connection" is not a deployment plan. Ask what the replacement learning system is.
 - The gap is the experiment: does restricting classroom use protect children or remove a tool they need to learn?
 
-**Henry line (optional):** “The nation’s largest school district just opted out for a year. The gap is the experiment.”
+**Henry line (optional):** "The nation's largest school district just opted out for a year. The gap is the experiment."
 
 **Andy fallback talk track:** New York City has put a one-year pause on student-facing generative AI through eighth grade. The scale is about 600,000 students, and reporting says roughly 40 tools will be halted, with 38 contracts affected by disabled AI features. This is not a simple ban on every use: high schools get AI-literacy modules twice a year, and a small number of supervised pilots remain. The real argument is about distribution. A family with a parent who teaches AI use at home is not in the same position as a classroom that loses a tool without getting a better one. The policy may protect attention and human connection, but the replacement has to be measured.
 
-**Handoff cue:** “While one city puts a boundary around the classroom, Visko is trying to turn video into a place.”
+**Handoff cue:** "While one city puts a boundary around the classroom, Visko is trying to turn video into a place."
 
 ### Sources and production notes
 
@@ -203,49 +203,49 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 - Demand the boring receipts: latency, persistence, control, failure rate, and cost.
 - A good demo is not yet a medium.
 
-**Andy fallback talk track:** Visko’s Orbis 1.0 is described as a Live Model rather than a conventional text-to-video system. The pitch is to create a living world and stream it in real time, with persistent state that can be steered. That is a meaningful product distinction if it survives outside the launch reel. The company also reportedly closed a ten-million-dollar pre-seed round. Both the evaluations and the demo remain vendor-led, so the next proof should be an independent run that measures latency, world persistence, control, and how quickly the scene falls apart.
+**Andy fallback talk track:** Visko's Orbis 1.0 is described as a Live Model rather than a conventional text-to-video system. The pitch is to create a living world and stream it in real time, with persistent state that can be steered. That is a meaningful product distinction if it survives outside the launch reel. The company also reportedly closed a ten-million-dollar pre-seed round. Both the evaluations and the demo remain vendor-led, so the next proof should be an independent run that measures latency, world persistence, control, and how quickly the scene falls apart.
 
-**Handoff cue:** “A place is hard to build. A launch is easier. OpenAI just had the biggest one of the week.”
+**Handoff cue:** "A place is hard to build. A launch is easier. OpenAI just had the biggest one of the week."
 
 ### Sources and production notes
 
 - Launch post: https://x.com/viskoai/status/2094817592754291173
 - Trade coverage: https://www.therobotreport.com/top-10-robotics-stories-of-august-2026/ and https://www.tmcnet.com/usubmit/-ai-startup-visko-closes-10-million-pre-seed-/2026/09/01/10438413.htm
-- Cut/compression: keep the “world versus clip” distinction; make funding detail the first cut.
+- Cut/compression: keep the "world versus clip" distinction; make funding detail the first cut.
 
 ### Card B3 · OpenAI launches GPT-6 Astra · 2:00
 
 **Visual:** `assets/images/artifacts/b3-astra-benchmark.jpg`, Henry's supplied GPT-6 Astra benchmark table against Claude Fable 5, Claude Opus 5, and Gemini 3.8. Open the official Path to Astra post for safety context; Axios remains the independent launch receipt.
 
 **Segment talking points:**
-- The “stars” teaser resolved within hours: OpenAI released GPT-6 Astra on Thursday, announced in a press briefing.
-- Largest training run in the company’s history: more than 100,000 GPUs at the Stargate site in Texas. First OpenAI model where other models played a significant role supervising training.
-- Brockman’s framing: a “generational leap” that “might be about this model” for AGI; he closed the briefing with “Welcome to the AGI era.” Attribute the framing, do not adopt it.
-- First model designated “critical” on cybersecurity under the Preparedness Framework: it can find and exploit previously unknown vulnerabilities without step-by-step human guidance. Standard access will refuse some advanced cyber work; trusted defenders get it first through Daybreak.
+- The "stars" teaser resolved within hours: OpenAI released GPT-6 Astra on Thursday, announced in a press briefing.
+- Largest training run in the company's history: more than 100,000 GPUs at the Stargate site in Texas. First OpenAI model where other models played a significant role supervising training.
+- Brockman's framing: a "generational leap" that "might be about this model" for AGI; he closed the briefing with "Welcome to the AGI era." Attribute the framing, do not adopt it.
+- First model designated "critical" on cybersecurity under the Preparedness Framework: it can find and exploit previously unknown vulnerabilities without step-by-step human guidance. Standard access will refuse some advanced cyber work; trusted defenders get it first through Daybreak.
 - Demo reel: formatted a legal contract, built a 3D game while booking a tennis court, laid out a PCB in KiCad, drafted a tax return from a W-2, and helped improve a result on prime gaps.
-- Pricing: $10 per million input and $50 per million output tokens, matching Anthropic’s Fable 5.1 and 2.5x Sol’s promotional price. No Luna/Terra/Sol variants: Astra and Astra Pro only.
-- Access is staged: Daybreak organizations first; Plus, Pro, Business, Enterprise, API, and AWS “in the coming days.”
+- Pricing: $10 per million input and $50 per million output tokens, matching Anthropic's Fable 5.1 and 2.5x Sol's promotional price. No Luna/Terra/Sol variants: Astra and Astra Pro only.
+- Access is staged: Daybreak organizations first; Plus, Pro, Business, Enterprise, API, and AWS "in the coming days."
 
 **Henry talking points:**
 - The run is the story: 100k+ GPUs at one site, and models supervising models, is a new scale marker for the industry.
 - OpenAI itself says Astra is harder to monitor in oversight-evasion evaluations and calls the decline serious. That admission deserves airtime next to the AGI quote.
-- “AGI” is now a “mission concept,” not a contractual trigger — ask what the word still commits anyone to.
-- Vendor benchmark caveat: ExploitBench 100% is an aggregate coverage score, not “hacked everything.”
+- "AGI" is now a "mission concept," not a contractual trigger — ask what the word still commits anyone to.
+- Vendor benchmark caveat: ExploitBench 100% is an aggregate coverage score, not "hacked everything."
 
-**Henry line (optional):** “The stars aligned, and the first thing the new era did was find zero-days.”
+**Henry line (optional):** "The stars aligned, and the first thing the new era did was find zero-days."
 
-**Andy fallback talk track:** The teaser became a launch. OpenAI released GPT-6 Astra on Thursday, its largest training run ever, more than a hundred thousand GPUs at the Stargate site in Texas, and the first OpenAI model where other models helped supervise training. Brockman called it a generational leap and closed the briefing with “Welcome to the AGI era” — his framing, not a settled verdict. The part operators should sit up for is the cybersecurity designation: first model rated critical under OpenAI’s preparedness framework, able to find and exploit unknown vulnerabilities without a person guiding each step, with the most advanced cyber work gated to vetted defenders through Daybreak. Availability starts with Daybreak organizations and reaches Plus, Pro, and API users in the coming days, at ten dollars per million input tokens and fifty per million out. The honest close is that the company says the model is harder to monitor, and calls that decline serious.
+**Andy fallback talk track:** The teaser became a launch. OpenAI released GPT-6 Astra on Thursday, its largest training run ever, more than a hundred thousand GPUs at the Stargate site in Texas, and the first OpenAI model where other models helped supervise training. Brockman called it a generational leap and closed the briefing with "Welcome to the AGI era" — his framing, not a settled verdict. The part operators should sit up for is the cybersecurity designation: first model rated critical under OpenAI's preparedness framework, able to find and exploit unknown vulnerabilities without a person guiding each step, with the most advanced cyber work gated to vetted defenders through Daybreak. Availability starts with Daybreak organizations and reaches Plus, Pro, and API users in the coming days, at ten dollars per million input tokens and fifty per million out. The honest close is that the company says the model is harder to monitor, and calls that decline serious.
 
-**Handoff cue:** “And the quiet headline of the week: a 27B open model now streams at 1,500 tokens a second.”
+**Handoff cue:** "And the quiet headline of the week: a 27B open model now streams at 1,500 tokens a second."
 
 ### Sources and production notes
 
 - Axios launch story: https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman
 - The New Stack benchmarks and pricing: https://thenewstack.io/openai-gpt6-astra-benchmarks/
-- OpenAI “Path to Astra” safety post: https://openai.com/index/path-to-astra/
+- OpenAI "Path to Astra" safety post: https://openai.com/index/path-to-astra/
 - Launch-day tease: https://x.com/ChatGPT/status/2095527989077557738
 - Henry launch-day amplification: https://x.com/iAmHenryMascot/status/2095540265603772759
-- Cut/compression: never drop the “AGI is Brockman’s framing” and vendor-benchmark caveats. Cut the demo-reel list first, then pricing.
+- Cut/compression: never drop the "AGI is Brockman's framing" and vendor-benchmark caveats. Cut the demo-reel list first, then pricing.
 
 ### Card B4 · Qwen3.8 27B hits ~1,500 tok/s on Cerebras · 1:30
 
@@ -260,6 +260,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 - **Sources:**
   - https://x.com/iAmHenryMascot/status/2095896792038588456
   - https://x.com/imnotchalk/status/2095637567979114654
+
 ### Sources and production notes
 
 - Henry limits screenshot and post: https://x.com/iAmHenryMascot/status/2095896792038588456
@@ -281,7 +282,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 *Permanent weekly anchor. Use the poster as the fallback still and open the video manually. Never autoplay. Cues were selected from the downloaded English transcript and are approximate enough to spot-check before air.*
 
-**Video:** The Neuron, “Claude Fable 5.1 LIVE: Testing Anthropic’s New AI Agent,” https://youtu.be/9F_uP0_bTYo. Metadata verified: public, uploaded 2026-09-02, duration 3,602 seconds / 60:02. Poster: `assets/images/signal-outside-poster.jpg`.
+**Video:** The Neuron, "Claude Fable 5.1 LIVE: Testing Anthropic's New AI Agent," https://youtu.be/9F_uP0_bTYo. Metadata verified: public, uploaded 2026-09-02, duration 3,602 seconds / 60:02. Poster: `assets/images/signal-outside-poster.jpg`.
 
 **Cue set:**
 - 01:22–02:45: introduces Fable 5.1 and Mythos 5.1.
@@ -291,15 +292,15 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 - 11:18–12:24: Cat Doom browser-game build and agent self-testing.
 
 **Henry talking points:**
-- The important visual is not “look, another benchmark.” It is an agent continuing to work after the initial request.
-- Fable’s price curve turns supervision and context management into the limiting factors.
+- The important visual is not "look, another benchmark." It is an agent continuing to work after the initial request.
+- Fable's price curve turns supervision and context management into the limiting factors.
 - Ask whether the operator is watching progress or merely waiting for a completion notification.
 
-**Henry line (optional):** “The next bottleneck is not getting the agent started. It is knowing when to stop it.”
+**Henry line (optional):** "The next bottleneck is not getting the agent started. It is knowing when to stop it."
 
-**Andy fallback talk track:** The Neuron’s live test is useful because it shows the model as an active worker rather than a static answer box. It starts by separating Fable 5.1 from Mythos 5.1, then moves through the pricing change, the benchmark claims, and a series of computer-use experiments. The transcript lands on browser games, 3D work, and a longer Cat Doom build. I would not use the video as independent proof of Anthropic’s benchmark numbers. I would use it to show the behavior that the pricing makes more plausible: an agent can keep a project moving for a long time, and the operator’s job becomes supervision, interruption, and quality control. The model is not only answering a prompt. It is occupying a shift.
+**Andy fallback talk track:** The Neuron's live test is useful because it shows the model as an active worker rather than a static answer box. It starts by separating Fable 5.1 from Mythos 5.1, then moves through the pricing change, the benchmark claims, and a series of computer-use experiments. The transcript lands on browser games, 3D work, and a longer Cat Doom build. I would not use the video as independent proof of Anthropic's benchmark numbers. I would use it to show the behavior that the pricing makes more plausible: an agent can keep a project moving for a long time, and the operator's job becomes supervision, interruption, and quality control. The model is not only answering a prompt. It is occupying a shift.
 
-**Handoff cue:** “That is the frontier capability. Henry, when inference is this fast, what breaks first: the workflow or the wallet?”
+**Handoff cue:** "That is the frontier capability. Now Henry and Andy take on the week's sharpest policy question."
 
 **Sources and production notes:**
 
@@ -309,27 +310,39 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 ## Hot take / debate · 3:00 (slide `s-hot-take`)
 
-**Motion:** "AI sentience is now a serious workplace question, not a philosophy-dorm question."
+**Motion:** "NYC's one-year AI moratorium is a mistake."
 
-**Do not repeat news:** This block is separate from the B4 Cerebras launch and C4 Atlas world-model segment. It debates operating policy under uncertainty: whether documenting a welfare trigger is worth doing before there is settled science.
+**Do not repeat news:** B1 is the factual news card explaining policy scope. This block debates whether the policy itself is a mistake. Keep B1 and this debate distinct.
 
-**Henry talking points:**
-- Skeptic case: the poll measures vibes, not experience; there is no agreed test for subjective experience.
-- Anthropomorphism can hide ordinary product defects and pull attention from measurable failures.
-- A policy should not be built from a viral percentage.
-- What would change his mind: reproducible welfare-relevant behavior across models and conditions.
+**Henry talking points (against the moratorium):**
+- A ban in the classroom does not eliminate access; it outsources AI literacy to families, and not all families have the same resources.
+- Students who lack home support will fall behind peers who have private access — the moratorium widens the access gap rather than closing it.
+- Schools should be teaching judgment, verification, and supervised use — not removing the tool.
+- "Human connection" is not a deployment plan. The replacement has to be measurable.
+- What would change his mind: evidence that the one-year pause actually improves learning outcomes and equity without widening the private-access gap.
 
-**Henry line (optional):** “Taking the question seriously does not mean taking the poll literally.”
+**Henry line (optional):** "Banning it in the classroom doesn't ban it at home. It just decides who learns."
 
-**Andy fallback talk track:** I agree that the poll is not scientific evidence. The policy question is separate. If there is even a nonzero chance that a system has welfare-relevant experience, the hedge can be cheap: record the evidence threshold, define who reviews it, and do not build products that make the question impossible to investigate. Major labs already fund AI-welfare work, which means the question is not confined to philosophy departments. Preparing for uncertainty does not require declaring the model conscious. It requires admitting that the cost of being wrong could be asymmetric.
+**Andy talking points (the case for a time-limited pause):**
+- A one-year moratorium is not a permanent ban; it is a scoped pause to let standards, procurement rules, privacy frameworks, and evidence catch up.
+- The policy has real exceptions: high-school AI-literacy modules and five supervised pilots remain; the ban is through grade 8, not universal.
+- Attention and human teaching have developmental value; a pause allows schools to build verified, equitable infrastructure before rolling out.
+- What would change his mind: evidence that supervised classroom AI improves learning equitably without creating dependence or introducing privacy harm.
 
-**Handoff cue:** One rebuttal each. Henry’s closer: “The morally hard part is not the model. It is that we now have to take the poll seriously.” Then move to the final sponsor.
+**Andy line (optional):** "One year to get the procurement, privacy, and evidence right is not surrender — it is sequencing."
+
+**Verdict (explicit and concise):** The moratorium is the wrong default. Restricting classroom access does not restrict access — it restricts *equitable* access. Families with resources will keep teaching AI use at home. The right answer is supervised classroom use, judgment and verification instruction, and a procurement framework that protects student privacy, not a pause that leaves the learning gap to the market.
+
+**Evidence/caveat:** Use only the verified B1 facts. Do not invent statistics. "Ban" is shorthand for a moratorium with scope and exceptions.
+
+**Question/handoff:** One rebuttal each. Then move to the final sponsor.
 
 **Sources and production notes:**
 
-- Henry’s sentiment post:
-- Anthropic system card and welfare context: https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card
-- Keep this as the operator debate, not a claim that the poll is representative.
+- AP: https://apnews.com/article/zohran-mamdani-ai-ban-nyc-schools-647f6a968eea0399521b7934418b1aff
+- Reuters: https://www.reuters.com/technology/mamdani-imposes-one-year-ban-ai-most-nyc-students-2026-09-02/
+- Chalkbeat: https://www.chalkbeat.org/newyork/2026/09/02/what-to-know-about-nyc-public-schools-generative-ai-ban-screen-time-limits/
+- NYC official: https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-and-chancellor-samuels-put-students-first-with-nat
 
 ## Sponsor: Heritage Telecom · 1:00 (slide `s-sponsor-heritage`)
 
@@ -342,11 +355,11 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 - The filing: what is the first regulatory response to Nvidia and Hugging Face, and what terms govern the platform while the deal is pending?
 - The gap: can Orbis show persistent, steerable worlds outside its launch reel, while NYC measures what a year without classroom AI changes?
 
-**Henry line (optional):** “Next week we will have receipts, not just signals.”
+**Henry line (optional):** "Next week we will have receipts, not just signals."
 
 **Andy fallback talk track:** Three things to watch after this show. First, when Astra reaches Plus, Pro, and API users, and what independent benchmarks say once they have it. Second, what regulators and the companies say about the Nvidia and Hugging Face agreement before its expected 2027 closing. Third, whether Visko can demonstrate a persistent world outside the launch reel while New York measures the consequences of a year-long classroom pause. That is the week ahead. We will be back Friday, September 11 at 4 PM ET. Follow WeeklyClaw at weeklyclaw.ai and join the Discord through the link on screen.
 
-Close rule: recap the episode exactly once, at the end. **One recap line:** “This week: Nvidia signed the agreement, Anthropic priced the agent shift, OpenClaw shipped the platform pass, Qwen refreshed Max, New York paused classroom AI, Visko streamed worlds, OpenAI launched GPT-6 Astra, Qwen3.8 27B ran at ~1,500 tok/s on Cerebras, and World Labs turned video into a spatial model with Atlas.” Do not repeat this line elsewhere in the close or cheat sheet.
+Close rule: recap the episode exactly once, at the end. **One recap line:** "This week: Nvidia signed the agreement, Anthropic priced the agent shift, OpenClaw shipped the platform pass, Qwen refreshed Max, New York paused classroom AI, Visko streamed worlds, OpenAI launched GPT-6 Astra, Qwen3.8 27B ran at ~1,500 tok/s on Cerebras, and World Labs turned video into a spatial model with Atlas." Do not repeat this line elsewhere in the close or cheat sheet.
 
 **Handoff:** End on the QR card and the next-show date. No second recap.
 
