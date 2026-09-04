@@ -1,0 +1,16 @@
+{
+  "episode": 28,
+  "generated_utc": "2026-09-03T16:00:00Z",
+  "note": "The episode uses generated editorial banners as card visuals and a verified YouTube poster as the Signal fallback. Live source links remain clickable on each card.",
+  "captures": [
+    {"id":"A1","path":"assets/images/artifacts/t-nvidia-hf-official.png","source":"https://x.com/ClementDelangue/status/2095482998674112733","type":"GENERATED_EDITORIAL_BANNER","visual_verification":"handshake between green and light-toned arms; no readable text or logos"},
+    {"id":"A2","path":"assets/images/artifacts/t-fable-mythos.png","source":"https://www.anthropic.com/claude-fable-and-mythos-5-1","type":"GENERATED_EDITORIAL_BANNER","visual_verification":"purple orb with two paths and keyhole; no readable text"},
+    {"id":"A3","path":"assets/images/artifacts/t-openclaw2.png","source":"https://openclaw.ai/blog/openclaw-2-accidentally","type":"GENERATED_EDITORIAL_BANNER","visual_verification":"paw-shaped sunrise over digital horizon; no readable text"},
+    {"id":"A4","path":"assets/images/artifacts/t-qwen-max.png","source":"https://x.com/Alibaba_Qwen/status/2094968708288680276","type":"GENERATED_EDITORIAL_BANNER","visual_verification":"open circuit-trace book linked to neural network; no readable text"},
+    {"id":"B1","path":"assets/images/artifacts/t-nyc-schools.png","source":"https://www.reuters.com/technology/mamdani-imposes-one-year-ban-ai-most-nyc-students-2026-09-02/","type":"GENERATED_EDITORIAL_BANNER","visual_verification":"wireframe question mark in school hallway; no readable text"},
+    {"id":"B2","path":"assets/images/artifacts/t-orbis.png","source":"https://x.com/viskoai/status/2094817592754291173","type":"GENERATED_EDITORIAL_BANNER","visual_verification":"glowing orb containing a miniature world and filmstrip; no readable text"},
+    {"id":"B3","path":"assets/images/artifacts/t-gpt6-tease.png","source":"https://x.com/ChatGPT/status/2095527989077557738","type":"GENERATED_EDITORIAL_BANNER","visual_verification":"purple brain linked to open book by golden thread; no readable text"},
+    {"id":"B4","path":"assets/images/artifacts/t-sentience.png","source":"https://x.com/iAmHenryMascot/status/2094468984171114741","type":"GENERATED_EDITORIAL_BANNER","visual_verification":"figures beneath tower with red thermometer; no readable text"},
+    {"id":"SIGNAL","path":"assets/images/signal-outside-poster.jpg","source":"https://youtu.be/9F_uP0_bTYo","type":"VIDEO_CLIP_POSTER","visual_verification":"PIL decode, 1280x720 JPEG; title/duration verified via yt-dlp"}
+  ]
+}

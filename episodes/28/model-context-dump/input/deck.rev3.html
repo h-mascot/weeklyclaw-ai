@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Claw #28 &mdash; September 4, 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+:root{
+  --bg-dark:#ece4d5;--bg-card:#f7f0e4;
+  --claw-red:#2a7e6b;--claw-orange:#286f7d;
+  --claw-gradient:linear-gradient(135deg,#2a7e6b,#286f7d);
+  --text-primary:#28231f;--text-secondary:#5f564e;--text-muted:#74695f;
+  --border-subtle:#b5a996;
+  --accent-blue:#286f7d;--accent-green:#2a7e6b;--accent-purple:#6a5d91;--accent-yellow:#9a6b22;
+  --site-paper:#fff9ee;--site-ink:#24201c;--site-mint:#9de5c9;--site-cyan:#82d2e6;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;height:100%;color-scheme:light;
+  background:repeating-linear-gradient(0deg,rgba(81,69,56,.018) 0,rgba(81,69,56,.018) 1px,transparent 1px,transparent 4px),radial-gradient(circle at 50% -10%,rgba(255,255,255,.72),transparent 34rem),var(--bg-dark);
+  color:var(--text-primary);font-family:var(--display);letter-spacing:.005em;overflow:hidden;}
+.slide-container{width:100%;height:100vh;position:relative;overflow:hidden;}
+.slide{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:52px 68px 64px;opacity:0;pointer-events:none;transition:opacity 0.45s ease;
+  background:linear-gradient(rgba(57,49,42,.065) 1px,transparent 1px),linear-gradient(90deg,rgba(57,49,42,.065) 1px,transparent 1px),radial-gradient(circle at 88% 18%,rgba(114,199,217,.16),transparent 30rem),var(--site-paper);
+  background-size:56px 56px,56px 56px,auto,auto;}
+.slide::before{position:absolute;inset:18px;z-index:1;content:"";pointer-events:none;border:2px solid rgba(54,47,40,.20);border-radius:22px;}
+.slide.active{opacity:1;pointer-events:all;}
+.slide.active .content{animation:rise 0.6s cubic-bezier(.2,.7,.2,1) both;}
+@keyframes rise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.progress-bar{position:fixed;top:0;left:0;height:5px;background:var(--claw-gradient);transition:width 0.4s ease;z-index:100;}
+.slide-counter{position:fixed;bottom:22px;right:32px;font-family:var(--mono);font-size:13px;color:#74695f;z-index:100;}
+.nav-dots{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:100;max-width:60%;flex-wrap:wrap;justify-content:center;}
+.nav-dot{width:8px;height:8px;border-radius:50%;background:#9c9184;border:1px solid #766b60;cursor:pointer;transition:all 0.3s;}
+.nav-dot.active{background:var(--claw-red);width:24px;border-radius:4px;}
+.kb-hint{position:fixed;bottom:22px;left:32px;font-size:11px;color:#74695f;font-family:var(--mono);z-index:100;}
+.kb-hint kbd{color:var(--site-ink);background:#e2d8c9;border:1px solid #a99d8c;border-radius:4px;padding:2px 6px;font-size:10px;}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.025em;}
+h1,h2{text-transform:uppercase;}
+h1{font-size:4rem;line-height:.92;margin-bottom:16px;}
+h2{font-size:2.25rem;line-height:1.02;margin-bottom:12px;}
+h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
+.subtitle{font-size:1.15rem;color:var(--text-secondary);line-height:1.5;max-width:820px;}
+.mono{font-family:var(--mono);}
+.gradient-text{background:var(--claw-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.gradient-line{width:80px;height:5px;background:var(--claw-gradient);border-radius:2px;margin:12px auto;}
+.gradient-line.wide{width:120px;}
+.red{color:#8f403a;}.orange,.blue{color:#225e6a;}.green{color:#216655;}.purple{color:#5d527b;}.yellow{color:#7b5a1c;}.muted{color:var(--text-secondary);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:22px;width:100%;max-width:1160px;}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;width:100%;max-width:1160px;}
+.text-center{text-align:center;}
+.mt-1{margin-top:8px;}.mt-2{margin-top:14px;}.mt-3{margin-top:20px;}
+.content{position:relative;z-index:2;width:100%;max-width:1184px;display:flex;flex-direction:column;align-items:center;}
+.card{background:var(--bg-card);border:2px solid var(--border-subtle);border-radius:18px;padding:20px 22px;text-align:left;position:relative;overflow:hidden;box-shadow:inset 0 0 0 6px var(--site-paper),0 10px 24px rgba(79,64,49,.06);}
+.card h3{font-size:1.15rem;margin-bottom:6px;}
+.card p,.card li{font-size:0.95rem;color:var(--text-secondary);line-height:1.45;}
+.card-glow{border-color:var(--claw-red);box-shadow:inset 0 0 0 6px var(--site-paper),0 0 28px rgba(42,126,107,.10);}
+.tag{display:inline-block;padding:4px 12px;border-radius:3px;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;font-family:var(--mono);}
+.tag-red{color:#8f403a;background:#f1d7d2;}.tag-orange{color:#225e6a;background:#dcebed;}.tag-green{color:#216655;background:#ddefe6;}.tag-blue{color:#225e6a;background:#dcebed;}.tag-yellow{color:#7b5a1c;background:#eee1bd;}.tag-purple{color:#5d527b;background:#e4deec;}
+.pill{display:inline-flex;align-items:center;gap:7px;color:var(--text-secondary);border:1px solid var(--border-subtle);border-radius:4px;background:rgba(255,249,238,.72);padding:5px 12px;font-size:0.74rem;font-family:var(--mono);font-weight:600;}
+.pill.red{color:#8f403a;border-color:#bd8b84;background:#f7e6df;}
+.pill.blue{color:#225e6a;border-color:#82b8c2;background:#e0f0f0;}
+.pill.green{color:#216655;border-color:#8fc8b5;background:#e3f2e9;}
+.pill.yellow{color:#7b5a1c;border-color:#cbb67e;background:#f4ead2;}
+.quote-block{color:var(--site-ink);border-left:7px solid var(--claw-red);border-radius:0 12px 12px 0;background:rgba(42,126,107,.08);padding:14px 22px;margin:12px 0;font-family:var(--display);font-size:1.18rem;font-weight:600;line-height:1.45;max-width:1040px;}
+.quote-block.orange{border-left-color:var(--claw-orange);background:rgba(40,111,125,.08);}
+.alert-card{background:#f7e6df;border:2px solid #a6645e;border-radius:18px;padding:18px 26px;max-width:1040px;width:100%;box-shadow:inset 0 0 0 6px var(--site-paper),0 10px 24px rgba(79,64,49,.06);}
+.alert-card h3{color:#8f403a;}
+.warn-card{background:#f4ead2;border:2px solid #b89e64;border-radius:12px;padding:14px 22px;max-width:1040px;width:100%;}
+.part-label{font-family:var(--mono);font-size:0.74rem;color:#24695e;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
+.story-num{font-family:var(--mono);font-size:0.78rem;letter-spacing:0.14em;color:#24695e;font-weight:700;text-transform:uppercase;margin-bottom:12px;}
+.hook{display:flex;align-items:center;gap:16px;background:var(--bg-card);border:2px solid var(--border-subtle);border-radius:14px;padding:13px 20px;width:100%;max-width:920px;margin-bottom:10px;box-shadow:inset 0 0 0 6px var(--site-paper),0 10px 24px rgba(79,64,49,.06);}
+.hook-num{font-family:var(--mono);font-size:1.3rem;font-weight:800;flex-shrink:0;width:30px;}
+.hook-text{font-size:1.02rem;font-weight:600;line-height:1.35;}
+.bullet-list{list-style:none;padding:0;margin:0;}
+.bullet-list li{position:relative;padding-left:20px;margin-bottom:7px;font-size:0.96rem;color:var(--text-secondary);line-height:1.45;}
+.bullet-list li::before{content:'';position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:1px;background:var(--claw-gradient);}
+.bullet-list li strong{color:var(--text-primary);font-weight:600;}
+.slide-brand{position:absolute;top:24px;left:36px;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;display:flex;align-items:center;gap:9px;color:#74695f;z-index:5;}
+.slide-brand svg{display:block;width:24px;height:24px;filter:drop-shadow(0 2px 4px rgba(42,126,107,.18));}
+.slide-tag{position:absolute;top:24px;right:36px;font-size:0.7rem;font-family:var(--mono);color:#74695f;z-index:5;letter-spacing:0.08em;}
+.arc-wrap{display:flex;width:100%;max-width:1080px;justify-content:space-between;align-items:flex-start;gap:6px;flex-wrap:wrap;}
+.arc-step{flex:1;min-width:130px;text-align:center;position:relative;}
+.arc-num{width:38px;height:38px;border-radius:50%;color:var(--site-ink);background:var(--bg-card);border:2px solid var(--border-subtle);display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-family:var(--mono);font-weight:700;font-size:0.9rem;}
+.arc-step.now .arc-num{color:var(--site-paper);background:var(--claw-gradient);border-color:transparent;box-shadow:0 0 0 5px rgba(42,126,107,.13);}
+.arc-label{font-size:0.84rem;color:var(--text-secondary);font-weight:600;line-height:1.3;}
+.arc-step.now .arc-label{color:var(--site-ink);}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:28px;width:100%;max-width:1120px;align-items:center;}
+.split.narrow-right{grid-template-columns:1.15fr 0.85fr;}
+.shot-frame{border-radius:14px;overflow:hidden;border:2px solid var(--border-subtle);background:var(--site-ink);box-shadow:inset 0 0 0 6px var(--site-paper),0 10px 24px rgba(79,64,49,.08);}
+.shot-bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#ded4c5;border-bottom:1px solid #a99d8c;}
+.shot-dot{width:9px;height:9px;border-radius:50%;}
+.shot-frame img,.shot-frame video{display:block;width:100%;height:auto;}
+.shot-cap{margin-top:10px;font-family:var(--mono);font-size:0.72rem;color:#74695f;letter-spacing:0.04em;text-align:center;}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;width:100%;max-width:1140px;margin-top:18px;align-items:stretch;}
+.demo-card{display:flex;flex-direction:column;min-width:0;padding:14px;background:rgba(255,249,238,.92);border:2px solid var(--border-subtle);border-radius:16px;box-shadow:0 14px 30px rgba(79,64,49,.10);text-align:left;}
+.demo-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:11px;}
+.demo-eyebrow{font-family:var(--mono);font-size:.67rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#225e6a;}
+.demo-title{font-size:1.15rem;line-height:1.15;margin-top:3px;color:var(--text-primary);}
+.demo-badge{flex-shrink:0;font-family:var(--mono);font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:#2a7e6b;border-radius:999px;padding:6px 9px;}
+.demo-frame{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid #a99d8c;border-radius:11px;background:#111;}
+.demo-frame video,.demo-frame img{display:block;width:100%;height:100%;object-fit:cover;}
+.demo-frame.diagram{background:#fff;}
+.demo-frame.diagram img{object-fit:contain;}
+.demo-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px;}
+.demo-meta span{font-family:var(--mono);font-size:.62rem;color:#4f463f;background:#e9dfd0;border:1px solid #cfc4b4;border-radius:999px;padding:5px 8px;}
+.demo-action{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:11px;font-family:var(--mono);font-size:.64rem;color:#74695f;}
+.demo-action a{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:7px 11px;border-radius:7px;background:#225e6a;color:#fff;text-decoration:none;font-weight:700;white-space:nowrap;}
+.demo-action a:hover{background:#184a53;}
+.media-model-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;width:100%;max-width:1160px;margin-top:14px;align-items:stretch;}
+.media-model-grid .card{padding:15px;}
+.media-model-grid h3{font-size:1.08rem;line-height:1.15;}
+.media-model-grid .bullet-list{font-size:.78rem;line-height:1.35;}
+.demo-grid.three{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:1160px;margin-top:12px;}
+.demo-grid.three .demo-card{padding:11px;}
+.demo-grid.three .demo-card-head{gap:8px;margin-bottom:8px;}
+.demo-grid.three .demo-title{font-size:.95rem;}
+.demo-grid.three .demo-badge{font-size:.54rem;padding:5px 7px;}
+.demo-grid.three .demo-meta{gap:5px;margin-top:8px;}
+.demo-grid.three .demo-meta span{font-size:.54rem;padding:4px 6px;}
+.demo-grid.three .demo-action{font-size:.56rem;padding-top:8px;}
+.demo-grid.three .demo-action a{min-height:28px;padding:5px 8px;}
+.channel-chip{display:inline-flex;align-items:center;gap:8px;color:var(--text-secondary);border:1px solid var(--border-subtle);border-radius:4px;background:rgba(255,249,238,.72);padding:9px 16px;font-weight:600;font-size:0.92rem;margin:5px;font-family:var(--mono);}
+.brand-mark{width:34px;height:34px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--mono);font-weight:700;font-size:0.85rem;border:1px solid rgba(36,32,28,.18);}
+.brand-mark.sm{width:22px;height:22px;border-radius:6px;font-size:0.62rem;}
+.bm-herald{background:linear-gradient(135deg,#1a2b4a,#0c1526);color:#7dd3fc;}
+.bm-heritage{background:linear-gradient(135deg,#1c3c3c,#0f2727);color:#f4d58d;}
+.logo-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;}
+.sponsor-logo{display:block;object-fit:contain;flex-shrink:0;}
+.sponsor-logo-chip{width:28px;height:28px;}
+.sponsor-logo-chip.herald{border-radius:7px;}
+.sponsor-logo-chip.heritage{border-radius:50%;background:#fff;}
+.sponsor-lockup{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.88);border:1px solid var(--border-subtle);box-shadow:0 12px 34px rgba(36,32,28,.08);}
+.sponsor-lockup.herald{gap:18px;padding:16px 28px;border-radius:14px;}
+.sponsor-lockup.herald img{width:72px;height:72px;border-radius:16px;}
+.sponsor-lockup.herald span{color:#11131d;font-size:2rem;font-weight:850;letter-spacing:-.03em;}
+.sponsor-lockup.heritage{width:min(660px,80vw);padding:14px 24px;border-radius:14px;}
+.sponsor-lockup.heritage img{width:100%;max-height:150px;}
+.social-cta{display:flex;align-items:center;justify-content:center;gap:26px;width:100%;max-width:1040px;}
+.social-links{text-align:center;min-width:0;}
+.discord-qr{display:grid;grid-template-columns:112px auto;align-items:center;gap:14px;padding:10px 16px 10px 10px;border:2px solid var(--border-subtle);border-radius:14px;background:#fffdf8;box-shadow:0 12px 30px rgba(79,64,49,.10);color:var(--text-primary);text-decoration:none;text-align:left;flex-shrink:0;}
+.discord-qr img{display:block;width:112px;height:112px;image-rendering:pixelated;}
+.discord-qr strong{display:block;font-size:1.12rem;color:#5865f2;}
+.discord-qr small{display:block;margin-top:5px;font-family:var(--mono);font-size:.68rem;line-height:1.35;color:var(--text-secondary);}
+.glow-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.10;pointer-events:none;z-index:0;}
+.orb-red,.orb-green{background:#2a7e6b;}.orb-orange,.orb-blue{background:#286f7d;}.orb-purple{background:#6a5d91;}
+.claw-bg{position:absolute;width:520px;opacity:.035;z-index:0;pointer-events:none;}
+table.cmp{width:100%;max-width:1120px;border-collapse:collapse;font-size:0.86rem;background:var(--bg-card);border:2px solid var(--border-subtle);border-radius:12px;overflow:hidden;}
+table.cmp th{font-family:var(--mono);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--site-ink);background:#e2d8c9;padding:8px 10px;text-align:left;border-bottom:2px solid var(--border-subtle);}
+table.cmp td{padding:8px 10px;border-bottom:1px solid #cfc4b4;color:var(--text-secondary);vertical-align:top;line-height:1.35;}
+table.cmp tr:last-child td{border-bottom:none;}
+table.cmp td.k{font-family:var(--mono);font-size:0.72rem;color:var(--site-ink);font-weight:600;white-space:nowrap;}
+table.cmp td strong{color:var(--text-primary);}
+table.cmp .unk{color:#a99d8c;font-style:italic;}
+.src-links{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;margin-top:14px;max-width:1100px;}
+.src-links a{font-family:var(--mono);font-size:0.66rem;color:#225e6a;text-decoration:none;border-bottom:1px dashed #82b8c2;word-break:break-all;}
+.src-links a:hover{color:var(--site-ink);border-bottom-style:solid;}
+.src-note{font-family:var(--mono);font-size:0.64rem;color:#74695f;margin-top:6px;}
+.event-row{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:baseline;padding:9px 0;border-bottom:1px solid #cfc4b4;text-align:left;width:100%;max-width:1020px;}
+.event-row:last-child{border-bottom:none;}
+.event-date{font-family:var(--mono);font-size:0.78rem;font-weight:700;color:#225e6a;}
+.ladder{width:100%;max-width:980px;display:flex;flex-direction:column;gap:10px;}
+.ladder-row{display:grid;grid-template-columns:240px 1fr 130px;align-items:center;gap:12px;}
+.ladder-name{font-size:0.88rem;font-weight:600;color:var(--text-primary);}
+.ladder-track{height:22px;background:#ded4c5;border:1px solid #ad9f8e;border-radius:6px;overflow:hidden;position:relative;}
+.ladder-fill{height:100%;border-radius:6px;}
+.ladder-val{font-family:var(--mono);font-size:0.8rem;font-weight:700;text-align:right;color:var(--site-ink);}
+.stamp{display:inline-block;font-family:var(--mono);font-weight:700;font-size:0.9rem;color:#8f403a;border:3px solid #a6645e;border-radius:8px;padding:6px 16px;transform:rotate(-3deg);background:#f7e6df;letter-spacing:0.1em;text-transform:uppercase;}
+@media(max-width:900px){.slide{padding:44px 40px 58px;}h1{font-size:3rem;}h2{font-size:2rem;}.two-col,.three-col,.split{grid-template-columns:1fr;}}
+</style>
+
+<style>
+#s-seg-grid-a .content,#s-seg-grid-b .content{height:100%;max-height:100%;}
+#s-seg-grid-a .content > div:first-child,#s-seg-grid-b .content > div:first-child{flex:0 0 auto;}
+.story-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:18px;flex:1;min-height:0;margin-top:16px;overflow:hidden;}
+.story-card{display:flex;flex-direction:column;background:rgba(255,255,255,.03);border:1.5px solid var(--border-subtle);border-radius:16px;overflow:hidden;min-height:0;transition:border-color .2s;}
+.story-card:hover{border-color:var(--accent);}
+.story-card .thumb{flex:1 1 0;min-height:0;overflow:hidden;position:relative;background:#0d1117;}
+.story-card a.thumb{position:relative;}
+.story-card .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.story-card .thumb .glyph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3.2rem;font-weight:800;}
+.story-card .meta{padding:12px 16px 14px;display:flex;flex-direction:column;gap:4px;min-height:0;}
+.story-card .meta h3{font-size:1.06rem;line-height:1.25;margin:0;color:var(--text);}
+.story-card .meta p{font-size:.82rem;line-height:1.35;margin:0;color:var(--muted);}
+.story-card .meta a{font-family:var(--mono);font-size:.72rem;color:var(--accent);text-decoration:none;margin-top:2px;}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="weeklyclaw-logo" viewBox="0 0 64 64">
+      <rect x="2" y="2" width="60" height="60" rx="12" fill="#f2eadb" stroke="#2f2923" stroke-width="3"></rect>
+      <path d="M12 19 16 9M21 19 25 9M30 19 34 9" fill="none" stroke="#2d8472" stroke-width="4" stroke-linecap="round"></path>
+      <path d="m13 27 8 25 11-18 10 18 9-25" fill="none" stroke="#211c18" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="slide-counter"><span id="slideNum">1</span> / <span id="slideTotal">11</span></div>
+<div class="nav-dots" id="navDots"></div>
+<div class="kb-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> navigate &middot; scroll / swipe &middot; <kbd>F</kbd> fullscreen</div>
+<div class="slide-container">
+
+<div class="slide active" id="s-title">
+  <svg class="claw-bg" style="top:2%;right:-4%;"><use href="#weeklyclaw-logo"/></svg>
+  <div class="glow-orb orb-red" style="width:520px;height:520px;top:-160px;left:-140px;"></div>
+  <div class="glow-orb orb-orange" style="width:420px;height:420px;bottom:-140px;right:-100px;"></div>
+  <div class="content">
+    <svg aria-label="Weekly Claw logo" style="width:92px;height:92px;margin-bottom:14px;filter:drop-shadow(0 12px 24px rgba(42,126,107,.22));"><use href="#weeklyclaw-logo"/></svg>
+    <div class="part-label">Episode 28 &middot; Friday, September 4, 2026 &middot; 4:00 PM ET</div>
+    <h1 style="font-size:4.7rem;text-align:center;margin-bottom:6px;"><span class="gradient-text">Weekly Claw</span></h1>
+    <div class="gradient-line wide"></div>
+    <p class="subtitle text-center mt-2" style="max-width:920px;">
+      The agreement landed. The models answered.<br/>Eight cards, two grids: Nvidia made its Hugging Face acquisition agreement official; Anthropic shipped two safeguard tiers; OpenClaw returned with 2.0; Qwen refreshed Max; New York paused classroom AI; Visko streamed living worlds; OpenAI launched GPT-6 Astra; and a viral poll turned sentience into an operator question.
+    </p>
+    <div class="mt-3" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+      <span class="pill blue">Hosts: @AndyML &middot; @HiM</span>
+      <span class="pill green">~36 min &middot; eight cards &middot; faster cuts &middot; built to be clipped</span>
+    </div>
+    <div class="mt-3 logo-row">
+      <span class="pill">Sponsored by</span>
+      <span class="channel-chip"><img class="sponsor-logo sponsor-logo-chip herald" src="assets/sponsors/herald-labs-icon.svg" alt="Herald Labs logo"> Herald Labs</span>
+      <span class="channel-chip"><img class="sponsor-logo sponsor-logo-chip heritage" src="assets/sponsors/heritage-telecom-mark-256.png" alt="Heritage Telecom logo"> Heritage Telecom</span>
+    </div>
+    <div class="mt-3 mono muted" style="font-size:0.8rem;letter-spacing:0.16em;text-transform:uppercase;">&ldquo;The agreement landed. The models answered.&rdquo;</div>
+  </div>
+</div>
+
+<div class="slide" id="s-cold-open">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #28</div><div class="slide-tag">01 / COLD OPEN</div>
+  <div class="glow-orb orb-red" style="width:460px;height:460px;top:-150px;right:-120px;"></div>
+  <div class="content">
+    <div class="part-label">Cold open &middot; the frame</div>
+    <h2 class="text-center">The agreement landed. <span class="gradient-text">The models answered.</span></h2>
+    <div class="gradient-line"></div>
+    <p class="subtitle text-center mt-1" style="max-width:900px;">A chip company agreed to buy the open-weights home, two model tiers arrived with different guardrails, and an open-source agent platform came back from seven quiet weeks. Then schools pushed back, a video company tried to make worlds, the internet started arguing about whether the machines feel anything, and Google, Meta, and fal all shipped while we were watching Astra.</p>
+    <div class="mt-3 arc-wrap">
+      <div class="arc-step now"><div class="arc-num">1</div><div class="arc-label">The deal</div></div>
+      <div class="arc-step"><div class="arc-num">2</div><div class="arc-label">Model tiers</div></div>
+      <div class="arc-step"><div class="arc-num">3</div><div class="arc-label">Platform pace</div></div>
+      <div class="arc-step"><div class="arc-num">4</div><div class="arc-label">Public pushback</div></div>
+      <div class="arc-step"><div class="arc-num">5</div><div class="arc-label">The mind question</div></div>
+    </div>
+    <div class="mt-3" style="width:100%;display:flex;flex-direction:column;align-items:center;">
+      <div class="hook"><span class="hook-num gradient-text">&#129309;</span><span class="hook-text">Nvidia signed the <span class="orange">Hugging Face acquisition agreement</span>; the open-weights commons may soon have a landlord.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#9889;</span><span class="hook-text">Anthropic shipped <span class="orange">Fable and Mythos 5.1</span>; long agent runs got cheaper.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#127793;</span><span class="hook-text">OpenClaw came back as <span class="orange">2.0</span>; the operating layer is moving fast.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="s-sponsor-herald">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #28</div><div class="slide-tag">SPONSOR</div>
+  <div class="glow-orb orb-blue" style="width:380px;height:380px;bottom:-100px;left:-80px;"></div>
+  <div class="content">
+    <div class="part-label">Brought to you by</div>
+    <div class="sponsor-lockup herald">
+      <img class="sponsor-logo" src="assets/sponsors/herald-labs-icon.svg" alt="Herald Labs logo">
+      <span>Herald Labs</span>
+    </div>
+    <p class="subtitle text-center mt-2" style="max-width:820px;">An applied AI product lab where humans and agents build together. Entity is mission control for agent teams. Hacker houses worldwide.</p>
+    <div class="quote-block mt-3 orange">Build with humans. Ship with agents.</div>
+    <div class="mt-2 pill blue">labs.theherald.co</div>
+  </div>
+</div>
+
+<div class="slide" id="s-seg-grid-a">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #28</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
+  <div class="glow-orb orb-green" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
+  <div class="content">
+    <div>
+      <div class="part-label">What happened this week &middot; part 1</div>
+      <h2>The agreement landed. <span class="gradient-text">The frontier answered.</span></h2>
+      <div class="gradient-line"></div>
+      <p class="subtitle mt-1" style="max-width:1000px;">Four launches and confirmations moved the stack from the commons to the agent shift. Each card links to the primary receipt.</p>
+    </div>
+    <div class="story-grid cols-2">
+      <div class="story-card">
+        <a class="thumb" href="https://www.theregister.com/ai-and-ml/2026/09/03/nvidia-buys-hugging-face-for-129b-promises-not-to-squeeze-too-hard/5294208" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-nvidia-hf-official.png" alt="Editorial handshake representing Nvidia and Hugging Face deal"></a>
+        <div class="meta"><h3>Nvidia signs the Hugging Face agreement.</h3><p>Definitive agreement signed; about $13B, expected to close in H1 2027 pending approvals.</p><a href="https://www.theregister.com/ai-and-ml/2026/09/03/nvidia-buys-hugging-face-for-129b-promises-not-to-squeeze-too-hard/5294208" target="_blank" rel="noopener">theregister.com</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-fable-mythos.png" alt="Editorial glowing orb with two paths representing Claude Fable and Mythos 5.1"></a>
+        <div class="meta"><h3>Anthropic launches Fable 5.1 and Mythos 5.1.</h3><p>One model, two safeguard tiers; cache reads are 75% cheaper.</p><a href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener">anthropic.com</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://openclaw.ai/blog/openclaw-2-accidentally" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-openclaw2.png" alt="Editorial sunrise paw representing OpenClaw 2.0"></a>
+        <div class="meta"><h3>OpenClaw ships version 2.0.</h3><p>Seven quiet weeks, then v2026.8.1 touches the whole platform.</p><a href="https://openclaw.ai/blog/openclaw-2-accidentally" target="_blank" rel="noopener">openclaw.ai</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://x.com/Alibaba_Qwen/status/2094968708288680276" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-qwen-max.png" alt="Editorial open book made of circuit traces representing Qwen3.8-Max-0902"></a>
+        <div class="meta"><h3>Qwen upgrades Qwen3.8-Max to 0902.</h3><p>2.4T parameters, 1M context, same price; post-trained for Coding and Cowork.</p><a href="https://x.com/Alibaba_Qwen/status/2094968708288680276" target="_blank" rel="noopener">@Alibaba_Qwen</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="s-seg-grid-b">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #28</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
+  <div class="glow-orb orb-green" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
+  <div class="content">
+    <div>
+      <div class="part-label">What happened this week &middot; part 2</div>
+      <h2>Then the world <span class="gradient-text">pushed back.</span></h2>
+      <div class="gradient-line"></div>
+      <p class="subtitle mt-1" style="max-width:1000px;">Schools set a boundary, video became a place, and the stars aligned into a launch.</p>
+    </div>
+    <div class="story-grid cols-2">
+      <div class="story-card">
+        <a class="thumb" href="https://www.reuters.com/technology/mamdani-imposes-one-year-ban-ai-most-nyc-students-2026-09-02/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-nyc-schools.png" alt="Editorial question mark in a school hallway representing New York City student AI moratorium"></a>
+        <div class="meta"><h3>New York City pauses student-facing AI.</h3><p>One-year moratorium through eighth grade; about 600,000 students are affected.</p><a href="https://www.reuters.com/technology/mamdani-imposes-one-year-ban-ai-most-nyc-students-2026-09-02/" target="_blank" rel="noopener">reuters.com</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://www.therobotreport.com/top-10-robotics-stories-of-august-2026/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-orbis.png" alt="Editorial living world inside a glowing orb representing Visko Orbis 1.0"></a>
+        <div class="meta"><h3>Visko launches Orbis 1.0.</h3><p>A Live Model for interactive worlds, with a $10M pre-seed round reported.</p><a href="https://www.therobotreport.com/top-10-robotics-stories-of-august-2026/" target="_blank" rel="noopener">therobotreport.com</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-gpt6-astra.png" alt="Editorial starfield igniting into one bright star above a GPU rack representing the GPT-6 Astra launch"></a>
+        <div class="meta"><h3>OpenAI launches GPT-6 Astra.</h3><p>Largest run yet on 100k+ GPUs; Brockman: &ldquo;Welcome to the AGI era.&rdquo;</p><a href="https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman" target="_blank" rel="noopener">axios.com</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://x.com/iAmHenryMascot/status/2094468984171114741" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-sentience.png" alt="Editorial thermometer and figures representing a viral AI sentience poll"></a>
+        <div class="meta"><h3>Henry sees 20% say AI is sentient.</h3><p>Viral poll graphic, provenance unconfirmed; sentiment is not a scientific result.</p><a href="https://x.com/iAmHenryMascot/status/2094468984171114741" target="_blank" rel="noopener">Henry&rsquo;s post</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="slide" id="s-seg-grid-c">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #28</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
+  <div class="glow-orb orb-blue" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
+  <div class="content">
+    <div>
+      <div class="part-label">What happened this week &middot; part 3 &middot; the ones we nearly missed</div>
+      <h2>The launch pedal <span class="gradient-text">stayed down.</span></h2>
+      <div class="gradient-line"></div>
+      <p class="subtitle mt-1" style="max-width:1000px;">Three more shipped while we were watching Astra: Google&rsquo;s third Flash in six weeks, Meta&rsquo;s agent workhorse, and the fastest frontier video model. Each card links to the primary receipt.</p>
+    </div>
+    <div class="story-grid cols-2">
+      <div class="story-card">
+        <a class="thumb" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-gemini38.png" alt="Editorial lightning bolts racing across a circuit field representing Gemini 3.8 Flash"></a>
+        <div class="meta"><h3>Google ships Gemini 3.8 Flash + Flash Cyber.</h3><p>Third Flash in six weeks; same price as 3.7. Flash Cyber does vulnerability detection for trusted defenders.</p><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/" target="_blank" rel="noopener">blog.google</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://research.meta.ai/blog/introducing-muse-spark-1-3" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-musespark.png" alt="Editorial spark orbiting a neural lattice representing Muse Spark 1.3"></a>
+        <div class="meta"><h3>Meta releases Muse Spark 1.3.</h3><p>Agentic and coding gains; about 20% fewer tool calls and 25% fewer tokens than 1.2 in Meta comparisons.</p><a href="https://research.meta.ai/blog/introducing-muse-spark-1-3" target="_blank" rel="noopener">research.meta.ai</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://www.prnewswire.com/news-releases/fal-launches-h3-max-a-new-post-trained-video-model-with-frontier-quality-and-faster-than-real-time-generation-302866462.html" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-h3max.png" alt="Editorial film strip turning into a stream of light representing fal H3 Max"></a>
+        <div class="meta"><h3>fal launches H3 Max.</h3><p>Post-trained MiniMax H3; #1 image-to-video on Design Arena; five-second clip in about three seconds.</p><a href="https://www.prnewswire.com/news-releases/fal-launches-h3-max-a-new-post-trained-video-model-with-frontier-quality-and-faster-than-real-time-generation-302866462.html" target="_blank" rel="noopener">prnewswire.com</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://artificialanalysis.ai/models/releases/muse-spark-1-3" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/t-musespark.png" alt="Editorial abstract benchmark dial representing independent release coverage"></a>
+        <div class="meta"><h3>The receipts are independent too.</h3><p>Artificial Analysis and Design Arena leaderboards back the claims above; rankings can move.</p><a href="https://artificialanalysis.ai/models/releases/muse-spark-1-3" target="_blank" rel="noopener">artificialanalysis.ai</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="s-signal-outside">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #28</div><div class="slide-tag">03 / SIGNAL FROM OUTSIDE &middot; 6 MIN</div>
+  <div class="glow-orb orb-blue" style="width:440px;height:440px;top:-130px;right:-120px;"></div>
+  <div class="content">
+    <div class="part-label">Signal From Outside &middot; weekly video review &middot; permanent anchor &middot; 6 min</div>
+    <h2 class="text-center">Fable is a <span class="gradient-text">supervision problem.</span></h2>
+    <div class="gradient-line"></div>
+    <div class="mt-2 two-col">
+      <div class="card card-glow">
+        <span class="tag tag-blue">THIS WEEK&rsquo;S VIDEO &middot; THE NEURON</span>
+        <h3 class="mt-2">&ldquo;Claude Fable 5.1 LIVE: Testing Anthropic&rsquo;s New AI Agent&rdquo;</h3>
+        <p>60:02 &middot; a live test of the new model. Start around 01:22 for the model split, 03:17 for the cache-read price, 06:55 for benchmarks, 08:31 for computer use, and 11:18 for Cat Doom. The useful story is not another score; it is an agent that keeps working after the prompt.</p>
+        <a href="https://youtu.be/9F_uP0_bTYo" target="_blank" rel="noopener" style="margin-top:12px;display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:2px solid var(--accent);border-radius:999px;font-family:var(--mono);font-size:.95rem;color:var(--accent);text-decoration:none;background:rgba(255,255,255,.03);">&#9654; PLAY &middot; youtu.be/9F_uP0_bTYo</a>
+      </div>
+      <div class="card">
+        <a href="https://youtu.be/9F_uP0_bTYo" target="_blank" rel="noopener"><img src="assets/images/signal-outside-poster.jpg" alt="The Neuron video thumbnail for Claude Fable 5.1 live test" style="width:100%;border-radius:10px;border:2px solid var(--border-subtle);"></a>
+        <p class="src-note mt-2">Manual start/end cues only. No autoplay. Poster is a fallback still.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="s-hot-take">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #28</div><div class="slide-tag">04 / HOT TAKE &middot; 3 MIN</div>
+  <div class="glow-orb orb-red" style="width:480px;height:480px;top:-140px;left:-120px;"></div>
+  <div class="content">
+    <div class="part-label">Hot take &middot; the fight &middot; two sides, one verdict</div>
+    <h2 class="text-center">AI sentience is a <span class="gradient-text">workplace question now.</span></h2>
+    <div class="gradient-line"></div>
+    <p class="subtitle text-center mt-1" style="max-width:900px;">The sentience card is an unverified poll. This debate is different: what should operators do when the evidence is uncertain and the cost of being wrong may be large?</p>
+    <div class="mt-3 two-col">
+      <div class="card">
+        <span class="tag tag-red">HENRY &middot; SKEPTIC</span>
+        <h3 class="mt-1">It is autocomplete with a PR problem.</h3>
+        <p class="muted">A viral percentage measures vibes, not experience. Treating it as evidence invites safety theater and pulls attention from failures we can measure.</p>
+        <ul class="bullet-list mt-2">
+          <li><strong>The evidence:</strong> no agreed test for subjective experience</li>
+          <li><strong>The risk:</strong> anthropomorphism hides ordinary product defects</li>
+          <li><strong>Mind-changer:</strong> reproducible welfare-relevant behavior across models</li>
+        </ul>
+      </div>
+      <div class="card card-glow">
+        <span class="tag tag-blue">ANDY &middot; PREPARE ANYWAY</span>
+        <h3 class="mt-1">The hedge is cheap.</h3>
+        <p class="muted">You do not need certainty to write a policy. If the expected moral weight is nonzero, treating the question seriously costs less than discovering too late that it mattered.</p>
+        <ul class="bullet-list mt-2">
+          <li><strong>The precedent:</strong> major labs already fund AI-welfare work</li>
+          <li><strong>The policy:</strong> document what would trigger a review</li>
+          <li><strong>Mind-changer:</strong> strong evidence that the concern is operationally empty</li>
+        </ul>
+      </div>
+    </div>
+    <div class="quote-block mt-3">The morally hard part is not the model. It is that we now have to take the poll seriously.</div>
+    <div class="src-links">
+      <a href="https://x.com/iAmHenryMascot/status/2094468984171114741" target="_blank" rel="noopener">Henry&rsquo;s sentience post</a>
+      <a href="https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card" target="_blank" rel="noopener">Anthropic system card</a>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="s-sponsor-heritage">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #28</div><div class="slide-tag">SPONSOR</div>
+  <div class="glow-orb orb-green" style="width:420px;height:420px;bottom:-120px;right:-100px;"></div>
+  <div class="content">
+    <div class="part-label">Also brought to you by</div>
+    <div class="sponsor-lockup heritage"><img class="sponsor-logo" src="assets/sponsors/heritage-telecom-logo-horizontal-1200.jpg" alt="Heritage Telecom logo"></div>
+    <p class="subtitle text-center mt-2" style="max-width:820px;">UCaaS and VoIP phone service for businesses that just need their calls to work. Independent, boring reliability, zero telemetry.</p>
+    <div class="quote-block mt-3">Independent. Reliable. Quietly essential.</div>
+    <div class="mt-2 pill green">heritagetel.com</div>
+  </div>
+</div>
+
+<div class="slide" id="s-watch">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #28</div><div class="slide-tag">05 / CLOSE</div>
+  <svg class="claw-bg" style="bottom:-6%;left:-4%;"><use href="#weeklyclaw-logo"/></svg>
+  <div class="content">
+    <div class="part-label">One to watch + where to follow</div>
+    <h2 class="text-center">See you <span class="gradient-text">next Friday.</span></h2>
+    <div class="gradient-line"></div>
+    <div class="mt-2 three-col">
+      <div class="card">
+        <h3 class="red">The rollout</h3>
+        <p>Astra reaches Plus, Pro, and API users in the coming days. Independent benchmarks will tell us what the launch numbers mean.</p>
+      </div>
+      <div class="card">
+        <h3 class="green">The filing</h3>
+        <p>Watch the first regulatory response to Nvidia and Hugging Face. The deal language matters less than the terms that govern the hub.</p>
+      </div>
+      <div class="card">
+        <h3 class="orange">The gap</h3>
+        <p>NYC&rsquo;s AI pause and Orbis&rsquo;s living worlds are opposite bets on the next generation. Watch which one produces a repeatable outcome.</p>
+      </div>
+    </div>
+    <div class="social-cta mt-2">
+      <div class="social-links">
+        <div>
+          <span class="channel-chip">&#127968; weeklyclaw.ai</span>
+          <span class="channel-chip">&#9654;&#65039; Full episodes on YouTube</span>
+          <span class="channel-chip">&#10005; Clips &amp; takes on X</span>
+        </div>
+        <p class="mt-2 text-center" style="font-size:1.05rem;color:var(--text-primary);"><strong>Back next Friday:</strong> September 11 &middot; 4 PM ET</p>
+        <a class="discord-qr" href="https://weeklyclaw.ai/discord" target="_blank" rel="noopener" aria-label="Join the Weekly Claw Discord">
+          <img src="assets/socials/weeklyclaw-discord-qr.png" alt="QR code for weeklyclaw.ai/discord">
+          <span><strong>Join Discord</strong><small>Scan or visit<br>weeklyclaw.ai/discord</small></span>
+        </a>
+      </div>
+    </div>
+    <p class="mt-2 mono muted" style="font-size:0.82rem;letter-spacing:0.16em;text-transform:uppercase;">Follow the operating layer.</p>
+  </div>
+</div>
+
+<div class="slide" id="s-sources">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #28</div><div class="slide-tag">SOURCES / LINKS</div>
+  <div class="content">
+    <div class="part-label">Every claim, one click &middot; verified 2026-09-03</div>
+    <h2 class="text-center">Sources &amp; <span class="gradient-text">Links.</span></h2>
+    <div class="gradient-line"></div>
+    <div class="mt-2 two-col" style="gap:16px;">
+      <div class="card">
+        <span class="tag tag-green">A1 &middot; NVIDIA &times; HUGGING FACE</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://www.theregister.com/ai-and-ml/2026/09/03/nvidia-buys-hugging-face-for-129b-promises-not-to-squeeze-too-hard/5294208" target="_blank" rel="noopener">theregister.com: agreement coverage</a>
+          <a href="https://www.techtimes.com/articles/326450/20260903/nvidia-buys-hugging-face-1293b-openai-hack-prompted-ceo-sell.htm" target="_blank" rel="noopener">techtimes.com: signed agreement and price</a>
+          <a href="https://qz.com/nvidia-hugging-face-acquisition-12-billion-082726" target="_blank" rel="noopener">qz.com: Bloomberg figure update</a>
+          <a href="https://x.com/ClementDelangue/status/2095482998674112733" target="_blank" rel="noopener">@ClementDelangue: $12.93B statement</a>
+        </div>
+        <span class="tag tag-blue mt-2">A2 &middot; FABLE / MYTHOS 5.1</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener">anthropic.com: launch announcement</a>
+          <a href="https://www.anthropic.com/claude-fable-5-1-mythos-5-1-system-card" target="_blank" rel="noopener">anthropic.com: system card</a>
+          <a href="https://venturebeat.com/technology/anthropics-claude-fable-5-1-and-mythos-5-1-arrive-with-a-75-cost-reduction-for-fable-cache-reads" target="_blank" rel="noopener">venturebeat.com: price corroboration</a>
+          <a href="https://simonwillison.net/2026/Sep/1/claude-fable-5-1/" target="_blank" rel="noopener">simonwillison.net: practitioner read</a>
+        </div>
+        <span class="tag tag-green mt-2">A3 &middot; OPENCLAW 2.0</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://openclaw.ai/blog/openclaw-2-accidentally" target="_blank" rel="noopener">openclaw.ai: OpenClaw 2.0</a>
+          <a href="https://docs.openclaw.ai/releases/2026.8.1" target="_blank" rel="noopener">docs.openclaw.ai: v2026.8.1 notes</a>
+          <a href="https://decrypt.co/377135/openclaw-2-0-is-here-whats-new" target="_blank" rel="noopener">decrypt.co: what changed</a>
+          <a href="https://x.com/iAmHenryMascot/status/2094551848086573063" target="_blank" rel="noopener">Henry: control UI reaction</a>
+        </div>
+        <span class="tag tag-yellow mt-2">A4 &middot; QWEN3.8-MAX-0902</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://x.com/Alibaba_Qwen/status/2094968708288680276" target="_blank" rel="noopener">@Alibaba_Qwen: 0902 launch</a>
+          <a href="https://www.datacamp.com/blog/qwen3-8-max" target="_blank" rel="noopener">datacamp.com: model snapshot</a>
+          <a href="https://aireiter.com/blog/qwen3-8-max-0902-api" target="_blank" rel="noopener">aireiter.com: API availability</a>
+        </div>
+      </div>
+      <div class="card">
+        <span class="tag tag-red">B1 &middot; NYC SCHOOL AI MORATORIUM</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://apnews.com/article/zohran-mamdani-ai-ban-nyc-schools-647f6a968eea0399521b7934418b1aff" target="_blank" rel="noopener">apnews.com: policy report</a>
+          <a href="https://www.reuters.com/technology/mamdani-imposes-one-year-ban-ai-most-nyc-students-2026-09-02/" target="_blank" rel="noopener">reuters.com: one-year moratorium</a>
+          <a href="https://www.chalkbeat.org/newyork/2026/09/02/what-to-know-about-nyc-public-schools-generative-ai-ban-screen-time-limits/" target="_blank" rel="noopener">chalkbeat.org: contract detail</a>
+          <a href="https://www.nyc.gov/mayors-office/news/2026/09/mayor-mamdani-and-chancellor-samuels-put-students-first-with-nat" target="_blank" rel="noopener">nyc.gov: mayor&rsquo;s office</a>
+        </div>
+        <span class="tag tag-blue mt-2">C1 &middot; GEMINI 3.8 FLASH / FLASH CYBER</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/" target="_blank" rel="noopener">blog.google: launch announcement</a>
+          <a href="https://deepmind.google/models/model-cards/gemini-3-8-flash/" target="_blank" rel="noopener">deepmind.google: model card</a>
+          <a href="https://deepmind.google/fairwind-program/" target="_blank" rel="noopener">deepmind.google: Fairwind Program</a>
+        </div>
+        <span class="tag tag-green mt-2">C2 &middot; MUSE SPARK 1.3</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://research.meta.ai/blog/introducing-muse-spark-1-3" target="_blank" rel="noopener">research.meta.ai: release post</a>
+          <a href="https://x.com/AIatMeta/status/2095234385129963666" target="_blank" rel="noopener">@AIatMeta: announcement</a>
+          <a href="https://artificialanalysis.ai/models/releases/muse-spark-1-3" target="_blank" rel="noopener">artificialanalysis.ai: release intelligence</a>
+        </div>
+        <span class="tag tag-blue mt-2">C3 &middot; FAL H3 MAX</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://www.prnewswire.com/news-releases/fal-launches-h3-max-a-new-post-trained-video-model-with-frontier-quality-and-faster-than-real-time-generation-302866462.html" target="_blank" rel="noopener">prnewswire.com: launch release</a>
+          <a href="https://x.com/fal/status/2094834516854788528" target="_blank" rel="noopener">@fal: launch pricing extension</a>
+          <a href="https://fal.ai/models/minimax/h3-max" target="_blank" rel="noopener">fal.ai: H3 Max model page</a>
+        </div>
+        <span class="tag tag-blue mt-2">B2 &middot; VISKO ORBIS 1.0</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://www.therobotreport.com/top-10-robotics-stories-of-august-2026/" target="_blank" rel="noopener">therobotreport.com: launch coverage</a>
+          <a href="https://www.tmcnet.com/usubmit/-ai-startup-visko-closes-10-million-pre-seed-/2026/09/01/10438413.htm" target="_blank" rel="noopener">tmcnet.com: pre-seed report</a>
+          <a href="https://x.com/viskoai/status/2094817592754291173" target="_blank" rel="noopener">@viskoai: Live Model announcement</a>
+        </div>
+        <span class="tag tag-purple mt-2">B3 &middot; GPT-6 ASTRA</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman" target="_blank" rel="noopener">Axios: OpenAI releases GPT-6 Astra</a>
+          <a href="https://thenewstack.io/openai-gpt6-astra-benchmarks/" target="_blank" rel="noopener">The New Stack: benchmarks and pricing</a>
+          <a href="https://openai.com/index/path-to-astra/" target="_blank" rel="noopener">OpenAI: Path to Astra safety post</a>
+          <a href="https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/" target="_blank" rel="noopener">TechCrunch: launch coverage</a>
+        </div>
+        <span class="tag tag-blue mt-2">B4 &middot; SENTIENCE SENTIMENT</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://x.com/iAmHenryMascot/status/2094468984171114741" target="_blank" rel="noopener">Henry: poll reaction</a>
+          <a href="https://x.com/Austen/status/2094364342221467941" target="_blank" rel="noopener">@Austen poll origin (unverified)</a>
+        </div>
+        <span class="tag tag-orange mt-2">SIGNAL FROM OUTSIDE</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://youtu.be/9F_uP0_bTYo" target="_blank" rel="noopener">The Neuron: Claude Fable 5.1 LIVE</a>
+        </div>
+        <p class="src-note mt-2">Caveats: Nvidia price is reported at about $12.9B to $14B; use about $13B on air. Anthropic benchmark and savings figures are company-reported. Qwen 0902 is a refresh, not a new base model. Orbis evaluations are vendor-reported. Astra benchmark and demo figures are vendor-reported; AGI is Brockman’s framing, not a consensus verdict. The sentience poll has unconfirmed provenance and is not research.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+(function() {
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+  const slideNumEl = document.getElementById('slideNum');
+  const slideTotalEl = document.getElementById('slideTotal');
+  const progressBar = document.getElementById('progressBar');
+  const navDots = document.getElementById('navDots');
+  slideTotalEl.textContent = total;
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => go(i));
+    navDots.appendChild(dot);
+  }
+  const dots = navDots.querySelectorAll('.nav-dot');
+  function go(i) {
+    if (i < 0 || i >= total) return;
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = i;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    slideNumEl.textContent = current + 1;
+    progressBar.style.width = ((current + 1) / total * 100) + '%';
+    if (history.replaceState) history.replaceState(null, '', '#' + slides[current].id);
+  }
+  progressBar.style.width = (1 / total * 100) + '%';
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(current - 1); }
+    else if (e.key === 'Home') { e.preventDefault(); go(0); }
+    else if (e.key === 'End') { e.preventDefault(); go(total - 1); }
+    else if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+  let wheelLock = false;
+  document.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    if (wheelLock) return;
+    const delta = e.deltaY || e.deltaX;
+    if (Math.abs(delta) < 12) return;
+    wheelLock = true; setTimeout(() => wheelLock = false, 650);
+    go(delta > 0 ? current + 1 : current - 1);
+  }, { passive: false });
+  let touchX = 0, touchY = 0;
+  document.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; touchY = e.touches[0].clientY; }, { passive: true });
+  document.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - touchX;
+    const dy = e.changedTouches[0].clientY - touchY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? current + 1 : current - 1);
+  }, { passive: true });
+  if (location.hash) {
+    const target = document.querySelector(location.hash);
+    if (target && target.classList.contains('slide')) {
+      const idx = Array.prototype.indexOf.call(slides, target);
+      if (idx >= 0) go(idx);
+    }
+  }
+})();
+</script>

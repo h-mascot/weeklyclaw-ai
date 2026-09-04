@@ -1,0 +1,155 @@
+{
+ "schema": "weeklyclaw-candidates/1.0",
+ "episode": 28,
+ "generated": "2026-09-03",
+ "rubric": {
+  "consequence": 0.25,
+  "henry_angle": 0.2,
+  "evidence": 0.2,
+  "novelty": 0.15,
+  "narrative": 0.1,
+  "clip": 0.1
+ },
+ "selected": [
+  {
+   "id": "A1",
+   "title": "Nvidia makes the Hugging Face acquisition agreement official",
+   "score": 9.6,
+   "sub": {
+    "consequence": 10,
+    "henry": 9,
+    "evidence": 10,
+    "novelty": 8,
+    "narrative": 10,
+    "clip": 9
+   }
+  },
+  {
+   "id": "A2",
+   "title": "Anthropic launches Claude Fable 5.1 and Mythos 5.1",
+   "score": 9.5,
+   "sub": {
+    "consequence": 9,
+    "henry": 10,
+    "evidence": 10,
+    "novelty": 8,
+    "narrative": 10,
+    "clip": 10
+   }
+  },
+  {
+   "id": "A3",
+   "title": "OpenClaw ships 2.0",
+   "score": 9.1,
+   "sub": {
+    "consequence": 9,
+    "henry": 10,
+    "evidence": 9,
+    "novelty": 8,
+    "narrative": 9,
+    "clip": 9
+   }
+  },
+  {
+   "id": "A4",
+   "title": "Qwen3.8-Max gets the 0902 upgrade",
+   "score": 8.8,
+   "sub": {
+    "consequence": 8,
+    "henry": 9,
+    "evidence": 9,
+    "novelty": 7,
+    "narrative": 8,
+    "clip": 8
+   }
+  },
+  {
+   "id": "B1",
+   "title": "NYC pauses student-facing AI through 8th grade",
+   "score": 8.7,
+   "sub": {
+    "consequence": 9,
+    "henry": 7,
+    "evidence": 10,
+    "novelty": 9,
+    "narrative": 8,
+    "clip": 9
+   }
+  },
+  {
+   "id": "B2",
+   "title": "Visko launches Orbis 1.0, the Live Model",
+   "score": 8.6,
+   "sub": {
+    "consequence": 8,
+    "henry": 8,
+    "evidence": 8,
+    "novelty": 9,
+    "narrative": 8,
+    "clip": 9
+   }
+  },
+  {
+   "id": "B3",
+   "title": "ChatGPT posts a stars teaser",
+   "score": 8.5,
+   "sub": {
+    "consequence": 8,
+    "henry": 9,
+    "evidence": 6,
+    "novelty": 9,
+    "narrative": 8,
+    "clip": 9
+   },
+   "flag": "TEASER_UNVERIFIED"
+  },
+  {
+   "id": "B4",
+   "title": "One in five say AI is already sentient",
+   "score": 8.4,
+   "sub": {
+    "consequence": 7,
+    "henry": 10,
+    "evidence": 6,
+    "novelty": 8,
+    "narrative": 9,
+    "clip": 8
+   },
+   "flag": "SECONDARY_POLL"
+  }
+ ],
+ "bench": [
+  {
+   "id": "B1b",
+   "title": "Gemini 3.8 Flash GA",
+   "score": 8.2
+  },
+  {
+   "id": "B2b",
+   "title": "Orbis pre-seed detail",
+   "score": 8.0
+  },
+  {
+   "id": "B3b",
+   "title": "Nvidia regulator rhetoric",
+   "score": 8.0
+  },
+  {
+   "id": "B4b",
+   "title": "Altimor reasoning-politics",
+   "score": 7.8
+  },
+  {
+   "id": "B5b",
+   "title": "Marcus OpenAI-security takeaways",
+   "score": 7.6
+  },
+  {
+   "id": "B6b",
+   "title": "Claude-shill cancellation color",
+   "score": 7.4
+  }
+ ],
+ "hot_take": "AI sentience is now a workplace question, not a philosophy-dorm question",
+ "signal_outside": "The Neuron - Claude Fable 5.1 LIVE (yt 9F_uP0_bTYo)"
+}

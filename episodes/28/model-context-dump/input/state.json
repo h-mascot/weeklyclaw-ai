@@ -1,0 +1,479 @@
+{
+ "episode": 28,
+ "show_date_ny": "2026-09-04",
+ "schema": "weeklyclaw-showprep/1.0",
+ "created_utc": "2026-09-03T16:00:00Z",
+ "tick_id": "28-2026-09-03-14",
+ "build_kind": "recovery-bootstrap-full-build",
+ "build_note": "Thursday 11:00 BUILD did not run; 12:00 tick performs full BUILD under recovery bootstrap rule.",
+ "news_window_start_utc": "2026-08-28T20:00:00Z",
+ "news_window_note": "Episode 27 aired Fri 2026-08-28 ~16:00 ET (20:00 UTC).",
+ "approval_state": "UNVALIDATED",
+ "title": "The agreement landed. The models answered.",
+ "selected_revision": "rev3",
+ "format": "Ep27 rev6.2 grid format: news as two 2x2 grid slides (4 cards each), one AI banner per card, ~2:00/card, Henry walks grids left-to-right top-to-bottom.",
+ "sponsors": {
+  "rotation_rule": "invert prior episode's two sponsor slots",
+  "ep27_order": [
+   "heritage",
+   "herald"
+  ],
+  "ep28_order": [
+   "herald",
+   "heritage"
+  ]
+ },
+ "selections": [
+  {
+   "slot": "grid-a-1",
+   "title": "Nvidia makes the Hugging Face acquisition agreement official",
+   "score": 9.6,
+   "cluster": "Nvidia x HF definitive agreement + regulatory scrutiny",
+   "sources": [
+    "https://www.theregister.com/ai-and-ml/2026/09/03/nvidia-buys-hugging-face-for-129b-promises-not-to-squeeze-too-hard/5294208",
+    "https://www.techtimes.com/articles/326450/20260903/nvidia-buys-hugging-face-1293b-openai-hack-prompted-ceo-sell.htm"
+   ]
+  },
+  {
+   "slot": "grid-a-2",
+   "title": "Anthropic launches Claude Fable 5.1 and Mythos 5.1",
+   "score": 9.5,
+   "cluster": "Fable/Mythos 5.1 + cache-read price cut + EFS",
+   "sources": [
+    "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+    "https://venturebeat.com/technology/anthropics-claude-fable-5-1-and-mythos-5-1-arrive-with-a-75-cost-reduction-for-fable-cache-reads"
+   ]
+  },
+  {
+   "slot": "grid-a-3",
+   "title": "OpenClaw ships 2.0",
+   "score": 9.1,
+   "cluster": "OpenClaw 2.0 (16k PRs, 7 quiet weeks, v2026.8.1)",
+   "sources": [
+    "https://openclaw.ai/blog/openclaw-2-accidentally",
+    "https://docs.openclaw.ai/releases/2026.8.1"
+   ]
+  },
+  {
+   "slot": "grid-a-4",
+   "title": "Qwen3.8-Max gets the 0902 upgrade",
+   "score": 8.8,
+   "cluster": "Qwen3.8-Max-0902 post-training snapshot",
+   "sources": [
+    "https://x.com/Alibaba_Qwen/status/2094968708288680276",
+    "https://www.datacamp.com/blog/qwen3-8-max",
+    "https://aireiter.com/blog/qwen3-8-max-0902-api"
+   ]
+  },
+  {
+   "slot": "grid-b-1",
+   "title": "NYC pauses student-facing AI through 8th grade",
+   "score": 8.7,
+   "cluster": "NYC schools one-year generative-AI moratorium",
+   "sources": [
+    "https://apnews.com/article/zohran-mamdani-ai-ban-nyc-schools-647f6a968eea0399521b7934418b1aff",
+    "https://www.reuters.com/technology/mamdani-imposes-one-year-ban-ai-most-nyc-students-2026-09-02/"
+   ]
+  },
+  {
+   "slot": "grid-b-2",
+   "title": "Visko launches Orbis 1.0, the Live Model",
+   "score": 8.6,
+   "cluster": "Orbis 1.0 real-time world-streaming + $10M pre-seed",
+   "sources": [
+    "https://x.com/viskoai/status/2094817592754291173",
+    "https://www.therobotreport.com/top-10-robotics-stories-of-august-2026/",
+    "https://www.tmcnet.com/usubmit/-ai-startup-visko-closes-10-million-pre-seed-/2026/09/01/10438413.htm"
+   ]
+  },
+  {
+   "slot": "grid-b-3",
+   "title": "OpenAI launches GPT-6 Astra",
+   "score": 9.7,
+   "cluster": "GPT-6 Astra launch + resolved 'stars' teaser",
+   "sources": [
+    "https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman",
+    "https://thenewstack.io/openai-gpt6-astra-benchmarks/",
+    "https://openai.com/index/path-to-astra/",
+    "https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/"
+   ],
+   "flags": [
+    "AGI_FRAMING_CONTESTED: attribute Brockman/OpenAI framing; do not state Astra is AGI as fact",
+    "VENDOR_REPORTED_BENCHMARKS: label benchmark and demo figures",
+    "LIMITED_INITIAL_ACCESS: Daybreak first; Plus/Pro/API in the coming days"
+   ],
+   "note": "upgraded from teaser 8.5 after launch receipts landed 2026-09-03 ~18:40 UTC; same grid-B slot and entity thread"
+  },
+  {
+   "slot": "grid-b-4",
+   "title": "One in five say AI is already sentient",
+   "score": 8.4,
+   "cluster": "AI-sentience sentiment spike (Henry's 'we are so fckd' thread)",
+   "sources": [
+    "https://x.com/iAmHenryMascot/status/2094468984171114741"
+   ],
+   "flags": [
+    "SECONDARY_POLL: engagement-sentiment item, poll source unconfirmed; host color not hard news"
+   ]
+  }
+ ],
+ "bench": [
+  {
+   "id": "B1",
+   "title": "Gemini 3.8 Flash GA (Sep 2)",
+   "score": 8.2,
+   "reason": "third Flash release in 43 days; cadence note inside OpenClaw/Qwen card talk, not its own card"
+  },
+  {
+   "id": "B2",
+   "title": "Orbis funding detail ($10M pre-seed)",
+   "score": 8.0,
+   "reason": "folded into Orbis card"
+  },
+  {
+   "id": "B3",
+   "title": "Nvidia regulator rhetoric ('not squeezing too hard')",
+   "score": 8.0,
+   "reason": "folded into Nvidia-HF card"
+  },
+  {
+   "id": "B4",
+   "title": "Altimor 'reasoning shifts models right politically' observation",
+   "score": 7.8,
+   "reason": "opinion RT; hot-take adjacent, not launch news"
+  },
+  {
+   "id": "B5",
+   "title": "Marcus on AI OpenAI-security takeaways",
+   "score": 7.6,
+   "reason": "already aired as Ep27 context; follow-on color only"
+  },
+  {
+   "id": "B6",
+   "title": "Eric-the-Claude-shill cancellation",
+   "score": 7.4,
+   "reason": "community color inside Fable card"
+  }
+ ],
+ "hot_take": {
+  "motion": "AI sentience is now a serious workplace question, not a philosophy dorm question.",
+  "note": "Does not repeat any news card; the sentience card is engagement data, the hot take is the operator fight. Henry skeptical (it's autocomplete with a PR problem; the 20% number measures vibes, not science; misallocation of safety attention), Andy plays the 'prepare anyway' case (cheap to take seriously, expected moral weight nonzero, welfare programs already exist at major labs). Two rebuttals, one mind-changer each, Henry's closer: the morally hard part isn't the model, it's that we'd have to take the poll seriously."
+ },
+ "signal_outside": {
+  "video": "The Neuron \u2014 Claude Fable 5.1 LIVE: Testing Anthropic's New AI Agent (yt 9F_uP0_bTYo, 60:02)",
+  "note": "Andy leads. Five beats: bigger jobs pitch (Terminal-Bench-Science 52.6% vs 24.7%), the price story (75% cheaper cache reads, 45% agentic savings), runaway-initiative problem (managing AI that keeps working), live stress tests (browser games, computer use, 3D), the operator takeaway (long-running work is now a supervision problem). NO AUTOPLAY; clip cues approximate, spot-check before air."
+ },
+ "one_to_watch": [
+  "Astra rollout to Plus/Pro/API and independent benchmark results",
+  "Nvidia-HF regulatory first response",
+  "Mythos 5.1 trusted-access enrollment",
+  "Orbis real-world demos beyond launch reel"
+ ],
+ "pins": [],
+ "narrative_arc": "agreement announced -> frontier models answer -> the agent platform matures -> open-model cadence -> policy pushes back -> world-models arrive -> the mind question",
+ "story_set_hash": "d5ce0c75ab19089994e5a96916e418720beea67bb8f5580a8b14ecb34318b38d",
+ "henry_x_pulse": {
+  "window": "2026-08-28T20:00Z -> 2026-09-03T16:00Z",
+  "tweets": 194,
+  "originals": 108,
+  "topic_volume": {
+   "sentience/AGI": 17,
+   "fable/mythos": 16,
+   "openclaw2": 16,
+   "omarchy/DHH": 7,
+   "deepseek": 6,
+   "grok": 5,
+   "nyc-schools": 5,
+   "instinct": 2
+  },
+  "source": "sources/henry-tweets/all.jsonl (fresh through 09-03)"
+ },
+ "updated_utc": "2026-09-03T20:05:43Z",
+ "role": "REFRESH",
+ "artifact_paths": {
+  "agenda": "revs/agenda.rev2.md",
+  "deck": "revs/deck.rev2.html",
+  "speaker_notes": "revs/speaker-notes.rev2.md",
+  "talking_points": "revs/talking-points.rev2.md",
+  "henry_section": "revs/henry-section.rev2.md",
+  "andy_section": "revs/andy-section.rev2.md",
+  "host_cheat_sheet": "revs/host-cheat-sheet.rev2.md"
+ },
+ "artifact_hashes": {
+  "agenda": "5eac84c6ba2b413e33840a7b0a1cc6f16fca5df0f9fc80803b5653e3ec642857",
+  "deck": "07fe58d2af691a79a43fdb2410b1f423b4a4fc3bb6c9fb6df7d18f51dde9fe43",
+  "speaker_notes": "ed8859d6d7d87bafdc6b482f6348ab21fe36fed8ccb5abce5744514562f1b4d0",
+  "talking_points": "b3a8a12bdb31b2938b9d91ff407014beb2e69af93e0225d26a8418591dd5c6d6",
+  "henry_section": "3d1766198b035a7bd58ba3d398294f5606f03856ccf77478a243cb7a89a294bc",
+  "andy_section": "c88c578023255b93258edf4adb81622660c2198e9c2cf02847f8f0b6a4768b1d",
+  "host_cheat_sheet": "ab65f6366d026476c2b52921539d2553452b8d588ed76bb169b390c2e486df16"
+ },
+ "validation": {
+  "status": "passed",
+  "slides": 11,
+  "speaker_notes_parity": true,
+  "clickable_source_links": 38,
+  "local_media_paths": 18,
+  "canonical_validator": "PASS (ep23 authority)",
+  "authority_checks": {
+   "episode_23": "PASS"
+  },
+  "render_qa": {
+   "status": "PASS",
+   "runner": "qa/render_qa.py",
+   "viewport": "1600x900",
+   "slides_rendered": 11,
+   "bad_slides": [],
+   "notes": "s-sources contentRect extends 28px past 900px bottom edge (viewportOverflow); pre-existing on rev2 (928px) \u2014 text is clipped, not lost; sources slide is non-air appendix. All other slides clean. QR on s-watch verified intact + quiet zone via vision.",
+   "receipt": "qa/render-1600x900-rev3/render-receipt.json"
+  },
+  "qr_decode": "https://weeklyclaw.ai/discord (validator structural PASS + vision render check)",
+  "draft_publication": {
+   "status": "PASS",
+   "commit": "692029516e02a0df8c51cf0891ac0112b47805d9",
+   "branch": "main",
+   "routes": {
+    "deck": {
+     "http_status": 200,
+     "byte_equal_local": true
+    },
+    "agenda": {
+     "http_status": 200,
+     "byte_equal_local": true
+    },
+    "agenda-draft": {
+     "http_status": 200,
+     "byte_equal_local": true
+    },
+    "host-cheat-sheet": {
+     "http_status": 200,
+     "byte_equal_local": true
+    }
+   },
+   "new_assets_verified": [
+    "t-gemini38.png",
+    "t-musespark.png",
+    "t-h3max.png"
+   ],
+   "receipt": "qa/live-draft-receipt-rev3.json"
+  }
+ },
+ "template_authority": {
+  "approved_episode": 23,
+  "path": "~/clawd/projects/weeklyclaw-ai/episodes/23/deck.html",
+  "sha256": "3548178052bb0c8e151b61ca230930885af8b7b3016072de1bfaa38aea598785",
+  "grid_reference": "~/weeklyclaw/episodes/27/showprep/revs/deck.rev6.html",
+  "grid_reference_sha256": "19060492b959a454d886651559c6085c8b90e19ed2b55ac47f7fa656afb94275",
+  "comparison_copy": "~/weeklyclaw/episodes/27/showprep/qa/authority-deck-ep26.html",
+  "comparison_copy_sha256": "7abef203065eebdf11ac9202ad558f16c4943398145db7df3e0210d8621ae4c7"
+ },
+ "asset_provenance": {
+  "source_episode": 27,
+  "sponsor_files": {
+   "assets/sponsors/herald-labs-icon.svg": "1e6615a52974dc52a1a9838788c46eb680099d74ad98fa75d282563f8c928886",
+   "assets/sponsors/heritage-telecom-logo-horizontal-1200.jpg": "101718dcee99436e26b46754d837b3653d218f88168d5b0c841c65e60d91dbf7",
+   "assets/sponsors/heritage-telecom-mark-256.png": "32b75bb508e6a0996b4ac03cf8907a868146af3ae2da24fbd561b86559de5fc5"
+  }
+ },
+ "media_qa": {
+  "status": "passed",
+  "manifest": "media-manifest.json",
+  "banner_count": 8,
+  "banner_dimensions": "1856x576",
+  "banner_mime": "image/png",
+  "qwen_replaced": true,
+  "signal_video": "The Neuron / 9F_uP0_bTYo / 3602 seconds / public",
+  "signal_poster": "assets/images/signal-outside-poster.jpg",
+  "signal_cues": "01:22, 03:17, 06:55, 08:31, 11:18",
+  "qr": "assets/socials/weeklyclaw-discord-qr.png",
+  "revision": "rev2",
+  "b3_asset": "assets/images/artifacts/t-gpt6-astra.png",
+  "b3_asset_supersedes": "assets/images/artifacts/t-gpt6-tease.png",
+  "b3_asset_sha256": "9d73addd1e603ddd9bbfe75d60b559839d529e6929cd76ed4476d178282cfb10"
+ },
+ "model_route_attempts": [
+  {
+   "model": "direct-hermes-build-path",
+   "outcome": "passed",
+   "artifacts_produced": [
+    "revs/agenda.rev1.md",
+    "revs/deck.rev1.html",
+    "revs/speaker-notes.rev1.md",
+    "revs/talking-points.rev1.md",
+    "revs/henry-section.rev1.md",
+    "revs/andy-section.rev1.md",
+    "revs/host-cheat-sheet.rev1.md"
+   ],
+   "reason": "Package fit direct-Hermes criteria; cloned grid template and passed all local gates."
+  }
+ ],
+ "revisions": [
+  {
+   "rev": "rev1",
+   "role": "BUILD",
+   "tick_id": "28-2026-09-03-12",
+   "created_utc": "2026-09-03T16:00:00Z",
+   "status": "superseded",
+   "artifact_hashes": {
+    "agenda": "b21eb12b86ceb9342e151682e5b037be1817555c33c36c51c2d1a485258d7b22",
+    "deck": "68f0216faa0ca21a1246be270b2ce47330539440da6461bd66529b540b61105d",
+    "speaker_notes": "8b673e727c22b0a717f0bd562f7f283eb35c88fb6ee465a5f9633ce15b49af1f",
+    "talking_points": "618c20a7dfc5c7672451dd94eef603ab913d418099857fe68944dc2ab5ab4d08",
+    "henry_section": "e6f39c6e1a3943067849a72b3e520ffbc1911c585ebf960c0356f3e28032de55",
+    "andy_section": "ceb00049bb8dc84cef0b0fb8ae2ec7ef2873d3bd85c8b542e6ad885cb8de6e61",
+    "host_cheat_sheet": "7ccddc75bd6d8ae08df4552259bb3428697ef439985e8e07e61eed4d7cc64927"
+   },
+   "validation": "PASS",
+   "approval_state": "UNVALIDATED"
+  },
+  {
+   "rev": "rev2",
+   "role": "REFRESH",
+   "tick_id": "28-2026-09-03-15",
+   "created_utc": "2026-09-03T19:28:54Z",
+   "status": "superseded",
+   "trigger": "Breaking-news upgrade: GPT-6 Astra launch resolved the existing B3 teaser thread.",
+   "artifact_hashes": {
+    "agenda": "89ccf824dceb62594b4e41b241ca130739d1636acae40a60c98165e5991178c8",
+    "deck": "c3b610911e2b308fe32359c4ae28e5df63a480650b0df684c12a702617d4a45b",
+    "speaker_notes": "aba84d07e0302c51ca92e12a09df822386ec470f8089088e503ca73db3810717",
+    "talking_points": "17bcd68e32ae5541e68239bb02fea42e35f320860007fb373046a5ef5a5eb756",
+    "henry_section": "82f04913027aaef6e35c7816fa3bd80c0e73e5feaf34a8392c3dc23cdce1e1af",
+    "andy_section": "f062b5ddc339287786da9dedf5eb2fa47d55981782f4db6377e22bb56c1e569c",
+    "host_cheat_sheet": "3798e2aff001d35adafe4a8f17ff31ee4a1260b714844fe3b660c1a7c2bae1c3"
+   },
+   "validation": "PASS",
+   "render_qa": "PASS",
+   "approval_state": "UNVALIDATED"
+  },
+  {
+   "rev": "rev3",
+   "role": "HOST_FEEDBACK",
+   "tick_id": "28-2026-09-04-02",
+   "created_utc": "2026-09-04T01:55:00Z",
+   "status": "selected",
+   "trigger": "Henry rev2 review in Telegram thread: 'No mention of muse spark 1.3 / Or Gemini 3.8 / Gemini launched a new models / Also Fals H3 Max is super important' + 'Include another slide with ones you missed'.",
+   "changes": [
+    "Added slide s-seg-grid-c 'The launch pedal stayed down.' with C1 Gemini 3.8 Flash + Flash Cyber, C2 Muse Spark 1.3, C3 fal H3 Max, C4 independent-receipts card.",
+    "All three launches primary-verified (blog.google, research.meta.ai, PRNewswire/fal) on 2026-09-04 ~01:45 UTC.",
+    "slideTotal 10 -> 11; cold-open subtitle extended; Sources slide gains C1-C3 link blocks (29 -> 38 clickable links).",
+    "agenda/talking-points/henry-section/andy-section/host-cheat-sheet regenerated with part-3 segment; published draft routes byte-verified."
+   ],
+   "artifact_hashes": {
+    "agenda": "5eac84c6ba2b413e33840a7b0a1cc6f16fca5df0f9fc80803b5653e3ec642857",
+    "deck": "07fe58d2af691a79a43fdb2410b1f423b4a4fc3bb6c9fb6df7d18f51dde9fe43",
+    "speaker_notes": "ed8859d6d7d87bafdc6b482f6348ab21fe36fed8ccb5abce5744514562f1b4d0",
+    "talking_points": "b3a8a12bdb31b2938b9d91ff407014beb2e69af93e0225d26a8418591dd5c6d6",
+    "henry_section": "3d1766198b035a7bd58ba3d398294f5606f03856ccf77478a243cb7a89a294bc",
+    "andy_section": "c88c578023255b93258edf4adb81622660c2198e9c2cf02847f8f0b6a4768b1d",
+    "host_cheat_sheet": "ab65f6366d026476c2b52921539d2553452b8d588ed76bb169b390c2e486df16"
+   },
+   "validation": "PASS",
+   "approval_state": "UNVALIDATED"
+  }
+ ],
+ "draft_publication": {
+  "required": true,
+  "status": "PASS",
+  "approval_state_after": "UNVALIDATED",
+  "commit": "549b20afe218b0deeed3e414023210fca0ba7a78",
+  "branch": "ada/draft-publication-28-rev2",
+  "worktree": "/tmp/weeklyclaw-draft-publish-rev2",
+  "npm_build": "PASS",
+  "repo_identity_assertions": "PASS",
+  "live_verified": true,
+  "published_utc": "2026-09-03T19:33:57Z",
+  "deck_url": "https://weeklyclaw.ai/episodes/28/deck",
+  "agenda_draft_url": "https://weeklyclaw.ai/episodes/28/agenda-draft",
+  "host_cheat_sheet_url": "https://weeklyclaw.ai/episodes/28/host-cheat-sheet",
+  "deck_sha256": "c3b610911e2b308fe32359c4ae28e5df63a480650b0df684c12a702617d4a45b",
+  "deck_live_sha_equal": true,
+  "agenda_draft_sha256": "a1fc44d7479e1c13aa7809d2919bd493de42a00264e67abc4f5dda73d2d03714",
+  "agenda_draft_live_sha_equal": true,
+  "host_cheat_sheet_sha256": "8652ae9dcbdafe0b7702fa8c02b6ada218411334547e1638b065c9d173852f1d",
+  "host_cheat_sheet_live_sha_equal": true,
+  "new_b3_asset_sha256": "9d73addd1e603ddd9bbfe75d60b559839d529e6929cd76ed4476d178282cfb10",
+  "new_b3_asset_live_sha_equal": true,
+  "old_b3_asset_http_status": 404,
+  "routes_http_200": 3,
+  "asset_count": 13,
+  "asset_sha_equal": true,
+  "asset_verification": "All 13 unique deck-relative assets returned HTTP 200 and matched the clean worktree bytes by SHA-256.",
+  "sponsor_order": {
+   "deck": [
+    21353,
+    21534
+   ],
+   "agenda_draft": [
+    4804,
+    34177
+   ],
+   "host_cheat_sheet": [
+    2153,
+    2618
+   ],
+   "rule": "Herald Labs before Heritage Telecom"
+  },
+  "receipt": "qa/live-draft-receipt-rev2.json",
+  "scope": "deck, agenda, host docs, referenced assets only; gallery and homepage untouched",
+  "staged_file_count": 9,
+  "worktree_removed": true,
+  "temporary_branch_removed": true,
+  "canonical_head_before_publication": "489c0bae98a476e24375364fc87f90206a77a4c8",
+  "origin_main_after_publication": "549b20afe218b0deeed3e414023210fca0ba7a78",
+  "canonical_dirty_state_preserved": true,
+  "cleanup_verified_utc": "2026-09-03T19:36:26Z"
+ },
+ "lock_recovery": {
+  "entry_lock_pid": 2015639,
+  "entry_lock_stale": true,
+  "pid_check": "not running",
+  "release_required": true,
+  "released": true,
+  "release_verified": true,
+  "released_utc": "2026-09-03T19:36:26Z",
+  "reason": "Rev2 publication and live verification completed; temporary worktree and branch removed before releasing the stale manual lock."
+ },
+ "review_card": {
+  "status": "SEND_ACK",
+  "target": "telegram:-1004370723812:17",
+  "subject": "WeeklyClaw Episode 28 BUILD review",
+  "body_file": "/tmp/ep28-review-card.txt",
+  "command": "hermes send --to telegram:-1004370723812:17 --subject \"WeeklyClaw Episode 28 BUILD review\" --file /tmp/ep28-review-card.txt",
+  "result": "sent",
+  "target_listed_by_hermes": true,
+  "recipient_readback": "UNAVAILABLE: hermes send has no message-read command; no outgoing Telegram Bot API history endpoint was available without consuming updates",
+  "program_topics_sheet_included": true
+ },
+ "revision_history": [
+  {
+   "rev": "rev2",
+   "utc": "2026-09-03T19:33:57Z",
+   "trigger": "Thursday 15:00 EDT REFRESH breaking-news upgrade",
+   "change": "B3 stars teaser resolved into verified GPT-6 Astra launch; refreshed grid-B timing, cold-open/close recaps, source receipts, all host views, and B3 banner; website draft republished and live byte-verified."
+  }
+ ],
+ "last_tick": "28-2026-09-03-16",
+ "selected_revision_paths": {
+  "agenda": "revs/agenda.rev3.md",
+  "deck": "revs/deck.rev3.html",
+  "speaker_notes": "revs/speaker-notes.rev3.md",
+  "talking_points": "revs/talking-points.rev3.md",
+  "henry_section": "revs/henry-section.rev3.md",
+  "andy_section": "revs/andy-section.rev3.md",
+  "host_cheat_sheet": "revs/host-cheat-sheet.rev3.md"
+ },
+ "revision_review_card": {
+  "revision": "rev2",
+  "status": "SEND_ACK",
+  "target": "telegram:-1004370723812:17",
+  "subject": "WeeklyClaw Episode 28 rev2 BUILD review",
+  "body_file": "/tmp/ep28-rev2-review-card.txt",
+  "command": "hermes send --to telegram:-1004370723812:17 --subject \"WeeklyClaw Episode 28 rev2 BUILD review\" --file /tmp/ep28-rev2-review-card.txt",
+  "result": "sent",
+  "target_listed_by_hermes": true,
+  "recipient_readback": "UNAVAILABLE: hermes send has no message-read command; record is a send ACK, not a fabricated read receipt",
+  "program_topics_sheet_included": true,
+  "live_urls_included": 3
+ }
+}

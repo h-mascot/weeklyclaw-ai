@@ -1,0 +1,215 @@
+{
+ "schema": "weeklyclaw-media-manifest/1.0",
+ "episode": 28,
+ "revision": 3,
+ "generated_utc": "2026-09-04T01:55:00Z",
+ "deck_relative_root": "revs/",
+ "visual_policy": "Generated editorial banners are beat markers; every card retains a clickable primary or best-available source. Signal uses a verified video poster with manual cues and no autoplay.",
+ "assets": [
+  {
+   "id": "A1",
+   "path": "assets/images/artifacts/t-nvidia-hf-official.png",
+   "type": "GENERATED_EDITORIAL_BANNER",
+   "source_url": "https://x.com/ClementDelangue/status/2095482998674112733",
+   "source_creator": "Clement Delangue / Hugging Face",
+   "prompt_file": "tmp/imagegen/t-nvidia-hf-official.txt",
+   "sha256": "750a5d975d7534d825384789b7c31d18971560b45bfb6a0a5891e874582af7e3",
+   "bytes": 637770,
+   "dimensions": "1856x576",
+   "mime": "image/png",
+   "verification": "Gemini multimodal read: stylized handshake between a green arm and a light-toned arm; no readable text or logos."
+  },
+  {
+   "id": "A2",
+   "path": "assets/images/artifacts/t-fable-mythos.png",
+   "type": "GENERATED_EDITORIAL_BANNER",
+   "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+   "source_creator": "Anthropic",
+   "prompt_file": "tmp/imagegen/t-fable-mythos.txt",
+   "sha256": "2c1d9fcab3ddb2482e747e0ad5a11f144012eef7f2be59db788d94dfe45a9c64",
+   "bytes": 683703,
+   "dimensions": "1856x576",
+   "mime": "image/png",
+   "verification": "Gemini multimodal read: glowing purple orb with fluid and structured paths, one containing a keyhole; no readable text."
+  },
+  {
+   "id": "A3",
+   "path": "assets/images/artifacts/t-openclaw2.png",
+   "type": "GENERATED_EDITORIAL_BANNER",
+   "source_url": "https://openclaw.ai/blog/openclaw-2-accidentally",
+   "source_creator": "OpenClaw",
+   "prompt_file": "tmp/imagegen/t-openclaw2.txt",
+   "sha256": "0f05974c4272a8cd66c9534bad3942e3406b730cd18873e35e6652ed99fc0ef4",
+   "bytes": 873742,
+   "dimensions": "1856x576",
+   "mime": "image/png",
+   "verification": "Gemini multimodal read: white paw-print sunrise on a sharp digital horizon; no readable text or logos."
+  },
+  {
+   "id": "A4",
+   "path": "assets/images/artifacts/t-qwen-max.png",
+   "type": "GENERATED_EDITORIAL_BANNER",
+   "source_url": "https://x.com/Alibaba_Qwen/status/2094968708288680276",
+   "source_creator": "Alibaba Qwen",
+   "prompt_file": "tmp/imagegen/t-qwen-max.txt",
+   "sha256": "5df5366abf4c716929c7d29d22aaf2cca571405b376a4e1949cedb5c40435c6f",
+   "bytes": 851798,
+   "dimensions": "1856x576",
+   "mime": "image/png",
+   "verification": "Gemini multimodal read: illuminated open book with circuit-trace pages, golden bridge, and branching neural network; no readable text or logos. Replaced an earlier misassigned Nvidia-regulator render."
+  },
+  {
+   "id": "B1",
+   "path": "assets/images/artifacts/t-nyc-schools.png",
+   "type": "GENERATED_EDITORIAL_BANNER",
+   "source_url": "https://www.reuters.com/technology/mamdani-imposes-one-year-ban-ai-most-nyc-students-2026-09-02/",
+   "source_creator": "Reuters / NYC policy coverage",
+   "prompt_file": "tmp/imagegen/t-nyc-schools.txt",
+   "sha256": "e19afe4f5b5c1639409316e475eb36cf55229ea5cd95168490fd006790f3ab3b",
+   "bytes": 924690,
+   "dimensions": "1856x576",
+   "mime": "image/png",
+   "verification": "Gemini multimodal read: glowing orange wireframe question mark in a dark school hallway; no readable text."
+  },
+  {
+   "id": "B2",
+   "path": "assets/images/artifacts/t-orbis.png",
+   "type": "GENERATED_EDITORIAL_BANNER",
+   "source_url": "https://x.com/viskoai/status/2094817592754291173",
+   "source_creator": "Visko AI",
+   "prompt_file": "tmp/imagegen/t-orbis.txt",
+   "sha256": "e77fa247dbfd996fb7b27eda0dc81ede67db9ed1396cf015726058bdd32e7752",
+   "bytes": 602035,
+   "dimensions": "1856x576",
+   "mime": "image/png",
+   "verification": "Gemini multimodal read: glowing glass orb containing a pixelated miniature world and filmstrip; no readable text."
+  },
+  {
+   "id": "B3",
+   "path": "assets/images/artifacts/t-gpt6-astra.png",
+   "type": "GENERATED_EDITORIAL_BANNER",
+   "source_url": "https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman",
+   "source_creator": "Gemini 3 Pro Image (editorial banner, prompt-authored)",
+   "prompt_file": "tmp/imagegen/t-gpt6-astra.txt",
+   "sha256": "9d73addd1e603ddd9bbfe75d60b559839d529e6929cd76ed4476d178282cfb10",
+   "bytes": 1168885,
+   "dimensions": "1856x576",
+   "mime": "image/png",
+   "verification": "PIL: 1856x576 RGB PNG; luminance stats consistent with dark editorial banner with bright highlight (mean 31.3, stdev 25.3, max 237); no readable text by tesseract OCR (empty output). Supersedes t-gpt6-tease.png at rev2 after the stars teaser resolved into the GPT-6 Astra launch (2026-09-03).",
+   "supersedes": "assets/images/artifacts/t-gpt6-tease.png"
+  },
+  {
+   "id": "B4",
+   "path": "assets/images/artifacts/t-sentience.png",
+   "type": "GENERATED_EDITORIAL_BANNER",
+   "source_url": "https://x.com/iAmHenryMascot/status/2094468984171114741",
+   "source_creator": "Henry Mascot / sentiment item",
+   "prompt_file": "tmp/imagegen/t-sentience.txt",
+   "sha256": "2659a72f5a521ea0169a395f03b4f5784cf88e9211d9638995f30c44bb2a6a91",
+   "bytes": 781457,
+   "dimensions": "1856x576",
+   "mime": "image/png",
+   "verification": "Gemini multimodal read: small figures below a tower containing a red thermometer near the top; no readable text. Poll remains unverified sentiment."
+  },
+  {
+   "id": "SIGNAL",
+   "path": "assets/images/signal-outside-poster.jpg",
+   "type": "VIDEO_CLIP_POSTER",
+   "source_url": "https://youtu.be/9F_uP0_bTYo",
+   "source_creator": "The Neuron",
+   "sha256": "1f78ea26f54d769329cbd6a06a021ac03c0926435ec7bf265789f45e5f763f61",
+   "bytes": 181039,
+   "dimensions": "1280x720",
+   "mime": "image/jpeg",
+   "verification": "PIL decode passed; yt-dlp metadata verified public title, creator, upload date 2026-09-02, duration 3602 seconds / 60:02."
+  },
+  {
+   "id": "CLOSE-QR",
+   "path": "assets/socials/weeklyclaw-discord-qr.png",
+   "type": "SOCIAL_QR",
+   "source_url": "https://weeklyclaw.ai/discord",
+   "source_creator": "WeeklyClaw prior episode asset",
+   "sha256": "657cad2ca0d4130cae27d07076f491b6e0f95ad681c7bdd54e89a80453732975",
+   "bytes": 2228,
+   "verification": "Copied byte-for-byte from Episode 27 showprep assets; browser naturalWidth verified in render QA.",
+   "mime": "image/png"
+  },
+  {
+   "id": "C1",
+   "path": "assets/images/artifacts/t-gemini38.png",
+   "type": "GENERATED_EDITORIAL_BANNER",
+   "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+   "source_creator": "Google (The Keyword)",
+   "prompt_file": "tmp/imagegen/t-gemini38.txt",
+   "sha256": "514ffe665b0d4e4e1f46844a5333ce667b376175b497cc1c93bc1b7f50c3c84b",
+   "bytes": 520434,
+   "verification": "Gemini-generated editorial banner; no readable text or logos by prompt."
+  },
+  {
+   "id": "C2",
+   "path": "assets/images/artifacts/t-musespark.png",
+   "type": "GENERATED_EDITORIAL_BANNER",
+   "source_url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+   "source_creator": "Meta (research.meta.ai)",
+   "prompt_file": "tmp/imagegen/t-musespark.txt",
+   "sha256": "44ca56e6ead9752e47373eba5261d984691d847d3dbb7a7d514c24645326ddc2",
+   "bytes": 445705,
+   "verification": "Gemini-generated editorial banner; no readable text or logos by prompt."
+  },
+  {
+   "id": "C3",
+   "path": "assets/images/artifacts/t-h3max.png",
+   "type": "GENERATED_EDITORIAL_BANNER",
+   "source_url": "https://www.prnewswire.com/news-releases/fal-launches-h3-max-a-new-post-trained-video-model-with-frontier-quality-and-faster-than-real-time-generation-302866462.html",
+   "source_creator": "fal (PRNewswire)",
+   "prompt_file": "tmp/imagegen/t-h3max.txt",
+   "sha256": "f07929c74f27fd76687ac75212427a61a3234fffc323dc810a88963a537ae3bc",
+   "bytes": 369671,
+   "verification": "Gemini-generated editorial banner; no readable text or logos by prompt."
+  }
+ ],
+ "sponsor_asset_provenance": {
+  "source_episode": 27,
+  "files": {
+   "assets/sponsors/herald-labs-icon.svg": "1e6615a52974dc52a1a9838788c46eb680099d74ad98fa75d282563f8c928886",
+   "assets/sponsors/heritage-telecom-logo-horizontal-1200.jpg": "101718dcee99436e26b46754d837b3653d218f88168d5b0c841c65e60d91dbf7",
+   "assets/sponsors/heritage-telecom-mark-256.png": "32b75bb508e6a0996b4ac03cf8907a868146af3ae2da24fbd561b86559de5fc5"
+  },
+  "status": "PASS byte equality against Episode 27 showprep assets"
+ },
+ "video": {
+  "id": "9F_uP0_bTYo",
+  "title": "Claude Fable 5.1 LIVE: Testing Anthropic\u2019s New AI Agent",
+  "creator": "The Neuron",
+  "duration_seconds": 3602,
+  "poster": "assets/images/signal-outside-poster.jpg",
+  "subtitle_receipt": "assets/videos/signal-outside.9F_uP0_bTYo.en.vtt",
+  "cues": [
+   "01:22-02:45 model split",
+   "03:17-03:58 price/cache",
+   "06:55-07:35 benchmarks",
+   "08:31-09:15 computer use/3D",
+   "11:18-12:24 Cat Doom build/self-test"
+  ],
+  "autoplay": false
+ },
+ "revision_history": [
+  {
+   "rev": 2,
+   "change": "B3 teaser -> GPT-6 Astra launch",
+   "previous": {
+    "id": "B3",
+    "path": "assets/images/artifacts/t-gpt6-tease.png",
+    "type": "GENERATED_EDITORIAL_BANNER",
+    "source_url": "https://x.com/ChatGPT/status/2095527989077557738",
+    "source_creator": "ChatGPT",
+    "prompt_file": "tmp/imagegen/t-gpt6-tease.txt",
+    "sha256": "c1f41b3595d32446bfc4077fb018933f8a9cb6eb88c205d19ae5d80d6437a0ef",
+    "bytes": 689100,
+    "dimensions": "1856x576",
+    "mime": "image/png",
+    "verification": "Gemini multimodal read: purple brain linked by golden thread to an open book and cap; no readable text. Does not assert GPT-6."
+   }
+  }
+ ]
+}
