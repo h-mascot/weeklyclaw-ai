@@ -1,8 +1,8 @@
-# WeeklyClaw Episode 28 host cheat sheet (rev5)
+# WeeklyClaw Episode 28 host cheat sheet (rev6)
 
 **Friday 2026-09-04 · 4:00 PM ET · Henry + Andy**  
 **Thesis:** The agreement landed. The models answered.  
-**Runtime:** target 34–38 min · hard stop 45 min  
+**Runtime:** target 36–40 min · hard stop 45 min
 **Status:** UNVALIDATED draft pending host review
 
 ## Order and ownership
@@ -11,7 +11,7 @@
 2. **Herald Labs · 1:00** — Henry.
 3. **Grid A · 8:00** — Henry leads all cards: Nvidia/HF, Fable/Mythos, OpenClaw 2.0, Qwen 0902.
 4. **Grid B · 8:15** — Henry leads all cards: NYC, Orbis, GPT-6 Astra launch, Cerebras speed.
-5. **Grid C · 3:00** — Henry leads all cards: Gemini 3.8, Muse Spark 1.3, fal H3 Max, independent receipts.
+5. **Grid C · 4:30** — Henry leads all cards: Gemini 3.8, Muse Spark 1.3, fal H3 Max, GitHub HydraFusion.
 6. **Signal From Outside · 6:00** — Andy leads The Neuron Fable 5.1 live test.
 7. **Hot take · 3:00** — Henry skeptic; Andy prepare-anyway.
 8. **Heritage Telecom · 1:00** — Andy.
@@ -28,6 +28,7 @@
 - Orbis: living worlds and real-time steering; closed source, vendor-led proof.
 - Astra: Brockman says “Welcome to the AGI era” — his framing. Vendor-reported benchmarks; cyber-critical gated to Daybreak. $10/$50 per M tokens.
 - Cerebras: ~1,500 tok/s and tier limits are vendor numbers as of launch day.
+- HydraFusion: research preview only. GitHub's +4.9 points / 67% lower cost figure is a controlled offline TerminalBench 2.1 result at medium reasoning, not production telemetry.
 
 ## Signal cues
 
@@ -48,22 +49,24 @@
 - **B1:** “The gap is the experiment.”
 - **B2:** “A good demo is not yet a medium.”
 - **B3:** “The stars aligned, and the first thing the new era did was find zero-days.”
-- **B4:** “A fifth of the room believes it. That is an operating condition.”
+- **B4:** “When the model answers before the prompt finishes loading, the bottleneck is you.”
+- **C4:** “Cadence is no longer the story. Orchestration is.”
 - **Signal:** “The next bottleneck is knowing when to stop the agent.”
 - **Hot take closer:** “The morally hard part is not the model. It is that we now have to take the poll seriously.”
 
-## News part 3 — the ones we nearly missed (after part 2, ~3 min)
+## News part 3 — the ones we nearly missed (after part 2, ~4:30)
 
 - C1 Gemini 3.8 Flash + Flash Cyber — Google, Sep 2. Third Flash in six weeks. $0.75/$3.75 per M (3.7 intro price). Cyber = vuln detection + auto-patching, Fairwind Program, trusted defenders only.
 - C2 Muse Spark 1.3 — Meta, Sep 2. Agent/coding model. ~20% fewer tool calls, ~25% fewer tokens vs 1.2 (Meta comparisons). Open weights teased; max reasoning pending safety tests.
 - C3 fal H3 Max — Sep 1. Post-trained MiniMax H3. 5s video in ~3s. #1 Design Arena I2V (1,341) + #1 Artificial Analysis I2V-audio (1,201). Promo through Sep 7, then $0.08/s list.
+- C4 GitHub HydraFusion — research preview in Copilot CLI. Runtime picks single, cascade, or cross-family critique. GitHub offline eval vs Opus 5: TerminalBench +4.9 quality / 67% lower estimated cost; DeepSWE -1.5 / 36% lower; CheckpointBench -0.1 / 65% lower. Henry: “Router Wars continue.”
 
 ## Close
 
 - Watch Astra rollout to Plus/Pro/API and independent benchmarks.
 - Watch the first Nvidia/HF regulatory response before the expected 2027 close.
 - Watch Orbis outside its launch reel and NYC’s measurement after the pause.
-- **One recap, once:** “This week: Nvidia signed the agreement, Anthropic priced the agent shift, OpenClaw shipped the platform pass, Qwen refreshed Max, New York paused classroom AI, Visko streamed worlds, OpenAI launched GPT-6 Astra, and Qwen3.8 27B ran at ~1,500 tok/s on Cerebras.”
+- **One recap, once:** “This week: Nvidia signed the agreement, Anthropic priced the agent shift, OpenClaw shipped the platform pass, Qwen refreshed Max, New York paused classroom AI, Visko streamed worlds, OpenAI launched GPT-6 Astra, Qwen3.8 27B ran at ~1,500 tok/s on Cerebras, and GitHub turned model routing into a live runtime.”
 - Back Friday September 11, 4 PM ET. Point to the Discord QR: https://weeklyclaw.ai/discord.
 
 ## Review commands
@@ -77,10 +80,10 @@
 
 ## Draft paths
 
-- Agenda: `episodes/28/showprep/revs/agenda.rev5.md`
-- Deck: `episodes/28/showprep/revs/deck.rev5.html`
-- Speaker notes: `episodes/28/showprep/revs/speaker-notes.rev5.md`
-- Talking points: `episodes/28/showprep/revs/talking-points.rev5.md`
-- Henry view: `episodes/28/showprep/revs/henry-section.rev5.md`
-- Andy view: `episodes/28/showprep/revs/andy-section.rev5.md`
-- This sheet: `episodes/28/showprep/revs/host-cheat-sheet.rev5.md`
+- Agenda: `episodes/28/showprep/revs/agenda.rev6.md`
+- Deck: `episodes/28/showprep/revs/deck.rev6.html`
+- Speaker notes: `episodes/28/showprep/revs/speaker-notes.rev6.md`
+- Talking points: `episodes/28/showprep/revs/talking-points.rev6.md`
+- Henry view: `episodes/28/showprep/revs/henry-section.rev6.md`
+- Andy view: `episodes/28/showprep/revs/andy-section.rev6.md`
+- This sheet: `episodes/28/showprep/revs/host-cheat-sheet.rev6.md`

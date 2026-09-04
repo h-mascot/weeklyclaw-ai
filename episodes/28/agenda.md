@@ -1,22 +1,22 @@
-# WeeklyClaw Episode 28: The agreement landed. The models answered. (rev5)
+# WeeklyClaw Episode 28: The agreement landed. The models answered. (rev6)
 
 **Show date:** Friday 2026-09-04 (America/New_York, 4:00 PM ET)  
 **Hosts:** Henry and Andy  
-**Target runtime:** 34–38 minutes  
+**Target runtime:** 36–40 minutes
 **Hard stop:** 45 minutes  
 **Format:** News runs as three grid slides, four story cards each (2 rows x 2 cols), one verified source capture or playable video per card, about 2 minutes per card. Henry walks each grid left-to-right, top-to-bottom. The Nvidia item is a signed definitive agreement, not a completed legal closing; expected close is H1 2027 pending approvals.
 
 ## Episode thesis
 
-The agreement landed, and the models answered. Nvidia made its proposed Hugging Face acquisition official at $12.9303B, with the transaction still subject to closing conditions and regulatory approvals. Anthropic shipped Fable 5.1 and the trusted-access Mythos 5.1, pricing long agent runs for a different kind of workday. OpenClaw returned from seven quiet weeks with version 2.0. Qwen refreshed Max for coding and long-horizon workflows. Then New York City paused student-facing AI through eighth grade, Visko proposed living worlds instead of generated clips, OpenAI launched GPT-6 Astra under an “AGI era” banner, and Qwen3.8 27B hit ~1,500 tokens/sec on Cerebras.
+The agreement landed, and the models answered. Nvidia made its proposed Hugging Face acquisition official at $12.9303B, with the transaction still subject to closing conditions and regulatory approvals. Anthropic shipped Fable 5.1 and the trusted-access Mythos 5.1, pricing long agent runs for a different kind of workday. OpenClaw returned from seven quiet weeks with version 2.0. Qwen refreshed Max for coding and long-horizon workflows. Then New York City paused student-facing AI through eighth grade, Visko proposed living worlds instead of generated clips, OpenAI launched GPT-6 Astra under an “AGI era” banner, Qwen3.8 27B hit ~1,500 tokens/sec on Cerebras, and GitHub previewed HydraFusion as a multi-model runtime inside Copilot CLI.
 
-Narrative arc: **agreement announced -> frontier model tiers -> agent platform pace -> open-model iteration -> public pushback -> a new medium -> the mind question**.
+Narrative arc: **agreement announced -> frontier model tiers -> agent platform pace -> open-model iteration -> public pushback -> a new medium -> runtime orchestration -> the mind question**.
 
 ## Cold open · 1:30 (slide `s-cold-open`)
 
 *Open on the five-step arc. The three hooks are the beats, not a briefing.*
 
-**Andy:** “Welcome back to Weekly Claw. The agreement landed and the models answered. Nvidia made Hugging Face official, Anthropic shipped two safeguard tiers, OpenClaw came back from seven quiet weeks, and New York decided the classroom was not ready. Eleven cards, three grids: the third grid adds Google's Gemini 3.8 Flash pair, Meta's Muse Spark 1.3, and fal's H3 Max. Let’s go.”
+**Andy:** “Welcome back to Weekly Claw. The agreement landed and the models answered. Nvidia made Hugging Face official, Anthropic shipped two safeguard tiers, OpenClaw came back from seven quiet weeks, and New York decided the classroom was not ready. Twelve cards, three grids: the third grid adds Google's Gemini 3.8 Flash pair, Meta's Muse Spark 1.3, fal's H3 Max, and GitHub HydraFusion. Let’s go.”
 
 **Henry talking points:**
 - The transaction is agreed, not closed: about $13B, with approvals still ahead.
@@ -249,7 +249,7 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 ### Card B4 · Qwen3.8 27B hits ~1,500 tok/s on Cerebras · 1:30
 
-**Visual:** `assets/videos/artifacts/b4-cerebras-clip.mp4` (official Qwen3.8-on-Cerebras demo, poster `assets/images/artifacts/b4-cerebras-poster-1080.jpg`), plus `assets/images/artifacts/b4-cerebras-limits.png` (Henry's tier-limits screenshot) in backup. Non-autoplay; Andy or Henry plays 2-3 seconds on cue.
+**Visual:** `assets/videos/b4-cerebras-qwen-clip.mp4` (official Qwen3.8-on-Cerebras demo, poster `assets/images/artifacts/b4-cerebras-poster.jpg`), plus `assets/images/artifacts/b4-cerebras-henry-limits.png` (Henry's tier-limits screenshot) in backup. Non-autoplay; Andy or Henry plays 2–3 seconds on cue.
 
 - Qwen3.8 27B is now available on the Cerebras Shared Tier at ~1,500 tokens/sec (announced Sep 3 by Daniel Ou; limits screenshot shared by Henry Sep 4).
 - Shared tier (free trial): 5 requests/min, 30K uncached TPM (~500 uncached tok/s average), 90K total TPM (~1,500 tok/s average), 1M tokens/day.
@@ -268,12 +268,15 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 - Cut/compression: trim the tier-limits list first if running long.
 
 
-### What happened this week — part 3: the ones we nearly missed (C1–C3, Henry-flagged in rev3)
+### What happened this week — part 3: the ones we nearly missed (C1–C4)
 
 - **C1 · Google ships Gemini 3.8 Flash + Flash Cyber** — third Flash in six weeks; "best reasoning & coding" Flash at 3.7's intro price ($0.75/$3.75 per M tokens); Flash Cyber does vulnerability detection and automated patching for trusted defenders via the new Fairwind Program. Receipts: blog.google launch post, DeepMind model card.
 - **C2 · Meta releases Muse Spark 1.3** — agentic/coding model in Muse Code and Meta Model API; ~20% fewer tool calls and ~25% fewer tokens vs 1.2 in Meta engineer comparisons; stronger prompt-injection resistance; open weights teased; max reasoning pending safety testing. Receipts: research.meta.ai release post, @AIatMeta.
 - **C3 · fal launches H3 Max** — post-trained MiniMax H3 video model with co-designed inference: ~5s clip in ~3s wall time, ~35x official endpoint throughput; #1 Design Arena image-to-video (1,341 Elo), #1 Artificial Analysis I2V-with-audio (1,201 Elo); promo pricing through Sep 7. Receipts: PRNewswire launch release, fal.ai model page.
-- **Visual receipts:** C1 `assets/images/artifacts/c1-gemini38-benchmark.png` (Google benchmark capture); C2 `assets/images/artifacts/c2-muse-spark-benchmark.png` (Meta benchmark capture); C3 `assets/images/artifacts/c3-h3max-benchmark.jpg` (official fal benchmark chart); C4 `assets/images/artifacts/c4-muse-spark-artificial-analysis.png` (independent Artificial Analysis chart).
+- **C4 · GitHub previews HydraFusion in Copilot CLI** — experimental runtime picks a single model, cascades from a cheaper draft to a stronger model, or uses cross-family critique. GitHub reports +4.9 verified-quality points at 67% lower estimated cost than Opus 5 on TerminalBench 2.1; DeepSWE is 1.5 points lower at 36% lower cost and CheckpointBench is 0.1 points lower at 65% lower cost. These are controlled offline GitHub evaluations at medium reasoning, not production outcomes. Available to all Copilot plans through `/experimental`; Henry's line: “Router Wars continue.”
+- **Visual receipts:** C1 `assets/images/artifacts/c1-gemini38-benchmark.png`; C2 `assets/images/artifacts/c2-muse-spark-benchmark.png`; C3 `assets/images/artifacts/c3-h3max-benchmark.jpg`; C4 `assets/images/artifacts/c4-hydrafusion-github-benchmark.png`, an OCR-verified capture of GitHub's benchmark table.
+- **C4 sources:** https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/ · https://github.com/orgs/community/discussions/206492 · https://x.com/satyanadella/status/2095912050535059918 · https://x.com/iAmHenryMascot/status/2095921629310198168
+
 ## Signal From Outside / weekly video review · 6:00 (slide `s-signal-outside`)
 
 *Permanent weekly anchor. Use the poster as the fallback still and open the video manually. Never autoplay. Cues were selected from the downloaded English transcript and are approximate enough to spot-check before air.*
@@ -306,9 +309,9 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 ## Hot take / debate · 3:00 (slide `s-hot-take`)
 
-**Motion:** "1,500 tokens a second changes what agents are for."
+**Motion:** "AI sentience is now a serious workplace question, not a philosophy-dorm question."
 
-**Do not repeat news:** B4 already covered the launch; this block debates what changes for operators. It debates operating policy under uncertainty: whether documenting a welfare trigger is worth doing before there is a settled science.
+**Do not repeat news:** This block is separate from the B4 Cerebras launch and C4 HydraFusion preview. It debates operating policy under uncertainty: whether documenting a welfare trigger is worth doing before there is settled science.
 
 **Henry talking points:**
 - Skeptic case: the poll measures vibes, not experience; there is no agreed test for subjective experience.
@@ -343,17 +346,17 @@ Narrative arc: **agreement announced -> frontier model tiers -> agent platform p
 
 **Andy fallback talk track:** Three things to watch after this show. First, when Astra reaches Plus, Pro, and API users, and what independent benchmarks say once they have it. Second, what regulators and the companies say about the Nvidia and Hugging Face agreement before its expected 2027 closing. Third, whether Visko can demonstrate a persistent world outside the launch reel while New York measures the consequences of a year-long classroom pause. That is the week ahead. We will be back Friday, September 11 at 4 PM ET. Follow WeeklyClaw at weeklyclaw.ai and join the Discord through the link on screen.
 
-Close rule: recap the episode exactly once, at the end. **One recap line:** “This week: Nvidia signed the agreement, Anthropic priced the agent shift, OpenClaw shipped the platform pass, Qwen refreshed Max, New York paused classroom AI, Visko streamed worlds, OpenAI launched GPT-6 Astra, and Qwen3.8 27B ran at ~1,500 tok/s on Cerebras.” Do not repeat this line elsewhere in the close or cheat sheet.
+Close rule: recap the episode exactly once, at the end. **One recap line:** “This week: Nvidia signed the agreement, Anthropic priced the agent shift, OpenClaw shipped the platform pass, Qwen refreshed Max, New York paused classroom AI, Visko streamed worlds, OpenAI launched GPT-6 Astra, Qwen3.8 27B ran at ~1,500 tok/s on Cerebras, and GitHub turned model routing into a live runtime.” Do not repeat this line elsewhere in the close or cheat sheet.
 
 **Handoff:** End on the QR card and the next-show date. No second recap.
 
 ## Build reference (not read on air)
 
-- Runtime targets: cold open 1:30; Herald 1:00; grid A 8:00; grid B 8:15; grid C 3:00; Signal From Outside 6:00; hot take 3:00; Heritage 1:00; close 3:00, plus live transitions and host banter. Target 34–38 minutes; hard stop 45.
+- Runtime targets: cold open 1:30; Herald 1:00; grid A 8:00; grid B 8:15; grid C 4:30; Signal From Outside 6:00; hot take 3:00; Heritage 1:00; close 3:00, plus live transitions and host banter. Target 36–40 minutes; hard stop 45.
 - Deliberate cuts, in order: B3 demo-reel detail; Orbis funding detail; Qwen pricing; Signal 3D cue. Do not cut the Signal anchor before optional card cuts.
 - News ownership: Henry leads every What Happened This Week card. Andy supplies fallback prose and caveats; Andy leads Signal From Outside.
 - Sponsor order: Herald Labs immediately after the cold open; Heritage Telecom immediately before the close.
-- Visual manifest: twelve real source artifacts across the three news grids, including four benchmark/chart captures, five receipt/social captures, one official OpenAI receipt, one official Orbis video clip with poster, sponsor assets copied byte-for-byte from Episode 27, and Discord QR copied byte-for-byte from Episode 27.
+- Visual manifest: fifteen real source artifacts across the three news grids, including the new GitHub HydraFusion benchmark capture, the official Orbis and Cerebras clips with posters, sponsor assets copied byte-for-byte from Episode 27, and the Discord QR copied byte-for-byte from Episode 27.
 - Approval state remains `UNVALIDATED` until Henry or Andy issues `APPROVE`. Do not promote root episode artifacts before approval.
 - Review commands: `APPROVE`, `SWAP <slot> <candidate>`, `DROP <slot>`, `PIN <candidate>`, `ORDER <n1,n2,n3,n4,n5>`, or free-text feedback.
 

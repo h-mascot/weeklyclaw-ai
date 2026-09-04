@@ -1,10 +1,10 @@
-# WeeklyClaw Episode 28 Henry view (rev4)
+# WeeklyClaw Episode 28 Henry view (rev6)
 
 ## Shared frame
 
 - **Title:** The agreement landed. The models answered.
 - Keep the Nvidia wording exact: signed definitive agreement, expected H1 2027 close pending approvals. Never say the acquisition has closed.
-- Narrative: agreement -> model tiers -> platform pace -> open-model iteration -> public pushback -> new medium -> mind question.
+- Narrative: agreement -> model tiers -> platform pace -> open-model iteration -> public pushback -> new medium -> runtime orchestration -> mind question.
 - Henry leads every What Happened This Week card. Andy supports with caveats and fallback prose.
 
 ## s-title / s-cold-open
@@ -94,6 +94,36 @@
 ### B4 Cerebras speed
 
 - Qwen3.8 27B live on Cerebras Shared Tier at ~1,500 tok/s. Free trial: 5 req/min, 1M tokens/day. Dev tier: 300 req/min, no daily cap.
-- Henry: agent watched for this 2-3 weeks. The joy when it landed. "Damn what would one use this for?"
+- Henry: agent watched for this 2–3 weeks. The joy when it landed. "Damn what would one use this for?"
 - Vendor/tier numbers as of launch day; shared-tier averages sit below peak.
 - https://x.com/iAmHenryMascot/status/2095896792038588456
+
+## s-seg-grid-c / four cards
+
+### C1 Gemini 3.8 Flash + Flash Cyber
+
+- Third Flash in six weeks, same intro price as 3.7.
+- Cyber variant is for trusted defenders through Fairwind.
+- Vendor claims stay attributed.
+
+### C2 Muse Spark 1.3
+
+- Meta agent/coding model in Muse Code and Model API.
+- Meta says ~20% fewer tool calls and ~25% fewer tokens than 1.2.
+- Open weights teased; max reasoning still pending.
+
+### C3 fal H3 Max
+
+- Post-trained MiniMax H3 for faster-than-real-time video.
+- fal reports five-second video in about three seconds and two launch-day leaderboard leads.
+- **Landing:** “At this point, generation speed is a pricing problem.”
+
+### C4 GitHub HydraFusion
+
+- Research preview inside Copilot CLI. All plans can enable it through `/experimental`.
+- Runtime chooses single, cascade, or cross-family critique instead of making the user pick one model.
+- GitHub controlled offline eval: TerminalBench 2.1 +4.9 quality points at 67% lower estimated cost than Opus 5. DeepSWE is -1.5 / 36% lower; CheckpointBench -0.1 / 65% lower.
+- Caveat: vendor-run, medium-reasoning offline tests, not production outcomes. Preview behavior and model pool can change.
+- Henry signal: “Router Wars continue.”
+- **Landing:** “Cadence is no longer the story. Orchestration is.”
+- **Handoff:** “Andy, the runtime just became the product.”
