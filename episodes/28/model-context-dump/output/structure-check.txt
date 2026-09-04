@@ -1,0 +1,24 @@
+VALIDATOR: PASS
+Slide-ID parity: PASS (11 slides <-> notes)
+JS syntax: PASS
+No autoplay: PASS
+Clickable source links: PASS (38)
+Final Sources slide: PASS
+Discord QR: PASS
+Theme markers: PASS
+Local media paths: PASS (18)
+Segment IDs: PASS (grid-a, grid-b, grid-c)
+CSS custom properties: PASS (15)
+SVG symbols: PASS
+Invented brand/logo symbols: PASS (none)
+Core layout classes: PASS (16)
+Sponsor assets: PASS (3)
+Deck size: PASS (56,595 bytes; authority 74,261 bytes)
+
+STRUCTURE: PASS
+Slides: 11, unique and in requested order
+Order: s-title -> s-cold-open -> s-sponsor-herald -> s-seg-grid-a -> s-seg-grid-b -> s-seg-grid-c -> s-signal-outside -> s-hot-take -> s-sponsor-heritage -> s-close -> s-sources
+Story cards: s-seg-grid-a=4, s-seg-grid-b=4, s-seg-grid-c=4
+Render QA: PASS at 1600x900; 11/11 slides, zero viewport overflow, zero scroll overflow, zero unloaded images
+Navigation smoke test: PASS (ArrowRight, Home, End, wheel, swipe)
+
