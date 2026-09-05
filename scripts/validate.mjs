@@ -183,7 +183,7 @@ if (changelogHtml.includes('Open changelog') || changelogHtml.includes('Host dec
 
 
 const episodesHtml = readFileSync(new URL('../episodes/index.html', import.meta.url), 'utf8');
-for (const needle of ['Weekly Claw Episodes', 'W27', 'W26', 'The agent owns the loop', 'The Sandbox Failed', '/episodes/27/deck', '/episodes/22/deck', 'data-video-id="vqUkh8w2L8g"', 'data-video-id="f2yugYwXOBo"', 'data-video-id="dquJyEBQWpE"', 'data-video-id="MSRFmpDfaTg"', 'data-spotify-id="5t1xYX7e4DUv6l9DKUAi21"', 'data-spotify-id="58kOYSrhrMLArnNfVY41RQ"', '/assets/youtube-thumbnails/w27.png', '/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>8</strong>', 'video episodes']) {
+for (const needle of ['Weekly Claw Episodes', 'W27', 'W26', 'The agent owns the loop', 'The Sandbox Failed', '/episodes/27/deck', '/episodes/22/deck', 'data-video-id="vqUkh8w2L8g"', 'data-video-id="f2yugYwXOBo"', 'data-video-id="dquJyEBQWpE"', 'data-video-id="MSRFmpDfaTg"', 'data-spotify-id="5t1xYX7e4DUv6l9DKUAi21"', 'data-spotify-id="58kOYSrhrMLArnNfVY41RQ"', '/assets/youtube-thumbnails/w27.png', '/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>9</strong>', 'video episodes']) {
   if (!episodesHtml.includes(needle)) {
     console.error(`Episodes index missing expected copy: ${needle}`);
     process.exit(1);
@@ -206,8 +206,8 @@ for (const needle of [
   }
 }
 const summaryCount = (episodesHtml.match(/class="summary-item"/g) ?? []).length;
-if (summaryCount !== 8) {
-  console.error(`Episodes index should render 8 video-era episode summaries, found ${summaryCount}`);
+if (summaryCount !== 9) {
+  console.error(`Episodes index should render 9 video-era episode summaries, found ${summaryCount}`);
   process.exit(1);
 }
 if (episodesHtml.includes('data-summary-week="19"')) {
@@ -228,13 +228,13 @@ for (const needle of [
   }
 }
 const feedItemCount = (feedXml.match(/<item>/g) ?? []).length;
-if (feedItemCount !== 8) {
-  console.error(`RSS feed should contain 8 items, found ${feedItemCount}`);
+if (feedItemCount !== 9) {
+  console.error(`RSS feed should contain 9 items, found ${feedItemCount}`);
   process.exit(1);
 }
 const episodesJson = JSON.parse(readFileSync(new URL('../episodes.json', import.meta.url), 'utf8'));
-if (episodesJson.episodes.length !== 8) {
-  console.error(`episodes.json should contain 8 episodes, found ${episodesJson.episodes.length}`);
+if (episodesJson.episodes.length !== 9) {
+  console.error(`episodes.json should contain 9 episodes, found ${episodesJson.episodes.length}`);
   process.exit(1);
 }
 for (const episode of episodesJson.episodes) {
@@ -301,7 +301,7 @@ if (featuredCopy.includes('Open episode') || featuredCopy.includes('class="lates
   process.exit(1);
 }
 const latestCtas = [...html.matchAll(/href="(https:\/\/www\.youtube\.com\/watch\?v=[\w-]{11})"[^>]*>Watch the latest/g)].map((match) => match[1]);
-if (latestCtas.length !== 3 || latestCtas.some((url) => url !== 'https://www.youtube.com/watch?v=vqUkh8w2L8g')) {
+if (latestCtas.length !== 3 || latestCtas.some((url) => url !== 'https://www.youtube.com/watch?v=-4LahKeV7hc')) {
   console.error('Homepage latest-episode CTAs do not all target the verified current episode');
   process.exit(1);
 }

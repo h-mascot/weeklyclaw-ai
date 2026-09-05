@@ -6,6 +6,7 @@
     <description>Readable summaries of every Weekly Claw episode. New episodes are added automatically after each show. Read the show without watching it.</description>
     <language>en</language>
     <atom:link href="https://weeklyclaw.ai/feed.xml" rel="self" type="application/rss+xml"/>
+    <item><title>W28 — GPT-6 Astra arrives, OpenClaw 2.0, Jensen Huang on AI and work, NYC’s classroom AI pause</title><link>https://www.youtube.com/watch?v=-4LahKeV7hc</link><guid isPermaLink="false">weeklyclaw-episode-28</guid><pubDate>Sat, 05 Sep 2026 18:53:10 GMT</pubDate><description><![CDATA[<ul><li>GPT-6 Astra leads a busy week of model launches and benchmark comparisons.</li><li>OpenClaw 2.0 brings a new interface and changes to everyday agent workflows.</li><li>Andy and Henry discuss Fable, Qwen, Gemini, Cerebras and other releases from the week.</li><li>Jensen Huang’s comments open a discussion about AI, work and how people use these tools.</li><li>The closing discussion examines classroom AI policies and proposals to pause AI development.</li></ul><p><a href="https://www.youtube.com/watch?v=-4LahKeV7hc">Watch W28 →</a></p>]]></description></item>
     <item>
       <title>W27 — The agent owns the loop</title>
       <link>https://www.youtube.com/watch?v=vqUkh8w2L8g</link>

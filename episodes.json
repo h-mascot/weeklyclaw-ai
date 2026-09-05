@@ -6,6 +6,20 @@
   },
   "episodes": [
     {
+      "week": 28,
+      "title": "GPT-6 Astra arrives, OpenClaw 2.0, Jensen Huang on AI and work, NYC’s classroom AI pause",
+      "date": "2026-09-04",
+      "url": "https://www.youtube.com/watch?v=-4LahKeV7hc",
+      "videoId": "-4LahKeV7hc",
+      "summary": [
+        "GPT-6 Astra leads a busy week of model launches and benchmark comparisons.",
+        "OpenClaw 2.0 brings a new interface and changes to everyday agent workflows.",
+        "Andy and Henry discuss Fable, Qwen, Gemini, Cerebras and other releases from the week.",
+        "Jensen Huang’s comments open a discussion about AI, work and how people use these tools.",
+        "The closing discussion examines classroom AI policies and proposals to pause AI development."
+      ]
+    },
+    {
       "week": 27,
       "title": "The agent owns the loop",
       "date": "2026-08-28",
