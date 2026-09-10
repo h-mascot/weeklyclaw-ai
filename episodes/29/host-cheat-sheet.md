@@ -41,7 +41,7 @@ Sponsor copy carried verbatim from prior approved episodes.
 
 | Card | Story | Key beat | Must-keep caveat |
 |------|-------|----------|------------------|
-| B1 | DeepSeek V4.1-Flash | 552B MoE · 8B/16B active · MIT weights · API live · 9/14 traffic migration | Benchmark + cache numbers vendor-reported |
+| B1 | DeepSeek V4.1-Flash | 552B MoE · 8B/16B active · MIT weights · API live · 9/14 migration · 1st independent run: >50× cheaper than Sol/Opus (60 browser tasks) | Cache ratio vendor-reported; independent run corroborates cheap, not the ratio |
 | B2 | Mistral €3B Series D | Samsung lead · €21B post · ASML on record · ~2× prior valuation | "Largest EU tech equity round" is Mistral framing |
 | B3 | Suno v6 with plaintiffs | Warner + BMG + Believe partners · from-scratch licensed training | Dataset scope + comp terms undisclosed · litigation continues |
 | B4 | AI jobs boom | ≈1M created vs ≈200K AI-attributed layoffs since mid-2023 | Estimates, not census · Stanford entry-level warning |
@@ -61,7 +61,7 @@ Sponsor copy carried verbatim from prior approved episodes.
 - **Henry:** incentive structures + IPO-timed claims + inspectable grant ledger (The Effort $3.3M · $200K TGC · $125K Faith Matters) + Newport NYT column.
 - **Andy:** guilt-by-association fails · lab system-card evidence is stronger technical case (Astra oversight-evasion, Hubinger Sep-9 statement).
 - **Verdict:** critique fair vs incentives; unfair as guilt-by-association against measurable work.
-- **Off-air:** unattributed conspiracy claims · engagement velocity as evidence · private-motive attribution.
+- **Off-air:** unattributed conspiracy claims · engagement velocity as evidence · private-motive attribution · Anthropic tenure numbers (reports conflict).
 
 ## One to Watch
 

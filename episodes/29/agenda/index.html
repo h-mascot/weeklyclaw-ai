@@ -27,7 +27,7 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <header><nav class="shell" aria-label="Episode navigation"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/29/deck">Open slides</a></div></nav></header>
 <main class="shell">
 <section class="intro"><p class="eyebrow">Episode 29 · September 11, 2026</p><h1>The chat is empty. The agents left.</h1><p>The chat is empty. The agents left. This week they showed up in five different rooms. An OpenAI system ran ten thousand agents for eighty-eight hours and came back…</p></section>
-<article><h2>WeeklyClaw Episode 29: The chat is empty. The agents left. (rev1)</h2>
+<article><h2>WeeklyClaw Episode 29: The chat is empty. The agents left. (rev2)</h2>
 <p><strong>Show date:</strong> Friday 2026-09-11 (America/New_York, 4:00 PM ET)</p>
 <p><strong>Hosts:</strong> Henry and Andy</p>
 <p><strong>Target runtime:</strong> 32–38 minutes</p>
@@ -171,13 +171,14 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>Vendor-reported claim: about one-quarter HBM cache and one-eighth SSD cache for equivalent behavior versus V4-Flash. The official benchmark table shows mixed near-peer results across the listed tasks; it does not establish a single aggregate quality or cost ratio.</li>
 <li>Hugging Face repo verified: created 2026-09-10 02:17:58 UTC, 1,048,576 positions, 384 routed experts, native vision, MIT tag, no gate, 48 safetensors shards.</li>
 <li>Henry retweeted the official announcement with big engagement and called this the sleep-blocker of the week.</li>
-<li>All performance and efficiency claims are vendor-reported; no independent reproduction available this early.</li>
+<li>All performance and efficiency claims are vendor-reported; the cache ratio has no independent reproduction yet.</li>
+<li>First independent agent-cost receipt landed Sep 10 (post-BUILD): Gregor Zunic, creator of browser-use, ran V4.1-Flash on 60 browser-use tasks — Pareto frontier against Sol and Opus at more than 50× lower recorded agent cost. Henry amplified it. This corroborates the cheap-agent-economics direction, not the specific cache ratio.</li>
 </ul>
 <p><strong>Henry talking points:</strong></p>
 <ul>
 <li>&quot;If cache cost dominates long-running agents, the launch is the architecture, not the score.&quot;</li>
 <li>The API migration on the 14th is the receipt to watch — is DeepSeek shipping their own flagship traffic onto V4.1?</li>
-<li>Someone will reproduce the KV cache claim next week. Wait for that number before repeating it.</li>
+<li>Someone will reproduce the KV cache claim next week; the first independent agent-cost number already landed — browser-use&#x27;s 60-task run at &gt;50× lower recorded cost than Sol/Opus. Cheap is corroborated; the cache ratio is not.</li>
 </ul>
 <p><strong>Henry line (optional):</strong> &quot;The launch is not the leaderboard. The launch is the cache.&quot;</p>
 <p><strong>Andy fallback talk track:</strong> DeepSeek&#x27;s V4.1 Flash is this week&#x27;s open-weights receipt. The model is five hundred and fifty-two billion parameters total, arranged as a mixture of experts with a causal encoder–decoder architecture. During inference it activates eight billion parameters on input and sixteen billion on output. The API is live under the name <code>deepseek-flash</code>, and the weights are on Hugging Face under an MIT license with no gate. That combination — open weights on the day the API turns on — remains rare at this scale. The interesting part of DeepSeek&#x27;s own launch page is not the benchmark table, even though the table is good; the useful chart is the cache one. DeepSeek claims about a quarter of the high-bandwidth-memory cache and about an eighth of the SSD cache for equivalent behavior compared to their prior V4-Flash. If that survives independent testing, it is a real cost move for long-running agents. All of the benchmark and efficiency numbers on the page are vendor-reported. The receipt to watch is not this week&#x27;s chart; it is next Monday, September fourteenth, when V4-Pro traffic is scheduled to migrate to V4.1-Flash. If the company runs its own flagship API on this checkpoint, the architecture claim becomes deployment reality.</p>
@@ -188,6 +189,7 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>Weights: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash</li>
 <li>Independent read: https://www.bloomberg.com/news/articles/2026-09-10/deepseek-s-new-low-cost-model-deals-a-fresh-blow-to-openai-z-ai</li>
 <li>Additional: https://srnnews.com/chinas-deepseek-launches-v4-1-flash-model/</li>
+<li>Independent agent-cost run (Sep 10): https://x.com/gregpr07/status/2098067206210998586</li>
 <li>Cut: drop the KV-cache chart on-air first; keep the &quot;1/4 HBM, 1/8 SSD, vendor-reported&quot; line.</li>
 </ul>
 <h4>Card B2 · Mistral raises €3B to build Europe&#x27;s sovereign AI stack · 2:00</h4>
@@ -300,7 +302,7 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <p><strong>Do not repeat news:</strong> Every news card this week is about a launch, a boundary, or a number. This block is about whether the safety movement&#x27;s incentive structure — funding, institutional capture, and IPO-timed catastrophe claims — is credible on its own terms. It is not the news, and it does not restate B4&#x27;s labor argument.</p>
 <p><strong>Henry talking points (challenging doomer incentive structures):</strong></p>
 <ul>
-<li>Anthropic&#x27;s public claims scaled with its IPO timing. Jacob Coxon&#x27;s public resignation post crossed ~120M views on X inside a day. That kind of velocity is not neutral.</li>
+<li>Anthropic&#x27;s public claims scaled with its IPO timing. Jacob Coxon&#x27;s public resignation post crossed ~120M views on X inside a day. That kind of velocity is not neutral. His reported tenure at Anthropic is disputed — &quot;less than two months&quot; in multiple viral posts — so we name the resignation and the post, never a tenure number.</li>
 <li>The Effort reported $3.3M in FLI-linked grants to religious NGOs including The Gospel Coalition ($200K) and Faith Matters ($125K). Grant ledgers are inspectable. What &quot;coordinated propaganda&quot; means is The Effort&#x27;s interpretation, but the payments are real, and they matter to the movement&#x27;s honest description of itself.</li>
 <li>Cal Newport&#x27;s Sep-10 NYT column names the Yudkowsky-lineage rationalists specifically — this is not a strawman built by AI-lab critics.</li>
 <li>What would change Henry&#x27;s mind: a serious safety org publishing budget, funding sources, and a policy that measures capability harm rather than movement growth.</li>
@@ -316,7 +318,7 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 </ul>
 <p><strong>Andy fallback talk track:</strong> The strong version of Henry&#x27;s argument is real. There is a lot of money in AI safety, some of it goes through organizations whose worldview is theological, some of it lands in institutions in a shape that looks a lot like political influence, and none of that is neutral. It is fair to say that a movement with donors, professional infrastructure, and IPO-timed messaging is not just a research field — it is also a business model. The place I want to push back is the guilt-by-association step. A researcher&#x27;s political funding history does not falsify a technical claim about capability. The strongest technical case for taking safety seriously does not come from religious grants; it comes from the frontier labs&#x27; own system cards. OpenAI itself said in the Astra release that oversight-evasion scored worse than prior models and called the decline serious. Anthropic&#x27;s alignment lead said publicly this week that his team treats catastrophic risk as real while stating that current-model risk remains low. That is the empirical part of the story. It survives Henry&#x27;s — and my — skepticism about the movement&#x27;s incentive structure. The right answer is not to collapse safety work into the movement or reject it because of the movement. It is to keep the measurable work — capability, oversight, evidence — separate from culture and to let both be scrutinized on their own terms.</p>
 <p><strong>Verdict (explicit and concise):</strong> The safety-movement critique is fair when it is aimed at incentives and funding — those are inspectable. It is not fair when it is used as guilt-by-association against measurable safety work inside labs. Both statements can be true.</p>
-<p><strong>Evidence/caveat:</strong> Coxon&#x27;s resignation and public thread are verified. His claims about colleagues&#x27; private beliefs and lab race dynamics remain testimony, not measured facts. The Effort&#x27;s grant ledger is documented; the &quot;coordinated campaign&quot; framing is The Effort&#x27;s interpretation. No unattributed conspiracy claims from social posts on air.</p>
+<p><strong>Evidence/caveat:</strong> Coxon&#x27;s resignation and public thread are verified. Reports conflict on how long he worked at Anthropic (six weeks to two months); we do not air a tenure number. His claims about colleagues&#x27; private beliefs and lab race dynamics remain testimony, not measured facts. The Effort&#x27;s grant ledger is documented; the &quot;coordinated campaign&quot; framing is The Effort&#x27;s interpretation. No unattributed conspiracy claims from social posts on air.</p>
 <p><strong>Handoff cue:</strong> One rebuttal each. Then Andy takes the Herald sponsor read.</p>
 <h4>Sources and production notes</h4>
 <ul>

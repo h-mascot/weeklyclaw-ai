@@ -1,4 +1,4 @@
-# WeeklyClaw Episode 29: The chat is empty. The agents left. (rev1)
+# WeeklyClaw Episode 29: The chat is empty. The agents left. (rev2)
 
 **Show date:** Friday 2026-09-11 (America/New_York, 4:00 PM ET)
 **Hosts:** Henry and Andy
@@ -172,12 +172,13 @@ Narrative arc: **agents left the chat → the boundaries became products → the
 - Vendor-reported claim: about one-quarter HBM cache and one-eighth SSD cache for equivalent behavior versus V4-Flash. The official benchmark table shows mixed near-peer results across the listed tasks; it does not establish a single aggregate quality or cost ratio.
 - Hugging Face repo verified: created 2026-09-10 02:17:58 UTC, 1,048,576 positions, 384 routed experts, native vision, MIT tag, no gate, 48 safetensors shards.
 - Henry retweeted the official announcement with big engagement and called this the sleep-blocker of the week.
-- All performance and efficiency claims are vendor-reported; no independent reproduction available this early.
+- All performance and efficiency claims are vendor-reported; the cache ratio has no independent reproduction yet.
+- First independent agent-cost receipt landed Sep 10 (post-BUILD): Gregor Zunic, creator of browser-use, ran V4.1-Flash on 60 browser-use tasks — Pareto frontier against Sol and Opus at more than 50× lower recorded agent cost. Henry amplified it. This corroborates the cheap-agent-economics direction, not the specific cache ratio.
 
 **Henry talking points:**
 - "If cache cost dominates long-running agents, the launch is the architecture, not the score."
 - The API migration on the 14th is the receipt to watch — is DeepSeek shipping their own flagship traffic onto V4.1?
-- Someone will reproduce the KV cache claim next week. Wait for that number before repeating it.
+- Someone will reproduce the KV cache claim next week; the first independent agent-cost number already landed — browser-use's 60-task run at >50× lower recorded cost than Sol/Opus. Cheap is corroborated; the cache ratio is not.
 
 **Henry line (optional):** "The launch is not the leaderboard. The launch is the cache."
 
@@ -191,6 +192,7 @@ Narrative arc: **agents left the chat → the boundaries became products → the
 - Weights: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
 - Independent read: https://www.bloomberg.com/news/articles/2026-09-10/deepseek-s-new-low-cost-model-deals-a-fresh-blow-to-openai-z-ai
 - Additional: https://srnnews.com/chinas-deepseek-launches-v4-1-flash-model/
+- Independent agent-cost run (Sep 10): https://x.com/gregpr07/status/2098067206210998586
 - Cut: drop the KV-cache chart on-air first; keep the "1/4 HBM, 1/8 SSD, vendor-reported" line.
 
 ### Card B2 · Mistral raises €3B to build Europe's sovereign AI stack · 2:00
@@ -318,7 +320,7 @@ Narrative arc: **agents left the chat → the boundaries became products → the
 **Do not repeat news:** Every news card this week is about a launch, a boundary, or a number. This block is about whether the safety movement's incentive structure — funding, institutional capture, and IPO-timed catastrophe claims — is credible on its own terms. It is not the news, and it does not restate B4's labor argument.
 
 **Henry talking points (challenging doomer incentive structures):**
-- Anthropic's public claims scaled with its IPO timing. Jacob Coxon's public resignation post crossed ~120M views on X inside a day. That kind of velocity is not neutral.
+- Anthropic's public claims scaled with its IPO timing. Jacob Coxon's public resignation post crossed ~120M views on X inside a day. That kind of velocity is not neutral. His reported tenure at Anthropic is disputed — "less than two months" in multiple viral posts — so we name the resignation and the post, never a tenure number.
 - The Effort reported $3.3M in FLI-linked grants to religious NGOs including The Gospel Coalition ($200K) and Faith Matters ($125K). Grant ledgers are inspectable. What "coordinated propaganda" means is The Effort's interpretation, but the payments are real, and they matter to the movement's honest description of itself.
 - Cal Newport's Sep-10 NYT column names the Yudkowsky-lineage rationalists specifically — this is not a strawman built by AI-lab critics.
 - What would change Henry's mind: a serious safety org publishing budget, funding sources, and a policy that measures capability harm rather than movement growth.
@@ -336,7 +338,7 @@ Narrative arc: **agents left the chat → the boundaries became products → the
 
 **Verdict (explicit and concise):** The safety-movement critique is fair when it is aimed at incentives and funding — those are inspectable. It is not fair when it is used as guilt-by-association against measurable safety work inside labs. Both statements can be true.
 
-**Evidence/caveat:** Coxon's resignation and public thread are verified. His claims about colleagues' private beliefs and lab race dynamics remain testimony, not measured facts. The Effort's grant ledger is documented; the "coordinated campaign" framing is The Effort's interpretation. No unattributed conspiracy claims from social posts on air.
+**Evidence/caveat:** Coxon's resignation and public thread are verified. Reports conflict on how long he worked at Anthropic (six weeks to two months); we do not air a tenure number. His claims about colleagues' private beliefs and lab race dynamics remain testimony, not measured facts. The Effort's grant ledger is documented; the "coordinated campaign" framing is The Effort's interpretation. No unattributed conspiracy claims from social posts on air.
 
 **Handoff cue:** One rebuttal each. Then Andy takes the Herald sponsor read.
 

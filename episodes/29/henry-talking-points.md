@@ -94,7 +94,7 @@ Walk left→right, top→bottom. One dominant artifact per card. Details live in
 - Vendor-reported: ≈1/4 HBM, ≈1/8 SSD cache vs prior V4-Flash. Treat the official benchmark table as a mixed task-level comparison, not a single quality or cost ratio.
 - HF repo verified: created 2026-09-10 02:17 UTC, 1M positions, 384 experts, native vision, MIT, no gate, 48 shards.
 - On 2026-09-14 V4-Pro API traffic is scheduled to migrate to V4.1-Flash.
-- All performance/efficiency numbers are vendor-reported. Wait for independent runs.
+- All performance/efficiency numbers are vendor-reported — but the first independent agent-cost run landed Sep 10: browser-use's Gregor Zunic, 60 browser tasks, Pareto frontier vs Sol/Opus at >50× lower recorded cost.
 
 **Optional line:** "The launch is not the leaderboard. The launch is the cache."
 
@@ -162,7 +162,7 @@ Walk left→right, top→bottom. One dominant artifact per card. Details live in
 **Motion:** "AI safety is becoming a religion with a business model."
 
 **Henry side — challenging doomer incentive structures:**
-- Anthropic's public claims scaled with IPO timing. Coxon's resignation post crossed ~120M views on X in a day. That velocity is not neutral.
+- Anthropic's public claims scaled with IPO timing. Coxon's resignation post crossed ~120M views on X in a day. That velocity is not neutral. Tenure reports conflict (six weeks vs two months) — name the resignation, not a number.
 - The Effort's Sep-4 report documents $3.3M in FLI-linked grants to religious NGOs, including $200K to The Gospel Coalition and $125K to Faith Matters. The ledgers are inspectable. "Coordinated propaganda" is The Effort's interpretation; the payments are real.
 - Cal Newport's Sep-10 NYT column names the Yudkowsky-lineage rationalists specifically.
 - What would change Henry's mind: a serious safety org publishing budget, funding sources, and a policy that measures capability harm rather than movement growth.
@@ -213,4 +213,4 @@ Walk left→right, top→bottom. One dominant artifact per card. Details live in
 - Do not repeat "world's first" on XPENG without attribution.
 - Do not describe AlphaGenome outputs as clinical.
 - Do not repeat DeepSeek benchmark or cache figures without the vendor-reported label.
-- Do not launder Coxon's testimony into fact on-air.
+- Do not launder Coxon's testimony into fact on-air, and do not air an Anthropic tenure number — reports conflict (six weeks vs two months).
