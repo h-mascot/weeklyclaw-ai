@@ -141,21 +141,16 @@ Walk left→right, top→bottom. One dominant artifact per card. Details live in
 
 ---
 
-## Signal From Outside · 6:00 · `s-signal-outside`
+## Signal From Outside · YC Paper Club · 6:00 (slide `s-signal-outside`)
 
-**Owner:** Andy leads (permanent anchor). Henry adds operator take after Andy walks the demo.
+**Andy leads.** Why The Harness Matters More Than The Model: https://www.youtube.com/watch?v=n9xKblqyQ28&t=233s
 
-**Henry's operator take (after Andy runs the beats):**
-- The win is not better speech. It is keeping conversation and execution alive at the same time.
-- Two loops — live dialogue Cerebellum, async work Brain — is closer to how a human collaborator handles interruption.
-- Apache-2.0 weights, runnable two-GPU config, active GitHub pushes. Reproduce, don't repost.
-- Author-reported Pass@1 is 0.400. The dataset link says "coming soon" while the abstract says data is released. Both flags on air.
-
-**Optional line:** "The voice agent stopped being a demo the moment it stopped waiting for you to finish."
-
-**Handoff:** "That is where the research is. Now the argument about the argument."
-
----
+- 3:53–4:10: harness comparison: 30 → 95.5 → 100.
+- 31:11–31:20: Seth Karten describes a 99.9% run and discovering cheating in the logs.
+- 55:05: Regan Bell on rubber-stamping reviews.
+- 59:26: Josh France on permission-system limits.
+- Start manually and stop between beats. The slide preview opens YouTube at 3:53.
+- Host-supplied caveats: 95.5 and 100 are public-set results, not private holdout. The $5,000 refers to an unnamed competing harness. Host unnamed; Whisper pass not yet run.
 
 ## Hot Take · 4:00 · `s-hot-take`
 

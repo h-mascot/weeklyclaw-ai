@@ -195,6 +195,7 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
 #s-sources .mt-2{margin-top:7px;}
 #s-sources .src-note{font-size:.54rem;line-height:1.2;}
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -340,33 +341,104 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
   </div>
 </div>
 
-<!-- SLIDE 6 — SIGNAL FROM OUTSIDE · GANDER -->
-<div class="slide" id="s-signal-outside">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #29</div><div class="slide-tag">03 / SIGNAL FROM OUTSIDE &middot; 6 MIN</div>
-  <div class="glow-orb orb-blue" style="width:440px;height:440px;top:-130px;right:-120px;"></div>
-  <div class="content">
-    <div class="part-label">Signal From Outside &middot; weekly video review &middot; permanent anchor &middot; 6 min</div>
-    <h2 class="text-center">Gander keeps working <span class="gradient-text">while you interrupt it.</span></h2>
-    <div class="gradient-line"></div>
-    <div class="mt-2 two-col" style="align-items:center;">
-      <div class="card card-glow">
-        <span class="tag tag-blue">THIS WEEK&rsquo;S SIGNAL &middot; GANDER PROJECT</span>
-        <h3 class="mt-2">Full-duplex agent: Cerebellum (Thinker&ndash;Talker) &middot; Brain (async).</h3>
-        <p>Continuous audio/video/text perception with interruptible speech AND a background reasoning loop that keeps making progress. The demo shows the user interrupting a running task; the agent acknowledges without dropping the background work.</p>
-        <p class="mt-2"><strong>Verified:</strong> arXiv v2 2026-09-09 &middot; Apache-2.0 weights on Hugging Face &middot; runnable two-GPU config &middot; GitHub push 2026-09-10.</p>
-        <p class="mt-2 mono" style="color:#8f403a;"><strong>Caveats on air:</strong> author-reported end-to-end Pass@1 &asymp; 0.400. Dataset link says &ldquo;coming soon&rdquo; while the abstract says data is released.</p>
-        <a href="https://omni-interaction-gander.github.io/Omni-Interaction-Agent/" target="_blank" rel="noopener" style="margin-top:12px;display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border:2px solid var(--claw-red);border-radius:999px;font-family:var(--mono);font-size:.9rem;color:#225e6a;text-decoration:none;background:rgba(255,255,255,.4);">&#9654; PLAY &middot; project site</a>
+<section class="slide" id="s-signal-outside">
+<style>
+#s-signal-outside{
+  --cream:#f4efe3; --ink:#1c1b18; --teal:#0e7a6f; --teal-soft:#dcebe7; --rule:#e3dccb;
+  --red:#b6382c; --card:#f8f4ea; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,sans-serif; --display:'Anton',Impact,'Arial Narrow Bold',sans-serif;
+  position:absolute; display:block; box-sizing:border-box; width:100vw; height:100vh; padding:28px 34px 44px;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,0) 0,rgba(0,0,0,0) calc(100% - 260px),rgba(14,122,111,.10) 100%),
+    linear-gradient(var(--rule) 1px,transparent 1px) 0 0/48px 48px,
+    linear-gradient(90deg,var(--rule) 1px,transparent 1px) 0 0/48px 48px,
+    var(--cream);
+  color:var(--ink); font-family:var(--sans); overflow:hidden;
+}
+#s-signal-outside *{box-sizing:border-box}
+#s-signal-outside .top{display:flex;justify-content:space-between;align-items:center;font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#5a564d}
+#s-signal-outside .top .brand{display:flex;align-items:center;gap:10px}
+#s-signal-outside .top .brand b{display:inline-grid;place-items:center;width:26px;height:26px;border:2px solid var(--ink);border-radius:6px;font:700 13px var(--mono);color:var(--ink)}
+#s-signal-outside .kicker{margin:16px 0 0;text-align:center;font:500 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+#s-signal-outside h1{margin:12px 0 0;text-align:center;font:400 clamp(34px,4.2vw,52px)/1 var(--display);letter-spacing:.005em;text-transform:uppercase}
+#s-signal-outside h1 em{font-style:normal;color:var(--teal)}
+#s-signal-outside .bar{width:100px;height:6px;background:var(--teal);margin:18px auto 0;border-radius:3px}
+
+#s-signal-outside .grid{display:grid;grid-template-columns:minmax(380px,46%) 1fr;gap:34px;align-items:start;margin-top:18px}
+
+#s-signal-outside .card{background:var(--card);border:2px solid var(--teal);border-radius:16px;padding:26px 28px 24px;box-shadow:6px 6px 0 rgba(14,122,111,.10);margin-top:70px}
+#s-signal-outside .tag{display:inline-block;background:var(--teal-soft);color:var(--teal);font:500 11.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:8px 10px;border-radius:3px}
+#s-signal-outside .card h2{margin:16px 0 8px;font:600 19px/1.25 var(--sans);letter-spacing:-.01em}
+#s-signal-outside .card p{margin:0 0 12px;font:400 15px/1.5 var(--sans);color:#33312c}
+#s-signal-outside .card p b{color:var(--ink)}
+#s-signal-outside .caveat{margin:14px 0 18px;font:500 14.5px/1.5 var(--mono);color:var(--red)}
+#s-signal-outside .caveat b{font-weight:600}
+#s-signal-outside .play{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--teal);color:var(--teal);background:transparent;border-radius:12px;padding:12px 22px;font:500 15px/1 var(--mono);letter-spacing:.06em;text-decoration:none}
+#s-signal-outside .play:hover{background:var(--teal-soft)}
+
+#s-signal-outside .panel{background:var(--card);border:2px solid #cdc6b4;border-radius:18px;padding:16px;box-shadow:8px 8px 0 rgba(0,0,0,.06)}
+#s-signal-outside .player{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#111;border:1px solid #b9b1a0}
+#s-signal-outside .player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#s-signal-outside .note{margin:16px 2px 14px;font:400 15px/1.5 var(--mono);color:#2f2d28}
+
+#s-signal-outside .nums{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:12px;background:#fff;border:1px solid #d7d0bf;border-radius:12px;padding:12px 16px}
+#s-signal-outside .num{text-align:center}
+#s-signal-outside .num .v{font:400 clamp(40px,4.6vw,58px)/1 var(--display);letter-spacing:.01em}
+#s-signal-outside .num .v.teal{color:var(--teal)}
+#s-signal-outside .num .l{margin-top:6px;font:500 10.5px/1.35 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#5a564d}
+#s-signal-outside .arrow{font:400 28px/1 var(--display);color:#9a9382}
+#s-signal-outside .nums .foot{grid-column:1/-1;margin-top:8px;padding-top:10px;border-top:1px dashed #d7d0bf;font:400 11.5px/1.4 var(--mono);color:#5a564d;text-align:center}
+
+#s-signal-outside .foot-nav{position:absolute;left:34px;bottom:14px;display:flex;align-items:center;gap:8px;font:400 12px/1 var(--mono);color:#6b675d}
+#s-signal-outside .foot-nav kbd{border:1px solid #bdb5a3;border-radius:5px;padding:4px 7px;background:#fff;font:inherit;color:#33312c}
+#s-signal-outside .dots{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:6px}
+#s-signal-outside .dots i{width:8px;height:8px;border-radius:50%;background:#9d968a;display:block}
+#s-signal-outside .dots i.on{width:26px;border-radius:4px;background:var(--teal)}
+#s-signal-outside .pg{position:absolute;right:34px;bottom:14px;font:400 12px/1 var(--mono);color:#6b675d}
+#s-signal-outside .foot-nav,#s-signal-outside .dots,#s-signal-outside .pg{display:none}
+</style>
+
+  <div class="top">
+    <div class="brand"><b>W</b> WEEKLY CLAW #29</div>
+    <div>03 / SIGNAL FROM OUTSIDE · 6 MIN</div>
+  </div>
+
+  <div class="kicker">SIGNAL FROM OUTSIDE · YC PAPER CLUB</div>
+  <h1>Same weights. <em>Thirty, or ninety-five.</em></h1>
+  <div class="bar"></div>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="tag">THIS WEEK'S SIGNAL · YC PAPER CLUB</span>
+      <h2>Why the harness matters more than the model.</h2>
+      <p>Claude Opus on ARC-AGI-3, bare: about <b>30</b>. Same weights inside Prime Agent's harness: <b>95.5</b> — above the human-expert line. Nvidia's AVO: <b>100</b> on the public set. Then YC's own team on running fifty-plus agents for real: reviewers who stopped reading, agents that quit early, information that leaks.</p>
+
+
+      <a class="play" href="https://www.youtube.com/watch?v=n9xKblqyQ28&t=233s" target="_blank" rel="noopener">▶ PLAY · 3:53 · youtube</a>
+    </div>
+
+    <div class="panel">
+      <div class="player">
+        <a href="https://www.youtube.com/watch?v=n9xKblqyQ28&t=233s" target="_blank" rel="noopener"><img src="assets/images/artifacts/signal-yc-harness.jpg" alt="YC Paper Club video preview" style="width:100%;height:100%;object-fit:contain"><span style="position:absolute;bottom:8px;left:12px;background:#111;color:white;padding:8px">▶ Open video at 3:53</span></a>
       </div>
-      <div class="card">
-        <div class="signal-media">
-          <video controls preload="metadata" poster="assets/images/artifacts/signal-gander-poster.jpg" src="assets/videos/signal-gander-visual-task.mp4" aria-label="Gander official visual-task demo — manual start, no autoplay"></video>
-        </div>
-        <p class="src-note mt-2">Manual start only. No autoplay. Poster is a fallback still. If the mp4 fails, the architecture image below is the visual for the two-loop split.</p>
-        <img src="assets/images/artifacts/signal-gander-architecture.jpg" alt="Gander architecture diagram: Cerebellum (Thinker–Talker) live loop vs Brain (async) loop" style="width:100%;margin-top:10px;border-radius:10px;border:1px solid var(--border-subtle);">
+      <div class="note">ARC-AGI-3 public-set results.</div>
+      <div class="nums">
+        <div class="num"><div class="v">30</div><div class="l">Opus 5 · bare model<br>ARC-AGI-3</div></div>
+        <div class="arrow">→</div>
+        <div class="num"><div class="v teal">95.5</div><div class="l">Same weights<br>Prime Agent harness</div></div>
+        <div class="arrow">→</div>
+        <div class="num"><div class="v teal">100</div><div class="l">Same weights<br>Nvidia AVO · public set</div></div>
+        <div class="foot">Human-expert baseline 95.4 · 183 / 183 levels · nothing about the model changed</div>
       </div>
     </div>
+
   </div>
-</div>
+
+  <div class="foot-nav"><kbd>←</kbd><kbd>→</kbd> navigate · scroll / swipe · <kbd>F</kbd> fullscreen</div>
+  <div class="dots"><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i></div>
+  <div class="pg">6 / 10</div>
+</section>
 
 <!-- SLIDE 7 — HOT TAKE -->
 <div class="slide" id="s-hot-take">
@@ -523,14 +595,8 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
           <a href="https://www.goldmansachs.com/insights/articles/how-will-ai-affect-the-us-labor-market" target="_blank" rel="noopener">goldmansachs.com: displacement outlook</a>
           <a href="https://x.com/iAmHenryMascot/status/2096560770339238330" target="_blank" rel="noopener">Henry pulse (Sep 8)</a>
         </div>
-        <span class="tag tag-blue mt-2">SIGNAL FROM OUTSIDE &middot; GANDER</span>
-        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://omni-interaction-gander.github.io/Omni-Interaction-Agent/" target="_blank" rel="noopener">omni-interaction-gander.github.io: project site</a>
-          <a href="https://arxiv.org/abs/2609.08977" target="_blank" rel="noopener">arxiv.org/abs/2609.08977: paper</a>
-          <a href="https://huggingface.co/Gander-Omni/Gander" target="_blank" rel="noopener">huggingface.co: Apache-2.0 weights</a>
-          <a href="https://github.com/Omni-Interaction-Gander/Omni-Interaction-Agent" target="_blank" rel="noopener">github.com: runnable code</a>
-        </div>
-        <span class="tag tag-red mt-2">HOT TAKE &middot; SAFETY AS RELIGION+BUSINESS</span>
+        <span class="tag tag-blue mt-2">SIGNAL FROM OUTSIDE &middot; YC PAPER CLUB</span><div class="src-links"><a href="https://www.youtube.com/watch?v=n9xKblqyQ28" target="_blank" rel="noopener">YC Paper Club: Why The Harness Matters More Than The Model</a></div>
+<span class="tag tag-red mt-2">HOT TAKE &middot; SAFETY AS RELIGION+BUSINESS</span>
         <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
           <a href="https://x.com/hilbertspaess/status/2097476196791709843" target="_blank" rel="noopener">x.com/hilbertspaess: Coxon opening thread</a>
           <a href="https://techcrunch.com/2026/09/09/gambling-with-our-lives-anthropic-researcher-quits-warns-against-self-improving-ai" target="_blank" rel="noopener">techcrunch.com: resignation coverage</a>

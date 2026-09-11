@@ -22,7 +22,7 @@ Sponsor copy carried verbatim from prior approved episodes.
 | 3 | `s-sponsor-heritage` | Sponsor 1 · Heritage | 1:00 | Henry | Heritage lockup |
 | 4 | `s-seg-grid-a` | Grid A · Agents left the chat | 8:00 | Henry (lead all cards) | A1 vortex · A2 Muse mp4 · A3 XPENG · A4 AlphaGenome |
 | 5 | `s-seg-grid-b` | Grid B · Boundaries became products | 8:00 | Henry (lead all cards) | B1 DeepSeek benchmark · B2 Mistral · B3 Suno · B4 jobs chart |
-| 6 | `s-signal-outside` | Signal · Gander | 6:00 | Andy | Gander demo mp4 + arch diagram |
+| 6 | `s-signal-outside` | Signal · YC Paper Club | 6:00 | Andy | YC video preview + public-set scores |
 | 7 | `s-hot-take` | Hot Take · Safety religion | 4:00 | Henry vs Andy | Receipts collage |
 | 8 | `s-sponsor-herald` | Sponsor 2 · Herald | 1:00 | Andy | Herald lockup |
 | 9 | `s-watch` | One to Watch + close | 2:30 | Andy (one recap only) | Three cards + Discord QR |
@@ -46,12 +46,16 @@ Sponsor copy carried verbatim from prior approved episodes.
 | B3 | Suno v6 with plaintiffs | Warner + BMG + Believe partners · from-scratch licensed training | Dataset scope + comp terms undisclosed · litigation continues |
 | B4 | AI jobs boom | ≈1M created vs ≈200K AI-attributed layoffs since mid-2023 | Estimates, not census · Stanford entry-level warning |
 
-## Signal From Outside — Gander (Andy)
+## Signal From Outside · YC Paper Club · 6:00 (slide `s-signal-outside`)
 
-- Cerebellum (Thinker–Talker) live loop + Brain async loop.
-- Apache-2.0 weights · runnable two-GPU config · GitHub 2026-09-10 · arXiv v2 2026-09-09.
-- Pass@1 ≈ 0.400. Dataset "coming soon" while abstract claims data released.
-- Manual demo start. NO AUTOPLAY. Poster + architecture-diagram fallbacks.
+**Andy leads.** Why The Harness Matters More Than The Model: https://www.youtube.com/watch?v=n9xKblqyQ28&t=233s
+
+- 3:53–4:10: harness comparison: 30 → 95.5 → 100.
+- 31:11–31:20: Seth Karten describes a 99.9% run and discovering cheating in the logs.
+- 55:05: Regan Bell on rubber-stamping reviews.
+- 59:26: Josh France on permission-system limits.
+- Start manually and stop between beats. The slide preview opens YouTube at 3:53.
+- Host-supplied caveats: 95.5 and 100 are public-set results, not private holdout. The $5,000 refers to an unnamed competing harness. Host unnamed; Whisper pass not yet run.
 
 ## Hot Take — Safety religion + business model
 
@@ -71,7 +75,7 @@ Sponsor copy carried verbatim from prior approved episodes.
 
 ## Recap (Andy delivers ONCE)
 
-"This week the agents left the chat: ten thousand at OpenAI on Navier–Stokes, one on your phone from Meta, one walking off XPENG's line, nine billion pre-computed predictions from DeepMind. The boundaries became products: DeepSeek made the cache the launch, Mistral priced sovereignty at three billion euros, Suno turned plaintiffs into partners, and the AI economy showed a boom in numbers and a warning at entry level. Signal was Gander. Hot take: safety incentives are inspectable; guilt-by-association is not."
+"This week the agents left the chat: ten thousand at OpenAI on Navier–Stokes, one on your phone from Meta, one walking off XPENG's line, nine billion pre-computed predictions from DeepMind. The boundaries became products: DeepSeek made the cache the launch, Mistral priced sovereignty at three billion euros, Suno turned plaintiffs into partners, and the AI economy showed a boom in numbers and a warning at entry level. Signal was YC Paper Club on agent harnesses. Hot take: safety incentives are inspectable; guilt-by-association is not."
 
 Never recap the recap. Sign-off = next-show date + Discord QR + follow line.
 
@@ -79,7 +83,7 @@ Never recap the recap. Sign-off = next-show date + Discord QR + follow line.
 
 1. Compress **A4** (drop AVI-score sub-beat).
 2. Compress **B4** (drop Stanford entry-level side quote).
-3. Compress **Signal** (skip demo cue → open on architecture).
+3. Compress **Signal** (keep opening comparison and public-set caveat).
 4. Compress **A3** (drop 2027 external-delivery timeline).
 5. **Never** cut Signal From Outside or Hot Take entirely.
 
@@ -98,7 +102,7 @@ Never recap the recap. Sign-off = next-show date + Discord QR + follow line.
 ## Emergency fallbacks
 
 - Muse mp4 fails → poster + read Andy's A2 fallback prose.
-- Gander mp4 fails → architecture-diagram image + read Signal fallback prose.
+- YouTube unavailable → use public-set score panel and host cues.
 - OpenAI page 403s → read Lean repo commit metadata from the sources slide.
 - Any live link fails → the sources slide has all primary + independent receipts.
 

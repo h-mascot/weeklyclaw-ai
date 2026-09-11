@@ -283,35 +283,16 @@ Narrative arc: **agents left the chat → the boundaries became products → the
 - Henry pulse: https://x.com/iAmHenryMascot/status/2096560770339238330
 - Cut: drop Goldman's forward-looking bullet first. Keep the two-number contrast plus the Stanford asterisk.
 
-## Signal From Outside / weekly video review · 6:00 (slide `s-signal-outside`)
+## Signal From Outside · YC Paper Club · 6:00 (slide `s-signal-outside`)
 
-*Permanent weekly anchor. Andy leads. Use the manual demo start. No autoplay. Poster fallback if the mp4 fails. Never invent timestamps.*
+**Andy leads.** Why The Harness Matters More Than The Model: https://www.youtube.com/watch?v=n9xKblqyQ28&t=233s
 
-**Video:** Gander official demo — `assets/videos/signal-gander-visual-task.mp4` (30-second trim from the project site's visual-task demo). Live link: the Gander project site. Poster: `assets/images/artifacts/signal-gander-poster.jpg`. Architecture-diagram fallback: `assets/images/artifacts/signal-gander-architecture.jpg`.
-
-**Beat sequence (manual start; stop after beat; no autoplay):**
-1. Manual start. The user speaks a task and interrupts partway through. Gander accepts the interruption without dropping the background work.
-2. Show the "Cerebellum" (Thinker–Talker) vs "Brain" split on the architecture diagram.
-3. Stop the video. Read the caveat: author-reported end-to-end Pass@1 is 0.400. The dataset link says "coming soon" despite the paper abstract saying data is released. That contradiction is on air.
-
-**Henry talking points:**
-- The operator win is not better speech. It is keeping the conversation and the execution alive at the same time.
-- Two separate loops — one for live dialogue, one for asynchronous work — is closer to how a human collaborator handles interruptions.
-- Open weights (Apache-2.0), runnable two-GPU config, active GitHub pushes. Independent replication is possible immediately.
-
-**Henry line (optional):** "The voice agent stopped being a demo the moment it stopped waiting for you to finish."
-
-**Andy fallback talk track:** This week's outside signal is Gander, a full-duplex agent project. The paper's arXiv version two landed on September ninth, the Hugging Face weights are Apache-2.0, there is a runnable two-GPU configuration, the GitHub repository received a fresh push on September tenth, and there is a live demo site at omni-interaction-gander dot github dot io. What Gander does that other voice-first agents do not is separate the fast conversational loop from the slow reasoning-and-tool loop. They call the fast part the "Cerebellum," a Thinker–Talker pair that handles live speech and interruption, and the slow part the "Brain," which does reasoning and tool use asynchronously. On the demo you see the user interrupt a running task, the agent acknowledge, and the background work continue toward completion. The caveats are real. The authors' end-to-end Pass@1 is around zero-point-four, meaning most tasks are not finished on the first attempt. The dataset link on the project site still reads "coming soon" even though the paper says the data is released. Those contradictions belong on air. The reason this is the outside signal — not another news card — is that Gander is the tightest research artifact this week that matches the show's thesis. Agents left the chat, and Gander is what "left the chat" looks like when the model has to hold two loops at once.
-
-**Handoff cue:** "That is where the research is. Now the argument about the argument."
-
-### Sources and production notes
-
-- Project site: https://omni-interaction-gander.github.io/Omni-Interaction-Agent/
-- Paper: https://arxiv.org/abs/2609.08977
-- Weights: https://huggingface.co/Gander-Omni/Gander
-- Code: https://github.com/Omni-Interaction-Gander/Omni-Interaction-Agent
-- Keep video on manual controls. If the mp4 fails, fall back to `signal-gander-architecture.jpg` and talk through the two-loop split from ledger notes.
+- 3:53–4:10: harness comparison: 30 → 95.5 → 100.
+- 31:11–31:20: Seth Karten describes a 99.9% run and discovering cheating in the logs.
+- 55:05: Regan Bell on rubber-stamping reviews.
+- 59:26: Josh France on permission-system limits.
+- Start manually and stop between beats. The slide preview opens YouTube at 3:53.
+- Host-supplied caveats: 95.5 and 100 are public-set results, not private holdout. The $5,000 refers to an unnamed competing harness. Host unnamed; Whisper pass not yet run.
 
 ## Hot take / debate · 4:00 (slide `s-hot-take`)
 
@@ -365,7 +346,7 @@ Narrative arc: **agents left the chat → the boundaries became products → the
 
 **Andy fallback talk track:** Three things to watch. First, September fourteenth — that is Monday — when DeepSeek is scheduled to migrate V4-Pro API traffic to V4.1-Flash. If the company runs its own flagship traffic on this checkpoint, the cache-economics claim moves from a chart into a deployment. Second, watch for the first independent mathematician who publicly checks the OpenAI Navier–Stokes Lean formalization. Not a summary, not a press release — the compiled result and the review commentary. And third, XPENG's next monthly disclosure will tell us whether the humanoid production line has any monthly capacity number behind it, or whether "commissioned" is still the whole story. That is the week ahead. We will be back Friday, September eighteen, at four PM Eastern. Follow WeeklyClaw at weeklyclaw dot ai and join the Discord through the QR on screen.
 
-**Close rule (single recap, once only):** "This week the agents left the chat: ten thousand at OpenAI on Navier–Stokes, one on your phone from Meta, one walking off XPENG's line, nine billion pre-computed predictions from DeepMind. The boundaries became products: DeepSeek made the cache the launch, Mistral priced sovereignty at three billion euros, Suno turned plaintiffs into partners, and the AI economy showed a boom in numbers and a warning at entry level. Signal was Gander. Hot take: safety incentives are inspectable; guilt-by-association is not."
+**Close rule (single recap, once only):** "This week the agents left the chat: ten thousand at OpenAI on Navier–Stokes, one on your phone from Meta, one walking off XPENG's line, nine billion pre-computed predictions from DeepMind. The boundaries became products: DeepSeek made the cache the launch, Mistral priced sovereignty at three billion euros, Suno turned plaintiffs into partners, and the AI economy showed a boom in numbers and a warning at entry level. Signal was YC Paper Club on agent harnesses. Hot take: safety incentives are inspectable; guilt-by-association is not."
 
 Do not repeat this line anywhere else in the close or host cheat sheet.
 
@@ -387,7 +368,7 @@ Do not repeat this line anywhere else in the close or host cheat sheet.
 
 1. Compress A4 (drop AVI-score sub-beat) → save 0:30.
 2. Compress B4 (drop Stanford entry-level side quote) → save 0:30.
-3. Compress Signal (skip visual-task demo cue; go straight to architecture beat) → save 1:00.
+3. Compress Signal (skip later clips; keep benchmark caveat) → save 1:00.
 4. Compress A3 (drop 2027 external-delivery timeline) → save 0:30.
 5. **Never** cut Signal From Outside or Hot Take entirely.
 
@@ -408,8 +389,6 @@ Do not repeat this line anywhere else in the close or host cheat sheet.
 
 - Ten deck slides, each with unique `s-*` ID that matches speaker-notes headings exactly.
 - Eight news artifacts, one Signal artifact, one Hot Take rendered receipts collage, plus sponsor lockups and Discord QR.
-- All primary artifacts are real captures from the vendor's own domain (contentful, xpeng CDN, api-docs.deepseek.com, DeepMind Google CDN, about.fb.com, mistral.ai CDN, cdn.sanity.io for Suno, Gander github.io project site). Two artifacts are rendered from ledger-verified numbers with source attribution on-slide (B4 AI jobs chart, Hot Take safety collage) and tagged `BENCHMARK_CAPTURE` / `SOCIAL_POST_CAPTURE` in the manifest.
-- Meta Muse mp4 is a 22-second trim of the official sizzle reel; Gander mp4 is a 30-second trim of the official visual-task demo. Both are manual-start only, no autoplay, poster fallback included.
 - Sponsor assets and Discord QR carried byte-for-byte from prior episodes via input/starter-assets.
 
 ### Claim caveats and vendor-labeled figures
