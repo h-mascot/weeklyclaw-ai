@@ -6,6 +6,20 @@
   },
   "episodes": [
     {
+      "week": 29,
+      "title": "OpenAI’s Maths Claim, Meta Muse Hands-On, AI Harnesses, The Safety Debate",
+      "date": "2026-09-11",
+      "url": "https://www.youtube.com/watch?v=-M4zet86U_A",
+      "videoId": "-M4zet86U_A",
+      "summary": [
+        "OpenAI’s announced Navier–Stokes result leads the discussion; independent acceptance is not established.",
+        "Henry shares hands-on experience with Meta Muse.",
+        "Andy and Henry compare agent harnesses, benchmarks and practical workflows.",
+        "The model round-up covers AlphaGenome, DeepSeek and AI’s uneven effects on work.",
+        "Both sides of the AI safety debate remain in the programme; motive and coordination claims are qualified."
+      ]
+    },
+    {
       "week": 28,
       "title": "GPT-6 Astra arrives, OpenClaw 2.0, Jensen Huang on AI and work, NYC’s classroom AI pause",
       "date": "2026-09-04",

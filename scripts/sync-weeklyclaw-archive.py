@@ -28,6 +28,7 @@ SPOTIFY_EPISODE_OVERRIDES = {
     26: "5t1xYX7e4DUv6l9DKUAi21",
 }
 YOUTUBE_THUMBNAIL_OVERRIDES = {
+    29: "w29-approved-a.png",
     20: "w20-v2-ai-got-cheap-approved-20260727.jpg",
     21: "w21-v2-approved-20260727.jpg",
     22: "w22-v2-the-sandbox-failed-approved-20260727.jpg",
