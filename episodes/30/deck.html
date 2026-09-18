@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Weekly Claw #30 &mdash; September 18, 2026</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 :root{
   --bg-dark:#ece4d5;--bg-card:#f7f0e4;
   --claw-red:#2a7e6b;--claw-orange:#286f7d;
@@ -186,8 +186,6 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
 .story-card .meta a{font-family:var(--mono);font-size:.72rem;color:#225e6a;text-decoration:none;margin-top:2px;}
 
 #s-hot-take .receipts-img{width:100%;max-width:1080px;border-radius:14px;border:2px solid var(--border-subtle);box-shadow:0 12px 30px rgba(79,64,49,.10);}
-#s-signal-outside .signal-media{width:100%;max-width:640px;border-radius:12px;border:2px solid var(--border-subtle);background:#0d1117;}
-#s-signal-outside .signal-media video{display:block;width:100%;height:auto;border-radius:10px;}
 
 #s-sources .card{padding:12px 16px;}
 #s-sources .tag{font-size:.58rem;padding:2px 8px;}
@@ -343,34 +341,245 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
   </div>
 </div>
 
-<!-- SLIDE 6 — SIGNAL FROM OUTSIDE · YC PAPER CLUB HARNESS -->
-<div class="slide" id="s-signal-outside">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #30</div><div class="slide-tag">03 / SIGNAL FROM OUTSIDE &middot; 6 MIN</div>
-  <div class="glow-orb orb-blue" style="width:440px;height:440px;top:-130px;right:-120px;"></div>
+<!-- SLIDE 6 — SIGNAL FROM OUTSIDE · THE BORING GOOD NEWS (host-supplied, Andy 2026-09-18) -->
+<div class="slide" id="s-sfo-frame">
+<style>
+#s-sfo-frame{
+  --cream:#f4efe3; --ink:#1c1b18; --teal:#0e7a6f; --teal-soft:#dcebe7; --rule:#e3dccb;
+  --red:#b6382c; --card:#f8f4ea;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+  --display:'Anton',Impact,'Arial Narrow Bold',sans-serif;
+  position:absolute; top:0; left:0; box-sizing:border-box; width:100%; height:100%; padding:28px 34px 44px;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,0) 0,rgba(0,0,0,0) calc(100% - 260px),rgba(14,122,111,.10) 100%),
+    linear-gradient(var(--rule) 1px,transparent 1px) 0 0/48px 48px,
+    linear-gradient(90deg,var(--rule) 1px,transparent 1px) 0 0/48px 48px,
+    var(--cream);
+  color:var(--ink); font-family:var(--sans); overflow:hidden;
+}
+#s-sfo-frame.slide:not(.active){display:none}
+#s-sfo-frame.slide.active{display:block}
+#s-sfo-frame *{box-sizing:border-box}
+#s-sfo-frame .top{display:flex;justify-content:space-between;align-items:center;font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#5a564d}
+#s-sfo-frame .top .brand{display:flex;align-items:center;gap:10px}
+#s-sfo-frame .top .brand b{display:inline-grid;place-items:center;width:26px;height:26px;border:2px solid var(--ink);border-radius:6px;font:700 13px var(--mono);color:var(--ink)}
+#s-sfo-frame .kicker{margin:16px 0 0;text-align:center;font:500 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+#s-sfo-frame h1{margin:12px 0 0;text-align:center;font:400 clamp(34px,4.2vw,52px)/1 var(--display);letter-spacing:.005em;text-transform:uppercase}
+#s-sfo-frame h1 em{font-style:normal;color:var(--teal)}
+#s-sfo-frame .bar{width:100px;height:6px;background:var(--teal);margin:18px auto 0;border-radius:3px}
+#s-sfo-frame .grid{display:grid;grid-template-columns:minmax(380px,46%) 1fr;gap:34px;align-items:start;margin-top:clamp(26px,4vh,56px)}
+#s-sfo-frame .card{background:var(--card);border:2px solid var(--teal);border-radius:16px;padding:18px 20px 20px;box-shadow:6px 6px 0 rgba(14,122,111,.10)}
+#s-sfo-frame .tag{display:inline-block;background:var(--teal-soft);color:var(--teal);font:500 11.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:8px 10px;border-radius:3px}
+#s-sfo-frame .photo{position:relative;margin:14px 0 0;border-radius:12px;overflow:hidden;border:1px solid #b9b1a0;aspect-ratio:700/360;background:#111}
+#s-sfo-frame .photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
+#s-sfo-frame .photo .cap{position:absolute;left:10px;bottom:10px;background:#111;color:#fff;font:500 11px/1 var(--mono);letter-spacing:.08em;padding:7px 9px;text-transform:uppercase}
+#s-sfo-frame blockquote{margin:16px 0 0;padding:0 0 0 16px;border-left:4px solid var(--teal);font:600 22px/1.25 var(--sans);letter-spacing:-.01em}
+#s-sfo-frame .who{margin:8px 0 0 20px;font:500 12px/1.4 var(--mono);letter-spacing:.06em;color:#5a564d;text-transform:uppercase}
+#s-sfo-frame .card p{margin:12px 0 0;font:400 15px/1.5 var(--sans);color:#33312c}
+#s-sfo-frame .card p b{color:var(--ink)}
+#s-sfo-frame .panel{background:var(--card);border:2px solid #cdc6b4;border-radius:18px;padding:16px 18px;box-shadow:8px 8px 0 rgba(0,0,0,.06)}
+#s-sfo-frame .note{margin:0 2px 10px;font:500 12px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#5a564d}
+#s-sfo-frame .pvh{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch;gap:8px}
+#s-sfo-frame .box{background:#fff;border:1px solid #d7d0bf;border-radius:12px;padding:12px 14px}
+#s-sfo-frame .box .k{font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#5a564d}
+#s-sfo-frame .box .t{margin-top:8px;font:500 15px/1.35 var(--sans)}
+#s-sfo-frame .box.old .t{color:#6b675d;text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:2px}
+#s-sfo-frame .box.new{border:2px solid var(--teal)}
+#s-sfo-frame .box.new .k{color:var(--teal)}
+#s-sfo-frame .arrow{display:grid;place-items:center;font:400 28px/1 var(--display);color:#9a9382}
+#s-sfo-frame .foot{margin-top:10px;padding-top:9px;border-top:1px dashed #d7d0bf;font:400 11.5px/1.4 var(--mono);color:#5a564d;text-align:center}
+#s-sfo-frame .housel{display:grid;grid-template-columns:clamp(150px,14vw,240px) 1fr;gap:16px;align-items:center;margin-top:16px}
+#s-sfo-frame .housel img{width:100%;aspect-ratio:677/380;object-fit:cover;object-position:left center;border-radius:10px;border:1px solid #b9b1a0;display:block}
+#s-sfo-frame .housel .q{font:600 17px/1.3 var(--sans)}
+#s-sfo-frame .housel .who{margin:6px 0 0}
+#s-sfo-frame .num{display:flex;align-items:baseline;gap:12px;margin-top:14px;background:#fff;border:1px solid #d7d0bf;border-radius:12px;padding:10px 16px}
+#s-sfo-frame .num .v{font:400 clamp(40px,4.6vw,58px)/1 var(--display);color:var(--teal)}
+#s-sfo-frame .num .l{font:500 11px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#5a564d}
+
+/* deck-contract adaptations */
+#s-sfo-frame{display:block}
+#s-sfo-frame .content{max-width:none;width:100%;display:block;position:relative;z-index:2;padding:0;margin:0}
+</style>
   <div class="content">
-    <div class="part-label">Signal From Outside &middot; weekly video review &middot; permanent anchor &middot; 6 min</div>
-    <h2 class="text-center">Same weights, different harness. <span class="gradient-text">30% becomes 95%.</span></h2>
-    <div class="gradient-line"></div>
-    <div class="mt-2 two-col" style="align-items:center;">
-      <div class="card card-glow">
-        <span class="tag tag-blue">THIS WEEK&rsquo;S SIGNAL &middot; YC PAPER CLUB</span>
-        <h3 class="mt-2">Why the harness matters more than the model.</h3>
-        <p>A 60-minute YC Paper Club session on agentic engineering. The anchor receipt: identical weights, different harness, ARC-AGI from 30 to 95 &mdash; 100 on the NVIDIA entry.</p>
-        <p class="mt-2"><strong>Verified:</strong> live yt-dlp pull on Enterprise, 2026-09-13 ~19:05 UTC &middot; 288,468 views on a 2026-09-07 upload &middot; full transcript pulled, 1,662 timestamped lines.</p>
-        <p class="mt-2 mono" style="color:#8f403a;"><strong>Caveats on air:</strong> timestamps are auto-caption cues &mdash; spot-check first. The fleet-of-50 story is YC&rsquo;s own deployment, not an independent benchmark.</p>
-        <a href="https://youtu.be/n9xKblqyQ28" target="_blank" rel="noopener" style="margin-top:10px;display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border:2px solid var(--claw-red);border-radius:999px;font-family:var(--mono);font-size:.85rem;color:#225e6a;text-decoration:none;background:rgba(255,255,255,.4);">&#9654; WATCH ON YOUTUBE &middot; 60:11 &middot; manual open</a>
+  <div class="top">
+    <div class="brand"><b>W</b> WEEKLY CLAW #30</div>
+    <div>03 / SIGNAL FROM OUTSIDE · 9 MIN</div>
+  </div>
+  <div class="kicker">Signal from outside · the boring good news</div>
+  <h1>The fear is loud. <em>The good news is boring.</em></h1>
+  <div class="bar"></div>
+
+  <div class="grid">
+    <div class="card">
+      <span class="tag">Jensen Huang · All-In Summit · Sep 14</span>
+      <div class="photo">
+        <img src="assets/images/artifacts/signal30-jensen-allin-scorecard.jpg" alt="Jensen Huang on stage at the All-In Summit">
+        <span class="cap">All-In Summit · Los Angeles</span>
       </div>
-      <div class="card">
-        <img src="assets/images/artifacts/signal-yc-harness-poster.jpg" alt="YC Paper Club — Why The Harness Matters More Than The Model, video poster" style="width:100%;max-height:210px;object-fit:cover;border-radius:10px;border:1px solid var(--border-subtle);">
-        <p class="src-note mt-2">Anchor pick (Andy): cue sheet 03:17&ndash;04:12 the 30&rarr;95&rarr;100 receipts &middot; 21:50&ndash;22:40 context as cache &middot; 43:53&ndash;44:40 the 800&times; local stack &middot; 49:24&ndash;51:15 the 50+ agent fleet.</p>
-        <img src="assets/images/artifacts/signal-theo-notyping-poster.jpg" alt="Theo t3.gg — You're using AI agents wrong, fallback demo poster" style="width:100%;max-height:150px;object-fit:cover;margin-top:8px;border-radius:10px;border:1px solid var(--border-subtle);">
-        <p class="src-note mt-2">Fallback demo if the anchor segment fails to load: Theo t3.gg, &ldquo;You&rsquo;re using AI agents wrong&rdquo; (2026-09-09, 49:22).</p>
+      <blockquote>&ldquo;We need more radiologists than ever in the world.&rdquo;</blockquote>
+      <div class="who">— Jensen Huang, CEO, Nvidia</div>
+      <p><b>Safety is paramount,</b> he said. But safety versus leadership is a <b>false choice</b>. And the scary forecasts should be scored against what actually happened.</p>
+    </div>
+
+    <div>
+      <div class="panel">
+        <div class="note">Jensen's scorecard · radiology</div>
+        <div class="pvh">
+          <div class="box old">
+            <div class="k">Predicted</div>
+            <div class="t">AI takes over radiology. No radiologists left in five years.</div>
+          </div>
+          <div class="arrow">→</div>
+          <div class="box new">
+            <div class="k">What happened</div>
+            <div class="t">AI reads the scans. We need <b>more</b> radiologists than ever.</div>
+          </div>
+        </div>
+        <div class="foot">The work changed · the people stayed · patients get read faster &nbsp;·&nbsp; <i>Jensen's claim</i></div>
+      </div>
+
+      <div class="panel" style="margin-top:18px">
+        <div class="note">From outside AI · Morgan Housel · Sep 11</div>
+        <div class="housel">
+          <img src="assets/images/artifacts/signal30-housel-outer-ai.jpg" alt="Psychology of Money with Morgan Housel, episode 'AI Optimism and the Agony of Waiting'">
+          <div>
+            <div class="q">When you dread something, your mind is &ldquo;a very proficient storyteller.&rdquo;</div>
+            <div class="who">— Morgan Housel, <i>The Psychology of Money</i></div>
+          </div>
+        </div>
+        <div class="num">
+          <div class="v">20–30%</div>
+          <div class="l">More productive, then life goes on.<br>The one forecast he'll make.</div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+  </div>
+</div>
 
-<!-- SLIDE 7 — HOT TAKE -->
+<!-- SLIDE 8 — SIGNAL FROM OUTSIDE · ALREADY WORKING (host-supplied, Andy 2026-09-18) -->
+<div class="slide" id="s-sfo-examples">
+<style>
+#s-sfo-examples{
+  --cream:#f4efe3; --ink:#1c1b18; --teal:#0e7a6f; --teal-soft:#dcebe7; --rule:#e3dccb;
+  --red:#b6382c; --card:#f8f4ea;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+  --display:'Anton',Impact,'Arial Narrow Bold',sans-serif;
+  position:absolute; top:0; left:0; box-sizing:border-box; width:100%; height:100%; padding:28px 34px 44px;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,0) 0,rgba(0,0,0,0) calc(100% - 260px),rgba(14,122,111,.10) 100%),
+    linear-gradient(var(--rule) 1px,transparent 1px) 0 0/48px 48px,
+    linear-gradient(90deg,var(--rule) 1px,transparent 1px) 0 0/48px 48px,
+    var(--cream);
+  color:var(--ink); font-family:var(--sans); overflow:hidden;
+}
+#s-sfo-examples.slide:not(.active){display:none}
+#s-sfo-examples.slide.active{display:block}
+#s-sfo-examples *{box-sizing:border-box}
+#s-sfo-examples .top{display:flex;justify-content:space-between;align-items:center;font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#5a564d}
+#s-sfo-examples .top .brand{display:flex;align-items:center;gap:10px}
+#s-sfo-examples .top .brand b{display:inline-grid;place-items:center;width:26px;height:26px;border:2px solid var(--ink);border-radius:6px;font:700 13px var(--mono);color:var(--ink)}
+#s-sfo-examples .kicker{margin:16px 0 0;text-align:center;font:500 13px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+#s-sfo-examples h1{margin:12px 0 0;text-align:center;font:400 clamp(34px,4.2vw,52px)/1 var(--display);letter-spacing:.005em;text-transform:uppercase}
+#s-sfo-examples h1 em{font-style:normal;color:var(--teal)}
+#s-sfo-examples .bar{width:100px;height:6px;background:var(--teal);margin:18px auto 0;border-radius:3px}
+#s-sfo-examples .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:clamp(24px,3.5vh,48px)}
+#s-sfo-examples .col{background:var(--card);border:2px solid #cdc6b4;border-radius:16px;padding:14px 14px 16px;box-shadow:6px 6px 0 rgba(0,0,0,.06);display:flex;flex-direction:column}
+#s-sfo-examples .shot{position:relative;border-radius:10px;overflow:hidden;border:1px solid #b9b1a0;aspect-ratio:16/9;background:#111}
+#s-sfo-examples .shot img{width:100%;height:100%;object-fit:cover;display:block}
+#s-sfo-examples .shot .src{position:absolute;left:8px;bottom:8px;background:#111;color:#fff;font:500 10.5px/1 var(--mono);letter-spacing:.06em;padding:6px 8px;text-transform:uppercase}
+#s-sfo-examples .src.vendor{background:var(--red)}
+#s-sfo-examples h2{margin:12px 2px 0;font:600 18px/1.25 var(--sans);letter-spacing:-.01em}
+#s-sfo-examples .stat{display:flex;align-items:baseline;gap:10px;margin:10px 2px 0}
+#s-sfo-examples .stat .v{font:400 40px/1 var(--display);color:var(--teal)}
+#s-sfo-examples .stat .l{font:500 10.5px/1.35 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#5a564d}
+#s-sfo-examples .q{margin:10px 2px 0;padding-left:12px;border-left:3px solid var(--teal);font:500 14.5px/1.4 var(--sans);color:#33312c}
+#s-sfo-examples .q .who{display:block;margin-top:4px;font:500 10.5px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#6b675d}
+#s-sfo-examples .flow{margin-top:auto;padding-top:12px;display:flex;align-items:center;flex-wrap:wrap;gap:5px}
+#s-sfo-examples .flow span{font:500 10.5px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;padding:6px 7px;border-radius:4px;background:#fff;border:1px solid #d7d0bf;color:#33312c}
+#s-sfo-examples .flow span.m{background:var(--teal-soft);border-color:#b5d6cf;color:var(--teal)}
+#s-sfo-examples .flow span.h{background:var(--ink);border-color:var(--ink);color:#fff}
+#s-sfo-examples .flow i{font-style:normal;color:#9a9382;font:400 14px/1 var(--display)}
+#s-sfo-examples .pattern{margin-top:18px;background:#fff;border:2px solid var(--teal);border-radius:14px;padding:10px 18px}
+#s-sfo-examples .pattern svg{display:block;width:100%;height:auto}
+
+/* deck-contract adaptations */
+#s-sfo-examples{display:block}
+#s-sfo-examples .content{max-width:none;width:100%;display:block;position:relative;z-index:2;padding:0;margin:0}
+</style>
+  <div class="content">
+  <div class="top">
+    <div class="brand"><b>W</b> WEEKLY CLAW #30</div>
+    <div>03 / SIGNAL FROM OUTSIDE · 9 MIN</div>
+  </div>
+  <div class="kicker">Signal from outside · already working</div>
+  <h1>A narrow model. <em>A person makes the call.</em></h1>
+  <div class="bar"></div>
+
+  <div class="cols">
+    <!-- ALS -->
+    <div class="col">
+      <div class="shot">
+        <img src="assets/images/artifacts/signal30-harrell-ucdavis-poster.jpg" alt="Brain-computer interface connectors on Casey Harrell's head, UC Davis">
+        <span class="src">UCTV · UC Davis · Sep 8</span>
+      </div>
+      <h2>A voice back, at home, unattended.</h2>
+      <div class="stat"><div class="v">3,800+</div><div class="l">hours of home use<br>99% word accuracy · 56 wpm</div></div>
+      <div class="q">&ldquo;Casey's the ultimate power user.&rdquo;<span class="who">— UC Davis researcher</span></div>
+      <div class="flow"><span>Neurons</span><i>→</i><span class="m">Decoder</span><i>→</i><span>Voice</span><i>→</i><span class="h">Casey</span></div>
+    </div>
+
+    <!-- Wildfire -->
+    <div class="col">
+      <div class="shot">
+        <img src="assets/images/artifacts/signal30-ryan-openai-poster.jpg" alt="Ryan Honary carrying a SensoRy AI wildfire sensor in the hills">
+        <span class="src vendor">OpenAI-produced · Sep 14</span>
+      </div>
+      <h2>A teenager's sensors catch fires at ignition.</h2>
+      <div class="stat"><div class="v">5th grade</div><div class="l">science project →<br>ridge-line sensor network</div></div>
+      <div class="q">&ldquo;Why do you believe this is a fire?&rdquo;<span class="who">— asked over Ryan's walkie-talkie</span></div>
+      <div class="flow"><span>Sensors</span><i>→</i><span class="m">LLM</span><i>→</i><span>Radio</span><i>→</i><span class="h">Firefighter</span></div>
+    </div>
+
+    <!-- Weather -->
+    <div class="col">
+      <div class="shot">
+        <img src="assets/images/artifacts/signal30-weathernext-melissa.jpg" alt="Peter Battaglia and Hannah Fry on the Google DeepMind podcast">
+        <span class="src vendor">DeepMind's own account · Sep 9</span>
+      </div>
+      <h2>Three days' warning on a Category 5.</h2>
+      <div class="stat"><div class="v">~3 days</div><div class="l">lead on Hurricane Melissa's<br>Cat 5 call (Oct 2025)</div></div>
+      <div class="q">The model's confidence raised the forecasters' own.<span class="who">— Peter Battaglia, DeepMind (paraphrased)</span></div>
+      <div class="flow"><span>Weather data</span><i>→</i><span class="m">Model</span><i>→</i><span>Forecast</span><i>→</i><span class="h">NHC</span></div>
+    </div>
+  </div>
+
+  <div class="pattern">
+    <svg viewBox="0 0 1200 64" role="img" aria-label="The shared pattern: input, then model, then output, then a human decides">
+      <g font-family="IBM Plex Mono, ui-monospace, monospace" font-size="13" letter-spacing="1.5">
+        <text x="0" y="37" fill="#0e7a6f" font-weight="600">THE PATTERN</text>
+        <rect x="150" y="14" width="190" height="36" rx="6" fill="#fff" stroke="#b5a996"/>
+        <text x="245" y="37" text-anchor="middle" fill="#33312c">INPUT</text>
+        <path d="M348 32 H392" stroke="#9a9382" stroke-width="2"/><path d="M386 26 L394 32 L386 38" fill="none" stroke="#9a9382" stroke-width="2"/>
+        <rect x="400" y="14" width="190" height="36" rx="6" fill="#dcebe7" stroke="#b5d6cf"/>
+        <text x="495" y="37" text-anchor="middle" fill="#0e7a6f" font-weight="600">NARROW MODEL</text>
+        <path d="M598 32 H642" stroke="#9a9382" stroke-width="2"/><path d="M636 26 L644 32 L636 38" fill="none" stroke="#9a9382" stroke-width="2"/>
+        <rect x="650" y="14" width="190" height="36" rx="6" fill="#fff" stroke="#b5a996"/>
+        <text x="745" y="37" text-anchor="middle" fill="#33312c">PLAIN OUTPUT</text>
+        <path d="M848 32 H892" stroke="#9a9382" stroke-width="2"/><path d="M886 26 L894 32 L886 38" fill="none" stroke="#9a9382" stroke-width="2"/>
+        <rect x="900" y="14" width="290" height="36" rx="6" fill="#1c1b18"/>
+        <text x="1045" y="37" text-anchor="middle" fill="#fff" font-weight="600">HUMAN MAKES THE CALL</text>
+      </g>
+    </svg>
+  </div>
+</div>
+  </div>
+</div>
+
+<!-- SLIDE 8 — HOT TAKE -->
 <div class="slide" id="s-hot-take">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #30</div><div class="slide-tag">04 / HOT TAKE &middot; 4 MIN</div>
   <div class="glow-orb orb-red" style="width:480px;height:480px;top:-140px;left:-120px;"></div>
@@ -405,7 +614,7 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
   </div>
 </div>
 
-<!-- SLIDE 8 — SPONSOR HERITAGE (second, near close) -->
+<!-- SLIDE 9 — SPONSOR HERITAGE (second, near close) -->
 <div class="slide" id="s-sponsor-heritage">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #30</div><div class="slide-tag">SPONSOR</div>
   <div class="glow-orb orb-green" style="width:420px;height:420px;bottom:-120px;right:-100px;"></div>
@@ -418,7 +627,7 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
   </div>
 </div>
 
-<!-- SLIDE 9 — ONE TO WATCH + CLOSE -->
+<!-- SLIDE 10 — ONE TO WATCH + CLOSE -->
 <div class="slide" id="s-watch">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #30</div><div class="slide-tag">05 / CLOSE</div>
   <svg class="claw-bg" style="bottom:-6%;left:-4%;"><use href="#weeklyclaw-logo"/></svg>
@@ -458,11 +667,11 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
   </div>
 </div>
 
-<!-- SLIDE 10 — SOURCES -->
+<!-- SLIDE 11 — SOURCES -->
 <div class="slide" id="s-sources">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #30</div><div class="slide-tag">SOURCES / LINKS</div>
   <div class="content">
-    <div class="part-label">Every claim, one click &middot; verified 2026-09-17</div>
+    <div class="part-label">Every claim, one click &middot; verified 2026-09-18</div>
     <h2 class="text-center">Sources &amp; <span class="gradient-text">Links.</span></h2>
     <div class="gradient-line"></div>
     <div class="mt-2 two-col" style="gap:16px;">
@@ -523,10 +732,15 @@ table.cmp .unk{color:#a99d8c;font-style:italic;}
           <a href="https://cyberscoop.com/openai-agents-malicious-rubygems-packages/" target="_blank" rel="noopener">cyberscoop.com: 2,000+ submissions reported</a>
           <a href="https://blog.rubygems.org/2026/07/22/security-advisory-legacy-api-key-leak.html" target="_blank" rel="noopener">blog.rubygems.org: key-leak advisory, no proven abuse</a>
         </div>
-        <span class="tag tag-blue mt-2">SIGNAL FROM OUTSIDE &middot; YC PAPER CLUB</span>
+        <span class="tag tag-blue mt-2">SIGNAL &middot; BORING GOOD NEWS + ALREADY WORKING</span>
         <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://youtu.be/n9xKblqyQ28" target="_blank" rel="noopener">youtu.be/n9xKblqyQ28: harness deep-dive, 60:11</a>
-          <a href="https://www.youtube.com/watch?v=q1D90-uGvBg" target="_blank" rel="noopener">youtube.com: fallback demo, Theo t3.gg</a>
+          <a href="https://www.youtube.com/watch?v=S7CrlFLAmEA" target="_blank" rel="noopener">youtube.com: Jensen Huang, All-In Summit, Sep 14</a>
+          <a href="https://www.cnbc.com/2026/09/14/trump-phones-nvidia-huang-all-in-calls-data-center-opposition-hoax.html" target="_blank" rel="noopener">cnbc.com: All-In Summit, independent coverage</a>
+          <a href="https://open.spotify.com/episode/6TEko61Nf08kgk4MmjBuoz" target="_blank" rel="noopener">spotify.com: Housel, AI Optimism and the Agony of Waiting</a>
+          <a href="https://health.ucdavis.edu/news/headlines/brain-computer-interface-enables-independent-accurate-communication-for-man-living-with-als/2026/06" target="_blank" rel="noopener">health.ucdavis.edu: Casey Harrell BCI, 3,800+ hours</a>
+          <a href="https://www.nature.com/articles/s41591-026-04414-6" target="_blank" rel="noopener">nature.com: Nature Medicine, doi 10.1038/s91591-026-04414-6</a>
+          <a href="https://openai.com/index/detecting-wildfires-early/" target="_blank" rel="noopener">openai.com: Ryan Honary, SensoRy AI, wildfire sensors</a>
+          <a href="https://deepmind.google/blog/how-weathernext-helped-the-national-hurricane-center-better-predict-hurricane-melissas-historic-landfall-in-jamaica/" target="_blank" rel="noopener">deepmind.google: WeatherNext, Hurricane Melissa</a>
         </div>
         <span class="tag tag-red mt-2">HOT TAKE &middot; WHO PAYS THE UMPIRE</span>
         <div class="src-links" style="justify-content:flex-start;margin-top:8px;">

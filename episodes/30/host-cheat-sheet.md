@@ -1,6 +1,6 @@
 # WeeklyClaw Episode 30 — Host cheat sheet
 
-One screen per host, printed. Slide order on air is the deck order: Herald → cold open → Grid A → Grid B → Signal → Hot Take → Heritage → close → sources.
+One screen per host, printed. Slide order on air is the deck order: Herald → cold open → Grid A → Grid B → Signal (2 slides) → Hot Take → Heritage → close → sources.
 
 ## Top-line numbers that must be said correctly
 
@@ -38,10 +38,10 @@ Do not guess. Every card carries its own evidence label; if a host is asked for 
 ## Card-by-card run sheet (Andy)
 
 - Each grid card: one caveat line, written on the card. Read it aloud. Do not add a second.
-- 18:30 Signal: 30s frame, 2:30 cue sheet, 1:00 caveats. Anchor line: same weights, different harness, ARC-AGI 30→95, 100 on NVIDIA. **Open the video manually from the slide button.** Nothing plays on its own. If it fails, the fallback demo is Theo t3.gg.
-- 22:30 hot take steelman: embedded evaluators get tools and risk-assessment access; publication rights are load-bearing; state regulators are slower and political.
-- 28:30 Heritage read: verbatim slide copy, `heritagetel.com`.
-- 29:30 close: three watch items, one recap, sign-off. Next show Friday, September 25, 4 PM Eastern.
+- 18:30 Signal (9:00, Andy, host-supplied slides): Slide 1 'boring good news' — Jensen radiology scorecard + Housel 20–30%. Slide 2 'already working' — UC Davis Harrell BCI (3,800+h, 99%, 56wpm), OpenAI Ryan Honary SensoRy AI, DeepMind WeatherNext/Melissa (~3 days at near-certainty). No video to open: run it from the slides.
+- 27:30 hot take steelman: embedded evaluators get tools and risk-assessment access; publication rights are load-bearing; state regulators are slower and political.
+- 31:30 Heritage read: verbatim slide copy, `heritagetel.com`.
+- 32:30 close: three watch items, one recap, sign-off. Next show Friday, September 25, 4 PM Eastern.
 
 ## On-air prohibitions
 
