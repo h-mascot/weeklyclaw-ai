@@ -1,0 +1,152 @@
+{
+  "schema_version": "weeklyclaw.candidates.v1",
+  "episode": 27,
+  "show_date_ny": "2026-08-28",
+  "airtime_window_open_utc": "2026-08-21T20:00:00+00:00",
+  "scoring_method": "consequence 25 + operator_angle 20 + evidence 20 + novelty 15 + narrative 10 + clip 10 (normalized to 0-1)",
+  "candidates": [
+    {
+      "id": "openai-jalapeno-premium",
+      "title": "OpenAI's full-stack squeeze: faster silicon, cheaper heavy-use seats",
+      "score": 0.93,
+      "score_breakdown": {"consequence": 25, "operator_angle": 20, "evidence": 18, "novelty": 15, "narrative": 9, "clip": 9},
+      "owner": "Henry",
+      "slot_assigned": 1,
+      "launch_receipt_utc": "2026-08-25T14:14:00+00:00",
+      "news_window_ok": true,
+      "source_tier": "A",
+      "sources": [
+        "https://openai.com/index/jalapeno-first-results/",
+        "https://openai.com/index/premium-seats-chatgpt-business/",
+        "https://help.openai.com/en/articles/8792828-chatgpt-business-overview",
+        "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Groq-3-LPX-Now-in-Full-Production-With-World-Class-Speed-for-Agentic-AI/default.aspx"
+      ],
+      "verification_notes": "OpenAI publication timestamp 2026-08-25 14:14 UTC; Premium availability update dated 2026-08-25; Jalapeño deployment remains planned for year-end. NVIDIA Groq 3 LPX full production 2026-08-24. Work-per-watt normalized by published package TDP — vendor-reported."
+    },
+    {
+      "id": "qwen3.8-flash-next",
+      "title": "Qwen3.8-Flash-Next opens the Qwen4 architecture early",
+      "score": 0.94,
+      "score_breakdown": {"consequence": 23, "operator_angle": 20, "evidence": 19, "novelty": 15, "narrative": 9, "clip": 9},
+      "owner": "Henry",
+      "slot_assigned": 2,
+      "launch_receipt_utc": "2026-08-26T12:29:00+00:00",
+      "news_window_ok": true,
+      "source_tier": "A",
+      "sources": [
+        "https://qwen.ai/blog?id=qwen3.8-flash-next",
+        "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+        "https://huggingface.co/Qwen/Qwen3.8-Flash-Next-FP8",
+        "https://docs.sglang.io/cookbook/autoregressive/Qwen/Qwen3.8-Flash-Next"
+      ],
+      "verification_notes": "Official release page dated 2026-08-26. Hugging Face API read at 2026-08-26 12:59 UTC showed the ungated BF16 repo public, last modified 12:29 UTC, with 2,551 downloads and 3,031 likes. QwenCloud lists $0.16/M input and $0.47/M output but says the API is coming soon. Distinct from Ep 26's Qwen3.8-Max/27B coverage because it introduces the Qwen4 preview architecture."
+    },
+    {
+      "id": "headlong-microharness",
+      "title": "Headlong asks what happens when the agent never goes to sleep",
+      "score": 0.91,
+      "score_breakdown": {"consequence": 21, "operator_angle": 20, "evidence": 19, "novelty": 14, "narrative": 9, "clip": 9},
+      "owner": "Henry",
+      "slot_assigned": 3,
+      "launch_receipt_utc": "2026-08-24T20:45:00+00:00",
+      "news_window_ok": true,
+      "source_tier": "A",
+      "sources": [
+        "https://www.laude.org/updates/headlong-a-microharness-for-persistent-agents",
+        "https://github.com/laude-institute/headlong"
+      ],
+      "verification_notes": "Launch 2026-08-24; repo verified 2026-08-26 with active same-day commits; Apache 2.0 license; explicit sandbox/spend-cap warnings. 796 stars, 64 forks at verification."
+    },
+    {
+      "id": "perplexity-portable-computer",
+      "title": "Perplexity put the whole agent stack on the desk",
+      "score": 0.89,
+      "score_breakdown": {"consequence": 21, "operator_angle": 19, "evidence": 18, "novelty": 15, "narrative": 8, "clip": 9},
+      "owner": "Henry",
+      "slot_assigned": 4,
+      "launch_receipt_utc": "2026-08-25T13:00:00+00:00",
+      "news_window_ok": true,
+      "source_tier": "A/B",
+      "sources": [
+        "https://www.perplexity.ai/hub/products/portable-computer",
+        "https://perplexity.ai/hub/blog/a-local-first-agent-for-private-and-cost-effective-knowledge-work",
+        "https://venturebeat.com/infrastructure/perplexity-partners-with-nvidia-to-launch-portable-computer-a-fully-local-ai-agent-with-zero-token-costs"
+      ],
+      "verification_notes": "VentureBeat launch timestamp 2026-08-25 13:00 UTC; product page says available today for Pro and Max on DGX Spark. Self-authored benchmark: 82.6% Computer vs 74.0% Hermes on 53-task internal local-work bench using same Qwen3.8-27B. Linux RTX requires 24GB VRAM; Windows September."
+    },
+    {
+      "id": "figure-index-robot-games",
+      "title": "The robot race is becoming a data race",
+      "score": 0.88,
+      "score_breakdown": {"consequence": 21, "operator_angle": 18, "evidence": 19, "novelty": 14, "narrative": 8, "clip": 9},
+      "owner": "Henry",
+      "slot_assigned": 5,
+      "launch_receipt_utc": "2026-08-25",
+      "news_window_ok": true,
+      "source_tier": "A/B",
+      "sources": [
+        "https://www.figure.ai/news/introducing-index",
+        "https://arstechnica.com/ai/2026/08/world-humanoid-robot-games-show-runners-breaking-records-bursting-into-flames/",
+        "https://www.euronews.com/video/2026/08/24/beijing-robot-games-humanoids-take-on-sprints-football-and-tai-chi"
+      ],
+      "verification_notes": "Figure launch 2026-08-25. Company-reported: 16M uploaded videos, 264K app downloads, 44K weekly active creators, 30 min new video/sec, $15M paid out. Beijing World Humanoid Robot Games 2026-08-24 event. Henry saved multiple Robot Games clips on 2026-08-25 to 2026-08-26."
+    },
+    {
+      "id": "qwenwork-international",
+      "title": "QwenWork takes Alibaba's workplace agent outside China",
+      "score": 0.85,
+      "score_breakdown": {"consequence": 20, "operator_angle": 18, "evidence": 19, "novelty": 13, "narrative": 8, "clip": 7},
+      "owner": "Henry",
+      "slot_assigned": null,
+      "launch_receipt_utc": "2026-08-26",
+      "news_window_ok": true,
+      "source_tier": "A",
+      "sources": [
+        "https://www.alizila.com/alibaba-launches-qwenwork-international-edition-extending-its-all-in-one-workplace-ai-agent-to-global-markets/",
+        "https://www.youtube.com/watch?v=rT_u0BG5MK0"
+      ],
+      "verification_notes": "Alibaba announcement 2026-08-26. International edition is public beta. Connectors and additional languages are roadmap items. Held as bench — lower show novelty vs Qwen Flash-Next same-day architecture preview."
+    },
+    {
+      "id": "codex-virtual-office-demo",
+      "title": "Codex virtual-office wrapper — agents escaping the chat box",
+      "score": 0.78,
+      "score_breakdown": {"consequence": 14, "operator_angle": 19, "evidence": 18, "novelty": 13, "narrative": 7, "clip": 7},
+      "owner": "Henry",
+      "slot_assigned": null,
+      "launch_receipt_utc": "2026-08-25T13:37:37+00:00",
+      "news_window_ok": true,
+      "source_tier": "B",
+      "sources": [
+        "https://x.com/davidfromkansas/status/2092245009810493916"
+      ],
+      "verification_notes": "16.9s demo · 2,114 likes / 106 reposts / 149 replies at ingest 2026-08-26. Henry saved directly. Used as Signal From Outside visual cue, not a standalone segment."
+    }
+  ],
+  "rejection_ledger": [
+    {
+      "id": "nvidia-groq-3-lpx-standalone",
+      "reason": "Folded into OpenAI Jalapeño slot as the live inference-speed rival. A separate segment would duplicate the same hardware-economics debate."
+    },
+    {
+      "id": "ibm-granite-4.2",
+      "reason": "Fresh open-weight release but lower show novelty beside same-day Qwen4 architecture preview. Hold if independent benchmarks emerge."
+    },
+    {
+      "id": "dify-1.17",
+      "reason": "Substantive agent-runtime release with E2B sandboxes, home snapshots and skill management. Too implementation-heavy for a main segment; useful as supporting evidence for the stateful-harness trend."
+    },
+    {
+      "id": "chatgpt-business-premium-standalone",
+      "reason": "Tied to Jalapeño for the full-stack-economics story rather than a standalone pricing item."
+    },
+    {
+      "id": "robot-games-clip-only",
+      "reason": "High visual value, low analytical value without Figure Index and the data bottleneck. Used as supporting evidence in Story 5."
+    },
+    {
+      "id": "qwen3.8-max-27b-recap",
+      "reason": "Repeat from Ep 26. Only a genuinely new release qualifies again."
+    }
+  ]
+}

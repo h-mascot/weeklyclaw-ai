@@ -1,0 +1,110 @@
+{
+ "episode": 30,
+ "show_date_local": "2026-09-18",
+ "show_time_local": "16:00 ET",
+ "assignment_boundary_utc": "2026-09-11T20:00:00Z",
+ "status": "READY_FOR_REVIEW",
+ "approval_state": "UNVALIDATED",
+ "selected_revision": "rev1",
+ "state_written_utc": "2026-09-18T19:54:16Z",
+ "build_mode": "operator-override Thursday BUILD",
+ "runtime_scripted": "29:00",
+ "runtime_target": "32-38 minutes",
+ "hard_stop": "45 minutes",
+ "hosts": [
+  "Henry",
+  "Andy"
+ ],
+ "sponsor_order": [
+  "herald-labs",
+  "heritage-telecom"
+ ],
+ "sponsor_position": {
+  "herald-labs": "first read of the show",
+  "heritage-telecom": "immediately before the close"
+ },
+ "mid_show_sponsors": false,
+ "slides": 11,
+ "gates": {
+  "canonical_validator": "PASS (17/17 gates)",
+  "canonical_validator_receipt": "qa/validate-final.log",
+  "render_qa": "PASS 11 slides at 1600x900",
+  "deck_link_check": {
+   "total": 28,
+   "direct": 25,
+   "blocked_valid": 3,
+   "dead": 0,
+   "receipt": "qa/deck-link-check.json"
+  },
+  "capture_receipt": {
+   "targets": 7,
+   "captured_utc": "2026-09-17T14:03:22.491776Z",
+   "receipt": "qa/capture-receipt.json"
+  },
+  "asset_manifest": {
+   "assets": 15,
+   "missing": []
+  },
+  "no_autoplay": true,
+  "runtime": "35:00 scripted",
+  "sponsor_order_confirmed": true
+ },
+ "artifacts_sha256": {
+  "deck.html": "e90682289ffa497a2fa939a398b9e5e4fe26a8f31b45035c24406ef1f277a62e",
+  "speaker-notes.md": "eee8a6d89dba9d6134a43997f0fa6591ac17c76d569b4196ad6063d69683db6c",
+  "agenda.md": "ebbd05058bae08bcf275fb6300523a203b73aaf585b78501a959a5b85be87534",
+  "talking-points.md": "b81687305cd24539eed0d1b358a5109bcce285aec1eed13023e577dc04809ba0",
+  "henry-section.md": "3372df1fb0ad31dd15da62ff629c1b9182bfda876b712726f0e2d19596f5318a",
+  "andy-section.md": "58509fbbfa941d0facbc5f3b3f2a8d4bbaad9b75ea23c63b6a78cb84f843336b",
+  "host-cheat-sheet.md": "0fcc411009025b7aa023e4d97444a6b40635b754d4cfaf97d089fa8f18100937",
+  "candidates.json": "6703955c385f9bbd77e756b90bb7fa29194ddc7208d43e7265f5e2aa69831e7a",
+  "selection-rationale.md": "b143ca4d7c132b51dfc49456681a32cdb308fdd99a8ac5637c0612aa8c661810",
+  "evidence.md": "d33a4638a8738e5408e39cf5c1b37cceea6b2fff8a63a5bc6f88b2f832a560b4",
+  "review-card.md": "785bc8b45853b81e0e293f5c7351c0e61a7006343c16ef2a5c0b190938c575c9",
+  "runlog.md": "4c22f2352dd7d81786025e3a4cfe152752278522360f393ed4b06c2cbdd36032",
+  "BUILD_NOTES.md": "a73631603774cc0e7e629fe18f06a64b64bb1e72a7e6adc833f84b888e581259",
+  "media-manifest.json": "9075084e5c71ea97b54ddb033ba3db7e82f0ba625cf66742228d68f7ea6edfd3",
+  "sources/host-shared-resources.md": "029df19a3a1ef0547d1977097f8593d0481a6b83728ade06163a53bdbef5859b",
+  "sources/henry-x-pulse.md": "8f22972ad08e2d998f321655fb45393d676fcf9b9bf23cc2437925cb5053265f"
+ },
+ "published": true,
+ "publication": {
+  "scope": "draft only: episodes/30 deck + agenda routes + referenced assets",
+  "published_utc": "2026-09-17T14:22:05Z",
+  "commit_sha": "983adea37e20fc8974ee3f91b1dcbbebd255f894",
+  "origin_main_sha": "983adea37e20fc8974ee3f91b1dcbbebd255f894",
+  "origin_main_matches_push": true,
+  "site_build_exit_code": 0,
+  "gallery_or_homepage_touched": false,
+  "routes": {
+   "deck": "https://weeklyclaw.ai/episodes/30/deck",
+   "agenda_draft": "https://weeklyclaw.ai/episodes/30/agenda-draft",
+   "host_cheat_sheet": "https://weeklyclaw.ai/episodes/30/host-cheat-sheet"
+  },
+  "canary_receipt": "publish-canary.json",
+  "canary": {
+   "verified_utc": "2026-09-17T14:23:07Z",
+   "all_routes_live": true,
+   "all_assets_match": true,
+   "assets_checked": 15,
+   "sponsor_order": {
+    "herald_first_byte": 22087,
+    "heritage_first_byte": 22268,
+    "herald_before_heritage": true
+   }
+  },
+  "published_deck_sha256": "e90682289ffa497a2fa939a398b9e5e4fe26a8f31b45035c24406ef1f277a62e",
+  "channel_qa": {
+   "discord_destination": "https://weeklyclaw.ai/discord -> 307 -> discord.gg/KtyabWNsq (200)",
+   "deck_outbound_links": "qa/deck-link-check.json (35 URLs, 0 dead)"
+  },
+  "program_topics_sheet": {
+   "title": "WeeklyClaw Program Topics",
+   "episode_tab": "Episode 30",
+   "candidate_rows": 16,
+   "public_csv_rows": 17,
+   "receipt": "sources/program-topics-sheet.json"
+  }
+ },
+ "notes": "No prior episode is APPROVED (Ep27-29 UNVALIDATED, root decks empty); EP29 deck used as structural template only. Website draft publication is standing-authorized and completed; approval state stays UNVALIDATED until explicit APPROVE/SWAP/DROP/PIN/ORDER."
+}

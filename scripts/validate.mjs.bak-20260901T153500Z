@@ -1,0 +1,479 @@
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+const root = new URL('..', import.meta.url);
+const required = [
+  'index.html',
+  'feedback.html',
+  'api/feedback.js',
+  'weeklyclaw-archive.html',
+  'changelog/index.html',
+  'episodes/index.html',
+  'episodes.json',
+  'feed.xml',
+  'episodes/10/deck.html',
+  'episodes/11/deck.html',
+  'episodes/12/deck.html',
+  'episodes/13/deck.html',
+  'episodes/13/agenda.md',
+  'episodes/14/deck.html',
+  'episodes/15/deck.html',
+  'episodes/15/agenda.md',
+  'episodes/18/deck.html',
+  'episodes/19/deck.html',
+  'episodes/19/host.html',
+  'episodes/19/viewer-agenda.md',
+  'episodes/19/host-agenda.md',
+  'episodes/20/agenda.md',
+  'episodes/20/agenda/index.html',
+  'episodes/20/deck.html',
+  'episodes/27/agenda.md',
+  'episodes/27/agenda/index.html',
+  'episodes/27/deck.html',
+  'episodes/26/agenda.md',
+  'episodes/26/agenda/index.html',
+  'episodes/26/deck.html',
+  'episodes/25/agenda.md',
+  'episodes/25/agenda/index.html',
+  'episodes/25/deck.html',
+  'episodes/24/agenda.md',
+  'episodes/24/agenda/index.html',
+  'episodes/24/deck.html',
+  'episodes/23/agenda.md',
+  'episodes/23/agenda/index.html',
+  'episodes/23/deck.html',
+  'episodes/22/agenda.md',
+  'episodes/22/agenda/index.html',
+  'episodes/22/deck.html',
+  'episodes/21/agenda.md',
+  'episodes/21/agenda/index.html',
+  'episodes/21/deck.html',
+  'w18/changelog/index.html', 'w19/changelog/index.html',
+  'sitemap.xml',
+  'assets/og-image.jpg',
+];
+
+const weeks = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+for (const week of weeks) {
+  required.push(`w${week}/index.html`, `w${week}/changelog/index.html`);
+}
+
+const missing = required.filter((p) => !existsSync(new URL(`../${p}`, import.meta.url)));
+if (missing.length) {
+  console.error(`Missing required files: ${missing.join(', ')}`);
+  process.exit(1);
+}
+
+const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+for (const needle of [
+  '<title>Weekly Claw</title>',
+  '<meta property="og:title" content="Weekly Claw">',
+  '<meta name="twitter:title" content="Weekly Claw">',
+  'Weekly Claw',
+  'The cost of intelligence collapsed',
+  '/feedback',
+  'https://www.youtube.com/watch?v=dquJyEBQWpE',
+  'https://www.youtube.com/watch?v=MSRFmpDfaTg',
+  'The Sandbox Failed',
+  'assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg',
+  'assets/youtube-thumbnails/w21-v2-approved-20260727.jpg',
+  'assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg',
+  'live builder show about AI, agents, devtools, and the future of work',
+  'The week decides',
+  'Latest Episodes',
+  'Supported by',
+  'Herald Labs',
+  'https://labs.theherald.co/',
+  'https://superada.ai/',
+  'https://heritagetel.com/',
+  'assets/sponsors/heritage-logo.png',
+  'assets/weeklyclaw-hosts-source.png?v=20260717-light-smile',
+  'https://x.com/weeklyclaw',
+  'https://youtube.com/@weeklyclaw',
+  'https://space.bilibili.com/3707046262213278/',
+  'action="https://weeklyclaw.beehiiv.com/create"',
+  'name="sent_from_orchid" value="true"',
+  'id="newsletter"',
+  'class="social-icon"',
+  'aria-label="Follow Weekly Claw on X"',
+  'aria-label="Watch Weekly Claw on YouTube"',
+  'aria-label="Watch Weekly Claw on Bilibili"',
+  'rel="noopener noreferrer" referrerpolicy="no-referrer" aria-label="Watch Weekly Claw on Bilibili"',
+  'href="https://podcasts.apple.com/us/podcast/weekly-claw/id6795290527"',
+  'href="https://open.spotify.com/show/033WWP2IOLy2T3SApjvw8v"',
+  'aria-label="Listen to Weekly Claw on Apple Podcasts"',
+  'aria-label="Listen to Weekly Claw on Spotify"',
+  '<link rel="canonical" href="https://weeklyclaw.ai/">',
+  '<meta property="og:image" content="https://weeklyclaw.ai/assets/og-image.jpg">',
+  '<meta name="twitter:card" content="summary_large_image">',
+  'application/ld+json',
+  'PodcastSeries',
+]) {
+  if (!html.includes(needle)) {
+    console.error(`Missing expected homepage copy: ${needle}`);
+    process.exit(1);
+  }
+}
+
+if (html.includes('platform-link-pending') || html.includes('>Soon<')) {
+  console.error('Homepage still renders pending platform placeholders');
+  process.exit(1);
+}
+
+const desktopNav = html.match(/<nav class="desktop-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
+const mobileNav = html.match(/<nav class="mobile-nav"[\s\S]*?<\/nav>/)?.[0] ?? '';
+const footerNav = html.match(/<nav class="footer-links"[\s\S]*?<\/nav>/)?.[0] ?? '';
+for (const [label, nav] of [['desktop nav', desktopNav], ['mobile nav', mobileNav], ['footer nav', footerNav]]) {
+  if (!nav) {
+    console.error(`Missing ${label}`);
+    process.exit(1);
+  }
+  for (const forbidden of ['#newsletter', 'https://x.com/weeklyclaw', '>Newsletter<', '>X<', '>YouTube<']) {
+    if (nav.includes(forbidden)) {
+      console.error(`${label} still contains forbidden menu item: ${forbidden}`);
+      process.exit(1);
+    }
+  }
+}
+
+const feedbackHtml = readFileSync(new URL('../feedback.html', import.meta.url), 'utf8');
+for (const needle of [
+  'id="feedback-form"',
+  'action="/api/feedback"',
+  'id="form-status"',
+  'Feedback sent. Thank you for helping shape the next Weekly Claw.',
+  'form.reportValidity()',
+  'Content-Type": "application/json"',
+]) {
+  if (!feedbackHtml.includes(needle)) {
+    console.error(`Feedback page missing expected integration marker: ${needle}`);
+    process.exit(1);
+  }
+}
+if (feedbackHtml.includes('formsubmit.co')) {
+  console.error('Feedback page still exposes the retired FormSubmit endpoint');
+  process.exit(1);
+}
+
+const feedbackApi = readFileSync(new URL('../api/feedback.js', import.meta.url), 'utf8');
+for (const needle of ['WEEKLYCLAW_FEEDBACK_REPO', 'WEEKLYCLAW_GITHUB_TOKEN', 'https://api.github.com/repos/${repo}/issues', 'website-feedback']) {
+  if (!feedbackApi.includes(needle)) {
+    console.error(`Feedback API missing expected GitHub integration marker: ${needle}`);
+    process.exit(1);
+  }
+}
+
+if (!readFileSync(new URL('../README.md', import.meta.url), 'utf8').includes('/w19/changelog/')) {
+  console.error('README is missing the W19 changelog route');
+  process.exit(1);
+}
+
+const changelogHtml = readFileSync(new URL('../changelog/index.html', import.meta.url), 'utf8');
+for (const needle of ['Release changelogs', '/w11/changelog/', '/w18/changelog/', '/w19/changelog/', '/w20/changelog/', '/episodes/11/deck', '/episodes/12/deck', '/episodes/14/deck', '/episodes/18/deck', '/episodes/19/deck', 'Episode deck', 'Changelog/DX deck']) {
+  if (!changelogHtml.includes(needle)) {
+    console.error(`Changelog index missing expected copy: ${needle}`);
+    process.exit(1);
+  }
+}
+
+if (changelogHtml.includes('Open changelog') || changelogHtml.includes('Host deck') || changelogHtml.includes('/episodes/19/host.html') || changelogHtml.includes('Main slides') || changelogHtml.includes('Changelog archive') || changelogHtml.includes('mirrored SuperAda') || changelogHtml.includes('short week routes')) {
+  console.error('Changelog index still exposes low-value or duplicate CTA copy');
+  process.exit(1);
+}
+
+
+const episodesHtml = readFileSync(new URL('../episodes/index.html', import.meta.url), 'utf8');
+for (const needle of ['Weekly Claw Episodes', 'W27', 'The Sandbox Failed', '/episodes/22/deck', 'data-video-id="f2yugYwXOBo"', 'data-video-id="dquJyEBQWpE"', 'data-video-id="MSRFmpDfaTg"', 'data-spotify-id="5t1xYX7e4DUv6l9DKUAi21"', 'data-spotify-id="58kOYSrhrMLArnNfVY41RQ"', '/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>7</strong>', 'video episodes']) {
+  if (!episodesHtml.includes(needle)) {
+    console.error(`Episodes index missing expected copy: ${needle}`);
+    process.exit(1);
+  }
+}
+
+// --- Episode summaries section + RSS feed (video era, 2026-08-23 rev2) ---
+for (const needle of [
+  'id="summaries"',
+  'Every episode, summarized',
+  'subscribe to the RSS feed',
+  'data-summary-week="26"',
+  'data-summary-week="20"',
+  '<link rel="alternate" type="application/rss+xml" title="The Weekly Claw — Episode Summaries" href="/feed.xml">',
+]) {
+  if (!episodesHtml.includes(needle)) {
+    console.error(`Episodes index missing summaries marker: ${needle}`);
+    process.exit(1);
+  }
+}
+const summaryCount = (episodesHtml.match(/class="summary-item"/g) ?? []).length;
+if (summaryCount !== 7) {
+  console.error(`Episodes index should render 7 video-era episode summaries, found ${summaryCount}`);
+  process.exit(1);
+}
+if (episodesHtml.includes('data-summary-week="19"')) {
+  console.error('Episodes index still renders slides-era summaries; summaries are video-era only now');
+  process.exit(1);
+}
+const feedXml = readFileSync(new URL('../feed.xml', import.meta.url), 'utf8');
+for (const needle of [
+  '<rss version="2.0"',
+  'The Weekly Claw — Episode Summaries',
+  '<atom:link href="https://weeklyclaw.ai/feed.xml"',
+  'weeklyclaw-episode-26',
+  'weeklyclaw-episode-20',
+]) {
+  if (!feedXml.includes(needle)) {
+    console.error(`RSS feed missing expected marker: ${needle}`);
+    process.exit(1);
+  }
+}
+const feedItemCount = (feedXml.match(/<item>/g) ?? []).length;
+if (feedItemCount !== 7) {
+  console.error(`RSS feed should contain 7 items, found ${feedItemCount}`);
+  process.exit(1);
+}
+const episodesJson = JSON.parse(readFileSync(new URL('../episodes.json', import.meta.url), 'utf8'));
+if (episodesJson.episodes.length !== 7) {
+  console.error(`episodes.json should contain 7 episodes, found ${episodesJson.episodes.length}`);
+  process.exit(1);
+}
+for (const episode of episodesJson.episodes) {
+  if (!episode.videoId || !Array.isArray(episode.summary) || episode.summary.length < 5) {
+    console.error(`episodes.json entry for W${episode.week} is incomplete (need videoId and 5+ summary topics)`);
+    process.exit(1);
+  }
+}
+
+const homepagePlayerMarkers = [
+  'id="featured-player"',
+  'aria-label="Featured episode player mode"',
+  'data-featured-mode="video"',
+  'data-featured-mode="spotify"',
+  'id="featured-video-frame"',
+  'id="featured-spotify-frame"',
+  'id="featured-spotify-unavailable"',
+  'https://www.youtube-nocookie.com/embed/${featuredVideoId}',
+  'https://open.spotify.com/embed/episode/${featuredSpotifyId}',
+  'featuredCard?.dataset.videoId',
+  'featuredCard.dataset.spotifyId',
+  'data-spotify-id="5t1xYX7e4DUv6l9DKUAi21"',
+  'Not on Spotify yet',
+];
+for (const marker of homepagePlayerMarkers) {
+  if (!html.includes(marker)) {
+    console.error(`Homepage missing Featured Episode player marker: ${marker}`);
+    process.exit(1);
+  }
+}
+if (html.includes('data-featured-mode="audio"') || html.includes('id="featured-audio"')) {
+  console.error('Homepage featured player must not expose the removed raw-audio mode');
+  process.exit(1);
+}
+if (episodesHtml.includes('data-player-mode="audio"') || episodesHtml.includes('id="episode-audio"')) {
+  console.error('Episodes page player must not expose the removed raw-audio mode');
+  process.exit(1);
+}
+if (!episodesHtml.includes('data-player-mode="spotify"')) {
+  console.error('Episodes page missing spotify player mode');
+  process.exit(1);
+}
+const featuredEpisode = html.match(/<div class="latest-card"[^>]*>/)?.[0] ?? '';
+const featuredVideoId = featuredEpisode.match(/data-video-id="([\w-]{11})"/)?.[1];
+const featuredAudioSrc = featuredEpisode.match(/data-audio-src="([^"]+)"/)?.[1];
+const featuredWeek = html.match(/<div class="latest-number" aria-hidden="true">(\d+)<\/div>/)?.[1];
+const featuredArchiveCard = html.match(new RegExp(`<article class="episode-card">[\\s\\S]*?<span class="episode-week">W${featuredWeek}</span>[\\s\\S]*?</article>`))?.[0] ?? '';
+const archiveVideoId = featuredArchiveCard.match(/youtube\.com\/watch\?v=([\w-]{11})/)?.[1];
+if (featuredVideoId !== archiveVideoId) {
+  console.error('Homepage Featured Episode player does not match the latest episode card video');
+  process.exit(1);
+}
+if (html.includes('autoplay=1')) {
+  console.error('Homepage Featured Episode player must not autoplay');
+  process.exit(1);
+}
+const RIVERSIDE_MEDIA_PREFIX = 'https://api.riverside.com/hosting-analytics/media/';
+if (featuredAudioSrc && !featuredAudioSrc.startsWith(RIVERSIDE_MEDIA_PREFIX) && (!featuredAudioSrc.startsWith('/') || !existsSync(new URL(`..${featuredAudioSrc}`, import.meta.url)))) {
+  console.error(`Homepage Featured Episode audio source does not resolve to a local asset or the Riverside podcast feed: ${featuredAudioSrc}`);
+  process.exit(1);
+}
+const featuredCopy = html.match(/<div class="latest-card"[\s\S]*?<div class="featured-player"/)?.[0] ?? '';
+if (featuredCopy.includes('Open episode') || featuredCopy.includes('class="latest-action"')) {
+  console.error('Homepage Featured Episode still exposes the obsolete slides-opening action');
+  process.exit(1);
+}
+
+const episode22Card = episodesHtml.match(/<article class="week-card"[^>]*data-week="22"[^>]*>[\s\S]*?<\/article>/)?.[0] ?? '';
+if (!episode22Card.includes('data-video-id="f2yugYwXOBo"')) {
+  console.error('Episode 22 card is missing its verified YouTube video ID');
+  process.exit(1);
+}
+if (!episode22Card.includes('href="https://www.youtube.com/watch?v=f2yugYwXOBo"')) {
+  console.error('Episode 22 player controls need a direct YouTube fallback');
+  process.exit(1);
+}
+if (!episode22Card.includes('<h3>The Sandbox Failed</h3>')) {
+  console.error('Episode 22 card is missing its canonical title');
+  process.exit(1);
+}
+if (!episode22Card.includes('/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg')) {
+  console.error('Episode 22 card is missing its approved thumbnail');
+  process.exit(1);
+}
+if (episodesHtml.includes('autoplay=1')) {
+  console.error('Episode player must not autoplay');
+  process.exit(1);
+}
+const summariesStart = episodesHtml.indexOf('<section class="summaries"');
+const archiveStart = episodesHtml.indexOf('<section class="archive"');
+if (!(summariesStart > 0 && summariesStart < archiveStart)) {
+  console.error('Episode summaries section must appear before the archive');
+  process.exit(1);
+}
+
+const homepageEpisodeWeeks = [...html.matchAll(/<span class="episode-week">W(\d+)<\/span>/g)]
+  .map((match) => Number(match[1]));
+const newestArchiveWeeks = [...episodesHtml.matchAll(/<span class="week-number">W(\d+)<\/span>/g)]
+  .map((match) => Number(match[1]))
+  .sort((a, b) => b - a)
+  .slice(0, 6);
+if (!html.includes('.archive-grid > .episode-card:nth-child(n + 7) { display: none; }')) {
+  console.error('Homepage is missing the 6-episode display limit');
+  process.exit(1);
+}
+const visibleHomepageWeeks = homepageEpisodeWeeks.slice(0, 6);
+if (visibleHomepageWeeks.join(',') !== newestArchiveWeeks.join(',')) {
+  console.error(`Homepage episode cards are not the newest 6 archive weeks: expected ${newestArchiveWeeks.map((week) => `W${week}`).join(', ')}, found ${visibleHomepageWeeks.map((week) => `W${week}`).join(', ')}`);
+  process.exit(1);
+}
+
+for (const [name, page] of [['homepage', html], ['episodes index', episodesHtml]]) {
+  for (const forbidden of ['>Agenda<', 'slides + agenda', 'Slides + agenda', 'full agenda', '/agenda">']) {
+    if (page.includes(forbidden)) {
+      console.error(`${name} still exposes removed agenda UI: ${forbidden}`);
+      process.exit(1);
+    }
+  }
+}
+
+for (const path of ['../episodes/20/agenda.md', '../episodes/20/agenda/index.html']) {
+  const agenda = readFileSync(new URL(path, import.meta.url), 'utf8');
+  for (const marker of ['Build notes', 'WINNERS:', 'fill in the winner', 'template.md']) {
+    if (agenda.includes(marker)) {
+      console.error(`Episode 20 public agenda exposes an internal marker: ${marker}`);
+      process.exit(1);
+    }
+  }
+}
+
+const legacyArchiveHtml = readFileSync(new URL('../weeklyclaw-archive.html', import.meta.url), 'utf8');
+if (!legacyArchiveHtml.includes("window.location.replace('/episodes'") || !legacyArchiveHtml.includes('href="/episodes"')) {
+  console.error('Legacy archive page does not redirect to /episodes');
+  process.exit(1);
+}
+
+for (const [name, page] of [['homepage', html], ['episodes index', episodesHtml], ['legacy archive', legacyArchiveHtml], ['changelog index', changelogHtml], ['feedback page', feedbackHtml]]) {
+  const htmlRoute = page.match(/(?:href|src|action|data-url)=["'][^"']*\.html(?:[?#][^"']*)?["']/);
+  if (htmlRoute) {
+    console.error(`${name} still exposes a public .html URL: ${htmlRoute[0]}`);
+    process.exit(1);
+  }
+}
+
+for (const week of [10, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]) {
+  const mainDeck = readFileSync(new URL(`../episodes/${week}/deck.html`, import.meta.url), 'utf8');
+  if (!mainDeck.includes('Weekly') && !mainDeck.includes('OpenClaw')) {
+    console.error(`Week ${week} main deck does not look like a Weekly Claw deck`);
+    process.exit(1);
+  }
+}
+
+const archivedMainDeckCanaries = new Map([
+  [11, ['The Weekly Claw #11', 'Friday, April 24, 2026', "That's <span class=\"gradient-text\">Episode 11"]],
+  [18, ['The Weekly Claw #18', 'Skill Workshop is your homework', 'Host: Andy · @AndyML']],
+]);
+for (const [week, canaries] of archivedMainDeckCanaries) {
+  const mainDeck = readFileSync(new URL(`../episodes/${week}/deck.html`, import.meta.url), 'utf8');
+  for (const canary of canaries) {
+    if (!mainDeck.includes(canary)) {
+      console.error(`Week ${week} archived main deck is missing source canary: ${canary}`);
+      process.exit(1);
+    }
+  }
+}
+
+for (const week of weeks) {
+  const dir = join(root.pathname, `w${week}`, 'changelog');
+  const files = readdirSync(dir);
+  const slideCount = files.filter((name) => /^slide-\d+\.jpg$/.test(name)).length;
+  if (slideCount === 0) {
+    console.error(`Week ${week} has no copied slide JPGs`);
+    process.exit(1);
+  }
+  const deck = readFileSync(join(dir, 'index.html'), 'utf8');
+  if (!deck.includes('Weekly') && !deck.includes('OpenClaw')) {
+    console.error(`Week ${week} changelog does not look like a Weekly Claw deck`);
+    process.exit(1);
+  }
+  if (!deck.includes('name="weeklyclaw-route"') || !deck.includes(`/w${week}/changelog/`)) {
+    console.error(`Week ${week} changelog is missing weeklyclaw-route metadata`);
+    process.exit(1);
+  }
+  const shortRoute = readFileSync(new URL(`../w${week}/index.html`, import.meta.url), 'utf8');
+  if (!shortRoute.includes(`/w${week}/changelog/`)) {
+    console.error(`Week ${week} short route does not redirect to changelog`);
+    process.exit(1);
+  }
+}
+
+const vercelConfig = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
+for (const week of weeks) {
+  for (const suffix of ['agenda', 'agenda.md']) {
+    const redirect = vercelConfig.redirects?.find((item) => item.source === `/episodes/:episode/${suffix}`);
+    if (redirect) {
+      console.error(`Stale agenda redirect still present: ${redirect.source}`);
+      process.exit(1);
+    }
+  }
+  const agendaPage = join('episodes', String(week), 'agenda.html');
+  const agendaMd = join('episodes', String(week), 'agenda.md');
+  if (existsSync(agendaMd) && !existsSync(agendaPage)) {
+    console.error(`agenda.md exists but no agenda.html page: episodes/${week}`);
+    process.exit(1);
+  }
+}
+
+console.log(`weeklyclaw-ai static validation passed (${weeks.length} changelog routes)`);// SEO integrity checks
+const seoPages = [
+  ['index.html', 'https://weeklyclaw.ai/'],
+  ['episodes/index.html', 'https://weeklyclaw.ai/episodes'],
+  ['feedback.html', 'https://weeklyclaw.ai/feedback'],
+  ['changelog/index.html', 'https://weeklyclaw.ai/changelog'],
+];
+for (const [f, canon] of seoPages) {
+  const h = readFileSync(new URL(`../${f}`, import.meta.url), 'utf8');
+  if (!h.includes(`<link rel="canonical" href="${canon}">`)) {
+    console.error(`${f} missing canonical ${canon}`);
+    process.exit(1);
+  }
+  if (!h.includes('og:image')) {
+    console.error(`${f} missing og:image`);
+    process.exit(1);
+  }
+  if (!h.includes('summary_large_image')) {
+    console.error(`${f} missing summary_large_image card`);
+    process.exit(1);
+  }
+}
+const sitemap = readFileSync(new URL('../sitemap.xml', import.meta.url), 'utf8');
+for (const route of ['https://weeklyclaw.ai/', 'https://weeklyclaw.ai/episodes', 'https://weeklyclaw.ai/feedback', 'https://weeklyclaw.ai/changelog', 'https://weeklyclaw.ai/w20/changelog']) {
+  if (!sitemap.includes(route)) {
+    console.error(`sitemap.xml missing ${route}`);
+    process.exit(1);
+  }
+}
+const vj = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), 'utf8'));
+if (!vj.redirects.some((r) => r.has && r.has.some((h) => h.value === 'www.weeklyclaw.ai'))) {
+  console.error('vercel.json missing www.weeklyclaw.ai redirect');
+  process.exit(1);
+}
+
+

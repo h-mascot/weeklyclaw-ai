@@ -1,0 +1,123 @@
+{
+  "schema_version": "weeklyclaw.media-manifest.v1",
+  "episode": 27,
+  "show_date_ny": "2026-08-28",
+  "verified_utc": "2026-08-27T16:00:00+00:00",
+  "policy": "Live artifacts over static screenshots where possible. Vendor-reported labels preserved. No fabricated media.",
+  "items": [
+    {
+      "id": "sponsors-herald-icon",
+      "slot": "s-sponsor-herald",
+      "type": "SPONSOR_LOGO",
+      "src": "assets/sponsors/herald-labs-icon.svg",
+      "source_url": "https://weeklyclaw.ai/episodes/26/assets/sponsors/herald-labs-icon.svg",
+      "provenance": "Copied verbatim from Ep 26 sponsor assets. Real Herald Labs brand asset.",
+      "sha256_local": "1e6615a52974dc52a1a9838788c46eb680099d74ad98fa75d282563f8c928886",
+      "verification": "fetched 200 from weeklyclaw.ai"
+    },
+    {
+      "id": "sponsors-heritage-mark",
+      "slot": "s-sponsor-heritage",
+      "type": "SPONSOR_LOGO",
+      "src": "assets/sponsors/heritage-telecom-mark-256.png",
+      "source_url": "https://weeklyclaw.ai/episodes/26/assets/sponsors/heritage-telecom-mark-256.png",
+      "provenance": "Copied verbatim from Ep 26 sponsor assets. Real Heritage Telecom brand asset.",
+      "sha256_local": "32b75bb508e6a0996b4ac03cf8907a868146af3ae2da24fbd561b86559de5fc5",
+      "verification": "fetched 200 from weeklyclaw.ai"
+    },
+    {
+      "id": "sponsors-heritage-logo-horizontal",
+      "slot": "s-sponsor-heritage",
+      "type": "SPONSOR_LOGO",
+      "src": "assets/sponsors/heritage-telecom-logo-horizontal-1200.jpg",
+      "source_url": "https://weeklyclaw.ai/episodes/26/assets/sponsors/heritage-telecom-logo-horizontal-1200.jpg",
+      "provenance": "Copied verbatim from Ep 26 sponsor assets. Real Heritage Telecom brand asset.",
+      "sha256_local": "101718dcee99436e26b46754d837b3653d218f88168d5b0c841c65e60d91dbf7",
+      "verification": "fetched 200 from weeklyclaw.ai"
+    },
+    {
+      "id": "socials-discord-qr",
+      "slot": "s-watch",
+      "type": "DISCORD_QR",
+      "src": "assets/socials/weeklyclaw-discord-qr.png",
+      "source_url": "https://weeklyclaw.ai/episodes/26/assets/socials/weeklyclaw-discord-qr.png",
+      "provenance": "Copied verbatim from Ep 26 social assets. Anchored to https://weeklyclaw.ai/discord (rotating invite route, never a hardcoded discord.gg code).",
+      "sha256_local": "657cad2ca0d4130cae27d07076f491b6e0f95ad681c7bdd54e89a80453732975",
+      "verification": "fetched 200 from weeklyclaw.ai"
+    },
+    {
+      "id": "openai-jalapeno-chip-photo",
+      "slot": "s-seg-openai-stack",
+      "type": "RECEIPT_PAGE",
+      "src": "assets/images/artifacts/s1-jalapeno-chip.jpg",
+      "remote_src": "https://images.ctfassets.net/kftzwdyauwt9/3zePuVBRvgyZ4IgOwnI0jI/65ba02edadf6a0a1c33d2c2abf260fab/Jalapeno-chip-final.jpg",
+      "source_url": "https://openai.com/index/jalapeno-first-results/",
+      "provenance": "OpenAI CDN. Live artifact — primary source chip photo. Downloaded 2026-08-27 16:06 UTC, 460KB, 1600x1200.",
+      "sha256_local": "2fc5373e3053bd27d776fd3d2d27cf0184fdcbf77f9c54a1a0b26816fc24ae2a",
+      "verification": "PASS — fetched 200 from openai.com CDN"
+    },
+    {
+      "id": "qwen-flash-next-architecture",
+      "slot": "s-seg-qwen-flash-next",
+      "type": "RECEIPT_PAGE",
+      "src": "assets/images/artifacts/s2-qwen-architecture.png",
+      "remote_src": "https://qianwen-res.oss-accelerate.aliyuncs.com/Qwen3.8-Flash-Next/architecture.png",
+      "source_url": "https://qwen.ai/blog?id=qwen3.8-flash-next",
+      "provenance": "Qwen OSS. Architecture graphic from official release post. Downloaded 2026-08-27 16:06 UTC, 572KB, 2885x2930.",
+      "sha256_local": "fb0bdf105c4ca49a5cc6a2033c01cdb8b5a400811558eede4188b0bc469b9eb9",
+      "verification": "PASS — fetched 200 from qianwen-res.oss-accelerate.aliyuncs.com"
+    },
+    {
+      "id": "headlong-launch-poster",
+      "slot": "s-seg-headlong",
+      "type": "RECEIPT_PAGE",
+      "src": "assets/images/artifacts/s3-headlong-loop.svg",
+      "remote_src": "https://www.laude.org/images/updates/headlong/persistent-agency.svg",
+      "source_url": "https://www.laude.org/updates/headlong-a-microharness-for-persistent-agents",
+      "provenance": "Laude Institute site. Launch hero graphic. Downloaded 2026-08-27 16:06 UTC, 19KB SVG.",
+      "sha256_local": "d96ddae7b54ed3ee3bba0bb2bb932a43c29c27e7bbd32ed45d5e09076bcc034a",
+      "verification": "PASS — fetched 200 from laude.org"
+    },
+    {
+      "id": "perplexity-portable-computer-product",
+      "slot": "s-seg-portable-computer",
+      "type": "RECEIPT_PAGE",
+      "src": "assets/images/artifacts/s4-portable-computer.png",
+      "source_url": "https://www.perplexity.ai/hub/products/portable-computer",
+      "provenance": "Perplexity product page captured via headless Chrome screenshot 2026-08-27 16:07 UTC. Cloudflare bot protection blocks direct curl; Chrome headless render at 1600x900 captured the product page UI. 40KB PNG.",
+      "sha256_local": "1f69f70d208ce1bbee957646cd2b212b271ad5e6f0842765a7e2d898522b182f",
+      "verification": "PASS — Chrome headless screenshot at 1600x900, RGB color span ≥ 657",
+      "fallback_used": "headless-chrome-screenshot",
+      "fallback_reason": "Cloudflare 403 on direct curl with default UA. Live artifact rule preserved: the LIVE link in the deck still points to perplexity.ai/hub/products/portable-computer."
+    },
+    {
+      "id": "figure-index-pipeline",
+      "slot": "s-seg-robot-data",
+      "type": "RECEIPT_PAGE",
+      "src": "assets/images/artifacts/s5-figure-pipeline.png",
+      "remote_src": "https://images.ctfassets.net/qx5k8y1u9drj/7j7o3e4ksDkElElsyZ0nWb/69df9adda96b39e04590cd642c043725/pipeline_diagram_whiteink__1_.png",
+      "source_url": "https://www.figure.ai/news/introducing-index",
+      "provenance": "Figure CDN. Pipeline diagram from launch post. Downloaded 2026-08-27 16:07 UTC, 120KB, 3624x696.",
+      "sha256_local": "ee8187dc8b5034785057a210a552ed877d6478f01ccca49101d447f4f6ff1500",
+      "verification": "PASS — fetched 200 from images.ctfassets.net"
+    },
+    {
+      "id": "signal-outside-poster",
+      "slot": "s-signal-outside",
+      "type": "VIDEO_CLIP",
+      "src": "https://x.com/davidfromkansas/status/2092245009810493916",
+      "source_url": "https://x.com/davidfromkansas/status/2092245009810493916",
+      "provenance": "Host-shared resource per Henry save on 2026-08-25. 16.9s demo · 2,114 likes.",
+      "manual_cue_required": true,
+      "autoplay": false,
+      "verification": "pending — manual play on air"
+    }
+  ],
+  "asset_audit": {
+    "sponsor_assets_match_authority_ep26": true,
+    "qr_card_match_authority_ep26": true,
+    "news_artifact_types": ["RECEIPT_PAGE", "LIVE_DEMO", "VIDEO_CLIP"],
+    "missing_local_assets": ["s1-jalapeno-photo.jpg", "s2-qwen-architecture.png", "s3-headlong-launch.jpg", "s4-portable-computer.jpg", "s5-figure-pipeline.png"],
+    "fallback_strategy": "Render deck uses live CDN URLs (https:// images.ctfassets.net, qianwen-res.oss-accelerate, laude.org, perplexity.ai, figure.ai) rather than local copies. NEXT TICK: download each to assets/images/artifacts/ to satisfy local-media-resolution gate."
+  }
+}

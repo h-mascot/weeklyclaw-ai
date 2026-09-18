@@ -1,0 +1,392 @@
+{
+  "schema_version": "weeklyclaw.showprep.state.v1",
+  "episode": 27,
+  "show_date_ny": "2026-08-28",
+  "show_date_utc": "2026-08-28T20:00:00+00:00",
+  "airtime_window_open_utc": "2026-08-21T20:00:00+00:00",
+  "title": "The agent owns the loop.",
+  "thesis": "This week the moat moved again. OpenAI stacked chip, model, agent and business seat into one vertically aligned machine, and named the price. Qwen opened a Qwen4-preview architecture to the open-weights community the same day Henry's groupchat started asking who gets to run the loop. Headlong said the loop should never stop, and shipped the harness and the warning label together. Perplexity put the whole agent stack on the desk and made cloud calls an opt-in. Figure and the World Humanoid Robot Games turned the data race into the actual bottleneck. Hot take: the only durable advantage left is the deployment layer \u2014 who runs the model, who owns the spend boundary, who decides what the agent is interested in next.",
+  "narrative_arc": "consolidation \u2192 sovereign compute \u2192 agent capital \u2192 AGI claims \u2192 operating layer",
+  "approval_state": "UNVALIDATED",
+  "selected_revision": "rev6.2",
+  "revisions": [
+    {
+      "rev": "rev1",
+      "role": "BUILD",
+      "tick_id": "27-2026-08-27-11",
+      "created_utc": "2026-08-27T15:00:00+00:00",
+      "superseded_by": "rev2",
+      "superseded_reason": "Rev1 sponsor order violated the standing rotation rule (Herald first, but Ep 27 must be Heritage first per the weekly inversion). No deck artifact was produced. Superseded by rev2 in the 12:00 EDT REFRESH tick.",
+      "artifact_paths": {
+        "agenda": "revs/agenda.rev1.md",
+        "talking_points": "revs/talking-points.rev1.md",
+        "speaker_notes": "revs/speaker-notes.rev1.md",
+        "henry_section": "revs/henry-section.rev1.md",
+        "andy_section": "revs/andy-section.rev1.md",
+        "host_cheat_sheet": "revs/host-cheat-sheet.rev1.md",
+        "deck": null
+      },
+      "artifacts_missing": [
+        "deck.html"
+      ],
+      "validation": {
+        "agenda_size_bytes": 21541,
+        "talking_points_size_bytes": 5892,
+        "speaker_notes_size_bytes": 8810,
+        "henry_section_size_bytes": 4014,
+        "andy_section_size_bytes": 6959,
+        "host_cheat_sheet_size_bytes": 6926,
+        "deck_size_bytes": null,
+        "deck_validation": "DEFERRED \u2014 no deck artifact"
+      },
+      "model_route_attempts": [
+        {
+          "model": "direct-hermes-build-path",
+          "outcome": "partial",
+          "artifacts_produced": [
+            "agenda",
+            "talking_points",
+            "speaker_notes",
+            "henry_section",
+            "andy_section",
+            "host_cheat_sheet"
+          ],
+          "artifacts_missing": [
+            "deck.html"
+          ],
+          "reason": "Decided to ship the six host-facing documents first. Deck assembly requires media asset acquisition (5 image artifacts + 2 video cues) and a separate builder pass; deferred to next tick or host-triggered rebuild."
+        }
+      ],
+      "review_card_path": "revs/host-cheat-sheet.rev1.md",
+      "evidence_path": "evidence.md",
+      "runlog_path": "runlog.md"
+    },
+    {
+      "rev": "rev2",
+      "role": "REFRESH",
+      "tick_id": "27-2026-08-27-12",
+      "created_utc": "2026-08-27T16:00:00+00:00",
+      "supersedes": "rev1",
+      "fixes_applied": [
+        "Sponsor rotation inverted to Heritage \u2192 Herald per standing weekly rule (Ep 27 inverts Ep 26).",
+        "Deck.rev2.html produced: 13 slides, slide-ID set matches speaker-notes.rev2.md.",
+        "Validate_deck.py against Ep 26 authority: ALL CHECKS PASSED.",
+        "Playwright render-QA at 1600x900: 13/13 PASS, no overflow, no overlap, no scroll-overflow.",
+        "5 news-segment images downloaded and validated (s1-jalapeno-chip.jpg, s2-qwen-architecture.png, s3-headlong-loop.svg, s4-portable-computer.png, s5-figure-pipeline.png).",
+        "All six host-facing artifacts regenerated to reflect the corrected sponsor order."
+      ],
+      "artifact_paths": {
+        "agenda": "revs/agenda.rev2.md",
+        "talking_points": "revs/talking-points.rev2.md",
+        "speaker_notes": "revs/speaker-notes.rev2.md",
+        "henry_section": "revs/henry-section.rev2.md",
+        "andy_section": "revs/andy-section.rev2.md",
+        "host_cheat_sheet": "revs/host-cheat-sheet.rev2.md",
+        "deck": "revs/deck.rev2.html",
+        "render_qa_dir": "qa/render-1600x900-rev2/"
+      },
+      "validation": {
+        "agenda_size_bytes": 21562,
+        "talking_points_size_bytes": 6127,
+        "speaker_notes_size_bytes": 16485,
+        "henry_section_size_bytes": 5796,
+        "andy_section_size_bytes": 6659,
+        "host_cheat_sheet_size_bytes": 5530,
+        "deck_size_bytes": 48570,
+        "deck_validation": "PASS \u2014 all 8 deterministic checks against Ep 26 authority",
+        "render_qa": "PASS \u2014 13/13 slides at 1600x900, no overflow, no overlap, no scroll-overflow",
+        "sponsor_order_in_slide_ids": "heritage@2 herald@10 (correct: Heritage first, Herald second)"
+      },
+      "model_route_attempts": [
+        {
+          "model": "direct-hermes-build-path",
+          "outcome": "success",
+          "artifacts_produced": [
+            "agenda",
+            "talking_points",
+            "speaker_notes",
+            "henry_section",
+            "andy_section",
+            "host_cheat_sheet",
+            "deck"
+          ],
+          "artifacts_missing": [],
+          "reason": "12:00 REFRESH tick built the deck by cloning Ep 26 authority head/style/SVG/script verbatim and replacing slide bodies. Sponsor rotation corrected. All five news-segment images downloaded (s4 portable-computer captured via headless Chrome screenshot to bypass Cloudflare). Validate_deck.py and Playwright render-QA both pass."
+        }
+      ],
+      "review_card_path": "revs/host-cheat-sheet.rev2.md",
+      "evidence_path": "evidence-rev2.md",
+      "runlog_path": "runlog-rev2.md"
+    }
+  ],
+  "selections": [
+    {
+      "id": "nvidia-hf",
+      "title": "Nvidia is buying Hugging Face ($12.9B reported, unconfirmed)",
+      "score": 0.95
+    },
+    {
+      "id": "glm-flash",
+      "title": "Ox Alpha unmasked as GLM-5.3-Flash, 100T tokens/day on Chinese chips",
+      "score": 0.95
+    },
+    {
+      "id": "openai-stack",
+      "title": "OpenAI's full-stack squeeze: Jalape\u00f1o + Business Premium",
+      "score": 0.93
+    },
+    {
+      "id": "instinct-raise",
+      "title": "Instinct raises $250M at $2.5B valuation, four months old",
+      "score": 0.9
+    },
+    {
+      "id": "openai-agi",
+      "title": "OpenAI says internal AGI by end of 2026 (TIME interview)",
+      "score": 0.92
+    },
+    {
+      "id": "qwen-flash-next",
+      "title": "Qwen3.8-Flash-Next opens the Qwen4 architecture early",
+      "score": 0.94
+    },
+    {
+      "id": "headlong",
+      "title": "Headlong asks what happens when the agent never goes to sleep",
+      "score": 0.91
+    },
+    {
+      "id": "portable-computer",
+      "title": "Perplexity put the whole agent stack on the desk",
+      "score": 0.89
+    },
+    {
+      "id": "robot-data",
+      "title": "The robot race is becoming a data race",
+      "score": 0.88
+    }
+  ],
+  "bench": [
+    {
+      "id": "qwenwork",
+      "title": "QwenWork takes Alibaba's workplace agent outside China"
+    },
+    {
+      "id": "codex-office",
+      "title": "Codex virtual-office wrapper \u2014 agents escaping the chat box"
+    }
+  ],
+  "pins": [],
+  "sponsor_rotation": {
+    "ep26": [
+      "herald",
+      "heritage"
+    ],
+    "ep27_inverted": [
+      "heritage",
+      "herald"
+    ]
+  },
+  "henry_x_pulse": {
+    "freshness_utc": "2026-08-27T08:00:52+00:00",
+    "tweet_count_window": 6,
+    "backfill_utc": "2026-08-21T09:25:39+00:00",
+    "engaged_topics": [
+      {
+        "topic": "Qwen3.8-Flash-Next",
+        "engagement": "RT 2026-08-26"
+      },
+      {
+        "topic": "Headlong",
+        "engagement": "RT + commentary 2026-08-25"
+      },
+      {
+        "topic": "OpenAI Jalape\u00f1o / Premium",
+        "engagement": "posts 2026-08-25"
+      },
+      {
+        "topic": "robot race / data moat",
+        "engagement": "saved clips 2026-08-25 to 2026-08-26"
+      },
+      {
+        "topic": "compute value-capture (Dylan Patel)",
+        "engagement": "commentary 2026-08-26"
+      }
+    ],
+    "status": "fresh"
+  },
+  "host_shared_resources": {
+    "items": [
+      {
+        "segment": "Signal From Outside",
+        "url": "https://x.com/davidfromkansas/status/2092245009810493916",
+        "host": "Henry",
+        "context": "Saved clip from 2026-08-25; passed through 2026-08-26 daily intake."
+      }
+    ]
+  },
+  "rules_applied": [
+    "standing-ownership-henry-news-2026-08-20",
+    "close-recap-once-andy-2026-08-21",
+    "news-window-airtime-2026-08-21",
+    "live-artifact-rule-2026-08-21",
+    "launch-pattern-news-titles-2026-08-21",
+    "no-scaffolding-kickers-on-news-slides-2026-08-21",
+    "discord-qr-last-slide-2026-08-23",
+    "template-authority-clone-prior-approved"
+  ],
+  "build_metadata": {
+    "build_tick_utc": "2026-08-27T15:00:00+00:00",
+    "build_tick_ny": "Thursday 11:00 EDT",
+    "role": "BUILD",
+    "target_show_date_ny": "Friday 2026-08-28",
+    "discovery_method": "show_date_lookup_from_daily_topic_list",
+    "template_authority_episode": 26,
+    "template_authority_path": "qa/authority-deck-ep26.html",
+    "template_authority_sha256": "computed_at_publish",
+    "template_authority_source": "https://weeklyclaw.ai/episodes/26/deck",
+    "sponsor_assets_copied": [
+      "assets/sponsors/herald-labs-icon.svg",
+      "assets/sponsors/heritage-telecom-mark-256.png",
+      "assets/sponsors/heritage-telecom-logo-horizontal-1200.jpg"
+    ],
+    "qr_card_copied": "assets/socials/weeklyclaw-discord-qr.png"
+  },
+  "draft_publication": {
+    "published_rev": "rev4",
+    "git": {
+      "commit_sha": "1fa6f6c7b4c9bea3a97af1da5d3cb18ac59187d4",
+      "commit_subject": "feat: episode 27 rev4 \u2014 clustered news slides, benchmark/cover/collage artifacts, sponsors start+end, Dwarkesh/Dylan Signal video"
+    },
+    "live_verified": false,
+    "approval_state_after": "UNVALIDATED"
+  },
+  "completion_evidence": {
+    "artifacts_complete_count": 7,
+    "artifacts_required_count": 7,
+    "missing": [],
+    "validation_passed": true,
+    "validation_failures": [],
+    "decisions": {
+      "build_with_partial_package": false,
+      "rationale": "Rev2 is the canonical package for Ep 27. All 7 artifacts present (agenda, talking-points, speaker-notes, henry-section, andy-section, host-cheat-sheet, deck). Validate_deck.py PASS (13/13 slide-ID parity, JS clean, theme markers present, no invented symbols, sponsor assets resolved). Playwright render-QA PASS (13/13 slides at 1600x900, no overflow, no overlap, no scroll-overflow, sponsor order verified Heritage@2 Herald@10). Awaiting Henry's APPROVE in Telegram review card to flip approval_state from UNVALIDATED to APPROVED."
+    }
+  },
+  "artifact_hashes_rev3": {
+    "deck.rev3.html": "e265a27bbd2ffcde285960be7b747c52864733ced8e8415e1be27b7ef291d4cf",
+    "speaker-notes.rev3.md": "42594800467a4942264068b3f26c4b39c42d0fb1fc5712272f40fd9f1c713f3a",
+    "agenda.rev3.md": "3255c763c44daa9cb74479ca63256d39bb83422261fa5e8f8f226932365ab4c6",
+    "henry-section.rev3.md": "9e57634d7851edae81c4eec64ccfb2c0c8f41d3282bfc22717611d383ce7e51a",
+    "andy-section.rev3.md": "4b9047a26080970bca8e6a65767cbb7aec3eb0849d16f522ef4ced9abe9d10d6",
+    "host-cheat-sheet.rev3.md": "0d27b0e33e629176cf4d658bef1c616b80c4fc9f195785bd53ff9ddae95207ed",
+    "talking-points.rev3.md": "1f8d222344640c709bd70e4185109b54d8a06bc49641b631de12969c55806ffc"
+  },
+  "rev3_validation": {
+    "validated_at_utc": "2026-08-28T10:59:00+00:00",
+    "validator": "qa/validate_deck.py vs qa/authority-deck-ep26.html",
+    "result": "ALL CHECKS PASSED (17 slides, 26 source links, theme parity, sponsor provenance)"
+  },
+  "rev3_render": {
+    "rendered_at_utc": "2026-08-28T10:59:00+00:00",
+    "renderer": "qa/render_qa_rev3.py (Playwright, 1600x900)",
+    "result": "RENDER-QA PASS \u2014 17/17 slides, no overflow, no overlaps, canaries OK",
+    "png_dir": "qa/render-1600x900-rev3"
+  },
+  "rev3_publication": {
+    "status": "PUBLISHED",
+    "published_at_utc": "2026-08-28T11:01:08+00:00",
+    "role": "HOST-EDIT",
+    "trigger": "Henry mid-week feedback (Telegram, WeeklyClaw thread 2026-08-28): add Nvidia-HF, GLM-5.3-Flash/Ox Alpha, Instinct raise, OpenAI AGI claim; spend less time per topic, more topics.",
+    "git": {
+      "commit_sha": "d579d5f998f35ec2d7bb7782e1a4759504663401",
+      "branch": "main",
+      "staged_files": [
+        "episodes/27/deck.html",
+        "episodes/27/agenda.md",
+        "episodes/27/henry-talking-points.md",
+        "episodes/27/host-cheat-sheet.md",
+        "episodes/27/assets/images/artifacts/s2-glm-flash-ox-alpha.png",
+        "episodes/27/assets/images/artifacts/s4-instinct-raise.png",
+        "episodes/27/assets/images/artifacts/s5-nvidia-hf-deal.png",
+        "episodes/27/assets/images/artifacts/s5b-openai-agi-time.png"
+      ],
+      "commit_subject": "fix: episode 27 deck \u2014 restore nav chrome (slide counter, dots) + slide-container, wheel/swipe nav"
+    },
+    "live_verified": {
+      "deck_canaries": [
+        "Nvidia is buying",
+        "GLM-5.3-Flash",
+        "Instinct raised at",
+        "AGI by December",
+        "verified 2026-08-28",
+        "100T tokens/day"
+      ],
+      "binary_assets_sha256_match": [
+        "s2-glm-flash-ox-alpha.png",
+        "s4-instinct-raise.png",
+        "s5b-openai-agi-time.png",
+        "s5-nvidia-hf-deal.png"
+      ],
+      "agenda_http": 200,
+      "homepage_http": 200
+    },
+    "approval_state": "UNVALIDATED",
+    "nav_fix": {
+      "trigger": "Henry Telegram 2026-08-28: \"The slides arent scrolling is it broken?\"",
+      "root_cause": "rev2 build dropped nav chrome (slideNum/slideTotal/navDots/kb-hint) AND .slide-container wrapper; nav script crashed on load (slideTotalEl null) \u2014 deck had NO working navigation, keyboard included. Also no wheel/touch handlers (keyboard-only by design since Ep23 template).",
+      "fix": [
+        "restored chrome divs + slide-container from Ep26 authority",
+        "added wheel handler (650ms lock) + touch swipe handlers",
+        "kb-hint updated: arrows / scroll / swipe / F"
+      ],
+      "live_verified": [
+        "slideTotal=17 navDots=17",
+        "ArrowRight s-title\u2192s-cold-open",
+        "wheel-down \u2192next",
+        "wheel-up \u2192prev",
+        "swipe-left \u2192next",
+        "dot click \u2192target slide"
+      ]
+    }
+  },
+  "rev5_publication": {
+    "commit": "8e75629",
+    "live_verified": true,
+    "verified_canaries": [
+      "bad for open source",
+      "HENRY \u00b7 BAD FOR OPEN SOURCE",
+      "ANDY \u00b7 GOOD FOR OPEN SOURCE",
+      "navDots",
+      "slideTotal"
+    ],
+    "live_bytes": 52469
+  },
+  "rev6_publication": {
+    "commit": "d073788",
+    "live_verified": true,
+    "canaries": [
+      "8 t-*.png thumbs live (HEAD 200)",
+      "overflow 0px on both grids",
+      "vision: no clipping/stretch on 2x2 grids"
+    ]
+  },
+  "signal_outside": {
+    "video": "OpenClaw Went Viral. Meet the Maintainers Building and Securing It.",
+    "url": "https://youtu.be/5VSwaUXtPIE",
+    "owner": "Andy (talk track)",
+    "commit": "f50c040",
+    "live_verified": true
+  },
+  "agenda_publication": {
+    "commits": [
+      "083e0eb",
+      "caade0e",
+      "bc14c32"
+    ],
+    "routes": [
+      "/episodes/27/agenda",
+      "/episodes/27/agenda.html"
+    ],
+    "live_verified": true
+  }
+}
