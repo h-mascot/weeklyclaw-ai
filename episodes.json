@@ -6,6 +6,20 @@
   },
   "episodes": [
     {
+      "week": 30,
+      "title": "Narrow Models Win, Typed Decisions, Union Alpha, Signal From Outside",
+      "date": "2026-09-18",
+      "url": "https://www.youtube.com/watch?v=jAWCqtNs0ns",
+      "videoId": "jAWCqtNs0ns",
+      "summary": [
+        "Narrow models lead the week: typed probability outputs and cheap decision endpoints beat another general chat model for operator work.",
+        "Union Alpha appears as a free 256K-context stealth model on OpenRouter and becomes the access story of the episode.",
+        "Qwen and PrismML merge into a practical omni/flash lane while Apple’s Siri AI beta and Google Home MCP open the assistant into the home.",
+        "Signal From Outside covers boring good news already working in the field, from medical and sensory aids to storm forecasting.",
+        "The closing debate asks who pays for an independent safety umpire when commitments are not controls."
+      ]
+    },
+    {
       "week": 29,
       "title": "OpenAI’s Maths Claim, Meta Muse Hands-On, AI Harnesses, The Safety Debate",
       "date": "2026-09-11",

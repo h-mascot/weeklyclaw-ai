@@ -251,6 +251,15 @@ class SyncMetadataTests(unittest.TestCase):
                 self.assertIn("assets/youtube-thumbnails/w29-approved-a.png", refreshed)
                 self.assertNotIn("assets/youtube-thumbnails/w29.jpg", refreshed)
 
+    def test_refresh_youtube_cards_preserves_episode_30_approved_thumbnail(self):
+        repo = Path(__file__).resolve().parents[1]
+        videos = {30: {"id": "jAWCqtNs0ns", "url": "https://youtu.be/jAWCqtNs0ns", "thumbnail": "unused"}}
+        for filename, archive in (("index.html", False), ("episodes/index.html", True)):
+            with self.subTest(filename=filename):
+                refreshed = SYNC.refresh_youtube_cards((repo / filename).read_text(), videos, archive=archive)
+                self.assertIn("assets/youtube-thumbnails/w30-approved-c.png", refreshed)
+                self.assertNotIn("assets/youtube-thumbnails/w30.jpg", refreshed)
+
     def test_refresh_youtube_cards_wires_archive_media_to_in_page_player(self):
         videos = {
             22: {
