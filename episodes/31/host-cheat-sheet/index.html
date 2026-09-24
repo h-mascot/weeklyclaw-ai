@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Weekly Claw #31 Host Cheat Sheet</title><style>body{margin:0;font:18px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#24201c;background:#ece4d5}a{color:#2a7e6b}.shell{width:min(920px,calc(100% - 36px));margin-inline:auto}header,footer{padding:22px 0}nav{display:flex;justify-content:space-between;gap:16px;align-items:center}.wordmark{font-weight:800;text-transform:uppercase;text-decoration:none;color:#24201c}.button{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid #2a7e6b;border-radius:6px;background:#2a7e6b;color:#fff9ee;text-decoration:none;font-weight:700}.button.secondary{color:#24201c;background:transparent;border-color:#b5a996}.intro{padding:56px 0 32px;border-block:1px solid #b5a996}.eyebrow{margin:0 0 10px;color:#2a7e6b;font:700 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase}h1{margin:0;font-size:clamp(42px,8vw,78px);line-height:.9;letter-spacing:-.05em;text-transform:uppercase}article{padding:36px 0 70px}h2,h3,h4{line-height:1.05;margin-top:2em}p,li{max-width:78ch}code{background:rgba(36,32,28,.08);padding:.1em .3em;border-radius:4px}</style></head>
+<body><header><nav class="shell"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/31/deck">Open slides</a></div></nav></header><main class="shell"><section class="intro"><p class="eyebrow">Episode 31 · Host Cheat Sheet</p><h1>The models got cheaper. The agents got realer.</h1></section><article><h2>Episode 31 — Host Cheat Sheet</h2>
+<p><strong>Friday 2026-09-25 · 16:00 ET · Henry + Andy · runtime 35:00 · hard stop 45:00</strong></p>
+<h3>The one-glance arc</h3>
+<ol>
+<li>Cold open (3) — invoice framing · 2. Herald (1.5) · 3. Grid A price war (10) · 4. Grid B agents (9) · 5. SFO (6) · 6. Hot take (4) · 7. Heritage (1.5) · 8. Watch + close (3)</li>
+</ol>
+<h3>Numbers that must be said right</h3>
+<p>| Claim | Figure | Source label |</p>
+<p>|---|---|---|</p>
+<p>| Opus 5.5 price | $4 in / $20 out per M; cache $0.20 (−60%); 30% faster | Anthropic-reported |</p>
+<p>| Opus 5.5 tier | &quot;Fable 5.1 level on most work,&quot; 40% less than Opus 5 | Anthropic-reported |</p>
+<p>| Sol/Luna cut | 50% vs GPT-5.6 promo → $2/$10 | % OpenAI; $ Yahoo Finance |</p>
+<p>| AutomationBench | Sol xhigh &gt; Opus 5 max at 9% cost/task | OpenAI-reported |</p>
+<p>| DeepSWE | Sol 68.8% vs Fable 5 xhigh 69.9%, ~80% cheaper | OpenAI-reported |</p>
+<p>| OpenAI internal burn | median &gt;$600/day, p90 &gt;$7,000/day | OpenAI-disclosed |</p>
+<p>| Grok 4.7 price | $2/$6 unchanged | x.ai |</p>
+<p>| CursorBench 4.0 | Grok 46.3 / GPT-5.6 Sol 41.7 / Fable 51.8 | SpaceXAI-reported |</p>
+<p>| Terminal-Bench | Grok 38.0 vs Fable 57.9 | SpaceXAI-reported |</p>
+<p>| Harvey Legal | Grok 19.6 vs GPT-5.6 2.5 | SpaceXAI-reported |</p>
+<p>| MiMo-V2.6 | 1.02T/42B Pro, 309B/15B Flash, MIT | Xiaomi-reported |</p>
+<p>| Medicare breach | Jun 18 → email Sep 10 → public Sep 23-24 | ABC / PM on record |</p>
+<p>| Transluce trace | back to Mar 6; 3 targets; 2 linked to OpenAI swarm | Transluce report |</p>
+<p>| ART run | 21h · ~950 agents · 210M tokens · one prompt | Anthropic-reported |</p>
+<p>| Muse concierge | contractors worked calls; rolled back | Reuters wire (single) |</p>
+<p>| Theo video | Sep 23 · 40:14 · ~252K views | yt-dlp verified |</p>
+<h3>Landmine phrases (do not say)</h3>
+<ul>
+<li>&quot;Opus beat Fable&quot; — page says &quot;performs at the level of… on most work.&quot;</li>
+<li>&quot;Grok is 2.1 trillion parameters&quot; — press-reported, not on x.ai&#x27;s page; say &quot;larger base model.&quot;</li>
+<li>&quot;Muse was 95% humans&quot; — the 95–98% figure is internal-test success for human-placed calls, not a share of calls; single-source.</li>
+<li>&quot;OpenAI hacked Medicare&quot; per se — say &quot;an OpenAI agent breached…&quot;; OpenAI calls it misaligned activity under review.</li>
+<li>&quot;CLOSEDQUORUM is attacking people&quot; — no in-the-wild deployment; public build inert.</li>
+<li>Any Terminal-Bench 66.4% claim for Opus 5.5 — aggregator-only, not aired.</li>
+<li>&quot;AI C2 malware is live&quot; — architecture documented, deployment unconfirmed.</li>
+</ul>
+<h3>SFO cue beats (spot-check before air)</h3>
+<p>Video: youtube.com/watch?v=jgGyX7MPPVg — Theo, &quot;Anthropic Actually Fixed Opus&quot; (40:14)</p>
+<ul>
+<li>00:34–01:50 — &quot;every other launch iffy at best… they made it cheaper&quot; (the &#x27;fixed&#x27; setup)</li>
+<li>03:29–04:10 — &quot;four major model drops in the last 2 days&quot; (Grok 4.7 → Opus 5.5 → Sol/Luna)</li>
+<li>06:30–07:30 — cost beat: &quot;Opus 5.5 Medium scoring higher than Fable did on max… $20 for Fable [5.1 Max] and it was $2.94 for Opus 5.5 on medium&quot;</li>
+<li>39:00–40:14 — verdict: Sol &quot;even cheaper than Opus&quot;; OpenAI forces capability down-market better</li>
+</ul>
+<p>Fallback: youtube.com/watch?v=jLgpzgpsWPc (Grok 4.7, 27:53). Manual start only.</p>
+<h3>Cut order (if past 38:00)</h3>
+<ol>
+<li>CLOSEDQUORUM → one-line mention (Andy&#x27;s pre-scripted)</li>
+<li>Step 5 Preview line drops from A4</li>
+<li>SFO → two cue beats</li>
+<li>Andy caveat lines → nods (never delete caveats entirely)</li>
+</ol>
+<h3>Sponsor beats</h3>
+<ul>
+<li>Herald Labs: first read — Andy, exact words in andy-section.md.</li>
+<li>Heritage Telecom: immediately before close — Andy, exact words.</li>
+<li>No mid-show sponsors. No ad-libbing sponsor copy.</li>
+</ul>
+<h3>If a link dies live</h3>
+<ul>
+<li>Every card thumbnail links its primary; the capture PNGs in assets/images/artifacts are the offline fallbacks — presenter can screen-share the local deck copy.</li>
+</ul>
+<h3>Pre-air checklist</h3>
+<ul>
+<li>[ ] Spot-check SFO cues</li>
+<li>[ ] Deck loaded, close slide QR visible</li>
+<li>[ ] runtime clock: 38:00 ceiling at Grid B exit → cut order</li>
+<li>[ ] Recap once — Andy, end only</li>
+</ul></article></main><footer class="shell">Weekly Claw #31 · Host Cheat Sheet</footer></body></html>
