@@ -48,4 +48,4 @@
 - Grid A → B: price of intelligence fell; cost of agency showed up.
 - B → SFO: exactly what the outside-signal video is about.
 - SFO → Hot take: cheap and "fixed" — now Andy pushes back.
-- Hot take → Heritage: "things moving faster than their oversight."
+- Hot take → Herald: "things moving faster than their oversight."

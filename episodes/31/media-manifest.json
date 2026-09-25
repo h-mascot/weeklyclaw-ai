@@ -1,0 +1,117 @@
+{
+  "episode": 31,
+  "revision": "rev2",
+  "generated_at": "2026-09-25T16:30:00Z",
+  "assets": [
+    {
+      "path": "assets/images/artifacts/a1-anthropic-opus55.png",
+      "type": "RECEIPT_PAGE",
+      "sha256": "dbc6e4021faf2c07f60faf14a1b310205e2ab22932ba33300ddd0b88ed1fb21f",
+      "bytes": 2177872,
+      "note": "Anthropic Opus 5.5 launch page capture; hero-heavy, OCR weak \u2014 visually a page capture not a render",
+      "ocr_head": "Nira ela\\cs Cee eo ae a RE RC NE Se ER BESTE Pee I Te ONL Re tS Sune BOC aAha, eegeyt cone NO al ee oe ee ee as ens oe SALT EAS 2 a SU Re | \u2026"
+    },
+    {
+      "path": "assets/images/artifacts/a2-sol-luna-price-card.png",
+      "type": "LIVE_CHART",
+      "sha256": "056fb246807c7724e60b5eacffe499fad2dd50dc98deed907b8af741e6e2060b",
+      "bytes": 84370,
+      "note": "Sol/Luna price-comparison card; image self-labels \"RENDERED\" \u2014 honest rendered data card, not a fake screenshot",
+      "ocr_head": "GPT-6 SOL + LUNA \u2014 THE 50% CUT RENDERED Astra-class methods, half the price GPT-6 Sol $2 in / $10 out per M \u201450% vs GPT-5.6 promo (OpenAl) G\u2026"
+    },
+    {
+      "path": "assets/images/artifacts/a3-xai-bench-table.png",
+      "type": "BENCHMARK_CAPTURE",
+      "sha256": "de7f68553a5defcb55dfbaff880a6b4a4f1c506542e93c48eaadc3715a2ad245",
+      "bytes": 97893,
+      "note": "x.ai news page capture; OCR verified CursorBench price-performance sentence",
+      "ocr_head": "x Products \u00a5 Solutions\u00bb Developer ~ \u00a9 Company~ Pricing News Contact Sales SCR Cost Tokens: Steps On CursorBench 4.0, which stresses longer-r\u2026"
+    },
+    {
+      "path": "assets/images/artifacts/b1-reuters-muse-concierge.png",
+      "type": "SCREEN_CAPTURE",
+      "sha256": "ed898fa77e12b2ea79717946228f3ff3ceee8edcb1bc90b74e261ea8f6f69ad1",
+      "bytes": 482541,
+      "note": "Reuters exclusive via Yahoo Finance syndication (reuters.com 401 at build; wire copy identical \u2014 ledger)",
+      "ocr_head": ". ( ~\\ yahoo/finance Home News Finance Sports More \u00bb Qa C ) Sign in My Portfolio News Markets Calendars Research Community Personal Finance \u2026"
+    },
+    {
+      "path": "assets/images/artifacts/b2-abc-medicare.png",
+      "type": "SCREEN_CAPTURE",
+      "sha256": "db05d648f80430f67b5e105618d621bc275424438f6fd9ce38c154c64c9aeb45",
+      "bytes": 323287,
+      "note": "ABC News Australia full-text capture",
+      "ocr_head": "OOOABC News iview listen CED Just In For You Politics World Business Analysis = Sport _Lifestyle More \u00a5 Q Search... = OpenAlI hacked Medicar\u2026"
+    },
+    {
+      "path": "assets/images/artifacts/b2-talos-closedquorum.png",
+      "type": "RECEIPT_PAGE",
+      "sha256": "c695d1e859b5f15d40eb0dda8d32cb3bcd4817dbc98bf647635f5aff90ffe14a",
+      "bytes": 221188,
+      "note": "Cisco Talos disclosure page capture",
+      "ocr_head": "1 Se) Way} el ecucckecn Cm UCase ccs Mao MICS Tong ECs oy uv oe ae Cmca s Introducing CAIRN: Frontier tracking for Al-integrated 5 rrr oy Da\u2026"
+    },
+    {
+      "path": "assets/images/artifacts/hot-anthropic-art.png",
+      "type": "SCREEN_CAPTURE",
+      "sha256": "d09cd8fd5d7a89f88c9f303ce57cebe66e88e16c3c3dc14864bc246532f3a3e7",
+      "bytes": 482593,
+      "note": "Anthropic newsroom \"novel enzyme system\" page capture (OCR verified headline)",
+      "ocr_head": "ANTHROP\\C Research Policy Commitments V Learn V_ News Science . Claude discovers a novel enzyme : . system with CRISPR-like repeats Sep 23, \u2026"
+    },
+    {
+      "path": "assets/images/artifacts/signal-theo-grok-poster.jpg",
+      "type": "VIDEO_CLIP_POSTER",
+      "sha256": "6974fa728b498cf4e94c2b2cd8fbec5f2cf7432180cf5e89f860f93fc755c4ef",
+      "bytes": 146726,
+      "note": "Fallback video poster \u2014 Theo Grok 4.7 (jLgpzgpsWPc, 2026-09-22)",
+      "ocr_head": "at a) 4 Z : f A e . r-rel anleei 4 ero Chole WARE Roneneliieiicim ay \u00a9 >,| of intelligence, speed & low cost MA. | a 12:25 PM - Sep 21, 2026\u2026"
+    },
+    {
+      "path": "assets/images/artifacts/signal-theo-opus-poster.jpg",
+      "type": "VIDEO_CLIP_POSTER",
+      "sha256": "8937e514d9358a3fa97f92f8b513f4c1b3c340bbfa9c8355187281c31ada4e9a",
+      "bytes": 113014,
+      "note": "Anchor video poster \u2014 Theo \"Anthropic Actually Fixed Opus\" (jgGyX7MPPVg, 2026-09-23, 252,112 views, yt-dlp verified)",
+      "ocr_head": "Opus ae %@) \u20ac Claude OpusS.5 * _. Opus X _\u2014 A 4a"
+    },
+    {
+      "path": "assets/images/socials/henry-flashwars-card.png",
+      "type": "SOCIAL_POST_CAPTURE",
+      "sha256": "ca7e79ffc8f99aa2da637868c5880a42f6b25d6d0f24dbf1d39586c952a93bb7",
+      "bytes": 45778,
+      "note": "Henry X post @iAmHenryMascot status 2102275426978517356, Sep 22 2026, archive-captured 2026-09-24",
+      "ocr_head": "Henry Mascot @iAmHenryMascot -: Sep 22, 2026 The Flash Wars x: Mimo v2.6 vs DeepSeek v4.1 vs 4.0 vision vs GLM5.3 DeepSeek v4.1 wins J] 0 re\u2026"
+    },
+    {
+      "path": "assets/socials/weeklyclaw-discord-qr.png",
+      "type": "SOCIAL_QR",
+      "sha256": "657cad2ca0d4130cae27d07076f491b6e0f95ad681c7bdd54e89a80453732975",
+      "bytes": 2228,
+      "note": "Rotating invite via weeklyclaw.ai/discord anchor",
+      "ocr_head": "Opt eae"
+    }
+  ],
+  "sponsor_asset_provenance": {
+    "files": {
+      "sponsors/herald-labs-icon.svg": {
+        "sha256": "1e6615a52974dc52a1a9838788c46eb680099d74ad98fa75d282563f8c928886",
+        "bytes": 1486
+      },
+      "sponsors/heritage-telecom-logo-horizontal-1200.jpg": {
+        "sha256": "101718dcee99436e26b46754d837b3653d218f88168d5b0c841c65e60d91dbf7",
+        "bytes": 50389
+      },
+      "sponsors/heritage-telecom-mark-256.png": {
+        "sha256": "32b75bb508e6a0996b4ac03cf8907a868146af3ae2da24fbd561b86559de5fc5",
+        "bytes": 61738
+      }
+    },
+    "note": "All three sponsor assets byte-identical to episodes/30/assets/sponsors/ (EP30 authority); no new sponsor art this episode."
+  },
+  "notes": [
+    "All types are approved real-capture types; no GENERATED_EDITORIAL_BANNER/PLACEHOLDER/STOCK_IMAGE.",
+    "a2 is the only rendered visual and is explicitly self-labeled RENDERED inside the image and on the deck.",
+    "b1 archive route: Yahoo Finance (Reuters syndication) because reuters.com returns 401 to bots."
+  ]
+}

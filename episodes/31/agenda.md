@@ -24,9 +24,9 @@ Seven days after the industry's loudest safety week, its answer was a price war:
 
 **Handoff cue:** Henry teases the first grid — "two flagships, one Tuesday" — and takes Grid A.
 
-## Sponsor: Herald Labs · 1.5 min
+## Sponsor: Heritage Telecom · 1.5 min
 
-**Andy:** "Weekly Claw is brought to you by Herald Labs — an applied AI product lab where humans and agents build together. Entity is mission control for agent teams, and they run hacker houses worldwide. Build with humans. Ship with agents. That's labs.theherald.co."
+**Andy:** "Weekly Claw is brought to you by Heritage Telecom: UCaaS and VoIP for businesses that just need their calls to work. Independent, boring reliability, zero telemetry. Independently reliable. Quietly essential. Heritagetel.com."
 
 ## What Happened This Week · Grid A — "The price war reaches the flagship tier" · 10 min
 
@@ -139,7 +139,7 @@ Seven days after the industry's loudest safety week, its answer was a price war:
 
 **Andy fallback talk track:** "Steelman against Henry: capability and oversight have ALWAYS moved at different speeds, and the gap never stopped prior technologies from compounding — aviation, pharma, finance all ran decades with audit trailing capability, and the binding constraint was never the auditor's calendar but the failure rate. And this week cut both ways: Anthropic shipped with external evaluators attached, Talos gave away an open-source toolkit for tracking AI malware, Transluce released its dataset publicly. The verification layer didn't stall — it distributed. The honest counter-question to Henry: if discovery outpaces audit by design, what specific artifact shipped THIS WEEK makes the gap wider rather than just noisier?"
 
-**Handoff cue:** Henry answers the counter-question in one line, then: "Speaking of things moving faster than their oversight —" → Heritage sponsor.
+**Handoff cue:** Henry answers the counter-question in one line, then: "Speaking of things moving faster than their oversight —" → Herald sponsor.
 
 ### Sources and production notes (not read on air)
 
@@ -147,9 +147,9 @@ Seven days after the industry's loudest safety week, its answer was a price war:
 - Caveats on air: ANTHROPIC-REPORTED; preprint not peer-reviewed; function unknown. Talos caveats already in B2.
 - Cut instruction: UNSC framing line goes first.
 
-## Sponsor: Heritage Telecom · 1.5 min
+## Sponsor: Herald Labs · 1.5 min
 
-**Andy:** "Before we close — Weekly Claw is also brought to you by Heritage Telecom: UCaaS and VoIP for businesses that just need their calls to work. Independent, boring reliability, zero telemetry. Independently reliable. Quietly essential. Heritagetel.com."
+**Andy:** "Before we close — Weekly Claw is also brought to you by Herald Labs — an applied AI product lab where humans and agents build together. Entity is mission control for agent teams, and they run hacker houses worldwide. Build with humans. Ship with agents. That's labs.theherald.co."
 
 ## One to watch and close · 3 min
 

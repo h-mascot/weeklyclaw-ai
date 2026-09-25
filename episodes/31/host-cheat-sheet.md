@@ -2,7 +2,7 @@
 **Friday 2026-09-25 · 16:00 ET · Henry + Andy · runtime 35:00 · hard stop 45:00**
 
 ## The one-glance arc
-1. Cold open (3) — invoice framing · 2. Herald (1.5) · 3. Grid A price war (10) · 4. Grid B agents (9) · 5. SFO (6) · 6. Hot take (4) · 7. Heritage (1.5) · 8. Watch + close (3)
+1. Cold open (3) — invoice framing · 2. Heritage (1.5) · 3. Grid A price war (10) · 4. Grid B agents (9) · 5. SFO (6) · 6. Hot take (4) · 7. Herald (1.5) · 8. Watch + close (3)
 
 ## Numbers that must be said right
 | Claim | Figure | Source label |
@@ -48,8 +48,8 @@ Fallback: youtube.com/watch?v=jLgpzgpsWPc (Grok 4.7, 27:53). Manual start only.
 4. Andy caveat lines → nods (never delete caveats entirely)
 
 ## Sponsor beats
-- Herald Labs: first read — Andy, exact words in andy-section.md.
-- Heritage Telecom: immediately before close — Andy, exact words.
+- Heritage Telecom: first read — Andy, exact words in andy-section.md.
+- Herald Labs: immediately before close — Andy, exact words.
 - No mid-show sponsors. No ad-libbing sponsor copy.
 
 ## If a link dies live
