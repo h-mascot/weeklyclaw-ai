@@ -1,0 +1,131 @@
+{
+  "episode": 31,
+  "revision": "rev2",
+  "checked_utc": "2026-09-25T16:57:27Z",
+  "total": 30,
+  "direct": 28,
+  "blocked_valid": 3,
+  "dead": [],
+  "results": [
+    {
+      "url": "https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/",
+      "status": "200"
+    },
+    {
+      "url": "https://docs.x.ai/developers/grok-4-7",
+      "status": "200"
+    },
+    {
+      "url": "https://finance.yahoo.com/news/exclusive-meta-testing-human-concierge-160436947.html",
+      "status": "200"
+    },
+    {
+      "url": "https://finance.yahoo.com/news/xai-launches-grok-4-7-171603280.html",
+      "status": "200"
+    },
+    {
+      "url": "https://github.com/Cisco-Talos/Cognitive-Artifact-Intelligence-Research-Network",
+      "status": "200"
+    },
+    {
+      "url": "https://huggingface.co/XiaomiMiMo",
+      "status": "200"
+    },
+    {
+      "url": "https://huggingface.co/convaiinnovations/laya",
+      "status": "200"
+    },
+    {
+      "url": "https://metr.org/",
+      "status": "200"
+    },
+    {
+      "url": "https://mimo.mi.com/docs/en-US/news/latest/v2-6",
+      "status": "200"
+    },
+    {
+      "url": "https://muse.ai/platform",
+      "status": "200"
+    },
+    {
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "status": "403"
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+      "status": "200"
+    },
+    {
+      "url": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/",
+      "status": "200"
+    },
+    {
+      "url": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/",
+      "status": "200"
+    },
+    {
+      "url": "https://transluce.org/agent-activity",
+      "status": "200"
+    },
+    {
+      "url": "https://weeklyclaw.ai/discord",
+      "status": "200"
+    },
+    {
+      "url": "https://www-cdn.anthropic.com/22573675ada52a8ca8a97a1a4b4326b2f208a071.pdf",
+      "status": "200"
+    },
+    {
+      "url": "https://www.abc.net.au/news/2026-09-24/ai-agent-accessed-australian-government-site-pm-says/107189078",
+      "status": "200"
+    },
+    {
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "status": "200"
+    },
+    {
+      "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
+      "status": "200"
+    },
+    {
+      "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+      "status": "200"
+    },
+    {
+      "url": "https://www.reuters.com/business/meta-testing-human-concierge-its-new-personal-ai-agent-muse-2026-09-22/",
+      "status": "401"
+    },
+    {
+      "url": "https://www.seattletimes.com/business/openais-ai-tried-breaching-4-other-targets-without-prompting/",
+      "status": "202"
+    },
+    {
+      "url": "https://www.stepfun.com/step-5-preview",
+      "status": "200"
+    },
+    {
+      "url": "https://www.theguardian.com/world/2026/sep/23/unga-sam-altman-dario-amodei",
+      "status": "200"
+    },
+    {
+      "url": "https://www.unite.ai/spacexai-releases-grok-4-7-for-coding-and-knowledge-work/",
+      "status": "200"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=jLgpzgpsWPc",
+      "status": "200"
+    },
+    {
+      "url": "https://x.ai/news/grok-4-7",
+      "status": "200"
+    },
+    {
+      "url": "https://x.com/iAmHenryMascot/status/2102275426978517356",
+      "status": "200"
+    },
+    {
+      "url": "https://youtu.be/jgGyX7MPPVg",
+      "status": "200"
+    }
+  ]
+}

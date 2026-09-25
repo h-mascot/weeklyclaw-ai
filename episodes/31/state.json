@@ -1,0 +1,93 @@
+{
+ "episode": 31,
+ "show_date_local": "2026-09-25",
+ "show_time_local": "16:00 ET",
+ "assignment_boundary_utc": "2026-09-17T20:00:00Z",
+ "status": "READY_FOR_REVIEW",
+ "approval_state": "UNVALIDATED",
+ "selected_revision": "rev2",
+ "state_written_utc": "2026-09-25T17:00:00Z",
+ "build_mode": "direct-Hermes Thursday BUILD + Friday 12:00 ET recovery tick (workspace-loss recovery)",
+ "runtime_scripted": "35:00",
+ "runtime_target": "38:00 ceiling",
+ "hard_stop": "45 minutes",
+ "hosts": [
+  "Henry",
+  "Andy"
+ ],
+ "sponsor_order": [
+  "heritage-telecom",
+  "herald-labs"
+ ],
+ "sponsor_position": {
+  "heritage-telecom": "first read of the show (rotation from EP30 Herald-first)",
+  "herald-labs": "immediately before the close"
+ },
+ "mid_show_sponsors": false,
+ "slides": 10,
+ "slide_order": [
+  "s-title",
+  "s-cold-open",
+  "s-sponsor-heritage",
+  "s-seg-grid-a",
+  "s-seg-grid-b",
+  "s-signal-outside",
+  "s-hot-take",
+  "s-sponsor-herald",
+  "s-watch",
+  "s-sources"
+ ],
+ "gates": {
+  "canonical_validator": "PASS (17/17 gates)",
+  "canonical_validator_receipt": "qa/validate-final.log",
+  "render_qa": "PASS 10 slides at 1600x900 (no overflow)",
+  "render_receipt": "qa/render/render-qa.json",
+  "deck_link_check": {
+   "total": 30,
+   "direct": 28,
+   "blocked_valid": 3,
+   "dead": 0,
+   "receipt": "qa/deck-link-check.json"
+  },
+  "asset_manifest": {
+   "assets": 14,
+   "missing": [],
+   "receipt": "media-manifest.json"
+  },
+  "no_autoplay": true,
+  "sponsor_order_confirmed": true,
+  "qr_card": "PASS (class discord-qr, href weeklyclaw.ai/discord, png on disk, live-verified)",
+  "live_sha_equality": true,
+  "live_sponsor_byte_offsets": {
+   "heritage": 24732,
+   "herald": 40582,
+   "order_ok": true
+  }
+ },
+ "publication": {
+  "commit_content": "8fc7621d54408075c889afcb64f05f0e6478d176",
+  "commit_state": null,
+  "live_deck_url": "https://weeklyclaw.ai/episodes/31/deck",
+  "live_deck_sha256": "292bdd68104d5d8cde2a320ec39102aef16245dd6c19da891823e890bcf0ae78",
+  "verified_utc": "2026-09-25T16:58:00Z",
+  "draft_only": true,
+  "root_promotion": false,
+  "platform_publication": false
+ },
+ "artifacts_sha256": {
+  "deck.html": "292bdd68104d5d8cde2a320ec39102aef16245dd6c19da891823e890bcf0ae78",
+  "speaker-notes.md": "685a89ae14ad921c78839ff110a64c496960e2c7713761efe6611823e1cbc918",
+  "agenda.md": "925afc732c82a70c67e4a59538a0d7f9cdd1fcf3b4a58c469bbf5bc6f35a9f97",
+  "talking-points.md": "b9651311850362e222c8af752808f903747f1725985d2bc647fa817488b00ea5",
+  "henry-section.md": "fc8b30498d582eda40fb447753e40fb96b2047c387bddfc3dff3475ac9deb634",
+  "andy-section.md": "3d4e28a965c80d51bd1acd40b700be98404b24e1a8da977e5262ff3604dd5de3",
+  "host-cheat-sheet.md": "92d7d8a17ce1125f2906a7ef009f2cf1d6d29738e5d77ff0271859f93339d56c",
+  "candidates.json": "49fa9d2da96b7171267def01163ff69ca5f398875506c800f6148d65ae29f121",
+  "selection-rationale.md": "dae53e4824045bc5fbe91e65c8b16cfca9d2a846c016ad007781a179dc421762",
+  "evidence.md": "dc3e68fe6dfd84e815c4f8324669e8b813ee2f4c3813426c1c32920f5b0eb5b7",
+  "media-manifest.json": "c1887a38f0d02b6f22fd30b5a418961310de89bc83f872390ba2a109b1529ca4",
+  "runlog.md": "fc55d0bac4e8a6d3ff62ef7b47bdc424aa1c377dd14cb363f8ebeef558e4d214"
+ },
+ "review_card": "qa/review-card.md",
+ "notes": "Checked: EP31 rev2 replaces rev1 sponsor order (Vercel CDN lag observed ~40s; re-fetched to stable new sha)."
+}
