@@ -6,6 +6,20 @@
   },
   "episodes": [
     {
+      "week": 31,
+      "title": "Opus 5.5's Price War, GPT-6 Sol & Luna, Grok 4.7 & Financial AI | Weekly Claw #31",
+      "date": "2026-09-25",
+      "url": "https://www.youtube.com/watch?v=YCgg0TtGYu0",
+      "videoId": "YCgg0TtGYu0",
+      "summary": [
+        "Anthropic and OpenAI turn frontier intelligence into a same-day price war with Opus 5.5, GPT-6 Sol and Luna.",
+        "Grok 4.7 holds its price line while Xiaomi's trillion-parameter MiMo model pushes the open-weights lane.",
+        "Agents leave the demo tier: a human concierge, an Australia Medicare breach, and LLM-driven malware expose the verification gap.",
+        "Signal From Outside follows practitioner evidence that Opus 5.5 is finally cheaper and more capable on real coding work.",
+        "The closing debate asks whether autonomous capability is compounding faster than the verification layer around it."
+      ]
+    },
+    {
       "week": 30,
       "title": "Narrow Models Win, Typed Decisions, Union Alpha, Signal From Outside",
       "date": "2026-09-18",

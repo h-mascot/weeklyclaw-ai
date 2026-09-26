@@ -27,6 +27,9 @@ const required = [
   'episodes/20/agenda.md',
   'episodes/20/agenda/index.html',
   'episodes/20/deck.html',
+  'episodes/31/agenda.md',
+  'episodes/31/agenda/index.html',
+  'episodes/31/deck.html',
   'episodes/27/agenda.md',
   'episodes/27/agenda/index.html',
   'episodes/27/deck.html',
@@ -108,6 +111,9 @@ for (const needle of [
   '<meta name="twitter:card" content="summary_large_image">',
   'application/ld+json',
   'PodcastSeries',
+  'data-video-id="YCgg0TtGYu0"',
+  'assets/youtube-thumbnails/w31-approved-a.png',
+  "Opus 5.5's Price War, GPT-6 Sol &amp; Luna, Grok 4.7 &amp; Financial AI | Weekly Claw #31",
 ]) {
   if (!html.includes(needle)) {
     console.error(`Missing expected homepage copy: ${needle}`);
@@ -183,7 +189,7 @@ if (changelogHtml.includes('Open changelog') || changelogHtml.includes('Host dec
 
 
 const episodesHtml = readFileSync(new URL('../episodes/index.html', import.meta.url), 'utf8');
-for (const needle of ['Weekly Claw Episodes', 'W30', 'data-video-id="jAWCqtNs0ns"', '/assets/youtube-thumbnails/w30-approved-c.png', 'W29', 'data-video-id="-M4zet86U_A"', '/assets/youtube-thumbnails/w29-approved-a.png', 'W27', 'W26', 'The agent owns the loop', 'The Sandbox Failed', '/episodes/27/deck', '/episodes/22/deck', 'data-video-id="vqUkh8w2L8g"', 'data-video-id="f2yugYwXOBo"', 'data-video-id="dquJyEBQWpE"', 'data-video-id="MSRFmpDfaTg"', 'data-spotify-id="5t1xYX7e4DUv6l9DKUAi21"', 'data-spotify-id="58kOYSrhrMLArnNfVY41RQ"', '/assets/youtube-thumbnails/w27.png', '/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>10</strong>', 'video episodes']) {
+for (const needle of ['Weekly Claw Episodes', 'W31', 'data-video-id="YCgg0TtGYu0"', '/assets/youtube-thumbnails/w31-approved-a.png', 'Opus 5.5&#x27;s Price War', 'data-video-id="jAWCqtNs0ns"', '/assets/youtube-thumbnails/w30-approved-c.png', 'W29', 'data-video-id="-M4zet86U_A"', '/assets/youtube-thumbnails/w29-approved-a.png', 'W27', 'W26', 'The agent owns the loop', 'The Sandbox Failed', '/episodes/27/deck', '/episodes/22/deck', 'data-video-id="vqUkh8w2L8g"', 'data-video-id="f2yugYwXOBo"', 'data-video-id="dquJyEBQWpE"', 'data-video-id="MSRFmpDfaTg"', 'data-spotify-id="5t1xYX7e4DUv6l9DKUAi21"', 'data-spotify-id="58kOYSrhrMLArnNfVY41RQ"', 'data-spotify-id="2GywqAyfGJMXafRHRbdIa6"', 'data-spotify-id="1rzUjx7BfqL07H5fYDqr9e"', 'data-spotify-id="3LqMk9YFrbHkQhR3s7exJI"', '/assets/youtube-thumbnails/w27.png', '/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>10</strong>', 'video episodes']) {
   if (!episodesHtml.includes(needle)) {
     console.error(`Episodes index missing expected copy: ${needle}`);
     process.exit(1);
@@ -206,8 +212,8 @@ for (const needle of [
   }
 }
 const summaryCount = (episodesHtml.match(/class="summary-item"/g) ?? []).length;
-if (summaryCount !== 11) {
-  console.error(`Episodes index should render 11 video-era episode summaries, found ${summaryCount}`);
+if (summaryCount !== 12) {
+  console.error(`Episodes index should render 12 video-era episode summaries, found ${summaryCount}`);
   process.exit(1);
 }
 if (episodesHtml.includes('data-summary-week="19"')) {
@@ -228,13 +234,13 @@ for (const needle of [
   }
 }
 const feedItemCount = (feedXml.match(/<item>/g) ?? []).length;
-if (feedItemCount !== 11) {
-  console.error(`RSS feed should contain 11 items, found ${feedItemCount}`);
+if (feedItemCount !== 12) {
+  console.error(`RSS feed should contain 12 items, found ${feedItemCount}`);
   process.exit(1);
 }
 const episodesJson = JSON.parse(readFileSync(new URL('../episodes.json', import.meta.url), 'utf8'));
-if (episodesJson.episodes.length !== 11) {
-  console.error(`episodes.json should contain 10 episodes, found ${episodesJson.episodes.length}`);
+if (episodesJson.episodes.length !== 12) {
+  console.error(`episodes.json should contain 12 episodes, found ${episodesJson.episodes.length}`);
   process.exit(1);
 }
 for (const episode of episodesJson.episodes) {
@@ -301,7 +307,7 @@ if (featuredCopy.includes('Open episode') || featuredCopy.includes('class="lates
   process.exit(1);
 }
 const latestCtas = [...html.matchAll(/href="(https:\/\/www\.youtube\.com\/watch\?v=[\w-]{11})"[^>]*>Watch the latest/g)].map((match) => match[1]);
-if (latestCtas.length !== 3 || latestCtas.some((url) => url !== 'https://www.youtube.com/watch?v=jAWCqtNs0ns')) {
+if (latestCtas.length !== 3 || latestCtas.some((url) => url !== 'https://www.youtube.com/watch?v=YCgg0TtGYu0')) {
   console.error('Homepage latest-episode CTAs do not all target the verified current episode');
   process.exit(1);
 }
@@ -383,7 +389,7 @@ for (const [name, page] of [['homepage', html], ['episodes index', episodesHtml]
   }
 }
 
-for (const week of [10, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]) {
+for (const week of [10, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 31]) {
   const mainDeck = readFileSync(new URL(`../episodes/${week}/deck.html`, import.meta.url), 'utf8');
   if (!mainDeck.includes('Weekly') && !mainDeck.includes('OpenClaw')) {
     console.error(`Week ${week} main deck does not look like a Weekly Claw deck`);
