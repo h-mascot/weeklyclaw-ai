@@ -1,7 +1,7 @@
-# WeeklyClaw Episode 32 speaker notes rev2
+# WeeklyClaw Episode 32 speaker notes rev3
 
 **Runtime:** 35:00 + 3:00 buffer = 38:00 ceiling; 45:00 hard stop. Title is included in cold open; Sources is included in close.  
-**Revision:** rev2 · local review draft. Exactly one entry per stable slide ID, in deck order.  
+**Revision:** rev3 · local review draft. Exactly one entry per stable slide ID, in deck order.  
 **Core question:** Which part of the agent stack would you change this week?
 
 ## s-title
@@ -160,29 +160,30 @@
 
 **Owner:** Andy leads; Henry answers operator questions
 
-**Purpose:** Use the selected outside source to examine workload-specific routing and total subagent cost without inventing the creator’s argument.
+**Purpose:** Use Jensen Huang’s interview with Ezra Klein to examine evidence before release and the incentives or oversight that make a safety decision credible.
 
-**Opening line or optional landing line:** Theo’s September 29 Sonnet 5.5 review gives us a useful contradiction: he likes the model but does not want it as his daily driver. His case turns on cached-token economics and using Sonnet as a subagent. Let’s look at the argument, then ask whether it fits our own work.
+**Opening line or optional landing line:** Jensen Huang joins Ezra Klein for a disagreement about AI safety. Klein challenges Huang’s view that catastrophic forecasts are overstated and additional regulation is unnecessary. We will use the safety chapter to ask what evidence should count before an agent reaches users.
 
 **Talking points:**
-- 0:00–0:25 Andy identifies Theo’s Sonnet 5.5 argument
-- Source 00:30–01:29 / segment 00:25–01:24: favorable review without an obvious primary-model case; react 01:24–01:56
-- Source 07:29–08:23 / segment 01:56–02:50: cached-token economics; react 02:50–03:30
-- Source 29:51–31:06 / segment 03:30–04:45: Sonnet as an Opus-called investigative subagent
-- 04:45–06:00 Henry proposes a falsifiable workload test; Andy preserves practitioner/hypothesis caveats and hands off
+- Segment 00:00–00:25: identify the guests and the official safety/regulation framing
+- Segment 00:25–01:55: manually start at official chapter 36:44; allow 60–90 seconds maximum, with the end chosen during the pre-air check
+- Segment 01:55–03:25: Henry names a release-stopping failure and evidence he would want repeated
+- Segment 03:25–05:35: test company incentives/existing liability against the case for outside oversight; do not invent host beliefs
+- Segment 05:35–06:00: hand off to the existing incident-reporting motion without recapping the interview
 
-**Evidence/caveat:** PENDING PLAYBACK: the three source-video windows are measured from the recovered timestamped transcript, not yet audio/video spot-checked. Theo - t3.gg, September 29, 2026, duration 31:46. Verified subject: Sonnet 5.5; GPT-6 Sol is a comparison target, with “Soul” preserved as an auto-caption spelling in the source. The selected windows are 00:30–01:29 (59 seconds), 07:29–08:23 (54 seconds), and 29:51–31:06 (75 seconds): 3:08 playback plus 2:52 host setup/reaction = 6:00. Source timestamps and elapsed segment-clock labels are kept separate. Spot-check spoken boundaries, factual context, sound, and playback before air; do not label these host-approved or independently replicated. Keep the source title/creator visible. Manual start only; no autoplay. If playback fails, hold the verified poster and Andy reads the corresponding fallback paraphrase, then takes the same reaction question; do not invent a replacement clip. If using a local trim, stage it with source/cue provenance and confirm the permitted use scope. A public video or thumbnail is not blanket permission to rehost it. Cut additional discussion before dropping the permanent anchor.
+**Evidence/caveat:** Official title, date, duration, poster and chapter starts verified. Exact spoken excerpt, end cut, audio and playback remain pending. Alternate official bookmarks: 31:34 (agent misalignment) and 42:09 (regulation). The official description supports the broad disagreement; no exact quotations are used. Huang is NVIDIA’s CEO; this is an interested participant’s position, not an independent safety evaluation. Do not turn conditional remarks into a blanket demand to shut every lab.
 
-**Question or handoff:** Andy reads the incident-reporting motion; Henry takes the proposed affirmative opening.
+**Question or handoff:** What evidence would stop a release? Are company incentives and existing liability enough under competitive pressure? Then advance to the separate incident-reporting motion.
 
-**Visual cue:** Verified Theo source poster linked to the 31:46 video. Three transcript-derived source windows are selected; playback/audio spot-check is pending. Manual start, no autoplay. Source timestamps and elapsed segment time are explicitly labeled. Use the prepared paraphrase if playback fails.
+**Visual cue:** Original Jensen/Ezra interview poster linked to the source, with manual chapter links. No autoplay. Use the agenda/Andy section’s complete fallback discussion if playback fails.
 
 **Source links:**
-- [Theo video, September 29, Sonnet 5.5 review](https://www.youtube.com/watch?v=8WbW_n95wc4)
+- [The Ezra Klein Show — Jensen Huang interview](https://www.youtube.com/watch?v=HjurAWAr_nY)
+- [Primary safety chapter, 36:44](https://www.youtube.com/watch?v=HjurAWAr_nY&t=2204s)
 
-**Target time:** 6:00, 21:15–27:15.
+**Target time:** 6:00, 21:15–27:15. Same show rundown; excerpt maximum 90 seconds.
 
-**Cut contingency:** Shorten middle host answers, preserving the permanent anchor. Spot-check the selected source cues before air; if playback fails, use the verified poster and matching fallback paraphrases. Do not fake a clip or independent test result.
+**Cut contingency:** Shorten additional examples and host answers. Preserve the permanent SFO anchor and source identification. Do not play the full 5:25 chapter or invent a verified end timestamp.
 
 ## s-hot-take
 
@@ -308,7 +309,7 @@
 - https://www.hsgac.senate.gov/subcommittees/dmdcc/hearings/rogue-ai-securing-the-homeland-against-ai-agent-attacks/
 - https://metr.org/blog/2026-09-30-chris-painter-senate-testimony/
 - https://www.axios.com/2026/09/29/openai-sued-hugging-face-breach
-- https://www.youtube.com/watch?v=8WbW_n95wc4
+- https://www.youtube.com/watch?v=HjurAWAr_nY
 - WeeklyClaw Discord: https://weeklyclaw.ai/discord
 - Program Topics: https://docs.google.com/spreadsheets/d/16xAvCzRGA8XlWvihdSBcipw0wARzVZT9YysXzM0eFM8/edit
 
@@ -318,8 +319,8 @@
 
 # Producer review only
 
-- **Local draft only.** Revision rev2 does not authorize promotion, site publication, or edits to the original package. Approval remains UNVALIDATED pending integrated deck/document/media QA and host approval.
-- **SFO playback spot-check remains open.** Timestamped transcript now supports three source windows and the actual Sonnet/cache/subagent argument. Verify spoken boundaries and playback before air. Selected cues are 00:30–01:29, 07:29–08:23, and 29:51–31:06, totaling 3:08 inside the 6:00 slot. They are transcript-derived, not pre-approved or independently replicated. Keep source cues separate from segment-clock timings; use the verified poster and prepared paraphrases if playback fails.
+- **Local draft only.** Revision rev3 does not authorize promotion, site publication, or edits to the original package. Approval remains UNVALIDATED pending integrated deck/document/media QA and host approval.
+- **SFO playback spot-check remains open.** Jensen Huang with Ezra Klein replaces the prior video. Official chapter starts are 36:44 (primary safety bookmark), 31:34 (misalignment), 42:09 (regulation). Use a manual 60–90-second excerpt inside the unchanged 6:00 slot; choose and verify its end and context before air. Chapter starts are verified; exact spoken cuts and audio/playback are not. Hold the official poster and use Andy’s prepared discussion if playback fails.
 - **Video playback holds.** Dots 00:50–01:10, pause 01:05; Decisions 00:05–00:25, pause 00:10: official media and exact-time frames are verified, but browser/audio playback is not. Retain the Decisions “Shown 15x realtime” label and qualify its numbers as a vendor demo. NVIDIA Developer demo is verified as 5:29, but the excerpt is unverified. OpenAI’s official keynote is 53:34, with no verified excerpt. Use still/source-link fallbacks; no autoplay or guessed timestamps. Verify any local trim and usage rights before relying on playback.
 - **Sponsor copy is preserved exactly from rev1.** The claims “zero telemetry” and “hacker houses worldwide” are not independently substantiated in this pass. Ask the producer/sponsor owner to clear them; do not silently rewrite approved copy. Both slots retain 90-second windows. The supplied reads are shorter than 90 seconds of ordinary speech; confirm the approved bumper/asset plan for the remaining slot time rather than adding claims or repeating the copy.
 - **Host approval.** Confirm the proposed Hot Take side assignments. Confirm the precise adjacent-tooling relationship before expanding the existing disclosure. No host opinions, test results, or sponsor approvals have been invented.
@@ -328,4 +329,4 @@
 - **Visual integration remains a parent QA gate.** Confirm the two four-card grids, readable benchmarks, verified source identities, all ten stable slide IDs, media paths, manual playback, and final-frame QR. QR must decode to the WeeklyClaw route and resolve to the correct community; a nearby href alone is insufficient proof.
 - **Program Topics reference:** https://docs.google.com/spreadsheets/d/16xAvCzRGA8XlWvihdSBcipw0wARzVZT9YysXzM0eFM8/edit. This local-only revision includes the reference; it does not claim the external sheet has been synced or changed.
 
-<!-- Episode 32 | revision rev2 | story-set-sha256 cee5cc422124f17a4b9d99326a790763ea58321c2dc545cf5aaea30d9ef6029d -->
+<!-- Episode 32 | revision rev3 | story-set-sha256 cee5cc422124f17a4b9d99326a790763ea58321c2dc545cf5aaea30d9ef6029d -->

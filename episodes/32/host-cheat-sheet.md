@@ -1,6 +1,6 @@
 # WeeklyClaw Episode 32 host cheat sheet
 
-**Revision:** rev2 · local review draft  
+**Revision:** rev3 · local review draft  
 **Core question:** Which part of the agent stack would you change this week?  
 **Runtime:** 35:00 planned + 3:00 buffer = 38:00 ceiling; 45:00 hard stop
 
@@ -49,12 +49,15 @@ Read each grid left to right, top to bottom. Henry leads all cards. Andy support
 
 ## Signal From Outside · 6:00
 
-- Andy leads; Henry supplies a real workload and a testable operator response
-- Theo - t3.gg, “OpenAI should be scared of this one,” September 29, 31:46; **Sonnet 5.5 review**, not a DevDay/Sol review
-- Actual argument: Theo likes Sonnet 5.5, questions the primary-model value under cache-heavy economics, and proposes Opus-called Sonnet for investigative subagent work. Test that recommendation against a specific workload
-- Source: https://www.youtube.com/watch?v=8WbW_n95wc4
-- Source cues: **00:30–01:29**, **07:29–08:23**, **29:51–31:06**; transcript-derived, **PENDING PLAYBACK** / pre-air audio spot-check. Total playback 3:08, host setup/reaction 2:52
-- Verified poster and prepared paraphrase fallback if playback fails. Manual start, no autoplay; no claim of independent replication
+- Andy leads; Henry tests a concrete release criterion and the strongest case on each side
+- Jensen Huang with Ezra Klein, “Jensen Huang Thinks A.I. Alarmism Has Gone Too Far,” The Ezra Klein Show, September 23, 1:47:21
+- Official framing: Klein challenges Huang’s view that catastrophic forecasts are overstated and additional regulation is unnecessary; this is a debate, not an independent safety evaluation
+- Source: https://www.youtube.com/watch?v=HjurAWAr_nY
+- Main official chapter bookmark: **36:44, safety before release**; alternatives **31:34, agent misalignment**, **42:09, regulation**
+- Manual **60–90-second maximum excerpt**, ending chosen during the pre-air check. Chapter starts are verified; exact spoken cut, audio and playback are **PENDING**. Do not play the full 5:25 chapter in this slot
+- Clock: 00:00–00:25 setup; 00:25–01:55 clip/fallback; 01:55–03:25 release-evidence question; 03:25–05:35 incentives/oversight question; 05:35–06:00 handoff
+- Questions: What evidence would stop a release? Are company incentives and existing liability enough under competitive pressure?
+- Genuine poster and complete Andy discussion fallback. Manual start, no autoplay. Do not invent quotations or attribute proposed host positions
 
 ## Hot Take · 4:00
 
@@ -85,4 +88,4 @@ This is a local draft, not an air-ready/publication clearance. Open holds: SFO p
 
 Program Topics: https://docs.google.com/spreadsheets/d/16xAvCzRGA8XlWvihdSBcipw0wARzVZT9YysXzM0eFM8/edit
 
-<!-- Episode 32 | revision rev2 | story-set-sha256 cee5cc422124f17a4b9d99326a790763ea58321c2dc545cf5aaea30d9ef6029d -->
+<!-- Episode 32 | revision rev3 | story-set-sha256 cee5cc422124f17a4b9d99326a790763ea58321c2dc545cf5aaea30d9ef6029d -->

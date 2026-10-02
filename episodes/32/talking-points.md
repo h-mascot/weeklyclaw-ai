@@ -1,6 +1,6 @@
 # WeeklyClaw Episode 32 consolidated talking points
 
-**Revision:** rev2 · local review draft  
+**Revision:** rev3 · local review draft  
 **Runtime:** 35:00 + 3:00 buffer = 38:00 ceiling; 45:00 hard stop  
 **Core question:** Which part of the agent stack would you change this week?
 
@@ -194,45 +194,42 @@ This is the shared, on-air-focused view of the canonical agenda. News remains He
 
 ## Signal From Outside / weekly video review · 6:00
 
-*Slide `s-signal-outside` · 21:15–27:15 · Andy leads. [Theo — OpenAI should be scared of this one](https://www.youtube.com/watch?v=8WbW_n95wc4), September 29, 2026, 31:46; Sonnet 5.5 review.*
+*Slide `s-signal-outside` · 21:15–27:15 · Andy leads. [Jensen Huang with Ezra Klein — Jensen Huang Thinks A.I. Alarmism Has Gone Too Far | The Ezra Klein Show](https://www.youtube.com/watch?v=HjurAWAr_nY), September 23, 2026, 1:47:21.*
 
 **Henry talking points:**
-- Theo likes Sonnet 5.5 but argues against choosing it as the everyday primary model; his introduction compares it with GPT-6 Sol
-- His pricing caveat is about cache-heavy coding workloads; do not turn his figures or usage into a universal cost result
-- His concrete niche is Sonnet handling investigative subagent work called by Opus; the claimed benefit remains his practitioner hypothesis
-- Name one task and a result that would disprove the routing choice; count retries, coordination, and human review
+- Separate the chance of a bad outcome from whether an operator can detect and contain it
+- Name one concrete pre-release test, the failure that would stop deployment, and who should verify the result
+- Test both positions: when are company incentives and existing liability enough, and when would an external rule add something useful?
+- Answer from actual operating experience if available; no personal experience or opinion is supplied on your behalf
 
-**Henry line (optional):** Which route wins after we count retries and review?
+**Henry line (optional):** What evidence would make you stop the release?
 
-**Andy fallback talk track / 0:00–0:25 open:** Theo’s September 29 Sonnet 5.5 review gives us a useful contradiction: he likes the model but does not want it as his daily driver. His case turns on cached-token economics and using Sonnet as a subagent. Let’s look at the argument, then ask whether it fits our own work.
+**Andy opening / segment clock 00:00–00:25:** Jensen Huang joins Ezra Klein for a disagreement about AI safety. Klein challenges Huang’s view that catastrophic forecasts are overstated and additional regulation is unnecessary. We will use the safety chapter to ask what evidence should count before an agent reaches users.
 
-**Manual source cue 00:30–01:29 (59s) · segment clock 00:25–01:24: A good model without a clear primary-model case.** Transcript-derived; PENDING PLAYBACK / pre-air spot-check.
+**Manual source bookmark 36:44 · segment clock 00:25–01:55:** Open the official safety chapter and play a host-controlled **60–90 seconds maximum**. Pause at a complete thought selected during the pre-air check. There is no verified end cut in this revision. The remaining 30 seconds, if a 60-second excerpt is chosen, goes to discussion. Do not play the full 5:25 chapter inside this slot.
 
-**Andy fallback if playback fails:** Theo says Sonnet 5.5 impressed him, even though the comparison he is discussing does not make an obvious case for it. He positions it against GPT-6 Sol. This is his assessment, not our benchmark conclusion.
+**Andy fallback if playback fails / 00:25–01:55:** The starting point is a disagreement about how much confidence we should have in the technology and in the people releasing it. The interview’s official description frames Huang as skeptical of catastrophic forecasts and of additional regulation. Klein presses that view. We should treat those as positions to examine, rather than as a safety result. Huang also leads a company that benefits from widespread AI adoption. That does not decide whether his argument is right, but it is useful context when we weigh it. For our purposes, the practical question is what a team must show before allowing an agent to take consequential actions. A reassuring forecast and a working control are different kinds of evidence. Henry, choose one action an agent might take in a real workflow and name the failure that would make you stop its release.
 
-**01:24–01:56 · React after cue 1 — Andy fallback:** That is a useful distinction: a model can be impressive without becoming the one you choose for every task. Theo is comparing it with GPT-6 Sol here; this is a Sonnet review, not a review of the GPT-6.1 Sol launch. Henry, what specific job would make you try a model even if you would not switch your primary route?
+**01:55–03:25 · Question 1, release evidence — Andy prompt and fallback:** What would count as convincing proof that the agent stays within its permissions? I would ask the operator to define the allowed action, demonstrate an attempted boundary crossing, and show what is recorded when the system refuses it. That gives us a concrete claim we can inspect. It also leaves room for disagreement: a successful test is useful, but it does not establish that every deployment is safe. Henry, which failure cases would you insist on testing, and who would you trust to repeat the test? If you would still ship after a failure, explain the limitation you would put on the pilot. The point is to make the release criterion explicit, rather than asking either host to endorse a broad prediction about AI.
 
-**Manual source cue 07:29–08:23 (54s) · segment clock 01:56–02:50: Cached-token costs qualify the headline price.** Transcript-derived; PENDING PLAYBACK / pre-air spot-check.
+**03:25–05:35 · Question 2, incentives and oversight — Andy prompt and fallback:** Now suppose a team has a promising product and a competitor is moving quickly. Are the company’s own incentives, customer pressure and existing liability enough to make it stop when the evidence is weak? Or does some outside requirement improve that decision? Those are questions for this discussion; we are not claiming the interview settled them. Henry, give the strongest version of both answers before choosing one. On the company-led side, a team may know its system best and have a strong reason to protect its customers and reputation. On the oversight side, customers and other affected people may not be able to see the evidence or judge the risk before release. A useful answer has to say who gets to inspect the claim and what happens when the result is unfavorable. It should also say what new cost or failure a rule could introduce. Which missing piece would change your view: a reproducible test, independent review, a clear right to stop deployment, or evidence that an existing consequence actually changes behavior? Keep the example specific, and do not assume a proposed rule works simply because its goal is safety.
 
-**Andy fallback if playback fails:** Theo questions the per-task saving claim and explains why cache reads and writes matter for his day-to-day agentic coding. His point is that input and output sticker prices alone can give the wrong impression of the bill.
+**05:35–06:00 · Landing and handoff:** We have a pre-release question: who decides the evidence is good enough to ship? Our Hot Take is a separate, narrower question about what happens after a failure: should agent vendors be required to publish incident reports? Henry takes the proposed affirmative opening; Andy presents the countercase.
 
-**02:50–03:30 · React after cue 2 — Andy fallback:** The question is which tokens your workflow actually spends money on. Theo says cache activity is a big part of his coding work, so the headline input and output prices leave out something important. We should treat that as his workload evidence. Henry, would cache reads, retries, or human review be the bigger cost in the job you just picked?
-
-**Manual source cue 29:51–31:06 (75s) · segment clock 03:30–04:45: Sonnet as an Opus-called investigative subagent.** Transcript-derived; PENDING PLAYBACK / pre-air spot-check.
-
-**Andy fallback if playback fails:** Theo sees value in letting Opus call Sonnet for codebase investigation and checking a hunch. He expects that routing to make Opus feel faster and get work done somewhat more cheaply; he is proposing a useful role, not reporting an independent replication.
-
-**04:45–06:00 · React after cue 3 and hand off — Andy fallback:** Here is his specific recommendation: keep Opus in charge and let it call Sonnet for bounded investigative work. The important qualifier is that he is predicting a benefit from routing it well. We have not independently reproduced that result. Henry, choose one investigation you would delegate that way, and tell us what would make you abandon it. For a useful comparison, I would hold the task and acceptance criteria fixed, count the coordinator and worker calls, and include failed attempts and the time a person spends checking the answer. That would tell us whether the cheaper worker really improved the route. Now we will leave model selection and take a different question: should agent vendors be required to publish incident reports?
-
-**Handoff cue:** Andy reads the incident-reporting motion; Henry takes the proposed affirmative opening.
+**Handoff cue:** Advance to the incident-reporting motion. Do not repeat the interview or rewrite the separate debate.
 
 ### Sources and production notes (not read on air)
 
-PENDING PLAYBACK: the three source-video windows are measured from the recovered timestamped transcript, not yet audio/video spot-checked. Theo - t3.gg, September 29, 2026, duration 31:46. Verified subject: Sonnet 5.5; GPT-6 Sol is a comparison target, with “Soul” preserved as an auto-caption spelling in the source. The selected windows are 00:30–01:29 (59 seconds), 07:29–08:23 (54 seconds), and 29:51–31:06 (75 seconds): 3:08 playback plus 2:52 host setup/reaction = 6:00. Source timestamps and elapsed segment-clock labels are kept separate. Spot-check spoken boundaries, factual context, sound, and playback before air; do not label these host-approved or independently replicated. Keep the source title/creator visible. Manual start only; no autoplay. If playback fails, hold the verified poster and Andy reads the corresponding fallback paraphrase, then takes the same reaction question; do not invent a replacement clip. If using a local trim, stage it with source/cue provenance and confirm the permitted use scope. A public video or thumbnail is not blanket permission to rehost it. Cut additional discussion before dropping the permanent anchor.
+The official YouTube page verifies the title, The Ezra Klein Show, September 23, 2026, duration 1:47:21, poster, and chapter starts. Primary bookmark: **36:44, The ‘Don’t Ship It’ Approach to A.I. Safety**. Alternatives: **31:34, Misalignment in the Hugging Face Hack**, and **42:09, Do We Need New Regulation?** These are publisher chapter starts, not transcript-verified spoken cut points. The suggested 60–90-second excerpt is a production allowance, not a verified source-video end timestamp. Choose and spot-check the sentence boundary and context before air; do not claim this excerpt has been watched or cleared.
 
-- Source: https://www.youtube.com/watch?v=8WbW_n95wc4
-- Fallback visual: verified Theo video poster linked to the source. Poster fallback is distinct from the transcript-derived excerpt; source playback still needs a spot-check.
-- Cut: shorten the middle discussion answers first; retain the outside-source identification, workload question, and handoff. Keep the three transcript-derived source windows and spot-check them before air.
+The official description supports the disagreement about catastrophic forecasts and additional regulation. The fallback below is host discussion grounded in that framing, not a quote or a verbatim paraphrase of an unverified clip. A third-party transcript has speaker-label errors and is not used for quotations. Keep Huang’s NVIDIA commercial role visible; his position is not an independent safety evaluation. No blanket claim that he wants all labs shut down.
+
+Manual start only; no autoplay. If the source cannot play, retain the genuine poster and use the prepared discussion below. Source timestamps and elapsed segment-clock labels are separate. Keep the permanent anchor inside **6:00**, 21:15–27:15. Cut extra examples before expanding the slot. Full third-party video is not bundled or rehosted; public availability is not a blanket redistribution license.
+
+- Source: https://www.youtube.com/watch?v=HjurAWAr_nY
+- Main chapter: https://www.youtube.com/watch?v=HjurAWAr_nY&t=2204s
+- Fallback visual: original official interview thumbnail, linked to the source
+- Pre-air hold: excerpt end, spoken context, sound and playback require a spot-check
 
 ## Hot take / debate · 4:00
 
@@ -287,8 +284,8 @@ These are proposed debate assignments, not statements of Henry’s or Andy’s e
 ## Producer references (not read on air)
 
 - Program Topics: https://docs.google.com/spreadsheets/d/16xAvCzRGA8XlWvihdSBcipw0wARzVZT9YysXzM0eFM8/edit
-- Canonical approval, sponsor-claim checks, source caveats, and runtime proof: agenda.rev2.md
+- Canonical approval, sponsor-claim checks, source caveats, and runtime proof: agenda.rev3.md
 - SFO transcript-derived cues remain pending playback spot-check; NVIDIA excerpt cues are unverified. Dots/Decisions official media frames are verified, with browser/audio playback pending
 - Local revision only; no publication or external-sheet synchronization is asserted
 
-<!-- Episode 32 | revision rev2 | story-set-sha256 cee5cc422124f17a4b9d99326a790763ea58321c2dc545cf5aaea30d9ef6029d -->
+<!-- Episode 32 | revision rev3 | story-set-sha256 cee5cc422124f17a4b9d99326a790763ea58321c2dc545cf5aaea30d9ef6029d -->

@@ -1,6 +1,6 @@
 # WeeklyClaw Episode 32 Henry section
 
-**Revision:** rev2 · local review draft  
+**Revision:** rev3 · local review draft  
 **Clock:** 35:00 + 3:00 buffer = 38:00 ceiling; 45:00 hard stop  
 **Your role:** Lead all eight news cards, answer Andy in SFO, take the proposed affirmative in Hot Take, and give one watch. Andy handles both sponsors and the single recap on `s-sources`.
 
@@ -205,31 +205,34 @@
 
 ## Signal From Outside / weekly video review · 6:00
 
-*Slide `s-signal-outside` · 21:15–27:15 · Andy leads. [Theo — OpenAI should be scared of this one](https://www.youtube.com/watch?v=8WbW_n95wc4), September 29, 2026, 31:46; Sonnet 5.5 review.*
+*Slide `s-signal-outside` · 21:15–27:15 · Andy leads. [Jensen Huang with Ezra Klein — Jensen Huang Thinks A.I. Alarmism Has Gone Too Far | The Ezra Klein Show](https://www.youtube.com/watch?v=HjurAWAr_nY), September 23, 2026, 1:47:21.*
 
 **Henry talking points:**
-- Theo likes Sonnet 5.5 but argues against choosing it as the everyday primary model; his introduction compares it with GPT-6 Sol
-- His pricing caveat is about cache-heavy coding workloads; do not turn his figures or usage into a universal cost result
-- His concrete niche is Sonnet handling investigative subagent work called by Opus; the claimed benefit remains his practitioner hypothesis
-- Name one task and a result that would disprove the routing choice; count retries, coordination, and human review
+- Separate the chance of a bad outcome from whether an operator can detect and contain it
+- Name one concrete pre-release test, the failure that would stop deployment, and who should verify the result
+- Test both positions: when are company incentives and existing liability enough, and when would an external rule add something useful?
+- Answer from actual operating experience if available; no personal experience or opinion is supplied on your behalf
 
-**Henry line (optional):** Which route wins after we count retries and review?
+**Henry line (optional):** What evidence would make you stop the release?
 
-**Manual source cue 00:30–01:29 (59s) · segment clock 00:25–01:24: A good model without a clear primary-model case.** Transcript-derived; PENDING PLAYBACK / pre-air spot-check.
+**Manual media cue:** Start from the official **36:44 safety chapter**. Allow at most 60–90 seconds, with the exact ending chosen during the pre-air spot-check. Alternatives are 31:34 (agent misalignment) and 42:09 (regulation). These are chapter bookmarks, not verified spoken edits.
 
-**Manual source cue 07:29–08:23 (54s) · segment clock 01:56–02:50: Cached-token costs qualify the headline price.** Transcript-derived; PENDING PLAYBACK / pre-air spot-check.
+**Reaction questions:** What evidence would stop a release? Are company incentives and existing liability enough under competitive pressure? Name what would change your answer.
 
-**Manual source cue 29:51–31:06 (75s) · segment clock 03:30–04:45: Sonnet as an Opus-called investigative subagent.** Transcript-derived; PENDING PLAYBACK / pre-air spot-check.
-
-**Handoff cue:** Andy reads the incident-reporting motion; Henry takes the proposed affirmative opening.
+**Handoff cue:** Move from pre-release evidence to the separate incident-reporting motion. Existing Hot Take assignments and copy are unchanged.
 
 ### Sources and production notes (not read on air)
 
-PENDING PLAYBACK: the three source-video windows are measured from the recovered timestamped transcript, not yet audio/video spot-checked. Theo - t3.gg, September 29, 2026, duration 31:46. Verified subject: Sonnet 5.5; GPT-6 Sol is a comparison target, with “Soul” preserved as an auto-caption spelling in the source. The selected windows are 00:30–01:29 (59 seconds), 07:29–08:23 (54 seconds), and 29:51–31:06 (75 seconds): 3:08 playback plus 2:52 host setup/reaction = 6:00. Source timestamps and elapsed segment-clock labels are kept separate. Spot-check spoken boundaries, factual context, sound, and playback before air; do not label these host-approved or independently replicated. Keep the source title/creator visible. Manual start only; no autoplay. If playback fails, hold the verified poster and Andy reads the corresponding fallback paraphrase, then takes the same reaction question; do not invent a replacement clip. If using a local trim, stage it with source/cue provenance and confirm the permitted use scope. A public video or thumbnail is not blanket permission to rehost it. Cut additional discussion before dropping the permanent anchor.
+The official YouTube page verifies the title, The Ezra Klein Show, September 23, 2026, duration 1:47:21, poster, and chapter starts. Primary bookmark: **36:44, The ‘Don’t Ship It’ Approach to A.I. Safety**. Alternatives: **31:34, Misalignment in the Hugging Face Hack**, and **42:09, Do We Need New Regulation?** These are publisher chapter starts, not transcript-verified spoken cut points. The suggested 60–90-second excerpt is a production allowance, not a verified source-video end timestamp. Choose and spot-check the sentence boundary and context before air; do not claim this excerpt has been watched or cleared.
 
-- Source: https://www.youtube.com/watch?v=8WbW_n95wc4
-- Fallback visual: verified Theo video poster linked to the source. Poster fallback is distinct from the transcript-derived excerpt; source playback still needs a spot-check.
-- Cut: shorten the middle discussion answers first; retain the outside-source identification, workload question, and handoff. Keep the three transcript-derived source windows and spot-check them before air.
+The official description supports the disagreement about catastrophic forecasts and additional regulation. The fallback below is host discussion grounded in that framing, not a quote or a verbatim paraphrase of an unverified clip. A third-party transcript has speaker-label errors and is not used for quotations. Keep Huang’s NVIDIA commercial role visible; his position is not an independent safety evaluation. No blanket claim that he wants all labs shut down.
+
+Manual start only; no autoplay. If the source cannot play, retain the genuine poster and use the prepared discussion below. Source timestamps and elapsed segment-clock labels are separate. Keep the permanent anchor inside **6:00**, 21:15–27:15. Cut extra examples before expanding the slot. Full third-party video is not bundled or rehosted; public availability is not a blanket redistribution license.
+
+- Source: https://www.youtube.com/watch?v=HjurAWAr_nY
+- Main chapter: https://www.youtube.com/watch?v=HjurAWAr_nY&t=2204s
+- Fallback visual: original official interview thumbnail, linked to the source
+- Pre-air hold: excerpt end, spoken context, sound and playback require a spot-check
 
 ## Hot take / debate · 4:00
 
@@ -275,4 +278,4 @@ These are proposed debate assignments, not statements of Henry’s or Andy’s e
 - On `s-sources`, leave Andy the only recap; no second Henry summary
 - Program Topics: https://docs.google.com/spreadsheets/d/16xAvCzRGA8XlWvihdSBcipw0wARzVZT9YysXzM0eFM8/edit
 
-<!-- Episode 32 | revision rev2 | story-set-sha256 cee5cc422124f17a4b9d99326a790763ea58321c2dc545cf5aaea30d9ef6029d -->
+<!-- Episode 32 | revision rev3 | story-set-sha256 cee5cc422124f17a4b9d99326a790763ea58321c2dc545cf5aaea30d9ef6029d -->
