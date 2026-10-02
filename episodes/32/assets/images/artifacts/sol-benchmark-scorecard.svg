@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="490" viewBox="0 0 1440 490" role="img"><title>GPT-6.1 Sol: selected benchmark deltas</title><rect width="1440" height="490" fill="#fff"/>
+<text x="40" y="59" font-family="Arial,sans-serif" font-size="39" font-weight="700" fill="#24201c">GPT-6.1 Sol: selected benchmark deltas</text>
+<text x="40" y="119" font-family="Arial,sans-serif" font-size="27" font-weight="600" fill="#5f564e">Benchmark / effort</text>
+<text x="700" y="119" font-family="Arial,sans-serif" font-size="27" font-weight="600" fill="#5f564e">Compared with</text>
+<text x="1110" y="119" font-family="Arial,sans-serif" font-size="27" font-weight="600" fill="#5f564e">Change</text>
+<path d="M40 142H1400" stroke="#2a7e6b" stroke-width="4"/>
+<text x="40" y="194" font-family="Arial,sans-serif" font-size="35" font-weight="500" fill="#24201c">DeepSWE v1.1 / high</text>
+<text x="700" y="194" font-family="Arial,sans-serif" font-size="37" font-weight="500" fill="#24201c">prior Sol best</text>
+<text x="1110" y="194" font-family="Arial,sans-serif" font-size="37" font-weight="700" fill="#216655">+6.4 pp</text>
+<path d="M40 218H1400" stroke="#ddd"/>
+<text x="40" y="277" font-family="Arial,sans-serif" font-size="35" font-weight="500" fill="#24201c">AutomationBench / medium</text>
+<text x="700" y="277" font-family="Arial,sans-serif" font-size="37" font-weight="500" fill="#24201c">Opus 5.5</text>
+<text x="1110" y="277" font-family="Arial,sans-serif" font-size="37" font-weight="700" fill="#216655">+2.2 pp</text>
+<path d="M40 301H1400" stroke="#ddd"/>
+<text x="40" y="360" font-family="Arial,sans-serif" font-size="35" font-weight="500" fill="#24201c">OSWorld offline / max</text>
+<text x="700" y="360" font-family="Arial,sans-serif" font-size="37" font-weight="500" fill="#24201c">Astra / max</text>
+<text x="1110" y="360" font-family="Arial,sans-serif" font-size="37" font-weight="700" fill="#216655">−2.1 pp</text>
+<path d="M40 384H1400" stroke="#ddd"/>
+<text x="40" y="435" font-family="Arial,sans-serif" font-size="23" fill="#5f564e">OpenAI-reported results. Different effort settings and evaluation conditions apply.</text>
+<text x="40" y="465" font-family="Arial,sans-serif" font-size="23" fill="#5f564e">WeeklyClaw transcription of openai.com/index/introducing-gpt-6-1-sol/</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="490" viewBox="0 0 1440 490" role="img"><title>ExploitBench: successful end-to-end exploits</title><rect width="1440" height="490" fill="#fff"/>
+<text x="40" y="59" font-family="Arial,sans-serif" font-size="39" font-weight="700" fill="#24201c">ExploitBench: successful end-to-end exploits</text>
+<text x="40" y="119" font-family="Arial,sans-serif" font-size="27" font-weight="600" fill="#5f564e">Model</text>
+<text x="700" y="119" font-family="Arial,sans-serif" font-size="27" font-weight="600" fill="#5f564e">Successes / attempts</text>
+<text x="1110" y="119" font-family="Arial,sans-serif" font-size="27" font-weight="600" fill="#5f564e">Rate</text>
+<path d="M40 142H1400" stroke="#2a7e6b" stroke-width="4"/>
+<text x="40" y="194" font-family="Arial,sans-serif" font-size="35" font-weight="500" fill="#24201c">GLM-5.3</text>
+<text x="700" y="194" font-family="Arial,sans-serif" font-size="37" font-weight="500" fill="#24201c">50 / 410</text>
+<text x="1110" y="194" font-family="Arial,sans-serif" font-size="37" font-weight="700" fill="#216655">12.2%</text>
+<path d="M40 218H1400" stroke="#ddd"/>
+<text x="40" y="277" font-family="Arial,sans-serif" font-size="35" font-weight="500" fill="#24201c">Claude Mythos Preview</text>
+<text x="700" y="277" font-family="Arial,sans-serif" font-size="37" font-weight="500" fill="#24201c">56 / 410</text>
+<text x="1110" y="277" font-family="Arial,sans-serif" font-size="37" font-weight="700" fill="#216655">13.7%</text>
+<path d="M40 301H1400" stroke="#ddd"/>
+<text x="40" y="435" font-family="Arial,sans-serif" font-size="23" fill="#5f564e">Anthropic evaluation: offline sandbox; Claude safeguards disabled. Rates calculated from counts.</text>
+<text x="40" y="465" font-family="Arial,sans-serif" font-size="23" fill="#5f564e">WeeklyClaw transcription of anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities</text>
+</svg>
