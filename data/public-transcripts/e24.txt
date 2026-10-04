@@ -1,0 +1,634 @@
+YouTube transcript
+Video ID: aJzb0Px8Gos
+Language: en-GB
+Captions: authored or unspecified
+
+[0:00] AndyML: Welcome to the Weekly Claw, episode twenty-four.
+[0:03] HiM: It's Friday, August seventh, and it's been an interesting week.
+[0:07] HiM: We didn't have a single frontier model move to the leaderboard um or shift it in some way, but it still seems like one of the biggest weeks of the summer.
+[0:16] HiM: I feel like we say that every week.
+[0:19] AndyML: So let's look at what shipped.
+[0:20] AndyML: AMD bought a chip company, Meta and OpenAI, both stood up in public and talked about their models getting broken into.
+[0:27] AndyML: We got four new open models landed or announced, um, and four different teams: Cloudflare, Cloudflare, Y Combinator, Prime Intellect, Microsoft Research, all independently shipping
+[0:38] AndyML: some version of the same product.
+[0:41] AndyML: The layer that sits between your agent and everything it's allowed to touch.
+[0:45] AndyML: So we got silicon underneath, security around it, harnesses on top.
+[0:50] AndyML: The model is the part in the middle that nobody's fighting over today uh because that's the cheap part.
+[0:55] AndyML: So Henry's got the rundown chip security models harness and a weather model that I think quietly might be the best story of the week.
+[1:01] AndyML: I've got two control plane repos that dropped and one demo from the Berkeley Summit that says the quiet part out loud, what an agent actually produces has less to do with the
+[1:12] AndyML: model you pick and more to do with the boundary you drew around it.
+[1:16] AndyML: Same prompt, same model.
+[1:17] AndyML: One refuses, one doesn't.
+[1:19] AndyML: Um so nobody moved in the frontier, everybody moved the envelope.
+[1:26] AndyML: See here. AndyML: em Of course we had a slide for that.
+[1:32] AndyML: And we've got two slide decks today.
+[1:34] AndyML: Um, we've got uh Henry's agent Ada or Ada from uh Entity building slides on the right, we've got Claude Desktop building slides on the left.
+[1:47] AndyML: Um Ada ran out of tokens this week, so um we're gonna double fist it.
+[1:54] AndyML: Um
+[1:57] AndyML: Weekly Claw is brought to you by Herald Labs, an applied AI project lab where humans and agents build products together.
+[2:03] AndyML: They're the team behind entity, mission control for agent teams, and they run hacker houses around the world where builders ship actual work.
+[2:10] AndyML: Not a theory club.
+[2:12] AndyML: Build, don't talk.
+[2:13] AndyML: And check them out at labs.theherald.co.
+[2:16] AndyML: Um, Henry, you've got five stacks to get through or four, so why don't you take it on?
+[2:23] HiM: Yes sir. HiM: um So I will share my screen because I have some pretty cool resources that I want to work through super quickly.
+[2:34] HiM: So we will start with AMD going ahead.
+[2:40] HiM: AMD needed to stop sharing so I can share.
+[2:42] HiM: um AMD bought a company this...
+[2:51] HiM: Actually just came out today.
+[2:52] HiM: mean, it's like one of the interesting things about...
+[2:58] HiM: One second.
+[2:59] HiM: Yeah, I'm just going to share the whole screen.
+[3:02] HiM: I mean, it's kind of like one of the, you know, the interesting things about the week is um almost like an hour or two before the session, we always have like breaking rules, have
+[3:13] HiM: like news, like lots of new stuff happening.
+[3:15] HiM: So yeah, so it's almost impossible if you wanted to kind of capture.
+[3:20] HiM: everything happening this everything happening to kind of like do a slice like hours ahead, right?
+[3:27] HiM: Something always like changes.
+[3:28] HiM: um But what's super interesting, I'm not sure how many of us remember, Chad Jimmy, so this company a few months ago, it's a Canadian company.
+[3:39] HiM: um They announced that they had um come up with this breakthrough technology around how to do chips.
+[3:47] HiM: And so like their innovation was that they were able to kind of like put the chips, put the model on the chip.
+[3:53] HiM: So they would write the model, would hard code the model on the chips and then allows them to get to, I think it was like 1200 TPS tokens per second, something like that, or 72,
+[4:06] HiM: some like very high number.
+[4:08] HiM: I think it's 17,000 TPS actually.
+[4:10] HiM: So let's do that.
+[4:13] AndyML: So it's, yeah.
+[4:15] AndyML: and sixty.
+[4:16] HiM: Exactly right, so if you see my screen you can see it's 18,500 tokens per second again, guess you can depends on what you're asking it.
+[4:25] AndyML: but yeah, but yeah, um, who is the president of America?
+[4:32] AndyML: mean, this is llama three.
+[4:33] AndyML: Um,
+[4:35] AndyML: sht fast.
+[4:37] HiM: Yeah, it's at 15k.
+[4:39] HiM: So it's ridiculous, right?
+[4:41] HiM: And I guess there are use cases you can start to get to when a model is this fast, even if it's a super shitty model.
+[4:48] HiM: If it's this fast, you will be able to iterate on whatever you're working on, maybe like a thousand, let's say a hundred times versus a classic model.
+[5:00] HiM: A GPT 5.6 sole is 56 TPS.
+[5:06] HiM: So compare like 50, 60 TPS on GPT 5.6 sold from OpenAI.
+[5:12] HiM: I mean, if you get it from OpenAI is 50, 60.
+[5:15] HiM: If you get it from Azure, it's like 70.
+[5:17] HiM: So compare 60 TPS to like 18,000.
+[5:20] HiM: It's the order of magnitude.
+[5:22] HiM: That doesn't need to be that.
+[5:23] HiM: So this company got acquired by AMD today.
+[5:28] HiM: So super interesting.
+[5:31] HiM: I mean, another thing to kind of like note that is interesting, obviously NVIDIA is the king of chips at the moment and AMD is like the follow number two.
+[5:41] HiM: And funny enough, the distant cousins and the CEO of NVIDIA and the CEO of AMD, they're like cousins, distant cousins, they're the same family doing chips.
+[5:50] HiM: So NVIDIA bought Grok a few months ago and now AMD is buying Talos.
+[5:55] HiM: Interesting. HiM: Andy, any thoughts before we move on to the terraform?
+[5:59] AndyML: Mean I chew on it.
+[6:01] AndyML: Hard wiring a model into silicon means model choice is less of a config line and more of a two year capital investment.
+[6:11] HiM: Yeah, I mean, obviously, I haven't seen, I haven't heard of anybody who is using it.
+[6:15] HiM: So I'm sure they have enterprise use cases.
+[6:18] HiM: But yeah, but I reckon AMD is probably going to do what NVIDIA did.
+[6:23] HiM: So what NVIDIA did is that they bought Grok for inference and then they would like provide that as part of them.
+[6:29] HiM: So they found a way to combine the inference because their models are good for training, but not great for inference.
+[6:34] HiM: So I'm not sure I know what exactly they did, but they found a way to combine it.
+[6:39] HiM: Okay.
+[6:40] HiM: So that's it on AMD.
+[6:42] HiM: Another cool topic on chips is TheraFab.
+[6:44] HiM: am going to, because I want to play this, I'm going to stream my audio again.
+[6:49] HiM: I do so I can play this clip.
+[6:51] HiM: I think it's a super cool clip.
+[6:54] HiM: So this is terra faba.
+[7:46] HiM: All right.
+[7:48] HiM: So Terra 5, so Terra 5 is a, I call it like Elon's Act 3.
+[7:56] HiM: So I mean, SpaceX is sort of like his Act 2.
+[7:59] HiM: mean, Tesla, it's like his first public company uses Act 1.
+[8:04] HiM: And obviously, largely, it's like, Tesla, think is 1.2 trillion right now.
+[8:09] HiM: SpaceX's Act 2, which is, I mean, he went public at 2.
+[8:14] HiM: two trillion and then came down.
+[8:16] HiM: I think as of today was one point five trillion.
+[8:19] HiM: So Terra Fab is what I think is he's the way he's going to use to do Actree, which everybody said like is saying that he's going to merge Tesla and SpaceX to become one of
+[8:32] HiM: the biggest companies in the world.
+[8:34] HiM: So Terra Fab is this idea that they're going to be the biggest cheap manufacturing company or plant or.
+[8:44] HiM: in the world.
+[8:45] HiM: And so you can see what it looks like, what the size looks like.
+[8:49] HiM: You get Texas, it's one of the biggest sort of like factories in America to date.
+[8:53] HiM: It's just like maybe what, 25 % or less of Terra Fab.
+[9:00] HiM: And the Pentagon, I think Elon said is like, I don't know, 50, 50, is it 10 times the Pentagon?
+[9:05] AndyML: Nah, it's much more than 10.
+[9:06] AndyML: no, no. AndyML: It's more than ten.
+[9:07] AndyML: Ten times gig of Texas.
+[9:10] HiM: Yeah, okay.
+[9:11] HiM: Yeah, and then Apple Park and Mall of America.
+[9:15] HiM: So yeah, so this is super cool.
+[9:18] HiM: He's saying that stage one, so for stage one, they need 16 billion being invested between SpaceX and Tesla to do this and the life cycle of the project, think, hundred and
+[9:27] HiM: something billion.
+[9:29] HiM: Stage one is gonna employ 3,000 people in America, at least 3,000 plus people in America.
+[9:34] HiM: I think it's big news in the world of AI.
+[9:39] HiM: Andy.
+[9:40] AndyML: Yeah, no, it absolutely is.
+[9:44] AndyML: I I can't believe ten size ten times the size of Giga Texas.
+[9:48] HiM: I mean Giga Texas is as you can see, forty percent larger than the the Pentagon and more than three times the size of Apple Park.
+[9:58] HiM: It's enormous.
+[10:01] HiM: And th d have they chosen the real estate?
+[10:03] HiM: Do we know exactly where it's gonna be?
+[10:05] HiM: Yeah, I know they chose somewhere.
+[10:07] HiM: They picked a county in Texas.
+[10:09] HiM: I think I have it on here somewhere.
+[10:11] AndyML: So they picked...
+[10:12] AndyML: It's going to be in Grimes County near the college station in close to Giga, Texas.
+[10:19] AndyML: So you can see how it cuts across.
+[10:22] AndyML: I'll put that in the chat for you guys as well.
+[10:27] AndyML: All right.
+[10:28] AndyML: So yeah, so kind of like moving on super quickly.
+[10:33] AndyML: Down the block we have...
+[10:35] HiM: OpenAI, mean, Andy kind of like mentioned this a little bit.
+[10:38] HiM: So OpenAI put out this, so they ran the Black Hat event.
+[10:42] HiM: I Black Hat is again a security event.
+[10:45] HiM: And so two OpenAI employees did a presentation.
+[10:48] HiM: I mean, it's a long video, so I just, I wanted to share the link with you guys so you can watch it.
+[10:53] HiM: But I mean, I haven't fully watched it, but it's pretty scary, right?
+[10:57] HiM: mean, it's, OpenAI announced as well that they have started slowing down.
+[11:04] HiM: research, model research on the end because of this.
+[11:07] HiM: So I mean, the gist of it, and I'm not sure if you follow through, but the gist of this is that...
+[11:16] HiM: I think you've said they've looked at something like 70 billion or seven billions and like something in the order of magnitude of billion log items to try to figure out what's going
+[11:25] HiM: on because they don't even understand what's going on, right?
+[11:27] HiM: So apparently the model that hacked Hugging Face, they thought it had a sense of what it did, but they're just finding more things that they didn't know it did, right?
+[11:37] HiM: So one of the insights that came out this week was that the models are coordinating through...
+[11:44] HiM: The models found a way to sort of like coordinate amongst themselves.
+[11:48] HiM: So initially they were working with, using sort of like a message board that was part of the OpenAI's code factory.
+[11:57] HiM: So when the researchers found this, you know, as part of the HoganFace hack, they shut it down, but they didn't stop.
+[12:03] HiM: The models didn't stop, right?
+[12:04] HiM: They continued the hack.
+[12:05] HiM: They figured out ways to communicate by putting the name, by using the name of, by using file names.
+[12:11] HiM: So they would like create a folder.
+[12:13] HiM: and name the folder and then that's the way they communicate amongst themselves.
+[12:19] HiM: So yeah, so the guys at OpenAI are like pretty scared, shitless.
+[12:25] HiM: I mean, you follow the conversation on X, know, people are kind of like talking about how this is a classic thing people are afraid of, misaligned super intelligence, right?
+[12:37] HiM: It's not being, it's not being...
+[12:41] HiM: It's not being evil, right?
+[12:42] HiM: It's trying to achieve a simple goal you give it and it's just going to do it like in the most um shocking ways that you would never imagine.
+[12:51] HiM: yeah, so that's just, um yeah.
+[12:55] AndyML: it's interesting that that all of those models were essentially in the same sandbox and they were able to create folders that the other models could see.
+[13:03] AndyML: That seems like an oversight given just basic conversations about how enterprise AI is is happening.
+[13:10] AndyML: You know, we're we're gonna go over all of these different essentially security and steering mechanisms and it like sandboxing is just the barrier to entry.
+[13:22] AndyML: And so
+[13:24] AndyML: Yeah. AndyML: frontier plus models um working on training and they can talk to each other.
+[13:32] HiM: What could go wrong?
+[13:34] HiM: yeah, it's, I mean, I feel like these guys are super scared because they don't even understand like, because they're so autonomous.
+[13:41] HiM: And I think there's an article I also read last week or this week talking about the humans, humans aren't, humans can't do long horizon, right?
+[13:50] HiM: So very few humans sort of like can plan out their lives like a year ahead, right?
+[13:58] HiM: humans can't just leave.
+[14:00] HiM: And you yeah, you look for the job and then maybe you might have a dream and then you work.
+[14:04] HiM: um So the idea is if you have agents, mean, today agents can do hours of work.
+[14:11] HiM: mean, I think most of us like Frontier Fable and the rest of them are able to stay coherent for days.
+[14:16] HiM: But it's obvious that as they keep increasing, these models will be coherent for like months and probably years.
+[14:23] HiM: So part of the risk um is if you have models that have very long horizon, like they can last like
+[14:31] HiM: five years, right?
+[14:31] HiM: And it's strategic and humans can't think that far.
+[14:34] HiM: Humans can't coordinate and think that far and be well planned.
+[14:37] HiM: uh Yeah, people are like super scared, right?
+[14:40] HiM: Because it could have a plan that lasts like 20 or 30 years and like, you you wouldn't know, right?
+[14:46] HiM: You would be doing the things you think you're telling it to do, but it has a bigger plan and it's coordinating amongst like thousands of agents.
+[14:54] HiM: So yeah, so I think, yeah, we're kind of like entering into that sci-fi
+[15:01] HiM: place where people are, even though some people also are a bit doubtful.
+[15:03] HiM: Again, you talked about this last week that this might be conspiracy theory of the models just trying to get the government to help slow them down.
+[15:12] HiM: Someone likened this to what happened with mode bots.
+[15:15] HiM: Three months ago, do you remember the mode bots example where everybody's scared about that agents were talking to themselves on this message board?
+[15:22] HiM: And it ended up being being fake, that it was just humans prompting the agents.
+[15:27] HiM: Do you remember the mode bot story?
+[15:29] AndyML: You'll have to turn off your stream audio again.
+[15:32] AndyML: I I do remember them I I do remember the Moltbook story and it's funny they got bought.
+[15:41] AndyML: I mean it was a whole thing.
+[15:42] AndyML: But it's interesting that they used the same mechanism, right?
+[15:47] AndyML: The the enterprise models built a covert message board to coordinate attacks.
+[15:52] AndyML: And we introduced Moltbook to like the brand new ClaudeBot at the time, then OpenClaw.
+[15:58] AndyML: Yeah, you know, before we had any idea.
+[16:02] HiM: event, right?
+[16:03] HiM: Because those were open claws, right?
+[16:04] HiM: Yeah.
+[16:05] HiM: That was an open claw event.
+[16:07] AndyML: it wasn't official, right?
+[16:08] AndyML: It was someone from the outside built something for OpenClause to talk to.
+[16:11] HiM: Yeah.
+[16:12] HiM: Yeah.
+[16:13] HiM: Yeah. HiM: Yeah.
+[16:14] HiM: But I meant the point, the guy's point was like how we've moved on from that.
+[16:17] AndyML: Like that no one even remembers that.
+[16:18] AndyML: That's like, was, that wasn't, the guy was like, hey, this is going to be one of those things that like, oh, okay, cool.
+[16:25] AndyML: We didn't do X good.
+[16:27] AndyML: And then everybody moves on.
+[16:29] AndyML: oh So that happened.
+[16:32] AndyML: then Meta, Meta announced this week as well that uh their 1.1, which is kind like, wasn't a great model, but apparently the model also was hacking a bunch of
+[16:39] HiM: companies.
+[16:41] HiM: Interesting.
+[16:43] HiM: Okay, um so that's it from the model side.
+[16:47] HiM: From the security side, this week, Meta released Muse Spark 1.2.
+[16:56] HiM: It was an okay model.
+[16:58] HiM: It's not Frontier class.
+[16:59] HiM: If you guys remember um some of the regulars I described a few weeks ago that there are I classified frontiers into three
+[17:08] HiM: categories Frontier 1, which is the frontier that has not yet been released GPT-6, Fable 5.1 or Fable 6.
+[17:16] HiM: And then Frontier 2 are the ones we have today, Fable, Soul.
+[17:21] HiM: And then Frontier 3 are kind of like Opus 5, you know, and so on and so forth.
+[17:29] HiM: So I would say that the new meta model is Frontier 3.
+[17:33] HiM: It's not Fable class, it's not Soul class.
+[17:36] HiM: So you can see the models they're comparing it with.
+[17:39] HiM: Opus 5 Max, GPT 5.6 Tera.
+[17:43] HiM: Remember Tera is the one after Soul, 4.5 Grok.
+[17:48] HiM: So it's an OK model.
+[17:49] HiM: um It's not so like, world class.
+[17:53] HiM: um And another thing to note is that it's the cheapest model right now in the market.
+[17:58] HiM: It's cheaper than DeepSeek Flash, but it's also because they're putting it out there as, they're calling it uh Contributor.
+[18:06] HiM: if you are using the model, they're going to train with your data.
+[18:08] HiM: So, but it's cheaper than I think it's the impute tokens like something like 0.002.
+[18:14] HiM: I don't think it's on this particular tweet, but there's another tweet.
+[18:17] HiM: I think I'll put the link in for you guys.
+[18:19] HiM: it could still on fire.
+[18:23] HiM: Whose echo is it?
+[18:26] AndyML: Yeah, we fixed it.
+[18:27] HiM: Okay.
+[18:28] HiM: So I thought to you, to you had a pretty good, I thought you had the best sort of like breakdown of the model.
+[18:34] HiM: um It's not, again, it's not incredible, but it's, it's, it is valuable.
+[18:40] HiM: Yandy, let me go on through the models before you respond, because I am used to them.
+[18:43] AndyML: I've used my time.
+[18:46] AndyML: And this week as well, Quinn 3.8 Max showed up.
+[18:51] AndyML: um Again, all these links will be on the show notes that will be on the decks, deck on the website so you can
+[18:57] AndyML: all the links to all the things we're talking about.
+[18:59] HiM: yeah, but this is Queen 3.6 Max came out.
+[19:03] HiM: It is Frontier, you can call it Frontier Level 2 with my kind of like categorization.
+[19:08] HiM: um It is not yet uh Fable class.
+[19:12] HiM: It is a little bit under Kimi.
+[19:14] HiM: um You know, I mean, obviously there are some places it performs as good to Fable as the one on the right and then Soul is this.
+[19:21] HiM: So it performs on par with Soul a little bit.
+[19:23] HiM: um
+[19:24] HiM: But it's still in a lot of places, it's still sob.
+[19:28] HiM: It's still sob.
+[19:29] HiM: Fable and some Kimi 3.
+[19:33] HiM: The biggest news though, within the online community is Queen 3.8.27b.
+[19:41] HiM: Queen 3.7.
+[19:43] AndyML: think 3.7.27b is the biggest, is the most used open source model that runs on local hardware, right?
+[19:50] AndyML: And yeah, I don't know if you run any of it.
+[19:52] HiM: But apparently this is the most exciting model for people because it runs on like your small MacBooks, the Plantization is going to run on 16 and it's a pretty good model.
+[20:01] AndyML: Yeah.
+[20:02] AndyML: No, um at this point the performance of DeepSeek for Flash is just so good locally, it's hard to hard to turn down.
+[20:10] AndyML: I haven't needed if I've needed the intelligence, um I've just turned to cloud APIs.
+[20:15] AndyML: So I haven't loaded three point seven yet.
+[20:19] AndyML: But that's that's exciting.
+[20:21] HiM: Very capable model.
+[20:22] HiM: the new Deep Sea Kit?
+[20:23] HiM: The new one that just came out two weeks ago?
+[20:26] AndyML: So so in my Pi coding agent I have um the local model and the Novita hosted uh API model side by side.
+[20:37] AndyML: And I switched the Novita model to the official uh DeepSeek four flash, but I haven't downloaded the local version yet for DS4.
+[20:45] HiM: Mm-hmm.
+[20:47] HiM: Yeah.
+[20:48] HiM: I have it.
+[20:49] HiM: Obviously my goal for this model, as you guys know, I have them.
+[20:53] HiM: I have a 128 gig Mac that me and Andy won that and so we can run local models.
+[20:59] HiM: But I also got a Spark.
+[21:02] HiM: I got two Sparks.
+[21:03] HiM: And so my goal is to get to a place where I can run a chunk of my crumbs on-prem and we're not yet there.
+[21:11] HiM: I think right now the concurrency is to like eighths.
+[21:14] HiM: So there's still limited amount of things I can put on it.
+[21:19] HiM: Okay.
+[21:21] HiM: So another cool stuff, I was super excited about this model when I saw it.
+[21:24] HiM: So this model is from an American lab, it's Liquid.
+[21:28] HiM: Liquid 2.5, would say 2.6 B model.
+[21:34] HiM: It is likened to, I mean, it doesn't, so like it's.
+[21:39] HiM: small model, right? HiM: So it's competing with, 3.5, 9Bs, like competing with all the small models, right?
+[21:43] HiM: It's not competing with anything frontier.
+[21:47] HiM: But what is exciting about it is that the model was push trained on traces of Hermes agents.
+[21:55] HiM: And I think there's another one as well.
+[22:00] HiM: it was traces of Hermes and OpenCore.
+[22:03] HiM: And so what that means is that it's pretty good.
+[22:06] HiM: It's great at like,
+[22:08] HiM: being it can do two calls and conversation in any of this.
+[22:11] HiM: So if you're looking for like a super fast, cheap model that runs on your device, I think it runs on every everybody here I reckon has like an eight gig or 16 gig MacBook or like
+[22:22] HiM: Windows box or whatever box you have.
+[22:25] HiM: So it's super cheap and the quantizations, um the quantized versions can run on like pretty much um any device you have.
+[22:34] HiM: And so the model is pretty good.
+[22:35] HiM: So I have it, I tested it.
+[22:36] HiM: um I tested it.
+[22:38] HiM: Where did I put my thing?
+[22:40] HiM: I tested it and I had it.
+[22:42] HiM: I tried it.
+[22:44] HiM: I connected it to because I'm not when we talk about harness, this is a harness BB that a friend of mine put out.
+[22:51] HiM: So I tested it in here and it was pretty good.
+[22:53] HiM: It's not a model that writes code.
+[22:55] HiM: So I have it connected now on my agents on Telegram so I can kind of like use it.
+[23:02] HiM: It's pretty okay.
+[23:03] HiM: Let's see.
+[23:06] HiM: So it's pretty.
+[23:07] HiM: It's pretty cool which one I said again.
+[23:12] HiM: Yeah, yeah, I think this is it, right?
+[23:14] HiM: So this is it.
+[23:15] HiM: My knowledge cutoff is this Liquid Foundation model.
+[23:20] HiM: I think I had it do something.
+[23:21] HiM: What did I have it do?
+[23:25] HiM: There's something I had it do that it did it pretty good, right?
+[23:28] HiM: So yeah, so it works well.
+[23:30] HiM: So this is, plan to have it here.
+[23:32] HiM: So part of how I do my thing is I can pin it on.
+[23:34] HiM: So I can pin it model to this Telegram tab and I can use it.
+[23:37] HiM: So I plan to do that.
+[23:38] HiM: So think you guys should definitely check it out.
+[23:43] HiM: Um, so, um, so that is that another thing I wanted to talk about.
+[23:48] HiM: And so, yeah, so I have it in this harness.
+[23:49] HiM: This is super cool harness.
+[23:50] HiM: I think you guys should check it out.
+[23:53] HiM: it's similar to, I actually just started learning about harnesses that do this.
+[23:59] HiM: I didn't know that there are harnesses that could do this.
+[24:02] HiM: Um, but I think this might be, this might be, um, similar to what,
+[24:09] HiM: what Val is doing with them.
+[24:10] HiM: mean, not Val is doing it with like general harnesses, but what Val is doing in OpenCovn where you have a meta harness that can load other harnesses.
+[24:18] HiM: So this harness uh BB is, I'm not sure how the guy came up with the name, but you can call other harnesses from here.
+[24:28] HiM: So I can call Codex or Codecode or Pi or Cursor or OpenCode or Grok or Hermes from in here.
+[24:39] HiM: So it's pretty cool.
+[24:41] HiM: You should check it out.
+[24:44] AndyML: Looks powerful. HiM: Looks like a convenient convenient place.
+[24:48] HiM: Yes. HiM: So yes, I wanted to mention that.
+[24:52] HiM: And then, I mean, I remember you wanted to talk about this.
+[24:56] HiM: Did you check this out yourself?
+[24:59] AndyML: no, I f what I found interesting about it was that
+[25:05] AndyML: Prime Agent um so this is a Python harness that its only tool is a lifelong um Python session.
+[25:14] AndyML: And so rather than using bash to execute your whole s you know on your whole system, it's doing stuff right in Python.
+[25:22] AndyML: And they found that it performed better on the Arc AGI 3 um than even the human expert baseline, which you know.
+[25:34] AndyML: I th I think you can call it.
+[25:35] AndyML: I think AGI's here.
+[25:37] AndyML: It's all about the harness at this point and less about the model's intelligence.
+[25:42] AndyML: That's what I thought was interesting about it.
+[25:44] HiM: It's like it's a clever approach.
+[25:46] HiM: Um, I think it runs in Go.
+[25:51] AndyML: And it uses Python.
+[25:52] HiM: Anyway, I was impressed.
+[25:54] HiM: installed it though.
+[25:56] HiM: So if you see, I installed it.
+[25:59] HiM: But I mean, it looks like every other harness, right?
+[26:01] HiM: mean, it doesn't, it looks like every other harness.
+[26:04] HiM: So I guess it depends on what you use it for.
+[26:09] HiM: Prime SSH Enterprise.
+[26:15] HiM: So yeah, it doesn't look any different, right?
+[26:17] HiM: It just looks like a regular kind of like thing.
+[26:21] HiM: m So yeah, so I haven't tested it, so I don't know m what it would do.
+[26:26] HiM: But yeah, again, it allows me, can see this is the 2.5 model I showed.
+[26:30] HiM: So you can load up any harness or any model you want.
+[26:33] HiM: um So it's pretty cool, but I haven't tried it yet.
+[26:37] HiM: So I don't have that much insight about it.
+[26:40] HiM: One thing I did find interesting about it,
+[26:43] HiM: was that, I mean, they announced that they hit RKGI 95.5.
+[26:47] HiM: And then I haven't used this far enough, but I've heard about it.
+[26:50] HiM: don't know if you have heard about it.
+[26:53] HiM: So OMP, don't know if anybody, okay.
+[26:59] AndyML: I don't know if you.
+[27:01] HiM: I don't know if anybody on the chat has heard about it, but I don't know.
+[27:06] HiM: I think this guy is a contributor or whatever to the project, but he also showed up and was like, Ohm actually did better than Prime Intellect.
+[27:14] HiM: So this is yesterday.
+[27:17] HiM: So you can see Prime Intellect is 95.5 and Ohm is 97.4.
+[27:22] HiM: So man, they saturated the benchmark.
+[27:25] AndyML: Yeah.
+[27:26] AndyML: That's hot.
+[27:28] HiM: So I I believe I b I I I believe uh ump is is like a like a swarm sort of mechanism.
+[27:36] HiM: Yeah, I haven't done study yet.
+[27:38] HiM: haven't checked it out, but...
+[27:40] AndyML: not. AndyML: No it's not.
+[27:42] AndyML: It's a it's an IDE that has sort of Pi pie coding agent built in.
+[27:47] HiM: Yeah. HiM: Prime Intellect is also Pi.
+[27:49] HiM: So I mean, OpenClaw is Pi.
+[27:50] HiM: So Pi is becoming like the actual Linus.
+[27:53] HiM: It's becoming the grandfather of a lot of all these coding agents.
+[27:59] AndyML: Okay, cool.
+[28:00] AndyML: I mean, funny thing is, mean, between yesterday and today, I probably have installed like five harnesses.
+[28:03] AndyML: So I installed T3 code, I installed Prime Intellect, I installed BB.
+[28:09] AndyML: There are just so many now, man, right?
+[28:11] AndyML: Obviously, Meta also came out with their own
+[28:14] HiM: Harness called meta and Muse code.
+[28:17] HiM: So yes, everybody's gonna release a harness.
+[28:19] HiM: It's gonna be like like models everybody There's they're gonna be hundreds of them um Okay, and then very quick wrap up for the harness section YC release their own kind like
+[28:29] HiM: work harness. HiM: It's like open call but for teams So it's called uh QM So you should definitely check it out link could be in the show notes Cloudflare also released their own harness called
+[28:41] HiM: cloudflare OS and again
+[28:44] HiM: you know, company harness for doing work.
+[28:47] HiM: And funny enough, I mean, I'm starting to get validation and this is what I'm building with Entity.
+[28:51] HiM: So Entity is sort of like the stack work harness for doing work that I've been using since January.
+[28:56] HiM: yeah, so companies are starting to like versions of it now for their teams.
+[29:01] HiM: um Yeah, I think that's it on harness Andy.
+[29:05] HiM: And em I believe that's it for me.
+[29:09] AndyML: Do do you wanna um mention weather next?
+[29:13] HiM: yes, so let me talk about WeddingX.
+[29:15] HiM: I I put it in bonus because I mean, the funny thing with, yeah, mean, the thing with a lot of the things I talk about here is I know about them during the week because they're top
+[29:28] AndyML: of mind on X.
+[29:29] AndyML: But WeddingX is again, one of the topics that we're talking about today that I showed up, that show up on my X-Reader.
+[29:34] AndyML: Apparently what's happening there is that apparently cyclones are one of the hardest.
+[29:40] HiM: It's like weather events to predict.
+[29:42] HiM: And obviously it's a very catastrophic thing that can happen, that happens.
+[29:47] HiM: And so the DeepMind researchers have come up with a model that is able to add an extra 24 hours to the ability for our ability to predict cyclones.
+[29:59] HiM: So now we can predict cyclones three days ahead.
+[30:01] HiM: think, um I believe from what I read, it used to be two days max.
+[30:06] HiM: Andy, correct me if I'm wrong.
+[30:08] HiM: um
+[30:10] HiM: Yeah, now they can predict it like three days ahead, which again, anytime you can, anytime you can add to this things ahead of times, you save lives, right?
+[30:18] HiM: You save lives and property.
+[30:20] AndyML: So that's super cool.
+[30:22] AndyML: Yeah. AndyML: No, that's that's exciting.
+[30:24] AndyML: I mean
+[30:27] AndyML: There's so many people that that think AI and it's absurd at this point, but still that think AI just isn't relevant, that it's not going to go anywhere.
+[30:34] AndyML: And and I I'm still blown away when I have those conversations.
+[30:38] AndyML: But when you hand them a model like this, um, you know, we're talking about infrastructure, but a day of warning before a cyclone, um, with the weights under GitHub,
+[30:48] AndyML: uh, and you know, NOAA and Colorado and the the Met office on the author list, that's it's like a whole segment.
+[30:56] AndyML: I don't know.
+[30:57] AndyML: Be cool.
+[30:58] HiM: Yeah, I mean, so we're starting to get to life changing events with this model, right?
+[31:02] HiM: This models are, yeah, this could save hundreds and thousands of lives.
+[31:06] HiM: So this is cool.
+[31:08] AndyML: Yeah, definitely.
+[31:11] AndyML: Well, uh let me share this thing here.
+[31:19] AndyML: So um that's a good handoff.
+[31:22] AndyML: Uh the the same week that Ensemble went open, two other teams shipped the agent version of the same sort of idea, right?
+[31:32] AndyML: Two repos dropped this week that are essentially the same product from two different starting points and neither's a model.
+[31:38] AndyML: You know, you mentioned Cloudflare, Cloud for OS.
+[31:46] AndyML: Forty two hundred stars, three hundred forks.
+[31:48] AndyML: Um, it's three pieces.
+[31:50] AndyML: There's a workspace with persistent files, state, output, isolated code execution, workflows that run on demand or schedule, from connected systems.
+[31:59] AndyML: There's an app layer where every use case becomes a you know real full stack app with its own database.
+[32:05] AndyML: And you can share it live or hand it to a coworker as a blueprint with none of your data, um, you know, history, credentials, connections, etc.
+[32:13] AndyML: And then sitting between those two is a gatekeeper.
+[32:16] AndyML: Um, so every agent starts with no access, credentials never live inside generated code, and the gatekeeper hands out narrow typed capabilities.
+[32:26] AndyML: It records which resources the agent actually looks at, constrains what it can pass downstream, and mediates um every side effect on the way out.
+[32:37] AndyML: So the honest part.
+[32:40] AndyML: Cloudflare says every employee got version one in May and thousands of people across the country use it daily.
+[32:46] AndyML: Um that's their number, but the V2 readme says early access had rough edges.
+[32:52] AndyML: That's fine. AndyML: Um we're not, you know, pitching on adoption, but it the shape is default deny.
+[33:00] AndyML: Credentials outside the code, typed capability, and a log of what got touched.
+[33:04] AndyML: You know, this is an enterprise harness.
+[33:07] AndyML: Um now put that next to far.ai.
+[33:09] AndyML: uh
+[33:10] AndyML: Um, red team leaderboard that came out this week because it lands to the same conclusion um from the opposite end.
+[33:17] AndyML: Uh FARDA AI reports the cost of a universal jailbreak swinging um by something like 170 times across frontier models.
+[33:29] AndyML: So $58 on the cheap end for GROK 4.5, north of $14,000 for the same attack against Fable Five.
+[33:37] AndyML: Um
+[33:38] AndyML: Their numbers, their methodology, it's color, but if the model you're standing on can vary by two orders of magnitude on how hard it is to break, then the model isn't really the
+[33:49] AndyML: thing that you control.
+[33:50] AndyML: The boundary is.
+[33:52] AndyML: the second repo, which does kind of the same thing, different surface.
+[33:56] AndyML: Y Combinator pushed QM, as you mentioned, July twenty ninth.
+[34:01] AndyML: The latest push was August first, multiplayer uh agent harness for Slack and the web.
+[34:08] AndyML: Memory, files, keychain views, permissions, crons, web apps, durable sandboxes, all scoped per person and per room.
+[34:17] AndyML: So you can have um these sandboxes that apply only to you, and you can share one within a team in a room.
+[34:24] AndyML: So that's a distinction that um agent products haven't bothered to make at this point.
+[34:31] AndyML: Um I I've seen implementations.
+[34:32] AndyML: We have a um regular attendee of the Weekly Claw that
+[34:38] AndyML: um has built a whole ecosystem around OpenClaw in Slack, separating um rooms.
+[34:45] AndyML: I don't know that the, you know, we don't have sandboxes per per person and per room in that implementation, but um this idea of context, um, you know, being separated per user,
+[34:57] AndyML: I mean that's just enterprise enterprise agent stack.
+[35:01] AndyML: Um so this gives you one runtime, it lets you run any harness.
+[35:04] AndyML: So
+[35:05] AndyML: You can put pi under it, open code, codec, claude code, swap the engine, keep the same governance.
+[35:11] AndyML: Um, but the part I'd point out really is the security posture.
+[35:16] AndyML: And there's three named modes: there's strict, auto, and dangerous.
+[35:21] AndyML: And even under dangerous, the YC combinator runtime hard denies destructive operations, which is a policy enforced below the model instead of politely requested in the prompt.
+[35:33] AndyML: YC says they run it internally.
+[35:36] AndyML: ah we can't say that it's battle tested, but the README is a receipt for the design, not the deployment.
+[35:42] AndyML: Um, I put these side by side because Cloudflare is a public company building this for thousands of its own employees.
+[35:49] AndyML: YC is an accelerator publishing a repo that's relatively new.
+[35:52] AndyML: They don't have a whole lot in common, and there's no real reason for them to converge, but they landed on the same three answers: default deny, scope the memory.
+[36:02] AndyML: put a kill switch underneath the model.
+[36:04] AndyML: So two teams uh who aren't talking to each other build the same thing in the same week.
+[36:11] AndyML: That's a segment.
+[36:14] HiM: you
+[36:18] AndyML: Okay.
+[36:20] AndyML: For the signal for the from the outside today, I'd like to talk to you about the agent AI uh summit at UC Berkeley.
+[36:31] AndyML: Which we only have one slide for.
+[36:33] AndyML: Okay.
+[36:34] AndyML: Um it's forty hours long.
+[36:38] AndyML: I did not watch the whole thing.
+[36:40] AndyML: Um what I did was I think what any one of us would do, take the transcript of the entire thing and mine it for gold nuggets, using using models.
+[36:53] AndyML: I used Sonnet and Opus V and just started looking for uh
+[37:00] AndyML: you know, what are the takeaways that are going to help builders?
+[37:04] AndyML: And I wasn't looking for predictions about where agents are going or evidence of what they've already produced.
+[37:11] AndyML: Um I I took the output and I checked it against the slides because the auto captions were somewhat creative.
+[37:20] AndyML: And um here's what came out of it.
+[37:24] AndyML: the framing came from the guy who opened the developer track, an MIT materials scientist.
+[37:30] AndyML: and I'm fairly confident it it was Marcus Bueller.
+[37:33] AndyML: His take-home slide was one sentence I keep coming back to.
+[37:37] AndyML: AI for biology and material science is quote, moving from retrieving knowledge to autonomous discovery and knowledge creation.
+[37:45] AndyML: Um, from retrieval to creation.
+[37:48] AndyML: He drew it as a fire to fusion um relationship.
+[37:54] AndyML: On one side, data model, prediction.
+[37:57] AndyML: The thing we've had for years on the other hypothesis, exploration, revision, and new principle.
+[38:02] AndyML: It's a big claim, and normally that's where a conference talk would leave it as aspirational.
+[38:07] AndyML: But 25 minutes later, on the same stage, somebody cached it.
+[38:12] AndyML: The the next talk is built on a project called Paper to Agent.
+[38:16] AndyML: The idea is you turn a research paper into an agent.
+[38:19] AndyML: The paper stops being a PDF that you read and becomes something that you can query and run.
+[38:24] AndyML: It's a neat trick.
+[38:26] AndyML: Um, but then he does the thing that makes you think twice.
+[38:29] AndyML: He takes two of these paper agents and points them at each other.
+[38:33] AndyML: Um, one is built on alpha genome, DeepMind's uh genomics model, and the other is built on an ADHD genome wide association study, and he let them collaborate.
+[38:46] AndyML: They start with 209 candidate genetic variants, which is the haystack, and the agent narrows it to one, the needle.
+[38:54] AndyML: And they don't just flag it, they propose the mechanism.
+[38:58] AndyML: It alters splicing on a particular gene in a particular class of neurons, which changes how the gene gets expressed, which is a plausible causal pathway for ADHD risk.
+[39:09] AndyML: The slide title is Agent Agent Collaboration Equals New Discoveries.
+[39:14] AndyML: And the the figure on it was generated by the agents, which was pretty cool.
+[39:19] AndyML: You should definitely check it out.
+[39:21] AndyML: Um
+[39:23] AndyML: I'm not a geneticist and I can't tell you how big that finding is in their field.
+[39:28] AndyML: what I can tell you is what category it's in.
+[39:31] AndyML: And it's not an agent retrieval, you know, fact retrieval thing.
+[39:36] AndyML: This is two agents talking to each other and coming out the other side with a claim that wasn't in either paper.
+[39:41] AndyML: Um so there you have the receipts.
+[39:48] AndyML: That's the ceiling, and then there's the floor.
+[39:50] AndyML: How good are these things actually getting and can you measure them?
+[39:53] AndyML: Well, Silas Alberti from Cognition, uh, the Devon people, they also picked up Windsurf, showed a chart from one of their reinforcement learning runs.
+[40:02] AndyML: Uh internal set of verifiable software engineering tasks, solve rate plotted against training step, and it starts at 52.4% and ends at 68.7.
+[40:13] AndyML: And what does that even mean?
+[40:14] AndyML: But it's a shape that's interesting.
+[40:16] AndyML: The curve.
+[40:18] AndyML: Climbs to 60% and then just sits there flat, wobbling, like for a long stretch in the middle of the run.
+[40:25] AndyML: And if you were watching it live, you'd think it it had hit a wall.
+[40:29] AndyML: And then late in the run, it breaks and climbs to 68.7.
+[40:33] AndyML: Alberti mentions that as training goes in, the model starts choosing to think for longer on its own.
+[40:39] AndyML: Nobody told it to, it just chose that.
+[40:41] AndyML: Um then there was a talk on finance.
+[40:46] AndyML: I don't have the presenter's name.
+[40:48] AndyML: uh the the the way the YouTube videos are organized, um, it's kind of a lot.
+[40:52] AndyML: But she's doing tool calling and fine-tuning over a million finance QA pairs and evaluates them against a benchmark called secq, which is built out of the questions analysts
+[41:05] AndyML: actually ask digging through SEC filings.
+[41:08] AndyML: Her best recipe took Quen3 14B, uh, brought it up eleven percentage points and uh
+[41:16] AndyML: I had this wrong initially, so I want to be accurate.
+[41:18] AndyML: Percentage points, not percents.
+[41:20] AndyML: So 59.7 to 70.7.
+[41:24] AndyML: Um, so that's fine tuning, you know, being very effective.
+[41:31] AndyML: But the number I'd want to put in front of anyone running agents in production is the third one on her slide.
+[41:37] AndyML: 25% fewer output tokens.
+[41:40] AndyML: So not only did the model that was fine tuned perform, you know, 20% better.
+[41:46] AndyML: It did so with 25% fewer tokens, 1815 down to 1613.
+[41:53] AndyML: So accuracy was unchanged, same answer, a quarter of the quarter less spend.
+[41:58] AndyML: So 75% spend.
+[41:59] AndyML: Um, and of course, that brings us to what matters most for us.
+[42:03] AndyML: This this guy from AMD, uh, Māti, and I only know his first name because he introduced himself um to his own agent during the live demo.
+[42:12] AndyML: He ran a workshop on hybrid routing and his setup.
+[42:16] AndyML: argument is that mixture of experts um implemented so that a gate wakes one specialist instead of a whole network.
+[42:24] AndyML: And it's probably the right instinct.
+[42:26] AndyML: Um but on his side he says it all lives inside one model.
+[42:31] AndyML: So his move is to take the routing idea out of the model and apply it between the models, a local one on the box in front of you, a frontier one in the cloud.
+[42:40] AndyML: And his line is not every token deserves the best frontier model out there.
+[42:44] AndyML: And that makes a lot of sense.
+[42:46] AndyML: Um, the runtime he does is in open claw.
+[42:50] AndyML: So AMD on a Berkeley stage using OpenClaw's reference architecture is kind of cool.
+[42:55] AndyML: He stops mid-talk to explain to the room what it is and mentions the founder is in the building, which hi Peter.
+[43:04] AndyML: He describes an agent as a workspace plus a few markdown files and shows four ways to route inside it.
+[43:10] AndyML: Uh two, you drive by hand, and two, the system runs for you.
+[43:13] AndyML: Um but
+[43:14] AndyML: The demo that stuck with me was two agents side by side.
+[43:18] AndyML: Same prompt to both.
+[43:20] AndyML: Read this financial CSV, same underlying capabilities.
+[43:24] AndyML: The cloud agent has file system and runtime tools denied by the config, and the local one doesn't.
+[43:30] AndyML: Well, the cloud agent refuses.
+[43:32] AndyML: Um, the wording on his slide is exact.
+[43:34] AndyML: It won't read the file, not because it can't, but because the policy says it shouldn't.
+[43:38] AndyML: Same task, same capability, different boundary.
+[43:42] AndyML: One produces nothing and one produces a report.
+[43:46] AndyML: So that's the connection I didn't really expect.
+[43:49] AndyML: We spend enormous energy asking how capable these things are getting.
+[43:53] AndyML: And the cognition curve and the sec queue numbers say steadily, measurably more capable.
+[43:59] AndyML: But Moddy's demo is the reminder that capability is an output.
+[44:04] AndyML: What an agent actually produces is downstream of the boundary you draw around it.
+[44:09] AndyML: And if you're running any of this yourself, you
+[44:12] AndyML: Are the person drawing that boundary in a text file, probably at 11 o'clock at night or later?
+[44:18] AndyML: Um, but the other thing that's interesting is on method.
+[44:23] AndyML: and I said I would come back to it.
+[44:24] AndyML: I checked five of these agents, five of these claims against the actual slides because I was just using the transcript.
+[44:31] AndyML: One of the captions had um the slide pretty much perfect.
+[44:37] AndyML: One AndyML: was much richer than the transcript suggested and one was just wrong coming out of the analysis.
+[44:43] AndyML: two of the model names had turned out to be garbled audio.
+[44:45] AndyML: Um so the real difference between you know mining a transcript of a YouTube video and attending an event and paying close attention is is real.
+[44:58] AndyML: Um I would say 40 hours of a conference versus you know two hours of research.
+[45:05] AndyML: Um but that's the honest scope.
+[45:07] AndyML: So AndyML: If you were there and I missed a thing that you would have led with, tell me, I'd rather hear it, um, I think than than keep mining.
+[45:20] AndyML: Uh this episode is brought to you by Heritage Telecom, trusted phone systems from trusted people.
+[45:26] AndyML: Heritage designs and supports the whole communication stack for your business, dependable phones, failover, reporting, and practical AI that turns calls into action.
+[45:35] AndyML: One accountable provider who actually answers.
+[45:37] AndyML: Start with the problem, not the product list at heritagetel.com.
+[45:42] AndyML: Um, Henry, what do you say we call it here?
+[45:47] AndyML: I don't know that we need to.
+[45:50] AndyML: beat the um the hot takes um in in favor of the clock.
+[45:57] AndyML: Any objections?
+[46:05] AndyML: Um, an independent reproduction of the weather next lead time result on actual storms.
+[46:11] AndyML: we've got the data from twenty twenty three to twenty twenty five, so you know, we could we could probably see that.
+[46:19] AndyML: Uh let me share our slides here.
+[46:24] AndyML: Sorry guys, I don't multitask as well as probably need to.
+[46:31] HiM: Thank you, John B. HiM: Appreciate it.
+[46:35] AndyML: Yeah.
+[46:36] AndyML: Uh so the question is whether they'll, you know, whether that extra day will will really hold on storm classes that the paper didn't cover.
+[46:44] AndyML: Um, I'd like to see Prime Agent's next disclosure.
+[46:48] AndyML: Um, interesting to see this other model as well.
+[46:51] AndyML: If Refine learned one exploit, nothing structurally stops it from learning three.
+[46:57] AndyML: Uh the next thing I'd want to see isn't the next failure.
+[46:59] AndyML: It would be a rollback story once an exploit is sitting in a persistent skill set.
+[47:05] AndyML: Um three production report on Cloudflare OS or QM.
+[47:10] AndyML: that's not from the lab that posted it, maybe an independent team's first week.
+[47:14] AndyML: That would be um really interesting to see.
+[47:17] AndyML: And a bonus thing I'll be watching for all quarter, whether hardwired silicon shows up in anybody's routing config.
+[47:23] AndyML: Um, if the model is the commodity and the boundary is the product, then baking a specific model into a chip is either the smartest bet of the year or the most expensive way to be
+[47:32] AndyML: wrong.
+[47:33] AndyML: So
+[47:34] AndyML: We'll see. AndyML: But everything from tonight, sources link, the Berkeley research notes, archived at Weekly Clauda AI.
+[47:41] AndyML: Um, full episodes and highlights on YouTube and clips and takes we'll we'll be putting on X.
+[47:47] AndyML: We're back next Friday, August 14th, 4 p.m.
+[47:50] AndyML: Eastern. AndyML: And um, you know, uh Elton, you're not the only one suggesting we move the show.
+[47:56] AndyML: So seriously, uh anyone watching this, if they'd like to participate live and the time isn't convenient.
+[48:03] AndyML: Go to the website and submit some feedback to us.
+[48:06] AndyML: We're we're really interested in making a show that people want to watch and want to participate in live.
+[48:12] AndyML: So uh with that, I'll close the show.
+[48:16] AndyML: Thank you so much for your time and enjoy your weekend.
+[48:20] HiM: Have good weekend, guys.
+[48:22] AndyML: Thanks everyone.

@@ -1,0 +1,4636 @@
+{
+  "schemaVersion": 1,
+  "week": 31,
+  "videoId": "YCgg0TtGYu0",
+  "captionSourceUrl": "https://www.youtube.com/watch?v=YCgg0TtGYu0",
+  "captionSourceHash": "837e8d786a3aead8a7d679aab40ff529575ecc9322f4adb977f6644d5ccd66f1",
+  "sourceTranscriptHash": "6df9f69ed4f116eb01b9f9bdd64f731ac0a92f2199829d147f4f0d5493f09953",
+  "timebaseOffsetSeconds": -4,
+  "speakerSource": "Named Riverside speaker alignment against the published caption export",
+  "speakers": [
+    {
+      "id": "andy",
+      "displayName": "Andy"
+    },
+    {
+      "id": "henry",
+      "displayName": "Henry"
+    },
+    {
+      "id": "pritam",
+      "displayName": "Pritam"
+    }
+  ],
+  "annotations": [
+    {
+      "segmentId": "e31-00000-01",
+      "speakerId": "andy",
+      "textHash": "a386908e3024f35e0543edbf13e8055d700d91c1d9c131857614c1fecaa940af"
+    },
+    {
+      "segmentId": "e31-00002-01",
+      "speakerId": "andy",
+      "textHash": "90531c8ec49b997ad8ada5bf310369f8d77552b0026f5763c49617beca99f39b"
+    },
+    {
+      "segmentId": "e31-00007-01",
+      "speakerId": "andy",
+      "textHash": "55da969f9b8501e5421944a3cc6e12cf20ecc5af9b9cf5b68cddf5d37cc2ffbd"
+    },
+    {
+      "segmentId": "e31-00013-01",
+      "speakerId": "andy",
+      "textHash": "885f686db5295b23ebbe395b7916ee1064ae99b035c48162407d7944bc9694ee"
+    },
+    {
+      "segmentId": "e31-00016-01",
+      "speakerId": "andy",
+      "textHash": "8b30b0c3e6f5e5830af6b1ca2dfc64e394b9bbabdd21b2736241808e808d7a5a"
+    },
+    {
+      "segmentId": "e31-00019-01",
+      "speakerId": "andy",
+      "textHash": "b326a1e2bfe9cb4c93a41bf33b2c4c8223f73b31deb3f4b5c751b58eb42f06e3"
+    },
+    {
+      "segmentId": "e31-00022-01",
+      "speakerId": "andy",
+      "textHash": "36aef019251cea2c7115564ab59d99035e22e65458d7f47344918c312fee283c"
+    },
+    {
+      "segmentId": "e31-00024-01",
+      "speakerId": "andy",
+      "textHash": "14a01c057dfb07995ec1a87505c898cdec3f696703cd4b8995e76f06971fbed3"
+    },
+    {
+      "segmentId": "e31-00031-01",
+      "speakerId": "andy",
+      "textHash": "30698f162191177343a6e1d28451dfc51ba3980b1149688eeac3533b658b79f5"
+    },
+    {
+      "segmentId": "e31-00034-01",
+      "speakerId": "andy",
+      "textHash": "35fcb230f4a7e511074fea7ca87076af43f8745185afae1847835d8c29f981fc"
+    },
+    {
+      "segmentId": "e31-00038-01",
+      "speakerId": "andy",
+      "textHash": "b54a2bebdbf0c2872a2fdb9732888f9151653e6697c5700635d42f6b7e8f194c"
+    },
+    {
+      "segmentId": "e31-00041-01",
+      "speakerId": "henry",
+      "textHash": "45a1ba2f1a39d8ab39cb5695056799a6dd5742416376630309b49eebc0b7c6bd"
+    },
+    {
+      "segmentId": "e31-00042-01",
+      "speakerId": "henry",
+      "textHash": "f07295d5dd5d3efa3dd956180f94c2ef730924c3016aad0593444a7c45672d80"
+    },
+    {
+      "segmentId": "e31-00044-01",
+      "speakerId": "henry",
+      "textHash": "bfd57e1d1aab9a0140f8fde46dd9106a23612d4b64d6a83de1e4d34b3e6b2466"
+    },
+    {
+      "segmentId": "e31-00046-01",
+      "speakerId": "henry",
+      "textHash": "800185b04899f12d6614f7888b125c899f56ba3f238ec33cb824a592dc0e8822"
+    },
+    {
+      "segmentId": "e31-00049-01",
+      "speakerId": "henry",
+      "textHash": "767528aa5ff9f4cdfc9a4646e81d6a5929329d21fbad5775b658cce81996816d"
+    },
+    {
+      "segmentId": "e31-00051-01",
+      "speakerId": "henry",
+      "textHash": "d874f42cd35383cbfdc7cf8c93d1a3ed78e3cd015bb7b15a3df23c4e96f34e47"
+    },
+    {
+      "segmentId": "e31-00055-01",
+      "speakerId": "henry",
+      "textHash": "783396cdcb524481e4ca75a5fda32b248f41fb68157326e2f0f0e640bcf4bf1b"
+    },
+    {
+      "segmentId": "e31-00061-01",
+      "speakerId": "henry",
+      "textHash": "dc922a71c8f5f68fdce40140c6aa621f0fac369afc43bfa0cddda94645bd9003"
+    },
+    {
+      "segmentId": "e31-00064-01",
+      "speakerId": "henry",
+      "textHash": "c2270947f7b741393bfd138c0fb6a8dc88856f68ad045c403e2eba9f35b144b3"
+    },
+    {
+      "segmentId": "e31-00067-01",
+      "speakerId": "henry",
+      "textHash": "6d5d97eca3e8789c52ccb902520b97dd3fc89fe07a60983bb60ae274533b8951"
+    },
+    {
+      "segmentId": "e31-00070-01",
+      "speakerId": "henry",
+      "textHash": "d2015ae249406dbb4a98bb613661bc472b2adc271645c8480c6c92f9f1feb6ce"
+    },
+    {
+      "segmentId": "e31-00070-02",
+      "speakerId": "henry",
+      "textHash": "c1edf21a126f633d115e6258d6d06a793a31e579a8f6d05be0e34be63e0492a9"
+    },
+    {
+      "segmentId": "e31-00073-01",
+      "speakerId": "henry",
+      "textHash": "7dad8583c02396c51479c1fd8fa057212c4f55b235dc7a217cd0daaca0ca5e12"
+    },
+    {
+      "segmentId": "e31-00074-01",
+      "speakerId": "henry",
+      "textHash": "daee0700df6ce617626854dcd5efebd2ec4881038785da1be7c51a6f0f76bec4"
+    },
+    {
+      "segmentId": "e31-00075-01",
+      "speakerId": "henry",
+      "textHash": "71b081f64966717eb5004bd135d93de7c7671821965b66aab908cc50bab268e3"
+    },
+    {
+      "segmentId": "e31-00078-01",
+      "speakerId": "henry",
+      "textHash": "d00ac3c51bee64fd1b70bb38bb643813ceae78ea5fda5ea433d56bc70f55e209"
+    },
+    {
+      "segmentId": "e31-00080-01",
+      "speakerId": "henry",
+      "textHash": "4abd58592a437ce043cbb6bd90628769f75b9d6d85bb82067ad3c70820bf94cb"
+    },
+    {
+      "segmentId": "e31-00083-01",
+      "speakerId": "andy",
+      "textHash": "9b5c527a57836b735e3053a2fc4eddffe7180d106ffc472ad99906b90c9c16a8"
+    },
+    {
+      "segmentId": "e31-00094-01",
+      "speakerId": "andy",
+      "textHash": "e850d83af277e0a8d6b01ad67e042d88a3326d6318676336934f3516e8994c95"
+    },
+    {
+      "segmentId": "e31-00105-01",
+      "speakerId": "andy",
+      "textHash": "24237b9a8d4745fa3968385e1101e7f47b17d3ce75755e8ecb1b224fedeed2c3"
+    },
+    {
+      "segmentId": "e31-00117-01",
+      "speakerId": "andy",
+      "textHash": "c96fa2556d1d985a4373c4aadba23dde0444fb70a2d4d9ac8dc8cc2b33282564"
+    },
+    {
+      "segmentId": "e31-00125-01",
+      "speakerId": "andy",
+      "textHash": "2edb3324d60a2310a3d07709f65c94a8a98281e226909e4db7902b5b18c8c6b3"
+    },
+    {
+      "segmentId": "e31-00132-01",
+      "speakerId": "andy",
+      "textHash": "68a2a95f463f1e8f1bf9b510893d2ada7608fe6332a5e802c1b1f05181e730fc"
+    },
+    {
+      "segmentId": "e31-00134-01",
+      "speakerId": "andy",
+      "textHash": "5af5483a43476c5f445f4920fbbb1c72602786c9bc267c48cfb25b72851bd54e"
+    },
+    {
+      "segmentId": "e31-00142-01",
+      "speakerId": "andy",
+      "textHash": "4c2d59b4afe5d2bb296b9f3e022892c4f4394c3ff76fa54b1a9ea6ecd62f6ab3"
+    },
+    {
+      "segmentId": "e31-00146-01",
+      "speakerId": "andy",
+      "textHash": "2f73a30d8330e00390f7d2bef4def965e8fca1e5d228bec0e17dba2e568c7150"
+    },
+    {
+      "segmentId": "e31-00150-01",
+      "speakerId": "andy",
+      "textHash": "093e9dd62ac583c4b43d807d6fc046f3e5279a45b45d0ec4c860006689b82370"
+    },
+    {
+      "segmentId": "e31-00153-01",
+      "speakerId": "andy",
+      "textHash": "e5786b49e49ba929cc417575746eb3f9d981a838503285c506b2a56c0685e04c"
+    },
+    {
+      "segmentId": "e31-00154-01",
+      "speakerId": "andy",
+      "textHash": "b0eb9f63b3391ddea03371e8f7ead5c50e24656ba90addd34929c47b04ed029e"
+    },
+    {
+      "segmentId": "e31-00156-01",
+      "speakerId": "andy",
+      "textHash": "fe7aaf6f19026bf381a5bbeb200c1b002ed3011da8383e4a0a8f338f3c9cf4d9"
+    },
+    {
+      "segmentId": "e31-00159-01",
+      "speakerId": "andy",
+      "textHash": "2802cab01dd4521991b78219a25a1027719d40760ab2fa2f281c33af601c9d3d"
+    },
+    {
+      "segmentId": "e31-00162-01",
+      "speakerId": "henry",
+      "textHash": "334bd618195cc5712a704b88efdffe8b128ea370c53a4b323dd5196175348a4e"
+    },
+    {
+      "segmentId": "e31-00164-01",
+      "speakerId": "henry",
+      "textHash": "e93dfc11c68bb6e5713dc206101068f4663e35c8fa48a2452e2a8f7d9982161e"
+    },
+    {
+      "segmentId": "e31-00167-01",
+      "speakerId": "henry",
+      "textHash": "9f5215fd069440ec4fbda0d1b2ddd20dd930e3fd5ee0938b14664ee4c7cd58ec"
+    },
+    {
+      "segmentId": "e31-00176-01",
+      "speakerId": "henry",
+      "textHash": "42dcbe3312dd47c6d3ae1df890c13049b869c56f80e6f1d575bc892bcdfb9538"
+    },
+    {
+      "segmentId": "e31-00181-01",
+      "speakerId": "henry",
+      "textHash": "fd9a566753043fbf9ecd09d79e71de3566872e94a44ce0e625003ce451853ff7"
+    },
+    {
+      "segmentId": "e31-00190-01",
+      "speakerId": "henry",
+      "textHash": "4af91e580869ef5cc0da9d66d6ec4afb01494cf533c43e30cb59129da7c1784e"
+    },
+    {
+      "segmentId": "e31-00191-01",
+      "speakerId": "henry",
+      "textHash": "984a8ba1c64c38013b0b5b15f821891db810ca75dacb8db83ad0c509d3e649c4"
+    },
+    {
+      "segmentId": "e31-00192-01",
+      "speakerId": "henry",
+      "textHash": "e08d66ea61e0e9b90032e8a6dc728a3a042fb2c0d7b80eaf659573c4f9e65a89"
+    },
+    {
+      "segmentId": "e31-00193-01",
+      "speakerId": "henry",
+      "textHash": "d5cff213608b1cd978311e15176831ef18c6aaa39859dc9ec25ef048632983d1"
+    },
+    {
+      "segmentId": "e31-00194-01",
+      "speakerId": "henry",
+      "textHash": "9b548153060d5eb96748a57e28e0ea9474f7cb70c8c0e2342dc35d81cac15b3c"
+    },
+    {
+      "segmentId": "e31-00195-01",
+      "speakerId": "henry",
+      "textHash": "358c4c5ab2146f2b243c1c1adf91e970b9effb493f62051fffcd1163480f1a73"
+    },
+    {
+      "segmentId": "e31-00197-01",
+      "speakerId": "andy",
+      "textHash": "9d30fa00a041d30cf917c055f2e9390e04807d9c28aa8f9e8b09d27942e41665"
+    },
+    {
+      "segmentId": "e31-00198-01",
+      "speakerId": "andy",
+      "textHash": "9d30fa00a041d30cf917c055f2e9390e04807d9c28aa8f9e8b09d27942e41665"
+    },
+    {
+      "segmentId": "e31-00199-01",
+      "speakerId": "andy",
+      "textHash": "cccd2e909950ad5905d7c68ed4c241b48c54593d2fbcc63a9ec4e5d16cf0a780"
+    },
+    {
+      "segmentId": "e31-00204-01",
+      "speakerId": "andy",
+      "textHash": "78308489a54e275ecbf35d296b9a4977f09bb7ac7502f1ab97f40bb06c29e2d5"
+    },
+    {
+      "segmentId": "e31-00209-01",
+      "speakerId": "henry",
+      "textHash": "9f808c9f36df425a90b067d77bfe3e4e72f3205b9ed89c390b2b5f6186be8ed0"
+    },
+    {
+      "segmentId": "e31-00211-01",
+      "speakerId": "henry",
+      "textHash": "21ac805375123160615244b3c337d8291ca0f867238a5f1bf2dba475debe99e1"
+    },
+    {
+      "segmentId": "e31-00215-01",
+      "speakerId": "andy",
+      "textHash": "11891a8d80c7e36262d7ce4a1f312b4a2c9259743feecaf86edf0f129f6879f7"
+    },
+    {
+      "segmentId": "e31-00216-01",
+      "speakerId": "andy",
+      "textHash": "f8a89103a6bf99a9dd17c28bec4938a789612a1fecf26a64e5104ed4ba0e3461"
+    },
+    {
+      "segmentId": "e31-00220-01",
+      "speakerId": "andy",
+      "textHash": "ff68d317f1f3216967c543d9ed718b8558f38a2023fee782fdfaeab0db166451"
+    },
+    {
+      "segmentId": "e31-00225-01",
+      "speakerId": "andy",
+      "textHash": "53a2d8005eea334d4b4fdf4eb119f5ee5137c21d357d4f82742974f328168cd8"
+    },
+    {
+      "segmentId": "e31-00230-01",
+      "speakerId": "andy",
+      "textHash": "01ec5b2d8a42967d3e9f6105441a11c9d159440b62e376ce725b8abdfcb958dd"
+    },
+    {
+      "segmentId": "e31-00231-01",
+      "speakerId": "andy",
+      "textHash": "acb195c984aa3a3d35ae6e62bc225b59b91d208bd0816c9f36a3ec893b8db509"
+    },
+    {
+      "segmentId": "e31-00236-01",
+      "speakerId": "andy",
+      "textHash": "461a9e698536d113b89b09eae2300f4580995b871065307328270baff517221d"
+    },
+    {
+      "segmentId": "e31-00238-01",
+      "speakerId": "henry",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-00239-01",
+      "speakerId": "henry",
+      "textHash": "d46da0c59d774ff04f61f4c4d4e07028a12fbedb639a1702b64ab273f350ec6f"
+    },
+    {
+      "segmentId": "e31-00241-01",
+      "speakerId": "henry",
+      "textHash": "799bf5881e39f01d057466b08b12b933c9f2de7ce5018a2dc7373ff39516c904"
+    },
+    {
+      "segmentId": "e31-00244-01",
+      "speakerId": "henry",
+      "textHash": "b78da9c570ca034b5f8d270f2c699051b42a90aacc7244c9312928c395ddc932"
+    },
+    {
+      "segmentId": "e31-00246-01",
+      "speakerId": "henry",
+      "textHash": "9112ca2620f6c57db2b8f833e5b7dc7a3988c1df22b8836df938cbff96616ecd"
+    },
+    {
+      "segmentId": "e31-00251-01",
+      "speakerId": "henry",
+      "textHash": "d9e9e0866a74ee4da548c145c37e32ac2517d152ed3726eaa2f1a677469f9e08"
+    },
+    {
+      "segmentId": "e31-00259-01",
+      "speakerId": "henry",
+      "textHash": "21b49457b2d098fb59c1819a16ceccd737f15e8c690831136789d73b24038ca0"
+    },
+    {
+      "segmentId": "e31-00266-01",
+      "speakerId": "henry",
+      "textHash": "2bbbeb3915b9a9aa3db226ad5797c4697cfdedd830529cf69f7249164d19f633"
+    },
+    {
+      "segmentId": "e31-00274-01",
+      "speakerId": "henry",
+      "textHash": "3d15898389c385bbfc535793c9778e9462fffab837e4ed15ac1b44e401307335"
+    },
+    {
+      "segmentId": "e31-00289-01",
+      "speakerId": "henry",
+      "textHash": "f73608b464e57e58134d12804876bc36c5d7d1501937bce5bd87873606529c95"
+    },
+    {
+      "segmentId": "e31-00295-01",
+      "speakerId": "henry",
+      "textHash": "1a1ad50ba765ba80c1a2370402a069263244847562b2f80fb3d68f0da6abc499"
+    },
+    {
+      "segmentId": "e31-00308-01",
+      "speakerId": "henry",
+      "textHash": "c4a16d56257009fe3ee644e71a4ed687ec7b073568a0a2469f2720fb62e1be0d"
+    },
+    {
+      "segmentId": "e31-00308-02",
+      "speakerId": "henry",
+      "textHash": "0fffeb4ccad9a6b89761dd38dbd3ea9bde207a19c44f811058d2457a1e436038"
+    },
+    {
+      "segmentId": "e31-00315-01",
+      "speakerId": "henry",
+      "textHash": "96c646fae5b15df4d157775837116ee06b072dab5946996e69dbafa1d97aac20"
+    },
+    {
+      "segmentId": "e31-00320-01",
+      "speakerId": "henry",
+      "textHash": "9b7d2aea8f24fad091176c574a707f0cf8b800cf07e2d1dee263c1c259984067"
+    },
+    {
+      "segmentId": "e31-00324-01",
+      "speakerId": "henry",
+      "textHash": "55c38bee825a7793383fce31dd6961972cbd5b9c32fbbe263cbcbe4cf06548fb"
+    },
+    {
+      "segmentId": "e31-00329-01",
+      "speakerId": "henry",
+      "textHash": "36c49046cbef9cce10de60c53c54cfe7aca355aa44e15f0634f9c806476f7fc4"
+    },
+    {
+      "segmentId": "e31-00335-01",
+      "speakerId": "henry",
+      "textHash": "0ad53fc2f2f55cfe179f12bb311f31ba858cdbe7318d0a29f139d6865c0b175e"
+    },
+    {
+      "segmentId": "e31-00339-01",
+      "speakerId": "henry",
+      "textHash": "8f2ec4edb6eb340e84216bf88f47f28f7dcbb8170755dc8cbda3c3635a8f8944"
+    },
+    {
+      "segmentId": "e31-00343-01",
+      "speakerId": "henry",
+      "textHash": "87bf9bd36a5b41004d824c164edd3b5a0d6f6880fa0e5ccc9788f51e4bb1626e"
+    },
+    {
+      "segmentId": "e31-00351-01",
+      "speakerId": "henry",
+      "textHash": "9412e8a76cc95564d365d6e161135df6c805693af14923495535246e95682f6c"
+    },
+    {
+      "segmentId": "e31-00352-01",
+      "speakerId": "henry",
+      "textHash": "cd5592e5e3140daa2f3fe0541c004877a65933bc07d69dbec8e3a441e7877c90"
+    },
+    {
+      "segmentId": "e31-00353-01",
+      "speakerId": "henry",
+      "textHash": "b6807ddfae3243addbe065d2cf5921230832393b5b19994d84304b8e0665a125"
+    },
+    {
+      "segmentId": "e31-00359-01",
+      "speakerId": "henry",
+      "textHash": "9668f4a195f6a9216f4f31486ce511f2cfc76effc15b3bbd0eed12bcf7fd8c5c"
+    },
+    {
+      "segmentId": "e31-00363-01",
+      "speakerId": "henry",
+      "textHash": "40438e87228dc01dfd0f3d1b837d1ce7d8deef448c959133f53f4c3ffbe2ca3f"
+    },
+    {
+      "segmentId": "e31-00370-01",
+      "speakerId": "henry",
+      "textHash": "54367e9f126e001418bb7154a2c02c099741074b9a1a3cb7a7c9b736e4ea813e"
+    },
+    {
+      "segmentId": "e31-00375-01",
+      "speakerId": "henry",
+      "textHash": "a5b5c41936579ca7ed651d2aaa24cc68d7a68434ff9d9c6f144e2e9542ca46d5"
+    },
+    {
+      "segmentId": "e31-00376-01",
+      "speakerId": "henry",
+      "textHash": "76a7cfb1ad69861d75b64c6c66ef8802891a740116a5df950534dc7a13a03309"
+    },
+    {
+      "segmentId": "e31-00383-01",
+      "speakerId": "henry",
+      "textHash": "b77bc09c91ea9f60af1ffcad7d01316b502e4f82421e9d30a05b17bbf21f4983"
+    },
+    {
+      "segmentId": "e31-00391-01",
+      "speakerId": "henry",
+      "textHash": "eae3b41b2413eb671b7706c205ba519e0b6a3e0655011ee293d19d5b13269335"
+    },
+    {
+      "segmentId": "e31-00394-01",
+      "speakerId": "henry",
+      "textHash": "89f89fa0214d7d4e221a43f162a02e9cff5608a2fd9eeab9670619f83208bd34"
+    },
+    {
+      "segmentId": "e31-00398-01",
+      "speakerId": "henry",
+      "textHash": "ea549d96b61b6f84bb06c2631febe1b66926af3138519b1e9d9d666f0541f159"
+    },
+    {
+      "segmentId": "e31-00403-01",
+      "speakerId": "henry",
+      "textHash": "b096dd0854c9062f10f4755d86b76d7b4f108e63264f01dd93a1961431789470"
+    },
+    {
+      "segmentId": "e31-00409-01",
+      "speakerId": "henry",
+      "textHash": "cf9db7dac4f51061ea7146f47d21454961306f5924af4696478b893765ddecf1"
+    },
+    {
+      "segmentId": "e31-00410-01",
+      "speakerId": "henry",
+      "textHash": "682fc037da1dbcdbbd94e8f1dad27ca89bfe04e5cb7f887013a324fe8e429430"
+    },
+    {
+      "segmentId": "e31-00411-01",
+      "speakerId": "henry",
+      "textHash": "ae741b6ba0f7f7814e56ca6e29de14d25111dbb633ba9de31ad3068345a8f9da"
+    },
+    {
+      "segmentId": "e31-00412-01",
+      "speakerId": "henry",
+      "textHash": "7850699ba75fb495fb714f3ffcbf273563a48c8c811ea13d0ad300684a1ccadf"
+    },
+    {
+      "segmentId": "e31-00413-01",
+      "speakerId": "henry",
+      "textHash": "2765a2339dbb74750656139f0ea462d41942023878d215e2ec0a6ba25ba4cb11"
+    },
+    {
+      "segmentId": "e31-00414-01",
+      "speakerId": "henry",
+      "textHash": "ed90ebde3a2420a9baa064c7f0f29a565bf535b2f75cadf4f5cdc600f75a4cdd"
+    },
+    {
+      "segmentId": "e31-00415-01",
+      "speakerId": "henry",
+      "textHash": "8f15c88c7c6e28027e3324de7d2820d08963b7553690b84ef9bb37602c4e52c0"
+    },
+    {
+      "segmentId": "e31-00415-02",
+      "speakerId": "henry",
+      "textHash": "e81ab24ee1a6f615f3fdc5c639e52f66db69291c1f13035fb225508bcc518d75"
+    },
+    {
+      "segmentId": "e31-00417-01",
+      "speakerId": "henry",
+      "textHash": "11763988f6353787af00d7eacace6ada4903a2301b2e244e722577f45f9b06f6"
+    },
+    {
+      "segmentId": "e31-00419-01",
+      "speakerId": "henry",
+      "textHash": "a9c60b015a67aac31dcedb0bd5b2b62945ffd1fe5b53639da36c043a4a5d0b65"
+    },
+    {
+      "segmentId": "e31-00420-01",
+      "speakerId": "henry",
+      "textHash": "2656fa8ccee2cfb26cf26fa8a8be5c6198b648534105bdd4e8ccb37992eae2b7"
+    },
+    {
+      "segmentId": "e31-00422-01",
+      "speakerId": "henry",
+      "textHash": "55e6e248f371c8997b6ed57f6734b4d026317c46e322a89482069482b8caea45"
+    },
+    {
+      "segmentId": "e31-00432-01",
+      "speakerId": "henry",
+      "textHash": "c70ca5f6d22b0829689265d3fd7a7be40a67380db349044b8b7ccd5be94ea431"
+    },
+    {
+      "segmentId": "e31-00435-01",
+      "speakerId": "henry",
+      "textHash": "f8a52927d936874b3999a707902432e6fa879df0be9965e13acc3792afea02aa"
+    },
+    {
+      "segmentId": "e31-00440-01",
+      "speakerId": "henry",
+      "textHash": "2545d7b3b67a41ec4d085bdd8eab33b38e08028edcada64883a15c2d0c0ce57d"
+    },
+    {
+      "segmentId": "e31-00444-01",
+      "speakerId": "henry",
+      "textHash": "e1e7322aeee9de1c4e51e05f2cef340049a2b658eaf2066396975e382290bc67"
+    },
+    {
+      "segmentId": "e31-00447-01",
+      "speakerId": "henry",
+      "textHash": "1a892e210400fb9df448075065773a3d588ae49c343a6d0e76f30c648b751fbe"
+    },
+    {
+      "segmentId": "e31-00449-01",
+      "speakerId": "henry",
+      "textHash": "bf7f1669b3fe8ec9b4650b49725767980005187728ffb377cf8c76f1a1abc9f2"
+    },
+    {
+      "segmentId": "e31-00451-01",
+      "speakerId": "henry",
+      "textHash": "51ef391a1202e26c384cf482cbfb3c71c9f0d38b3790215c5132bd711c8fc423"
+    },
+    {
+      "segmentId": "e31-00452-01",
+      "speakerId": "henry",
+      "textHash": "2214e79a60ce7a8e2fc316745bd11e06d9a9cd5a5df524351b2e53128bd9eed8"
+    },
+    {
+      "segmentId": "e31-00455-01",
+      "speakerId": "henry",
+      "textHash": "50581e2e918849a6e4498a80881a049948404ab6dc8020ee7843122c8852c4d1"
+    },
+    {
+      "segmentId": "e31-00463-01",
+      "speakerId": "henry",
+      "textHash": "058a66fb137270c680950df94bdea72fd288a8a719f32ba7c6cfad9d3d29c6d9"
+    },
+    {
+      "segmentId": "e31-00464-01",
+      "speakerId": "henry",
+      "textHash": "810d7c3ca6aa6411102588f8636833035138a35f32f5e7b2df96d2ab2dc4d660"
+    },
+    {
+      "segmentId": "e31-00464-02",
+      "speakerId": "henry",
+      "textHash": "03d504db06dfc7208caa4cf4858844dc94b79f3d2882913e802a38cbe429d6e4"
+    },
+    {
+      "segmentId": "e31-00466-01",
+      "speakerId": "henry",
+      "textHash": "67920472cf4c1ad839f1b13b37a24637ba9d19174ce3fd7333ae7f65f7d89d73"
+    },
+    {
+      "segmentId": "e31-00471-01",
+      "speakerId": "andy",
+      "textHash": "85c9830b7dd1348f57cd84dd5838ed4d7d5bf08afd38091e77f1e8bc842c0060"
+    },
+    {
+      "segmentId": "e31-00472-01",
+      "speakerId": "andy",
+      "textHash": "0a4c33251931fa3ae691c66020d965c983ddee0bad88c2a2b3dd33a0997163a8"
+    },
+    {
+      "segmentId": "e31-00474-01",
+      "speakerId": "andy",
+      "textHash": "35ac05071da231c451a1249afe8d473e45fe8f76d0263280424b85d94437660f"
+    },
+    {
+      "segmentId": "e31-00484-01",
+      "speakerId": "andy",
+      "textHash": "6221bbadb374082679db559c5a5d754839da792d2d614308e9ac4c5ba9c66b52"
+    },
+    {
+      "segmentId": "e31-00486-01",
+      "speakerId": "andy",
+      "textHash": "e837885d5fb2d947b7cd0a0c055a5fe93a4ee9d0e40d24fa7080002e1474df95"
+    },
+    {
+      "segmentId": "e31-00497-01",
+      "speakerId": "andy",
+      "textHash": "a4676cdf44ed267888368a39e4092220839009be6d23456844513ee75b917d40"
+    },
+    {
+      "segmentId": "e31-00500-01",
+      "speakerId": "andy",
+      "textHash": "720048dfb607450a8f413dc426b5e8c277247104f9bfcc613d5a5f21e32f9e15"
+    },
+    {
+      "segmentId": "e31-00503-01",
+      "speakerId": "andy",
+      "textHash": "0990dccf254e51c40d639b040b3c348aa09e9f61905c5b67994ba082229b82a9"
+    },
+    {
+      "segmentId": "e31-00514-01",
+      "speakerId": "andy",
+      "textHash": "b0c4d49c45c2045d1d28c7fbdd0802cdd94410d1e136a3cb28f8e4e016e1fad9"
+    },
+    {
+      "segmentId": "e31-00518-01",
+      "speakerId": "andy",
+      "textHash": "5678a4fed1ddb9b58fe2726023cc0290284a8eecb3d8579b1d14cfa9d6fdbb31"
+    },
+    {
+      "segmentId": "e31-00520-01",
+      "speakerId": "andy",
+      "textHash": "a3a64f7abdd73efe67cd2be0b9dac8282a9694d767f65c9a5ca1576753a0bf27"
+    },
+    {
+      "segmentId": "e31-00523-01",
+      "speakerId": "andy",
+      "textHash": "4decc8c390e421fae0e20414dd08da5d7db99826d217943b557aa565fd4993c9"
+    },
+    {
+      "segmentId": "e31-00527-01",
+      "speakerId": "andy",
+      "textHash": "b8f4c5887e94aa90a0c0544860891a51ab82f361cafb2c22a5051597ee9b91d8"
+    },
+    {
+      "segmentId": "e31-00538-01",
+      "speakerId": "andy",
+      "textHash": "e5233fbfb233a51cbc3fdd5abc5dba09e64bddd5953a64753b89df594e0e190a"
+    },
+    {
+      "segmentId": "e31-00544-01",
+      "speakerId": "andy",
+      "textHash": "fa9a9c5ced584fd9c59a0d4bdcc388bd270ddb134e118a36b3c68512f8015037"
+    },
+    {
+      "segmentId": "e31-00549-01",
+      "speakerId": "andy",
+      "textHash": "9df6950f40e062dd45fa7a886026f8227603d83ceef95dc2ce37427667909606"
+    },
+    {
+      "segmentId": "e31-00551-01",
+      "speakerId": "andy",
+      "textHash": "442550ed50cf7bf3534cb4502d7619d379adb47534c2a37f1c1ef56eafb25f1a"
+    },
+    {
+      "segmentId": "e31-00553-01",
+      "speakerId": "andy",
+      "textHash": "98ae9ef513f08e552c67081d957b8a0d0bc0cc83eb0e9ebcb9c12efc5202de51"
+    },
+    {
+      "segmentId": "e31-00558-01",
+      "speakerId": "andy",
+      "textHash": "21ef2c25599a1d0050c412ea935466794ec9da2e059f21cab2ec8c2d6330bdf4"
+    },
+    {
+      "segmentId": "e31-00564-01",
+      "speakerId": "andy",
+      "textHash": "821e5ff2265906fc0b1b12cbf45f6e7cbc3d300101cb4fcf4443b161183cd99b"
+    },
+    {
+      "segmentId": "e31-00566-01",
+      "speakerId": "andy",
+      "textHash": "698eb8047f36bc6f258f4b535ddcaeb0efd6fa484e78ffb2e413d7b6ec948ffe"
+    },
+    {
+      "segmentId": "e31-00568-01",
+      "speakerId": "andy",
+      "textHash": "ec35028ba4a55d0ad660e1933faa59cd521ec232914c3e68792090f01690bda7"
+    },
+    {
+      "segmentId": "e31-00570-01",
+      "speakerId": "henry",
+      "textHash": "f578ce252091a678e77ffde2c725acf826b13ce566b00031593137ecbe3fd13d"
+    },
+    {
+      "segmentId": "e31-00571-01",
+      "speakerId": "henry",
+      "textHash": "e10ecf37e58885d8cfb2d24563c65514325e2c9f3b5bf22fc5ab1c12c4577d19"
+    },
+    {
+      "segmentId": "e31-00573-01",
+      "speakerId": "henry",
+      "textHash": "b53f677ddec45a560b7a734a99a47e277f7dd07caa80433cdc0c89ddbc862bdd"
+    },
+    {
+      "segmentId": "e31-00582-01",
+      "speakerId": "henry",
+      "textHash": "f6f369310aa147f9b386eb0d390d219372921363efc9036bea6b09026ce05a25"
+    },
+    {
+      "segmentId": "e31-00586-01",
+      "speakerId": "henry",
+      "textHash": "61702cbce5e62bcbfaf7eba933292abec5e54004ca16e273d5150371aa2cbe6d"
+    },
+    {
+      "segmentId": "e31-00589-01",
+      "speakerId": "henry",
+      "textHash": "6bd6717dc6832a072919ad58588cc1f6a27323a01f1fd40818e72a0eb156faee"
+    },
+    {
+      "segmentId": "e31-00591-01",
+      "speakerId": "henry",
+      "textHash": "2fa443543f0e04e71821cf3ae19509b13e9c69bfc1051049062bdf9d20d88945"
+    },
+    {
+      "segmentId": "e31-00594-01",
+      "speakerId": "henry",
+      "textHash": "d0f791ae1f8a953063aa69c0cc9a2c48719a805534d447ef2b01cd4fb0090790"
+    },
+    {
+      "segmentId": "e31-00595-01",
+      "speakerId": "andy",
+      "textHash": "3b20ece829b0bd68ea5ad35b61c6b4c221595ee1757addfcb7cfa30e60a46e04"
+    },
+    {
+      "segmentId": "e31-00595-02",
+      "speakerId": "andy",
+      "textHash": "a9a227b0896f85c9bfbf0332f847f757e4cb163022eec44e63acc970220894ec"
+    },
+    {
+      "segmentId": "e31-00599-01",
+      "speakerId": "andy",
+      "textHash": "bfe986f02b56224382376e2d38140b9003f2148877c781e7bb1877d07798cb84"
+    },
+    {
+      "segmentId": "e31-00608-01",
+      "speakerId": "andy",
+      "textHash": "c95091d1746506b5df144770b2230449cdd0dea3ce6fb0a6942bfb3d4e21cfbc"
+    },
+    {
+      "segmentId": "e31-00620-01",
+      "speakerId": "henry",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-00621-01",
+      "speakerId": "henry",
+      "textHash": "d6706b4f8ef86fed2054e5beb8196ef3cb543cb73d1ca1b00e899db807ffbb0a"
+    },
+    {
+      "segmentId": "e31-00624-01",
+      "speakerId": "henry",
+      "textHash": "c1d21d5a46a26c6855c8d0456cf441c727c0e3b06f9022ed6f41b83a19da0939"
+    },
+    {
+      "segmentId": "e31-00630-01",
+      "speakerId": "henry",
+      "textHash": "2872f0014b85b0d56f6954582e0af1e6ecf6af9a50802ff709c95d1d372ae82b"
+    },
+    {
+      "segmentId": "e31-00633-01",
+      "speakerId": "henry",
+      "textHash": "16000ef74716a6fca5349fab8d10e3b71e352a32f720d4e7dacb304b699ea133"
+    },
+    {
+      "segmentId": "e31-00648-01",
+      "speakerId": "henry",
+      "textHash": "b54ce3d5ca0dcf60732889c3236f70e98c98b1e384ee1f8d7ccff7e2bdfc690c"
+    },
+    {
+      "segmentId": "e31-00652-01",
+      "speakerId": "henry",
+      "textHash": "8248cfdbddb982d2c3125cafdef3da4eba8a825805c4d19d42fca8391e210721"
+    },
+    {
+      "segmentId": "e31-00654-01",
+      "speakerId": "henry",
+      "textHash": "debd7216d60fc2778507f9343ede6cbf57e137371cd85e80040a9eb932393090"
+    },
+    {
+      "segmentId": "e31-00655-01",
+      "speakerId": "henry",
+      "textHash": "5c343d142e747c2854e39a10294bedf45830111d2de9cef4e16533b998d6a635"
+    },
+    {
+      "segmentId": "e31-00658-01",
+      "speakerId": "henry",
+      "textHash": "52b90eabcbe287cd39ec1b66a8487467a4ce1b77661a3a58318e0932101fe765"
+    },
+    {
+      "segmentId": "e31-00663-01",
+      "speakerId": "henry",
+      "textHash": "ffd8720d5bb3e0a878c6171ee239ce4bed57ba8c73f9ea49a2210f38192fffd1"
+    },
+    {
+      "segmentId": "e31-00664-01",
+      "speakerId": "henry",
+      "textHash": "db810b10c75138614291b3de297984ad9a8f82945915d1178d682f20ef1934e0"
+    },
+    {
+      "segmentId": "e31-00669-01",
+      "speakerId": "henry",
+      "textHash": "0f4626e59fd35014fb60c9a7d0f15c7b968cfad1e00bd27e1126216b3330e0ef"
+    },
+    {
+      "segmentId": "e31-00673-01",
+      "speakerId": "henry",
+      "textHash": "22431ed7de8b772f183717adcd60d89a51449dfdd06156f190ac6958e199b6d1"
+    },
+    {
+      "segmentId": "e31-00675-01",
+      "speakerId": "henry",
+      "textHash": "31c824453ed5acf48237b9f8a1fa48a2d0f0acdcc47fa003bad800a6df8e7d4f"
+    },
+    {
+      "segmentId": "e31-00677-01",
+      "speakerId": "henry",
+      "textHash": "492998178d04b03528507ae4684fcebb40f1fac07a6ee8a4172b81c672e0ffee"
+    },
+    {
+      "segmentId": "e31-00680-01",
+      "speakerId": "henry",
+      "textHash": "5609bf03a02327fce5c4956161d5cbfcf48342ff3f1a520cb8c1636d1ff44224"
+    },
+    {
+      "segmentId": "e31-00682-01",
+      "speakerId": "henry",
+      "textHash": "dbfccf89872b5de0173d311fb8b933f53ab42657407cdeebe6c1f7e7c32dbb1b"
+    },
+    {
+      "segmentId": "e31-00685-01",
+      "speakerId": "henry",
+      "textHash": "d00ac3c51bee64fd1b70bb38bb643813ceae78ea5fda5ea433d56bc70f55e209"
+    },
+    {
+      "segmentId": "e31-00685-02",
+      "speakerId": "henry",
+      "textHash": "3ea8577010f59a8e2d27bb1c00f46089f402b5de28b043ce8a2553618b739d69"
+    },
+    {
+      "segmentId": "e31-00689-01",
+      "speakerId": "henry",
+      "textHash": "e867bd90159daffc66fd917b896252dc9456699aaf7b86b8dabb70796d5039b6"
+    },
+    {
+      "segmentId": "e31-00692-01",
+      "speakerId": "henry",
+      "textHash": "09bae0fdaab7e64e969977139bf0c05e79b55e452ee9c28fd7fab2bd3d302aa3"
+    },
+    {
+      "segmentId": "e31-00700-01",
+      "speakerId": "henry",
+      "textHash": "8ad48fd3d0f7e126492da735d055d51d04ce724015bcab5994f6d6a5ca257b31"
+    },
+    {
+      "segmentId": "e31-00703-01",
+      "speakerId": "henry",
+      "textHash": "4b3c76f7a088d379c637f33e8fb2f4f719b6687114dbc473540e1c8866a5c5c7"
+    },
+    {
+      "segmentId": "e31-00705-01",
+      "speakerId": "henry",
+      "textHash": "9a9862fcb38769ad28e5de7bddf782549fb5dd7e9e94a968a73ef12e86738970"
+    },
+    {
+      "segmentId": "e31-00710-01",
+      "speakerId": "henry",
+      "textHash": "d564a0021a6d2d7f2c8273b114b73c7becfc638f31de6757a33b7f976ce1305d"
+    },
+    {
+      "segmentId": "e31-00716-01",
+      "speakerId": "henry",
+      "textHash": "a32956b3c3e6d3d1799b6ca1314eaee62fc1960c63944d2b8df0d064da584d83"
+    },
+    {
+      "segmentId": "e31-00720-01",
+      "speakerId": "henry",
+      "textHash": "8189650d95d449d3f2105e4979e996b8d728e85ba38fdf7bc261f35a5e2f5d22"
+    },
+    {
+      "segmentId": "e31-00722-01",
+      "speakerId": "henry",
+      "textHash": "abba54df69bfdb85a6838dfdfdb83a794037cbfcc3acadd3536b3b7271248d09"
+    },
+    {
+      "segmentId": "e31-00724-01",
+      "speakerId": "henry",
+      "textHash": "be4fbbb7d0234f92e36da4098cc822629600fa86b79063126201991e59dab83d"
+    },
+    {
+      "segmentId": "e31-00729-01",
+      "speakerId": "henry",
+      "textHash": "1be2fedff9f2547bf5fedc3f6cf603f16d633f5c69d8558c37d4444e8cb40a62"
+    },
+    {
+      "segmentId": "e31-00733-01",
+      "speakerId": "henry",
+      "textHash": "0889e81a217168f87838f5c398baee703c037d015ddc6c8677e2fc748cc2afbb"
+    },
+    {
+      "segmentId": "e31-00734-01",
+      "speakerId": "henry",
+      "textHash": "4bacd93d410c4c5004321bafe232337bc929f430d2c9b0206b2c4ce1c1b54333"
+    },
+    {
+      "segmentId": "e31-00738-01",
+      "speakerId": "henry",
+      "textHash": "e099fb80939ad5436cceeba14723cd7aafb8b34b41ed572b67b14fa3c0ba795f"
+    },
+    {
+      "segmentId": "e31-00741-01",
+      "speakerId": "henry",
+      "textHash": "10430cc0961406f7aab8187335fb03cddc0664cb0a0017e6b60594eb6f5014cd"
+    },
+    {
+      "segmentId": "e31-00743-01",
+      "speakerId": "henry",
+      "textHash": "a30f38eb6777bfe863868397f929e7b8c9808b907c7af78d76c32c22842f63f9"
+    },
+    {
+      "segmentId": "e31-00747-01",
+      "speakerId": "henry",
+      "textHash": "c5cff639fc43f0a6e4406947a0d1cbf1ead70492d22e29702830540fc9cf2a88"
+    },
+    {
+      "segmentId": "e31-00751-01",
+      "speakerId": "andy",
+      "textHash": "9c3e0791a7776aad6827eab76a12bdc5a10fd4e8d9e7df90460009e5f206d321"
+    },
+    {
+      "segmentId": "e31-00755-01",
+      "speakerId": "andy",
+      "textHash": "df8c4904acf8d74786f6de8fa68b9b5f78df2cbed3646c496b15c1fa35798afb"
+    },
+    {
+      "segmentId": "e31-00757-01",
+      "speakerId": "andy",
+      "textHash": "4d36a46e46336622933228e2681e3ecf7c639c16b1191c7570825b3849b045bf"
+    },
+    {
+      "segmentId": "e31-00760-02",
+      "speakerId": "henry",
+      "textHash": "359082974f049c64795d2675a577a1c06d2716b16a9acd3ae6c9581b360032da"
+    },
+    {
+      "segmentId": "e31-00767-01",
+      "speakerId": "henry",
+      "textHash": "74da5691b49d48bf1399852d7c6e6af0ec273a2b5b6b3b438e9bc54ba063136d"
+    },
+    {
+      "segmentId": "e31-00772-01",
+      "speakerId": "henry",
+      "textHash": "e05b43ba7db984027659324a25f63a0d71177b9268a50d1a6f535d9b49a24336"
+    },
+    {
+      "segmentId": "e31-00779-01",
+      "speakerId": "henry",
+      "textHash": "533761de40a86f101ee93eef9071d107fb8f77073d1c902173c70910f93e9a2a"
+    },
+    {
+      "segmentId": "e31-00786-01",
+      "speakerId": "henry",
+      "textHash": "930994f131cb059305b6cc2106a1b353a8656e32e24ffb88a5b2b1d6a0d67e5b"
+    },
+    {
+      "segmentId": "e31-00788-01",
+      "speakerId": "henry",
+      "textHash": "bde812b150c459d1651565611357879d5a392528ec5af6a437d1c88ad7a2f61b"
+    },
+    {
+      "segmentId": "e31-00796-01",
+      "speakerId": "henry",
+      "textHash": "0923e54fb0fad7a7a41c2fae775cb4b38100ef7c43e91b233a38b68d1e437800"
+    },
+    {
+      "segmentId": "e31-00806-01",
+      "speakerId": "henry",
+      "textHash": "47e206c64eaa0bd9f2ceb703f1b62bac4a2eb346c1ecc1e4ad24d5286a1c3e92"
+    },
+    {
+      "segmentId": "e31-00807-01",
+      "speakerId": "henry",
+      "textHash": "1a7d48a5ee3df2a1f308c424d3a5b0d5361a6e7c83e9515f182d17bfcf9e3236"
+    },
+    {
+      "segmentId": "e31-00812-01",
+      "speakerId": "henry",
+      "textHash": "8930861015ba0cff3a5b630fd3abddcc4ffa0fe1b26ffcc7b30542e6cc613531"
+    },
+    {
+      "segmentId": "e31-00818-01",
+      "speakerId": "henry",
+      "textHash": "be36de4303157788fba07c70a48dd94fde8b82fd5ffb46bdf8fb11958c6c7a99"
+    },
+    {
+      "segmentId": "e31-00827-01",
+      "speakerId": "henry",
+      "textHash": "eab122440137748de221cae1e8535130bd68e76190290b48859a6dd697045d0a"
+    },
+    {
+      "segmentId": "e31-00828-01",
+      "speakerId": "henry",
+      "textHash": "ec7eb0b9083977828af3193f30eff1f37a79d72d1025213ef89512d720a5b59f"
+    },
+    {
+      "segmentId": "e31-00829-01",
+      "speakerId": "henry",
+      "textHash": "d3542ac3be0e8cbe7117df5629c91853cf366a3221f0afa7b2fcfff20d370fd3"
+    },
+    {
+      "segmentId": "e31-00837-01",
+      "speakerId": "henry",
+      "textHash": "7cfc7a261f9e320de36c990b03a8832b7af52741717345c368696ea95e500fc5"
+    },
+    {
+      "segmentId": "e31-00840-01",
+      "speakerId": "henry",
+      "textHash": "2d35774ab421ddb175538dddce81236aa817a4797f419cb9ea8fce661936b9c3"
+    },
+    {
+      "segmentId": "e31-00843-01",
+      "speakerId": "henry",
+      "textHash": "ac511444c275a4447de16f2f45b40227e57ccbfeea9c90d9326d42249f720294"
+    },
+    {
+      "segmentId": "e31-00847-01",
+      "speakerId": "henry",
+      "textHash": "ec02b1ca18987313b581f9c39400b27b3631d0596e39ad67486159b88d127ec7"
+    },
+    {
+      "segmentId": "e31-00848-01",
+      "speakerId": "henry",
+      "textHash": "1ec597bcda3098d9e83ed821f3d01c361bcd11ae656578aca2028336d7daeb08"
+    },
+    {
+      "segmentId": "e31-00851-01",
+      "speakerId": "henry",
+      "textHash": "4b6adab5bb1737eed8d024fad1efc10fec150e83b017a5516b3260d4b4764864"
+    },
+    {
+      "segmentId": "e31-00854-01",
+      "speakerId": "henry",
+      "textHash": "8ab10143cb980ad4e90c0dbc9e3695d9cecfd789279cf2d6581df4b825a320a6"
+    },
+    {
+      "segmentId": "e31-00856-01",
+      "speakerId": "henry",
+      "textHash": "8d4f16e32a33ac013ff010a80f2785bc64577c930a94ebdc46bfb3609689beb4"
+    },
+    {
+      "segmentId": "e31-00860-01",
+      "speakerId": "henry",
+      "textHash": "2483629a390978fcc61d8ae1116d065b6a5c2495ea98530db8de9cc27fde0012"
+    },
+    {
+      "segmentId": "e31-00862-01",
+      "speakerId": "henry",
+      "textHash": "c25beb2b4838f4b1c3d05d8b291e9d7a7bfca047ef50be3fd48567b3c3cfa703"
+    },
+    {
+      "segmentId": "e31-00871-01",
+      "speakerId": "henry",
+      "textHash": "cd3ef62e9bee4b289d6aa97aa7a1886cd4976d52ccc519349b78cb8116f757c3"
+    },
+    {
+      "segmentId": "e31-00877-01",
+      "speakerId": "andy",
+      "textHash": "1032684d93c794bf2aefb35d07bbfcc747f679b4b87e8b1e44526034e2627e43"
+    },
+    {
+      "segmentId": "e31-00878-01",
+      "speakerId": "andy",
+      "textHash": "74fd747c6a1633954f509fda8c0cd323858f5f10e15a4e3cfa1a8b3583fc785f"
+    },
+    {
+      "segmentId": "e31-00886-01",
+      "speakerId": "andy",
+      "textHash": "7d427e254e6dc341fb8e2c441866b047d8dbaa826b371733c34a0c9460f1504a"
+    },
+    {
+      "segmentId": "e31-00892-01",
+      "speakerId": "andy",
+      "textHash": "7f2ad3ae0f8e41a991661f46169f352ba04aa333a9a5fad0d54f011012192b13"
+    },
+    {
+      "segmentId": "e31-00900-01",
+      "speakerId": "henry",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-00902-01",
+      "speakerId": "henry",
+      "textHash": "03b25bed61dad2fc92bb7ca539a0f5abb89e97a767e3ca68789d47009f9fa5c3"
+    },
+    {
+      "segmentId": "e31-00902-02",
+      "speakerId": "henry",
+      "textHash": "6628dd197bfc9ff0e401710a25952da919f6bed6c1ffe0d6147f8a180782839b"
+    },
+    {
+      "segmentId": "e31-00908-01",
+      "speakerId": "henry",
+      "textHash": "1af5bd00069ec5b5d62aa8809ff575f4cb5f434b0b38cf8f058b9a0655b5711b"
+    },
+    {
+      "segmentId": "e31-00909-01",
+      "speakerId": "henry",
+      "textHash": "4444fa2a4688275f418c71cbe314442955350a5f78bd7872cc214be96e90f376"
+    },
+    {
+      "segmentId": "e31-00915-01",
+      "speakerId": "henry",
+      "textHash": "6b30b887e7de2234ba7fde740626c4b28f43dbceb6edb797c708ea97ab3daca1"
+    },
+    {
+      "segmentId": "e31-00918-01",
+      "speakerId": "andy",
+      "textHash": "6f2dedca05473e432112a7ad0104f7aff548839d18a3d4d1e270f56a2011a937"
+    },
+    {
+      "segmentId": "e31-00921-01",
+      "speakerId": "andy",
+      "textHash": "270b0d155e67a511ffb1c1059eafc3c8259c7d0a9a9b890584a38e70ccaddbd4"
+    },
+    {
+      "segmentId": "e31-00923-01",
+      "speakerId": "andy",
+      "textHash": "195c03b2871ed9ef7c426e8ab75a31ed4cc6fc71c17e7611e12dca9e793d1604"
+    },
+    {
+      "segmentId": "e31-00930-01",
+      "speakerId": "andy",
+      "textHash": "98151a0b9b4d97ad61aa87848aad4c3b74d77c7b976b2571e0a95aed48c17af3"
+    },
+    {
+      "segmentId": "e31-00934-01",
+      "speakerId": "andy",
+      "textHash": "a1eebbaa9a47a2ea344b5d201b6ec5f5038fc4808092d35d1633cda789c674b5"
+    },
+    {
+      "segmentId": "e31-00944-01",
+      "speakerId": "andy",
+      "textHash": "ff93cfcd0d8740c1e6dee1394f51be167483f94ebe623ce0000c0749323e7595"
+    },
+    {
+      "segmentId": "e31-00948-01",
+      "speakerId": "andy",
+      "textHash": "a49774852b56867dff242f16cc245b757cf4d439079c46d03ca090e0ccba68b2"
+    },
+    {
+      "segmentId": "e31-00955-01",
+      "speakerId": "andy",
+      "textHash": "a12b8d3cf5b97f8f57785d815eeb1180a11a713752355cadd66c0774514ae363"
+    },
+    {
+      "segmentId": "e31-00960-01",
+      "speakerId": "andy",
+      "textHash": "36468fe09754c32d7464cb63421ce61e19ef639b836d76b9eebfd6278a383302"
+    },
+    {
+      "segmentId": "e31-00962-01",
+      "speakerId": "andy",
+      "textHash": "1e52676560fa219d5b506eeead8a726cda76c3a05b4307aedb9deac5736a63c9"
+    },
+    {
+      "segmentId": "e31-00972-01",
+      "speakerId": "andy",
+      "textHash": "161470d11e9ed9010696bde03bfb4f6cc5a20d32f739369ba5354d4ccc17f944"
+    },
+    {
+      "segmentId": "e31-00975-01",
+      "speakerId": "andy",
+      "textHash": "beb7d2f684f51883824e5ea0deb27f80ae9d5cd0bb0905a4b337c704c9b34d35"
+    },
+    {
+      "segmentId": "e31-00977-01",
+      "speakerId": "andy",
+      "textHash": "5a6ab9b6facd42a256c844d46c472129b07ce25d081ba11444cce84dcb68704d"
+    },
+    {
+      "segmentId": "e31-00980-01",
+      "speakerId": "andy",
+      "textHash": "6c7ed523aa225b226a066153e619db3a4cbae25222702de75af5d1060c7ef04f"
+    },
+    {
+      "segmentId": "e31-00983-01",
+      "speakerId": "andy",
+      "textHash": "39ffe0a0c2c53870b3556caa0a02705eca9a5f921ea5999b04304cdf62ce1975"
+    },
+    {
+      "segmentId": "e31-00989-01",
+      "speakerId": "andy",
+      "textHash": "7a9c09c8f0fc47de1a714c8267115ddbbdfb2545c52707c03b168995b9dcc9e3"
+    },
+    {
+      "segmentId": "e31-00991-01",
+      "speakerId": "andy",
+      "textHash": "4f6d667ba333e92f98c41207694a2972554465a213fc0723a89073877b615b93"
+    },
+    {
+      "segmentId": "e31-00993-01",
+      "speakerId": "andy",
+      "textHash": "be0bcdc91d5a3c854256947d47d3f243dcc5c324c1915fc585ecce0777a13782"
+    },
+    {
+      "segmentId": "e31-01001-01",
+      "speakerId": "andy",
+      "textHash": "2fadd0352c8b27ce04785fb5d7a1c3ef3ecc83ab634f29427a86688e58130fc8"
+    },
+    {
+      "segmentId": "e31-01007-01",
+      "speakerId": "andy",
+      "textHash": "8fb6a4f5773da6fb6be9fabb2706d288c7d6fd1dfe2f59ab2edb3b89023a1738"
+    },
+    {
+      "segmentId": "e31-01009-01",
+      "speakerId": "andy",
+      "textHash": "eae3c2b4f5a3fed58d8099d0ac0c535cfac2cc6f3fbb7e762bfbda3c78a6ff66"
+    },
+    {
+      "segmentId": "e31-01009-02",
+      "speakerId": "henry",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-01011-01",
+      "speakerId": "henry",
+      "textHash": "d1d358e4ff759355d0f4dfbd3c152b6f41158c327e869d0724937223b212bdf0"
+    },
+    {
+      "segmentId": "e31-01012-01",
+      "speakerId": "henry",
+      "textHash": "11e0b98a7fb16d6e6610bb64e502dd497e0fb83b056df651b8c57798e73ad4bf"
+    },
+    {
+      "segmentId": "e31-01016-01",
+      "speakerId": "henry",
+      "textHash": "37b17c13ce994fa04dfe9d143b51c5f89fc9134a3a2e114765c0010570a30a25"
+    },
+    {
+      "segmentId": "e31-01024-01",
+      "speakerId": "henry",
+      "textHash": "47b87d2743afc407ee2367011de53d469c75bf73c5df168432d4795e019c5c81"
+    },
+    {
+      "segmentId": "e31-01026-01",
+      "speakerId": "henry",
+      "textHash": "f68145d85343cdd883b94dc34c96c38cb9c5acbd8c06b570a02b270b42a4c6ce"
+    },
+    {
+      "segmentId": "e31-01037-01",
+      "speakerId": "henry",
+      "textHash": "2f1a9a2063a9c152dd56fd7241ec70a3648023193b1df22a0da631abc34b8fc7"
+    },
+    {
+      "segmentId": "e31-01039-01",
+      "speakerId": "pritam",
+      "textHash": "44ef0aaabe997042517c63dbf632b6cc7cd4244cd1a87cb31eda6cc9369ee84b"
+    },
+    {
+      "segmentId": "e31-01041-01",
+      "speakerId": "henry",
+      "textHash": "85279111091369decdc202e525c3f3146ee3d70d0a95f46e2754efe592b9736e"
+    },
+    {
+      "segmentId": "e31-01042-01",
+      "speakerId": "henry",
+      "textHash": "3fc2118d352cbb01db0d8b015d9df5926e416c4b75379601277187da80329c6b"
+    },
+    {
+      "segmentId": "e31-01043-01",
+      "speakerId": "pritam",
+      "textHash": "62b70d267a80467190b4dc16c90253b69a9d5ffc42070c31c657e08fdd866b6b"
+    },
+    {
+      "segmentId": "e31-01045-01",
+      "speakerId": "henry",
+      "textHash": "07ea5e0f47a1ec660d7776dec748e10753800f432f760158f7b3526c6f68100c"
+    },
+    {
+      "segmentId": "e31-01049-01",
+      "speakerId": "henry",
+      "textHash": "309d389bfb06e7a1c0bbb4c984b03e15d8b5171a1e7f87ebb0d6bfc24060e7c8"
+    },
+    {
+      "segmentId": "e31-01051-01",
+      "speakerId": "henry",
+      "textHash": "ce651c9026fda7248d57eadc7e11267fa4cd8af9dde8fad9a165d55a42707254"
+    },
+    {
+      "segmentId": "e31-01053-01",
+      "speakerId": "henry",
+      "textHash": "3f1102d561c0baf5416c7a4d10da0ff27ea88d4372467b37f4884799979e14ff"
+    },
+    {
+      "segmentId": "e31-01057-01",
+      "speakerId": "henry",
+      "textHash": "facee402dd7deb330783d8cf0230f03fa1aebff7d15682f1e33c41c872af002f"
+    },
+    {
+      "segmentId": "e31-01060-01",
+      "speakerId": "henry",
+      "textHash": "b8ae8266aa1cce5483f7f29d1b15aa901c82ce7243238cfb9938a5876a306548"
+    },
+    {
+      "segmentId": "e31-01067-01",
+      "speakerId": "henry",
+      "textHash": "53acd3bbffe5c373266387fc4ddb973cdd6b252feceb4a91e1ff52e1a54171e5"
+    },
+    {
+      "segmentId": "e31-01072-01",
+      "speakerId": "henry",
+      "textHash": "47cd9eb3d35a073b647c9892bb05a4aa082005ee663bfa759b02d6b396c707ef"
+    },
+    {
+      "segmentId": "e31-01075-01",
+      "speakerId": "henry",
+      "textHash": "ee3c79dac1330785e3f06d56ce47dcada47b827f814998c6a8800d11ec6e648a"
+    },
+    {
+      "segmentId": "e31-01083-01",
+      "speakerId": "henry",
+      "textHash": "e6e0988fd17e35411cf499f8d2a9438a1ac4edabc0118d6d58005c221144e492"
+    },
+    {
+      "segmentId": "e31-01085-01",
+      "speakerId": "henry",
+      "textHash": "0e127b806d9723ec9319d9e12f6a72c82ff1f99771471de635fb50f7598f350c"
+    },
+    {
+      "segmentId": "e31-01092-01",
+      "speakerId": "pritam",
+      "textHash": "9e99dec789f1b3a13e4af2848b32e2c14300e5005a7e8f84f0e41731b1acc7c7"
+    },
+    {
+      "segmentId": "e31-01105-01",
+      "speakerId": "pritam",
+      "textHash": "cd8b708632b120994f3710f87f8b94fa3236c2c8bda0c7362ee4832a5a61f66e"
+    },
+    {
+      "segmentId": "e31-01109-01",
+      "speakerId": "pritam",
+      "textHash": "8f1bcf159f3eb28ae3183bebbd6ad2ec8fc22cfef975fc4978eafba9e484b251"
+    },
+    {
+      "segmentId": "e31-01122-01",
+      "speakerId": "pritam",
+      "textHash": "f4d299760e58e0b49f89a22fe7b0b71c3e09c97873f35e669977817f5d57836f"
+    },
+    {
+      "segmentId": "e31-01125-01",
+      "speakerId": "pritam",
+      "textHash": "ab9df33c4eefc6ce2d41e1e99f20bff29d834b949e115531cb6f1b2804737a41"
+    },
+    {
+      "segmentId": "e31-01136-01",
+      "speakerId": "pritam",
+      "textHash": "5345aceeb2db930b5fa1dc5ed7c08f960f1e67dfa8262cdfbdd52b4a058ab667"
+    },
+    {
+      "segmentId": "e31-01137-01",
+      "speakerId": "pritam",
+      "textHash": "dfc548ba566a9ec1dd58754f5dd4bf6afe46ace1929f621afc7bbd9b6eea2688"
+    },
+    {
+      "segmentId": "e31-01139-01",
+      "speakerId": "pritam",
+      "textHash": "5539a5983c839defb897e705a7c4b89f4d03ae524495fc7db82f3b3b671eb813"
+    },
+    {
+      "segmentId": "e31-01151-01",
+      "speakerId": "pritam",
+      "textHash": "9cddb40785673267cae538faf8b929920a95aa643d759fd4f36b1c5b5c9a7201"
+    },
+    {
+      "segmentId": "e31-01158-01",
+      "speakerId": "pritam",
+      "textHash": "9f7acd2c96deb985ffec9228a179382d1c7a7f6d2b3113a7639a80de1f202ad5"
+    },
+    {
+      "segmentId": "e31-01173-01",
+      "speakerId": "pritam",
+      "textHash": "b7e1524e56b8b5c3a94ef789e065b7e41b5d6b3ad7e37f0a575bfe4e5fdd2060"
+    },
+    {
+      "segmentId": "e31-01179-01",
+      "speakerId": "pritam",
+      "textHash": "9db8d7ea90b7b4314e02115e938e146461daf1bc84350c07f65eca3402eee104"
+    },
+    {
+      "segmentId": "e31-01182-01",
+      "speakerId": "pritam",
+      "textHash": "f4385f8282f0d349cf2b4d92f8008886223c5ac84a32897d3200f5fe80d1dcd4"
+    },
+    {
+      "segmentId": "e31-01195-01",
+      "speakerId": "pritam",
+      "textHash": "289ac52c50f411c8d8f5204091b364d29191fd509a57bff1874558342333a28b"
+    },
+    {
+      "segmentId": "e31-01197-01",
+      "speakerId": "henry",
+      "textHash": "edd27e13eb216fc5a532421567231d29115811db7438f38ce8f823d99c7e415c"
+    },
+    {
+      "segmentId": "e31-01198-01",
+      "speakerId": "henry",
+      "textHash": "e13c100ca27d1be176ea03decd166abf0d25dd019ac3b71397d206a225f2fb92"
+    },
+    {
+      "segmentId": "e31-01200-01",
+      "speakerId": "henry",
+      "textHash": "054372fb16b9e6b1b1b27f0a51937b291336dd5f1f1ccc6970d1a201feaa439a"
+    },
+    {
+      "segmentId": "e31-01207-01",
+      "speakerId": "henry",
+      "textHash": "27cdb07a44bee7f2c4c488c7d49c6a02a2c036dde01a71ddc92e69b074ac4c3e"
+    },
+    {
+      "segmentId": "e31-01208-01",
+      "speakerId": "henry",
+      "textHash": "80f91c3d4090596d9cab7dd4a2d26b569b5b9e225137468020505bb6df069b1c"
+    },
+    {
+      "segmentId": "e31-01209-01",
+      "speakerId": "henry",
+      "textHash": "a1aaf2371328832e9358644f083713ff142af94e3c47a9e5befd0e0af8634619"
+    },
+    {
+      "segmentId": "e31-01214-01",
+      "speakerId": "henry",
+      "textHash": "a283440f291afbbe217f628ea80ffe67d50854a7f4f857a0fa63ce0dbba7d510"
+    },
+    {
+      "segmentId": "e31-01221-01",
+      "speakerId": "henry",
+      "textHash": "64503bcec374766ab275989c20df61e1defaadf2ce649a0e95211283fac88c98"
+    },
+    {
+      "segmentId": "e31-01223-01",
+      "speakerId": "henry",
+      "textHash": "7ab992e9daa39f565ba4964091ab00216313dfa99ba633ed9fbde6120f604fad"
+    },
+    {
+      "segmentId": "e31-01224-01",
+      "speakerId": "henry",
+      "textHash": "3d7d3fa76b3332ca01451f05eefb2feae54cc9cbbea8524765f7f8f07c0022ab"
+    },
+    {
+      "segmentId": "e31-01227-01",
+      "speakerId": "henry",
+      "textHash": "a9a7509037d773d4ab53cbdc8299d4e727e9258c4a497bc9dbdd00b8c2a26971"
+    },
+    {
+      "segmentId": "e31-01238-01",
+      "speakerId": "henry",
+      "textHash": "a6622b939d6067a898e8c22d71078010eeea4cf7b7a4371e8bc03b9f9e7fd72a"
+    },
+    {
+      "segmentId": "e31-01242-01",
+      "speakerId": "henry",
+      "textHash": "380f4802908f127f801a88c73a00a4d17a1053ad159d761b936a01df3cfc4642"
+    },
+    {
+      "segmentId": "e31-01246-01",
+      "speakerId": "henry",
+      "textHash": "7f46cb7695a988dd292f1d60739b0cf6171937f5cf5d43fc8b850d6c29d9b7ba"
+    },
+    {
+      "segmentId": "e31-01248-01",
+      "speakerId": "henry",
+      "textHash": "411ded288154fe7e6298be9830a5e3cf9857fa827481ea34f05122e676d853b6"
+    },
+    {
+      "segmentId": "e31-01250-01",
+      "speakerId": "henry",
+      "textHash": "0530c6568379159fe8ada78988ef70cc1c62b27c2cce188f37b78397eb7b00a1"
+    },
+    {
+      "segmentId": "e31-01256-01",
+      "speakerId": "henry",
+      "textHash": "042f62c352fcce30ecd32e40156737d52931101686b00e6fdc8350c92fb4c539"
+    },
+    {
+      "segmentId": "e31-01257-01",
+      "speakerId": "henry",
+      "textHash": "0d369a0fd13b7975549fdeaa66e2eb2bc636e5a9f057d34a772900b61f18f423"
+    },
+    {
+      "segmentId": "e31-01258-01",
+      "speakerId": "henry",
+      "textHash": "6ec7e0f827ed21bc1f14a091e2967738802099ceb8c5c31d252160cfd7b799d8"
+    },
+    {
+      "segmentId": "e31-01264-01",
+      "speakerId": "henry",
+      "textHash": "d6db08a78b5fcedc3435b2ad8d13b40cbfbccdb37a3d20fafc307371a025e417"
+    },
+    {
+      "segmentId": "e31-01269-01",
+      "speakerId": "andy",
+      "textHash": "5ab5f9648c2300ecba3582e02ee24304837414c7d99a5d6133fff4a353082077"
+    },
+    {
+      "segmentId": "e31-01270-01",
+      "speakerId": "andy",
+      "textHash": "575ec911d23879613b2aebac93a64e94e7e81f9aca2a518762bf127d112e1d42"
+    },
+    {
+      "segmentId": "e31-01275-01",
+      "speakerId": "andy",
+      "textHash": "13a301a1a9f01d1af6160b246866d9bd5fd26155ee4b8d52f1e435d0d2472994"
+    },
+    {
+      "segmentId": "e31-01280-01",
+      "speakerId": "andy",
+      "textHash": "0c33653e830364842ef76e6bac13fd04ecb41804441ac454ae7fea1f02a034ac"
+    },
+    {
+      "segmentId": "e31-01287-01",
+      "speakerId": "andy",
+      "textHash": "499cbf44dae02e8fc6aec5d8f2268497153d2ad94543b627178de9b83247179d"
+    },
+    {
+      "segmentId": "e31-01295-01",
+      "speakerId": "andy",
+      "textHash": "79f317d2e64ac3dabe27531746cac40c2ef20c5d058b524360b995d2331bc221"
+    },
+    {
+      "segmentId": "e31-01298-01",
+      "speakerId": "andy",
+      "textHash": "42780cc0a85315db866cca85414101f18ca87205daf50d5b3e949e08ecfda2da"
+    },
+    {
+      "segmentId": "e31-01303-01",
+      "speakerId": "andy",
+      "textHash": "a1ebdfc8957bed997730c5950d961342ed0d6ea8d1afa83facfefe31a2dc80e2"
+    },
+    {
+      "segmentId": "e31-01307-01",
+      "speakerId": "andy",
+      "textHash": "4e9a880497a1b990d29755d129f45de2fbb8315303bcab847cfa9e5fcc283d98"
+    },
+    {
+      "segmentId": "e31-01309-01",
+      "speakerId": "andy",
+      "textHash": "4cff370d30e118a0f2d06169be445ebbcf958567d2c17bf9359b35d47b009995"
+    },
+    {
+      "segmentId": "e31-01316-01",
+      "speakerId": "andy",
+      "textHash": "e5334514a78b39b4a3a87bcd1d4a70b9fbdd855334e9533f221d57765a0e1ddd"
+    },
+    {
+      "segmentId": "e31-01318-01",
+      "speakerId": "andy",
+      "textHash": "e7ab8697d9336d914267a5c9dcd61c1d57b639594da6856b10afce9f3fcd2752"
+    },
+    {
+      "segmentId": "e31-01322-01",
+      "speakerId": "andy",
+      "textHash": "cfc984069cca4b68feec018e7ca3e054365bc05d5b513987e17fd7fc8d0cae74"
+    },
+    {
+      "segmentId": "e31-01331-01",
+      "speakerId": "andy",
+      "textHash": "9e255b3242f06b17e700cc6bc2dcada5470b980df79987f0942cad39b42eb1e4"
+    },
+    {
+      "segmentId": "e31-01334-01",
+      "speakerId": "andy",
+      "textHash": "ef8f4f1a9d5ef70b80fbf3aff22b20e7ba4be753af11d08c2a5d7533939af105"
+    },
+    {
+      "segmentId": "e31-01337-01",
+      "speakerId": "andy",
+      "textHash": "b61b42a3e7e7c489d5d95522fbfc7b880c46d43acf3dbc8c0530048e182b23dc"
+    },
+    {
+      "segmentId": "e31-01340-01",
+      "speakerId": "andy",
+      "textHash": "962cb7e75fca59c13953831346587c49bdf1e2aa793177f120b9c67d73e5513e"
+    },
+    {
+      "segmentId": "e31-01341-01",
+      "speakerId": "andy",
+      "textHash": "baf8a4f17df2fc0f65a2ee0f76eb80761e3d5f1a33a1e81d9d30c3a1f5e95456"
+    },
+    {
+      "segmentId": "e31-01345-01",
+      "speakerId": "henry",
+      "textHash": "3b69942d4dd36955bf0f2cfc8701863a36a16ce9492adef64aec09fa317365f8"
+    },
+    {
+      "segmentId": "e31-01352-01",
+      "speakerId": "henry",
+      "textHash": "962d4780f7330c48910c5873a2b43078310738d9a7973fd004d63a26ccbb63df"
+    },
+    {
+      "segmentId": "e31-01353-01",
+      "speakerId": "henry",
+      "textHash": "348394b8293cd671f40e6fd4b01be9952685c421ee9f80b3f9c6200e8f146434"
+    },
+    {
+      "segmentId": "e31-01363-01",
+      "speakerId": "henry",
+      "textHash": "0b4eef6bdcbd64d934551b005f54b30d99a20cd5b9a5e8ff02a97ad2c3f8c129"
+    },
+    {
+      "segmentId": "e31-01366-01",
+      "speakerId": "henry",
+      "textHash": "247f6e1fca5b2f6edfeb0d29e4c5e236520344427a62543213a6c0efdac31555"
+    },
+    {
+      "segmentId": "e31-01370-01",
+      "speakerId": "henry",
+      "textHash": "e05985757d02a5759220fbe36b65d2d0f68c528ac8e4c4bbc4690fb62a5b7e7d"
+    },
+    {
+      "segmentId": "e31-01370-02",
+      "speakerId": "henry",
+      "textHash": "be729ac712b0308a405044f0e3d0f32d7e4d3a8e56837f84843e6b5f7037e436"
+    },
+    {
+      "segmentId": "e31-01374-01",
+      "speakerId": "henry",
+      "textHash": "4c759b0baabaee9595b90c0a6714a58f3a375ee6d03aaa347ec22e4aa0a25474"
+    },
+    {
+      "segmentId": "e31-01375-01",
+      "speakerId": "henry",
+      "textHash": "86c5bb16c3d84bdca4a3c7db5d1081a11258089097f9faa343320304c432f32a"
+    },
+    {
+      "segmentId": "e31-01378-01",
+      "speakerId": "henry",
+      "textHash": "fcec4ded5c700cdab1e3972d6e70403fcf4c2aace05a2eaf0c2f4dac7ee7edd6"
+    },
+    {
+      "segmentId": "e31-01383-02",
+      "speakerId": "henry",
+      "textHash": "e482f1711dc4f0db7715be4b99950d4bb594ee8d2ba52c589a157249188143be"
+    },
+    {
+      "segmentId": "e31-01384-01",
+      "speakerId": "henry",
+      "textHash": "f1071a8b630f02d0e330bc7d52bdcb940735c5e9b035feda565c2013e5c10feb"
+    },
+    {
+      "segmentId": "e31-01384-02",
+      "speakerId": "henry",
+      "textHash": "c1e2c0b48a6afce378041865337e1ddb58e8cdae7ae887dcc101f764b8f7f911"
+    },
+    {
+      "segmentId": "e31-01389-01",
+      "speakerId": "henry",
+      "textHash": "7dd9b42d5c6c3d570640afcf0feddd2e73d1ae21608e18647ada07a548dea48e"
+    },
+    {
+      "segmentId": "e31-01392-01",
+      "speakerId": "henry",
+      "textHash": "a7b5c15fa2c04c758db00322ba095b895799b02a4ba83ae3f0e74475dd1704f8"
+    },
+    {
+      "segmentId": "e31-01394-01",
+      "speakerId": "henry",
+      "textHash": "94ebe8f38474267f950dbc3c83a7d84b53e424438412f51c6a2916cadfe3ef5f"
+    },
+    {
+      "segmentId": "e31-01396-01",
+      "speakerId": "henry",
+      "textHash": "fba1665f346ac0bb1d7878422a39c057e6e68cca72e73adbbee8d486a21a4c9b"
+    },
+    {
+      "segmentId": "e31-01400-01",
+      "speakerId": "henry",
+      "textHash": "ddf6dced56e31bc83215782f6f67a8145b6fb65939ae78752efb246558b67c8b"
+    },
+    {
+      "segmentId": "e31-01404-01",
+      "speakerId": "pritam",
+      "textHash": "a8261be8a907200d7750021fe60fa7a3bf3894dd2c685d66444d263d9c3ade95"
+    },
+    {
+      "segmentId": "e31-01410-01",
+      "speakerId": "pritam",
+      "textHash": "7ac943ed12eb4c693c77e98e7cafa3ee05b483325c8b02b9cfd6ec7be92c7ff3"
+    },
+    {
+      "segmentId": "e31-01413-01",
+      "speakerId": "pritam",
+      "textHash": "053a67c57469e09f403271c0c92ab09b501dcb55cff17fa373fb36aa8df5034b"
+    },
+    {
+      "segmentId": "e31-01415-01",
+      "speakerId": "pritam",
+      "textHash": "85c9830b7dd1348f57cd84dd5838ed4d7d5bf08afd38091e77f1e8bc842c0060"
+    },
+    {
+      "segmentId": "e31-01416-01",
+      "speakerId": "henry",
+      "textHash": "2c8f372de7068088c863170acf100b1f0fa4858e4a91a02d8a31f483767f321c"
+    },
+    {
+      "segmentId": "e31-01417-01",
+      "speakerId": "henry",
+      "textHash": "eb20fb66d4f16d3f09f313cd1d555a306e2ab7661d089ca237c7b1171206dea0"
+    },
+    {
+      "segmentId": "e31-01419-01",
+      "speakerId": "henry",
+      "textHash": "100d13dbba5648d36d676446355c87d461ae6d56d992a4873bd4d665d0bac1be"
+    },
+    {
+      "segmentId": "e31-01422-01",
+      "speakerId": "pritam",
+      "textHash": "9ce63d3dbd1fede038c42522d1ec43938dce21ca6293f727e3cb7d5d728977fa"
+    },
+    {
+      "segmentId": "e31-01437-01",
+      "speakerId": "pritam",
+      "textHash": "a9d8157b01df881bf8db5184031daa643a5d45adccdb6c48ecc1e4ebfee8a799"
+    },
+    {
+      "segmentId": "e31-01447-01",
+      "speakerId": "pritam",
+      "textHash": "6c7a813988452756fc6293bd9628434d7b341d322c07fe64f9a585e2bd26a83f"
+    },
+    {
+      "segmentId": "e31-01449-01",
+      "speakerId": "pritam",
+      "textHash": "d00ac3c51bee64fd1b70bb38bb643813ceae78ea5fda5ea433d56bc70f55e209"
+    },
+    {
+      "segmentId": "e31-01450-01",
+      "speakerId": "henry",
+      "textHash": "d879ddfd19db1293f8882135c6c2f5da7a579837907c421516ef855842f54f47"
+    },
+    {
+      "segmentId": "e31-01450-02",
+      "speakerId": "henry",
+      "textHash": "e669299700b09c47b8280a46e9ad47e5590d3c9da9e5df3301a05309ad6cb7b2"
+    },
+    {
+      "segmentId": "e31-01455-01",
+      "speakerId": "henry",
+      "textHash": "6f11d8b72b6f7aa18c7a54f8c81ce8a9804bef73991423dc692aaaba75257244"
+    },
+    {
+      "segmentId": "e31-01460-01",
+      "speakerId": "henry",
+      "textHash": "efb9b0502f1a77bea7dd27d1b01e8ad6a9996084536b831f14f61a0d69ea2913"
+    },
+    {
+      "segmentId": "e31-01462-01",
+      "speakerId": "henry",
+      "textHash": "f30a925a213b349d1cd2f7e8cc15f2b832b90ce6dea0254f853371993177d837"
+    },
+    {
+      "segmentId": "e31-01465-01",
+      "speakerId": "henry",
+      "textHash": "3f802deac819c13eda9460e2d050d8bcd8af63a49d13832acfdf5b9016ed4842"
+    },
+    {
+      "segmentId": "e31-01468-01",
+      "speakerId": "henry",
+      "textHash": "01727f67f4cf6bf5b22cb781fcd88913c744ab69def5d9051eaeb51258e0d72e"
+    },
+    {
+      "segmentId": "e31-01470-01",
+      "speakerId": "henry",
+      "textHash": "35df72464e3082f8b28ae6b70a84351fbdaeacb1ee8cf524ad66eff0b0f0f8f3"
+    },
+    {
+      "segmentId": "e31-01471-01",
+      "speakerId": "henry",
+      "textHash": "72bace33220c7b2b59291b9405e57fefa842bd8957949f94f1ab4816278bd905"
+    },
+    {
+      "segmentId": "e31-01478-01",
+      "speakerId": "henry",
+      "textHash": "b9e19f66fdc63129507270f887cd47b2ba21c894d551c025aca62c1d19a8e370"
+    },
+    {
+      "segmentId": "e31-01482-01",
+      "speakerId": "andy",
+      "textHash": "dcba0d892df4afff46c1357e09c2fea6b7cdca982f38ef1b57fde8a2af4c7219"
+    },
+    {
+      "segmentId": "e31-01487-01",
+      "speakerId": "henry",
+      "textHash": "4ab22be9f4d3059d72ebdfe2b8cfde40fe5bcad42ae186d203c9174960df8131"
+    },
+    {
+      "segmentId": "e31-01488-01",
+      "speakerId": "henry",
+      "textHash": "ca9a1b7019241603ccf844cb69b6f24d6b2e57f28651c644cd767d4e9053d91c"
+    },
+    {
+      "segmentId": "e31-01561-01",
+      "speakerId": "henry",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-01562-01",
+      "speakerId": "henry",
+      "textHash": "8a99ea761b007136395d393c00973299556c2d9ccc9dbdd73156678ca08ad014"
+    },
+    {
+      "segmentId": "e31-01564-01",
+      "speakerId": "henry",
+      "textHash": "9e0a1d8ad40cd2b32b55e8ada2f032d82fedd55a8a9832d51dbbedd247a057af"
+    },
+    {
+      "segmentId": "e31-01567-01",
+      "speakerId": "henry",
+      "textHash": "a55148e7c6266caba6751a5fab2361d7830c8a947f93cd2b2bab0ef492abcd0f"
+    },
+    {
+      "segmentId": "e31-01569-01",
+      "speakerId": "henry",
+      "textHash": "7d0f5174a7e3c42ac58dcbc458ca3170086760b5a6fc6779cfd6806ee80cac91"
+    },
+    {
+      "segmentId": "e31-01573-01",
+      "speakerId": "henry",
+      "textHash": "6ecfda7e134f14281abb50a9b939ce4314a78d64484bba61c5ee72c92d5878ea"
+    },
+    {
+      "segmentId": "e31-01580-01",
+      "speakerId": "henry",
+      "textHash": "124b665bc9a2ef7db5452a8cb03366936a4b1fbfa71163d0ca6644a3de9f82e8"
+    },
+    {
+      "segmentId": "e31-01584-01",
+      "speakerId": "henry",
+      "textHash": "3271ea3c51a5b637796eed31d82810295fdb98491d4bca53f7c42e7c7f6eddc6"
+    },
+    {
+      "segmentId": "e31-01586-01",
+      "speakerId": "henry",
+      "textHash": "b2bdddd3f22319860fbf0d803eda8fa4dcddfd966107e0bcb1f881c9ba5f5529"
+    },
+    {
+      "segmentId": "e31-01588-02",
+      "speakerId": "henry",
+      "textHash": "865782091890cfbb85cf72c5233449cc07ad0b26ea01d3d265c6439128690dc1"
+    },
+    {
+      "segmentId": "e31-01592-01",
+      "speakerId": "henry",
+      "textHash": "31849391fb1900a77e869e0bae8c389c33a60423c0cde01b1aca6eed285701ac"
+    },
+    {
+      "segmentId": "e31-01600-01",
+      "speakerId": "henry",
+      "textHash": "21e9d560a48aae5b66f5b6eccff3cba7bb55aea43e7341df7aa8c0f2b4ebcfd4"
+    },
+    {
+      "segmentId": "e31-01602-01",
+      "speakerId": "henry",
+      "textHash": "eb6dfbec4d492814408e028f82ab1656883467a0e20f6ac7548058064d401bdd"
+    },
+    {
+      "segmentId": "e31-01603-01",
+      "speakerId": "henry",
+      "textHash": "855b7790298ca49391afd2f2404af3eb6e08931023ad14659fcff8a8dcad46f4"
+    },
+    {
+      "segmentId": "e31-01604-01",
+      "speakerId": "henry",
+      "textHash": "22546d984d7b0d95efec0ddc9de346f6da4b292846274bb16959a127bc7c5c65"
+    },
+    {
+      "segmentId": "e31-01606-01",
+      "speakerId": "pritam",
+      "textHash": "c81879b90aef95c86d828d3951329d87b7659672742b1ae6082ff40edfc9abd2"
+    },
+    {
+      "segmentId": "e31-01616-01",
+      "speakerId": "pritam",
+      "textHash": "48bccf2bf840cda7678f46c87704baf27461f97c9d9e39586b63cc60ae6c39e1"
+    },
+    {
+      "segmentId": "e31-01618-01",
+      "speakerId": "pritam",
+      "textHash": "787928197c3593a342d8a92e9919b730ae3b7b7dc4cd7fca6bac1a82ec637c88"
+    },
+    {
+      "segmentId": "e31-01620-01",
+      "speakerId": "pritam",
+      "textHash": "a3f1b1eec5620e980dcfa70e418966e7875f3ecc264ce6914c4e2d55edcc89db"
+    },
+    {
+      "segmentId": "e31-01632-01",
+      "speakerId": "henry",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-01633-01",
+      "speakerId": "henry",
+      "textHash": "dbee4d995a9b896ff6f0b83f692bc9de811cde24e28d26092a9c7d003bbeeb9a"
+    },
+    {
+      "segmentId": "e31-01634-01",
+      "speakerId": "henry",
+      "textHash": "d17e9e9dfb312a3610e9562dfdb47065189b2ae8f96f2d7cfbe21891a5c4f701"
+    },
+    {
+      "segmentId": "e31-01639-01",
+      "speakerId": "henry",
+      "textHash": "9268ecd14f819e40b3efb3ce8441e2b62d25bd459f2443519643b27a4a0aac31"
+    },
+    {
+      "segmentId": "e31-01650-01",
+      "speakerId": "henry",
+      "textHash": "1b86fcf715a4a8ab0233da1a22df0adf16ff19fc44ecd8dac65f9cabf5f6eba5"
+    },
+    {
+      "segmentId": "e31-01651-01",
+      "speakerId": "henry",
+      "textHash": "d021d76ce56997c6924a12cec4b57380fe739979f272f4f32e6f355cd6b833bf"
+    },
+    {
+      "segmentId": "e31-01657-01",
+      "speakerId": "henry",
+      "textHash": "a3beee7c4663f0efc304500724a4924c3ffb9c1e2206ceee0f9382d8d0e6626b"
+    },
+    {
+      "segmentId": "e31-01659-01",
+      "speakerId": "henry",
+      "textHash": "11ae138243da8321a7e325a809c2e594d8c1bf7acf69f79cd2ffc759337f8cd4"
+    },
+    {
+      "segmentId": "e31-01660-01",
+      "speakerId": "henry",
+      "textHash": "f0266841371a9330e9292c977ad6a23c42e09c39f70664d41168e6a6afed4ffd"
+    },
+    {
+      "segmentId": "e31-01661-01",
+      "speakerId": "henry",
+      "textHash": "19d5c6c886d1cf7b03389c09dab4a17255f76dc9967bd528c1f1a58bdc6b9462"
+    },
+    {
+      "segmentId": "e31-01662-01",
+      "speakerId": "henry",
+      "textHash": "3236481b51c80b94a41c49d97f13911f9f43dafdde24ac262164a456f1bd8351"
+    },
+    {
+      "segmentId": "e31-01665-01",
+      "speakerId": "henry",
+      "textHash": "fedaa72745eda542caf1872da7a6448d1a7364ce5eb0b93362bb82bc228cd268"
+    },
+    {
+      "segmentId": "e31-01666-01",
+      "speakerId": "henry",
+      "textHash": "16e46bdb6e2f6bac978bbad19b4630d3e6c84d01cca273527702984bfdc6ba04"
+    },
+    {
+      "segmentId": "e31-01669-01",
+      "speakerId": "henry",
+      "textHash": "9e62c19d48abd3ad00258dadf14b49197bc8b07a06b8477ac2ae049d4a8f9bfe"
+    },
+    {
+      "segmentId": "e31-01678-01",
+      "speakerId": "henry",
+      "textHash": "3a317d90f98ef66d105401af525f6650ff9cd82cf54b8cb2fe11c63d4a89b039"
+    },
+    {
+      "segmentId": "e31-01680-01",
+      "speakerId": "henry",
+      "textHash": "cbee67a79cb1810c55e82160849eafcabcb21fa9d54be7d9ed60b73242e83fe9"
+    },
+    {
+      "segmentId": "e31-01687-01",
+      "speakerId": "henry",
+      "textHash": "ba0cd9dd99e14422f6b39dd3c79bcff11c3f5abe2f8c2542946003d17c2a94b9"
+    },
+    {
+      "segmentId": "e31-01688-01",
+      "speakerId": "henry",
+      "textHash": "8208a73430c3b78d9e2051bafba8308a901d883d1371b75693d6c9fb07ae8b99"
+    },
+    {
+      "segmentId": "e31-01696-01",
+      "speakerId": "henry",
+      "textHash": "1dfc7a997be0913028805a2e44e5f13c89ae961359f01e58b50af7b28401c9ee"
+    },
+    {
+      "segmentId": "e31-01697-01",
+      "speakerId": "henry",
+      "textHash": "afbb3bd875bbf49b19a97feb62a3a7e65f2e3a355fc5b6fd2a514805dc82cc59"
+    },
+    {
+      "segmentId": "e31-01698-01",
+      "speakerId": "henry",
+      "textHash": "2cbded15cbd6959eb2aee4c60f83fe4506ef86c64fa01e06ec61e63e54d0ae6e"
+    },
+    {
+      "segmentId": "e31-01701-01",
+      "speakerId": "henry",
+      "textHash": "275349d940f2068377f5a5be0161b485ad34ccc691bf39711595090a873b609a"
+    },
+    {
+      "segmentId": "e31-01705-01",
+      "speakerId": "henry",
+      "textHash": "6fac5eef3fcd9648dc83dfedef3460073fdbdc32e01124a05564bd18bcaf7d88"
+    },
+    {
+      "segmentId": "e31-01708-01",
+      "speakerId": "henry",
+      "textHash": "68079647458ec0dad6a3e680c061574f2296215bf30d227d40373f0bde2bff97"
+    },
+    {
+      "segmentId": "e31-01715-01",
+      "speakerId": "henry",
+      "textHash": "2b93095af0ce84695ab0b79c6e09b02f7142235817fd2dd0b8d74ae438846f43"
+    },
+    {
+      "segmentId": "e31-01716-01",
+      "speakerId": "henry",
+      "textHash": "d89085660826a1d8351e14660d565eea0aaf2d46e65bdfb2ddf537083130cc62"
+    },
+    {
+      "segmentId": "e31-01716-02",
+      "speakerId": "henry",
+      "textHash": "53d012fda16ef6e9434ff2fb677d28e89c3da5eef000ad3f0f47db6fb9b7793a"
+    },
+    {
+      "segmentId": "e31-01718-01",
+      "speakerId": "henry",
+      "textHash": "1420d7c921781468a4bab7ed8c12a2920625f84f1dc21135e7572d802bece6b7"
+    },
+    {
+      "segmentId": "e31-01724-01",
+      "speakerId": "henry",
+      "textHash": "e582e27d2eed6008eb4b79a9f37a7655c636e44a789900f0e67cad2d48c7331d"
+    },
+    {
+      "segmentId": "e31-01725-01",
+      "speakerId": "henry",
+      "textHash": "350f8ced57caf47898b9dc2959023aa693fff572f046e7b81cdfa67e116a25b1"
+    },
+    {
+      "segmentId": "e31-01727-01",
+      "speakerId": "henry",
+      "textHash": "824042c7b397afe047ba656ebf90b49cff85284e7d8b6874a737578973971748"
+    },
+    {
+      "segmentId": "e31-01735-01",
+      "speakerId": "henry",
+      "textHash": "4ec6d110a6d78731feca1f9fe39924376a56ed4fde6ca29589da6d357a3dbf94"
+    },
+    {
+      "segmentId": "e31-01737-01",
+      "speakerId": "henry",
+      "textHash": "6aa8bdea522188475c354e319574b5e3462c2d3a408e46fa2be791a04fbd14c3"
+    },
+    {
+      "segmentId": "e31-01744-01",
+      "speakerId": "henry",
+      "textHash": "c25fd27028b1ffd9b12949f4ee01f30ae22e1160ddf792d1468f1a93ba713aa4"
+    },
+    {
+      "segmentId": "e31-01748-01",
+      "speakerId": "henry",
+      "textHash": "a3a445355e6d6ebfb57c6b72b645ec1b0f9faa0c8cf727a524c2f423c1afc3a0"
+    },
+    {
+      "segmentId": "e31-01752-01",
+      "speakerId": "henry",
+      "textHash": "20b0a0d1decb27e0e5277632d52e9f54c12c683fa3d668c2f12b83774a832fc0"
+    },
+    {
+      "segmentId": "e31-01769-01",
+      "speakerId": "henry",
+      "textHash": "cf1e61341097fea5e6ed9003c389b0dbd7785bc85df77044bea383bc55c9451c"
+    },
+    {
+      "segmentId": "e31-01774-01",
+      "speakerId": "henry",
+      "textHash": "a2f77275aebf383f57b1d90006cc980586686807bbe9b2efb92a1e5562a8804e"
+    },
+    {
+      "segmentId": "e31-01782-01",
+      "speakerId": "henry",
+      "textHash": "8239161fe22e3d84e43fea5063d6253d00e3f867f359f5e6a4f2c60b352cfec2"
+    },
+    {
+      "segmentId": "e31-01786-01",
+      "speakerId": "henry",
+      "textHash": "7813aaeffe839c6116edab74ec38eed17cfe3bcb41a457dccf113a1a29eed673"
+    },
+    {
+      "segmentId": "e31-01795-01",
+      "speakerId": "henry",
+      "textHash": "87345e1b53ea9bdb81768e45140bf52b0b44e9c96ed5f93dbc9f851f81e59067"
+    },
+    {
+      "segmentId": "e31-01804-01",
+      "speakerId": "henry",
+      "textHash": "115346431a87bce9347c9ca846b7dad6b984916bdd6d3f895f989eefb7e5090e"
+    },
+    {
+      "segmentId": "e31-01805-01",
+      "speakerId": "henry",
+      "textHash": "955ad3c5345192dd9fe21bc41a795f82fd396f2ca4ddd6919ed2ae12179d6d63"
+    },
+    {
+      "segmentId": "e31-01806-01",
+      "speakerId": "pritam",
+      "textHash": "572948e0c42f627dd7535bab9f71ad5b3136cf6c5fe811348e4a50dbcb41a1b4"
+    },
+    {
+      "segmentId": "e31-01814-01",
+      "speakerId": "pritam",
+      "textHash": "1b9887d2d72202b89e8b437ea6a7b83be48758fd0f604a5accb9b3abf9f98249"
+    },
+    {
+      "segmentId": "e31-01827-01",
+      "speakerId": "pritam",
+      "textHash": "8626efc70a747ec7342a40dfcd6b60cf37ec7298e804f1e2e209f4845349453d"
+    },
+    {
+      "segmentId": "e31-01831-01",
+      "speakerId": "pritam",
+      "textHash": "dfabca37f284cde24f7f7898587348233c2b056e1a331df6d8eb357b7e26a32f"
+    },
+    {
+      "segmentId": "e31-01835-01",
+      "speakerId": "henry",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-01836-01",
+      "speakerId": "henry",
+      "textHash": "c3fd02e83d9d9d1db437aab1bee71eaac2945236333ae2c6f975d9f12e26d5a3"
+    },
+    {
+      "segmentId": "e31-01838-01",
+      "speakerId": "henry",
+      "textHash": "59a40c005d879e6628ce2cb85f0aea4b700a991c5d2b24884c8600b29e550906"
+    },
+    {
+      "segmentId": "e31-01847-01",
+      "speakerId": "henry",
+      "textHash": "14611d9d3cca155f9e819f8695d177ca8bbebb7bb9c48b1f9b950dacf2e037d3"
+    },
+    {
+      "segmentId": "e31-01849-01",
+      "speakerId": "henry",
+      "textHash": "fc74e85bbd19cfb6e628609a0ae70fc96ae10b5516e7c5bc5cb66e79518d1a90"
+    },
+    {
+      "segmentId": "e31-01856-01",
+      "speakerId": "henry",
+      "textHash": "f195c14fef78d9d16532b21f88b6f703169e5ac3085c69aabe09c3d27b4f088a"
+    },
+    {
+      "segmentId": "e31-01860-01",
+      "speakerId": "henry",
+      "textHash": "b0ad76641847b1cb7fa47763a4e0f9f03a93ff8f563a79eaf29a9cc3fec8d404"
+    },
+    {
+      "segmentId": "e31-01864-01",
+      "speakerId": "henry",
+      "textHash": "7cb73c1b459d0ec9cd1a457a4ed91b17c90ede87e228dede69112803e41cf553"
+    },
+    {
+      "segmentId": "e31-01865-01",
+      "speakerId": "henry",
+      "textHash": "331dd8cef7d5d15ba9a1469a984ba33e9964d23ec569952aaa99d9c07227f164"
+    },
+    {
+      "segmentId": "e31-01871-01",
+      "speakerId": "henry",
+      "textHash": "8f6b7af37e243d94aae50b3a36cd332e3f648c454e8e164608a95c777a01aa8b"
+    },
+    {
+      "segmentId": "e31-01874-01",
+      "speakerId": "henry",
+      "textHash": "2d8fabcb0f58c04503fea8b08f14b558956c26237b8e85985e8a4b9ebbee3b57"
+    },
+    {
+      "segmentId": "e31-01878-01",
+      "speakerId": "henry",
+      "textHash": "c88b2f26db0ac849d83bf6f91a3413d3a80ecb76fb7f83d6590dffda24eb1f41"
+    },
+    {
+      "segmentId": "e31-01883-01",
+      "speakerId": "henry",
+      "textHash": "f3ecdc2b809216b7c197da46d0642a7218886965140ca35cdd9cba2c4e7609b9"
+    },
+    {
+      "segmentId": "e31-01885-01",
+      "speakerId": "henry",
+      "textHash": "4bcf68d4cb41ff2b39efdb03e756520fb835c0ceccef23afe072507468707cb6"
+    },
+    {
+      "segmentId": "e31-01886-01",
+      "speakerId": "henry",
+      "textHash": "3f74caa793d0e24bf08d3ea25484d76cd072f72f3e8372211a22b61a425c0d40"
+    },
+    {
+      "segmentId": "e31-01892-01",
+      "speakerId": "henry",
+      "textHash": "95f777ab0e79d85d4403d4ce54472d90184857573bc3c90f4ba303b251723b41"
+    },
+    {
+      "segmentId": "e31-01895-01",
+      "speakerId": "henry",
+      "textHash": "ca68f4de4b86a411e70b781cd37d47cfb3f2558c647cadfb9f49f867ac119a80"
+    },
+    {
+      "segmentId": "e31-01896-01",
+      "speakerId": "henry",
+      "textHash": "cffd99d6f9ee60fe510465bb2473f044ac67016d50a5028ce261d9f47256799f"
+    },
+    {
+      "segmentId": "e31-01899-01",
+      "speakerId": "henry",
+      "textHash": "2c152ef0887f4ab9d6d9e2acc6bc3512d4ed46fb0c64c1e23eba85506596a22c"
+    },
+    {
+      "segmentId": "e31-01900-01",
+      "speakerId": "henry",
+      "textHash": "6d5ec5ba7f03f2bf872ac885c6752c7e864d48e60a1c2fa12995da7a54a5cc89"
+    },
+    {
+      "segmentId": "e31-01902-01",
+      "speakerId": "henry",
+      "textHash": "59cdf03ca2cb6fe0b56048c328feeb4fcd3f0cfc1bb0f0ba10cf3197574ab487"
+    },
+    {
+      "segmentId": "e31-01906-01",
+      "speakerId": "henry",
+      "textHash": "36a3e384e8d2b0166390a2b77724bd187f8a4fac1eef41710513dd33c9f58459"
+    },
+    {
+      "segmentId": "e31-01910-01",
+      "speakerId": "henry",
+      "textHash": "08be63f0ee550312a50cd3323152b0afb761caf71edfa99dd3c631370720538b"
+    },
+    {
+      "segmentId": "e31-01912-01",
+      "speakerId": "henry",
+      "textHash": "e12a39a9c2163965255d7e694c1c5254f0d441225b8b1162e34937b55880f9fe"
+    },
+    {
+      "segmentId": "e31-01921-01",
+      "speakerId": "henry",
+      "textHash": "7b4ee268d670c892bf59562c2c0ad78488f996a19738e41b55655af1ed5aafdf"
+    },
+    {
+      "segmentId": "e31-01925-01",
+      "speakerId": "henry",
+      "textHash": "445ea76e0fecc22edfb57a2ca2be09cca64ca11a356ce23a5287505de22c9fc0"
+    },
+    {
+      "segmentId": "e31-01925-02",
+      "speakerId": "henry",
+      "textHash": "d9db0b483778f60172570a308e2db0f308bfe0c5431a1876ddf22a488a7331d1"
+    },
+    {
+      "segmentId": "e31-01927-01",
+      "speakerId": "henry",
+      "textHash": "e0573f34a6987c2ac0e12533bbe94cf89f17f72430acedd90e102239c4d68a90"
+    },
+    {
+      "segmentId": "e31-01934-01",
+      "speakerId": "henry",
+      "textHash": "9875182a0d5496cec3239166275c9a72ba142ce31434bd9025ed27c2e7c52b4b"
+    },
+    {
+      "segmentId": "e31-01936-01",
+      "speakerId": "henry",
+      "textHash": "f00d26b5bd9079c6ad4aebaad0ea7402e003e250df6e8b7a212728b445acb7d0"
+    },
+    {
+      "segmentId": "e31-01939-01",
+      "speakerId": "henry",
+      "textHash": "56086441216e8f107915ff40a451b6d35df53529bfbae8bad9e15803428e6fad"
+    },
+    {
+      "segmentId": "e31-01941-01",
+      "speakerId": "henry",
+      "textHash": "d73a7f81e3def3cd7de4ff72945780c29a9ebd000561a3eb5479d497a8a2731b"
+    },
+    {
+      "segmentId": "e31-01942-01",
+      "speakerId": "henry",
+      "textHash": "117112801ffaa96db2e3d0c5325d699f36887f2ef3cf32a80e7d81dae085f0e2"
+    },
+    {
+      "segmentId": "e31-01943-01",
+      "speakerId": "henry",
+      "textHash": "046accd1beaddf0ff7269f8c28604f3510bbf156a2aac065898f7f882f09a2ad"
+    },
+    {
+      "segmentId": "e31-01945-01",
+      "speakerId": "andy",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-01946-01",
+      "speakerId": "andy",
+      "textHash": "fe254f0724c7ecaac9f8cd37e7dda0cfcdb6155b1ade7c6d7f2eb0afd37d703f"
+    },
+    {
+      "segmentId": "e31-01947-01",
+      "speakerId": "andy",
+      "textHash": "868814c37cc5e0984f89f2e5a244504b88b08d177508da7d7a22acb017de8be6"
+    },
+    {
+      "segmentId": "e31-01949-01",
+      "speakerId": "andy",
+      "textHash": "3258906d9c1196814ff3fb4863253887a6daae2fbffbbd1e09b43a3fc35e0fb8"
+    },
+    {
+      "segmentId": "e31-01954-01",
+      "speakerId": "pritam",
+      "textHash": "e079e57a875ac2b6017e9c12742ea9e5407c01a030adec79775936be156b4001"
+    },
+    {
+      "segmentId": "e31-01968-01",
+      "speakerId": "pritam",
+      "textHash": "6de70997a3ace8705bfb8cf9481e248ff75c5257c5db75ee13dc6534efce955b"
+    },
+    {
+      "segmentId": "e31-01973-01",
+      "speakerId": "henry",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-01974-01",
+      "speakerId": "henry",
+      "textHash": "62b376379b4b8cbfee409f65a0eaa89e9e8fb0c693b02073f60e4ec7b49b2d32"
+    },
+    {
+      "segmentId": "e31-01975-01",
+      "speakerId": "henry",
+      "textHash": "8dec8f260bc8c828bab6898ddbc304d5264ef2524848954fa576c5dc4c7dc908"
+    },
+    {
+      "segmentId": "e31-01977-01",
+      "speakerId": "henry",
+      "textHash": "e4cdb11a0f05d2025041d9d54ac006c78ee0bb64eea1d814e316984fc041a6db"
+    },
+    {
+      "segmentId": "e31-01981-01",
+      "speakerId": "henry",
+      "textHash": "9de18429e3ccc6ff26f44b9842e227903f7a4eaf3ce487241cc9a8e4e124b0b9"
+    },
+    {
+      "segmentId": "e31-01983-01",
+      "speakerId": "henry",
+      "textHash": "471443d755453fcf29e2f40217f5c4496a9896c0fd9a80e87f1d175f9f503c1e"
+    },
+    {
+      "segmentId": "e31-01985-01",
+      "speakerId": "henry",
+      "textHash": "5ef34ddfd0015bfeaeb5e35a091307fb55b97b7c8c1d9aa1df4d1344d66ab14f"
+    },
+    {
+      "segmentId": "e31-01988-01",
+      "speakerId": "henry",
+      "textHash": "55d37ab1b1d07b19e45d2ebed78005f73404521ac4d2577d6ba183da7781fb8c"
+    },
+    {
+      "segmentId": "e31-01989-01",
+      "speakerId": "henry",
+      "textHash": "330ccaae6ae8da1650be05960baae3eb8866ab30ca3e8ccdf24883bb22072067"
+    },
+    {
+      "segmentId": "e31-01990-01",
+      "speakerId": "andy",
+      "textHash": "6846570dc254bd709a6ce2a6fa56726438ea21a40213ffa93642675e16960633"
+    },
+    {
+      "segmentId": "e31-02003-01",
+      "speakerId": "andy",
+      "textHash": "4b76506e171b889cbac54c9939339e642c5de96ee5b5b6ac90695e02fda28913"
+    },
+    {
+      "segmentId": "e31-02003-02",
+      "speakerId": "andy",
+      "textHash": "bc86037b288a97542b3d53ada8b1617cdf37873cd3f4e2585499dae12a92dab3"
+    },
+    {
+      "segmentId": "e31-02014-01",
+      "speakerId": "andy",
+      "textHash": "bcce404827450cffe053b25ffa281c6c0d6983e4e81cdf45c3ae69217b8903c4"
+    },
+    {
+      "segmentId": "e31-02020-01",
+      "speakerId": "andy",
+      "textHash": "8931e3fd6a138da50c9e65fd7bd7e697b7cf215533cdb4133469372c26500c33"
+    },
+    {
+      "segmentId": "e31-02022-01",
+      "speakerId": "andy",
+      "textHash": "0ec850f269af8d30e6adf5154ea0b9124a6bcdcc6a85d6fafabf674a63775671"
+    },
+    {
+      "segmentId": "e31-02024-01",
+      "speakerId": "andy",
+      "textHash": "ac8acabbb52d89e240cec4ac18d8293dd2c6b0ee9bb85381a58ecc46196e329b"
+    },
+    {
+      "segmentId": "e31-02034-01",
+      "speakerId": "andy",
+      "textHash": "7d25c0a1b56f2675816b589237b3538cb2282a430bf6662dd33bdded2cfec276"
+    },
+    {
+      "segmentId": "e31-02036-01",
+      "speakerId": "andy",
+      "textHash": "4a7d9f2ea51743cda36de26427b7fc9da762d5a323aa134668d6ea80103b9e4a"
+    },
+    {
+      "segmentId": "e31-02042-01",
+      "speakerId": "andy",
+      "textHash": "e1cbea900b1018a98649c2df496765a9fdb2db6160e5d02266b2c558b07ceec1"
+    },
+    {
+      "segmentId": "e31-02047-01",
+      "speakerId": "andy",
+      "textHash": "30b974e81a02b356a6d6080dccbeb328d44fb4646b2f7be1c48e22ca71b4ac44"
+    },
+    {
+      "segmentId": "e31-02058-01",
+      "speakerId": "andy",
+      "textHash": "81fe1c965526d45f595591008444239b5c247c0ab08d5a1affc00dbe08826230"
+    },
+    {
+      "segmentId": "e31-02060-01",
+      "speakerId": "andy",
+      "textHash": "075e0dda5e7601ca5d975b8699dade9affb7f8c5f768f77d9f067e1f5884c39b"
+    },
+    {
+      "segmentId": "e31-02063-01",
+      "speakerId": "andy",
+      "textHash": "b8272ee5d91f5420e09385831f0e2d60bceb8030b6b68932fdf817374be3c021"
+    },
+    {
+      "segmentId": "e31-02065-01",
+      "speakerId": "andy",
+      "textHash": "49e8f3cdd58211b5de2e79354c3faf8d863bcf510bec187d320eac4eecd4294b"
+    },
+    {
+      "segmentId": "e31-02078-01",
+      "speakerId": "andy",
+      "textHash": "90d92795ce20eb5b354760668f9bdda1c8ad0387266d900089645b7caa4b0403"
+    },
+    {
+      "segmentId": "e31-02092-01",
+      "speakerId": "andy",
+      "textHash": "3cf29f895f4323a93a469e76342771845c1b0c20f76f052fe146b61e1bc5cabe"
+    },
+    {
+      "segmentId": "e31-02098-01",
+      "speakerId": "andy",
+      "textHash": "e82bec6f9adce1e2cf96f31c56719051858a79c9ec726a0b83f8b46bb7512837"
+    },
+    {
+      "segmentId": "e31-02103-01",
+      "speakerId": "henry",
+      "textHash": "f7a2b56e27fbc6784d8b9fa94fba8dc46c95959d636f692d8570ee42158d3d87"
+    },
+    {
+      "segmentId": "e31-02112-01",
+      "speakerId": "henry",
+      "textHash": "7b1b561a9602507d3b7205764328eb83dfce1860b65c43d0cccfa2dbd8e9747c"
+    },
+    {
+      "segmentId": "e31-02113-01",
+      "speakerId": "andy",
+      "textHash": "497ba33e6a4c9f4d61ebcc6e40d2d6093b4c45f75fb481aefa3db9fb5fa18592"
+    },
+    {
+      "segmentId": "e31-02115-01",
+      "speakerId": "pritam",
+      "textHash": "f3197cd8c1d45cd5974ea7bc04ce94594cf4a371041ac589aad5a0980de27c79"
+    },
+    {
+      "segmentId": "e31-02122-01",
+      "speakerId": "pritam",
+      "textHash": "d4957b1a1a78b59167946a6b18c9f4751615276175718588b743484dde8f6073"
+    },
+    {
+      "segmentId": "e31-02128-01",
+      "speakerId": "pritam",
+      "textHash": "9f54632a0afcb63749de74d75ea29a363ffe1eb139fa880658de128fa75a5345"
+    },
+    {
+      "segmentId": "e31-02147-01",
+      "speakerId": "pritam",
+      "textHash": "4460be27d5124147e95e5a8c504595dee127996372c8e80a30c82989067ef07d"
+    },
+    {
+      "segmentId": "e31-02151-01",
+      "speakerId": "henry",
+      "textHash": "2456b988a336d40868eea8f990a19224dfe359fa69c1e1c66fc1be4da37d27f4"
+    },
+    {
+      "segmentId": "e31-02153-01",
+      "speakerId": "pritam",
+      "textHash": "ea19dcf467c31c8b19f9c6fefdc513274a6e73708bc1c53d15f55bc41da64bc0"
+    },
+    {
+      "segmentId": "e31-02163-01",
+      "speakerId": "pritam",
+      "textHash": "aa3e7fc33f54bdb31ebabb3c1462b769ccd058f7e01c596388b7957ccad92f71"
+    },
+    {
+      "segmentId": "e31-02166-01",
+      "speakerId": "pritam",
+      "textHash": "bef2fd9cff296e652422806326829e1b90b5e3c3c6ae97693f30c7f2ea940392"
+    },
+    {
+      "segmentId": "e31-02179-01",
+      "speakerId": "pritam",
+      "textHash": "d745599b223f095cf8ea4a9778cc657c8069e7d4b44eb8ea991b9d580e61de39"
+    },
+    {
+      "segmentId": "e31-02181-01",
+      "speakerId": "pritam",
+      "textHash": "4b40fe0537399e7eb361ed31b88d3ae67cac5d9d18f9b336c82e8079dcdb26f3"
+    },
+    {
+      "segmentId": "e31-02185-01",
+      "speakerId": "pritam",
+      "textHash": "c9774d410a277e0322f45bad5181a338d652b1d3495f0c951d1156510768545d"
+    },
+    {
+      "segmentId": "e31-02198-01",
+      "speakerId": "pritam",
+      "textHash": "164473722ccbfc9456328f513eeaed964fc2cb2040516cb0adc141256866c207"
+    },
+    {
+      "segmentId": "e31-02201-01",
+      "speakerId": "henry",
+      "textHash": "313f0521d2932ab6354a09bfd1d84a7dc9de25db87cdd9391b0cee22b80639e8"
+    },
+    {
+      "segmentId": "e31-02202-01",
+      "speakerId": "henry",
+      "textHash": "5d6c45a63c925fb78a56361f3272a30c97ae9f7d8318c0a1193598623f41d0bb"
+    },
+    {
+      "segmentId": "e31-02203-01",
+      "speakerId": "henry",
+      "textHash": "375fa5a4deee14514420fa6cb54469bdc45ac4f1fddbb6a325da46ac5a224cd9"
+    },
+    {
+      "segmentId": "e31-02207-01",
+      "speakerId": "andy",
+      "textHash": "2bcdf11769a26144db01223df5e03ef1a4d05afe27f73bb7bd3b86f273b0131e"
+    },
+    {
+      "segmentId": "e31-02218-01",
+      "speakerId": "andy",
+      "textHash": "999e442096b90aaa55008199d64604a81d7aa16f045e7a9a287c470af55ffaf2"
+    },
+    {
+      "segmentId": "e31-02230-01",
+      "speakerId": "andy",
+      "textHash": "04259bd9b2a0da7a03e147d04741a34a076f6e364e7bdf0f10c544329eeab2dc"
+    },
+    {
+      "segmentId": "e31-02234-01",
+      "speakerId": "andy",
+      "textHash": "ef3d133561c3f5ad337628f41d9150800dc2c872bc25957b00c74ac5fc75b704"
+    },
+    {
+      "segmentId": "e31-02237-01",
+      "speakerId": "andy",
+      "textHash": "b2f00de7249f16f8a3867d558b5d5856f80b7593ab67f04e78bbbcb714885a62"
+    },
+    {
+      "segmentId": "e31-02245-01",
+      "speakerId": "andy",
+      "textHash": "202da108761e865e0d3e3712321e9257e420df8a6c771de5ae09111e84d45c64"
+    },
+    {
+      "segmentId": "e31-02253-01",
+      "speakerId": "andy",
+      "textHash": "a536ca1d386727d57dc73272d4e94105151c45facf2b9580233990a4805cd3a7"
+    },
+    {
+      "segmentId": "e31-02255-01",
+      "speakerId": "andy",
+      "textHash": "ff3c66e7dc9f31aef3160e1a9a22dda0bc500d5ab35022f4a5ebf26cc16ff375"
+    },
+    {
+      "segmentId": "e31-02259-01",
+      "speakerId": "andy",
+      "textHash": "d1af2dd937988c651f6cd6ddb72eb483a6429d039182dd9eead7ccb22c3c42f8"
+    },
+    {
+      "segmentId": "e31-02270-01",
+      "speakerId": "andy",
+      "textHash": "7716f563b6960e7aa39f6661d23e9ed289f466ebcaaf6cecf631aa87c3bf5731"
+    },
+    {
+      "segmentId": "e31-02278-01",
+      "speakerId": "henry",
+      "textHash": "85e063597ef90b3eba53d41bb37ccd6fa723a3ffcacb260392bf448e44b28e19"
+    },
+    {
+      "segmentId": "e31-02279-01",
+      "speakerId": "henry",
+      "textHash": "d580918bf5ac89a716ee4fbcfafb14a3f45fbe724dc6fef1c437cc4d206e49db"
+    },
+    {
+      "segmentId": "e31-02280-01",
+      "speakerId": "henry",
+      "textHash": "6cdbc2f5a8795c92e6c74cd59104e753aacc7fa54ddd6b1e62d2fe630929e6ee"
+    },
+    {
+      "segmentId": "e31-02281-01",
+      "speakerId": "henry",
+      "textHash": "acd5f6c8f23c7fa70e050fdc05f7a26364e932c6898d0a98377704a6b32cd8e7"
+    },
+    {
+      "segmentId": "e31-02286-01",
+      "speakerId": "henry",
+      "textHash": "1262a9f98e9c91fb09e162b9578d93998ea84ab205cf64e1492ac8e7fdc4d83b"
+    },
+    {
+      "segmentId": "e31-02288-01",
+      "speakerId": "henry",
+      "textHash": "bf09bd240cce70da975e165ad226a4941d16074da16211ad7de7a2311717ce37"
+    },
+    {
+      "segmentId": "e31-02291-01",
+      "speakerId": "henry",
+      "textHash": "f52346ec14dcb620dde783324b649037ac04a4a774221c03c498745f25606e4b"
+    },
+    {
+      "segmentId": "e31-02294-01",
+      "speakerId": "henry",
+      "textHash": "16b58f4da50aedea6b9531f293e43e979f55230d99c09a36781c65db40edf3b1"
+    },
+    {
+      "segmentId": "e31-02305-01",
+      "speakerId": "henry",
+      "textHash": "df62556bd07b623b675b58079ec43423665d6a3ad938f5790d0c34deb3cfb326"
+    },
+    {
+      "segmentId": "e31-02310-01",
+      "speakerId": "henry",
+      "textHash": "53e81ae1bd44f0b6f64e73d6f364a4876a5a9fc9ac2b68918dce0942a1bee539"
+    },
+    {
+      "segmentId": "e31-02311-01",
+      "speakerId": "henry",
+      "textHash": "22f1d790be726ff901700048ee4fe902f3c20488549f642c4b1ecc1793326a6c"
+    },
+    {
+      "segmentId": "e31-02313-01",
+      "speakerId": "henry",
+      "textHash": "209c37e6e72ad32e9dced75e7502fe0312e6b02ba10aca1a2b5d239cedd93e4d"
+    },
+    {
+      "segmentId": "e31-02314-01",
+      "speakerId": "henry",
+      "textHash": "6caaa2dc1d1456080a19bdfaeb2d0398cdc7f06fbee27d8591968173252d79e0"
+    },
+    {
+      "segmentId": "e31-02316-01",
+      "speakerId": "henry",
+      "textHash": "45b062a06f29fa64f4f2e1b8c6db4396b0d9cb33bc4a5511550157e88ecca45b"
+    },
+    {
+      "segmentId": "e31-02321-01",
+      "speakerId": "henry",
+      "textHash": "9325fb7dff6eae4a02e995c6afde7bc6cab9543c35c763897944e4de5a2615b4"
+    },
+    {
+      "segmentId": "e31-02324-01",
+      "speakerId": "henry",
+      "textHash": "7edc0583f98985d4a53a799b6a99163ab7f2a17dca114ac28e849a755c5e5329"
+    },
+    {
+      "segmentId": "e31-02332-01",
+      "speakerId": "henry",
+      "textHash": "da6c362d614f1eaba0aad0670331b7a2f5253dea547450d637f4b6ca9e7c06b8"
+    },
+    {
+      "segmentId": "e31-02335-01",
+      "speakerId": "henry",
+      "textHash": "a16b9de38ec5df34a3be55b2b41c48ea6051897f110d5870af6a5cf4eab67486"
+    },
+    {
+      "segmentId": "e31-02339-01",
+      "speakerId": "henry",
+      "textHash": "bf7df6235938583afe79deecf0864c884dbc79177e1cd146434663fbf025dede"
+    },
+    {
+      "segmentId": "e31-02341-01",
+      "speakerId": "henry",
+      "textHash": "8634f5200ba7beae6b8c4244dba0c4b5b7317638e78ca2890b1fa7067b958488"
+    },
+    {
+      "segmentId": "e31-02342-01",
+      "speakerId": "henry",
+      "textHash": "520a6d8e727bf59b3221f7f2cc35e76455008179736a4d678b6c94f671679f75"
+    },
+    {
+      "segmentId": "e31-02346-01",
+      "speakerId": "henry",
+      "textHash": "3e22ba63494293b5dfcabcbe2ed9eabc6a7c50dc85828f467774007e4d71c299"
+    },
+    {
+      "segmentId": "e31-02354-01",
+      "speakerId": "henry",
+      "textHash": "e59443b12752d1f95844806d3f6c14ca45410ddb6a7010e5fc8db3f474705dfd"
+    },
+    {
+      "segmentId": "e31-02362-01",
+      "speakerId": "henry",
+      "textHash": "5ec4fc3df5eb38896189748e443294048c70bee6c4b3bb027041d5256b09bc28"
+    },
+    {
+      "segmentId": "e31-02365-01",
+      "speakerId": "henry",
+      "textHash": "a1d55fb5524a00eee16d40e4a439d4b7f1bbd3f0333237590e3f6437f3054282"
+    },
+    {
+      "segmentId": "e31-02371-01",
+      "speakerId": "henry",
+      "textHash": "5e0411b3df7df35b3805fabb2b4eca0112a301f539540dd75ad9f887672bd5de"
+    },
+    {
+      "segmentId": "e31-02374-01",
+      "speakerId": "henry",
+      "textHash": "ba8cee5840d3623ccf61119f2c376d52094588fb3d22d7cdb1335ee325de32b7"
+    },
+    {
+      "segmentId": "e31-02378-01",
+      "speakerId": "henry",
+      "textHash": "3ee942d144e274b9862991b616b671eed88b0bd2ddd325f58c1b468855a35bd1"
+    },
+    {
+      "segmentId": "e31-02379-01",
+      "speakerId": "henry",
+      "textHash": "fafd5979d4e06ec3b4fc09c3ea60ba3e01d1a32aa4fca9dc06c860c1f003424b"
+    },
+    {
+      "segmentId": "e31-02381-01",
+      "speakerId": "henry",
+      "textHash": "16ed2751b31414f1ac72468ff1f62527d491c8151306ff2084b1a02ec5b6ce58"
+    },
+    {
+      "segmentId": "e31-02389-01",
+      "speakerId": "henry",
+      "textHash": "cfba4046992c1208961d3129e3ce437c544084187a01c44e96b0d953632a76a0"
+    },
+    {
+      "segmentId": "e31-02393-01",
+      "speakerId": "henry",
+      "textHash": "ba52c950ca3594acb6fb11416571d1ecea30bd11aaf1f52dbd5d997227de730e"
+    },
+    {
+      "segmentId": "e31-02397-01",
+      "speakerId": "henry",
+      "textHash": "22beb86675bb8ee4d5f7c443d474d111c899cb1a317ad4ce99bf44d229be9742"
+    },
+    {
+      "segmentId": "e31-02406-01",
+      "speakerId": "henry",
+      "textHash": "f451c6345892acfcdfafc38d8ca23a3dafe99f807820235b4b0e7490268c00b5"
+    },
+    {
+      "segmentId": "e31-02408-01",
+      "speakerId": "henry",
+      "textHash": "711f60791cb70d6b3edd77b95dae66761cc84a9ccac1980b1baa6411ba004480"
+    },
+    {
+      "segmentId": "e31-02411-01",
+      "speakerId": "henry",
+      "textHash": "899f7b1a2019e2d1d7d3077dac9140b778b331eb7713531f2126932ac8d42e58"
+    },
+    {
+      "segmentId": "e31-02418-01",
+      "speakerId": "henry",
+      "textHash": "86c5b07e50fd330c8bf731cf2e40594510810843382768a18c9222e00741f1d9"
+    },
+    {
+      "segmentId": "e31-02422-01",
+      "speakerId": "pritam",
+      "textHash": "f1914936afa00614cd2a4b536ebd2bc4a2036910c7e92be980374ad04f6fd4d0"
+    },
+    {
+      "segmentId": "e31-02424-01",
+      "speakerId": "pritam",
+      "textHash": "a2c6f44e8599932f82cdb6521b70a5c1ecb313e7f4caeac0c7c35a59bd6ab276"
+    },
+    {
+      "segmentId": "e31-02430-01",
+      "speakerId": "pritam",
+      "textHash": "cab2eec4111c17b70f1097d41c8c81f9125edf597ea90b06a2ce50c363f9efb7"
+    },
+    {
+      "segmentId": "e31-02438-01",
+      "speakerId": "henry",
+      "textHash": "f3a71d7b1efd71c1d08f7776c4e62977fdc2eca672be1b62c067f79cefd53fd0"
+    },
+    {
+      "segmentId": "e31-02448-01",
+      "speakerId": "henry",
+      "textHash": "9061d05cbf4f7d9c720b0db88d9ed46dc983257726edaa9c4ddeb204de3d8c00"
+    },
+    {
+      "segmentId": "e31-02459-01",
+      "speakerId": "henry",
+      "textHash": "90cd0b9fe71eae277db2abffe3f22006b64324a8425c1affe57bc5840fe9d5a8"
+    },
+    {
+      "segmentId": "e31-02467-01",
+      "speakerId": "henry",
+      "textHash": "9f7fece2d574cb75a22a0eaa4f26233ef9385172ecf36a676b4520c4991386cc"
+    },
+    {
+      "segmentId": "e31-02474-01",
+      "speakerId": "henry",
+      "textHash": "e6c775759879cbbeb33f0dfe724ccf802bf62b2c244484fccf07b5754164f301"
+    },
+    {
+      "segmentId": "e31-02476-01",
+      "speakerId": "henry",
+      "textHash": "8ae77bd4942737929fbbc7169f506b12b1ed6b00149679ee9608154613763985"
+    },
+    {
+      "segmentId": "e31-02477-01",
+      "speakerId": "andy",
+      "textHash": "0f90fd0cb87f29775f52161f73abf3499dfc288b3abe246da4ebdf2d03439dc7"
+    },
+    {
+      "segmentId": "e31-02481-01",
+      "speakerId": "andy",
+      "textHash": "fa25d1b60167c7b56a31dd3ac49e88dd04a4fc1cbd78484d10f21eccd8c76416"
+    },
+    {
+      "segmentId": "e31-02483-01",
+      "speakerId": "andy",
+      "textHash": "75f11165e4538a0dbb8c8c7f8293c63c01d81b30eebec68ef0432e53955cd759"
+    },
+    {
+      "segmentId": "e31-02492-01",
+      "speakerId": "andy",
+      "textHash": "a36b530e580ea73021810babbb4e38560499320090b1cad30b07f69610657bdd"
+    },
+    {
+      "segmentId": "e31-02502-01",
+      "speakerId": "andy",
+      "textHash": "8758b8fbd6ebd7b551fc4c5d5c247e18049dc90e92e8004b13670ba846f5d2f5"
+    },
+    {
+      "segmentId": "e31-02502-02",
+      "speakerId": "andy",
+      "textHash": "4001a385188027c146622ec751065e835b29ac52eee3044e61d20e083e65762d"
+    },
+    {
+      "segmentId": "e31-02506-01",
+      "speakerId": "andy",
+      "textHash": "2cddd82afa692f0593d491c48c8446567a52194e9ceda88ce160a178a0ccc220"
+    },
+    {
+      "segmentId": "e31-02510-01",
+      "speakerId": "andy",
+      "textHash": "c39f7ced4f353ccc7e70ad82305f5fb61f9a35a6d54c19d6538de665cd8f500c"
+    },
+    {
+      "segmentId": "e31-02514-01",
+      "speakerId": "andy",
+      "textHash": "192ed566cbff8dd724f86e80a0d85c4f3ea9fd6e73b4b534d778ab16012b3bcb"
+    },
+    {
+      "segmentId": "e31-02522-01",
+      "speakerId": "andy",
+      "textHash": "5c0b760479ea56c9ed3c627c494aaaf38ec2fb71fe94486873d9762fff9149e0"
+    },
+    {
+      "segmentId": "e31-02525-01",
+      "speakerId": "andy",
+      "textHash": "f5c87355dd7a2cb1f13d8d8434e7183d7d26a2ad5f41e63708f3774185def382"
+    },
+    {
+      "segmentId": "e31-02530-01",
+      "speakerId": "andy",
+      "textHash": "b16d3d66eab588f335572dcad097930c9b2a81af2a41916c57dd6a09a33d2027"
+    },
+    {
+      "segmentId": "e31-02531-01",
+      "speakerId": "andy",
+      "textHash": "b810b32d51dbc0080439fb46ca702b24cd39f41a516776eb0f7161d835870e77"
+    },
+    {
+      "segmentId": "e31-02533-01",
+      "speakerId": "andy",
+      "textHash": "810d7c3ca6aa6411102588f8636833035138a35f32f5e7b2df96d2ab2dc4d660"
+    },
+    {
+      "segmentId": "e31-02533-02",
+      "speakerId": "andy",
+      "textHash": "2b84f456e47996169323c15f753a457c54011f1a07276104a6782f99513484be"
+    },
+    {
+      "segmentId": "e31-02535-01",
+      "speakerId": "andy",
+      "textHash": "20e3acfe02702597ccfa172cb8331afdcd712c3e7091dd88af239d058be3e2c0"
+    },
+    {
+      "segmentId": "e31-02540-01",
+      "speakerId": "andy",
+      "textHash": "16804c69be7490c7aa8d5acc62f939940c752a51695916c56dc3678d883342ae"
+    },
+    {
+      "segmentId": "e31-02541-01",
+      "speakerId": "andy",
+      "textHash": "e67049152fc6bc85ff924c4f755aed8a4c8e817d988c1d85bae1fd11d3373547"
+    },
+    {
+      "segmentId": "e31-02544-01",
+      "speakerId": "andy",
+      "textHash": "1cec21851a6934097925c009f897594b07ba344d7641c4d713c8f43082c818a5"
+    },
+    {
+      "segmentId": "e31-02548-01",
+      "speakerId": "henry",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-02548-02",
+      "speakerId": "henry",
+      "textHash": "2753383df9f4606a78bd7783a57ae1dab50ac08f42b7f395d47eca81858760d0"
+    },
+    {
+      "segmentId": "e31-02549-01",
+      "speakerId": "henry",
+      "textHash": "63fc9569b54111c8f85603f8f06171e85c2c03c06fe196ca79751e064d9ef9f9"
+    },
+    {
+      "segmentId": "e31-02550-01",
+      "speakerId": "henry",
+      "textHash": "bb83e1ca8c87bdd7cc6cf1c5fd59cee97405d57cbb6446a8908bf712c97cfd8a"
+    },
+    {
+      "segmentId": "e31-02554-01",
+      "speakerId": "henry",
+      "textHash": "ad730a762ab424c872b9960294a2b3919168ce768d8ee43e5ddb202c5f40cba2"
+    },
+    {
+      "segmentId": "e31-02558-01",
+      "speakerId": "henry",
+      "textHash": "9b8fbe3087708337b6224ab7460b5b5a68807af248fe9fd5b3ee02eee6e1fc36"
+    },
+    {
+      "segmentId": "e31-02565-01",
+      "speakerId": "henry",
+      "textHash": "58d907a67c45a4a3210e8b5518c5abcd42316aac4263469b91010eca340efd41"
+    },
+    {
+      "segmentId": "e31-02572-01",
+      "speakerId": "henry",
+      "textHash": "99ae346e4b9446a43a92443454dd270d7133119bc7b6f0891611f9c54442f3b2"
+    },
+    {
+      "segmentId": "e31-02574-01",
+      "speakerId": "henry",
+      "textHash": "ff2b30b60a94a225c3e72292caf70bf7d186462e7b36990c178184f506fcdcdf"
+    },
+    {
+      "segmentId": "e31-02576-01",
+      "speakerId": "henry",
+      "textHash": "4440fcf5aabbaec2c63b79f740121a02e66e0902c89cce3543cb2af92d336c35"
+    },
+    {
+      "segmentId": "e31-02578-01",
+      "speakerId": "henry",
+      "textHash": "460b7219f61c175e17089dda5f9bf179420c7ab133f43fd6027dd3d322282fea"
+    },
+    {
+      "segmentId": "e31-02579-01",
+      "speakerId": "pritam",
+      "textHash": "0ce736e3ca67a1492b817940833eda676c8cf940d3fc535177d1d89dba0b4cb6"
+    },
+    {
+      "segmentId": "e31-02591-01",
+      "speakerId": "pritam",
+      "textHash": "647ce2d80a869f5e073929ad6b79a7b2c49fa0df952e24364e139e5f61f62a7f"
+    },
+    {
+      "segmentId": "e31-02594-01",
+      "speakerId": "pritam",
+      "textHash": "129ce538b7f7fb6c0f0afdc73286fea5083c69c4e1af8da094f3e205ae370387"
+    },
+    {
+      "segmentId": "e31-02597-01",
+      "speakerId": "henry",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-02597-02",
+      "speakerId": "henry",
+      "textHash": "e7e970451ce625787c317fcb3f365c04e053b73c6c95f86a18ea940edd64d6d7"
+    },
+    {
+      "segmentId": "e31-02602-01",
+      "speakerId": "henry",
+      "textHash": "3139fcbd683b2eaf019788ad4e7eebe3b1bd3850ec722a20224cdcdbcfdb17eb"
+    },
+    {
+      "segmentId": "e31-02604-01",
+      "speakerId": "henry",
+      "textHash": "84dc9d72928bcfe85e0c95b4dd026d098f7fc896d41dc92dee1f6be88adf3458"
+    },
+    {
+      "segmentId": "e31-02607-01",
+      "speakerId": "henry",
+      "textHash": "caad14181ad09167d0cb5c32472e4015e2460f1ab2fc72b20aef663ff5baee69"
+    },
+    {
+      "segmentId": "e31-02609-01",
+      "speakerId": "henry",
+      "textHash": "5cb0ad82e8b3badef4bc647b727595220132ac251e45914b62aa60af1c19a12d"
+    },
+    {
+      "segmentId": "e31-02613-01",
+      "speakerId": "henry",
+      "textHash": "b170007f2fdb525293ad4958c07d3c6ed40eea278b348cd171490a1c574523ad"
+    },
+    {
+      "segmentId": "e31-02614-01",
+      "speakerId": "henry",
+      "textHash": "a7cbb3031a48eb746a73a7f6fe9ed618b89c38025818f6cf0892e6323f2f42b7"
+    },
+    {
+      "segmentId": "e31-02617-01",
+      "speakerId": "henry",
+      "textHash": "429b9f4f2fe4a517e52514198508a5b73e06f01a15be903bd7dacad5dd2c4e61"
+    },
+    {
+      "segmentId": "e31-02618-01",
+      "speakerId": "henry",
+      "textHash": "0d06cdb960b235048b44a3f28ae40ea60eec6ea3cfdb6b618e495538ec997659"
+    },
+    {
+      "segmentId": "e31-02622-01",
+      "speakerId": "henry",
+      "textHash": "b19fbeaa8c4d9173f9bb995afc39a4345f30893afdb1b65835e68fdb56f9dcea"
+    },
+    {
+      "segmentId": "e31-02624-01",
+      "speakerId": "henry",
+      "textHash": "b66fa8353116fcc81796d394cc434788983f176a34ceb8e43742061a3fff58fe"
+    },
+    {
+      "segmentId": "e31-02626-01",
+      "speakerId": "henry",
+      "textHash": "9a6b1b4ffa580699a298dc361a8c0a62636b302bd391e2b3a73dad0373badf43"
+    },
+    {
+      "segmentId": "e31-02628-01",
+      "speakerId": "henry",
+      "textHash": "540fcaa950586b3ab83e1d51766fccf2e71475ae0bf60f991e42f9daf015b4ca"
+    },
+    {
+      "segmentId": "e31-02630-01",
+      "speakerId": "henry",
+      "textHash": "d169efa02b038b338d798caed0735a95413337805465b78e9c9adb9861111cf9"
+    },
+    {
+      "segmentId": "e31-02634-01",
+      "speakerId": "henry",
+      "textHash": "03c84dc67c19d38bb3d485667fde3e9e919f92bf718be513baea7da7258aef9a"
+    },
+    {
+      "segmentId": "e31-02638-01",
+      "speakerId": "henry",
+      "textHash": "bf57e00e3e93a0a28ebd9ab510884ad0b3170264bd4c1aa8543a37fd771900db"
+    },
+    {
+      "segmentId": "e31-02643-01",
+      "speakerId": "henry",
+      "textHash": "4def9d5597e454ffcd0f9a5bcc6fa4ee3be2c85c2e7ed2a3ea519c31d7f95ac2"
+    },
+    {
+      "segmentId": "e31-02647-01",
+      "speakerId": "henry",
+      "textHash": "51a068f22fbad992a6563710716370b3936dd5b97b601fd3c671bd6a4042227d"
+    },
+    {
+      "segmentId": "e31-02651-02",
+      "speakerId": "henry",
+      "textHash": "c90e6f61cdb8b12e82f91db8163801bd38625e3057bae3d9f704c67b883886c7"
+    },
+    {
+      "segmentId": "e31-02655-01",
+      "speakerId": "henry",
+      "textHash": "2d8046c8e6ccab6c90323262b30f9cae00b9052b9e27d0e156e247f448402982"
+    },
+    {
+      "segmentId": "e31-02664-01",
+      "speakerId": "henry",
+      "textHash": "8ad28ecd15f520b4f1ef2c3576429bd6f315bd7bfabdb2147c7f3fb87d46b554"
+    },
+    {
+      "segmentId": "e31-02666-01",
+      "speakerId": "henry",
+      "textHash": "0a568bdbadf6cba4da4130c30669ec393d7e8392aaa79bb70b0959fc44239d2a"
+    },
+    {
+      "segmentId": "e31-02674-01",
+      "speakerId": "andy",
+      "textHash": "8e8c8edb36f0511512a014e8c461501895b3e62cf4246d3964c3d11c203de6e0"
+    },
+    {
+      "segmentId": "e31-02675-01",
+      "speakerId": "andy",
+      "textHash": "4489e57108e037d170cc0c87b607d176cadaeee50ae244e300946aa1cd2834bf"
+    },
+    {
+      "segmentId": "e31-02677-02",
+      "speakerId": "henry",
+      "textHash": "6a2345de929b9018e7f00b40c1bf6ec02090bbcad5aab6d5ea567c09e9560c58"
+    },
+    {
+      "segmentId": "e31-02679-01",
+      "speakerId": "henry",
+      "textHash": "4f3e2c03a44c07bb38b4fe0ea51ca1aede467b33f9c153ba06324bcbb04e3ce1"
+    },
+    {
+      "segmentId": "e31-02684-01",
+      "speakerId": "henry",
+      "textHash": "7b267a478104b54ac9a15c0091cac12b0ef5db080d36d12dcf1c78de20c1a0c0"
+    },
+    {
+      "segmentId": "e31-02696-01",
+      "speakerId": "henry",
+      "textHash": "785505f9a0ca6c6061f9e2867d13ea30f603dab10ab8f9d8bf38ef23f5c793e1"
+    },
+    {
+      "segmentId": "e31-02700-01",
+      "speakerId": "henry",
+      "textHash": "31241df03c3108ff42173a07de32653e4360eadb7a5125dab77aba6e3a0b5994"
+    },
+    {
+      "segmentId": "e31-02704-01",
+      "speakerId": "henry",
+      "textHash": "937b2cab6641d1631ac7af485f29693ea402eb85366e2262adbbdf9eadbcbe83"
+    },
+    {
+      "segmentId": "e31-02708-01",
+      "speakerId": "henry",
+      "textHash": "0a0200f2a81575b4dded37f0cb087216839cb72655171fa80cb0ac71819b217e"
+    },
+    {
+      "segmentId": "e31-02720-01",
+      "speakerId": "henry",
+      "textHash": "2493378cd67f5c4ee6927a3954e2a0de5e096c092ef54d79ed27776df193c7a5"
+    },
+    {
+      "segmentId": "e31-02732-01",
+      "speakerId": "henry",
+      "textHash": "3dbf3206ce4800854e672249dcdb922ae640ccfc8920c4daa67eb8faa6dbc7de"
+    },
+    {
+      "segmentId": "e31-02734-01",
+      "speakerId": "henry",
+      "textHash": "209d038281610f0b6f5140431d2f4b22d19fe219f436c43966032595e5295f38"
+    },
+    {
+      "segmentId": "e31-02735-01",
+      "speakerId": "henry",
+      "textHash": "a2db4223294158275722ae7409f4dda36743cadfad37d01843fdcb67c5081da6"
+    },
+    {
+      "segmentId": "e31-02740-01",
+      "speakerId": "henry",
+      "textHash": "97c2166ac411f33540b645c0f772f8dbe69c602c037a60639828f6cd2cfecf58"
+    },
+    {
+      "segmentId": "e31-02746-01",
+      "speakerId": "henry",
+      "textHash": "1b7ed0fc4743cd3a6bac535357465c42b92bd26b3b25dc738a8a04fc486a1d0f"
+    },
+    {
+      "segmentId": "e31-02753-01",
+      "speakerId": "henry",
+      "textHash": "c57d0a1166ce5c5ec8e643ea7994dc382348063db837dba971ed3a2ffe38001a"
+    },
+    {
+      "segmentId": "e31-02754-01",
+      "speakerId": "henry",
+      "textHash": "30ecff1b5ed230fdf5853578c0fb556d36e87427326df7a52263e23cbd333ca7"
+    },
+    {
+      "segmentId": "e31-02760-01",
+      "speakerId": "henry",
+      "textHash": "df3040d70bd785e608b47f21f9e2beb6f41b62c0dd82deb69dc2b64fcfbd2f14"
+    },
+    {
+      "segmentId": "e31-02766-01",
+      "speakerId": "henry",
+      "textHash": "9939a8a94cc4429698fb9df1035ddb564724d387976c01cdc0981702e5ccf221"
+    },
+    {
+      "segmentId": "e31-02775-01",
+      "speakerId": "henry",
+      "textHash": "a12b5a25096076f0ef3538b719b6797d6a3771e8cf22869297c05e990fced384"
+    },
+    {
+      "segmentId": "e31-02785-01",
+      "speakerId": "henry",
+      "textHash": "0f3781e6c1bbcbcc6dafff95cb9656c18075c1dae74ec4e770240998a40236f9"
+    },
+    {
+      "segmentId": "e31-02789-01",
+      "speakerId": "henry",
+      "textHash": "b0b762ba64aacb0b188285fca7eb77b4d704f3b5794709915d0d594952e48c3d"
+    },
+    {
+      "segmentId": "e31-02790-01",
+      "speakerId": "henry",
+      "textHash": "131d69524b23ae0a92448fb4bab89bf7d7fa513e95e35b9b0831d590d9ee8398"
+    },
+    {
+      "segmentId": "e31-02794-01",
+      "speakerId": "henry",
+      "textHash": "40b3a4d12acea7ea5d4f47d216e8458ca3bdb1459c8d568dc46115f552cec549"
+    },
+    {
+      "segmentId": "e31-02796-01",
+      "speakerId": "henry",
+      "textHash": "ee3f8a268ef5ca382a59db25090d09617fc80ec0ff4ec029c8e2befe4ea03722"
+    },
+    {
+      "segmentId": "e31-02802-01",
+      "speakerId": "henry",
+      "textHash": "87583d22c8a2aa2777ce0c4751032b134762e26dbd289688b278df266f41544d"
+    },
+    {
+      "segmentId": "e31-02806-01",
+      "speakerId": "andy",
+      "textHash": "213a56d92c96dcd7b5fa3bdbb2565d934d65b3803f7d6010d0ad53d89f9cb8bc"
+    },
+    {
+      "segmentId": "e31-02812-01",
+      "speakerId": "andy",
+      "textHash": "73b5bf9f8f40be799d013c449fb784f46d44787e045d3663df7bdc03fd222c5a"
+    },
+    {
+      "segmentId": "e31-02814-01",
+      "speakerId": "andy",
+      "textHash": "f44305bf6d0952011a1c934c497fc8127e8decaea9f83a50bfa4b4174f7a3d49"
+    },
+    {
+      "segmentId": "e31-02817-01",
+      "speakerId": "andy",
+      "textHash": "1d599e400c95739009faf294799b00404a4801aa41b6b9ebcb27cc13d356bcd6"
+    },
+    {
+      "segmentId": "e31-02824-01",
+      "speakerId": "andy",
+      "textHash": "03f37a8a77df7fb49743a3f78033418db4f45d181600d3f9a8ab50e76bf5baf5"
+    },
+    {
+      "segmentId": "e31-02826-01",
+      "speakerId": "andy",
+      "textHash": "f4bf30b5fc8b7d363b414bc2a372fa1031dcaef91fceb9df2800cd881325261a"
+    },
+    {
+      "segmentId": "e31-02830-01",
+      "speakerId": "andy",
+      "textHash": "93b4d270bd8d4f3eff350028f8aa408936592bcc6288f0465d46c54e21228cf5"
+    },
+    {
+      "segmentId": "e31-02833-01",
+      "speakerId": "andy",
+      "textHash": "6ffe4bb331f81eca0dc2b28e30f229cbb269a01f29665f19e67ac116bbd1c92b"
+    },
+    {
+      "segmentId": "e31-02841-01",
+      "speakerId": "henry",
+      "textHash": "fb8c3c7f0e2568407937a029e29a25d285971225925e256fd83ecac7e4c3c8ea"
+    },
+    {
+      "segmentId": "e31-02842-01",
+      "speakerId": "henry",
+      "textHash": "ef5d849b5083c48a10142f1929acd7669ea8ca5df1d0071f6a823311758cfdd1"
+    },
+    {
+      "segmentId": "e31-02844-01",
+      "speakerId": "henry",
+      "textHash": "be355dac443e18f095a50283297bd8966fd401c67a479c7e9c1de36e0df2abbf"
+    },
+    {
+      "segmentId": "e31-02847-01",
+      "speakerId": "henry",
+      "textHash": "3a5ab97562ecbbe2d47cfec537dbb7c02a4d7999e2de07c29027e1eb46429e4a"
+    },
+    {
+      "segmentId": "e31-02849-01",
+      "speakerId": "henry",
+      "textHash": "4278fa51750d5887fdb43327d6437e709632d0e7bbdfafca91c3620a5c5eade8"
+    },
+    {
+      "segmentId": "e31-02852-01",
+      "speakerId": "henry",
+      "textHash": "ff21004227e4f04ebdb59ac7fc957c3a833da34a4971f927dac8f6d787b46c22"
+    },
+    {
+      "segmentId": "e31-02859-01",
+      "speakerId": "henry",
+      "textHash": "ba1ce70bae46181f050c4911b0978b6e3ce31084d80c2f739d5d182ad3ddea68"
+    },
+    {
+      "segmentId": "e31-02868-01",
+      "speakerId": "pritam",
+      "textHash": "43ca5c95866633ffbdb7cea0df11f4d8ccf829f65aa56f43bfd653386b341fd8"
+    },
+    {
+      "segmentId": "e31-02870-01",
+      "speakerId": "pritam",
+      "textHash": "56cc337cbaed27e6bf46ab876b374a63833e4dfe9c04f2d82176d75444345b0e"
+    },
+    {
+      "segmentId": "e31-02884-01",
+      "speakerId": "pritam",
+      "textHash": "4984ccca17ebed491c6502650da28a2411823130244f29bf05d9e6a36ca13271"
+    },
+    {
+      "segmentId": "e31-02888-01",
+      "speakerId": "pritam",
+      "textHash": "d72baf073eaf5a7a52ea2388c35c6cfcb12d1844f84355592ae36f77e913b868"
+    },
+    {
+      "segmentId": "e31-02898-01",
+      "speakerId": "pritam",
+      "textHash": "1135bf038fbb0bfcb82bcd22239aef34a527f1d857dcce7d18ad87d05d40bca4"
+    },
+    {
+      "segmentId": "e31-02902-01",
+      "speakerId": "pritam",
+      "textHash": "bb7c81dbaa9e742bd7b97524d2842640624fef194f6a9763770a2f83c10c4f4d"
+    },
+    {
+      "segmentId": "e31-02909-01",
+      "speakerId": "pritam",
+      "textHash": "daf5409f7fa8051d07fda1420f2e4ecc2a46545c1adeaf9a1f82a3bee85381a3"
+    },
+    {
+      "segmentId": "e31-02917-01",
+      "speakerId": "pritam",
+      "textHash": "f8e9ac48b999f9763fa981a2c48030cd973448dbdc90b14357f7320a8bc1674b"
+    },
+    {
+      "segmentId": "e31-02919-01",
+      "speakerId": "pritam",
+      "textHash": "5594b4fcc8e299dadd4460cef22cd7c7dd2c13c228c8adbdb80e658e16e5b3d0"
+    },
+    {
+      "segmentId": "e31-02925-01",
+      "speakerId": "pritam",
+      "textHash": "039f0e8bd14529596e1ce10757111a08aaebe54d3594cf688ad7877c975231f4"
+    },
+    {
+      "segmentId": "e31-02927-01",
+      "speakerId": "henry",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-02927-02",
+      "speakerId": "pritam",
+      "textHash": "bb66e940d4e09dda1c2eb7ff85990026aecd6d2cb90277919615904878a1fb3d"
+    },
+    {
+      "segmentId": "e31-02938-01",
+      "speakerId": "henry",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-02938-02",
+      "speakerId": "henry",
+      "textHash": "34d77f447a02cc0e930c71bcbd3353e4278f04ffc61526b4bd9e4746e3324a33"
+    },
+    {
+      "segmentId": "e31-02941-01",
+      "speakerId": "henry",
+      "textHash": "ad3ba022d355f4453bd4ee3fbd2825e3b3d45293a19a3f87f41d25e2fc6e126a"
+    },
+    {
+      "segmentId": "e31-02942-01",
+      "speakerId": "henry",
+      "textHash": "1d4de32245a0828a5ba6687993fde11dda717678d590a757baa990e40c054bcc"
+    },
+    {
+      "segmentId": "e31-02944-01",
+      "speakerId": "henry",
+      "textHash": "7ce434078f1980c366ef1e32161d769a2b1f557f78f9d27ca7bcea3dfe90bdd8"
+    },
+    {
+      "segmentId": "e31-02948-01",
+      "speakerId": "henry",
+      "textHash": "48551831c20b6753dbf0bc2b2118f1adc77ae227d91347edd90361d50217c917"
+    },
+    {
+      "segmentId": "e31-02952-01",
+      "speakerId": "henry",
+      "textHash": "93a25f088dfd97a76745abe47ba22b2abeef334ebe012f39de7e08294fffe575"
+    },
+    {
+      "segmentId": "e31-02953-01",
+      "speakerId": "henry",
+      "textHash": "4b7d8aaa9576247160f90150e6374417e43e3d25d71b38d77a762be65893c1ad"
+    },
+    {
+      "segmentId": "e31-02960-01",
+      "speakerId": "henry",
+      "textHash": "f0d86ce9478985f86bb7b03adbaecfaa2280fcb41a8e2f2b6397fa7d14248990"
+    },
+    {
+      "segmentId": "e31-02961-01",
+      "speakerId": "henry",
+      "textHash": "99166a8bfab7afca3fa4b26c20efc96e2de62e6ea1b4a8d7966be5b76c4a3921"
+    },
+    {
+      "segmentId": "e31-02964-01",
+      "speakerId": "henry",
+      "textHash": "24aa969707bb1a530bed2d736b864da3323e9d6432bc28c3305e2bd364d63992"
+    },
+    {
+      "segmentId": "e31-02966-01",
+      "speakerId": "henry",
+      "textHash": "1f0087626f4ff51c9788e25f0720639ec07133421775cc56ea08ff72dd3d30f5"
+    },
+    {
+      "segmentId": "e31-02967-01",
+      "speakerId": "henry",
+      "textHash": "ac3f15485740fb6db1349c60598467afbeadc223451ed3ccd5944ee1f686bbd9"
+    },
+    {
+      "segmentId": "e31-02969-01",
+      "speakerId": "henry",
+      "textHash": "c7f02b31d95e35ec098a5dc6a31377c082c2e3b3258cf0591bfd235b43c415a3"
+    },
+    {
+      "segmentId": "e31-02972-01",
+      "speakerId": "henry",
+      "textHash": "445ea76e0fecc22edfb57a2ca2be09cca64ca11a356ce23a5287505de22c9fc0"
+    },
+    {
+      "segmentId": "e31-02974-01",
+      "speakerId": "henry",
+      "textHash": "445ea76e0fecc22edfb57a2ca2be09cca64ca11a356ce23a5287505de22c9fc0"
+    },
+    {
+      "segmentId": "e31-02974-02",
+      "speakerId": "pritam",
+      "textHash": "032d30c44b76236c0f642d2cc48859513ba9d277f90bfffd0502f7a5a206a05b"
+    },
+    {
+      "segmentId": "e31-02976-01",
+      "speakerId": "pritam",
+      "textHash": "134373c9a0180f3d68c11d4e2f7bf8a752ce8b5b5382f453bbecfc599e443de4"
+    },
+    {
+      "segmentId": "e31-02977-01",
+      "speakerId": "pritam",
+      "textHash": "6f00aa3de761cc1966c19477ae5cf25eddc9f22727fed4b062a55f95aa6a871e"
+    },
+    {
+      "segmentId": "e31-02991-01",
+      "speakerId": "pritam",
+      "textHash": "05858a10689f8b1ddf2348c60ebd9322f3b0769c7148940d4f8fa757187eadf1"
+    },
+    {
+      "segmentId": "e31-02999-01",
+      "speakerId": "pritam",
+      "textHash": "fa19d4f3764c364181c487c56d54b0e52bfa6955259d83915d673d87190b52c5"
+    },
+    {
+      "segmentId": "e31-03006-01",
+      "speakerId": "pritam",
+      "textHash": "ff34336c4907b642bfb38b46747e440d93c9001af6c5318735de376145979edf"
+    },
+    {
+      "segmentId": "e31-03007-01",
+      "speakerId": "pritam",
+      "textHash": "a00c908aaae39c0b2a8d4403841f415fdf28870c4b0d8d74dda08ad1beea84e2"
+    },
+    {
+      "segmentId": "e31-03009-01",
+      "speakerId": "pritam",
+      "textHash": "3c4f954af51da9b35efc080734b544650346d0e71782b60d774c7fc9c8155717"
+    },
+    {
+      "segmentId": "e31-03014-01",
+      "speakerId": "pritam",
+      "textHash": "e793de47a7d5debe1823415e7b768c1de23ce2740a15f93a7141db29d0f9aeb2"
+    },
+    {
+      "segmentId": "e31-03018-01",
+      "speakerId": "pritam",
+      "textHash": "c6f2139e1acb74dd0440023a98236c7e76e47e8d02b4006cffc464b0f04f7ee5"
+    },
+    {
+      "segmentId": "e31-03029-01",
+      "speakerId": "pritam",
+      "textHash": "c030eacbcbf027015f4be8508ef337df14de26997ba13ad5bfa849af79eb295a"
+    },
+    {
+      "segmentId": "e31-03032-02",
+      "speakerId": "henry",
+      "textHash": "a66399077a1e43234c9df9e7bd7e916d671e4670f2bd3948c0bed1e4960c9a94"
+    },
+    {
+      "segmentId": "e31-03034-01",
+      "speakerId": "henry",
+      "textHash": "584f836c88722ddb2df6fcbd48ed259d2c54f3cc446a31d73b4b3dcc3b15d838"
+    },
+    {
+      "segmentId": "e31-03037-01",
+      "speakerId": "henry",
+      "textHash": "9206ad6424b30751e3b7523e881a1acfdd8c2394fd03e546b653f17a88e60db4"
+    },
+    {
+      "segmentId": "e31-03040-01",
+      "speakerId": "henry",
+      "textHash": "02a387ecb2d2521a02cce9853dd8f2b94750abff38b95a9a1e719898e4a09492"
+    },
+    {
+      "segmentId": "e31-03045-01",
+      "speakerId": "henry",
+      "textHash": "8b42380f8543440f3398f7441a72d9a9003b68f94f93c93f81dd611a0fa963ab"
+    },
+    {
+      "segmentId": "e31-03048-01",
+      "speakerId": "henry",
+      "textHash": "6202c95255def26e74c947c49e04755979479aaf4d20099a5e456af40b71dec6"
+    },
+    {
+      "segmentId": "e31-03057-01",
+      "speakerId": "pritam",
+      "textHash": "4c0f4c432e02f093a2a6d00d1b22097435e7503f1d40fc234f5acddd4f0a9f61"
+    },
+    {
+      "segmentId": "e31-03058-01",
+      "speakerId": "pritam",
+      "textHash": "b0af5f8f79b073e005b4bf4b5b54a54906b587c8282a9a66a6ab3c2bd9656a77"
+    },
+    {
+      "segmentId": "e31-03061-01",
+      "speakerId": "pritam",
+      "textHash": "b8443bed1265aaa753a053ab77e83b62a648671d1dd5e7889e7feb1fc05b4797"
+    },
+    {
+      "segmentId": "e31-03064-01",
+      "speakerId": "pritam",
+      "textHash": "fa66ff3385d8a8c02ad9139b3ad8c353efe699045b3d79e5f193e44238d0e414"
+    },
+    {
+      "segmentId": "e31-03078-01",
+      "speakerId": "pritam",
+      "textHash": "4bd90e8a116a2dc428b8435ee5dc4e51d21b813b7b3c4d2b2ffde900284c7c58"
+    },
+    {
+      "segmentId": "e31-03081-01",
+      "speakerId": "pritam",
+      "textHash": "4b8e41958e12f77987f55c3bed752b56bc13acb608a61bfcf084275af4568353"
+    },
+    {
+      "segmentId": "e31-03086-01",
+      "speakerId": "pritam",
+      "textHash": "d47901a85cc09cc82d13c98bfd9f7cd15f6b392f85a5d812269728c532d9b8e5"
+    },
+    {
+      "segmentId": "e31-03096-01",
+      "speakerId": "pritam",
+      "textHash": "d21829efd714df563babcc2fc922c5a6515de949f1db11de2dd0acd2f5b165ee"
+    },
+    {
+      "segmentId": "e31-03096-02",
+      "speakerId": "pritam",
+      "textHash": "c9a76a4a5e4031fb00a507d98c6286d881b3200e52d32368219822df785c7284"
+    },
+    {
+      "segmentId": "e31-03109-01",
+      "speakerId": "pritam",
+      "textHash": "c840682c12bb8da08f9a404c4f2b577031f4f760a061c0fc23e48a3c19da6738"
+    },
+    {
+      "segmentId": "e31-03116-01",
+      "speakerId": "pritam",
+      "textHash": "2bca779b7b99fcfdd21f08c6805af43bff3367f04e708b20f894cb4ecfc6518d"
+    },
+    {
+      "segmentId": "e31-03124-01",
+      "speakerId": "pritam",
+      "textHash": "aa16abb20685ee3c2c47c08a75d4129b31a85d3377816f9e8e80ed95cf0b283b"
+    },
+    {
+      "segmentId": "e31-03132-01",
+      "speakerId": "pritam",
+      "textHash": "aa17807b858df58824e487f08b4e49ce4e86e8f31643f285478d231b66b65daa"
+    },
+    {
+      "segmentId": "e31-03139-01",
+      "speakerId": "pritam",
+      "textHash": "915e9fdedd4d4f0e0f0f0f39c94bc0889a2b194956a557a39dd973059029839c"
+    },
+    {
+      "segmentId": "e31-03144-01",
+      "speakerId": "pritam",
+      "textHash": "6c51a992f55896689adb5e7862d1c12119792998b8398cd20026f0264d81eb94"
+    },
+    {
+      "segmentId": "e31-03148-01",
+      "speakerId": "pritam",
+      "textHash": "e2e2dbc80abe1000c2522064d03510eb18782702b212367d7c9ae49812394250"
+    },
+    {
+      "segmentId": "e31-03157-01",
+      "speakerId": "pritam",
+      "textHash": "4d3c0e20429d3e2391edb270d07d6434ac90cc63d80dfe5f0bb84f7d80c8202c"
+    },
+    {
+      "segmentId": "e31-03162-01",
+      "speakerId": "pritam",
+      "textHash": "46d6ae2c2a5f6658b2800de62d61b5418fa4e602d0bf2ff5b05d9985df0fcaac"
+    },
+    {
+      "segmentId": "e31-03174-01",
+      "speakerId": "pritam",
+      "textHash": "9678cef0a9164bb4400f920a9abf8975529b855bb2f18bf194e9dba707ccae7a"
+    },
+    {
+      "segmentId": "e31-03176-01",
+      "speakerId": "pritam",
+      "textHash": "b5d5dd00153c7fa46c2223f51b0f9844ca7882676b98000244eb9d684e9e67bf"
+    },
+    {
+      "segmentId": "e31-03181-01",
+      "speakerId": "pritam",
+      "textHash": "87e71a79551130d444504ddadbcfcebaa6f4e5d3a4881dc818e2f58bdc7c5672"
+    },
+    {
+      "segmentId": "e31-03190-01",
+      "speakerId": "pritam",
+      "textHash": "9f142917d0f58e613293536ea4f74fa9239d8d1fa89fe753c7f784062e8e2e82"
+    },
+    {
+      "segmentId": "e31-03194-01",
+      "speakerId": "pritam",
+      "textHash": "9fc3e4b629ac300cb44afe7d65e85cd71918dad2bd09e4d1ef78d2ddff83f2f2"
+    },
+    {
+      "segmentId": "e31-03203-01",
+      "speakerId": "pritam",
+      "textHash": "d0b6948a57b77befd4c37f1d43165d46b2566b4cd4a363c1027374604b264f31"
+    },
+    {
+      "segmentId": "e31-03207-01",
+      "speakerId": "pritam",
+      "textHash": "383bcae3674392a86fd7ab2290b2bff1bc6cab4dc5a8747ae04082cd84b3c2a3"
+    },
+    {
+      "segmentId": "e31-03208-01",
+      "speakerId": "pritam",
+      "textHash": "a656b4ae9a573554dea3078a495396842800035023eaf77aa797e02c740e0bb4"
+    },
+    {
+      "segmentId": "e31-03220-01",
+      "speakerId": "pritam",
+      "textHash": "a8acd32cd4eee155e4869024770d5b8fbcb7755f3fee6fea98269b45edc79021"
+    },
+    {
+      "segmentId": "e31-03232-01",
+      "speakerId": "pritam",
+      "textHash": "5be6ef7c44dcb9713d0a6bddb725a107c5e4147a1bf86deda7eec43d2582ce09"
+    },
+    {
+      "segmentId": "e31-03236-01",
+      "speakerId": "pritam",
+      "textHash": "75f9b8ca4b8fbbe0776976413037d0f5dab17038d0152e6273addcf433b750a4"
+    },
+    {
+      "segmentId": "e31-03248-01",
+      "speakerId": "pritam",
+      "textHash": "2f06d1cf6c9adf3598ee7c189ed9c8f4d530916b06ea2d6e42acca485de5acfd"
+    },
+    {
+      "segmentId": "e31-03251-01",
+      "speakerId": "pritam",
+      "textHash": "f7964ec6fdfca9bd0b730014beb1fac408088e1726b17b5bb551806e9ba3b503"
+    },
+    {
+      "segmentId": "e31-03253-01",
+      "speakerId": "pritam",
+      "textHash": "ce868600f7d06f8963d7358bde41f54cfe017f1635d10aa2059f18672af1ed0f"
+    },
+    {
+      "segmentId": "e31-03260-01",
+      "speakerId": "pritam",
+      "textHash": "8be88049438cee9756186421c74d26485702410e98931a0a650362198ba85366"
+    },
+    {
+      "segmentId": "e31-03283-01",
+      "speakerId": "andy",
+      "textHash": "3ccdaf3cabf0fa269c174f983909bfa45074f91d76e11a5072a2c3a2ffb6ad42"
+    },
+    {
+      "segmentId": "e31-03284-01",
+      "speakerId": "andy",
+      "textHash": "03b25bed61dad2fc92bb7ca539a0f5abb89e97a767e3ca68789d47009f9fa5c3"
+    },
+    {
+      "segmentId": "e31-03286-01",
+      "speakerId": "andy",
+      "textHash": "0a5fdf4ababff8e9b3db074548bdf450d49b87f9596e613ccabe312c9151e3e3"
+    },
+    {
+      "segmentId": "e31-03289-01",
+      "speakerId": "pritam",
+      "textHash": "73a2b8a4503e41194120072f73e9ea67363aa400ae5afe7fc49e214508e57958"
+    },
+    {
+      "segmentId": "e31-03298-01",
+      "speakerId": "pritam",
+      "textHash": "a37db5da360304d769d1c39b75bba35e6467db84bfb130afada097257c8e9561"
+    },
+    {
+      "segmentId": "e31-03303-01",
+      "speakerId": "pritam",
+      "textHash": "c23e6439dc77cf28649708f087f68e6ceb7629dba5d1583678e810fe842beafe"
+    },
+    {
+      "segmentId": "e31-03306-01",
+      "speakerId": "pritam",
+      "textHash": "7eceb40c1fa0be84654974ef697c90eb437326e7f3bc92c03fc9bd33b8de5b66"
+    },
+    {
+      "segmentId": "e31-03309-01",
+      "speakerId": "andy",
+      "textHash": "03b25bed61dad2fc92bb7ca539a0f5abb89e97a767e3ca68789d47009f9fa5c3"
+    },
+    {
+      "segmentId": "e31-03311-01",
+      "speakerId": "andy",
+      "textHash": "28d5ba86bf1d07bf25767abb1ad6152271ab389a3d363da1e2e31542ec232f42"
+    },
+    {
+      "segmentId": "e31-03316-01",
+      "speakerId": "andy",
+      "textHash": "6cf99aa1764b9b9370202c2f38056cc177e2258071081d1f15f111a21033700e"
+    },
+    {
+      "segmentId": "e31-03323-01",
+      "speakerId": "andy",
+      "textHash": "f36d6a94733aaa3cf4e5da53c84842460832410ff74c755bac0fa2aaceb7e23e"
+    },
+    {
+      "segmentId": "e31-03334-01",
+      "speakerId": "andy",
+      "textHash": "c93de5121cf58687734c3b0d161465c3de9a65b471e2f38bda4f06a2dcec6703"
+    },
+    {
+      "segmentId": "e31-03340-01",
+      "speakerId": "pritam",
+      "textHash": "d77845f9910f0a99d9a474c92ab85beef5ce72e45e1b463c46d8d3920aa43841"
+    },
+    {
+      "segmentId": "e31-03356-01",
+      "speakerId": "pritam",
+      "textHash": "031658bbeb74298537705852a9a40ce93016fdfa347252a386f744fa1b498bf2"
+    },
+    {
+      "segmentId": "e31-03362-01",
+      "speakerId": "pritam",
+      "textHash": "dbe180152d8e4e5b1e6a6becadfc482140efa4c6a313d173957195279d6df2bc"
+    },
+    {
+      "segmentId": "e31-03367-01",
+      "speakerId": "pritam",
+      "textHash": "dfa0774cf0cf5d5f979894c6e750a2ae213eb16f140ea52542f7696815f530b0"
+    },
+    {
+      "segmentId": "e31-03373-01",
+      "speakerId": "pritam",
+      "textHash": "996ee42c18b4691ded1617fa4cfaf133a8011b0dbb0c1b303b568d6e5b647d1b"
+    },
+    {
+      "segmentId": "e31-03390-01",
+      "speakerId": "pritam",
+      "textHash": "6f98901b3798bcb4544c7d5620e18ae279ad049d39746ac1cdc10689cd80685b"
+    },
+    {
+      "segmentId": "e31-03394-01",
+      "speakerId": "pritam",
+      "textHash": "aee17924af6b6c5aa19f5c944a558e2752ac1579e89f46248a5f0ef69947a119"
+    },
+    {
+      "segmentId": "e31-03396-01",
+      "speakerId": "pritam",
+      "textHash": "d092ada83e6a8c32c33b1ee981796733a4149cab7cb9ba4d5b66e05273271529"
+    },
+    {
+      "segmentId": "e31-03408-01",
+      "speakerId": "pritam",
+      "textHash": "39a90287c5771008fc1de5d05efb86175091ead6d21084d4d82c31e4455ceeff"
+    },
+    {
+      "segmentId": "e31-03420-01",
+      "speakerId": "pritam",
+      "textHash": "f27288cdb0a354c4fe55b51b71ceae6c0d912fda7422b5899682f3f8633e81b0"
+    },
+    {
+      "segmentId": "e31-03420-02",
+      "speakerId": "pritam",
+      "textHash": "1ac0e00d27e2730318cfd536f5f163553d42cb3d916b6e5f8a177fd85c89a00d"
+    },
+    {
+      "segmentId": "e31-03425-01",
+      "speakerId": "pritam",
+      "textHash": "d88c25df6785409b1c0669e498c7c94d8f4bb72890b873d36253dd0eda89dd21"
+    },
+    {
+      "segmentId": "e31-03429-01",
+      "speakerId": "pritam",
+      "textHash": "e55af79e5e126501a73d575334283ed4a684b5e68f08859e56df4160cea72648"
+    },
+    {
+      "segmentId": "e31-03448-01",
+      "speakerId": "pritam",
+      "textHash": "e2ea865e5e276b0792f8731055981aeefeddb56e8eede81a990cc62f3725fdbb"
+    },
+    {
+      "segmentId": "e31-03455-01",
+      "speakerId": "pritam",
+      "textHash": "62b678f4cfa1a4799e4693015b89c91f4dc32a250c0600ae98735d7d0b5a1205"
+    },
+    {
+      "segmentId": "e31-03462-01",
+      "speakerId": "pritam",
+      "textHash": "9c4d5083e58751620e6c1225ef780b602bbe4fbaee3c9cbd11d772d9b2745cb7"
+    },
+    {
+      "segmentId": "e31-03478-01",
+      "speakerId": "pritam",
+      "textHash": "5a4d0b5f817977ae4e7d444fa4aab9df2237ae562c0dff97584a24ecdc5bd8f4"
+    },
+    {
+      "segmentId": "e31-03484-01",
+      "speakerId": "pritam",
+      "textHash": "7ec56630f164d029c9090f5bf968816e483961f525bf486667fa80454da9d098"
+    },
+    {
+      "segmentId": "e31-03491-01",
+      "speakerId": "pritam",
+      "textHash": "d00ac3c51bee64fd1b70bb38bb643813ceae78ea5fda5ea433d56bc70f55e209"
+    },
+    {
+      "segmentId": "e31-03492-01",
+      "speakerId": "andy",
+      "textHash": "fd5cf2511c556e91cc63966a90ff03bf5d25c8baaa21707c6a9f3624179682e4"
+    },
+    {
+      "segmentId": "e31-03493-01",
+      "speakerId": "andy",
+      "textHash": "f6a99b8434fcf119c5b7f2481781bfa6fddd5bf58ec84de23134be95db04677d"
+    },
+    {
+      "segmentId": "e31-03496-01",
+      "speakerId": "andy",
+      "textHash": "08c301270b468719ac355608cb560ed7c872b982d4e796326a6ae3a61cebc875"
+    },
+    {
+      "segmentId": "e31-03504-01",
+      "speakerId": "andy",
+      "textHash": "55e206a38871d38810df798fb5ca4aedf89cbe8b0114ccb5fdc874906218103d"
+    },
+    {
+      "segmentId": "e31-03507-01",
+      "speakerId": "andy",
+      "textHash": "c148e87e5cf8484542e004ae8f8b4d05b323dca130ecafa1f2646c846a1f464f"
+    },
+    {
+      "segmentId": "e31-03512-01",
+      "speakerId": "andy",
+      "textHash": "5c0b3da7a84810ac40182a742c63b82a131cef1fd6941f09f98d848b8146e25c"
+    },
+    {
+      "segmentId": "e31-03522-01",
+      "speakerId": "andy",
+      "textHash": "be011857cbdd54c670659a9ccd44c7d55d4d0db0b1c786b9edff2f2e1d1d7af0"
+    },
+    {
+      "segmentId": "e31-03523-01",
+      "speakerId": "andy",
+      "textHash": "71886002aeccfe608dc781aeba1f7ef51043369cc318e4b7cb1271ef1a2c5240"
+    },
+    {
+      "segmentId": "e31-03537-01",
+      "speakerId": "andy",
+      "textHash": "ae6f0090e86111f5d559aa32dc4c22f398817325649a699bdbd0166d3b70eeb3"
+    },
+    {
+      "segmentId": "e31-03551-01",
+      "speakerId": "andy",
+      "textHash": "5b6c328e518b78ad3363dfd5e2f0262c3c23b6cc86ac998de4a31271866959cd"
+    },
+    {
+      "segmentId": "e31-03553-01",
+      "speakerId": "andy",
+      "textHash": "a327f4c87dfe3d159238b76ba72762b318243593094020743ea164408aec49aa"
+    },
+    {
+      "segmentId": "e31-03557-01",
+      "speakerId": "andy",
+      "textHash": "3ffc6c96fc6b428f2f54b7157dd4c1f2c64f16441fa2bd2f54ffd43bab46fa60"
+    },
+    {
+      "segmentId": "e31-03560-01",
+      "speakerId": "andy",
+      "textHash": "7656f4a344ee76edb32d7dc4d50e0fc7849ea9c1f13a91768ba50bf520aba86f"
+    },
+    {
+      "segmentId": "e31-03565-01",
+      "speakerId": "andy",
+      "textHash": "ebaaa31a504256ac781fa15e63b67746d9cee64e89c5af03a5c22141ee4a3e84"
+    },
+    {
+      "segmentId": "e31-03574-01",
+      "speakerId": "andy",
+      "textHash": "62297034a7a1f4930e0ee82e371721830732e9f520e937a188c934442f74fca6"
+    },
+    {
+      "segmentId": "e31-03576-01",
+      "speakerId": "andy",
+      "textHash": "5384513b2e05fd67677b1acc4fefd646be91b0eaa9894f7b9e2173b7eb532f27"
+    },
+    {
+      "segmentId": "e31-03586-01",
+      "speakerId": "andy",
+      "textHash": "4758ff3a7fed2824a192b5594e1b979d514dc685b543b13de5fd5a73b9260dd2"
+    },
+    {
+      "segmentId": "e31-03590-01",
+      "speakerId": "andy",
+      "textHash": "f3c72705d60bf0b6521e26c0493525f56799ce8016c243781f7045016c321992"
+    },
+    {
+      "segmentId": "e31-03592-01",
+      "speakerId": "andy",
+      "textHash": "f6a704fee11bb8ecf9e18083154327933c10e1abdb8647f16cb1a2a9bf153a39"
+    },
+    {
+      "segmentId": "e31-03599-01",
+      "speakerId": "pritam",
+      "textHash": "85c9830b7dd1348f57cd84dd5838ed4d7d5bf08afd38091e77f1e8bc842c0060"
+    },
+    {
+      "segmentId": "e31-03600-01",
+      "speakerId": "pritam",
+      "textHash": "a81bf4b36f6fb71adaa6b803bf199450903170e507175712627b9111591cb3f4"
+    },
+    {
+      "segmentId": "e31-03602-01",
+      "speakerId": "pritam",
+      "textHash": "45e7cff0cafd8e1b1f595d05317753fddcefe0132726a60c52626d27caf5387c"
+    },
+    {
+      "segmentId": "e31-03603-01",
+      "speakerId": "pritam",
+      "textHash": "68673b0ea2af5f41677aaf996350705c31e0bedb2e71350d2aa0665488dfa466"
+    },
+    {
+      "segmentId": "e31-03605-01",
+      "speakerId": "pritam",
+      "textHash": "ca2ba1be8f615b58027e5c5f7df6bd973395135c04577ada96a89f89cc754ec3"
+    },
+    {
+      "segmentId": "e31-03610-01",
+      "speakerId": "pritam",
+      "textHash": "ed915055b89f56fabfe0e89d56248f92c3f1a195a68bcb22de6eac3274065ab9"
+    },
+    {
+      "segmentId": "e31-03629-01",
+      "speakerId": "pritam",
+      "textHash": "800e0fba97149077d522a6ad2e108310e12e7709772adb67ae28da4428dc28cd"
+    },
+    {
+      "segmentId": "e31-03637-01",
+      "speakerId": "pritam",
+      "textHash": "81e6962b850687c0a65676cdf95d3f73a8b3f5e2068d515db49672730fddcae5"
+    },
+    {
+      "segmentId": "e31-03642-01",
+      "speakerId": "andy",
+      "textHash": "cf00796f4298051110de6f14af7f478e98cf5d0a082c427c0d2426fc9e1351d9"
+    },
+    {
+      "segmentId": "e31-03647-01",
+      "speakerId": "andy",
+      "textHash": "15a4ee80258569c9c4dbb6bdeaeb10148a5b830786b630386705f205e47d60b2"
+    },
+    {
+      "segmentId": "e31-03652-01",
+      "speakerId": "pritam",
+      "textHash": "d39105c27f3eef46d3b96f1dfa1e7942257439369b6416051be3cb115023cfaa"
+    },
+    {
+      "segmentId": "e31-03656-01",
+      "speakerId": "pritam",
+      "textHash": "c42c5616a4cabe7e2ac8416bf3e381288c1dd7148468eb45bcdcc94dd9e69aa2"
+    },
+    {
+      "segmentId": "e31-03671-01",
+      "speakerId": "pritam",
+      "textHash": "d224a848989867b307e69c546ad56950ae7cad422a53c32d37cde677c4895cc0"
+    },
+    {
+      "segmentId": "e31-03675-01",
+      "speakerId": "pritam",
+      "textHash": "91802240aede7a66af9e5d992909fbe7cec20aed5e7c64b6d94289fafc4133b9"
+    },
+    {
+      "segmentId": "e31-03681-01",
+      "speakerId": "pritam",
+      "textHash": "e3af339eb8a5341463298742962acba33086d8f39ae8e8dcc0e01a75bc4b48fa"
+    },
+    {
+      "segmentId": "e31-03686-01",
+      "speakerId": "pritam",
+      "textHash": "82788d91f50142d0b784317bc64b96e8ade6c087f93320b1e71e744fb5fc7678"
+    },
+    {
+      "segmentId": "e31-03692-01",
+      "speakerId": "pritam",
+      "textHash": "2c4f417de4d3e73568179a55386650a81e6f2091a80a50b8d377aff3ce93e007"
+    },
+    {
+      "segmentId": "e31-03703-01",
+      "speakerId": "andy",
+      "textHash": "5179dad09edbbe176af499524ea56a17b9f173415ba495ec6b1d1086f04f0eb5"
+    },
+    {
+      "segmentId": "e31-03703-02",
+      "speakerId": "andy",
+      "textHash": "b9ec03eef7ebedae9ce0b17ed544c5f8798beacd294ddbf7af06ee3d625dacea"
+    },
+    {
+      "segmentId": "e31-03718-01",
+      "speakerId": "andy",
+      "textHash": "586ac6cc95f9016768ab8faf3afa4fbaa7e60a6c87ffd19a1feaac75a09ea484"
+    },
+    {
+      "segmentId": "e31-03724-01",
+      "speakerId": "andy",
+      "textHash": "6702e42c5418a514ef00e4f85a53380c379460fca4da6c64f0a9a31da55fe66e"
+    },
+    {
+      "segmentId": "e31-03731-01",
+      "speakerId": "andy",
+      "textHash": "0dc95bd7f8c566f6fec6538b534ef694baeaba3cbd16e0115d388fe0a45b21c5"
+    },
+    {
+      "segmentId": "e31-03735-01",
+      "speakerId": "pritam",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-03737-01",
+      "speakerId": "pritam",
+      "textHash": "05d9cfcd4f17f8556a4195fe61c7307c9bc613c535aeb674c54eda8f9121eeef"
+    },
+    {
+      "segmentId": "e31-03741-01",
+      "speakerId": "andy",
+      "textHash": "8f839941a5164df86fbd98376cf154e0ebda48c8e66b6ad7559eeec9a17aff57"
+    },
+    {
+      "segmentId": "e31-03742-01",
+      "speakerId": "andy",
+      "textHash": "63e1d5c22164dfd6d400d3eb8a032ffa7584a9a0213899dda95c3fdf4bbd660e"
+    },
+    {
+      "segmentId": "e31-03746-01",
+      "speakerId": "pritam",
+      "textHash": "f1a7f81823e30ae66c5f299230ebcb2e8107e06a1a317780f279a7f4bf30ded9"
+    },
+    {
+      "segmentId": "e31-03760-01",
+      "speakerId": "pritam",
+      "textHash": "e163393e302efd923d00198da348dce3bde5ebe5acd71c1cda20c6d793fabcac"
+    },
+    {
+      "segmentId": "e31-03764-01",
+      "speakerId": "pritam",
+      "textHash": "34f3aa5a258b279a656b1bd5569962e1ae812f17174b11a560f8f922a2ba3c3d"
+    },
+    {
+      "segmentId": "e31-03781-01",
+      "speakerId": "andy",
+      "textHash": "70ed0caa584a262350785035396bf11d914474299df9ff4874e6f2c098c87ae6"
+    },
+    {
+      "segmentId": "e31-03782-01",
+      "speakerId": "andy",
+      "textHash": "5ca9f112714f84351a3a7c8fe9d4cbc62a72a7ce17220b778a5366e3ae50fc02"
+    },
+    {
+      "segmentId": "e31-03785-01",
+      "speakerId": "andy",
+      "textHash": "3c599f39d8b6a7c3c8cfbd5d1da0dcfc1c02391ff05059a342b8856fbd91297f"
+    },
+    {
+      "segmentId": "e31-03790-01",
+      "speakerId": "andy",
+      "textHash": "b48792d771fe1139f0e3afd2556fe9b962c1adc451b5527ad300b3b2f1bcf78d"
+    },
+    {
+      "segmentId": "e31-03795-01",
+      "speakerId": "andy",
+      "textHash": "68ee0993d81e8fe084e2f76646da85e431d024d92d7140e863618760a1905535"
+    },
+    {
+      "segmentId": "e31-03806-01",
+      "speakerId": "andy",
+      "textHash": "1e40192594f3d7ed4c722c697321e425b8c4e13d96b4e57d7defe88ab6880b89"
+    },
+    {
+      "segmentId": "e31-03808-01",
+      "speakerId": "andy",
+      "textHash": "be1d0b67ec47a7971247e3a07ae526c6b6392bcd503c8eaf709b84630aef9718"
+    },
+    {
+      "segmentId": "e31-03815-01",
+      "speakerId": "pritam",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-03818-01",
+      "speakerId": "andy",
+      "textHash": "3ccdaf3cabf0fa269c174f983909bfa45074f91d76e11a5072a2c3a2ffb6ad42"
+    },
+    {
+      "segmentId": "e31-03819-01",
+      "speakerId": "andy",
+      "textHash": "2c33dcef91e066247cc05cc403f99dcf572e5bb8f45656fec462270e689916b6"
+    },
+    {
+      "segmentId": "e31-03820-01",
+      "speakerId": "andy",
+      "textHash": "4ee02bc140fd96b3cb3b9b3bfe8a603743d8c0238f7f6d93b22f2fcc8d000855"
+    },
+    {
+      "segmentId": "e31-03826-01",
+      "speakerId": "andy",
+      "textHash": "4e225aedd8e90d0cfbe3473246cf825011ffc8099da91b7c6d594d4c75359769"
+    },
+    {
+      "segmentId": "e31-03827-01",
+      "speakerId": "andy",
+      "textHash": "01fd8d29d3eee81135db8819b59392195997838a9ff0956089ef4d906a681229"
+    },
+    {
+      "segmentId": "e31-03833-01",
+      "speakerId": "andy",
+      "textHash": "83008ea36b46b08a60d7306330c2729d8341f9ce8bfac4cb40543ef4f0cbd86b"
+    },
+    {
+      "segmentId": "e31-03844-01",
+      "speakerId": "andy",
+      "textHash": "ff500bef93401c9decbba1aba5ee476c9f8f9a5e96fcca94cb401003d2be7949"
+    },
+    {
+      "segmentId": "e31-03848-01",
+      "speakerId": "andy",
+      "textHash": "7eccffe62dbd1d7dbf59629adc34543ecf7a3d72e75f1f84aa924c0363a1abc8"
+    },
+    {
+      "segmentId": "e31-03857-01",
+      "speakerId": "andy",
+      "textHash": "55ec84551ca46f25cf1440a89d70d59a5ebba99ec7221a3e20b9d4001fe639c8"
+    },
+    {
+      "segmentId": "e31-03865-01",
+      "speakerId": "andy",
+      "textHash": "1ce65b16e5ed63406e4aa93d6b4760889dc7a555f220306ddf1ef5b1c1ae20b9"
+    },
+    {
+      "segmentId": "e31-03869-01",
+      "speakerId": "andy",
+      "textHash": "3e4a763a91934617beaf515d37ea7ac05eaf2340af0057f9798545be7e442477"
+    },
+    {
+      "segmentId": "e31-03873-01",
+      "speakerId": "andy",
+      "textHash": "c6ac6308d59e4612808680882af5ba54a47a17a1720934ab275b896f7912b827"
+    },
+    {
+      "segmentId": "e31-03876-01",
+      "speakerId": "andy",
+      "textHash": "5c2a00a3ce98d9224dad39a8c0792e54e93adcc81858a8fbc30c6c5f464fa6a2"
+    },
+    {
+      "segmentId": "e31-03885-01",
+      "speakerId": "andy",
+      "textHash": "048c6ec5dcb891b3b3466b65d971800b8e94c700d2cbee8993d8e8d2083214e4"
+    },
+    {
+      "segmentId": "e31-03898-01",
+      "speakerId": "andy",
+      "textHash": "f75d4de6c5a9b9c36d8e3322efef0665e1090b31aef19c83a74675180fa0324a"
+    },
+    {
+      "segmentId": "e31-03899-01",
+      "speakerId": "andy",
+      "textHash": "9eef5f5161105eef8755228ee16e7607af5040e453faff56412be2405ec3e1dd"
+    },
+    {
+      "segmentId": "e31-03906-01",
+      "speakerId": "andy",
+      "textHash": "57e69660d2813f6b29b90488917f5d38022e4d7d09924b249313cf3e2bedeed9"
+    },
+    {
+      "segmentId": "e31-03911-01",
+      "speakerId": "andy",
+      "textHash": "4552f6742f6ff76447348a5a19f5cf20b063d9a334e50b9bbc8cb10c5453608c"
+    },
+    {
+      "segmentId": "e31-03921-01",
+      "speakerId": "andy",
+      "textHash": "6aaa2f28108bdcb8efa7bae4a709f470ded08b7f5024855e365fcdbeb83816b3"
+    },
+    {
+      "segmentId": "e31-03929-01",
+      "speakerId": "andy",
+      "textHash": "90ba1c0d60abeb3383686e621975a612f3ad5bf1c67b4de04b3bc6a3334e5183"
+    },
+    {
+      "segmentId": "e31-03933-01",
+      "speakerId": "andy",
+      "textHash": "20131e607289af66d2ce57a2ffbd322cfaed395e298500098a84f98fb7bcfb76"
+    },
+    {
+      "segmentId": "e31-03945-01",
+      "speakerId": "andy",
+      "textHash": "da42500bd5f832598efe2626254db581c1a9652a4481050d7bb73b8eaea043a2"
+    },
+    {
+      "segmentId": "e31-03949-01",
+      "speakerId": "andy",
+      "textHash": "ab862234badd44cee4bbe11eff12d499f6b11334c027628a607811edc4965259"
+    },
+    {
+      "segmentId": "e31-03962-01",
+      "speakerId": "andy",
+      "textHash": "407f30ccd429a0291a82a1838122bcef21ed02d547d3006595d749e272239cf8"
+    },
+    {
+      "segmentId": "e31-03973-01",
+      "speakerId": "andy",
+      "textHash": "63633b3769ad2c878cc1425d9df5a80ad0c4240ebee883781cac1f50f55d9c9b"
+    },
+    {
+      "segmentId": "e31-03977-01",
+      "speakerId": "pritam",
+      "textHash": "d104c4803d9f606014a40fd80f727e08c504b5ff031d221ffe1c84083942afdd"
+    },
+    {
+      "segmentId": "e31-03981-01",
+      "speakerId": "pritam",
+      "textHash": "d10e643991f9b8947cdfe8ef813402e8eeb27215a7804b185ed15ac614848431"
+    },
+    {
+      "segmentId": "e31-03990-01",
+      "speakerId": "pritam",
+      "textHash": "b8c50f23c0674ff91b3eae1474a715f529ad7e2999f9bd9e01e51c3dd1eea6bb"
+    },
+    {
+      "segmentId": "e31-03996-01",
+      "speakerId": "pritam",
+      "textHash": "c385a0ac7ebe57ee133d8586f2df8d6f7d304fefe6b95103be2376505dfc4434"
+    },
+    {
+      "segmentId": "e31-04006-01",
+      "speakerId": "pritam",
+      "textHash": "c5bae38f0050428fc1e702dd7681dfe1281cf8a4b0cdf1de7760299a2d3d073c"
+    },
+    {
+      "segmentId": "e31-04012-01",
+      "speakerId": "pritam",
+      "textHash": "df1e193b34da2ea116eff587529cbc17cb488c1cbb7d9f14783d9cc39b45263a"
+    },
+    {
+      "segmentId": "e31-04025-01",
+      "speakerId": "pritam",
+      "textHash": "5241a4465f825103af30b8bc09841979cfe0f7d1d9286e2de28ba9abb12f9e32"
+    },
+    {
+      "segmentId": "e31-04037-01",
+      "speakerId": "pritam",
+      "textHash": "34f3a3e6cfd668d43ab72a41593f9e6c81e1991afad0553045707200ac63846b"
+    },
+    {
+      "segmentId": "e31-04043-01",
+      "speakerId": "pritam",
+      "textHash": "2f6c5074850d8ff0200f18a1bf3b4342ae7602dfaa05d785e5177b8198b54e76"
+    },
+    {
+      "segmentId": "e31-04048-01",
+      "speakerId": "pritam",
+      "textHash": "bc56d5b81cd4d7818ecf82017845688ba91a2f00671c88a81bd798c117a2d02f"
+    },
+    {
+      "segmentId": "e31-04057-01",
+      "speakerId": "andy",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-04058-01",
+      "speakerId": "andy",
+      "textHash": "0f3bc95d214ee3adc7cc4a206c647ac2d0326eca1285133c3ead1b4ea33fb1be"
+    },
+    {
+      "segmentId": "e31-04060-01",
+      "speakerId": "andy",
+      "textHash": "293669fb206564e1c71e527c45c5e5354334cb4032cc5946b9edf302e8dca999"
+    },
+    {
+      "segmentId": "e31-04066-01",
+      "speakerId": "andy",
+      "textHash": "db6694d0b45b9c64187d889ac6c7a9b64dff0151d77fc9bc5c0004cabf5fe577"
+    },
+    {
+      "segmentId": "e31-04081-01",
+      "speakerId": "andy",
+      "textHash": "c2a2ba0113d281c8170f1577a00326c68d86aa36d7735506a8fb6d18e1fde201"
+    },
+    {
+      "segmentId": "e31-04082-01",
+      "speakerId": "andy",
+      "textHash": "629ac2edf00bdae3e64763ddeacc209fa706f2960cde157e1ad5677e5633337f"
+    },
+    {
+      "segmentId": "e31-04084-01",
+      "speakerId": "andy",
+      "textHash": "71d28e7f1029ee2c8f86aaa4df0c39a7171f63179f68edaab179a01f3ec74b1a"
+    },
+    {
+      "segmentId": "e31-04087-01",
+      "speakerId": "andy",
+      "textHash": "f46eacce42118195126c6d114cafd9a245e66017a6019c09d85f56764f47305b"
+    },
+    {
+      "segmentId": "e31-04090-01",
+      "speakerId": "andy",
+      "textHash": "e2964efe8d25c7146d214af3deb4e7ccac4aa99c57f2e0dad453d01c18d2130f"
+    },
+    {
+      "segmentId": "e31-04096-01",
+      "speakerId": "andy",
+      "textHash": "7a01a0dd84f5309cdcd46cbd79cb5b8c6c62933476beb1269167a5dcea868ac2"
+    },
+    {
+      "segmentId": "e31-04101-01",
+      "speakerId": "andy",
+      "textHash": "ab8fd0fc4a4d6b9730bf1a58a511aefdb923c860b21d36329a607220cb69a4b8"
+    },
+    {
+      "segmentId": "e31-04105-01",
+      "speakerId": "andy",
+      "textHash": "263dad4a3584405df07787f04d2d521a0b733da0e40195912165718de5d7d8d5"
+    },
+    {
+      "segmentId": "e31-04107-01",
+      "speakerId": "andy",
+      "textHash": "e489af4f65ed7cdc4708e44e0227e1fdd6998a6839680041e625f0047891c80e"
+    },
+    {
+      "segmentId": "e31-04111-01",
+      "speakerId": "pritam",
+      "textHash": "a196ed11f0a7eed885ab35cdf480220a694899ca8a88a15d47f6e2ba7e753fa7"
+    },
+    {
+      "segmentId": "e31-04117-01",
+      "speakerId": "pritam",
+      "textHash": "696398a336fef97cdbb08b93d06b84da6a42cfa2f9d0c4773c1a6745766a5218"
+    },
+    {
+      "segmentId": "e31-04132-01",
+      "speakerId": "andy",
+      "textHash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad"
+    },
+    {
+      "segmentId": "e31-04133-01",
+      "speakerId": "andy",
+      "textHash": "2c33dcef91e066247cc05cc403f99dcf572e5bb8f45656fec462270e689916b6"
+    },
+    {
+      "segmentId": "e31-04134-01",
+      "speakerId": "andy",
+      "textHash": "2c33dcef91e066247cc05cc403f99dcf572e5bb8f45656fec462270e689916b6"
+    },
+    {
+      "segmentId": "e31-04135-01",
+      "speakerId": "andy",
+      "textHash": "febc83a7a4f6ae8615e2dfe2618e61bd7c9aa4fb65a91f8efcd396dfc8f2aa79"
+    },
+    {
+      "segmentId": "e31-04137-01",
+      "speakerId": "andy",
+      "textHash": "cc52ed62ef8d9c117158fd0e9460b02a7da42a1a51196500f4bd7d0c29b4fab0"
+    },
+    {
+      "segmentId": "e31-04141-01",
+      "speakerId": "andy",
+      "textHash": "4f3461ee432786c152905d423541483746c03ef6c518370d23869b72bb2d538c"
+    },
+    {
+      "segmentId": "e31-04144-01",
+      "speakerId": "andy",
+      "textHash": "b123b2de71529734e9ff8e440ff3f78bd55e05908697e245d2da5aa6e7329ca6"
+    },
+    {
+      "segmentId": "e31-04147-01",
+      "speakerId": "andy",
+      "textHash": "01d4afbda9752d7bf6652cb2fc361c56c27c5e5b449564fe22f778329a9bb280"
+    },
+    {
+      "segmentId": "e31-04151-01",
+      "speakerId": "andy",
+      "textHash": "e145d5745326ea2e7ee4f590eb002453b09b2dba9f6e22c809fb14f8dd746c23"
+    },
+    {
+      "segmentId": "e31-04155-01",
+      "speakerId": "andy",
+      "textHash": "0bc9f0a6a810af34c73cc2fefd5d6d3cc205854fe878fb78eb72ab497d2c1b63"
+    },
+    {
+      "segmentId": "e31-04164-01",
+      "speakerId": "andy",
+      "textHash": "2a3c6e6cf1ee8230f782ddda37f697eb712787b6b22b495eaf97712ff1a22be9"
+    },
+    {
+      "segmentId": "e31-04164-02",
+      "speakerId": "andy",
+      "textHash": "e37ebaa5448c36bd9c5cd7f84c7bd4e06c7570d79ea0862f7629a56273b3ca75"
+    },
+    {
+      "segmentId": "e31-04169-01",
+      "speakerId": "andy",
+      "textHash": "d7d67846b84cbbe93b2841894a99aaf495f3d0d1d3903d09925a4f9be4d63ae1"
+    },
+    {
+      "segmentId": "e31-04178-01",
+      "speakerId": "andy",
+      "textHash": "819745c14ca2e6da7e9e9064076d69f81874a88fbb4dc14ee8a0a3b4ca5bda6b"
+    },
+    {
+      "segmentId": "e31-04180-01",
+      "speakerId": "andy",
+      "textHash": "904380ef41de826d3a849499b69ebaf6c3a361a66b4bd2a4b5228f7629ef771a"
+    },
+    {
+      "segmentId": "e31-04182-01",
+      "speakerId": "andy",
+      "textHash": "e582b9cce14153c36910de160865747df63dcd1effa3716067bf1ece30c95d46"
+    },
+    {
+      "segmentId": "e31-04184-01",
+      "speakerId": "andy",
+      "textHash": "89e82849d2de76c421dd7851a9083091ea8be3a2dd8deb3fbfd9df20023899ae"
+    },
+    {
+      "segmentId": "e31-04187-01",
+      "speakerId": "andy",
+      "textHash": "992a27f881754d42827e3bd40cab01d4569f8de7e0841a67a29a2feae5f87169"
+    },
+    {
+      "segmentId": "e31-04191-01",
+      "speakerId": "andy",
+      "textHash": "e2b8fd89dbc6a0984f1e9fa11202f3dd2c85ab2360a612e641562ef6200ad2c3"
+    },
+    {
+      "segmentId": "e31-04195-01",
+      "speakerId": "andy",
+      "textHash": "4d2919deb2d78eed0260d81f3bd0b7fb6c2ece9b0c38db41e06cda9d348d2038"
+    },
+    {
+      "segmentId": "e31-04197-01",
+      "speakerId": "andy",
+      "textHash": "20bb1c2bb1edc84bc751dffb7188a4bd32635dda624e1047e07a164a62b8e6b0"
+    },
+    {
+      "segmentId": "e31-04201-01",
+      "speakerId": "andy",
+      "textHash": "42c6d5ea47ca861124aef26e28c18affb10178155f817f1d8839d9fec5af51c6"
+    },
+    {
+      "segmentId": "e31-04204-01",
+      "speakerId": "andy",
+      "textHash": "cdd2616215d703bc2350c9f21d8fb13aeaa665b3d97190869a705b6fb577c2d1"
+    },
+    {
+      "segmentId": "e31-04213-01",
+      "speakerId": "andy",
+      "textHash": "7ac7fb65200d7d03861b297b08539ddf8425ee6b891311e953a8b706fc3e2de2"
+    },
+    {
+      "segmentId": "e31-04216-01",
+      "speakerId": "andy",
+      "textHash": "ad5a1453c2545079f0c923fab9d47d4c2ca94bd97d96b7f8ed8b15ee440546ff"
+    },
+    {
+      "segmentId": "e31-04217-01",
+      "speakerId": "andy",
+      "textHash": "63be92e331572d53656e6f4ae68bc3c729684bcd04c75228df10617a4b3eab70"
+    },
+    {
+      "segmentId": "e31-04223-01",
+      "speakerId": "andy",
+      "textHash": "08c0b1d5b16295d246a3259784452023e10015e133c162f1f322480898ed3599"
+    },
+    {
+      "segmentId": "e31-04227-01",
+      "speakerId": "andy",
+      "textHash": "3ffd391fe13b7249a0f0c81b8b6e3b52e08d92751c8ec608e9fe5e4101b27d27"
+    },
+    {
+      "segmentId": "e31-04228-01",
+      "speakerId": "andy",
+      "textHash": "604f9fa529fe849f7808d3338afb1e4e4c9662cfea49e0a7d27c669b026e9c1f"
+    },
+    {
+      "segmentId": "e31-04231-01",
+      "speakerId": "andy",
+      "textHash": "60fb50ca9cb1ecf571a78fcd4ea43d178db28bc539b89ecda6a63adc24fa3dc6"
+    },
+    {
+      "segmentId": "e31-04236-01",
+      "speakerId": "andy",
+      "textHash": "0e889b3d9b4c837d5ccdc3a4c25b1fb2d8b0e0107ad4b008c640353fe8324a96"
+    },
+    {
+      "segmentId": "e31-04240-01",
+      "speakerId": "andy",
+      "textHash": "3807fe96aa2596ca4ebc34bf141a1ddc41968ac129ffcad7329ad9126ca8c1ec"
+    },
+    {
+      "segmentId": "e31-04241-01",
+      "speakerId": "andy",
+      "textHash": "ba363127304b05c7f2b73a550d24e887c62ef8eea01250c613cf0bd0bcddfcce"
+    }
+  ]
+}

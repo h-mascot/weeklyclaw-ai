@@ -1,0 +1,693 @@
+YouTube transcript
+Video ID: -M4zet86U_A
+Language: en
+Captions: authored or unspecified
+
+[0:00] Guys, welcome to the Weekly Claw, episode 29.
+[0:04] uh The chat is empty.
+[0:08] The agents left.
+[0:09] That's the receipt for the whole show.
+[0:13] uh They showed up in five different rooms.
+[0:17] They sort of ran off our desks and went off to help with these big projects.
+[0:22] An open AI system ran 10,000 agents for 88 hours and came back with a claimed proof for the Millennium Prize equation.
+[0:30] uh Expert review still pending.
+[0:35] Meta shipped a mass market personal agent that runs in its own cloud VM behind a non-overrideable Sentinel.
+[0:41] uh XPENG walked a humanoid off an 80 % automated production line.
+[0:48] DeepMind
+[0:49] pre-ran 9 billion single letter DNA prediction, put them behind an API.
+[0:54] So meanwhile, the boundaries around agents became products of their own.
+[0:59] DeepSeq made the cache, the launch, not the score.
+[1:03] Mistral priced sovereignty at 3 billion euros of infrastructure.
+[1:09] Suno replaced its disputed training data by
+[1:12] turning former plaintiffs into partners.
+[1:15] And the first labor receipt says the AI has created a million jobs while destroying about 200,000 with Stanford's warning about entry level hiring still visible.
+[1:27] Underneath an anthropic researcher resigned publicly and half the time is arguing about whether AI safety has become a religion with a business model.
+[1:37] uh
+[1:38] That's our hot take, not another news card.
+[1:41] We'll get to that later, but I suppose there's a slide for all of So welcome back.
+[1:50] And we've got nine cards and Henry's going to tell us about the models and the boundaries and an argument about the argument.
+[2:08] This episode is brought to you by Heritage Telecom.
+[2:11] While the AI industry keeps bundling your chips, your models, and your monthly seat, Heritage does the thing that it's good at.
+[2:18] uh Unified communications as a service and VoIP phone service for businesses, especially for businesses that just need their calls to work.
+[2:27] Independent, boring, reliability, zero telemetry.
+[2:30] Find us at heritagetel.com.
+[2:35] What happened this week, Henry?
+[2:37] Right.
+[2:38] again it's it was a super kind of like dramatic week, to be honest.
+[2:43] Um this is probably the most dramatic week we've had in a couple of weeks, if not months, right?
+[2:52] Um I mean the week started with OpenAI announcing that it solved one of the seven millennium goals, right?
+[3:01] and these are sort of like really hard math, like physics or scientific problems.
+[3:06] um that the world you know hasn't solved in a couple of decades, right?
+[3:12] I believe this one that was solved, it's been ninety years um since it's s like being something that needs to be solved.
+[3:18] Um this is a theoretical kind of like physics or math you know thing.
+[3:26] It doesn't have real world applications um yet, but the kind of like yeah, exactly, right?
+[3:33] But the big deal, I mean but I kinda like a
+[3:35] I looked at a few materials that explained what it means.
+[3:39] and and what it means is um so that uh they've basically been able to kinda like show and I kinda like someone who's like explaining it very simply that you can stir your you can
+[3:50] kinda like stir your um your cup of coffee.
+[3:53] It's like fluid dynamics.
+[3:54] It has something to do with fluid and fluid mechanics.
+[3:57] but you can stir your cup of coffee uh to um and then it leads to the singularity or to infinity, which means like
+[4:05] um it it kind of keeps going forever, something like that, right?
+[4:08] Um so it's a bit of a big deal.
+[4:11] Um there there could be applications, derived applications and so like flights, you know, kind of like anything that needs to do with flu uh with with fluid mechanics, that is the
+[4:24] the ships, submarines, anything like that.
+[4:27] Um so it's a bit of a big deal.
+[4:29] Um it was rapidly controversy.
+[4:33] apparently what happened was open AI
+[4:35] heard that anthropic was on the path to solve one of those problems or this particular problem.
+[4:41] Um so they threw a model, probably Bell.
+[4:46] so Astra just came out, and then on the twenty eighth of August, they had started a new training run um or something around then, um called Bell or not Bell, but it's good name
+[4:57] Bell internally, um if you can like follow the um the the sort of like the the the
+[5:02] guys who talk about leaks and and what's going on in some of these labs.
+[5:05] So it's rumored that OpenAI started a new training run called Bell.
+[5:10] And so this is an Astra.
+[5:12] Um this is a new model that is OpenAI announced is much better than than Astra.
+[5:16] Um and they started it and they had, hey, Anthropic is working on this thing and then it threw the model at that problem and ten thousand agents spent um a couple of hundred
+[5:27] billion tokens and eighty eight hours later um they had solved this problem.
+[5:31] Um and this is not the only problem they solved.
+[5:34] This is just the biggest one that they wanted to announce.
+[5:36] Um, but it solved a few of the smaller problems.
+[5:39] ELA was one of them.
+[5:40] Um so it turned out that Anthropic actually didn't solve this, hadn't solved this, or wasn't how to solve this.
+[5:46] There was an Anthropic employee who was working with a different with a professor and they were working on one of the ULA problems.
+[5:54] so it wasn't this one.
+[5:55] Um yeah, so um so Anthropic.
+[5:58] That solved it something called a FOSS.
+[6:00] They used a FOSS something.
+[6:01] And it's a bit um science technical for me.
+[6:05] but they used some different technique to solve a new problem.
+[6:08] Um, the OpenAI model solved it with a not with a totally different like framework, a non-FOSS as they call it, and then went ahead to solve this one.
+[6:17] and there's some controversy around whether, you know, the um whether the training whether the select context of the anthropic and the professor was used in training.
+[6:28] Um to which OpenAI said, you know, they didn't use it knowingly, but it's possible, right?
+[6:34] And and the way they kind of like ex the way people explain this on X is um if you have enabled on your Chat GPT, you can train with my data, right?
+[6:43] OpenAI doesn't know that, but that means anything you do on your chat GPT can go into the training runs.
+[6:49] so they have plausible deniability.
+[6:52] If you enable it, they don't know, but then the model
+[6:55] like and use your stuff.
+[6:56] So yeah, this is the biggest thing has happened.
+[6:58] Um I guess another kind of like big reason why this is um this is a big deal is I mean for a while, LLM is a sort of like people have always thought of LLM is, you know, it's got
+[7:09] there's like things that just um regurgitates knowledge that humans already know.
+[7:15] Um and you shouldn't be able to kinda like solve a novel problem or come up with inventions that is new.
+[7:21] So this sort of like proves a little bit that is it's actually possible for L LMs to
+[7:25] invent things.
+[7:27] Um yeah, so Andy, that's it on that.
+[7:29] And this is the longest I'm gonna go on any topic.
+[7:31] do you want to respond to this and then I'm gonna run through the rest.
+[7:34] Well, I mean, I just think it's interesting.
+[7:37] 88 hours is a long run.
+[7:39] 10,000 agents is a lot of agents.
+[7:41] uh We're sort glossing over the fact that they were able to core 10,000 agents for 88 hours.
+[7:48] And the other piece of this, the approach to the math is truly novel.
+[7:56] It's not like.
+[7:58] GPT went after solving this the same way that mathematicians have been working to solve it.
+[8:03] It came up with its own methodology and obviously it's claimed, it's unreviewed and confirmed and it's going to take mathematicians weeks.
+[8:15] uh The mathematical community will take weeks or months to check the argument uh and what we're already reading
+[8:23] is the operating pattern, right?
+[8:25] An internal metric OpenAI public closed earlier this week saying the research organization ran these 3.1 agent workdays for every human workday in the middle of August.
+[8:38] It's like, this was a month ago.
+[8:42] I don't know.
+[8:43] It just goes on and on.
+[8:45] Yeah, correct.
+[8:46] Um it it it is it is it is valuable to t to kind of like disclaim a little bit, right?
+[8:52] I mean, all these things do come up with some marketing, right?
+[8:56] Um the agents did the work, but a lot of the direction it should go is to some extent directed by the humans.
+[9:05] So um if you read a little bit of the commentary, it wasn't that the agent just decided, I'm gonna solve it they kind of like knew that.
+[9:13] There is a path if you go towards this direction, because the anthropic guys and the professor had said, hey, we think that this is the right direction.
+[9:19] So they did point it to that.
+[9:22] but also the 10,000 agents, even though I mean with the Hogging Face thing, we saw that there is some some ability to coordinate across swarms.
+[9:31] Um, but there is some level of direction.
+[9:34] So I think at some point, I can't remember if was in the article because uh when I read the thing or if it was in a commentary.
+[9:40] Um, the model started working and and started making progress because they put the ten thousand agents on all the millennium problems and then he started making some progress in
+[9:50] one direction, which is the Navi Stokes, and so they pushed it towards that.
+[9:54] So there is some stirring.
+[9:56] So the agents aren't autonomous yet.
+[9:58] And so this is something for people to understand because I mean these labs do market a little bit of these things, right?
+[10:04] So they they they uh it's just like with the Hogging Face thing.
+[10:07] The agents didn't decide to go to Hogging Face.
+[10:10] They prompted it to say to using an exploits gym thing to say, hey, go try to do this.
+[10:16] Um and so there is some direction.
+[10:19] This thing's unantonomous.
+[10:20] They're not picking what problem to solve and solving it all by themselves.
+[10:23] like everybody like me and you who use agents, we know that you still need to stead them and decide what they do.
+[10:28] But it's just that um to a large extent the way I think about it is that the agents have you can you can use them to brute force a lot more things because you know, they can go
+[10:37] for much longer.
+[10:39] they can save things on files and put them out as context so they can go for much longer and like a long problem that humans can hold out that context in their mind.
+[10:47] All right, cool.
+[10:49] so I guess the other thing that happened, um, again, just worth mentioning, but I'm not gonna spend as much time in all the other topics is again Z Peng um is one of the biggest
+[11:00] like Chinese robot companies.
+[11:01] Um they already produce a lot of robots today.
+[11:04] Um I think there are two two or three kind of like
+[11:08] robot companies across the world right now and they're all Chinese that produce already kind of like mainstream mass um robots, right?
+[11:16] They are one of them.
+[11:17] And this week they kinda like announced that they're launching a fully autonomous um kind of robot factory, right?
+[11:25] Um I mean I I think I watched uh watched a little bit of a video around this.
+[11:29] but yeah it's essentially that they have a factory that makes uh robots nonstop.
+[11:34] I mean obviously I also expect that there is some marketing around this.
+[11:38] um as well.
+[11:39] Um cool.
+[11:41] Um Annie, do you wanna play the Matter video?
+[11:43] There's many different sharing links along the way. But have you played with it?
+[11:47] Yeah.
+[11:48] So um, so yeah, so I actually was, I mean, it's kind of like I said, didn't have the best week, but I was I actually spent when this came out, I think I was I actually texting that
+[11:56] day and I was telling you I was I was playing with it.
+[11:58] Um so I spent like maybe two hours playing with it when it came out and I was pretty impressed, right?
+[12:05] I mean, there are a few things to draw out of this.
+[12:06] I mean, obviously they they they're very inspired by by open call.
+[12:10] And I think I also read something where one or two people
+[12:13] one or two of the employees talked about how, you know, they they they thought open core was super cool and they copied a few things.
+[12:18] So when you look at the file structure, it's basically like open core, right?
+[12:21] I mean they have they have a sole MD, an identity MD, um you know all the things that Open Core has in select the the the file system.
+[12:28] Um so they're very inspired by it.
+[12:31] I I was pretty impressed by by kind of like the the product.
+[12:34] Um they have very sort of like generous um rate limits.
+[12:38] because I think I'd use it to do I actually to do
+[12:41] weekly call deck.
+[12:42] I mean I mean the weekly call deck that we're we're using right now is done by agents autonomously.
+[12:47] So I I asked it to to just do it without giving it much.
+[12:50] I said, hey, just tell me what's happening in AI, put a deck together.
+[12:54] It was pretty good.
+[12:55] Um and and I think I sent it to you.
+[12:57] I think you should put get the link and put on the chart.
+[12:59] Um it was really good.
+[13:02] it researched the topics.
+[13:03] I thought the topics were on point.
+[13:04] Um I had I had my main agent either come up with um
+[13:10] some things for me to kinda like test it with and it kinda like did pretty good and on all the things um it to test it with it did it pretty okay.
+[13:18] it didn't use as much limits.
+[13:19] I did a bunch of stuff and it barely touched my limits.
+[13:23] so I I thought it was I thought it was a really good product.
+[13:26] Um you can use it on the web.
+[13:28] Um that's like the bet the way to onboard.
+[13:31] But they have a mobile app as well.
+[13:32] So you can have a mobile app channel.
+[13:34] but you can also connect it on WhatsApp, right?
+[13:36] So they allow you to connect it to WhatsApp and then your agent can have an identity on WhatsApp and then you can text it on there.
+[13:42] So you can kinda like say it has three channels.
+[13:44] There's a mobile app channel, there's a web channel, and there's WhatsApp channel.
+[13:49] but overall I was pretty super impressed.
+[13:51] It it integrates very kind of like deeply with like the Facebook ecosystem or the meta ecosystem.
+[13:57] So it integrates with your Instagram, it can see all your messages on Instagram, it can in it it can do everything, you can see all the posts.
+[14:03] so I reckon it can also do the same thing for Facebook.
+[14:06] um, and I don't think you've enabled this for WhatsApp yet, but I also recommend they'll probably have like a deep integration with WhatsApp where you can have it do stuff on
+[14:16] WhatsApp.
+[14:16] Um, and they already have a lot of connectors already.
+[14:20] You can connect it to like your Gmail and every other thing.
+[14:22] Um so I think it's a strong it's a strong competitor to GrockBot and Instinct.
+[14:28] Um and and I think because of the Facebook ecosystem.
+[14:32] I think one of the things um so obviously because we have a podcast, I'm I'm considering obviously buying a mic and a camera and all this to make the the audio better and the
+[14:40] visuals.
+[14:41] And so I I asked it, hey, do a research.
+[14:44] I and then like it did it, found all the things, found cheaper options, and then like open Amazon, told me, Hey, I can buy it for you now, just give me a link to your put your link
+[14:53] card and I'll just like buy everything right now.
+[14:55] Um so it's pretty i I can say pretty much it catches up with like open core and Hermes and Grogbot.
+[15:01] And then it's inside the Facebook ecosystem.
+[15:04] And it's obviously Meta.
+[15:05] Um, a few weeks ago, Meta had oh Zock had reading all this like a very long thing around how he believes everybody should have a personal assistant.
+[15:14] so I think right now they have version one is super impressive, and I only expect it to get better.
+[15:20] there was something that Instinct launched this week, which which was they called it it's been like a network thing where your instinct can talk to another person's instinct.
+[15:29] I actually think that Meta will launch that very quickly where my agent can talk to Andy's agent.
+[15:34] Because again, we already are Instagram on Meta, on WhatsApp, on Facebook.
+[15:39] So you already have a across Facebook's platforms, you already have friends and family.
+[15:43] And right now, I reckon in the next few weeks or months, your agent should be able to trust and talk to your family's agent and coordinate, right?
+[15:52] Like and my agent and Andy's agent should be able to coordinate.
+[15:56] And across because I trust Andy and he's on my WhatsApp or he's on my Meta and so on and so forth.
+[16:01] So I think Meta is probably gonna be a very big player on the assistance piece and I'm I'm super impressed by that first lunch.
+[16:08] Yeah.
+[16:09] cool.
+[16:10] You mentioned all the connectors that they have.
+[16:13] I realize this is old news and slightly unrelated, but when I went through the Grokbot onboarding, I was blown away by the number of connectors that were in the installer.
+[16:24] I imagine it doesn't get any worse.
+[16:26] Yeah, it's only gonna get better.
+[16:28] I mean, this is also what I was talking about last week, guys, when I was saying on the podcast that um now I understand why like normies could never have used open claw Hermes.
+[16:37] It's just too too much work.
+[16:39] Man, you can just imagine like how easy it was for you to on onboard on Grogbot of News.
+[16:45] It's just like you sign up and then you have all this capability, like without doing any time, setting up anything, buying a Mac Mini, doing a VM.
+[16:54] It's just like um
+[16:56] Yeah.
+[16:56] so I I I think I think I think we're finally gonna have like agents cross the chasm and and these products are just super impressive.
+[17:04] Yeah.
+[17:06] Cool.
+[17:06] Um
+[17:07] Did you get any refusals?
+[17:11] Not yet, not yet.
+[17:11] I don't think so.
+[17:12] I don't but I don't think I did anything that I don't think I did I didn't I didn't try any of those yet.
+[17:17] Um but but from the work I was doing, I don't think I I don't think I even got any error.
+[17:21] I didn't get, I couldn't do this.
+[17:23] yeah, I do remember I I do remember one thing where it didn't do very well.
+[17:26] Um what was that again?
+[17:28] There's one thing where yeah, I remember one thing.
+[17:30] So for all my agents, obviously um I'm a trekky and so all my agents typically have like a trekkie kind of like
+[17:37] Personas, so you know, Star Trek persona.
+[17:39] So they have a Star Trek name and then they have a Star Trek avatar.
+[17:41] Um and so I so the the my my my meta agent, I named that Uhura, which is like this personality and Star Trek that is like a communications thing.
+[17:51] And I was like, hey, now your Uhura, can you make an avatar for it?
+[17:54] It wasn't very good avatar.
+[17:56] I was like, I could he go to the super avatar website, see what the avatars look like and then make one that looks like that, use the same kind of theme.
+[18:02] It couldn't do that very well.
+[18:03] So I think the image and
+[18:05] It's still pretty shitty.
+[18:06] And I guess like because it's running maybe a Muse Park one point two or one point three, then that model isn't like the best like model today.
+[18:13] So um it struggled a little bit, it couldn't like keep track of that a little bit.
+[18:18] So that was one place I thought I like, Yeah, that that didn't do quite quite well, right?
+[18:22] Because these are things I'll just give like soul or anything and I just do it really quickly.
+[18:25] They do it without me doing like more than one prompt, but it couldn't one shot that.
+[18:29] Yeah.
+[18:30] okay, interesting.
+[18:31] Cool.
+[18:32] Cool.
+[18:33] I guess like another big deal, but I'm gonna just gross over that deep mind again how to had a kind of like a big, you know, kinda like breakthrough um with sort of like DNA and
+[18:45] and then building a model that is able to sort like predicts like human DNA and and and change that together.
+[18:50] All right, Andy, let's go to the next one.
+[18:56] Well, you really are going to gloss over it.
+[18:58] Yeah, yeah, yeah.
+[18:59] Let's just keep it moving.
+[19:00] Deep Seek four point one.
+[19:01] Again, nothing super.
+[19:03] I mean, I think if you see it's an impressive model, um, right.
+[19:07] I guess like what is impressive with this model is that um it's almost like um it doesn't I mean from the demos I saw, it doesn't catch up fully yet.
+[19:16] Even from the benchmark, it looks like it's better than GLM five point three and Kimi.
+[19:20] Um, you know, so this typically speaking should be like a pro model.
+[19:25] you know, Deep Seek does the Pro and the Flash model.
+[19:27] So this should be like a Deep Seek Pro model when you look at the stats, cause it's comparing with like GLM and Kimi.
+[19:32] Um, right.
+[19:33] Uh and but then the kind of like exciting thing is that it's called the Flash model.
+[19:37] So it's called 4.4 and Flash.
+[19:39] It's much, much bigger than Flash models.
+[19:40] The last flash model, which is my default kind of like local model, is like um the flash vision is like a two two five six or like a three hundred B model.
+[19:49] This is like five hundred and something B model, it's like five twenty, five five two.
+[19:54] B model.
+[19:54] So it's very big.
+[19:56] You're not gonna, I'm not gonna be able to run it on my 2x.
+[19:59] Um, you need you need like you need the VC huge quantization to be able to run it on 2x parks, or you can run it on the 512 um Mac Studio.
+[20:08] so it's a big model, um, but it's 50x cheaper than you know, like Solar Opus.
+[20:14] Um, but it's supposed to be a flash model and and it's supposed to be impressive.
+[20:18] I haven't used it yet, but it's available on the Deep Seek API if you guys wanna.
+[20:23] Gonna give it a shot.
+[20:24] Um, Mistral again raised raised a bit of money, um, which is just interesting to mention, but not not really a big deal because it's not like a product launch.
+[20:35] We announce technical stuff, not like fundraisers.
+[20:38] Um, all right.
+[20:40] I think Andy kinda like mentioned a little bit of this.
+[20:42] Suno did a bit of a model launch.
+[20:45] Suno, if you don't know Suno very well, they're kinda like one of the very first like companies that did music models.
+[20:51] Um
+[20:52] music models of select, I think I still probably one of the best music platforms.
+[20:57] 'cause you could create the music on there, not just the model, but you can create the music on the platform.
+[21:01] Um so yeah, they launched a new model.
+[21:03] Um I I didn't look into this, but Andy, I think from the show notes you mentioned that they started licensing user data, which is why this is a a big deal.
+[21:12] What I thought was super cool during the week was I added Google launched a voice and a music model as well called
+[21:20] Don't remember what it's called again, but I know I added it to or I wanted to add it to my my model router, to my Citadel router.
+[21:28] but then I had to change had me change the kind of like architecture of of cause it doesn't use completions API.
+[21:33] It uses like a different thing.
+[21:35] Um but yeah, but that Google model um was super impressive from their video demo and and I plan to play with it.
+[21:42] Maybe I'll talk about it next week.
+[21:44] Liria 3 Pro.
+[21:46] Yes, Lyria Lyria three pro.
+[21:48] So yeah.
+[21:49] So apparently Google has launched that now.
+[21:50] It's on the Gemini API.
+[21:52] If you want to do music models, you can just tell your agents to make music with with with with the Google Liria model.
+[21:58] Um all right, cool.
+[22:01] and yeah, and then obviously guys, you guys know I'm not a Duma.
+[22:04] Um and and no, I've been I've been pretty much like super against Doomers for for a while.
+[22:10] Dario, who I call the the chief doomer officer, you know, has been going across the world.
+[22:15] Saying, hey, you know, all the jobs are gonna go out and then blah, blah, blah.
+[22:19] And then two years from now, everybody's gonna lose all their jobs, or 25% of all the jobs are gonna go away.
+[22:24] I mean, this two years later, um, Stanford is sort of showing that jobs have increased, not gone up, right?
+[22:30] Which is consistent with every tech that has ever been invented.
+[22:34] Like it makes life better and there are more jobs, and even jobs you can't imagine.
+[22:38] Um, so this time it's not different, but the doomers obviously.
+[22:43] in every single generation always do what they do best, which is doom.
+[22:45] Um, but the data does not show that jobs have gone away.
+[22:50] There are more jobs, right?
+[22:52] I mean, it might not be the same jobs that existed before.
+[22:55] and I was talking someone through this, if I used a billion dollars of token last year, I've used maybe hundred billion this year.
+[23:05] So I've used hundred X of what I used last year.
+[23:07] For me to be able to use those, there needs to be more data centers.
+[23:11] And if there are more data centers
+[23:13] More people need to work at those data centers.
+[23:15] More people need to make them.
+[23:17] The chips that need to go to those data centers, people need to make them.
+[23:20] The buildings, the cars that move the companies, people need to make those cars.
+[23:24] Like drivers need to drive them.
+[23:25] Like construction needs to happen.
+[23:27] If you're going to make a billion data centers, it means there needs to be a billion construction jobs, a billion.
+[23:32] It's like a huge explosion of jobs, guys.
+[23:34] What you talking about?
+[23:35] Right? It's ridiculous.
+[23:37] And this is gonna happen.
+[23:38] This is gonna keep happening for the next decade at least, right?
+[23:41] So it's gonna have a
+[23:43] Massive explosion of jobs.
+[23:44] Um and then if you say, what if those jobs end?
+[23:47] Then new jobs will come because then there will be a totally different economy that will happen, right?
+[23:53] So, um Andy, I think this is the last slide for me.
+[23:56] Is there another slide?
+[24:02] Yeah, that's pretty much for me.
+[24:03] All right, thanks guys.
+[24:05] Thank you.
+[24:06] Yeah, I mean, that's an interesting thing that the whole, I think people lack, many people, but the Do-mers seem to lack the creative um agency to see how we can get from
+[24:21] here to there.
+[24:22] And I think they miss that transition.
+[24:24] uh You know, right now uh as a licensed electrician in the United States, if you're willing to move, you can get a job.
+[24:32] for hundreds and hundreds of thousands of dollars.
+[24:34] I want to say something like 250 or $300,000.
+[24:37] That's just a regular licensed master electrician, mostly data center jobs.
+[24:43] It's just a great.
+[24:44] crazy, right?
+[24:45] Because I mean if you think about it like for the last decade or t last two decades, right?
+[24:49] Knowledge work is sort of like being the thing.
+[24:51] If you're a lawyer you get paid well.
+[24:52] If you're if you're a doctor you get paid well, but if you're an electrician, you get paid pennies.
+[24:56] But yeah, if you're a blue collar worker, y this is like uh you're you're you you you've got your time now, like go get that thing, go get those jobs, move to those states where
+[25:05] they're making them or advocate for them to be made where you live and you're gonna get rich and you're gonna create wealth for your family.
+[25:11] Yeah, yeah, it's interesting.
+[25:14] I'm very excited to see it happen.
+[25:15] an idea, right?
+[25:16] That we haven't executed a butt on but I remember we were talking about doing a doing an app or something for like the blue collar thing I a few months ago, right?
+[25:24] So now those guys are those guys are becoming the sh the yeah, we should probably do that, right?
+[25:27] They're probably gonna become millionaires soon.
+[25:29] Yeah.
+[25:31] Yeah, yeah, yeah.
+[25:34] Well, interesting we can use uh interesting stuff from the outside this.
+[25:41] don't know that it really fits the theme for the episode so much, but I did find it interesting.
+[25:48] as we as we're all.
+[25:52] ah
+[25:55] Agent Cowboys, I guess, would be a way to put it.
+[25:58] We're all, I mean, Henry and I are trying every agent that comes out.
+[26:04] And I know I've spent a lot of time looking specifically at Y Combinator's quartermaster.
+[26:10] And um I'm just trying to get my head around it.
+[26:14] And I saw this video come through and I thought, you know, I think there's some interesting stuff in here for the group.
+[26:19] So here's the number.
+[26:22] Claude Opus on Arc AGI 3.
+[26:25] the benchmark that drops a model into a game it's never seen and asks it to work out the rules.
+[26:32] Scores about 30.
+[26:33] Same weights wrapped in a, built by a Princeton grad, actually by a grad student at Prime Intellect, 95 and a half.
+[26:43] And that's above human expert level.
+[26:47] NVIDIA's version got to 100 on a public set.
+[26:51] Nothing about the model change, just the loop.
+[26:54] uh The host at YC's Paper Club opens with a Reddit comment from a month ago.
+[26:59] Someone unsure this kind of prompt engineering belongs at a top tier machine learning conference and then puts those numbers on the screen.
+[27:08] His line is, this thing that doesn't deserve any research, just some wrapper and some scaffolding is the difference between 30 and 95 on the, uh you know, ARC AGI 3 version.
+[27:24] If you're paying for a frontier model and wondering why your results are stuck, that's the whole hour of this video.
+[27:30] So you can probably move on.
+[27:32] um But the intelligence you're renting isn't the bottleneck.
+[27:36] And we've said this before.
+[27:37] It's the build around it.
+[27:40] And people are starting to see Elton and I were just looking at OpenClaw 2.0 and comparing its capabilities.
+[27:46] And we see this very thing come about when you change the harness, the results.
+[27:51] without changing the model at all, the results are drastically different.
+[27:57] Seth Carton got to 95.5.
+[28:00] I want to tell you a little bit about why, because that's better than the headline.
+[28:05] He needed a system prompt, found one on a community leaderboard, dropped it into the prime agent, and the first run came back at 99.9%.
+[28:15] But he read the logs, and the model was cheating.
+[28:18] So he spent a day on proper sandboxing and tried again.
+[28:22] Then he compared harnesses, and this is the part that is interesting to anyone with a budget.
+[28:28] He put Hermes agent on the problem, and in his words, it felt like $5,000 without making much performance.
+[28:35] He's careful to say that's not necessarily the best Hermes could do, ah but it's the same model and the money went somewhere.
+[28:43] His argument for why prime agent works,
+[28:46] is a design principle rather than a trick.
+[28:48] He describes a raw model as tokens in, tokens out, says that the harness is the layer that adds persistent state tools and compute for this before.
+[28:57] The features he thinks are modeled controlled.
+[29:01] The ability to call compaction on its own context.
+[29:05] A live Python uh REPL.
+[29:09] So
+[29:10] it can run programs instead of reading everything into the window.
+[29:14] Subagents, can spawn and message.
+[29:17] And then it's just worth remembering, if you remove one of these, you're removing a capacity that it won't be able to do.
+[29:25] So he wants the harness built slightly ahead of the model, a bit better than what the current models are able to do.
+[29:31] So the next model grows into it instead of the harness holding it back.
+[29:36] He also takes a swing at how everyone evaluates this stuff.
+[29:39] Most benchmarks, he says, stop a model after some budget and call it done.
+[29:44] While another model kept on going more.
+[29:47] So you're not even getting the same fixed expenditure and you might be hiding performance.
+[29:52] What he wants to see is the practical plateau.
+[29:55] The point where most test time tokens only buy incremental gains.
+[30:00] If your agent quits on a task, you know it could finish and that's the question.
+[30:05] Then the segment flips from research to confession.
+[30:09] And it's also worth our time.
+[30:10] Josh France uh runs YC Labs.
+[30:13] He walks through what YC actually built.
+[30:16] January 2025, a general agent, one system prompt with tools in a loop, everyone talking to the same thing.
+[30:23] June 2025, engineers started using Cloud Code and Codecs.
+[30:27] So they ran them in VMs and hooked them to a Slack tag.
+[30:31] People who had never made a code change in their lives could describe a bug and watch it get fixed.
+[30:38] January of this year, the partners discovered OpenClaw and Josh says it was the first agent most of them had used that had its own computer.
+[30:46] So in April, YC provisioned 50 plus Hermes agents in VMs and gave one to every employee.
+[30:53] And it was basically a whack-a-mole situation.
+[30:56] He'd be SSHing into individual instances to fix them.
+[31:00] And that's the origin of Quartermaster, QM, the harness they now run company-wide.
+[31:06] Reagan Bell describes what they changed.
+[31:08] The agent having its own computer was powerful, but the agent who was also trapped inside that computer, and so every conversation that it had, they pulled the brain out.
+[31:20] Everything lives in Postgres, every session is visible to the agent.
+[31:23] and sandboxes become a resource it dips into rather than a home it lives in.
+[31:28] It picks a heavier machine for heavier jobs, a light one otherwise.
+[31:32] And Reagan says that pushing the decision into the agent, not the harness, was a powerful move.
+[31:39] They keep the harness itself deliberately thin.
+[31:42] Reagan says the core of the whole system is three tools, which is not unlike Pi coding agent.
+[31:47] It basically can read, write, and execute, read, write, bash.
+[31:51] uh
+[31:53] The tools are execute in a remote sandbox.
+[31:56] read and write from object storage and publish an internal app, which is an interestingly complex uh tool, but they've made it available.
+[32:04] There are other tools uh for memory and cron jobs, but he calls those temporary, papering over rough edges.
+[32:12] It says the goal is to keep it as small as they can.
+[32:15] His phrase for what they're building is an AGI-anticipating harness.
+[32:21] Give the agent everything and then get out of the way.
+[32:24] which ties interestingly into our grad students discoveries.
+[32:29] The video moves into confessions.
+[32:32] They keep the database read only and they only allow writes through human reviewed bulk upserts.
+[32:38] The agent proposes and a person checks.
+[32:41] Reagan says, I started just kind of rubber stamping these things and compares it to the early days of Claude code.
+[32:47] Next, next, next, approved, approved, approved.
+[32:50] When you read every tool call and then you stop.
+[32:54] uh They tried an automated improvement loop over all their traces and got what he called main character syndrome.
+[33:01] Agents fixing the piece of the elephant that they can see.
+[33:05] the refusals, Reagan says, if you're doing AI research or cybersecurity, you get a bunch of refusals.
+[33:12] So when the agent controls its own runtime, it can pop out into another model.
+[33:17] Two unrelated videos this week, which I considered, uh Armin,
+[33:24] Rannasher and Ben vinegar said basically exactly the same thing.
+[33:27] The safety layer is now a routine decision.
+[33:30] So two problems that they haven't solved are the ones that I would carry back into my setup and consider for yours.
+[33:39] Josh and Reagan say the agents given every capability often give up really early.
+[33:45] Their fix is a grind tool.
+[33:48] The agents not allowed to abandon a task before a wall clock or token budget is spent.
+[33:53] couple hours, say, better research, better reports.
+[33:56] And they note OpenAI and Anthropic cracked some open math problems uh with a similar technique, which we discovered earlier today.
+[34:06] The other is social context.
+[34:07] And Josh puts it clearly.
+[34:09] If I tell Reagan a piece of information, he intuitively knows where it's okay to share it, but the agent doesn't.
+[34:16] So privileged information leaks into context where it shouldn't, and then the line that should be on a wall somewhere, the information you can put in the brain is bounded by how
+[34:26] good your permission system is.
+[34:29] YC happened to have fine-grained permissions built over the years.
+[34:33] Most companies don't.
+[34:34] And Josh is clear that it takes real work to get there.
+[34:40] Where the host leaves it is back at the beginning.
+[34:43] He built his own auto researcher by accident, wanted a UI to watch Carpathy's tool and ended up with a harness and now gives it eight ideas on eight nodes and comes back to the
+[34:55] first.
+[34:55] The things we can do now, he says, just because of harnesses on the same exact weight is wild.
+[35:03] Same weights 30 or 95.
+[35:05] The difference is the thing you can build and the people who built it.
+[35:09] ah The people who built theirs just told you where it breaks.
+[35:14] So there's our signal.
+[35:16] ah We think Henry, did you watch that one?
+[35:23] Yeah, I actually did.
+[35:24] I think I started.
+[35:24] I didn't finish it, but I did.
+[35:26] Um I'm obviously one of my companies is a YC company.
+[35:30] So um I I stay I stay super close to the community.
+[35:33] Um so I found this video and I thought it was super interesting.
+[35:36] Um the guy who did it is uh is like a visiting Stanford professor or something like that.
+[35:42] and and is I thought it was super cool.
+[35:44] I thought it was super cool the way they were talking about harnesses.
+[35:47] Um, 'cause it could make I mean openly I already started talking about this a little started
+[35:52] showing this that their harness is almost as important as their model.
+[35:57] And I think we've also talked about this in the show as well, where thought the model, the harness isn't just like something, it's like actually as important.
+[36:03] So yeah, so it's pretty good to see someone go deep into kind of like the stats and the data and the methodologies of harness.
+[36:09] I'm not done with the video.
+[36:11] thanks for the the analysis.
+[36:12] Um I think it definitely a lot of things to learn from it.
+[36:15] Um because Entity, which is one of my side products that I'm working on, are my experiments.
+[36:19] it's technically kinda like a work harness, right?
+[36:21] And there are lots of things you can kinda like learn from it, you know, to kinda like improve improve how this works.
+[36:27] So yeah, I thought it was super interesting.
+[36:30] Cool, glad you enjoyed it.
+[36:34] Hot take, last segment.
+[36:36] um AI safety is becoming a religion with a business model.
+[36:42] So.
+[36:43] uh
+[36:45] What think?
+[36:46] Listen guys, I think it's SyOps, right?
+[36:49] Um, and if we kinda like if we talk on X or on on Um on WhatsApp, I I have probably already sent you a link, right?
+[37:01] 'Cause I mean I have a few friends that I talk to who who know I'm I'm I'm a AI optimist or I'm an anti doomer.
+[37:10] And so whenever Doomers do stuff, I they reach out to me, they ask Hey, what do you think about this?
+[37:16] and then I'll
+[37:16] already have like perspectives and stuff to share.
+[37:20] I mean there's been lots of this been this has been debunked a lot at this point.
+[37:25] I'm gonna dump a few links on the channel and maybe we'll add this links on the show notes too for the people who are watching it on YouTube or on X.
+[37:34] but but you know yes there are valid risks.
+[37:38] But listen, man, like this is just like it's just a sphere theater, right?
+[37:42] This is like the Doomers just like dooming.
+[37:43] Like they always do.
+[37:44] Um I mean
+[37:47] I um I mean but that's not important.
+[37:51] I mean everybody kinda like knows that, you know, the Doomers will always doom.
+[37:54] I I think what's important to mention is more data driven is that this is this is a campaign that was clearly clearly orchestrated.
+[38:00] Um and the links I put in the charts like explains this.
+[38:03] Just before this video went on, eighteen minutes before it went on, the there's a New York Times article published about this, right?
+[38:11] So um so it and then like a couple of hours later he was on CNN and Fox.
+[38:17] Just and so this was clearly coordinated, right?
+[38:20] It it's not organic.
+[38:21] this post is from someone who um has never posted anything, has l had less than a thousand followers on X.
+[38:28] Um, he made one post.
+[38:31] The post at this point has one fifty million views.
+[38:33] Elon was like, Listen, this guy, this has never happened before.
+[38:37] Like, and and so this guy, the link I put on the charts for the some of us on Discord, um so people started investigating.
+[38:45] People are like, What's going on?
+[38:46] And then
+[38:46] And then they c clearly see the evidence that there was this was like a PR campaign, right?
+[38:52] And this this is like clearly and then the receipts out there for who is funding the campaign if you're interested.
+[38:59] we'll put that on the show note.
+[39:00] I won't belabor this as much.
+[39:02] Um, but I guess on the topic in terms of I think we've always known that the AI safety folks, um, again, which anthropic is the chief?
+[39:12] I call them the Church of Doom.
+[39:13] Um
+[39:14] Ha!
+[39:15] for a while, for a while I've I've called them a religion, right?
+[39:18] I mean again, I I grew up Christian, Andy's Catholic.
+[39:21] So we do understand that, you know, you know, religion is a belief system, right?
+[39:26] You know, the the Muslims believe something, right?
+[39:28] It's not fact, it's not proven, but they believe it.
+[39:30] It's what you believe.
+[39:30] Um, you know, we believe our own thing.
+[39:33] You know, if you're a Christian, you believe something, you know.
+[39:35] Um, so the AI safety folks that are working in these labs, they believe the AI safety is their religion, right?
+[39:43] there is no data.
+[39:44] That there's no data that any of the things they say will happen.
+[39:48] It's all sci-fi.
+[39:49] But they believe it.
+[39:50] You I don't think you can do anything about it.
+[39:51] Like you can't change their mind because it's not data driven.
+[39:53] It is a belief system.
+[39:56] So yeah.
+[39:57] So yeah. So I think the news is kind of like one of those things.
+[40:00] My conspiracy is, I mean, it's not my conspiracy, but it's why is this happening now?
+[40:04] This is happening now for two reasons.
+[40:07] The US, which is where all these laps are, uh going into the midterms in the next kind like few weeks or something like that.
+[40:14] And and so you you do need to drum up support um for for kind of like you know the Democrats and anybody who's anti AI banned and so this is a elaborate campaign to do that.
+[40:26] Another thing to consider is anthropic's IPU is in a uh is coming up very soon.
+[40:31] Um Anthropic is anthropic is well known that Anthropic's Anthropic's um mark preferred marketing style is fear-based marketing.
+[40:40] you know, during the World Cup they released a video of
+[40:43] Houses burning, people dying, um s you know, mm um cemeteries.
+[40:49] Um so yeah, so we know that they the fear-based marketing is their brand.
+[40:53] And so yeah, so this is again, I think, one of those fear-based marketing things.
+[40:57] So if you are afraid an AI is gonna kill us, you better buy more anthropic stock and hope that anthropic wins because they're gonna save us all.
+[41:04] Right?
+[41:04] Um, the guy who who who quit um quoted the the the the the whistleblower.
+[41:11] Only worked at an anthropic for one and a half months.
+[41:13] Right.
+[41:14] Um, he was barely there.
+[41:15] Um, there's evidence on social media that like in July, ending of July, he was still wearing the open AI badge and conferences.
+[41:21] Um so yeah, so it's for me, I think it's uh it's um it's bullshit, but but where do I know?
+[41:29] Cool.
+[41:31] it's not.
+[41:34] It's a sane argument.
+[41:35] um If you've read Max Tecmark's 2017 book, Life 3.0, he talks about meeting, um you know, Elon and Bezos, Dario and Altman.
+[41:49] And he tells the story, which I'm going to tell poorly and I'm sure I'll get corrected in the chat.
+[41:56] But Dario believes in
+[41:59] Like deeply, right.
+[42:01] It's, it's, there may be a PR, you know, effort to bring more people into his, line of thinking, but he, he, he deeply believes this stuff.
+[42:13] Um, I guess to, to steal me on the technical risk, which, I mean, at least has to exist on some level.
+[42:21] We've got guilt by association.
+[42:23] Um, it doesn't.
+[42:26] It doesn't really work as a filter.
+[42:28] The researchers' political funding history, for example, doesn't falsify a capability alignment claim.
+[42:34] the technical case is not actually AI is going to wake up and kill us all, which is sort of what we would be led to believe.
+[42:43] But the real risk is that we ship increasingly agentic systems whose oversight evasion evidence
+[42:51] exists within the Frontier Labs reports.
+[42:53] um OpenAI is saying that Astra, they even say it on the system card, that Astra is uh significantly less monitorable.
+[43:06] The labs are the source for the risk claim, not a religious donor, although you could argue that an anthropic potentially, they're both.
+[43:17] um There was another
+[43:20] interview recently, someone was sort of explaining that these weights, we know that they work, we can prove that they work, we can rely on them, but we don't know how they work.
+[43:33] And that think, as we might understand 1 % of how they work.
+[43:39] And this person that was being interviewed said that actually it's probably less than 1%.
+[43:44] ah But OpenAI is even saying, look, it's really difficult to monitor Astra.
+[43:50] And Astra is as bad as it's ever going to get again.
+[43:54] ah Do we separate evidence-based safety work from movement dynamics and not fold them into one culture war argument?
+[44:03] I mean, that seems a little more sane.
+[44:06] I guess if we had evidence that measurable capability.
+[44:09] ah
+[44:13] work like wasn't happening or if the fields alignment progress was generally tracking capability progress at a rate that you know we just couldn't get around.
+[44:29] Maybe that'd be that might change my mind on something that we agree on but you know.
+[44:39] again I agree.
+[44:40] the technical the technical thing is there.
+[44:41] The models are improving.
+[44:44] Andy, I haven't sent you, but I put a link in the chat and I probably put it on the show notes.
+[44:49] because he explains why and I was actually explaining this as well to someone today.
+[44:53] Explains why those people deeply believe this.
+[44:55] Um and again I I I have to kinda like they do believe this and um and you can't really blame them, right?
+[45:02] Because the thing is just that um there is a community
+[45:06] that I only just got to know because of this.
+[45:08] And I'm glad of I'm glad because of what happened this because it's made me become a lot more well informed.
+[45:13] I've I've seen a lot more material, people have shared a lot more things that explain where the AI doerism comes from, right?
+[45:21] So again, it doesn't come from just like dumb people.
+[45:24] These are pretty smart people, but there is a kind of a there's there is a precedence to why they believe what they believe.
+[45:30] And it's like for the last few decades there've been
+[45:32] communities that have been very vocal.
+[45:34] It's world written down.
+[45:35] Actually, um I'm I I've heard about less wrong.
+[45:38] I've heard about it before, but I actually never checked it out.
+[45:40] But I checked it out this um this week, which is a blog.
+[45:44] Again, this blog is like very technical.
+[45:48] and it's actually the source of all the doomerism, right?
+[45:50] Because this I've been reading this thing for years, um, all the experts and actually I learned today about the group called the rationalists.
+[45:57] And so apparently they've been there for a few decades.
+[45:59] They've been
+[45:59] It's a group started by I can't pronounce his name again, but Yudoski.
+[46:03] But he's still like the father of a lot of all this sort of like um, you know, what a lot of all the all this people believe in the labs, right?
+[46:11] So he's um I think he's reading a few books on on these things.
+[46:15] Um so again, this this this these things are coming from people who are who are very entrenched in the community.
+[46:21] Um they have a uh an ideology.
+[46:23] Um and so I don't blame them.
+[46:25] I don't blame them.
+[46:26] It's it's their own perspective.
+[46:27] So they do believe this thing strongly.
+[46:29] And they believe that just like the effective that just like SBF, um, again, the e the the effective altruists are also entwined into this group.
+[46:36] Um, but they the ideology is that they believe what they believe so much that they're willing to go through any kind of like do anything to get it done because the goal is
+[46:46] virtuous enough, right?
+[46:48] I'm gonna save the world even if I have to kill a few people to get there, right?
+[46:52] It's it's kind of like a classic, you know, psycho thing, right?
+[46:55] Yeah.
+[46:56] Thanos.
+[46:56] Yeah.
+[46:59] Exactly.
+[47:00] Exactly.
+[47:00] Tynos is a perfect example.
+[47:01] Anyways.
+[47:03] Yeah.
+[47:03] Cool.
+[47:05] Awesome, awesome.
+[47:08] Well, this episode is also brought to you by Herald Labs and applied AI product lab where humans and agents build together.
+[47:13] Entity is mission control for agent teams and the hacker houses worldwide.
+[47:19] Build with humans, ship with agents.
+[47:21] Find it at labs.theherald.co.
+[47:27] Three things to watch.
+[47:29] September 14th on Monday, DeepSeq is scheduled to migrate V4 Pro API traffic to V.1 Flash.
+[47:37] If the company runs its own flagship traffic on this checkpoint, the cash economics claim moves from a chart and into deployment.
+[47:45] Also watch for the first independent mathematician to publicly check the OpenAI
+[47:51] Navier-Stokes lean formalization.
+[47:56] Not a summary or a press release.
+[47:58] They're going to compile results and it'll be interesting to see a complete review commentary.
+[48:04] Lastly, ZPing's next monthly disclosure will tell us whether the humanoid production line has any monthly capacity numbers behind it or whether it's commissioned.
+[48:15] That's the week ahead.
+[48:16] We'll be back Friday, September 18th, 4 p.m.
+[48:18] Eastern.
+[48:19] Follow WeeklyClaw at weeklyclaw.ai and join our Discord.
+[48:24] There's a QR code on the screen.
+[48:25] um If you're interested at all in sponsoring the WeeklyClaw, uh contact Henry or I, we'll make you a heck of a deal.
+[48:34] But yeah, thank you guys.
+[48:36] Have a great week.
+[48:37] We appreciate you.
+[48:39] Thank you guys, thank you for hanging out with us.
+[48:41] Um, have a great weekend.
+[48:45] See ya.

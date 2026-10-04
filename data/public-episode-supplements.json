@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-10-03",
+  "sourceSnapshot": {
+    "revision": "4966c04a46dc3df8bfee0cd4a03ac011ea55898b",
+    "catalogue": "episodes.json",
+    "archive": "episodes/index.html",
+    "scope": "Public catalogue E10-E31: current video inventory plus deck-only archive cards"
+  },
+  "transcripts": {
+    "20": {
+      "status": "missing",
+      "sourceUrl": null,
+      "publicationStatus": "public_video_no_transcript",
+      "evidence": [
+        "episodes.json",
+        "episodes/index.html",
+        "Public YouTube transcript probe 2026-10-03"
+      ],
+      "notes": "The public video is catalogued, but the public transcript source reported no transcript.",
+      "language": null,
+      "captionType": null,
+      "sourceHash": null,
+      "speakerLabels": [],
+      "possibleCaptionErrors": false
+    },
+    "21": {
+      "status": "missing",
+      "sourceUrl": null,
+      "publicationStatus": "public_video_no_transcript",
+      "evidence": [
+        "episodes.json",
+        "episodes/index.html",
+        "Public YouTube transcript probe 2026-10-03"
+      ],
+      "notes": "The public video is catalogued, but the public transcript source reported no transcript.",
+      "language": null,
+      "captionType": null,
+      "sourceHash": null,
+      "speakerLabels": [],
+      "possibleCaptionErrors": false
+    },
+    "22": {
+      "status": "published",
+      "sourcePath": "data/public-transcripts/e22.txt",
+      "sourceUrl": "https://www.youtube.com/watch?v=f2yugYwXOBo",
+      "publicationStatus": "public_verified",
+      "evidence": [
+        "episodes.json",
+        "episodes/index.html",
+        "Public YouTube transcript export 2026-10-03"
+      ],
+      "notes": "Timestamped public YouTube transcript; speaker labels are retained where supplied by the public captions.",
+      "language": "en-GB",
+      "captionType": "authored_or_unspecified",
+      "sourceHash": "0017165bfe9547ec62ce31f99642320bca64003ece96fe9723e2911217f9f274",
+      "speakerLabels": [
+        "AndyML",
+        "HiM"
+      ],
+      "possibleCaptionErrors": true
+    },
+    "23": {
+      "status": "missing",
+      "sourceUrl": null,
+      "publicationStatus": "public_video_no_transcript",
+      "evidence": [
+        "episodes.json",
+        "episodes/index.html",
+        "Public YouTube transcript probe 2026-10-03"
+      ],
+      "notes": "The public video is catalogued, but the public transcript source reported no transcript.",
+      "language": null,
+      "captionType": null,
+      "sourceHash": null,
+      "speakerLabels": [],
+      "possibleCaptionErrors": false
+    },
+    "24": {
+      "status": "published",
+      "sourcePath": "data/public-transcripts/e24.txt",
+      "sourceUrl": "https://www.youtube.com/watch?v=aJzb0Px8Gos",
+      "publicationStatus": "public_verified",
+      "evidence": [
+        "episodes.json",
+        "episodes/index.html",
+        "Public YouTube transcript export 2026-10-03"
+      ],
+      "notes": "Timestamped public YouTube transcript; speaker labels are retained where supplied by the public captions.",
+      "language": "en-GB",
+      "captionType": "authored_or_unspecified",
+      "sourceHash": "e91d2c2200c551c4872bf6f84c6cf9f7e80904e269d338156eb4445b4679c3af",
+      "speakerLabels": [
+        "AndyML",
+        "HiM"
+      ],
+      "possibleCaptionErrors": true
+    },
+    "25": {
+      "status": "missing",
+      "sourceUrl": null,
+      "publicationStatus": "public_video_no_transcript",
+      "evidence": [
+        "episodes.json",
+        "episodes/index.html",
+        "Public YouTube transcript probe 2026-10-03"
+      ],
+      "notes": "The public video is catalogued, but the public transcript source reported no transcript.",
+      "language": null,
+      "captionType": null,
+      "sourceHash": null,
+      "speakerLabels": [],
+      "possibleCaptionErrors": false
+    },
+    "26": {
+      "status": "missing",
+      "sourceUrl": null,
+      "publicationStatus": "public_video_no_transcript",
+      "evidence": [
+        "episodes.json",
+        "episodes/index.html",
+        "Public YouTube transcript probe 2026-10-03"
+      ],
+      "notes": "The public video is catalogued, but the public transcript source reported no transcript.",
+      "language": null,
+      "captionType": null,
+      "sourceHash": null,
+      "speakerLabels": [],
+      "possibleCaptionErrors": false
+    },
+    "27": {
+      "status": "published",
+      "sourcePath": "data/public-transcripts/e27.txt",
+      "sourceUrl": "https://www.youtube.com/watch?v=vqUkh8w2L8g",
+      "publicationStatus": "public_verified",
+      "evidence": [
+        "episodes.json",
+        "episodes/index.html",
+        "Public YouTube transcript export 2026-10-03"
+      ],
+      "notes": "Timestamped public YouTube transcript with supplied speaker labels.",
+      "language": "en-GB",
+      "captionType": "authored_or_unspecified",
+      "sourceHash": "de5a478f58d25c3625a31fa3d8736e7f2e03166bc8d7093806ef19109950c40a",
+      "speakerLabels": [
+        "AndyML",
+        "HiM"
+      ],
+      "possibleCaptionErrors": true
+    },
+    "28": {
+      "status": "published",
+      "sourcePath": "data/public-transcripts/e28.txt",
+      "sourceUrl": "https://www.youtube.com/watch?v=-4LahKeV7hc",
+      "publicationStatus": "public_verified",
+      "evidence": [
+        "episodes.json",
+        "episodes/index.html",
+        "Public YouTube transcript export 2026-10-03"
+      ],
+      "notes": "Timestamped public YouTube transcript; speaker labels are retained where supplied by the public captions.",
+      "language": "en",
+      "captionType": "authored_or_unspecified",
+      "sourceHash": "44aee01eab894f9b30a10e8f4ddc24253f90317cd2bf836388b0c4834379562c",
+      "speakerLabels": [],
+      "possibleCaptionErrors": true
+    },
+    "29": {
+      "status": "published",
+      "sourcePath": "data/public-transcripts/e29.txt",
+      "sourceUrl": "https://www.youtube.com/watch?v=-M4zet86U_A",
+      "publicationStatus": "public_verified",
+      "evidence": [
+        "episodes.json",
+        "episodes/index.html",
+        "Public YouTube transcript export 2026-10-03"
+      ],
+      "notes": "Timestamped public YouTube transcript; speaker labels are retained where supplied by the public captions.",
+      "language": "en",
+      "captionType": "authored_or_unspecified",
+      "sourceHash": "cf32dc1a95be24f34f4a6aed18a0d07783c3e55e8e61094ec9b5a35d6cbf5c6e",
+      "speakerLabels": [],
+      "possibleCaptionErrors": true
+    },
+    "30": {
+      "status": "published",
+      "sourcePath": "data/public-transcripts/e30.txt",
+      "sourceUrl": "https://www.youtube.com/watch?v=jAWCqtNs0ns",
+      "publicationStatus": "public_verified",
+      "evidence": [
+        "episodes.json",
+        "episodes/index.html",
+        "Public YouTube transcript export 2026-10-03"
+      ],
+      "notes": "Timestamped public YouTube transcript exported from the public video; captions are auto-generated and may contain recognition errors.",
+      "language": "en",
+      "captionType": "auto_generated",
+      "sourceHash": "619ec59bc58b224bd08d85aeb4a3aa70d025b130654ce29b859197e77effe872",
+      "speakerLabels": [],
+      "possibleCaptionErrors": true
+    },
+    "31": {
+      "status": "published",
+      "sourcePath": "data/public-transcripts/e31.txt",
+      "speakerAnnotationPath": "data/public-speaker-annotations/e31.json",
+      "sourceUrl": "https://www.youtube.com/watch?v=YCgg0TtGYu0",
+      "publicationStatus": "public_verified",
+      "evidence": [
+        "episodes.json",
+        "episodes/index.html",
+        "Public YouTube transcript export 2026-10-03"
+      ],
+      "notes": "Timestamped public YouTube transcript; named Riverside alignment labels only cues supported by both source transcripts and leaves ambiguous or mixed cues unlabeled.",
+      "language": "en",
+      "captionType": "authored_or_unspecified",
+      "sourceHash": "837e8d786a3aead8a7d679aab40ff529575ecc9322f4adb977f6644d5ccd66f1",
+      "speakerLabels": [],
+      "possibleCaptionErrors": true
+    }
+  },
+  "limitations": [
+    "E20, E21, E23, E25, and E26 have public videos but no transcript returned by the public transcript probe.",
+    "E30 captions are auto-generated and may contain recognition errors; no human speaker labels are inferred.",
+    "No verified public Weekly Claw short clips are included; the clips array remains empty.",
+    "E32 is absent from this snapshot because it is not a verified released catalogue row; its agenda does not generate a public episode page.",
+    "E4, E7, and E9 are recording-only historical inventory references without a verified public archive card or release; they are excluded from public episode pages."
+  ],
+  "archiveEpisodes": [
+    {
+      "week": 10,
+      "title": "Stability, memory, and multimodal",
+      "dateLabel": "Archive label · 17 Apr 2026 · publication unknown",
+      "url": "https://weeklyclaw.ai/episodes/10/deck",
+      "summary": [
+        "Behavior tuning, active memory, provider recovery, multimodal tools, and security hardening."
+      ],
+      "deckUrl": "/episodes/10/deck",
+      "evidence": [
+        "episodes/index.html",
+        "Public archive card at revision 4966c04a46dc3df8bfee0cd4a03ac011ea55898b"
+      ]
+    },
+    {
+      "week": 11,
+      "title": "The earliest mirrored weekly packet",
+      "dateLabel": "Archive label · 24 Apr 2026 · publication unknown",
+      "url": "https://weeklyclaw.ai/episodes/11/deck",
+      "summary": [
+        "The first Weekly Claw changelog and developer-experience deck currently available in GitHub."
+      ],
+      "deckUrl": "/episodes/11/deck",
+      "evidence": [
+        "episodes/index.html",
+        "Public archive card at revision 4966c04a46dc3df8bfee0cd4a03ac011ea55898b"
+      ]
+    },
+    {
+      "week": 12,
+      "title": "Less haunted. More operating system.",
+      "dateLabel": "Archive label · 1 May 2026 · publication unknown",
+      "url": "https://weeklyclaw.ai/episodes/12/deck",
+      "summary": [
+        "OpenClaw changelog slides, community signal, release framing, memory, and provider routing."
+      ],
+      "deckUrl": "/episodes/12/deck",
+      "evidence": [
+        "episodes/index.html",
+        "Public archive card at revision 4966c04a46dc3df8bfee0cd4a03ac011ea55898b"
+      ]
+    },
+    {
+      "week": 13,
+      "title": "Codex, Code Mode, and proof pressure",
+      "dateLabel": "Archive label · 8 May 2026; changelog label also says 15 May · publication unknown",
+      "url": "https://weeklyclaw.ai/episodes/13/deck",
+      "summary": [
+        "Validation infrastructure, GitHub milestones, community proof, and a rough week worth unpacking."
+      ],
+      "deckUrl": "/episodes/13/deck",
+      "evidence": [
+        "episodes/index.html",
+        "Public archive card at revision 4966c04a46dc3df8bfee0cd4a03ac011ea55898b",
+        "Archive date conflict retained as a label"
+      ]
+    },
+    {
+      "week": 14,
+      "title": "The reference design",
+      "dateLabel": "Archive label · 15 May 2026; changelog label also says 22 May · publication unknown",
+      "url": "https://weeklyclaw.ai/episodes/14/deck",
+      "summary": [
+        "OpenClaw release themes, support signal, runtime quality, and the weekly close."
+      ],
+      "deckUrl": "/episodes/14/deck",
+      "evidence": [
+        "episodes/index.html",
+        "Public archive card at revision 4966c04a46dc3df8bfee0cd4a03ac011ea55898b",
+        "Archive date conflict retained as a label"
+      ]
+    },
+    {
+      "week": 15,
+      "title": "Enterprise agents and token economics",
+      "dateLabel": "Archive label · 22 May 2026; changelog label also says 29 May · publication unknown",
+      "url": "https://weeklyclaw.ai/episodes/15/deck",
+      "summary": [
+        "Claw Chain, enterprise agents, token economics, and the first community meetups."
+      ],
+      "deckUrl": "/episodes/15/deck",
+      "evidence": [
+        "episodes/index.html",
+        "Public archive card at revision 4966c04a46dc3df8bfee0cd4a03ac011ea55898b",
+        "Archive date conflict retained as a label"
+      ]
+    },
+    {
+      "week": 16,
+      "title": "Ecosystem and release signal",
+      "dateLabel": "Archive label · 5 Jun 2026 · publication unknown",
+      "url": "https://weeklyclaw.ai/w16/changelog/",
+      "summary": [
+        "The ecosystem story, release signal, and compressed developer-experience notes."
+      ],
+      "deckUrl": "/w16/changelog/",
+      "evidence": [
+        "episodes/index.html",
+        "Public archive card at revision 4966c04a46dc3df8bfee0cd4a03ac011ea55898b"
+      ]
+    },
+    {
+      "week": 17,
+      "title": "Release proof loops",
+      "dateLabel": "Archive label · 12 Jun 2026 · publication unknown",
+      "url": "https://weeklyclaw.ai/w17/changelog/",
+      "summary": [
+        "Maintainer signal, release evidence, and a developer-experience readout grounded in what shipped."
+      ],
+      "deckUrl": "/w17/changelog/",
+      "evidence": [
+        "episodes/index.html",
+        "Public archive card at revision 4966c04a46dc3df8bfee0cd4a03ac011ea55898b"
+      ]
+    },
+    {
+      "week": 18,
+      "title": "Community signal and weekly summary",
+      "dateLabel": "Archive label · 19 Jun 2026 · publication unknown",
+      "url": "https://weeklyclaw.ai/episodes/18/deck",
+      "summary": [
+        "OpenClaw release notes, developer-experience signal, community updates, and the week’s close."
+      ],
+      "deckUrl": "/episodes/18/deck",
+      "evidence": [
+        "episodes/index.html",
+        "Public archive card at revision 4966c04a46dc3df8bfee0cd4a03ac011ea55898b"
+      ]
+    },
+    {
+      "week": 19,
+      "title": "Security skills and the weirdness ahead",
+      "dateLabel": "Archive label · 26 Jun 2026 · publication unknown",
+      "url": "https://weeklyclaw.ai/episodes/19/deck",
+      "summary": [
+        "GPT‑5.6 Sol, dependable agent recovery, provider plugins, ClawExplorer events, and the weekly signal map."
+      ],
+      "deckUrl": "/episodes/19/deck",
+      "evidence": [
+        "episodes/index.html",
+        "Public archive card at revision 4966c04a46dc3df8bfee0cd4a03ac011ea55898b"
+      ]
+    }
+  ]
+}

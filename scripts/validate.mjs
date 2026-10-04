@@ -211,9 +211,10 @@ for (const needle of [
     process.exit(1);
   }
 }
+const minimumVideoEraCount = 12;
 const summaryCount = (episodesHtml.match(/class="summary-item"/g) ?? []).length;
-if (summaryCount !== 12) {
-  console.error(`Episodes index should render 12 video-era episode summaries, found ${summaryCount}`);
+if (summaryCount < minimumVideoEraCount) {
+  console.error(`Episodes index should retain at least ${minimumVideoEraCount} video-era episode summaries, found ${summaryCount}`);
   process.exit(1);
 }
 if (episodesHtml.includes('data-summary-week="19"')) {
@@ -234,18 +235,18 @@ for (const needle of [
   }
 }
 const feedItemCount = (feedXml.match(/<item>/g) ?? []).length;
-if (feedItemCount !== 12) {
-  console.error(`RSS feed should contain 12 items, found ${feedItemCount}`);
+if (feedItemCount < minimumVideoEraCount) {
+  console.error(`RSS feed should retain at least ${minimumVideoEraCount} items, found ${feedItemCount}`);
   process.exit(1);
 }
 const episodesJson = JSON.parse(readFileSync(new URL('../episodes.json', import.meta.url), 'utf8'));
-if (episodesJson.episodes.length !== 12) {
-  console.error(`episodes.json should contain 12 episodes, found ${episodesJson.episodes.length}`);
+if (!Array.isArray(episodesJson.episodes) || episodesJson.episodes.length < minimumVideoEraCount) {
+  console.error(`episodes.json should contain at least ${minimumVideoEraCount} episodes, found ${episodesJson.episodes?.length ?? 0}`);
   process.exit(1);
 }
 for (const episode of episodesJson.episodes) {
-  if (!episode.videoId || !Array.isArray(episode.summary) || episode.summary.length < 5) {
-    console.error(`episodes.json entry for W${episode.week} is incomplete (need videoId and 5+ summary topics)`);
+  if (!Number.isInteger(episode.week) || typeof episode.title !== 'string' || !Array.isArray(episode.summary) || (episode.videoId && episode.summary.length < 5)) {
+    console.error(`episodes.json entry for W${episode.week ?? '?'} is incomplete (need week, title, and summary; video episodes need 5+ summary topics)`);
     process.exit(1);
   }
 }
