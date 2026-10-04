@@ -207,6 +207,7 @@ function normalizeCurrentEpisode(source, supplement, week) {
   const videoId = /^[A-Za-z0-9_-]{11}$/.test(source.videoId || "") ? source.videoId : null;
   const url = typeof source.url === "string" && source.url.startsWith("https://") ? source.url : null;
   if (videoIdFromUrl(url) !== videoId) throw new Error(`E${week} catalogue URL does not match its video ID`);
+  const thumbnailUrl = typeof source.thumbnailUrl === "string" && /^\/assets\/youtube-thumbnails\/[A-Za-z0-9._-]+$/.test(source.thumbnailUrl) && existsSync(join(root, source.thumbnailUrl.slice(1))) ? source.thumbnailUrl : null;
   const record = supplement.transcripts[String(week)] || {
     status: "missing",
     sourceUrl: null,
@@ -235,6 +236,7 @@ function normalizeCurrentEpisode(source, supplement, week) {
       dateLabel: formatDate(date),
       url,
       videoId,
+      ...(thumbnailUrl ? { thumbnailUrl } : {}),
       summary: (Array.isArray(source.summary) ? source.summary : []).filter((item) => typeof item === "string" && item.trim()).map((item) => item.trim()),
       deckUrl: localDeckUrl(week),
       publicationStatus: "public_verified",
@@ -250,6 +252,7 @@ function normalizeCurrentEpisode(source, supplement, week) {
     dateLabel: formatDate(date),
     url,
     videoId,
+    ...(thumbnailUrl ? { thumbnailUrl } : {}),
     summary: (Array.isArray(source.summary) ? source.summary : []).filter((item) => typeof item === "string" && item.trim()).map((item) => item.trim()),
     deckUrl: localDeckUrl(week),
     publicationStatus: "public_verified",

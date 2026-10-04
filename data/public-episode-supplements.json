@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-10-03",
+  "asOf": "2026-10-04",
   "sourceSnapshot": {
     "revision": "4966c04a46dc3df8bfee0cd4a03ac011ea55898b",
     "catalogue": "episodes.json",
     "archive": "episodes/index.html",
-    "scope": "Public catalogue E10-E31: current video inventory plus deck-only archive cards"
+    "scope": "Public catalogue E10-E32: current video inventory plus deck-only archive cards"
   },
   "transcripts": {
     "20": {
@@ -216,13 +216,23 @@
       "sourceHash": "837e8d786a3aead8a7d679aab40ff529575ecc9322f4adb977f6644d5ccd66f1",
       "speakerLabels": [],
       "possibleCaptionErrors": true
+    },
+    "32": {
+      "status": "missing",
+      "sourceUrl": null,
+      "publicationStatus": "public_video_no_transcript",
+      "evidence": [
+        "episodes.json",
+        "https://www.youtube.com/watch?v=RRYBhrJiyU8"
+      ],
+      "notes": "The released video is public. A verified public transcript has not yet been imported."
     }
   },
   "limitations": [
     "E20, E21, E23, E25, and E26 have public videos but no transcript returned by the public transcript probe.",
     "E30 captions are auto-generated and may contain recognition errors; no human speaker labels are inferred.",
     "No verified public Weekly Claw short clips are included; the clips array remains empty.",
-    "E32 is absent from this snapshot because it is not a verified released catalogue row; its agenda does not generate a public episode page.",
+    "E32 is a verified public video release. Its page currently has summary coverage; no verified public transcript has been imported.",
     "E4, E7, and E9 are recording-only historical inventory references without a verified public archive card or release; they are excluded from public episode pages."
   ],
   "archiveEpisodes": [

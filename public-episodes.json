@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03",
+  "generatedAt": "2026-10-04",
   "sourceSnapshot": {
     "revision": "4966c04a46dc3df8bfee0cd4a03ac011ea55898b",
     "catalogue": "episodes.json",
     "archive": "episodes/index.html",
-    "scope": "Public catalogue E10-E31: current video inventory plus deck-only archive cards"
+    "scope": "Public catalogue E10-E32: current video inventory plus deck-only archive cards"
   },
   "coverage": {
     "inventoryStart": 10,
-    "inventoryEnd": 31,
-    "episodeCount": 22,
+    "inventoryEnd": 32,
+    "episodeCount": 23,
     "transcriptPublished": [
       22,
       24,
@@ -35,7 +35,8 @@
       21,
       23,
       25,
-      26
+      26,
+      32
     ],
     "publicClipCount": 0,
     "publicationEvidence": {
@@ -141,13 +142,17 @@
         "episodes.json",
         "episodes/index.html",
         "Public YouTube transcript export 2026-10-03"
+      ],
+      "32": [
+        "episodes.json",
+        "https://www.youtube.com/watch?v=RRYBhrJiyU8"
       ]
     },
     "limitations": [
       "E20, E21, E23, E25, and E26 have public videos but no transcript returned by the public transcript probe.",
       "E30 captions are auto-generated and may contain recognition errors; no human speaker labels are inferred.",
       "No verified public Weekly Claw short clips are included; the clips array remains empty.",
-      "E32 is absent from this snapshot because it is not a verified released catalogue row; its agenda does not generate a public episode page.",
+      "E32 is a verified public video release. Its page currently has summary coverage; no verified public transcript has been imported.",
       "E4, E7, and E9 are recording-only historical inventory references without a verified public archive card or release; they are excluded from public episode pages."
     ]
   },
@@ -41174,6 +41179,40 @@
             "text": "Good."
           }
         ]
+      },
+      "clips": []
+    },
+    {
+      "week": 32,
+      "title": "GPT-6.1 Sol, Gemini 4 Argon & NVIDIA’s Agent Safety Debate | WeeklyClaw #32",
+      "date": "2026-10-02",
+      "dateLabel": "2 Oct 2026",
+      "url": "https://www.youtube.com/watch?v=RRYBhrJiyU8",
+      "videoId": "RRYBhrJiyU8",
+      "thumbnailUrl": "/assets/youtube-thumbnails/w32-approved-c.png",
+      "summary": [
+        "GPT-6.1 Sol leads the week’s discussion of model capability, coding performance and cost.",
+        "The hosts compare Pro usage allowances and what they mean for sustained agent work.",
+        "Dots and the Decisions API raise questions about how agents remember context and make decisions.",
+        "Gemini 4 Argon’s restricted access puts model availability alongside capability in the launch debate.",
+        "OpenClaw’s enterprise direction brings deployment, permissions and reliability into focus.",
+        "NVIDIA OpenShell and Sentry frame the discussion of controls around increasingly capable agents.",
+        "Jensen Huang’s interview with Ezra Klein anchors the closing debate about AI safety and accountability."
+      ],
+      "deckUrl": "/episodes/32/deck",
+      "publicationStatus": "public_verified",
+      "publicationEvidence": [
+        "episodes.json",
+        "https://www.youtube.com/watch?v=RRYBhrJiyU8"
+      ],
+      "transcript": {
+        "status": "missing",
+        "sourceUrl": null,
+        "language": null,
+        "captionType": null,
+        "sourceHash": null,
+        "possibleCaptionErrors": false,
+        "segments": []
       },
       "clips": []
     }

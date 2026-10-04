@@ -4,12 +4,12 @@ The public library is a deterministic projection of evidence that is already pub
 
 ## Authoritative inputs
 
-- `episodes.json` is the current public catalogue source. At the current snapshot it contains E20–E31 with the public title, date, canonical YouTube URL, video ID, and published summary topics.
+- `episodes.json` is the current public catalogue source. At the current snapshot it contains E20–E32 with the public title, date, canonical YouTube URL, video ID, and published summary topics.
 - `episodes/index.html` is the public archive-card source for deck-only E10–E19 records. Those rows have `date: null`, an honest archive-label `dateLabel`, no video ID, and `publicationStatus: "unknown"`.
 - `data/public-episode-supplements.json` records transcript status, public source URLs, caption language/type, SHA-256 hashes, evidence strings, and the current catalogue coverage boundary. Its archive rows and metadata are public-safe because the site output directory serves this tree.
 - `data/public-transcripts/eN.txt` contains only public YouTube transcript exports. Each published entry must bind to the exact canonical video ID and source URL declared in the manifest.
 
-Recording-only references such as E4, E7, and E9 are coverage limitations, not public episode pages. E32 is absent from the current source snapshot because it is not a verified released catalogue row; a future verified catalogue record follows the same normal addition workflow.
+Recording-only references such as E4, E7, and E9 are coverage limitations, not public episode pages. E32 is a verified public catalogue row as of 4 October 2026; it has summary coverage and an explicit missing-transcript state.
 
 ## Adding a released episode
 

@@ -138,6 +138,7 @@ function normalizeEpisode(episode) {
     dateLabel: episode?.dateLabel === null ? null : String(episode?.dateLabel || formatDate(date) || "Date unavailable"),
     url: safeUrl(episode?.url),
     videoId,
+    thumbnailUrl: typeof episode.thumbnailUrl === "string" && /^\/assets\/youtube-thumbnails\/[A-Za-z0-9._-]+$/.test(episode.thumbnailUrl) ? episode.thumbnailUrl : null,
     summary: Array.isArray(episode?.summary) ? episode.summary.map((item) => String(item).trim()).filter(Boolean) : [],
     deckUrl,
     publicationStatus: episode?.publicationStatus === "public_verified" ? "public_verified" : "unknown",
@@ -181,7 +182,7 @@ function visibleEpisodeTitle(episode) {
   return title.replace(new RegExp(`\\s*\\|\\s*Weekly Claw\\s*#?${episode.week}\\s*$`, "i"), "").trim() || title;
 }
 
-function pageFrame({ title, description, canonical, body, script = "" }) {
+function pageFrame({ title, description, canonical, body, script = "", thumbnailUrl = null }) {
   return `<!doctype html>
 <html lang="en" data-page="episode-library">
 <head>
@@ -194,7 +195,7 @@ function pageFrame({ title, description, canonical, body, script = "" }) {
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://weeklyclaw.ai${canonical}">
-  <meta property="og:image" content="https://weeklyclaw.ai/assets/og-image.jpg">
+  <meta property="og:image" content="https://weeklyclaw.ai${escapeHtml(thumbnailUrl || '/assets/og-image.jpg')}">
   <meta name="theme-color" content="#ece4d5">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -288,7 +289,7 @@ function renderPages(episodes) {
     const previous = episodes[index + 1];
     const next = episodes[index - 1];
     const title = `Weekly Claw #${episode.week} — ${episode.title}`;
-    const html = pageFrame({ title, description: episode.summary[0] || title, canonical: `/episodes/${episode.week}/`, body: episodeBody(episode, previous, next), script: detailScript });
+    const html = pageFrame({ title, description: episode.summary[0] || title, canonical: `/episodes/${episode.week}/`, body: episodeBody(episode, previous, next), script: detailScript, thumbnailUrl: episode.thumbnailUrl });
     const directory = join(root, "episodes", String(episode.week));
     mkdirSync(directory, { recursive: true });
     writeFileSync(join(directory, "index.html"), html);

@@ -13,10 +13,10 @@ const outputPath = join(root, "public-episodes.json");
 assert.ok(existsSync(outputPath));
 const corpus = JSON.parse(readFileSync(outputPath, "utf8"));
 assert.equal(corpus.schemaVersion, 1);
-assert.equal(corpus.episodes.length, 22);
-assert.deepEqual(corpus.episodes.map((episode) => episode.week), [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]);
+assert.equal(corpus.episodes.length, 23);
+assert.deepEqual(corpus.episodes.map((episode) => episode.week), [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]);
 assert.deepEqual(corpus.coverage.transcriptPublished, [22, 24, 27, 28, 29, 30, 31]);
-assert.deepEqual(corpus.coverage.transcriptMissing, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 25, 26]);
+assert.deepEqual(corpus.coverage.transcriptMissing, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 25, 26, 32]);
 assert.equal(corpus.coverage.publicClipCount, 0);
 assert.ok(corpus.episodes.find((episode) => episode.week === 27).transcript.segments.length > 400);
 assert.ok(corpus.episodes.find((episode) => episode.week === 31).transcript.segments.length > 900);
@@ -26,7 +26,7 @@ assert.match(corpus.episodes.find((episode) => episode.week === 13).dateLabel, /
 const episodeKeys = ["clips", "date", "dateLabel", "deckUrl", "publicationEvidence", "publicationStatus", "summary", "title", "transcript", "url", "videoId", "week"];
 const transcriptKeys = ["captionType", "language", "possibleCaptionErrors", "segments", "sourceHash", "sourceUrl", "status"];
 for (const episode of corpus.episodes) {
-  assert.deepEqual(Object.keys(episode).sort(), [...episodeKeys].sort());
+  assert.deepEqual(Object.keys(episode).sort(), [...episodeKeys, ...(episode.thumbnailUrl ? ["thumbnailUrl"] : [])].sort());
   assert.equal(typeof episode.deckUrl, "string");
   assert.deepEqual(episode.clips, []);
   assert.match(episode.url, /^https:\/\/((www\.)?youtube\.com\/watch\?v=|weeklyclaw\.ai\/)/);
@@ -44,7 +44,8 @@ const serialized = JSON.stringify(corpus);
 for (const forbidden of ["/Users/", "/private/", "/var/folders/", '"sourcePath"', '"downloadURL"', '"downloadUrl"', '"password"', '"cookie"']) {
   assert.equal(serialized.toLowerCase().includes(forbidden.toLowerCase()), false, `public corpus contains ${forbidden}`);
 }
-assert.equal(corpus.episodes.some((episode) => episode.week === 32), false);
+assert.equal(corpus.episodes.find((episode) => episode.week === 32).videoId, "RRYBhrJiyU8");
+assert.equal(corpus.episodes.find((episode) => episode.week === 32).thumbnailUrl, "/assets/youtube-thumbnails/w32-approved-c.png");
 
 // The builder's explicit field projection must ignore private source metadata,
 // and a transcript whose declared video ID changes must fail closed.
