@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekly Claw #33 Agenda — The week the receipts went public.</title>
+<style>
+:root { color-scheme: light; --ink:#24201c; --paper:#fff9ee; --muted:#6e645a; --line:#b5a996; --accent:#2a7e6b; }
+body { margin:0; font:18px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:#ece4d5; }
+a { color:var(--accent); }
+.shell { width:min(920px, calc(100% - 36px)); margin-inline:auto; }
+header, footer { padding:22px 0; }
+nav { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.wordmark { font-weight:800; text-transform:uppercase; text-decoration:none; color:var(--ink); }
+.button { display:inline-flex; align-items:center; min-height:40px; padding:0 14px; border:1px solid var(--accent); border-radius:6px; background:var(--accent); color:var(--paper); text-decoration:none; font-weight:700; }
+.button.secondary { color:var(--ink); background:transparent; border-color:var(--line); }
+.intro { padding:56px 0 32px; border-block:1px solid var(--line); }
+.eyebrow { margin:0 0 10px; color:var(--accent); font:700 12px/1 ui-monospace,Menlo,monospace; letter-spacing:.12em; text-transform:uppercase; }
+h1 { margin:0; font-size:clamp(42px,8vw,78px); line-height:.9; letter-spacing:-.05em; text-transform:uppercase; }
+article { padding:36px 0 70px; }
+h2,h3,h4 { line-height:1.05; margin-top:2em; }
+p,li { max-width:78ch; }
+code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
+</style>
+</head>
+<body>
+<header><nav class="shell" aria-label="Episode navigation"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/33/deck">Open slides</a></div></nav></header>
+<main class="shell">
+<section class="intro"><p class="eyebrow">Episode 33 · October 9, 2026</p><h1>The week the receipts went public.</h1><p>Air: Friday, October 9, 2026, 16:00 ET / 21:00 UK · Target runtime: 32:00 (hard stop 45:00) Ownership: Henry leads ALL &quot;What Happened This Week&quot; segments (grids A+B,…</p></section>
+<article><h2>Weekly Claw #33 — Show Agenda (rev1)</h2>
+<ul>
+<li><strong>Air:</strong> Friday, October 9, 2026, 16:00 ET / 21:00 UK · <strong>Target runtime:</strong> 32:00 (hard stop 45:00)</li>
+<li><strong>Ownership:</strong> Henry leads ALL &quot;What Happened This Week&quot; segments (grids A+B, SFO bridge, hot-take proposition, One to Watch). Andy: cold open, both sponsor reads, hot-take steelman, and his ONE recap at the close (no recap-of-recap).</li>
+<li><strong>Sponsor order:</strong> 1) Herald Labs (after cold open) → 2) Heritage Telecom (before close). Rotation inverted from #32.</li>
+<li><strong>Signal From Outside (locked per contract):</strong> Theo, <strong>&quot;I love Ultrafast (it&#x27;s unusable)&quot;</strong> — <code>pJljViiUEPw</code>, Oct 6, 28:17, 128,624 views. Manual open only. Cues spot-check before air.</li>
+<li><strong>Show rules in force:</strong> five stories is a target not a quota (8 cards, 2 grids) · no autoplay · verified provenance/caveats on every card · Andy material has complete fallback prose · hot take does not repeat any grid proposition · no alternating dialogue forced.</li>
+</ul>
+<p>| # | Segment | Owner | Budget | Beats |</p>
+<p>|---|---|---|---|---|</p>
+<p>| 1 | Cold open | Andy | 0:45 | 3 hooks + episode frame |</p>
+<p>| 2 | Sponsor: Herald Labs | Andy | 1:30 | read |</p>
+<p>| 3 | What Happened · Grid A — &quot;The trillion-parameter open-weight promise&quot; | Henry | 8:00 | 4 cards × ~2:00: Mistral Large 4 → Beam → 722 manuscripts → math reception |</p>
+<p>| 4 | Signal From Outside | Andy intro → Henry bridge | 6:00 | Theo Ultrafast; Henry&#x27;s token-per-task discipline |</p>
+<p>| 5 | What Happened · Grid B — &quot;Agents get graded, routed, and locked down&quot; | Henry | 8:00 | 4 cards × ~2:00: ThinkingBox → ReviewBench → Grok Bot routing → Apple FDA |</p>
+<p>| 6 | Hot take | Henry prop · Andy steel | 4:00 | &quot;The free-compute era ended on schedule — and that&#x27;s healthy.&quot; |</p>
+<p>| 7 | Sponsor: Heritage Telecom | Andy | 1:30 | read |</p>
+<p>| 8 | One to Watch + close | Henry watch → Andy recap | 2:15 | Alibaba/DeepSeek Oct 10 deadline + Discord QR → Andy&#x27;s single recap |</p>
+<p><strong>Card beats (Henry, grid A)</strong></p>
+<ol>
+<li><strong>Mistral Large 4</strong> — 1T total / 52B active, natively multimodal (Mistral&#x27;s post). Public-preview API now at $1.36/M in, $4.18/M out — matches AA exactly. AA independent index: 38, above the 26 median — and &quot;very verbose&quot; (200M eval tokens vs 81M median). &quot;Le Chonk&quot; is Mistral&#x27;s own name. <strong>Weights NOT out</strong>: &quot;weights drop end of this month&quot; while red-teaming runs. &quot;Surpassing frontier closed models&quot; is Mistral&#x27;s claim; 38 is the independent number. The gap is the beat.</li>
+<li><strong>Reflection Beam</strong> — 501B total / 23B active sparse MoE, agentic coding focus (Reflection, Oct 5). <strong>Weights NOT out</strong>: &quot;weights, technical report, model card… later this month&quot;; early access is a select group. The DeepSWE/HLE/Terminal-Bench chart is Reflection&#x27;s own. Caveat ON AIR: self-reported, weights pending, independent runs after weights land. Both grid-A leads are promises — that&#x27;s the honest frame, not &quot;open weights shipped&quot;.</li>
+<li><strong>OpenAI 722 manuscripts</strong> — <code>github.com/openai/math</code>: 722 papers, 372 result families, 235 with Lean formalizations, Apache-2.0. Zero peer review. One-night dump from a secret internal frontier model.</li>
+<li><strong>Math reception</strong> — Williams–Alman (arXiv 2610.06783): deterministic 3SUM in n^1.9992 and APSP in n^2.9995 — humans refuting 50-year conjectures the same week. Aaronson&#x27;s &quot;Mathocalypse&quot; and Tao&#x27;s &quot;Math 2.0&quot; — <strong>ON AIR: open before quoting</strong> (Aaronson post is Cloudflare-gated; quote only after manual open). Name-drop C1: Muse Spark&#x27;s six papers incl. five open problems, plain chat, no scaffold.</li>
+</ol>
+<p><strong>Card beats (Henry, grid B)</strong></p>
+<ol>
+<li><strong>ThinkingBox</strong> — Microsoft + HF ship a stateful-reliability benchmark: grades the records agents leave, not their sentences. Receipt: 121,680 valid trials across 12 models, 79,853 failed — two-thirds. Paper 2608.19741.</li>
+<li><strong>ReviewBench</strong> — GitHub ships an open AI-code-review benchmark from 103.9M PRs; leaderboard live with grounded/augmented precision+recall.</li>
+<li><strong>Grok Bot routing</strong> — Musk, Oct 7: &quot;Going forward, @SpaceX will use the best back end model for any given task, including Claude Opus 5.5, MidJourney, Suno… Whatever is most likely to give you the best outcome.&quot; 106.1K likes. The harness-wins beat: the loudest model-lock founder concedes routing to the best model. Tie to Henry&#x27;s standing call.</li>
+<li><strong>Apple FDA</strong> — Apple Developer News Oct 2: full-disk-access apps face per-app user prompts; silent paths close. Apple&#x27;s own text blames autonomous agents reading everything. The agent boom now sets desktop OS threat models.</li>
+</ol>
+<p><strong>Hot take (C11)</strong> — Henry: Gemini&#x27;s free tier quietly drops to Flash-Lite on air day; OpenAI halves Pro 200 limits Oct 30; &quot;With 6.1 you get 2.5x more usage on the new 10x plan.&quot; Subsidized-compute era ends; builders who learned on subsidies face real unit economics — healthy. Andy steelman: subsidies built the hobbyist pipeline; ending it mid-flight kicks the ladder; Flash-Lite free tier is a downgrade disguised as a tier. Mind-changer: if free-tier retention holds after Oct 9, the subsidy was never load-bearing. <strong>Caveat on air:</strong> tier changes rest on 9to5Google + OpenAI help-center pages; no vendor-dated primary.</p>
+<p><strong>One to Watch (C32)</strong> — Alibaba retires every third-party model from Model Studio <strong>Oct 10 — the day after we air.</strong> DashScope migrations break Saturday. Irony: DeepSeek-V4.1-Flash is served on rival Qwen&#x27;s consumer platform while Alibaba delists everyone else&#x27;s.</p>
+<p><strong>SFO cues (Theo, spot-check before air)</strong> — manual open <code>youtube.com/watch?v=pJljViiUEPw</code>:</p>
+<ul>
+<li>0:00–0:40 — live Astra app edit in real time (&quot;make it light mode and funnier&quot; → updates as he types).</li>
+<li>1:00–1:17 — the receipts: Astra $50/M output tokens; Ultrafast $300/M; long-context $450/M. &quot;These bills are actually insane.&quot;</li>
+<li>~2:40–3:10 — Graptile/T-Rex sponsor bridge (skip or fold into the graded-agents frame).</li>
+<li>Later: rate-limit burn + verdict — <strong>open before air and re-locate timestamps</strong> (auto-caption times drift).</li>
+</ul>
+<p><strong>Henry bridge into SFO:</strong> his Oct 8 post quoting token-use comparisons (Haiku 5.5 max ~162K output tokens/task vs GPT-6 Luna max ~50K) — Theo&#x27;s &quot;tokens per second is meaningless&quot; thesis, with Henry&#x27;s own per-task data as the receipt.</p>
+<p><strong>Andy fallback prose (if video fails):</strong> complete paraphrase lives in <code>andy-section.rev1.md</code>; poster on deck is the fallback visual; never autoplay.</p></article>
+</main>
+<footer class="shell">Weekly Claw #33 · Agenda and source notes · <a href="/episodes/33/deck">View host deck</a></footer>
+</body>
+</html>
