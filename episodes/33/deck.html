@@ -123,22 +123,36 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
 .src-links a{font-family:var(--mono);font-size:0.66rem;color:#225e6a;text-decoration:none;border-bottom:1px dashed #82b8c2;word-break:break-all;}
 .src-links a:hover{color:var(--site-ink);border-bottom-style:solid;}
 .src-note{font-family:var(--mono);font-size:0.64rem;color:#74695f;margin-top:6px;}
-@media(max-width:900px){.slide{padding:44px 40px 58px;}h1{font-size:3rem;}h2{font-size:2rem;}.two-col,.three-col,.split{grid-template-columns:1fr;}}
+
 </style>
 
 <style>
-#s-seg-grid-a .content,#s-seg-grid-b .content{height:100%;max-height:100%;}
-#s-seg-grid-a .content > div:first-child,#s-seg-grid-b .content > div:first-child{flex:0 0 auto;}
+#s-seg-grid-a .content,#s-seg-grid-b .content,#s-seg-grid-c .content{height:100%;max-height:100%;}
+#s-seg-grid-a .content > div:first-child,#s-seg-grid-b .content > div:first-child,#s-seg-grid-c .content > div:first-child{flex:0 0 auto;}
 .story-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:18px;flex:1;min-height:0;margin-top:16px;overflow:hidden;}
 .story-card{display:flex;flex-direction:column;background:rgba(255,255,255,.03);border:1.5px solid var(--border-subtle);border-radius:16px;overflow:hidden;min-height:0;transition:border-color .2s;}
 .story-card:hover{border-color:var(--claw-red);}
 .story-card .thumb{flex:1 1 0;min-height:0;overflow:hidden;position:relative;background:#0d1117;}
 .story-card a.thumb{position:relative;}
-.story-card .thumb img,.story-card .thumb video{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
+.story-card .thumb img,.story-card .thumb video{width:100%;height:100%;object-fit:contain;object-position:center;display:block;background:var(--site-paper);}
+.story-card .thumb.source-panel{height:auto!important;min-height:0;display:flex!important;flex:1 1 0;flex-direction:column;align-items:flex-start;justify-content:center;gap:10px;padding:20px 24px;text-decoration:none;color:var(--site-paper);background:linear-gradient(135deg,#173d3b,#245d67 70%,#2a7e6b);}
+.story-card .thumb.source-panel strong{font-size:1.15rem;line-height:1.05;letter-spacing:.05em;text-transform:uppercase;}
+.story-card .thumb.source-panel span{font-family:var(--mono);font-size:.68rem;line-height:1.4;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,249,238,.82);}
+.story-card .thumb.source-panel .quote{font-family:var(--display);font-size:1.15rem;line-height:1.15;font-weight:800;letter-spacing:0;text-transform:none;color:var(--site-paper);}
+#s-seg-grid-c .story-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:minmax(0,1fr);}
 .story-card .meta{padding:12px 16px 14px;display:flex;flex-direction:column;gap:4px;min-height:0;}
 .story-card .meta h3{font-size:1.06rem;line-height:1.25;margin:0;color:var(--text-primary);}
 .story-card .meta p{font-size:.82rem;line-height:1.35;margin:0;color:var(--text-secondary);}
 .story-card .meta a{font-family:var(--mono);font-size:.72rem;color:#225e6a;text-decoration:none;margin-top:2px;}
+.story-card .meta .source-row{display:flex;flex-wrap:wrap;gap:2px 10px;margin-top:2px;}
+.story-card .meta .source-row a{margin-top:0;}
+.sfo-price-panel{min-height:230px;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:22px 20px;border-radius:10px;color:var(--site-paper);background:linear-gradient(135deg,#173d3b,#245d67 70%,#2a7e6b);}
+.sfo-price-kicker,.sfo-price-caption{font-family:var(--mono);font-size:.62rem;line-height:1.35;letter-spacing:.06em;color:rgba(255,249,238,.84);}
+.sfo-price-panel h3{font-size:1.18rem;line-height:1.15;margin:0;color:var(--site-paper);}
+.sfo-price-ladder{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%;}
+.sfo-price-item{display:flex;flex-direction:column;gap:5px;padding:10px 9px;border:1px solid rgba(255,249,238,.32);border-radius:8px;background:rgba(255,249,238,.08);}
+.sfo-price-item strong{font-family:var(--mono);font-size:1.05rem;line-height:1;color:var(--site-paper);}
+.sfo-price-item span{font-family:var(--mono);font-size:.57rem;line-height:1.25;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,249,238,.82);}
 
 #s-hot-take .receipts-img{width:100%;max-width:1080px;border-radius:14px;border:2px solid var(--border-subtle);box-shadow:0 12px 30px rgba(79,64,49,.10);}
 
@@ -147,6 +161,38 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
 #s-sources .src-links{gap:3px 8px;margin-top:4px;}
 #s-sources .mt-2{margin-top:7px;}
 #s-sources .src-note{font-size:.54rem;line-height:1.2;}
+@media(max-width:900px){
+  html,body{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto;}
+  body::after{content:"";position:fixed;left:0;right:0;bottom:0;height:32px;z-index:99;background:var(--site-paper);border-top:1px solid var(--border-subtle);pointer-events:none;}
+  .slide-container{height:auto;min-height:100svh;overflow:visible;}
+  .slide{display:none;position:relative;top:auto;left:auto;height:auto;min-height:100svh;overflow:visible;justify-content:flex-start;padding:54px 20px 92px;}
+  .slide.active{display:flex;}
+  .slide::before{inset:8px;border-radius:14px;}
+  .slide-brand{top:15px;left:20px;font-size:.62rem;}
+  .slide-tag{top:15px;right:20px;font-size:.6rem;}
+  .content{width:100%;max-width:100%;height:auto!important;max-height:none!important;}
+  h1{font-size:2.65rem;}
+  #s-title h1{font-size:2.65rem!important;}
+  h2{font-size:1.75rem;line-height:1.05;}
+  .subtitle{font-size:1rem;}
+  .two-col,.three-col,.split{grid-template-columns:1fr;}
+  .split.narrow-right{grid-template-columns:1fr;}
+  #s-seg-grid-a .content,#s-seg-grid-b .content,#s-seg-grid-c .content{height:auto;max-height:none;}
+  #s-seg-grid-a .story-grid,#s-seg-grid-b .story-grid,#s-seg-grid-c .story-grid{grid-template-columns:1fr;grid-template-rows:none;grid-auto-rows:auto;}
+  .story-grid{flex:none;min-height:0;overflow:visible;gap:14px;margin-top:14px;}
+  .story-card{min-height:0;height:auto;}
+  .story-card .thumb{height:clamp(150px,48vw,230px)!important;min-height:150px;max-height:none;flex:none;}
+  .story-card .thumb.source-panel{height:150px!important;min-height:150px;flex:none;padding:20px 22px;}
+  .story-card .meta{padding:14px 16px 16px;}
+  .story-card .meta h3{font-size:1.15rem;}
+  .story-card .meta p{font-size:.95rem;line-height:1.45;}
+  .story-card .meta a{font-size:.7rem;}
+  .nav-dots{bottom:10px;max-width:78%;gap:4px;}
+  .nav-dot{width:7px;height:7px;}
+  .nav-dot.active{width:20px;}
+  .slide-counter{bottom:8px;right:12px;font-size:10px;}
+  .kb-hint{display:none;}
+}
 </style>
 </head>
 <body>
@@ -161,7 +207,7 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
 </svg>
 
 <div class="progress-bar" id="progressBar"></div>
-<div class="slide-counter"><span id="slideNum">1</span> / <span id="slideTotal">10</span></div>
+<div class="slide-counter"><span id="slideNum">1</span> / <span id="slideTotal">11</span></div>
 <div class="nav-dots" id="navDots"></div>
 <div class="kb-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> navigate &middot; scroll / swipe &middot; <kbd>F</kbd> fullscreen</div>
 <div class="slide-container">
@@ -173,15 +219,15 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
   <div class="glow-orb orb-orange" style="width:420px;height:420px;bottom:-140px;right:-100px;"></div>
   <div class="content">
     <svg aria-label="Weekly Claw logo" style="width:92px;height:92px;margin-bottom:14px;filter:drop-shadow(0 12px 24px rgba(42,126,107,.22));"><use href="#weeklyclaw-logo"/></svg>
-    <div class="part-label">Episode 33 &middot; Friday, October 9, 2026 &middot; 4:00 PM ET</div>
+    <div class="part-label">Episode 33 &middot; Friday, October 9, 2026 &middot; 4:00 PM ET / 20:00 UTC</div>
     <h1 style="font-size:4.7rem;text-align:center;margin-bottom:6px;"><span class="gradient-text">Weekly Claw</span></h1>
     <div class="gradient-line wide"></div>
     <p class="subtitle text-center mt-2" style="max-width:980px;">
-      The trillion-parameter open-weight promise &mdash; Mistral and Reflection preview monsters with weights promised by month-end &mdash; landed the same week OpenAI dumped 722 unrefereed math papers and humans refuted 50-year conjectures. Microsoft graded agents on the records they leave behind: two-thirds fail. Apple started treating agents as a threat model. And the loudest model-lock founder conceded: route to the best model.
+      Mistral previewed a 1T model; Reflection&rsquo;s Beam is 501B, and both weights remain pending. OpenAI&rsquo;s public math corpus has a correction trail. Windows and workplace agents are expanding. The debate: can open agents feel mainstream without giving up user control?
     </p>
     <div class="mt-3" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
       <span class="pill blue">Hosts: @AndyML &middot; @HiM</span>
-      <span class="pill green">~32 min &middot; two grids &middot; one anchor &middot; one debate</span>
+      <span class="pill green">~37 min &middot; three grids &middot; one anchor &middot; one debate</span>
     </div>
     <div class="mt-3 logo-row">
       <span class="pill">Sponsored by</span>
@@ -200,20 +246,20 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
     <div class="part-label">Cold open &middot; the frame</div>
     <h2 class="text-center">The week the receipts <span class="gradient-text">went public.</span></h2>
     <div class="gradient-line"></div>
-    <p class="subtitle text-center mt-1" style="max-width:980px;">Trillion-parameter previews with promised weights. A one-night math dump, unrefereed and Apache-licensed. An agent benchmark that grades the database, not the demo. A desktop OS rewritten around what agents might read. And a price ladder that ends at $450 per million. And this morning: a usage policy that protects the model itself &mdash; and a serving-stack root hole with no patch.</p>
+    <p class="subtitle text-center mt-1" style="max-width:980px;">Large model previews still have weights pending; a public math corpus shows withdrawals and repairs. Windows and Google are expanding agent workflows. Henry and Teknium disagree on a consumer retreat: can open harnesses match mainstream ease while preserving user control? Benchmark, policy, and security reports round out the week.</p>
     <div class="mt-3 arc-wrap">
-      <div class="arc-step now"><div class="arc-num">1</div><div class="arc-label">The open-weight promise</div></div>
-      <div class="arc-step"><div class="arc-num">2</div><div class="arc-label">Math goes public</div></div>
-      <div class="arc-step"><div class="arc-num">3</div><div class="arc-label">Outside signal</div></div>
-      <div class="arc-step"><div class="arc-num">4</div><div class="arc-label">Grading the agents</div></div>
-      <div class="arc-step"><div class="arc-num">5</div><div class="arc-label">The rules layer</div></div>
-      <div class="arc-step"><div class="arc-num">6</div><div class="arc-label">One to watch</div></div>
+      <div class="arc-step now"><div class="arc-num">1</div><div class="arc-label">Weights pending</div></div>
+      <div class="arc-step"><div class="arc-num">2</div><div class="arc-label">Math with revisions</div></div>
+      <div class="arc-step"><div class="arc-num">3</div><div class="arc-label">Agents enter Windows</div></div>
+      <div class="arc-step"><div class="arc-num">4</div><div class="arc-label">Workplace agents</div></div>
+      <div class="arc-step"><div class="arc-num">5</div><div class="arc-label">Measure and route</div></div>
+      <div class="arc-step"><div class="arc-num">6</div><div class="arc-label">Policy, security, debate</div></div>
     </div>
     <div class="mt-3" style="width:100%;display:flex;flex-direction:column;align-items:center;">
-      <div class="hook"><span class="hook-num gradient-text">&#129504;</span><span class="hook-text">Mistral and Reflection previewed <span class="orange">trillion-scale open weights</span> in the same week. Neither ships until <span class="orange">month-end</span> &mdash; the promise is the story.</span></div>
-      <div class="hook"><span class="hook-num gradient-text">&#128165;</span><span class="hook-text">OpenAI dumped <span class="orange">722 unrefereed math papers</span> overnight. The same week, humans refuted 50-year conjectures &mdash; <span class="orange">deterministically</span>.</span></div>
-      <div class="hook"><span class="hook-num gradient-text">&#128220;</span><span class="hook-text">Microsoft&rsquo;s own benchmark: <span class="orange">79,853 of 121,680 agent trials fail</span>. Apple read the same writing on the wall.</span></div>
-      <div class="hook"><span class="hook-num gradient-text">&#128737;</span><span class="hook-text">Anthropic bans <span class="orange">&ldquo;sustained and needless&rdquo; cruelty</span> toward Claude &mdash; the same week an <span class="orange">unpatched CVSS 9.8 root hole</span> ships in vLLM&rsquo;s cache layer.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#129504;</span><span class="hook-text">Mistral previewed <span class="orange">1T total / 52B active</span>; Reflection&rsquo;s Beam is <span class="orange">501B / 23B active</span>. Both sets of weights remain pending.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#128165;</span><span class="hook-text">OpenAI&rsquo;s repo listed <span class="orange">722 manuscripts</span>; three withdrawals left 719, and 14 others were repaired. No peer review is claimed.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#128220;</span><span class="hook-text">Windows 11 gets GA execution containers for OpenClaw; Google announced a <span class="orange">shared workplace agent</span> with persistent cloud execution.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#128737;</span><span class="hook-text">Henry reads the polished UX of <span class="orange">Grok Bot, Muse, and Dot</span> as pulling consumers from open harnesses; Teknium disputes that reading.</span></div>
     </div>
   </div>
 </div>
@@ -241,26 +287,26 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
   <div class="content">
     <div>
       <div class="part-label">What happened this week &middot; part 1</div>
-      <h2>The trillion-parameter <span class="gradient-text">open-weight promise.</span></h2>
+      <h2>Open weights, public math, <span class="gradient-text">Windows for agents.</span></h2>
       <div class="gradient-line"></div>
-      <p class="subtitle mt-1" style="max-width:1000px;">Mistral and Reflection preview models bigger than anything open has shipped &mdash; weights promised by month-end, benchmarks self-reported until then. OpenAI&rsquo;s math dump needs no promise: it&rsquo;s public, unrefereed, and Apache-2.0. Each card links its primary receipt.</p>
+      <p class="subtitle mt-1" style="max-width:1000px;">Mistral and Reflection previewed large models with weights pending; Microsoft adds Windows infrastructure for agents. OpenAI&rsquo;s math corpus and a separate 3SUM paper carry distinct records.</p>
     </div>
     <div class="story-grid">
       <div class="story-card">
-        <a class="thumb" href="https://mistral.ai/news/mistral-large-4" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/mistral-aa-chart.png" alt="Artificial Analysis page for Mistral Large 4 Preview: intelligence index 38, $1.36 in and $4.18 out per million tokens, 'notably fast, however very verbose'" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>Mistral launches Large 4 &mdash; &ldquo;Le Chonk&rdquo;: 1T total, 52B active, weights end of October.</h3><p>Public-preview API now at $1.36/$4.18 per million. AA&rsquo;s independent index: 38, above the 26 median &mdash; and &ldquo;very verbose&rdquo; (200M eval tokens vs 81M median). &ldquo;Surpassing frontier closed models&rdquo; is Mistral&rsquo;s claim; 38 is the independent number.</p><a href="https://mistral.ai/news/mistral-large-4" target="_blank" rel="noopener">&#9654; LIVE &middot; mistral.ai &middot; MISTRAL-REPORTED + AA-INDEXED</a></div>
+        <a class="thumb" href="https://mistral.ai/news/mistral-large-4" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/mistral-aa-chart.png" alt="Artificial Analysis page for Mistral Large 4 Preview: intelligence index 38, $1.36 in and $4.18 out per million tokens, 'notably fast, however very verbose'" style="object-fit:contain;object-position:center;"></a>
+        <div class="meta"><h3>Mistral previews Large 4: 1T total, 52B active.</h3><p>Weights are promised for the end of October and remain unreleased. Artificial Analysis lists an index of 38 and API prices; those are separate from Mistral&rsquo;s own preview claims.</p><a href="https://mistral.ai/news/mistral-large-4" target="_blank" rel="noopener">&#9654; PRIMARY &middot; MISTRAL LARGE 4</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://reflection.ai/beam" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/beam-bench.png" alt="Reflection's own Beam chart: open-weight, 501B parameters, 23B active, scored against mean generated tokens on DeepSWE, HLE text-only, Terminal Bench 2.1 vs GLM-5.2 and Qwen3.8" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>Reflection previews Beam: a 501B-parameter open-weight MoE, 23B active.</h3><p>Agentic-coding focus; weights, technical report, and model card &ldquo;later this month,&rdquo; early access by invite. The DeepSWE / HLE / Terminal-Bench chart is Reflection&rsquo;s own. Independent runs wait for weights.</p><a href="https://reflection.ai/beam" target="_blank" rel="noopener">&#9654; LIVE &middot; reflection.ai &middot; SELF-REPORTED, WEIGHTS PENDING</a></div>
+        <a class="thumb" href="https://www.reflection.ai/blog/introducing-beam" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/beam-bench.png" alt="Reflection's own Beam chart: 501B parameters, 23B active, scored against mean generated tokens on DeepSWE, HLE text-only, Terminal Bench 2.1 vs GLM-5.2 and Qwen3.8" style="object-fit:contain;object-position:center;"></a>
+        <div class="meta"><h3>Reflection previews Beam: 501B total, 23B active.</h3><p>Weights, technical report, and model card are promised later this month. The coding and reasoning chart is Reflection&rsquo;s own; independent runs await released weights.</p><a href="https://www.reflection.ai/blog/introducing-beam" target="_blank" rel="noopener">&#9654; PRIMARY &middot; REFLECTION BEAM</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://github.com/openai/math" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/openai-math-repo.png" alt="GitHub repository openai/math: commits updating manuscripts and Lean formalizations, Apache-2.0 license" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>OpenAI dumps 722 math manuscripts from a secret internal frontier model.</h3><p>372 result families, 235 with Lean formalizations, Apache-2.0, zero peer review &mdash; including a solution to the Unitary Synthesis Problem Aaronson posed with Kuperberg in 2007. One-night drop.</p><a href="https://github.com/openai/math" target="_blank" rel="noopener">&#9654; LIVE &middot; github.com/openai/math &middot; PRIMARY REPO</a></div>
+        <a class="thumb" href="https://github.com/openai/math" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/openai-math-repo.png" alt="GitHub repository openai/math: commits updating manuscripts and Lean formalizations, Apache-2.0 license" style="object-fit:contain;object-position:center;"></a>
+        <div class="meta"><h3>OpenAI&rsquo;s math release: revisions and authorship.</h3><p>722 manuscripts across 372 families; three withdrawn by Oct 7 left 719, and 14 others were repaired. 300/719 (~42%) list top-line formalizations. In the separate 3SUM paper, Claude discovered the algorithm; Josh Alman and Virginia Vassilevska Williams developed and authored the paper.</p><div class="source-row"><a href="https://github.com/openai/math/blob/main/history.md" target="_blank" rel="noopener">&#9654; REPO HISTORY</a><a href="https://github.com/openai/math/blob/main/overview.tex" target="_blank" rel="noopener">FORMALIZATION OVERVIEW</a><a href="https://arxiv.org/html/2610.06783v1" target="_blank" rel="noopener">3SUM PAPER</a></div></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://arxiv.org/abs/2610.06783" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/williams-alman-arxiv.png" alt="arXiv 2610.06783 abstract: Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs, by Josh Alman and Virginia Vassilevska Williams" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>The math world answers: &ldquo;Mathocalypse&rdquo;, Math 2.0, and a human 3SUM record.</h3><p>Same week: Williams&ndash;Alman refute the 3SUM and APSP hypotheses &mdash; deterministic n^1.9992, human-authored. Aaronson&rsquo;s field guide and Tao&rsquo;s &ldquo;Math 2.0&rdquo;: quotes on air only after manual open.</p><a href="https://arxiv.org/abs/2610.06783" target="_blank" rel="noopener">&#9654; LIVE &middot; arxiv.org &middot; HUMAN-AUTHORED COUNTERPOINT</a></div>
+        <a class="thumb source-panel" href="https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/" target="_blank" rel="noopener" aria-label="Microsoft Building Windows for hybrid intelligence announcement"><strong>Windows<br>Hybrid intelligence</strong><span>Execution Containers: GA<br>HydraFusion: experimental preview later October</span></a>
+        <div class="meta"><h3>Microsoft adds agent execution and routing to Windows.</h3><p>Execution Containers are GA on Windows 11; a native Windows gateway supports OpenClaw. HydraFusion local/cloud routing is experimental preview later in October; Copilot+ PC context, actions, and models are planned for coming months.</p><a href="https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/" target="_blank" rel="noopener">&#9654; PRIMARY &middot; BUILDING WINDOWS FOR HYBRID INTELLIGENCE</a></div>
       </div>
     </div>
   </div>
@@ -273,57 +319,61 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
   <div class="content">
     <div>
       <div class="part-label">What happened this week &middot; part 2</div>
-      <h2>Agents get <span class="gradient-text">graded, routed, and locked down.</span></h2>
+      <h2>Measure outcomes, route work, <span class="gradient-text">give agents a workplace.</span></h2>
       <div class="gradient-line"></div>
-      <p class="subtitle mt-1" style="max-width:1000px;">The measurement layer arrived the same week an OS vendor rewrote permissions around agents and the loudest model-lock founder conceded routing. Each card links its primary receipt.</p>
+      <p class="subtitle mt-1" style="max-width:1000px;">One scoped benchmark, native X access, and workplace-agent announcements put new agent workflows to the test.</p>
     </div>
     <div class="story-grid">
       <div class="story-card">
-        <a class="thumb" href="https://huggingface.co/blog/microsoft/thinkingbox" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/thinkingbox-failtable.png" alt="Hugging Face article on ThinkingBox: in a common-set ablation covering 121,680 valid trials across 12 LLM models, 79,853 attempts failed" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>Microsoft and Hugging Face ship ThinkingBox: agents graded on records, not sentences.</h3><p>In a 121,680-trial common-set ablation across 12 models, 79,853 attempts failed &mdash; two-thirds. &ldquo;An agent can sound correct while leaving the wrong value.&rdquo; Paper 2608.19741.</p><a href="https://huggingface.co/blog/microsoft/thinkingbox" target="_blank" rel="noopener">&#9654; LIVE &middot; huggingface.co &middot; PRIMARY BLOG + PAPER</a></div>
+        <a class="thumb" href="https://huggingface.co/blog/microsoft/thinkingbox" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/thinkingbox-failtable.png" alt="Hugging Face article on ThinkingBox: in a common-set ablation covering 121,680 valid trials across 12 LLM models, 79,853 attempts failed" style="object-fit:contain;object-position:center;"></a>
+        <div class="meta"><h3>ThinkingBox reports failures in a common-set ablation.</h3><p>79,853 of 121,680 trials failed across 12 models (~65.6%) in the paper&rsquo;s common-set ablation. Treat this as that measured setup, not a universal agent failure rate.</p><a href="https://huggingface.co/blog/microsoft/thinkingbox" target="_blank" rel="noopener">&#9654; PRIMARY BLOG &middot; PAPER 2608.19741</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://review-bench.ai" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/reviewbench-site.png" alt="ReviewBench website: an open benchmark for AI code review, with a live leaderboard scoring agents on grounded and augmented precision, recall, and F1" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>GitHub releases ReviewBench, an open code-review benchmark from 103.9M pull requests.</h3><p>Live leaderboard scores agents on grounded and augmented precision/recall &mdash; research preview, submissions open. The harness layer gets its own benchmark suite.</p><a href="https://review-bench.ai" target="_blank" rel="noopener">&#9654; LIVE &middot; review-bench.ai &middot; LEADERBOARD LIVE</a></div>
+        <a class="thumb source-panel" href="https://x.com/bot/status/2107949161878606089" target="_blank" rel="noopener" aria-label="Grok Bot announcement of native X search and monitoring"><strong>Grok Bot</strong><span>Native X search, reading and monitoring<br>Selected model routing</span></a>
+        <div class="meta"><h3>Grok Bot adds native X access and selected model routing.</h3><p>Native X search, reading and monitoring for all users, without configuring the X connector. Cursor lists Opus 5.5 routing; tasks may route to different models. No per-user picker or added per-token charge merely for routing.</p><div class="source-row"><a href="https://x.com/bot/status/2107949161878606089" target="_blank" rel="noopener">&#9654; X ANNOUNCEMENT</a><a href="https://x.com/bot/status/2107949163191353358" target="_blank" rel="noopener">FOLLOW-UP</a><a href="https://cursor.com/help/grok-bot/models" target="_blank" rel="noopener">CURSOR DOCS</a></div></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://x.com/elonmusk/status/2107724314451878104" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/grok-bot-tweet-card.png" alt="Rendered card of Elon Musk's original post of October 7, 2026: 'Going forward, @SpaceX will use the best back end model for any given task, including Claude Opus 5.5, MidJourney, Suno and other leading APIs.' 106.1K likes. WeeklyClaw render of a verified post." style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>Musk points Grok Bot at rival models: &ldquo;the best back end model for any given task.&rdquo;</h3><p>&ldquo;&hellip;including Claude Opus 5.5, MidJourney, Suno and other leading APIs. Whatever is most likely to give you the best outcome.&rdquo; 106.1K likes. The harness wins: model-lock concedes to routing.</p><a href="https://x.com/elonmusk/status/2107724314451878104" target="_blank" rel="noopener">&#9654; LIVE &middot; x.com &middot; VERBATIM POST &middot; WEEKLYCLAW-RENDERED CARD</a></div>
+        <a class="thumb source-panel" href="https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026" target="_blank" rel="noopener" aria-label="Google Gemini at Work 2026 announcement"><strong>Gemini at Work 2026</strong><span>Shared workplace agent<br>Early access announced</span></a>
+        <div class="meta"><h3>Google introduces the Gemini workplace agent.</h3><p>Gemini at Work introduces persistent cloud execution, coworker agents with shared memory and dedicated identities, Gemini/Claude orchestration, and spend caps with pause controls. SMB early access starts now; broader access is planned soon. No universal price or date is given.</p><a href="https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026" target="_blank" rel="noopener">&#9654; PRIMARY &middot; GEMINI AT WORK 2026</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://developer.apple.com/news/?id=101stbvu" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/apple-fda.png" alt="Apple Developer News, October 2, 2026: Updates to Full Disk Access in macOS" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>Apple tightens Full Disk Access &mdash; because agents read everything.</h3><p>Oct 2 developer update: per-app prompts replace silent full-disk paths; Apple&rsquo;s own text cites autonomous agents sidestepping controls. The agent boom is now a desktop OS threat model.</p><a href="https://developer.apple.com/news/?id=101stbvu" target="_blank" rel="noopener">&#9654; LIVE &middot; developer.apple.com &middot; OCT 2, 2026</a></div>
+        <a class="thumb source-panel" href="https://nousresearch.com/a-note-on-our-fundraise" target="_blank" rel="noopener" aria-label="Nous Research fundraise note"><strong>Nous Research</strong><span>$90M fundraise<br>Hermes for Businesses: intent</span></a>
+        <div class="meta"><h3>Nous confirms a $90M fundraise; its business product is still a plan.</h3><p>Nous Research develops Hermes. Its note signals intent to bring Hermes to businesses; it does not announce a launched product.</p><a href="https://nousresearch.com/a-note-on-our-fundraise" target="_blank" rel="noopener">&#9654; PRIMARY &middot; NOUS FUNDRAISE NOTE</a></div>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- SLIDE 6 — WHAT HAPPENED · GRID C (Friday 11:00 ET late-news ADD) -->
+<!-- SLIDE 6 — WHAT HAPPENED · GRID C -->
 <div class="slide" id="s-seg-grid-c">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #33</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
   <div class="glow-orb orb-red" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
   <div class="content">
     <div>
-      <div class="part-label">What happened this week &middot; part 3 &middot; added Friday morning</div>
-      <h2>The rules layer arrives: <span class="gradient-text">dignity clauses and a CVSS 9.8.</span></h2>
+      <div class="part-label">What happened this week &middot; part 3</div>
+      <h2>A policy update, a cache-layer RCE, <span class="gradient-text">and a .claw application.</span></h2>
       <div class="gradient-line"></div>
-      <p class="subtitle mt-1" style="max-width:1000px;">Two overnight receipts: a frontier lab writes model dignity into enforceable policy, and the cache layer everyone bolts onto vLLM ships an unauthenticated root hole. Each card links its primary receipt.</p>
+      <p class="subtitle mt-1" style="max-width:1000px;">Three distinct status updates: Anthropic revises its usage policy, a network-exposed LMCache transport has a critical RCE advisory, and ICANN lists an active application for the .claw top-level domain.</p>
     </div>
-    <div class="story-grid" style="grid-template-rows:1fr;">
+    <div class="story-grid">
       <div class="story-card">
-        <a class="thumb" href="https://www.anthropic.com/news/2026-usage-policy-update" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/anthropic-cruelty-policy.png" alt="Anthropic's 2026 Usage Policy update page, Oct 8 2026: the paragraph adding a prohibition on sustained and needless abusive or cruel behavior toward our models" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>Anthropic bans &ldquo;sustained and needless&rdquo; cruelty toward Claude &mdash; the first policy line protecting the model itself.</h3><p>Oct 8 usage-policy update, effective Nov 12. Carve-outs: frustration, pushback, dark themes, and testing don&rsquo;t count. Same update drops the blanket personalized voter-targeting ban &mdash; Anthropic&rsquo;s stated reason: it &ldquo;covered legitimate civic work.&rdquo;</p><a href="https://www.anthropic.com/news/2026-usage-policy-update" target="_blank" rel="noopener">&#9654; LIVE &middot; anthropic.com &middot; PRIMARY POLICY PAGE</a></div>
+        <a class="thumb" href="https://www.anthropic.com/news/2026-usage-policy-update" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/anthropic-cruelty-policy.png" alt="Anthropic's 2026 Usage Policy update page, Oct 8 2026: the paragraph adding a prohibition on sustained and needless abusive or cruel behavior toward our models" style="object-fit:contain;object-position:center;"></a>
+        <div class="meta"><h3>Anthropic updates its usage policy on model-directed abuse.</h3><p>Announced Oct 8, effective Nov 12. The primary announcement says enforcement centers on ending conversations; carve-outs include ordinary frustration, creative themes, and research.</p><a href="https://www.anthropic.com/news/2026-usage-policy-update" target="_blank" rel="noopener">&#9654; PRIMARY &middot; POLICY UPDATE</a></div>
       </div>
       <div class="story-card">
-        <a class="thumb" href="https://research.jfrog.com/vulnerabilities/lmcache-is-vulnerable-to-unauthenticated-remote-code-execution-via-pickle-deserialization-on-the-multiprocess-zmq-transport-cve-2026-105192-jfsa-2026-001694382/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/lmcache-rce-advisory.png" alt="JFrog Security Research advisory JFSA-2026-001694382: LMCache vulnerable to unauthenticated remote code execution via pickle deserialization on the multiprocess ZMQ transport, CVE-2026-105192, CVSS 9.8, published Oct 7 2026" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>LMCache ships an unpatched CVSS 9.8 root RCE &mdash; one unauthenticated ZeroMQ message runs code as root.</h3><p>Port 5555, no auth, pickle.loads before any validation &mdash; official containers run as root, and no fixed version exists. Scope: default localhost binds aren&rsquo;t remotely reachable; risk concentrates in routable multi-node vLLM deployments.</p><a href="https://research.jfrog.com/vulnerabilities/lmcache-is-vulnerable-to-unauthenticated-remote-code-execution-via-pickle-deserialization-on-the-multiprocess-zmq-transport-cve-2026-105192-jfsa-2026-001694382/" target="_blank" rel="noopener">&#9654; LIVE &middot; research.jfrog.com &middot; PRIMARY ADVISORY &middot; NO PATCH</a></div>
+        <a class="thumb" href="https://research.jfrog.com/vulnerabilities/lmcache-is-vulnerable-to-unauthenticated-remote-code-execution-via-pickle-deserialization-on-the-multiprocess-zmq-transport-cve-2026-105192-jfsa-2026-001694382/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/lmcache-rce-advisory.png" alt="JFrog Security Research advisory JFSA-2026-001694382: LMCache vulnerable to unauthenticated remote code execution via pickle deserialization on the multiprocess ZMQ transport, CVE-2026-105192, CVSS 9.8, published Oct 7 2026" style="object-fit:contain;object-position:center;"></a>
+        <div class="meta"><h3>LMCache has a critical RCE in its multiprocess transport.</h3><p>An unauthenticated pickle message can run code with the process&rsquo;s privileges when the ZeroMQ service is network-exposed. Official containers run as root; no fix was listed as of Oct 7. Default localhost binds are not remotely reachable.</p><a href="https://research.jfrog.com/vulnerabilities/lmcache-is-vulnerable-to-unauthenticated-remote-code-execution-via-pickle-deserialization-on-the-multiprocess-zmq-transport-cve-2026-105192-jfsa-2026-001694382/" target="_blank" rel="noopener">&#9654; JFROG ADVISORY &middot; CVE-2026-105192</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb source-panel" href="https://x.com/steipete/status/2108374513931165759" target="_blank" rel="noopener" aria-label="Peter Steinberger announces .claw incoming on October 8"><strong>@steipete · Oct 8 · 18:50</strong><span class="quote">“WE GOT IT! .claw incoming!”</span><span>Quoting @drodecker&rsquo;s winning-applicant report</span></a>
+        <div class="meta"><h3>Peter announces &ldquo;.claw incoming.&rdquo;</h3><p>He quoted David Rodecker&rsquo;s report naming the OpenClaw Foundation as winning applicant. ICANN still lists Active &mdash; Pre-Evaluation Processing; final delegation and domain-registration availability are not established.</p><div class="source-row"><a href="https://x.com/steipete/status/2108374513931165759" target="_blank" rel="noopener">&#9654; PETER&rsquo;S POST</a><a href="https://x.com/drodecker/status/2108372568843448769" target="_blank" rel="noopener">DAVID&rsquo;S REPORT</a><a href="https://newgtldprogram-aps.icann.org/applications/OF2656T-T69841/summary" target="_blank" rel="noopener">ICANN STATUS</a></div></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 6 — SIGNAL FROM OUTSIDE · THEO ON ULTRAFAST -->
+<!-- SLIDE 7 — SIGNAL FROM OUTSIDE · THEO ON ULTRAFAST -->
 <div class="slide" id="s-signal-outside">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #33</div><div class="slide-tag">03 / SIGNAL FROM OUTSIDE &middot; 6 MIN</div>
   <div class="glow-orb orb-blue" style="width:440px;height:440px;top:-130px;right:-120px;"></div>
@@ -335,65 +385,59 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
       <div class="card card-glow">
         <span class="tag tag-blue">THIS WEEK&rsquo;S SIGNAL &middot; THEO &middot; T3.GG</span>
         <h3 class="mt-2">&ldquo;I love Ultrafast (it&rsquo;s unusable)&rdquo; &mdash; the speed tier priced honestly.</h3>
-        <p>The canary read: Theo edits an Astra app live in real time, then reads the bill &mdash; $50/M output tokens becomes $300/M on Ultrafast, $450/M on long context. &ldquo;These bills are actually insane.&rdquo; The perfect bridge into Henry&rsquo;s own per-task token discipline.</p>
-        <p class="mt-2"><strong>Verified:</strong> Enterprise yt-dlp pull, 2026-10-08 &middot; uploaded 2026-10-06 &middot; 28:17 &middot; 128,624 views &middot; transcript pulled, cues spot-check before air.</p>
-        <p class="mt-2 mono" style="color:#8f403a;"><strong>Caveats on air:</strong> single reviewer, own workload; auto-caption timestamps drift &mdash; re-locate on open. Manual open only &mdash; NOT autoplay.</p>
-        <a href="https://www.youtube.com/watch?v=pJljViiUEPw" target="_blank" rel="noopener" style="margin-top:10px;display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border:2px solid var(--claw-red);border-radius:999px;font-family:var(--mono);font-size:.85rem;color:#225e6a;text-decoration:none;background:rgba(255,255,255,.4);">&#9654; WATCH ON YOUTUBE &middot; 28:17 &middot; manual open &middot; NOT autoplay</a>
+        <p>Theo edits an Astra app in real time, then looks at the bill: $50/M output tokens becomes $300/M on Ultrafast and $450/M on long context. His reaction: &ldquo;These bills are actually insane.&rdquo;</p>
+        <p class="mt-2">Those prices and the workflow are one practitioner&rsquo;s report, not a universal benchmark. The clip ties speed to cost in a concrete development task.</p>
+        <a href="https://www.youtube.com/watch?v=pJljViiUEPw" target="_blank" rel="noopener" style="margin-top:10px;display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border:2px solid var(--claw-red);border-radius:999px;font-family:var(--mono);font-size:.85rem;color:#225e6a;text-decoration:none;background:rgba(255,255,255,.4);">&#9654; WATCH ON YOUTUBE &middot; 28:17</a>
       </div>
       <div class="card">
-        <img src="assets/images/sfo-poster.jpg" alt="Theo t3.gg — I love Ultrafast (it's unusable), video poster" style="width:100%;max-height:230px;object-fit:cover;border-radius:10px;border:1px solid var(--border-subtle);">
-        <p class="src-note mt-2">Anchor (manual open): 00:00&ndash;00:40 live real-time edit &middot; 01:00&ndash;01:17 the $50&rarr;$300&rarr;$450 price ladder &middot; ~02:40 Graptile/T-Rex sponsor (skip) &middot; verdict at the end. Re-locate timestamps on open &mdash; captions drift.</p>
-        <p class="src-note mt-1">Fallback if video fails: complete paraphrase in Andy&rsquo;s section; poster above is the on-screen visual.</p>
+        <div class="sfo-price-panel" role="img" aria-label="Theo at t3.gg's quoted output-token prices per million: 50 dollars standard, 300 dollars on Ultrafast, 450 dollars on long context">
+          <div class="sfo-price-kicker">THEO &middot; T3.GG &middot; QUOTED OUTPUT-TOKEN PRICES / MILLION</div>
+          <h3>&ldquo;I love Ultrafast (it&rsquo;s unusable).&rdquo;</h3>
+          <div class="sfo-price-ladder">
+            <div class="sfo-price-item"><strong>$50/M</strong><span>Astra</span></div>
+            <div class="sfo-price-item"><strong>$300/M</strong><span>Ultrafast</span></div>
+            <div class="sfo-price-item"><strong>$450/M</strong><span>Long context</span></div>
+          </div>
+          <div class="sfo-price-caption">Price ladder and workflow from Theo&rsquo;s video; one practitioner&rsquo;s workload.</div>
+        </div>
+        <p class="src-note mt-2">Theo discusses an Astra edit alongside the quoted price ladder.</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SLIDE 7 — HOT TAKE -->
+<!-- SLIDE 8 — HOT TAKE -->
 <div class="slide" id="s-hot-take">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #33</div><div class="slide-tag">04 / HOT TAKE &middot; 4 MIN</div>
   <div class="glow-orb orb-red" style="width:480px;height:480px;top:-140px;left:-120px;"></div>
   <div class="content">
-    <div class="part-label">Hot take &middot; two sides, one verdict</div>
-    <h2 class="text-center" style="font-size:1.85rem;">The free-compute era ended <span class="gradient-text">on schedule.</span></h2>
+    <div class="part-label">Hot take &middot; two views, one question</div>
+    <h2 class="text-center" style="font-size:1.85rem;">Who wins the <span class="gradient-text">consumer agent?</span></h2>
     <div class="gradient-line"></div>
     <div class="split narrow-right mt-2" style="align-items:stretch;">
-      <div style="display:flex;flex-direction:column;gap:12px;">
-        <div class="card" style="padding:14px 16px;">
-          <span class="tag tag-red">HENRY &middot; SUBSIDIES OFF</span>
-          <h3 class="mt-1" style="font-size:.98rem;line-height:1.2;">Prices are finally telling the truth about inference. That&rsquo;s healthy.</h3>
-          <ul class="bullet-list mt-1" style="font-size:.78rem;">
-            <li><strong>On air day (Oct 9):</strong> Gemini&rsquo;s free tier locks to 3.5 Flash-Lite &mdash; per Google&rsquo;s updated support doc, via 9to5Google.</li>
-            <li><strong>Oct 30:</strong> Pro 200 usage halves (20x&rarr;10x Plus on Work/Codex; GPT-6 Pro chat 200&rarr;100/wk) per OpenAI&rsquo;s own help page &mdash; at the same $200.</li>
-            <li><strong>Henry&rsquo;s line:</strong> &ldquo;With 6.1 you get 2.5x more usage on the new 10x plan.&rdquo; Builders who learned on subsidies now face real unit economics.</li>
-          </ul>
-        </div>
-        <div class="card card-glow" style="padding:14px 16px;">
-          <span class="tag tag-blue">ANDY &middot; THE LADDER</span>
-          <h3 class="mt-1" style="font-size:.98rem;line-height:1.2;">The subsidy era built the hobbyist pipeline &mdash; ending it mid-flight kicks the ladder away.</h3>
-          <ul class="bullet-list mt-1" style="font-size:.78rem;">
-            <li><strong>Flash-Lite free tier</strong> is a downgrade dressed as a tier &mdash; free users lose model choice on air day.</li>
-            <li><strong>Half the product at the same price</strong> is a hike, not efficiency &mdash; even with $2,500 in expiring credits as a peace offering.</li>
-            <li><strong>Counter-question:</strong> which lab still needs free users enough to subsidize them honestly?</li>
-          </ul>
-        </div>
+      <div class="card" style="padding:18px 20px;">
+        <span class="tag tag-red">HENRY &middot; OCT 7 THESIS</span>
+        <h3 class="mt-2" style="font-size:1.12rem;line-height:1.2;">Polished UX is pulling consumers toward closed agents.</h3>
+        <p class="mt-2">Henry argues that users are leaving open-source harnesses for Grok Bot, Muse, and Dot. He reads OpenClaw&rsquo;s enterprise emphasis and Hermes&rsquo; coding/science focus as a retreat from consumers. That is his interpretation, not measured market-share data.</p>
+        <a href="https://x.com/iAmHenryMascot/status/2107753255304335618" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;font-family:var(--mono);font-size:.74rem;color:#225e6a;text-decoration:none;">&#9654; HENRY&rsquo;S POST &middot; OCT 7</a>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;">
-        <div class="alert-card" style="max-width:none;">
-          <h3>The mind-changer</h3>
-          <p style="font-size:.9rem;">If free-tier retention holds after October 9, the subsidy was never load-bearing &mdash; and everyone pricing honestly wins. If it craters, the ladder mattered.</p>
+        <div class="card card-glow" style="padding:18px 20px;">
+          <span class="tag tag-blue">TEKNIUM &middot; OCT 6 POSITION</span>
+          <h3 class="mt-2" style="font-size:1.12rem;line-height:1.2;">Wider-use focus, with consumer mobile plans.</h3>
+          <p class="mt-2">Teknium says consumers are not the only demographic: scientists, cybersecurity, developers, and knowledge workers matter too. He says mobile will be almost exclusively consumer-focused.</p>
+          <a href="https://x.com/Teknium/status/2107712074038288806" target="_blank" rel="noopener" style="display:inline-block;margin-top:12px;font-family:var(--mono);font-size:.74rem;color:#225e6a;text-decoration:none;">&#9654; TEKNIUM&rsquo;S WIDER-USE POSITION &middot; OCT 6</a>
         </div>
-        <div class="card" style="padding:14px 16px;">
-          <span class="tag tag-yellow">CAVEATS ON AIR</span>
-          <p style="font-size:.78rem;" class="mt-1">Gemini tier change: Google support doc + 9to5Google (Oct 3); no vendor-dated primary beyond the support doc. Pro 200 numbers: OpenAI&rsquo;s help page is a vendor primary &mdash; its own framing. Neither change appears in either story grid; this debate stands alone.</p>
+        <div class="alert-card" style="max-width:none;">
+          <h3>The debate question</h3>
+          <p style="font-size:.95rem;">Can an open, model-agnostic agent deliver mainstream ease without giving up user control?</p>
         </div>
       </div>
     </div>
-    <div class="quote-block mt-2" style="font-size:1.02rem;padding:10px 18px;margin:8px 0 0;">Verdict: watch the retention, not the rage. The week free compute ends is the week we learn who was building on it &mdash; and who was just renting the hype.</div>
   </div>
 </div>
 
-<!-- SLIDE 8 — SPONSOR HERITAGE (second, near close) -->
+<!-- SLIDE 9 — SPONSOR HERITAGE -->
 <div class="slide" id="s-sponsor-heritage">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #33</div><div class="slide-tag">SPONSOR</div>
   <div class="glow-orb orb-green" style="width:420px;height:420px;bottom:-120px;right:-100px;"></div>
@@ -406,7 +450,7 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
   </div>
 </div>
 
-<!-- SLIDE 9 — ONE TO WATCH + CLOSE -->
+<!-- SLIDE 10 — ONE TO WATCH + CLOSE -->
 <div class="slide" id="s-watch">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #33</div><div class="slide-tag">05 / CLOSE</div>
   <svg class="claw-bg" style="bottom:-6%;left:-4%;"><use href="#weeklyclaw-logo"/></svg>
@@ -416,16 +460,16 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
     <div class="gradient-line"></div>
     <div class="mt-2 three-col">
       <div class="card">
-        <h3 class="red">The deadline</h3>
-        <p>Alibaba retires every third-party model from Model Studio <strong>October 10 &mdash; the day after we air.</strong> 100+ models across four waves: DeepSeek, MiniMax, GLM, Kimi, plus 60+ snapshots. DashScope migrations break Saturday.</p>
+        <h3 class="red">Scheduled cutoff</h3>
+        <p>The scheduled cutoff was <strong>noon ET today, Oct 9</strong> (16:00 UTC / Oct 10, 00:00 Beijing) &mdash; four hours before the 20:00 UTC show.</p>
       </div>
       <div class="card">
-        <h3 class="orange">The irony</h3>
-        <p>DeepSeek-V4.1-Flash is now served on rival Qwen&rsquo;s consumer platform &mdash; while Alibaba delists everyone else&rsquo;s models from its own. Platform neutrality, one direction only.</p>
+        <h3 class="orange">Check listed IDs</h3>
+        <p>The notice names specific model IDs; check those IDs and migration status now. The schedule alone does not verify completed retirement.</p>
       </div>
       <div class="card">
-        <h3 class="green">Free-tier watch</h3>
-        <p>Gemini&rsquo;s Flash-Lite lock starts on air day. Retention data next week settles the hot take: was the subsidy load-bearing, or was it marketing?</p>
+        <h3 class="green">Model Studio status</h3>
+        <p>Use the official Model Studio documentation to check deprecation and migration details for each listed model.</p>
       </div>
     </div>
     <div class="social-cta mt-2">
@@ -446,78 +490,77 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
   </div>
 </div>
 
-<!-- SLIDE 10 — SOURCES -->
+<!-- SLIDE 11 — SOURCES -->
 <div class="slide" id="s-sources">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #33</div><div class="slide-tag">SOURCES / LINKS</div>
   <div class="content">
-    <div class="part-label">Every claim, one click &middot; verified 2026-10-08 + 10-09</div>
+    <div class="part-label">Episode 33 &middot; source index &middot; reviewed 2026-10-09</div>
     <h2 class="text-center">Sources &amp; <span class="gradient-text">Links.</span></h2>
     <div class="gradient-line"></div>
-    <div class="mt-2 two-col" style="gap:16px;">
+    <div class="mt-2 two-col source-columns" style="gap:12px;">
       <div class="card">
-        <span class="tag tag-green">A1 &middot; MISTRAL LARGE 4</span>
-        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://mistral.ai/news/mistral-large-4" target="_blank" rel="noopener">mistral.ai: primary launch, 1T/52B, weights end of month</a>
-          <a href="https://artificialanalysis.ai/models/mistral-large-4" target="_blank" rel="noopener">artificialanalysis.ai: AA index 38, $1.36/$4.18, verbosity</a>
+        <span class="tag tag-green">OPEN-WEIGHT PREVIEWS</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:5px;">
+          <a href="https://mistral.ai/news/mistral-large-4" target="_blank" rel="noopener">Mistral: Large 4 preview and weights timing</a>
+          <a href="https://artificialanalysis.ai/models/mistral-large-4" target="_blank" rel="noopener">Artificial Analysis: independent index and pricing</a>
+          <a href="https://www.reflection.ai/blog/introducing-beam" target="_blank" rel="noopener">Reflection: Beam preview and self-reported chart</a>
         </div>
-        <span class="tag tag-blue mt-2">A2 &middot; REFLECTION BEAM</span>
-        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://reflection.ai/beam" target="_blank" rel="noopener">reflection.ai: Beam preview, 501B/23B, self-reported chart</a>
+        <span class="tag tag-yellow mt-2">OPENAI MATH CORPUS &middot; 3SUM PAPER</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:5px;">
+          <a href="https://github.com/openai/math" target="_blank" rel="noopener">OpenAI math repository</a>
+          <a href="https://github.com/openai/math/blob/main/history.md" target="_blank" rel="noopener">Repository history: withdrawals and repairs</a>
+          <a href="https://github.com/openai/math/blob/main/overview.tex" target="_blank" rel="noopener">Repository overview: formalization counts</a>
+          <a href="https://arxiv.org/html/2610.06783v1" target="_blank" rel="noopener">Alman and Vassilevska Williams: 3SUM paper</a>
         </div>
-        <span class="tag tag-yellow mt-2">A3 &middot; OPENAI 722 MANUSCRIPTS</span>
-        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://github.com/openai/math" target="_blank" rel="noopener">github.com/openai/math: primary repo, Lean, Apache-2.0</a>
+        <span class="tag tag-blue mt-2">WINDOWS &middot; HYBRID INTELLIGENCE</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:5px;">
+          <a href="https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/" target="_blank" rel="noopener">Microsoft: Windows execution and routing roadmap</a>
         </div>
-        <span class="tag tag-purple mt-2">A4 &middot; MATH RECEPTION</span>
-        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://arxiv.org/abs/2610.06783" target="_blank" rel="noopener">arxiv.org: Williams&ndash;Alman, 3SUM n^1.9992 / APSP n^2.9995</a>
-          <a href="https://mathscholar.org/2026/10/openai-stuns-mathematicians-with-722-new-papers/" target="_blank" rel="noopener">mathscholar.org: reception secondary, Bailey, Oct 7</a>
-          <a href="https://scottaaronson.blog/?p=9137" target="_blank" rel="noopener">scottaaronson.blog: &ldquo;Mathocalypse&rdquo; (open before quoting)</a>
-        </div>
-        <span class="tag tag-red mt-2">SIGNAL FROM OUTSIDE &middot; THEO T3.GG</span>
-        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://www.youtube.com/watch?v=pJljViiUEPw" target="_blank" rel="noopener">youtube.com: I love Ultrafast (it&rsquo;s unusable), 28:17, Oct 6</a>
+        <span class="tag tag-red mt-2">SIGNAL FROM OUTSIDE</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:5px;">
+          <a href="https://www.youtube.com/watch?v=pJljViiUEPw" target="_blank" rel="noopener">Theo at t3.gg: &ldquo;I love Ultrafast (it&rsquo;s unusable)&rdquo;</a>
         </div>
       </div>
       <div class="card">
-        <span class="tag tag-green">B1 &middot; THINKINGBOX</span>
-        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://huggingface.co/blog/microsoft/thinkingbox" target="_blank" rel="noopener">huggingface.co: ThinkingBox announcement, 121,680/79,853</a>
-          <a href="https://arxiv.org/abs/2608.19741" target="_blank" rel="noopener">arxiv.org: One Success Isn&rsquo;t Reliability (the paper)</a>
+        <span class="tag tag-green">THINKINGBOX</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:5px;">
+          <a href="https://huggingface.co/blog/microsoft/thinkingbox" target="_blank" rel="noopener">Microsoft / Hugging Face announcement</a>
+          <a href="https://arxiv.org/abs/2608.19741" target="_blank" rel="noopener">One Success Isn&rsquo;t Reliability paper</a>
         </div>
-        <span class="tag tag-blue mt-2">B2 &middot; REVIEWBENCH</span>
-        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://review-bench.ai" target="_blank" rel="noopener">review-bench.ai: open benchmark + live leaderboard</a>
+        <span class="tag tag-yellow mt-2">GROK BOT &middot; NATIVE X ACCESS AND ROUTING</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:5px;">
+          <a href="https://x.com/bot/status/2107949161878606089" target="_blank" rel="noopener">Grok Bot: native X access announcement</a>
+          <a href="https://x.com/bot/status/2107949163191353358" target="_blank" rel="noopener">Grok Bot: follow-up</a>
+          <a href="https://cursor.com/help/grok-bot/models" target="_blank" rel="noopener">Cursor: Grok Bot model routing docs</a>
         </div>
-        <span class="tag tag-yellow mt-2">B3 &middot; GROK BOT ROUTING</span>
-        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://x.com/elonmusk/status/2107724314451878104" target="_blank" rel="noopener">x.com: Musk post, Oct 7, verbatim + engagement counts</a>
+        <span class="tag tag-blue mt-2">WORKPLACE AGENTS</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:5px;">
+          <a href="https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026" target="_blank" rel="noopener">Google: Gemini at Work 2026 announcement</a>
+          <a href="https://cloud.google.com/blog/topics/startups/how-to-grow-your-small-business-using-google-gemini" target="_blank" rel="noopener">Google: SMB early-access details</a>
+          <a href="https://nousresearch.com/a-note-on-our-fundraise" target="_blank" rel="noopener">Nous Research: $90M fundraise and business intent</a>
         </div>
-        <span class="tag tag-red mt-2">B4 &middot; APPLE FULL DISK ACCESS</span>
-        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://developer.apple.com/news/?id=101stbvu" target="_blank" rel="noopener">developer.apple.com: FDA update, Oct 2, 2026</a>
+        <span class="tag tag-red mt-2">POLICY & SECURITY</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:5px;">
+          <a href="https://www.anthropic.com/news/2026-usage-policy-update" target="_blank" rel="noopener">Anthropic: usage-policy update</a>
+          <a href="https://research.jfrog.com/vulnerabilities/lmcache-is-vulnerable-to-unauthenticated-remote-code-execution-via-pickle-deserialization-on-the-multiprocess-zmq-transport-cve-2026-105192-jfsa-2026-001694382/" target="_blank" rel="noopener">JFrog: LMCache advisory, CVE-2026-105192</a>
         </div>
-        <span class="tag tag-green mt-2">C1 &middot; ANTHROPIC CRUELTY POLICY</span>
-        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://www.anthropic.com/news/2026-usage-policy-update" target="_blank" rel="noopener">anthropic.com: 2026 Usage Policy update, Oct 8 (primary)</a>
-          <a href="https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude" target="_blank" rel="noopener">theverge.com: enforcement is Claude ending conversations</a>
+        <span class="tag tag-blue mt-2">.CLAW ANNOUNCEMENT &middot; STATUS</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:5px;">
+          <a href="https://x.com/steipete/status/2108374513931165759" target="_blank" rel="noopener">Peter Steinberger: &ldquo;.claw incoming!&rdquo;</a>
+          <a href="https://x.com/drodecker/status/2108372568843448769" target="_blank" rel="noopener">David Rodecker: winning-applicant report</a>
+          <a href="https://newgtldprogram-aps.icann.org/applications/OF2656T-T69841/summary" target="_blank" rel="noopener">ICANN: OpenClaw Foundation .claw application record</a>
         </div>
-        <span class="tag tag-blue mt-2">C2 &middot; LMCACHE ROOT RCE</span>
-        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://research.jfrog.com/vulnerabilities/lmcache-is-vulnerable-to-unauthenticated-remote-code-execution-via-pickle-deserialization-on-the-multiprocess-zmq-transport-cve-2026-105192-jfsa-2026-001694382/" target="_blank" rel="noopener">research.jfrog.com: JFSA-2026-001694382 &middot; CVE-2026-105192 &middot; CVSS 9.8</a>
-          <a href="https://thehackernews.com/2026/10/unpatched-critical-lmcache-flaw-lets.html" target="_blank" rel="noopener">thehackernews.com: corroboration &mdash; no fixed version</a>
+        <span class="tag tag-yellow mt-2">CONSUMER-AGENT DEBATE</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:5px;">
+          <a href="https://x.com/iAmHenryMascot/status/2107753255304335618" target="_blank" rel="noopener">Henry: Oct 7 consumer-agent thesis</a>
+          <a href="https://x.com/Teknium/status/2107712074038288806" target="_blank" rel="noopener">Teknium: Oct 6 wider-use position and consumer-mobile plans</a>
+          <a href="https://x.com/Teknium/status/2107755286761202033" target="_blank" rel="noopener">Teknium: Oct 7 reply</a>
         </div>
-        <span class="tag tag-purple mt-2">HOT TAKE &middot; TIER CHANGES</span>
-        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://9to5google.com/2026/10/03/gemini-model-limits-oct-26/" target="_blank" rel="noopener">9to5google.com: Gemini free tier locks to 3.5 Flash-Lite</a>
-          <a href="https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers" target="_blank" rel="noopener">help.openai.com: Pro 200 allowance change (vendor primary)</a>
+        <span class="tag tag-purple mt-2">ALIBABA MODEL STUDIO CUTOFF</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:5px;">
+          <a href="https://www.aliyun.com/notice/118345" target="_blank" rel="noopener">Aliyun: Oct 10 scheduled cutoff notice</a>
+          <a href="https://help.aliyun.com/zh/model-studio/model-depreciation" target="_blank" rel="noopener">Model Studio: retired model IDs and migration</a>
         </div>
-        <span class="tag tag-green mt-2">ONE TO WATCH &middot; DASHSCOPE</span>
-        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
-          <a href="https://therouter.ai/blog/oct-2026-dashscope-massive-model-sunset-migration-guide/" target="_blank" rel="noopener">therouter.ai: Oct 10 DashScope retirement map (100+ models)</a>
-          <a href="https://nfero.com/updates/legacy-model-retirements-october-2026" target="_blank" rel="noopener">nfero.com: Alibaba legacy retirement listing, Oct 10</a>
-        </div>
-        <p class="src-note mt-2">Caveats: Mistral/Beam weights are promises dated month-end, not downloads; both labs&rsquo; benchmark charts are self-reported (AA&rsquo;s 38 is the independent index for ML4). The 722-manuscript counts are OpenAI&rsquo;s repo metadata; none peer-reviewed. ThinkingBox stats are Microsoft/HF&rsquo;s own ablation. The Grok Bot card is a WeeklyClaw render of a verified post (text and counts verbatim, bird-read 2026-10-08). Hot-take tier changes: Google support doc via 9to5Google, OpenAI help page (grandfathered until Oct 29). Aaronson/Tao quotes are gated until manual open on air. All video is manually opened; nothing plays on its own anywhere in this deck (no autoplay). Friday additions: Anthropic policy quotes are the newsroom page&rsquo;s own text (opened 2026-10-09); the conversation-ending enforcement detail is The Verge&rsquo;s reporting, not the policy page. LMCache facts are JFrog&rsquo;s own advisory &mdash; default localhost binds are not remotely reachable; no fixed version existed as of Oct 7.</p>
       </div>
     </div>
   </div>
@@ -549,6 +592,7 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
     current = i;
     slides[current].classList.add('active');
     dots[current].classList.add('active');
+    if (window.matchMedia('(max-width:900px)').matches) window.scrollTo(0, 0);
     slideNumEl.textContent = current + 1;
     progressBar.style.width = ((current + 1) / total * 100) + '%';
     if (history.replaceState) history.replaceState(null, '', '#' + slides[current].id);
@@ -566,6 +610,7 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
   });
   let wheelLock = false;
   document.addEventListener('wheel', (e) => {
+    if (window.matchMedia('(max-width:900px)').matches) return;
     e.preventDefault();
     if (wheelLock) return;
     const delta = e.deltaY || e.deltaX;

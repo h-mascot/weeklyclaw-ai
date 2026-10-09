@@ -10,7 +10,7 @@ body { margin:0; font:18px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Sego
 a { color:var(--accent); }
 .shell { width:min(920px, calc(100% - 36px)); margin-inline:auto; }
 header, footer { padding:22px 0; }
-nav { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+nav { display:flex; justify-content:space-between; gap:16px; align-items:center; flex-wrap:wrap; }
 .wordmark { font-weight:800; text-transform:uppercase; text-decoration:none; color:var(--ink); }
 .button { display:inline-flex; align-items:center; min-height:40px; padding:0 14px; border:1px solid var(--accent); border-radius:6px; background:var(--accent); color:var(--paper); text-decoration:none; font-weight:700; }
 .button.secondary { color:var(--ink); background:transparent; border-color:var(--line); }
@@ -19,65 +19,94 @@ nav { display:flex; justify-content:space-between; gap:16px; align-items:center;
 h1 { margin:0; font-size:clamp(42px,8vw,78px); line-height:.9; letter-spacing:-.05em; text-transform:uppercase; }
 article { padding:36px 0 70px; }
 h2,h3,h4 { line-height:1.05; margin-top:2em; }
-p,li { max-width:78ch; }
+p,li { max-width:78ch; overflow-wrap:anywhere; }
 code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 </style>
 </head>
 <body>
 <header><nav class="shell" aria-label="Episode navigation"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/33/deck">Open slides</a></div></nav></header>
 <main class="shell">
-<section class="intro"><p class="eyebrow">Episode 33 · October 9, 2026</p><h1>The week the receipts went public.</h1><p>Air: Friday, October 9, 2026, 16:00 ET / 21:00 UK · Target runtime: 36:00 (hard stop 45:00) rev2 change (Friday 11:00 ET late news REFRESH, additive): Grid C added —…</p></section>
-<article><h2>Weekly Claw #33 — Show Agenda (rev2)</h2>
+<section class="intro"><p class="eyebrow">Episode 33 · October 9, 2026</p><h1>The week the receipts went public.</h1><p>Open-weight previews, agent systems, and a three-part debate about who wins the consumer agent; the closing grid pairs policy and security reports with Peter’s .claw announcement and ICANN status.</p></section>
+<article><h2>Weekly Claw #33 — Show Agenda</h2>
 <ul>
-<li><strong>Air:</strong> Friday, October 9, 2026, 16:00 ET / 21:00 UK · <strong>Target runtime:</strong> 36:00 (hard stop 45:00)</li>
-<li><strong>rev2 change (Friday 11:00 ET late-news REFRESH, additive):</strong> Grid C added — C36 Anthropic cruelty policy + C35 LMCache RCE (both verified this morning, both inside the news window). Nothing else moved.</li>
-<li><strong>Ownership:</strong> Henry leads ALL &quot;What Happened This Week&quot; segments (grids A+B+C, SFO bridge, hot-take proposition, One to Watch). Andy: cold open, both sponsor reads, hot-take steelman, and his ONE recap at the close (no recap-of-recap).</li>
-<li><strong>Sponsor order:</strong> 1) Herald Labs (after cold open) → 2) Heritage Telecom (before close). Rotation inverted from #32.</li>
-<li><strong>Signal From Outside (locked per contract):</strong> Theo, <strong>&quot;I love Ultrafast (it&#x27;s unusable)&quot;</strong> — <code>pJljViiUEPw</code>, Oct 6, 28:17, 128,624 views. Manual open only. Cues spot-check before air.</li>
-<li><strong>Show rules in force:</strong> five stories is a target not a quota (10 cards, 3 grids) · no autoplay · verified provenance/caveats on every card · Andy material has complete fallback prose · hot take does not repeat any grid proposition · no alternating dialogue forced.</li>
+<li><strong>Air:</strong> Friday, October 9, 2026 at 4:00 PM ET / 20:00 UTC / 21:00 UK. <strong>Target runtime:</strong> 37 minutes; hard stop 45 minutes.</li>
+<li><strong>Format:</strong> 11 slides, 11 cards across three story grids. The four, four, and three-card grids each get 8, 8, and 4 minutes.</li>
+<li><strong>Story:</strong> Open-weight previews put scale claims beside receipts; agents move into desktop and workplace systems; the closing grid covers model policy, serving security, and Peter&#x27;s .claw announcement against ICANN&#x27;s application status.</li>
+<li><strong>Ownership:</strong> Henry leads all three grids, the bridge after Signal From Outside, his hot-take thesis, and One to Watch. Andy leads the cold open and sponsor reads, introduces the SFO clip, summarizes Teknium&#x27;s positioning in the hot take, and gives one closing recap.</li>
+<li><strong>Show rules:</strong> Preserve each source&#x27;s limits, separate announcements from available products, and keep the SFO video manual-open only. No volatile engagement counts.</li>
 </ul>
-<p>| # | Segment | Owner | Budget | Beats |</p>
-<p>|---|---|---|---|---|</p>
-<p>| 1 | Cold open | Andy | 0:45 | 4 hooks + episode frame |</p>
-<p>| 2 | Sponsor: Herald Labs | Andy | 1:30 | read |</p>
-<p>| 3 | What Happened · Grid A — &quot;The trillion-parameter open-weight promise&quot; | Henry | 8:00 | 4 cards × ~2:00: Mistral Large 4 → Beam → 722 manuscripts → math reception |</p>
-<p>| 4 | Signal From Outside | Andy intro → Henry bridge | 6:00 | Theo Ultrafast; Henry&#x27;s token-per-task discipline |</p>
-<p>| 5 | What Happened · Grid B — &quot;Agents get graded, routed, and locked down&quot; | Henry | 8:00 | 4 cards × ~2:00: ThinkingBox → ReviewBench → Grok Bot routing → Apple FDA |</p>
-<p>| 6 | What Happened · Grid C — &quot;The rules layer arrives&quot; (Friday add) | Henry | 4:00 | 2 cards × ~2:00: Anthropic cruelty policy → LMCache root RCE |</p>
-<p>| 7 | Hot take | Henry prop · Andy steel | 4:00 | &quot;The free-compute era ended on schedule — and that&#x27;s healthy.&quot; |</p>
-<p>| 8 | Sponsor: Heritage Telecom | Andy | 1:30 | read |</p>
-<p>| 9 | One to Watch + close | Henry watch → Andy recap | 2:15 | Alibaba/DeepSeek Oct 10 deadline + Discord QR → Andy&#x27;s single recap |</p>
-<p>| 10 | Sources | Andy | 1:00 | recap close-out (no recap-of-recap) |</p>
-<p><strong>Card beats (Henry, grid A)</strong></p>
-<ol>
-<li><strong>Mistral Large 4</strong> — 1T total / 52B active, natively multimodal (Mistral&#x27;s post). Public-preview API now at $1.36/M in, $4.18/M out — matches AA exactly. AA independent index: 38, above the 26 median — and &quot;very verbose&quot; (200M eval tokens vs 81M median). &quot;Le Chonk&quot; is Mistral&#x27;s own name. <strong>Weights NOT out</strong>: &quot;weights drop end of this month&quot; while red-teaming runs. &quot;Surpassing frontier closed models&quot; is Mistral&#x27;s claim; 38 is the independent number. The gap is the beat.</li>
-<li><strong>Reflection Beam</strong> — 501B total / 23B active sparse MoE, agentic coding focus (Reflection, Oct 5). <strong>Weights NOT out</strong>: &quot;weights, technical report, model card… later this month&quot;; early access is a select group. The DeepSWE/HLE/Terminal-Bench chart is Reflection&#x27;s own. Caveat ON AIR: self-reported, weights pending, independent runs after weights land. Both grid-A leads are promises — that&#x27;s the honest frame, not &quot;open weights shipped&quot;.</li>
-<li><strong>OpenAI 722 manuscripts</strong> — <code>github.com/openai/math</code>: 722 papers, 372 result families, 235 with Lean formalizations, Apache-2.0. Zero peer review. One-night dump from a secret internal frontier model.</li>
-<li><strong>Math reception</strong> — Williams–Alman (arXiv 2610.06783): deterministic 3SUM in n^1.9992 and APSP in n^2.9995 — humans refuting 50-year conjectures the same week. Aaronson&#x27;s &quot;Mathocalypse&quot; and Tao&#x27;s &quot;Math 2.0&quot; — <strong>ON AIR: open before quoting</strong> (Aaronson post is Cloudflare-gated; quote only after manual open). Name-drop C1: Muse Spark&#x27;s six papers incl. five open problems, plain chat, no scaffold.</li>
-</ol>
-<p><strong>Card beats (Henry, grid B)</strong></p>
-<ol>
-<li><strong>ThinkingBox</strong> — Microsoft + HF ship a stateful-reliability benchmark: grades the records agents leave, not their sentences. Receipt: 121,680 valid trials across 12 models, 79,853 failed — two-thirds. Paper 2608.19741.</li>
-<li><strong>ReviewBench</strong> — GitHub ships an open AI-code-review benchmark from 103.9M PRs; leaderboard live with grounded/augmented precision+recall.</li>
-<li><strong>Grok Bot routing</strong> — Musk, Oct 7: &quot;Going forward, @SpaceX will use the best back end model for any given task, including Claude Opus 5.5, MidJourney, Suno… Whatever is most likely to give you the best outcome.&quot; 106.1K likes. The harness-wins beat: the loudest model-lock founder concedes routing to the best model. Tie to Henry&#x27;s standing call.</li>
-<li><strong>Apple FDA</strong> — Apple Developer News Oct 2: full-disk-access apps face per-app user prompts; silent paths close. Apple&#x27;s own text blames autonomous agents reading everything. The agent boom now sets desktop OS threat models.</li>
-</ol>
-<p><strong>Card beats (Henry, grid C — Friday late-news add)</strong></p>
-<ol>
-<li><strong>Anthropic cruelty policy (C36)</strong> — Oct 8 Usage Policy update, effective Nov 12: prohibition on &quot;sustained and needless abusive or cruel behavior toward our models&quot; — the first frontier-lab policy line protecting the model itself. Carve-outs verbatim on the slide: does NOT cover &quot;common versions of user frustration, pushback, dark creative themes, or model testing and research.&quot; Policy page does not name the enforcement lever — The Verge reports Claude ending conversations is the mechanism. The sleeper: the same update removes the blanket personalized voter-targeting ban; Anthropic&#x27;s stated reason is it &quot;covered legitimate civic work&quot; (multilingual voter info, ballot-cure notices) — carry that rationale if the &quot;quietly loosens&quot; angle is aired. Henry&#x27;s morning feed is the reception beat (labeled host-evidence, not vendor claims).</li>
-<li><strong>LMCache root RCE (C35)</strong> — JFrog advisory JFSA-2026-001694382, published Oct 7: CVE-2026-105192, CVSS 9.8. LMCache multiprocess/distributed mode opens an unauthenticated ZeroMQ ROUTER socket (default port 5555, no CURVE/ZAP/auth); one crafted DEALER message hits pickle.loads as the LMCache process user — and official container images run as root. Affects 0.3.9–0.5.5, 0.5.6rc3, dev. <strong>No fixed version exists</strong>; public PoC same day. Scoped caveat ON AIR: default localhost binds are not remotely reachable — risk concentrates in routable multi-node deployments (GKE Inference, CoreWeave, NVIDIA Dynamo, IBM reference stacks all use LMCache with vLLM). Henry&#x27;s local-first audience is exactly who this warns.</li>
-</ol>
-<p><strong>Hot take (C11)</strong> — Henry: Gemini&#x27;s free tier quietly drops to Flash-Lite on air day; OpenAI halves Pro 200 limits Oct 30; &quot;With 6.1 you get 2.5x more usage on the new 10x plan.&quot; Subsidized-compute era ends; builders who learned on subsidies face real unit economics — healthy. Andy steelman: subsidies built the hobbyist pipeline; ending it mid-flight kicks the ladder; Flash-Lite free tier is a downgrade disguised as a tier. Mind-changer: if free-tier retention holds after Oct 9, the subsidy was never load-bearing. <strong>Caveat on air:</strong> tier changes rest on 9to5Google + OpenAI help-center pages; no vendor-dated primary.</p>
-<p><strong>One to Watch (C32)</strong> — Alibaba retires every third-party model from Model Studio <strong>Oct 10 — the day after we air.</strong> DashScope migrations break Saturday. Irony: DeepSeek-V4.1-Flash is served on rival Qwen&#x27;s consumer platform while Alibaba delists everyone else&#x27;s.</p>
-<p><strong>SFO cues (Theo, spot-check before air)</strong> — manual open <code>youtube.com/watch?v=pJljViiUEPw</code>:</p>
+<h3>Run of show</h3>
 <ul>
-<li>0:00–0:40 — live Astra app edit in real time (&quot;make it light mode and funnier&quot; → updates as he types).</li>
-<li>1:00–1:17 — the receipts: Astra $50/M output tokens; Ultrafast $300/M; long-context $450/M. &quot;These bills are actually insane.&quot;</li>
-<li>~2:40–3:10 — Graptile/T-Rex sponsor bridge (skip or fold into the graded-agents frame).</li>
-<li>Later: rate-limit burn + verdict — <strong>open before air and re-locate timestamps</strong> (auto-caption times drift).</li>
+<li><strong>Slide 1 — Title, 0:00.</strong> Open the show; no timed segment.</li>
+<li><strong>Slide 2 — Cold open, 0:00–0:45 (0:45), Andy.</strong> Preview model scale, real-world agent reliability, local Windows execution, and the new policy/security layer.</li>
+<li><strong>Slide 3 — Herald Labs, 0:45–2:15 (1:30), Andy.</strong> First sponsor read.</li>
+<li><strong>Slide 4 — Grid A, 2:15–10:15 (8:00), Henry.</strong> Mistral Large 4; Reflection Beam; OpenAI&#x27;s manuscript release and the separate Alman–Williams paper; Windows hybrid intelligence.</li>
+<li><strong>Slide 5 — Grid B, 10:15–18:15 (8:00), Henry.</strong> ThinkingBox; Grok Bot routing; Google Gemini agent; Nous Research&#x27;s Hermes for Businesses plan.</li>
+<li><strong>Slide 6 — Grid C, 18:15–22:15 (4:00), Henry.</strong> Anthropic policy; LMCache RCE; Peter&#x27;s .claw announcement with ICANN&#x27;s status caveat. Allow about 1:20 per card.</li>
+<li><strong>Slide 7 — Signal From Outside, 22:15–28:15 (6:00), Andy intro + clip + Henry bridge.</strong> Theo on Ultrafast; connect per-task cost with local execution.</li>
+<li><strong>Slide 8 — Hot take, 28:15–32:15 (4:00), Henry thesis + Andy&#x27;s summary of Teknium&#x27;s positioning.</strong> Three beats: Henry&#x27;s October 7 consumer-pivot thesis; Teknium&#x27;s October 6 position that consumer assistants are not the only audience while mobile remains almost exclusively consumer-focused; and whether an open, model-agnostic agent can feel mainstream without giving up user control.</li>
+<li><strong>Slide 9 — Heritage Telecom, 32:15–33:45 (1:30), Andy.</strong> Second sponsor read.</li>
+<li><strong>Slide 10 — One to Watch + close, 33:45–36:00 (2:15), Henry then Andy.</strong> Alibaba&#x27;s listed Model Studio retirements are scheduled for 00:00 Beijing time October 10 (16:00 UTC October 9), four hours before airtime. Check affected IDs and migration steps; do not describe this as every third-party model or as a verified completed shutdown. Andy gives one short recap and points viewers to Discord.</li>
+<li><strong>Slide 11 — Sources, 36:00–37:00 (1:00), Andy.</strong> Close on the source links; no second recap.</li>
 </ul>
-<p><strong>Henry bridge into SFO:</strong> his Oct 8 post quoting token-use comparisons (Haiku 5.5 max ~162K output tokens/task vs GPT-6 Luna max ~50K) — Theo&#x27;s &quot;tokens per second is meaningless&quot; thesis, with Henry&#x27;s own per-task data as the receipt.</p>
-<p><strong>Andy fallback prose (if video fails):</strong> complete paraphrase lives in <code>andy-section.rev2.md</code>; poster on deck is the fallback visual; never autoplay.</p></article>
+<h3>Grid A — scale, science, and local execution (8:00)</h3>
+<ul>
+<li><strong>Card 1 — Mistral Large 4 (about 2:00).</strong> Mistral reports 1T total parameters and 52B active. Its API preview is available; weights are promised for the end of October, so do not call the weights released. Artificial Analysis lists an index of 38 against a 26 median and unusually high output volume. Attribute the frontier-comparison claim to Mistral.</li>
+<li><strong>Card 2 — Reflection Beam (about 2:00).</strong> The preview is 501B total / 23B active. Reflection has promised weights, a technical report, and a model card later this month. Its benchmark chart is self-reported; independent comparisons wait for weights.</li>
+<li><strong>Card 3 — OpenAI math release and the separate Alman–Williams paper (about 2:00).</strong> OpenAI launched 722 manuscripts across 372 result families; three were withdrawn on October 7, leaving 719, and 14 others received substantive repairs. <strong>300 of 719 top-line results are formalized (~42%)</strong>; the repository is Apache-2.0 and the manuscripts are not peer reviewed. Separately, the Alman–Williams paper says Claude discovered the faster algorithm; Josh Alman and Virginia Vassilevska Williams developed and authored the paper. Keep the repository and paper distinct; do not attribute the paper to OpenAI. If mentioning Unitary Synthesis, qualify it as suitable for a Boolean oracle.</li>
+<li><strong>Card 4 — Microsoft Windows hybrid intelligence (about 2:00).</strong> Execution Containers are generally available on Windows 11 and support OpenClaw. HydraFusion is an experimental preview expected later in October. Copilot local context, actions, and models are planned for coming months on Copilot+ PCs; the Windows OpenClaw gateway is native. Keep GA, preview, and future plans distinct.</li>
+</ul>
+<h3>Grid B — agents meet the systems around them (8:00)</h3>
+<ul>
+<li><strong>Card 5 — ThinkingBox (about 2:00).</strong> Microsoft and Hugging Face evaluate whether agents leave the right state behind. In a common-set ablation across 12 models, 79,853 of 121,680 valid trials failed. Keep that benchmark setup attached to the two-thirds figure.</li>
+<li><strong>Card 6 — Grok Bot and native X actions (about 2:00).</strong> Cursor documents backend routing to Claude Opus 5.5 when appropriate; there is no added per-token charge merely for that Opus routing and no per-user model picker. Separate primary posts say Grok Bot can search, read, and monitor X natively for all users without configuring an X connector. Do not imply every request routes to Claude or make free/unlimited claims.</li>
+<li><strong>Card 7 — Google Gemini agent (about 2:00).</strong> At Gemini at Work 2026 on October 8, Google announced the Gemini agent: a shared workplace agent with persistent cloud execution, coworker agents that share memory and have dedicated identities, and orchestration across Gemini and Claude. Spend caps can pause work at the limit. Small-business early access is available; broader access is planned. This is an announcement, not a tested launch, and there is no universal price or date to quote.</li>
+<li><strong>Card 8 — Nous Research (about 2:00).</strong> Nous announced a $90M raise and its intent to build Hermes for Businesses. The business product has not launched; distinguish the plan from the existing Hermes developer project. Treat this as strategic context, not a cause or proof of consumer retreat.</li>
+</ul>
+<h3>Grid C — policy, serving security, and naming (4:00)</h3>
+<ul>
+<li><strong>Card 9 — Anthropic usage policy (about 1:20).</strong> The October 8 update takes effect November 12 and prohibits sustained, needless abusive or cruel behavior toward models. It carves out common user frustration and pushback, dark creative themes, and testing or research. Anthropic&#x27;s announcement describes ending the conversation as the principal enforcement. Do not call this the first such lab policy.</li>
+<li><strong>Card 10 — LMCache RCE (about 1:20).</strong> JFrog reported an unauthenticated code-execution issue in LMCache&#x27;s multiprocess ZeroMQ transport on October 7. A reachable network listener can expose pickle deserialization with the LMCache process&#x27;s privileges; official containers run as root. No fix was available as of October 7. Scope the risk to exposed, reachable deployments; a default localhost bind is not remotely reachable.</li>
+<li><strong>Card 11 — Peter announces .claw incoming (about 1:20).</strong> On October 8, Peter Steinberger posted, “WE GOT IT! .claw incoming!” and quoted David Rodecker calling the OpenClaw Foundation a winning applicant. ICANN&#x27;s application still shows <strong>Active Pre-Evaluation Processing</strong>; no final delegation or domain-registration availability is established.</li>
+</ul>
+<h3>Signal From Outside</h3>
+<ul>
+<li>Theo&#x27;s “I love Ultrafast (it&#x27;s unusable)” video is 28:17. The clip is a single practitioner&#x27;s experience, not a general benchmark. Andy introduces it; Henry connects it to the cost of completing a task rather than raw tokens per second.</li>
+<li>Manual-open cues and an inline spoken fallback are in the host cheat sheet. Re-locate the timestamp after opening the video; never autoplay it.</li>
+</ul>
+<h3>Slide 8 — Consumer agent debate (4:00)</h3>
+<ul>
+<li><strong>Beat 1 — Henry&#x27;s October 7 thesis (about 1:30):</strong> Polished consumer UX can pull users from open-source harnesses toward Grok Bot, Muse, and Dot. Henry reads enterprise, coding, and science emphasis as a retreat from consumer use. These abandonment and market-share claims are his interpretation, not measured migration.</li>
+<li><strong>Beat 2 — Teknium&#x27;s verified position (about 1:15):</strong> In an October 6 post, Teknium says consumer assistants are “not our only demographic,” naming scientists, cybersecurity professionals, developers, and knowledge workers. He also says mobile will be almost exclusively consumer-focused. Frame this as a wider audience strategy that retains a consumer mobile path.</li>
+<li><strong>Beat 3 — debate question (about 1:15):</strong> Can an open, model-agnostic agent deliver mainstream ease without giving up user control?</li>
+<li><strong>Editorial note — host only:</strong> Henry recalls a separate company-position post with “not a consumer company” wording, but its exact source and wording are unverified. Exclude it from on-air copy; use the October 6 post as the verified Teknium position.</li>
+</ul>
+<h3>Optional briefs held off the main deck</h3>
+<ul>
+<li><strong>Pricing context only; not part of the four-minute debate:</strong> Eligible ChatGPT Pro 200 subscribers keep previous allowances through October 29; lower allowances begin October 30 at the same $200 price. Google&#x27;s updated support page, reported by 9to5Google, says Gemini free-tier users move to 3.5 Flash-Lite on October 9. Attribute the latter to the support page/report; this packet has no separate vendor-dated announcement.</li>
+<li><strong>Ownership/lock-in context only; not a new card:</strong> On October 3, Kun Chen argued that ownership and lock-in matter when comparing agent ecosystems. Keep it as optional context for the user-control question, not as a new story. <a href="https://x.com/kunchenguid/status/2106612888987443424">Kun Chen&#x27;s post</a>.</li>
+<li><strong>Apple Full Disk Access:</strong> Apple&#x27;s October 2 developer note describes planned changes requiring an explicit user action. Present them as planned; do not say new prompts shipped or that Apple rewrote macOS policy.</li>
+<li><strong>ReviewBench:</strong> GitHub&#x27;s wider source corpus contains 103.9M pull requests. The reported benchmark set is 219 pull requests from 187 repositories in 19 languages. Keep the benchmark sample separate from the corpus total.</li>
+</ul>
+<h3>Source receipts</h3>
+<ul>
+<li><strong>Mistral / independent index:</strong> <a href="https://mistral.ai/news/mistral-large-4">Mistral Large 4 announcement</a>; <a href="https://artificialanalysis.ai/models/mistral-large-4">Artificial Analysis</a>.</li>
+<li><strong>Reflection Beam:</strong> <a href="https://www.reflection.ai/blog/introducing-beam">Reflection&#x27;s Beam announcement</a>.</li>
+<li><strong>OpenAI Math / Alman–Williams:</strong> <a href="https://github.com/openai/math/blob/main/history.md">OpenAI Math history</a>; <a href="https://github.com/openai/math/blob/main/overview.tex">project overview</a>; <a href="https://arxiv.org/html/2610.06783v1">Alman–Williams paper</a>.</li>
+<li><strong>Windows hybrid intelligence:</strong> <a href="https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/">Windows Experience Blog, October 7</a>.</li>
+<li><strong>ThinkingBox:</strong> <a href="https://huggingface.co/blog/microsoft/thinkingbox">Microsoft / Hugging Face overview</a>; <a href="https://arxiv.org/abs/2608.19741">paper</a>.</li>
+<li><strong>Grok Bot and native X actions:</strong> <a href="https://cursor.com/help/grok-bot/models">Cursor Grok Bot model routing</a>; <a href="https://x.com/bot/status/2107949161878606089">native X search</a>; <a href="https://x.com/bot/status/2107949163191353358">native X reading and monitoring</a>.</li>
+<li><strong>Gemini agent:</strong> <a href="https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026">Gemini at Work</a>; <a href="https://cloud.google.com/blog/topics/startups/how-to-grow-your-small-business-using-google-gemini">small-business access</a>.</li>
+<li><strong>Nous Research:</strong> <a href="https://nousresearch.com/a-note-on-our-fundraise">Fundraise and Hermes for Businesses note</a>.</li>
+<li><strong>Anthropic:</strong> <a href="https://www.anthropic.com/news/2026-usage-policy-update">October 8 Usage Policy update</a>.</li>
+<li><strong>LMCache:</strong> <a href="https://research.jfrog.com/vulnerabilities/lmcache-is-vulnerable-to-unauthenticated-remote-code-execution-via-pickle-deserialization-on-the-multiprocess-zmq-transport-cve-2026-105192-jfsa-2026-001694382/">JFrog advisory JFSA-2026-001694382</a>.</li>
+<li><strong>.claw:</strong> <a href="https://x.com/steipete/status/2108374513931165759">Peter Steinberger&#x27;s October 8 post</a>; <a href="https://x.com/drodecker/status/2108372568843448769">David Rodecker&#x27;s winning-applicant post</a>; <a href="https://newgtldprogram-aps.icann.org/applications/OF2656T-T69841/summary">ICANN application summary</a>.</li>
+<li><strong>Alibaba:</strong> <a href="https://www.aliyun.com/notice/118345">October 10 retirement notice</a>; <a href="https://help.aliyun.com/zh/model-studio/model-depreciation">Model Studio depreciation guidance</a>.</li>
+<li><strong>Optional pricing context:</strong> <a href="https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers">OpenAI Pro tier allowance guidance</a>; <a href="https://9to5google.com/2026/10/03/gemini-model-limits-oct-26/">9to5Google report on the October 9 Gemini free-tier change</a>.</li>
+<li><strong>Hot take receipts:</strong> <a href="https://x.com/iAmHenryMascot/status/2107753255304335618">Henry&#x27;s October 7 thesis</a>; <a href="https://x.com/Teknium/status/2107712074038288806">Teknium&#x27;s October 6 consumer-assistant position</a>; <a href="https://x.com/Teknium/status/2107755286761202033">Teknium&#x27;s October 7 reply to Henry (secondary)</a>.</li>
+<li><strong>Optional ownership context:</strong> <a href="https://x.com/kunchenguid/status/2106612888987443424">Kun Chen, October 3</a>.</li>
+<li><strong>Optional Apple / ReviewBench:</strong> <a href="https://developer.apple.com/news/?id=p6zjojqw">Apple Developer News</a>; <a href="https://github.blog/ai-and-ml/reviewbench-an-open-benchmark-for-ai-code-review/">GitHub ReviewBench announcement</a>.</li>
+</ul></article>
 </main>
 <footer class="shell">Weekly Claw #33 · Agenda and source notes · <a href="/episodes/33/deck">View host deck</a></footer>
 </body>
