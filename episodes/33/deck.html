@@ -200,18 +200,20 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
     <div class="part-label">Cold open &middot; the frame</div>
     <h2 class="text-center">The week the receipts <span class="gradient-text">went public.</span></h2>
     <div class="gradient-line"></div>
-    <p class="subtitle text-center mt-1" style="max-width:980px;">Trillion-parameter previews with promised weights. A one-night math dump, unrefereed and Apache-licensed. An agent benchmark that grades the database, not the demo. A desktop OS rewritten around what agents might read. And a price ladder that ends at $450 per million.</p>
+    <p class="subtitle text-center mt-1" style="max-width:980px;">Trillion-parameter previews with promised weights. A one-night math dump, unrefereed and Apache-licensed. An agent benchmark that grades the database, not the demo. A desktop OS rewritten around what agents might read. And a price ladder that ends at $450 per million. And this morning: a usage policy that protects the model itself &mdash; and a serving-stack root hole with no patch.</p>
     <div class="mt-3 arc-wrap">
       <div class="arc-step now"><div class="arc-num">1</div><div class="arc-label">The open-weight promise</div></div>
       <div class="arc-step"><div class="arc-num">2</div><div class="arc-label">Math goes public</div></div>
       <div class="arc-step"><div class="arc-num">3</div><div class="arc-label">Outside signal</div></div>
       <div class="arc-step"><div class="arc-num">4</div><div class="arc-label">Grading the agents</div></div>
-      <div class="arc-step"><div class="arc-num">5</div><div class="arc-label">One to watch</div></div>
+      <div class="arc-step"><div class="arc-num">5</div><div class="arc-label">The rules layer</div></div>
+      <div class="arc-step"><div class="arc-num">6</div><div class="arc-label">One to watch</div></div>
     </div>
     <div class="mt-3" style="width:100%;display:flex;flex-direction:column;align-items:center;">
       <div class="hook"><span class="hook-num gradient-text">&#129504;</span><span class="hook-text">Mistral and Reflection previewed <span class="orange">trillion-scale open weights</span> in the same week. Neither ships until <span class="orange">month-end</span> &mdash; the promise is the story.</span></div>
       <div class="hook"><span class="hook-num gradient-text">&#128165;</span><span class="hook-text">OpenAI dumped <span class="orange">722 unrefereed math papers</span> overnight. The same week, humans refuted 50-year conjectures &mdash; <span class="orange">deterministically</span>.</span></div>
       <div class="hook"><span class="hook-num gradient-text">&#128220;</span><span class="hook-text">Microsoft&rsquo;s own benchmark: <span class="orange">79,853 of 121,680 agent trials fail</span>. Apple read the same writing on the wall.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#128737;</span><span class="hook-text">Anthropic bans <span class="orange">&ldquo;sustained and needless&rdquo; cruelty</span> toward Claude &mdash; the same week an <span class="orange">unpatched CVSS 9.8 root hole</span> ships in vLLM&rsquo;s cache layer.</span></div>
     </div>
   </div>
 </div>
@@ -291,6 +293,31 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
       <div class="story-card">
         <a class="thumb" href="https://developer.apple.com/news/?id=101stbvu" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/apple-fda.png" alt="Apple Developer News, October 2, 2026: Updates to Full Disk Access in macOS" style="object-fit:cover;object-position:top;"></a>
         <div class="meta"><h3>Apple tightens Full Disk Access &mdash; because agents read everything.</h3><p>Oct 2 developer update: per-app prompts replace silent full-disk paths; Apple&rsquo;s own text cites autonomous agents sidestepping controls. The agent boom is now a desktop OS threat model.</p><a href="https://developer.apple.com/news/?id=101stbvu" target="_blank" rel="noopener">&#9654; LIVE &middot; developer.apple.com &middot; OCT 2, 2026</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- SLIDE 6 — WHAT HAPPENED · GRID C (Friday 11:00 ET late-news ADD) -->
+<div class="slide" id="s-seg-grid-c">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #33</div><div class="slide-tag">WHAT HAPPENED THIS WEEK</div>
+  <div class="glow-orb orb-red" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
+  <div class="content">
+    <div>
+      <div class="part-label">What happened this week &middot; part 3 &middot; added Friday morning</div>
+      <h2>The rules layer arrives: <span class="gradient-text">dignity clauses and a CVSS 9.8.</span></h2>
+      <div class="gradient-line"></div>
+      <p class="subtitle mt-1" style="max-width:1000px;">Two overnight receipts: a frontier lab writes model dignity into enforceable policy, and the cache layer everyone bolts onto vLLM ships an unauthenticated root hole. Each card links its primary receipt.</p>
+    </div>
+    <div class="story-grid" style="grid-template-rows:1fr;">
+      <div class="story-card">
+        <a class="thumb" href="https://www.anthropic.com/news/2026-usage-policy-update" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/anthropic-cruelty-policy.png" alt="Anthropic's 2026 Usage Policy update page, Oct 8 2026: the paragraph adding a prohibition on sustained and needless abusive or cruel behavior toward our models" style="object-fit:cover;object-position:top;"></a>
+        <div class="meta"><h3>Anthropic bans &ldquo;sustained and needless&rdquo; cruelty toward Claude &mdash; the first policy line protecting the model itself.</h3><p>Oct 8 usage-policy update, effective Nov 12. Carve-outs: frustration, pushback, dark themes, and testing don&rsquo;t count. Same update drops the blanket personalized voter-targeting ban &mdash; Anthropic&rsquo;s stated reason: it &ldquo;covered legitimate civic work.&rdquo;</p><a href="https://www.anthropic.com/news/2026-usage-policy-update" target="_blank" rel="noopener">&#9654; LIVE &middot; anthropic.com &middot; PRIMARY POLICY PAGE</a></div>
+      </div>
+      <div class="story-card">
+        <a class="thumb" href="https://research.jfrog.com/vulnerabilities/lmcache-is-vulnerable-to-unauthenticated-remote-code-execution-via-pickle-deserialization-on-the-multiprocess-zmq-transport-cve-2026-105192-jfsa-2026-001694382/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/lmcache-rce-advisory.png" alt="JFrog Security Research advisory JFSA-2026-001694382: LMCache vulnerable to unauthenticated remote code execution via pickle deserialization on the multiprocess ZMQ transport, CVE-2026-105192, CVSS 9.8, published Oct 7 2026" style="object-fit:cover;object-position:top;"></a>
+        <div class="meta"><h3>LMCache ships an unpatched CVSS 9.8 root RCE &mdash; one unauthenticated ZeroMQ message runs code as root.</h3><p>Port 5555, no auth, pickle.loads before any validation &mdash; official containers run as root, and no fixed version exists. Scope: default localhost binds aren&rsquo;t remotely reachable; risk concentrates in routable multi-node vLLM deployments.</p><a href="https://research.jfrog.com/vulnerabilities/lmcache-is-vulnerable-to-unauthenticated-remote-code-execution-via-pickle-deserialization-on-the-multiprocess-zmq-transport-cve-2026-105192-jfsa-2026-001694382/" target="_blank" rel="noopener">&#9654; LIVE &middot; research.jfrog.com &middot; PRIMARY ADVISORY &middot; NO PATCH</a></div>
       </div>
     </div>
   </div>
@@ -423,7 +450,7 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
 <div class="slide" id="s-sources">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #33</div><div class="slide-tag">SOURCES / LINKS</div>
   <div class="content">
-    <div class="part-label">Every claim, one click &middot; verified 2026-10-08</div>
+    <div class="part-label">Every claim, one click &middot; verified 2026-10-08 + 10-09</div>
     <h2 class="text-center">Sources &amp; <span class="gradient-text">Links.</span></h2>
     <div class="gradient-line"></div>
     <div class="mt-2 two-col" style="gap:16px;">
@@ -470,6 +497,16 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
         <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
           <a href="https://developer.apple.com/news/?id=101stbvu" target="_blank" rel="noopener">developer.apple.com: FDA update, Oct 2, 2026</a>
         </div>
+        <span class="tag tag-green mt-2">C1 &middot; ANTHROPIC CRUELTY POLICY</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://www.anthropic.com/news/2026-usage-policy-update" target="_blank" rel="noopener">anthropic.com: 2026 Usage Policy update, Oct 8 (primary)</a>
+          <a href="https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude" target="_blank" rel="noopener">theverge.com: enforcement is Claude ending conversations</a>
+        </div>
+        <span class="tag tag-blue mt-2">C2 &middot; LMCACHE ROOT RCE</span>
+        <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
+          <a href="https://research.jfrog.com/vulnerabilities/lmcache-is-vulnerable-to-unauthenticated-remote-code-execution-via-pickle-deserialization-on-the-multiprocess-zmq-transport-cve-2026-105192-jfsa-2026-001694382/" target="_blank" rel="noopener">research.jfrog.com: JFSA-2026-001694382 &middot; CVE-2026-105192 &middot; CVSS 9.8</a>
+          <a href="https://thehackernews.com/2026/10/unpatched-critical-lmcache-flaw-lets.html" target="_blank" rel="noopener">thehackernews.com: corroboration &mdash; no fixed version</a>
+        </div>
         <span class="tag tag-purple mt-2">HOT TAKE &middot; TIER CHANGES</span>
         <div class="src-links" style="justify-content:flex-start;margin-top:8px;">
           <a href="https://9to5google.com/2026/10/03/gemini-model-limits-oct-26/" target="_blank" rel="noopener">9to5google.com: Gemini free tier locks to 3.5 Flash-Lite</a>
@@ -480,7 +517,7 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
           <a href="https://therouter.ai/blog/oct-2026-dashscope-massive-model-sunset-migration-guide/" target="_blank" rel="noopener">therouter.ai: Oct 10 DashScope retirement map (100+ models)</a>
           <a href="https://nfero.com/updates/legacy-model-retirements-october-2026" target="_blank" rel="noopener">nfero.com: Alibaba legacy retirement listing, Oct 10</a>
         </div>
-        <p class="src-note mt-2">Caveats: Mistral/Beam weights are promises dated month-end, not downloads; both labs&rsquo; benchmark charts are self-reported (AA&rsquo;s 38 is the independent index for ML4). The 722-manuscript counts are OpenAI&rsquo;s repo metadata; none peer-reviewed. ThinkingBox stats are Microsoft/HF&rsquo;s own ablation. The Grok Bot card is a WeeklyClaw render of a verified post (text and counts verbatim, bird-read 2026-10-08). Hot-take tier changes: Google support doc via 9to5Google, OpenAI help page (grandfathered until Oct 29). Aaronson/Tao quotes are gated until manual open on air. All video is manually opened; nothing plays on its own anywhere in this deck (no autoplay).</p>
+        <p class="src-note mt-2">Caveats: Mistral/Beam weights are promises dated month-end, not downloads; both labs&rsquo; benchmark charts are self-reported (AA&rsquo;s 38 is the independent index for ML4). The 722-manuscript counts are OpenAI&rsquo;s repo metadata; none peer-reviewed. ThinkingBox stats are Microsoft/HF&rsquo;s own ablation. The Grok Bot card is a WeeklyClaw render of a verified post (text and counts verbatim, bird-read 2026-10-08). Hot-take tier changes: Google support doc via 9to5Google, OpenAI help page (grandfathered until Oct 29). Aaronson/Tao quotes are gated until manual open on air. All video is manually opened; nothing plays on its own anywhere in this deck (no autoplay). Friday additions: Anthropic policy quotes are the newsroom page&rsquo;s own text (opened 2026-10-09); the conversation-ending enforcement detail is The Verge&rsquo;s reporting, not the policy page. LMCache facts are JFrog&rsquo;s own advisory &mdash; default localhost binds are not remotely reachable; no fixed version existed as of Oct 7.</p>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
-# Episode 33 — Henry's Sections
+# Episode 33 — Henry's Sections (rev2)
 
-Everything Henry owns on air: Grid A, the SFO bridge, Grid B, the hot-take proposition, and One to Watch.
+Everything Henry owns on air: Grid A, the SFO bridge, Grid B, Grid C (Friday late-news add), the hot-take proposition, and One to Watch.
 
 ## Grid A — "The trillion-parameter open-weight promise" (8:00)
 
@@ -45,6 +45,23 @@ Everything Henry owns on air: Grid A, the SFO bridge, Grid B, the hot-take propo
 - Numbers: Oct 2 developer update; per-app user prompts replace silent FDA paths; Apple's own text cites autonomous agents sidestepping controls.
 - Landing line: "When Apple writes OS policy because of your industry, your industry arrived. Agents are now a threat model — treat them like one."
 
+## Grid C — "The rules layer arrives" (4:00, Friday late-news add)
+
+**Card 9 — Anthropic cruelty policy (C36)**
+- The line: Oct 8 Usage Policy update, effective Nov 12 — prohibition on "sustained and needless abusive or cruel behavior toward our models." First frontier-lab policy line protecting the model itself (checked against OpenAI's current usage policies — person-directed protections only).
+- Carve-outs verbatim on air: does NOT apply to "common versions of user frustration, pushback, dark creative themes, or model testing and research." Extreme cases only.
+- Enforcement: the policy page does not name the lever — The Verge reports it's Claude ending conversations. Say it as Verge reporting, not policy text.
+- The sleeper: same update REMOVES the blanket personalized voter-targeting ban. Anthropic's stated reason: it "covered legitimate civic work" — multilingual voter info, ballot-cure notices. Carry that rationale if you air the "quietly loosens" angle; don't present it as unexplained deregulation.
+- Reception: your own morning feed — "It's a fucking tool guys… Don't tell me how to talk to MS Word." Host-evidence, and the audience heat is the point.
+- Landing line: "Anthropic wrote the model's feelings into the terms of service — and quietly rewrote the elections section in the same document. One of those is trending; the other matters."
+
+**Card 10 — LMCache root RCE (C35)**
+- Numbers: CVE-2026-105192, CVSS 9.8, JFrog Security Research, published Oct 7, discovered by Yuval Moravchick. NO fixed version. Public PoC same day.
+- The path, plain: distributed LMCache opens a ZeroMQ ROUTER socket on default port 5555 — no auth. One crafted message reaches pickle.loads before any validation. Official container images run as root. Affected: 0.3.9–0.5.5, 0.5.6rc3, dev.
+- Scoped caveat ON AIR: default localhost binds are NOT remotely reachable. Risk concentrates in multi-node deployments with routable addresses — and GKE Inference, CoreWeave, NVIDIA Dynamo, and IBM reference stacks all pair LMCache with vLLM.
+- Henry angle: "The standard recipe for cheap inference is vLLM plus LMCache, and that stack ships a no-patch root hole. If you run local or OSS serving — my whole thesis — this is the week to check what's listening on 5555."
+- Landing line: "One policy paragraph protects the model's feelings. No patch protects your root. That's the rules layer in 2026."
+
 ## Hot take proposition (2:00)
 - "The free-compute era ended on schedule — and that's healthy. Tomorrow, Gemini's free tier locks to 3.5 Flash-Lite. October 30, OpenAI halves Pro 200 — 20x to 10x Plus on Work and Codex, GPT-6 Pro chat from 200 to 100 a week — same $200. My line: with 6.1 you get 2.5x more usage on the new 10x plan. Prices are finally telling the truth about inference. Everyone who learned on subsidies now has to build unit economics that survive contact with a real bill. That's not the apocalypse; that's graduation."
 
@@ -60,3 +77,5 @@ Everything Henry owns on air: Grid A, the SFO bridge, Grid B, the hot-take propo
 - Apple: developer.apple.com/news/?id=101stbvu.
 - Tier changes: 9to5google.com/2026/10/03/gemini-model-limits-oct-26/ + help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers.
 - DashScope: therouter.ai Oct-2026 sunset guide + nfero.com listing.
+- Anthropic policy: anthropic.com/news/2026-usage-policy-update (opened + read in full 2026-10-09; quotes verbatim) + theverge.com enforcement reporting.
+- LMCache: research.jfrog.com JFSA-2026-001694382 (opened + read in full 2026-10-09) + thehackernews.com corroboration.
