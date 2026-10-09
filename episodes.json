@@ -6,6 +6,26 @@
   },
   "episodes": [
     {
+      "week": 32,
+      "title": "GPT-6.1 Sol, Gemini 4 Argon & NVIDIA’s Agent Safety Debate | WeeklyClaw #32",
+      "date": "2026-10-02",
+      "url": "https://www.youtube.com/watch?v=RRYBhrJiyU8",
+      "videoId": "RRYBhrJiyU8",
+      "thumbnailUrl": "/assets/youtube-thumbnails/w32-approved-c.png",
+      "durationSeconds": 3394.458,
+      "status": "published",
+      "visibility": "public",
+      "summary": [
+        "GPT-6.1 Sol leads the week’s discussion of model capability, coding performance and cost.",
+        "The hosts compare Pro usage allowances and what they mean for sustained agent work.",
+        "Dots and the Decisions API raise questions about how agents remember context and make decisions.",
+        "Gemini 4 Argon’s restricted access puts model availability alongside capability in the launch debate.",
+        "OpenClaw’s enterprise direction brings deployment, permissions and reliability into focus.",
+        "NVIDIA OpenShell and Sentry frame the discussion of controls around increasingly capable agents.",
+        "Jensen Huang’s interview with Ezra Klein anchors the closing debate about AI safety and accountability."
+      ]
+    },
+    {
       "week": 31,
       "title": "Opus 5.5's Price War, GPT-6 Sol & Luna, Grok 4.7 & Financial AI | Weekly Claw #31",
       "date": "2026-09-25",

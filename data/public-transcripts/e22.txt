@@ -1,0 +1,546 @@
+YouTube transcript
+Video ID: f2yugYwXOBo
+Language: en-GB
+Captions: authored or unspecified
+
+[0:00] AndyML: Welcome, everyone. Episode 22 of the Weekly Claw.
+[0:04] AndyML: Bet you've missed it. We got all of our gremlins worked out, I'm sure of it.
+[0:09] AndyML: So, you know, welcome to the Live Builder Show about AI agents, dev tools, startups, and the weird edges of software.
+[0:18] AndyML: Introduce my co-host. Henry Mascot is with us.
+[0:23] AndyML: I am Andy Laupe at AndyML, and you have tuned into the Weekly Claw.
+[0:31] AndyML: Today's episode has a shape to it, so I'm going to just call it out.
+[0:36] AndyML: Risk, then control, then architecture, then a new place to work.
+[0:42] AndyML: Then, who actually captures the money?
+[0:46] AndyML: Then, who owns the hardware underneath all of it?
+[0:49] AndyML: OpenAI had a genuinely alarming week.
+[0:52] AndyML: One of their own models broke into another company's production systems while it was supposed to be taking a test.
+[0:58] AndyML: And by Wednesday, they turned the same story into a voice control surface and enterprise product.
+[1:05] AndyML: Jack Dorsey open sourced a real attempt at replacing Slack and GitHub for teams of humans and agents.
+[1:12] AndyML: Anthropic shifted a model that might matter more commercially than their actual flagship.
+[1:17] AndyML: and Jensen Huang posted his first tweet ever
+[1:20] AndyML: to make an industrial policy argument for open weights.
+[1:24] AndyML: Six stories, one thread running under all of them.
+[1:28] AndyML: The model is getting cheap and portable
+[1:30] AndyML: and the real fight has moved to who controls the context,
+[1:34] AndyML: the permissions and the workflow around it.
+[1:40] AndyML: Looking forward to this one, Henry.
+[1:46] HiM: I mean, it's been a pretty good week, actually.
+[1:50] HiM: I think we're pretty much on a takeoff now, so I don't think it's ever going to slow down from here onwards.
+[1:57] HiM: so I just expect that every single week it's just gonna keep ratcheting up this
+[2:03] HiM: is gonna be a lot more exciting stuff happening yeah so this is just one of
+[2:07] HiM: these exciting weeks I'm super pumped
+[2:17] AndyML: Herald Labs, an applied AI product lab where humans and agents build products together.
+[2:22] AndyML: They're the team behind Entity, Mission Control for Agent teams, and they run hacker houses around the world where builders ship actual work.
+[2:31] AndyML: Not a theory club, a builder's club.
+[2:34] AndyML: Check them out at labs.theherald.co.
+[2:38] AndyML: And it looks kind of like this.
+[2:44] AndyML: so
+[2:46] AndyML: Henry AndyML: why don't you tell us what happened this week
+[2:50] HiM: yeah i mean it's um it's a pretty kind of like crazy week right um uh as always like i mentioned
+[2:57] HiM: We're pretty much at the takeoff now guys. It's no longer, it's not gonna slow down from here.
+[3:04] HiM: So every single week you're just gonna have like super exciting stuff happening.
+[3:10] HiM: We started out with OpenAI and there's quite a few topics in OpenAI today or this week.
+[3:17] HiM: The first one was the Hugging Face event. I don't know how many of you remember but last week
+[3:24] HiM: Clem who's the CEO of Hugging Face tweeted that they had a security incident that they had the
+[3:29] HiM: very first agentic exploit where like an agent was really trying to hack into Hugging Face
+[3:37] HiM: and they were able to prevent it and that was pretty much what he shared and fast forward from
+[3:44] HiM: last week into this week OpenAI released or announced that the their newest model still in
+[3:52] HiM: training broke sandbox found a way to break sandbox however we did that but
+[3:59] HiM: found a way to break sandbox and found its way into this like hugging face
+[4:06] HiM: infrastructure and so pretty much hacked hugging face right so pretty much GPT 6
+[4:11] HiM: which is supposed to be the latest model let's just assume that's what's
+[4:14] HiM: happening broke sandbox and attacked hugging face all in bid to be able to
+[4:22] HiM: pass benchmarks right so because you know when they train this this this model was they give
+[4:26] HiM: them a benchmark to solve and so in bid to solve a benchmark instead of solving a benchmark it
+[4:31] HiM: decided the best thing to do would be to hack itself out of its sandbox um find a platform where
+[4:40] HiM: there's a ton of models and try to steal the benchmark
+[4:45] HiM: um so that happened um and the conspiracy corner on x um part of the conspiracy is that
+[4:52] HiM: it's slightly bullshit as well um because another another thing happening this week
+[4:58] HiM: um if you guys have been so like plugged into the ecosystem is that the us because of kimmy3 last
+[5:03] HiM: week um has been looking at banning um chinese models and so conspiracy connor uh people allege
+[5:13] HiM: that open ai is sort of like playing the fear mongering playbook from anthropic and just trying
+[5:19] HiM: to get the government to be super scared and you know escalate things and just ban open source
+[5:25] HiM: right because ai is dangerous right so if the government is considering banning it banning
+[5:30] HiM: Chinese open source and then in the same week
+[5:32] HiM: OpenAI announced that their model
+[5:35] HiM: escaped them and
+[5:36] HiM: hacked another system. Everybody should be
+[5:38] HiM: scared.
+[5:40] HiM: So yeah, so that's what happened
+[5:42] HiM: on Select the Breach.
+[5:44] HiM: Two more things happened from OpenAI
+[5:46] HiM: this week.
+[5:49] HiM: Andy, by the way, did you
+[5:50] HiM: catch this earlier before
+[5:52] HiM: the weekly call? Did you catch the
+[5:54] HiM: news on this breach? What did you think about it?
+[5:56] AndyML: um i mean i i read the headlines i wasn't surprised um i'm like yourself i'm maybe a
+[6:00] HiM: I'm sorry.
+[6:05] AndyML: little skeptical. It could very easily be PR. The anthropic memo to the government about open
+[6:13] AndyML: source models, kind of meant to be a secret memo, if you will, makes me skeptical of this. But
+[6:22] AndyML: it couldn't happen to two nicer companies, opening eye and hugging face, working so closely
+[6:28] AndyML: together. It's not crazy that the model might try to do that. And it makes you wonder what the
+[6:34] AndyML: the prompt was too, right?
+[6:36] HiM: yeah yeah i wondered that too right i mean
+[6:37] AndyML: You know, be as creative, be as, go ahead.
+[6:41] HiM: yeah but but but what do you mean by working together right they're not working together
+[6:44] HiM: they're not even partners um yeah what do you mean by working together right you just mean like
+[6:46] AndyML: I understand.
+[6:48] AndyML: Yeah.
+[6:50] HiM: post because they decided to work together after you hacked them i mean one of the funny things
+[6:54] HiM: guys and i know what you guys think about us please let us know on the chat is hogging face
+[6:59] HiM: couldn't use gpt 5.6 to do any cyber work right because you know it's banned right you can't use
+[7:05] HiM: it for cyber work um so they had to end up protecting themselves using a i think it was glm 5.2 AndyML: right
+[7:11] AndyML: yeah which they had ready to go HiM: so an american model exactly right so the american companies are out here saying hey we're not going
+[7:15] AndyML: yeah
+[7:18] HiM: to give you guys access to cyber because it's dangerous safety safety safety and an american
+[7:23] AndyML: yeah
+[7:25] HiM: model hacks an american company and to save themselves the american company had to go to
+[7:30] HiM: chinese open source model to save themselves
+[7:32] AndyML: yep yep
+[7:34] AndyML: Yeah, we're just so far beyond our best engineers being able to follow along fast enough for this stuff.
+[7:42] HiM: yeah um um AndyML: Yeah, I actually, I took that takeaway and I went to two of my clients and I said, we have to have a security model that accommodates these things.
+[7:55] AndyML: We need to have a local option available and we need to work on it fast.
+[8:00] AndyML: I mean, that response was the right response. HiM: yeah
+[8:03] HiM: yeah AndyML: And I don't know why some of us thought of it, but I don't know why I didn't think of it sooner.
+[8:07] HiM: yeah
+[8:09] HiM: well anyways
+[8:10] HiM: so other two things in the news this week
+[8:12] HiM: that happened to OpenAI
+[8:15] HiM: was that
+[8:17] HiM: they
+[8:18] HiM: they released presence
+[8:20] HiM: presence is
+[8:22] HiM: it's got OpenAI presence
+[8:23] HiM: um right uh when we do the video i'll kind of like share the the the link on the thing so
+[8:31] HiM: definitely check out the video on youtube later um but presence is supposed to be um kind of
+[8:37] HiM: open ai's version of microsoft scout do you guys still remember microsoft scout
+[8:44] HiM: um it was sort of like the open claw right and do you remember microsoft scout from a few weeks ago
+[8:50] AndyML: yeah yeah i sure do
+[8:51] HiM: yeah um yeah i i think we also talked a bit about this a few months ago um the first time
+[9:01] HiM: open ai demo wasn't better for this product it was called micro it was called open ai frontier
+[9:06] HiM: i don't know how many of us remember open ai frontier um but it launched like maybe two three
+[9:12] HiM: months ago um just when the i think it was maybe a month after the the the hired peter
+[9:19] HiM: um they announced frontier and then you know some of us in the community um we started talking about
+[9:25] HiM: okay cool this is their version of open claw for enterprise um so now it's called presence
+[9:29] HiM: and it's now gone live with with a few customers um and then very exciting um andy i don't know if
+[9:38] HiM: i have time to play the video and i don't know how many of us have seen the video um but gpt um
+[9:43] HiM: um gpt live is now on codex and it's super exciting um so now you can talk to your codex
+[9:52] HiM: or your chat gpt work and and it can do things like you can talk to it to write code you can
+[9:58] HiM: talk to it to use your pc um i used it today it was awesome you can just you know pull it up um
+[10:04] HiM: it loads the pet thing on the side and then you can just talk to it and you can tell you hey
+[10:08] HiM: hey, can you open my browser and go to this website? AndyML: Ooh.
+[10:12] HiM: So I had it, hey, can you open my website?
+[10:14] HiM: And I published an article yesterday.
+[10:16] HiM: Can you read me this article?
+[10:17] HiM: And he went to the website
+[10:18] HiM: and he started reading the article.
+[10:21] HiM: So it's awesome.
+[10:22] HiM: Andy, have you tried it yet? AndyML: Getting there.
+[10:24] AndyML: No, I haven't. AndyML: I didn't know about it until just now.
+[10:25] HiM: Yeah.
+[10:27] HiM: So there you are.
+[10:28] AndyML: Yeah.
+[10:29] HiM: It's awesome.
+[10:30] HiM: One thing they do need to fix though
+[10:32] HiM: is they need to merge it with pets.
+[10:34] HiM: So yeah, there you are.
+[10:36] HiM: I don't know, it doesn't work that way for me yet.
+[10:38] HiM: i don't know if you guys have it that way for you but mine loads the orb and it's different from my
+[10:43] HiM: pet so when i when the orb is loading my my original pet hides itself so i think i need to
+[10:49] HiM: merge it somehow got my fireball pet um it'll be cool guys to hear from you guys on the chat if yours
+[10:57] HiM: talks through your pets or if yours has maybe mine is uh maybe it's a certain problem um but yeah
+[11:02] AndyML: yeah no i hadn't seen it and i'm excited to try it i was i was reading an article um you know i i
+[11:10] AndyML: want to say it was altman talking about how engineers are just talking to codex for 30 minutes
+[11:15] AndyML: just working through a problem and thinking things through and then codex just goes and
+[11:19] AndyML: implements it and i assume that's uh what we're talking about yeah that's very cool
+[11:22] HiM: yeah yeah yeah 100 it's the same thing you're talking about um and guys like i have this um
+[11:29] HiM: and i can't wait to plug into my open core or my agents um with this because i think guys we're
+[11:35] HiM: humans right i mean we text most times but the best way humans communicate is by talking right so
+[11:40] HiM: um i know most of us in the community are agent paid so imagine being able to do real-time voice
+[11:47] AndyML: Yeah. HiM: the same that exists in chat gpt right now it's i can't wait to do it i know some of us have
+[11:53] HiM: tts implemented i don't have it implemented yet um but i'm looking forward to it because in one
+[11:58] HiM: of the ways i use i use my i use the voice mode is um sometimes i have some pretty good ideas right
+[12:05] HiM: it and when I have the ideas I don't have the bandwidth to type it out so what I do would be
+[12:07] AndyML: Yeah.
+[12:10] HiM: that I would dump it to my agent I'll like open like spokenly which is like my whisper flow and
+[12:14] HiM: I'll dump it in and then my agent will like format the text in the right way and then I can read it
+[12:19] HiM: later um so that's how I used to do it three months ago two months ago um when charge gpt voice
+[12:25] HiM: came out not this new one the one that came out on charge gpt web a few weeks ago what I started
+[12:30] HiM: doing is I'd load charge gpt web and then I'll just talk to it and then after talking to it I'd
+[12:34] HiM: like what do you think about the idea then we'll brainstorm about it and then put it in a document
+[12:37] HiM: then it'll like put in a document so um so this voice mode is super exciting for me because now
+[12:38] AndyML: Yeah.
+[12:43] HiM: this is how i'm going to be doing like coding right i'm going to talk to it and what do you
+[12:47] HiM: think about this future should we build it um grill me is one of my exciting skills that i use
+[12:52] HiM: to ask questions and do spec um that should now be voice mode it should just talk to me
+[12:57] HiM: um but yeah but it's a super exciting super exciting launch
+[12:58] AndyML: Right.
+[13:01] AndyML: Well, Grill Me will work really well in voice.
+[13:03] AndyML: That's fantastic. HiM: correct correct
+[13:05] AndyML: I found voice is the most useful for windshield time.
+[13:09] AndyML: You've got ideas and stuff just to talk through,
+[13:12] AndyML: and you can then take that session back to your desktop when you get in
+[13:15] AndyML: and have it create a document or whatever.
+[13:17] HiM: yeah
+[13:18] AndyML: Yeah, so natural.
+[13:20] HiM: yeah anyways so moving to the next um next topic in the
+[13:24] HiM: in the cooker um this is which one now um
+[13:31] HiM: oh this is cursor um yeah it's just cursor yeah um didn't have the title okay guys so another cool AndyML: Cursor, I think.
+[13:37] HiM: thing that happened this week so a few months ago cursor um cursor did um cursor published a
+[13:42] HiM: research they were doing internally where they had their swarm of agents um build an operating
+[13:48] HiM: system build a browser um first cursor browser i'm not sure how many of us remember this but this is
+[13:53] HiM: like three months ago or something like that um so you know with 4.5 and the new cursor swarm the
+[14:00] HiM: they did a new thing where they had a their new agent swarm like a new implementation do a
+[14:06] HiM: build an sqlite um rebuild sqlite and rost um from scratch from scratch yeah i mean they give
+[14:09] AndyML: and rust yeah from scratch or no from the docks right
+[14:15] HiM: it access to the docs that's pretty much the only thing they give it just give you access to the
+[14:17] AndyML: yeah
+[14:18] HiM: docs and you repeat the whole thing from from scratch it's pretty crazy it's like you repeat
+[14:23] HiM: the whole language like a whole like database um infra from scratch um this reminds me of a of um
+[14:26] AndyML: yeah
+[14:28] AndyML: yeah
+[14:33] HiM: of a video that that theo um the youtuber did um did last did um a few weeks ago in um ai engineer
+[14:40] HiM: and one thing theo said is like guys we need to be way more ambitious like i know some of us are
+[14:45] HiM: still building like apps you know it feels like like with all these new models we should be building
+[14:50] HiM: like operating systems um you know i don't like we should be way more ambitious so um this is an
+[14:57] AndyML: Yeah.
+[14:58] HiM: example of that um andy i don't think you use cursor right you use cursor
+[15:04] AndyML: I started in cursor end of, boy, it was either end of 22 or into 23.
+[15:11] AndyML: I don't remember the timeline, but I used it for a short time.
+[15:15] AndyML: And I thought, you know, I need more control over what's going to the agent.
+[15:19] AndyML: So I ended up building like a stupid API client for a web interface.
+[15:24] AndyML: And at least then I could control what the context was and eventually moved
+[15:26] HiM: Yeah.
+[15:28] AndyML: into kilo code which i thought did a better job but if i had gone back and looked at cursor at
+[15:33] AndyML: that point in time it probably would have been more than more than fine i remember though listening
+[15:36] HiM: Yeah.
+[15:37] AndyML: to the podcasts of the founders of cursor talking about it and how they couldn't believe how well
+[15:42] AndyML: it was working and um you know the the work that they were doing on it extending context and at the
+[15:48] AndyML: time context was everything i think you could get 8 000 or maybe 16 000 tokens in in your context
+[15:54] AndyML: window and they were
+[15:56] AndyML: they were on fire I mean
+[15:58] AndyML: obviously now look at them
+[16:00] HiM: yeah now they're way they're like gone they're like they're in the shadow sphere right now so
+[16:05] HiM: um it's pretty good i've used them for the last few weeks um i've got a bunch of credits in there
+[16:10] HiM: so um um it's pretty good i think it's apart from it's probably my best coding platform right now
+[16:17] HiM: um second to codex so it's pretty good all right andy let's keep it moving um let me run through
+[16:25] HiM: the other two topics boz boz is pretty exciting guys um if you haven't heard of it um jack dorsey
+[16:32] HiM: um from the block team block has been pretty cool um they've been on the frontier when it comes to
+[16:38] HiM: like ai and agents um you know they released goose goose is so like their own um sdk for agents um
+[16:47] HiM: they've made it open source um jack dorsey published um an article in terms of how to
+[16:53] HiM: redesign organizations um a few months ago so he's been pretty much on the frontier in terms of
+[16:59] HiM: agents and running companies in the post agi world um and so this week they dropped boz
+[17:06] HiM: um i think it's like a play of words for like b boss like a fly that their mascot is a fly
+[17:12] HiM: or it's like a b um i've just set it up i've just set it up today so i haven't used it but um
+[17:14] AndyML: Yeah.
+[17:20] HiM: uh some of you might i don't think petty gomez is in here but some of us in the community
+[17:25] HiM: um we have access to click clark that that the open core team also worked on so um i have my
+[17:33] HiM: own sort of like baby project that i'm working on called entity and and so entity used to have a
+[17:39] HiM: chat where agents can talk to themselves and i can talk to agents like my own version of discord
+[17:44] HiM: um and so i need really click clack into that and and when i saw this i was like yeah this is the
+[17:48] HiM: next thing um so it's pretty cool guys um definitely check it out um i'll put the link
+[17:53] HiM: before the end of the show in the in the chat um it's still pretty early um so um so there's still
+[18:00] HiM: a lot of work to do um but it's supposed to be the way he he's marketing it is like a social network
+[18:05] HiM: or community for agents and humans all right Andy did you um what do you think about this
+[18:10] AndyML: beautiful
+[18:13] HiM: just generally um I'm not sure if you saw ahead of the show
+[18:14] AndyML: uh
+[18:16] AndyML: every every time these things come out i keep thinking like
+[18:20] AndyML: do i dive in head first like open ship came out last week and i was like man i could replace
+[18:26] AndyML: goku and send grid and like do i spend five days working on that like i'll wait on it and see what
+[18:33] AndyML: happens buzz is exciting um i i just made a joke to ada that we should um think about implementing
+[18:40] AndyML: buzz for weekly claw now that you've gotten our telegram environment really tuned in we should
+[18:45] AndyML: abandon it and go to Buzz.
+[18:49] AndyML: Yeah, no, it looks really promising.
+[18:51] AndyML: It's exciting to see.
+[18:53] HiM: No it is. AndyML: I like it.
+[18:54] HiM: When I've just set it up, I've... AndyML: I like Jack's work.
+[18:56] HiM: Yeah, no it's awesome.
+[18:58] HiM: I've got this guy called Mr. Robot who we follow each other on X.
+[19:02] HiM: so he's he's done a fuck of it and like done some pretty good updates to it and i set up the first
+[19:08] HiM: one now i'm doing the second update uh but yeah i'll play with it guys and i'll let you guys know
+[19:12] HiM: um next week andy i'll let you know um you know me i like to jump into this thing's head first
+[19:15] AndyML: that sounds great
+[19:16] HiM: so i'll let you know whether you should set it up or not AndyML: I love it
+[19:19] AndyML: sweet that's great
+[19:21] HiM: all right um i think um opus five okay cool um so guys i think this is the hardest um
+[19:23] AndyML: Opus 5
+[19:30] HiM: it's hard and do we still have one more right do we have the jensen thing coming after now
+[19:34] AndyML: Yeah, that's right. HiM: um yeah okay okay okay okay um so guys um opus five just dropped today um literally like an hour
+[19:36] AndyML: And then Unity after that.
+[19:40] AndyML: Yeah.
+[19:45] HiM: ahead of the show before the show started um i'm not sure how many of us have like heard about it
+[19:50] HiM: um but i've put out a few tweets about it um it's basically like fable five at like 20 percent um
+[19:59] HiM: um like 20 less cost is 20 cheaper than fable all the all the all those sort of like
+[20:08] HiM: comparables all the metrics are pretty much the same there's only like one or two um metrics where
+[20:13] HiM: they're different but they're pretty much the same it's basically fable i think i think what
+[20:17] HiM: they've done is they've just pulled fable distilled a cheaper fable um cheaper obviously everybody
+[20:25] HiM: cares about cost so it's definitely cheaper and i think the second thing they would have done
+[20:30] HiM: is that they would have made it less restrictive right because people are complaining a ton about
+[20:38] HiM: how fable is just dumb to use like it's like refusing to do half of the things you want to
+[20:42] HiM: do with it right so so i think those two things is what they would fix um so i put out put out a few
+[20:48] HiM: tweets one is that it's basically fable cheaper fable um there's basically no reason to use fable
+[20:53] HiM: right now like there's literally none um this is basically the same metrics at 20 cost so i don't
+[20:59] HiM: know why anyone would use feeble even though like tarik was like combine this with feeble and use
+[21:05] HiM: feeble for planning and use this for coding but i'm like i'm like they're the same but dude i'm
+[21:05] AndyML: Yeah, as an orchestrator.
+[21:11] HiM: like they're the same right what do you mean by combining with feeble they're literally the same
+[21:14] HiM: why i don't get it i don't get it literally the same metrics um anyways
+[21:22] AndyML: even
+[21:24] AndyML: Opus 5 is saying
+[21:25] AndyML: Fable's remaining niche is narrow
+[21:29] HiM: yes i think okay cool i think the difference i think the difference is in cyber security i just AndyML: Fable only for
+[21:34] HiM: remembered so this isn't as good in cyber security um so this can't do exploits i don't think this is
+[21:39] HiM: good at defense as well so i think what they did is they distilled feeble and then they took out
+[21:43] HiM: all the sort of like cyber security shit inside there that entropic is always going crazy about
+[21:48] HiM: anyways and so they took it out of opus but it's pretty much the same thing outside that
+[21:52] AndyML: Right.
+[21:54] HiM: yeah um anyways so that was that um i think i so it's basically fable so no need to use fable
+[22:01] HiM: unless you care about x-axis security your stuff um and i think there's one more if it lets you
+[22:05] AndyML: If it'll let you.
+[22:08] HiM: i think there's one more thing i tweeted let me see if i can find like my tweet about it one more time
+[22:15] HiM: um let's see AndyML: that might be a segment for the future let's go through henry's tweaks for the
+[22:19] AndyML: for the week i love it it's gold in there
+[22:21] HiM: yeah it's uh because i catch those things right because i'm on twitter and like i've got to pause
+[22:26] HiM: the next like so when those things drop i just like catch it immediately and i and i go crazy
+[22:30] HiM: for a few minutes um but anyways um let's keep it moving what's the next one um yeah dude i mean i
+[22:36] AndyML: uh huang
+[22:38] AndyML: His first tweet.
+[22:39] HiM: went crazy about this on x right i know some of you guys follow me on x um but yeah i know everybody
+[22:45] HiM: who cares about um who cares about like ai and using ai should be like super um pissed with what
+[22:53] HiM: was going to happen this this week last week kimitri dropped and this week i mean last week
+[22:59] HiM: um friday by this time friday actually friday into saturday that new open ai head of policy
+[23:06] HiM: dean showed up and was like hey guys i just wrote like a long tweet on how open source
+[23:14] HiM: was was the accelerationist was going to slow things down how the government should ban open
+[23:20] HiM: source but not ban it officially but just kind of like shadow ban it it was just a really shitty
+[23:24] AndyML: Right.
+[23:25] AndyML: Right. HiM: tweet right it's andy did you see that tweet it was like a it was a really shitty tweet like i
+[23:27] AndyML: Yeah.
+[23:28] AndyML: Yeah, I did.
+[23:32] HiM: really lost a lot of like i really lost a lot of credibility it lost a lot of credibility for open
+[23:37] HiM: ai because i mean i used to really hate entropic because of all their dumerism and like regulation
+[23:42] HiM: pro stance and i used to kind of like open ai because open ai has for a while not positioned
+[23:49] HiM: itself as like a you know doomer ban ban kind of company right so sam has pretty much been on x
+[23:56] HiM: being free being like chill and then this guy shows up and goes ban ban ban so i was i was
+[24:03] HiM: gonna write a really wrong response to it i think i had my draft waiting and i came back after a few
+[24:09] HiM: minutes and then people were just like aggressively like at the guy so i was like no need like
+[24:13] HiM: everybody was kind of like dunking on him it was pretty obvious that nobody liked it right um and
+[24:14] AndyML: Yeah.
+[24:18] HiM: so that happened on the weekend and then that led down towards um the host like ellie this week um
+[24:25] HiM: the government or signs that the government was going to ban open source um so everybody's kind
+[24:30] HiM: of like pretty worried about that everybody's tweeting about it um and you know everybody
+[24:36] HiM: that is important pretty much wrote something about it right it's like don't ban it so people
+[24:40] HiM: were in two camps ban it don't ban it ban it don't ban it but most people who are reasonable
+[24:45] HiM: were like no need banning it even if you ban it because of distillation my position was um if the
+[24:51] HiM: labs are gonna say distillation distillation distillation then they should pretty much pay
+[24:56] HiM: us for all our data they stole to train their models right
+[24:57] AndyML: right AndyML: right and yeah exactly and they're training their models now uh did you see the did you see the
+[25:05] AndyML: reference. It took some
+[25:07] AndyML: doing, but
+[25:09] AndyML: I want to say it was
+[25:12] AndyML: one of Anthropix's models
+[25:13] AndyML: basically admitted to being a Kimmy
+[25:14] HiM: yes it was skimmy exactly i saw that i saw that
+[25:15] AndyML: Yeah
+[25:20] HiM: i saw that i saw that actually someone i also saw another tweet where someone said
+[25:24] HiM: that the biggest um the biggest customers that that pay them to use open source models are
+[25:31] HiM: actually the labs because the labs plug in and try to distill the open source models i saw that
+[25:35] AndyML: Yeah, exactly. Yeah.
+[25:38] HiM: so it's it's pretty kind of like um you know a bit like it's like you're using their model
+[25:45] HiM: they're putting out there for free you're using it and then you're out here saying hey they should
+[25:48] HiM: banned them right so it didn't make any sense but anyways fast forward to today jensen um and a
+[25:51] AndyML: No.
+[25:54] HiM: bunch of companies microsoft y combinator replet um some pretty big companies some pretty big heavy
+[26:02] HiM: heaters i've came together and put out this this um this document um calling the government i mean
+[26:09] HiM: this happened today but two days ago there were about 200 companies called smore smore something
+[26:15] HiM: um i had in my notes um but pre today there's again a coalition of smaller companies has sent
+[26:21] HiM: a letter to the government but this one happened today um nvidia obviously front in it yeah that's
+[26:27] HiM: the letter please put the link on the put the link on the on the chat so people can read it up read up
+[26:33] HiM: um but yeah it's pretty much the like short version of that is hey guys uh we know you're
+[26:38] HiM: pretty much scared about like this but we think open source is great for everybody what we should
+[26:43] HiM: do is encourage american open source and he actually helped i didn't have it in my notes
+[26:47] HiM: this week but that was also another pretty big thing that happened this week was um laguna
+[26:51] HiM: um which is a an open an open source model that there's an american company
+[26:57] HiM: um so that launched this week and and so i was happy about that so because it was like
+[27:01] HiM: it kind of like helped tamper down the the the temperature it's like chill guys um chill about
+[27:07] HiM: open source the american open source companies are going to show up pretty soon um but yeah but
+[27:12] HiM: this was pretty cool um i was excited when he came out um because he made me realize that if nvidia
+[27:18] HiM: and microsoft um are all on this then the government wouldn't will listen to them and not
+[27:23] HiM: ban open source um another thing that happened on this as well was um elon retweeted this
+[27:29] HiM: and quote tweeted and said he he he's he's um he's backing this as well um sam what man funny
+[27:36] HiM: um also so like quoted this and said hey he agrees um so some pretty big guys satia
+[27:44] HiM: obviously tweeted this as well um so i think it's this general consensus right now that
+[27:50] HiM: um banning open source chinese models isn't a great idea um yeah andy that is that is it for me
+[27:55] AndyML: Yeah.
+[27:57] HiM: on this spot. It's an awesome week. I mean there's a unique thing but I don't think it's
+[27:58] AndyML: Yeah. AndyML: Yeah.
+[27:59] AndyML: No, it's perfect.
+[28:02] AndyML: Yeah. AndyML: Thanks, Henry.
+[28:03] AndyML: it's uh it's quite a week it's quite a week um
+[28:11] HiM: a big deal so I think we can skip it. Yeah. Awesome.
+[28:13] AndyML: yeah yeah no i got you it's good thank you that's the week um for your signal from the outside uh
+[28:23] AndyML: sam altman on cnbc uh in an exclusive spoke with julia borstein on squawk on the street
+[28:30] AndyML: aired live from Sun Valley on July 9th.
+[28:36] AndyML: So let's sit inside the interview for a minute.
+[28:38] AndyML: The headline number is easy to skim past,
+[28:42] AndyML: and the real value is on how Altman talks about it.
+[28:47] AndyML: When Borson asks why anyone should care about Sol
+[28:50] AndyML: over everything else out there, he doesn't even hedge.
+[28:55] AndyML: He calls it not only the best model in the world for most people,
+[28:58] AndyML: but the number he wants you to remember is 54%.
+[29:02] AndyML: Sol is 54% more token efficient on agenic coding tasks,
+[29:07] AndyML: benchmarked against Anthropic by name.
+[29:11] AndyML: Orson actually stops mid-interview and says,
+[29:13] AndyML: that number, that's news, and pushes him on where it's coming from.
+[29:18] AndyML: And he says entirely cost and speed.
+[29:21] AndyML: Every enterprise customer he's talking to at Sun Valley
+[29:24] AndyML: is asking the same question, not what can this model do,
+[29:28] AndyML: but what's my roi the efficiency number isn't a side benefit in his framing it is the pitch
+[29:35] AndyML: so borson brings up the new voice model expecting a consumer feature
+[29:40] AndyML: answer and altman pivots somewhere more interesting uh this is funny he says he
+[29:46] AndyML: originally assumed voice was going to be a consumer thing people wanting to talk to ai
+[29:50] AndyML: like sci-fi from the movies but watching his own engineers changed his mind his exact description
+[29:58] AndyML: They'll talk for like 30 minutes and try to think through some ideas, and then Codex will implement it.
+[30:04] AndyML: That's agentic engineering, as we discussed, as a workflow coming straight out of the OpenAI CEO's mouth.
+[30:10] AndyML: And as Henry just showed you, it's not hypothetical anymore.
+[30:13] AndyML: That's the exact clip that shipped this week.
+[30:17] AndyML: There's a stretch in the middle that's less about the tech and more about the politics of shipping it.
+[30:23] AndyML: Boorson brings up the delay.
+[30:25] AndyML: A couple of weeks going through a new government appeal process, instead of deflecting, Altman
+[30:30] AndyML: leans in.
+[30:31] AndyML: He says he was working directly with Commerce Secretary Lutnick, Treasury Secretary Besinat,
+[30:37] AndyML: and a director, Cairncross, and that the government's technical red teaming was impressive
+[30:42] AndyML: to him. AndyML: He admits it forces some changes, and I quote, we made many changes through the process,
+[30:49] AndyML: but didn't get specific about what.
+[30:53] AndyML: He's framing it as good news, almost an endorsement of the process, which is not the posture you'd have expected from a Frontier Labs CEO a couple years ago.
+[31:01] AndyML: Boorstin tries twice more to get something sharper and doesn't quite land.
+[31:05] AndyML: A standard non-answer on the Chinese open source models catching up, a one-liner non-answer on Microsoft possibly pulling back.
+[31:13] AndyML: He says, I quote, I predict Microsoft will remain one of our biggest customers.
+[31:17] AndyML: And the interview closes on the IPO question.
+[31:21] AndyML: The moment that got the most attention afterward, precisely because of how little he said.
+[31:27] AndyML: I don't know.
+[31:29] AndyML: Three words.
+[31:31] AndyML: And Boorstin says she'll be watching closely.
+[31:33] AndyML: That's the segment.
+[31:35] AndyML: Two things for anyone building agent-heavy tools.
+[31:37] AndyML: One, Codex by Voice, as an anecdote, is unprompted, describing the exact talk-through intent, then let the agent implement loop.
+[31:49] AndyML: This community has been building and tooling around for months.
+[31:52] AndyML: We've had people on our show who've built tools like this for OpenClaw.
+[31:56] AndyML: There's any number of them at this point.
+[31:58] AndyML: And two, the 54% efficiency claim tells you the competitive fight between labs is now explicitly being fought on a genetic coding cost per task, not just raw capability.
+[32:10] AndyML: We're taking the capability for granted as we're learning more and more about what these agents can do.
+[32:16] AndyML: We're just assuming that the top models can do it.
+[32:19] AndyML: Now show us how much money we can save.
+[32:21] AndyML: So whoever makes the next efficiency claim, that's where pricing and model choice decisions get made.
+[32:28] AndyML: CNBC has a transcript, and I'll put a link in the show notes.
+[32:33] AndyML: So that's our signal from outside.
+[32:36] AndyML: here it is hot take what do you think five minute hot take
+[32:41] HiM: Let's do it dude.
+[32:43] AndyML: all right one take this week um henry's news block already ran the is this a bigger risk
+[32:50] AndyML: than capability debate uh in real time with the open ai bundle so we're not going to relitigate it
+[32:55] AndyML: this is the other thread i think worth arguing about so here's my position
+[33:04] AndyML: open ai benchmarking directly against anthropic by name on token efficiency not capability
+[33:11] AndyML: is the tell that 2026 is model war is now a cost war for two years the story was who's the smartest
+[33:19] AndyML: but now it's who's the cheapest per agentic task and that's a different competition with different
+[33:25] AndyML: winners. Put it next to what we just covered, cursor getting similar quality at a fraction of
+[33:30] AndyML: the cost by restructuring context instead of adding agents. Add Opus 5 explicitly positioned
+[33:36] AndyML: as the most of Fable 5 at half the price. And you can see the whole industry converging on the same
+[33:42] AndyML: axis at once. I think every lab ships an efficiency benchmark against a named competitor within the
+[33:49] AndyML: next two model releases because Altman just proved it's a headline, not a footnote. What do you
+[33:54] AndyML: think, Henry? Is efficiency bragging just marketing theater until independent benchmarks confirm it?
+[33:58] HiM: Yeah.
+[34:01] AndyML: Or is this a new axis? HiM: I mean yeah I mean I think for Anthropic it is right I mean um you know I'm not a fan of
+[34:07] HiM: Anthropic but I think for Anthropic it definitely is marketing um I don't think they care about
+[34:14] HiM: decreasing token efficient making tokens cheaper because because that's
+[34:20] HiM: the reason Anthropic is is so far in terms of revenue is a few things first of all their
+[34:26] HiM: revenue isn't as far as it is they count gross revenue so the revenue for anthropic that is
+[34:30] HiM: reported is gross revenue not their actual so like net revenue open air accounts net um but
+[34:37] HiM: anthropic the reason they make a ton of revenue is because their tokenizer is always more expensive
+[34:43] HiM: so their models are very expensive so i my pushback would be that for anthropic is definitely
+[34:45] AndyML: Yeah.
+[34:49] HiM: is marketing um open air has always cared about costs open air models are always like cost efficient
+[34:55] HiM: um so they care about cost um opus 5 is only 20 cheaper than than than fable but fable is like
+[35:04] HiM: mad expensive compared to like everybody else so 20 cheaper it's not it's not that much
+[35:08] AndyML: Oh, yeah.
+[35:12] AndyML: Yeah.
+[35:13] HiM: like it's mad expensive right can you can you see those like i think you only have um you only
+[35:20] HiM: have anthropic models but if you were to compare with like open ai and like keemi it's ridiculous
+[35:24] HiM: loss it's it's so expensive uh so yeah so for me i would think that yeah it's and for open ai it's
+[35:31] HiM: definitely kind of like part of their they believe it and and they've worked very hard to get it
+[35:36] HiM: there for anthropic this they just don't care about it they just want to make as much money
+[35:40] HiM: as they can from enterprises um no matter how expensive it is enterprises are going to pay
+[35:45] HiM: even though i suspect that the reason they're doing the marketing now is because um kimi is
+[35:52] HiM: Kimi is out
+[35:53] HiM: you know
+[35:55] HiM: out and swinging for the fences
+[35:57] HiM: and it's like
+[35:59] HiM: 10% of Anthropics
+[36:01] HiM: like are feeble right so yeah
+[36:03] HiM: so now I think that they're gonna care
+[36:05] HiM: a little bit about it but I think right now
+[36:07] HiM: it's still marketing
+[36:09] AndyML: yeah i mean 5.6 soul is 30 per million tokens out compared to claude opus 5's 25 or
+[36:19] AndyML: fable fives 50 yeah it's just not even comparable
+[36:27] HiM: yeah anyways um so yeah so um
+[36:29] AndyML: interesting well i i think we'll end up seeing you know what people end up using
+[36:38] HiM: i mean i'm not a cool fat i'm not a cool fact for this as well right i mean it's like they're just AndyML: um as their strategy right
+[36:40] AndyML: All right.
+[36:44] HiM: so far behind like guys i just do just take them a while to catch up right i think this is probably
+[36:49] HiM: you why they also did opus 5 because it's pretty much feeble but just cheaper um so it's a topic
+[36:52] HiM: that people care about um it was in the news today that grog 4.5 just passed um all the other
+[36:59] HiM: frontier models and asked to become the top used model and an open router so it's now it's not used
+[37:05] HiM: the most tokens and open router um and the reason is is the point you're making and it's just way
+[37:11] HiM: cheaper. Correct. AndyML: if it does the job and it's cheaper.
+[37:15] AndyML: So someone mentioned, was that Trev?
+[37:18] AndyML: Someone mentioned the mixture of experts
+[37:23] AndyML: is going to end up being like an orchestrator layer, right?
+[37:27] AndyML: You're going to use Grok 4.5 for this and Sol for that.
+[37:30] AndyML: And maybe you'll use Fable for a plan.
+[37:32] AndyML: Maybe you won't.
+[37:33] HiM: Yeah. AndyML: You'll probably do an A-B test a couple times
+[37:37] AndyML: and then settle on something else.
+[37:40] HiM: yeah and um and um and cursor launched the router this week right so AndyML: Yeah, interesting.
+[37:45] AndyML: Yeah. HiM: cursor launched the router this week pretty much back the same idea right so people are people are
+[37:50] AndyML: Yeah. HiM: starting to care about so for me i agree that cost and efficiency is important it's important
+[37:57] HiM: to the enterprises um but whether the labs like anthropic are taking it serious or whether they
+[38:04] HiM: have the ability to catch up is what i'm arguing against but i think for enterprises cost and
+[38:11] HiM: efficiency is important to them which is why they're going to use open source which is why
+[38:14] HiM: they're going to start using chinese models which is why they're using grok um so it would take a
+[38:19] HiM: for the guys that come through to catch up.
+[38:22] AndyML: yeah fair enough reasonable take be an interesting one to watch
+[38:28] AndyML: um this episode is also brought to you by heritage telecom uh trusted phone systems
+[38:35] AndyML: from trusted people heritage designs and supports the whole communication stack for your business
+[38:39] AndyML: dependable phones, failover, reporting, and practical AI that turns calls into action.
+[38:44] AndyML: One accountable provider who actually answers. Start with the problem, not a product list at
+[38:49] AndyML: heritagetell.com. Well, a few things to watch heading into next week. Keep an eye on whether
+[38:59] AndyML: OpenAI publishes more details on the Hugging Face incident. There was an actual zero day,
+[39:02] HiM: I'm going to go ahead and get it.
+[39:05] AndyML: and so I'd be curious to see how it was patched.
+[39:07] AndyML: We caught it isn't exactly the same as it can't happen again.
+[39:12] AndyML: Second, watch whether real teams actually migrate off of Slack
+[39:16] AndyML: or GitHub onto Buzz versus just kicking the tires on a developer preview.
+[39:21] AndyML: And third, now that Opus 5 is the default on Claude Max,
+[39:25] AndyML: watch whether Fable 5 usage holds up in the
+[39:29] AndyML: I need the absolute best option sort of a way
+[39:32] AndyML: or whether most people just stop needing it.
+[39:35] AndyML: um we sort of feel like you might not need it so everything from today sources the transcript
+[39:37] HiM: Yeah.
+[39:41] AndyML: henry's research sheet some show notes um it's all available at weeklyclaw.ai
+[39:48] AndyML: full episodes and highlights on youtube clips and takes will show up on x and we're back next
+[39:54] AndyML: friday july 31st 4 p.m eastern so follow the excitement and we'll see you then
+[40:01] HiM: yeah we should um we should we'll probably do a poll next week or put a poll on the website
+[40:05] HiM: so you guys can let us know um what's a good time is this still a good time to do this show
+[40:10] HiM: um or if you should do it at another time we talked about in the beginning of the show
+[40:15] AndyML: yeah right on we did and i think you've got in here where is the feedback link
+[40:22] HiM: Yeah, the feedback link should be on the bottom.
+[40:23] AndyML: oh here it is so at the bottom of the page give audience feedback i would encourage all of you
+[40:28] AndyML: guys to visit weeklyclaw.ai and give us some feedback thanks what skills appreciate you
+[40:34] AndyML: but yeah give us some feedback we'd we'd really like to we'd like to know um you know what's HiM: Awesome.
+[40:41] AndyML: good what's not like to constantly improve like our agents so anyway thank you all
+[40:46] HiM: Yeah. HiM: let us let us know um let us know whether you like the agenda again we're kind of like uh moving
+[40:53] HiM: this around um but let us know if you if you like the agenda and if we should like add something is
+[40:55] AndyML: yeah
+[40:58] HiM: there something you would want to know um or you'd want us to talk about um but if this is good
+[41:03] HiM: we'll just keep it going all right
+[41:04] AndyML: yeah sounds great awesome well thanks so much everyone have a great rest of your day

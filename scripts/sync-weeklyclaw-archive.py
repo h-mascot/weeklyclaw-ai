@@ -28,6 +28,7 @@ SPOTIFY_EPISODE_OVERRIDES = {
     26: "5t1xYX7e4DUv6l9DKUAi21",
 }
 YOUTUBE_THUMBNAIL_OVERRIDES = {
+    32: "w32-approved-c.png",
     31: "w31-approved-a.png",
     30: "w30-approved-c.png",
     29: "w29-approved-a.png",
@@ -38,6 +39,10 @@ YOUTUBE_THUMBNAIL_OVERRIDES = {
 # YouTube can lag publication in the channel playlist. These IDs are added only
 # after direct public-video verification, so archive sync remains deterministic.
 YOUTUBE_EPISODE_OVERRIDES = {
+    32: {
+        "id": "RRYBhrJiyU8",
+        "title": "GPT-6.1 Sol, Gemini 4 Argon & NVIDIA’s Agent Safety Debate | WeeklyClaw #32",
+    },
     31: {
         "id": "YCgg0TtGYu0",
         "title": "Opus 5.5's Price War, GPT-6 Sol & Luna, Grok 4.7 & Financial AI | Weekly Claw #31",

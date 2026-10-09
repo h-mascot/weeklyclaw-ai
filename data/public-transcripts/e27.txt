@@ -1,0 +1,456 @@
+YouTube transcript
+Video ID: vqUkh8w2L8g
+Language: en-GB
+Captions: authored or unspecified
+
+[0:00] AndyML: let's do it.
+[0:01] AndyML: Welcome back.
+[0:03] AndyML: Welcome back to the Weekly Claw.
+[0:05] AndyML: Big week, episode 27.
+[0:07] AndyML: uh eight stories on two slides.
+[0:12] AndyML: we're going to rip through them.
+[0:14] AndyML: think today we're going to try a broader approach to covering the agentic AI news.
+[0:20] AndyML: Um, see if we can't sort of tell you what happened and let you figure out what's interesting to you and you know, what to, what to dig into.
+[0:29] AndyML: after the show.
+[0:32] AndyML: Chips buying commons, stealth models on domestic silicon, agents worth two and a half billion at four months old, AGI dates with footnotes.
+[0:44] HiM: can you guys hear us?
+[0:45] HiM: Uh yeah, it doesn't guess we're back.
+[0:52] AndyML: Back again. AndyML: Okay, cool.
+[0:53] AndyML: All right, cool.
+[0:54] AndyML: Thanks, Praya. AndyML: Alright, cool.
+[0:55] AndyML: So guys, so I'm gonna stream run through there 'cause we've got less than I really ten minutes is gone already.
+[1:01] AndyML: Um but I guess like the biggest thing that happened this week is NVIDIA.
+[1:04] AndyML: NVIDIA bought Hog and Phase for um north of twelve billion.
+[1:09] AndyML: So it's like twelve point nine billion, so that's almost thirteen billion dollars.
+[1:12] AndyML: Um
+[1:13] HiM: You know, so I mean make make of that what you will.
+[1:16] HiM: Um we will have like a brief discussion later on the show to talk about like, you know, what we think about it, right?
+[1:25] HiM: Um last week we presented to you guys Ox Alpha.
+[1:29] HiM: Um, we'd mentioned that it was an open router and it was free and you should definitely go get a get your own feel.
+[1:35] HiM: Um so we ended up getting to something like hundred trillion tokens a day.
+[1:42] HiM: And and it ended up being run fully on Chinese chips.
+[1:45] HiM: And that's the favorite model in kind of like the my friend network now, so GLM five point three flash.
+[1:53] HiM: Andy loves it too.
+[1:54] HiM: Andy uses it everywhere now.
+[1:55] HiM: Um yeah.
+[1:59] HiM: Andy do do you wanna put a commentary here?
+[2:02] AndyML: I do. AndyML: um Yeah, it's a fantastic model.
+[2:07] AndyML: uh It's cheaper than cheap, cheaper than dirt, cheaper than air.
+[2:12] AndyML: um It runs great in coding harnesses and personal assistant agents.
+[2:20] AndyML: It's RIPID fast, and that's a combination of Wicked and RIPPON.
+[2:25] AndyML: Yeah, it's a fantastic model.
+[2:28] AndyML: We're really excited to see it out.
+[2:30] HiM: And frankly,
+[2:32] AndyML: you know, next to QN3.8 27b, um you know, it's a nice upgrade.
+[2:39] AndyML: It's nice to have options.
+[2:40] AndyML: um Yeah, I want to say, originally, I tried to use it and I was getting a rate limit from the provider I was connected to and I switched to QN3.8 Max and uh I was blown away by
+[2:57] AndyML: that performance.
+[2:58] AndyML: It's like we're there now.
+[3:00] HiM: wow.
+[3:01] HiM: wow. HiM: Yeah.
+[3:03] HiM: Yeah. HiM: I mean I haven't used this model yet.
+[3:05] HiM: I mean I think I just switched my my agents, um, either my open core, my hermies, Hermes, and y either of them.
+[3:10] HiM: I just switched them to it um today, but I haven't used it to the few.
+[3:13] HiM: I do have DGX Park, so I I've I have it running.
+[3:17] HiM: I'm benchmarking it now.
+[3:19] HiM: Um Doctor Flash
+[3:21] HiM: Um which is just like a recipe or a thing that helps make you faster.
+[3:25] HiM: Doctor Flash two came out today, so I think I'm excited to to take that on the road.
+[3:35] HiM: and
+[3:36] HiM: Yeah, let's do that.
+[3:37] HiM: So I'm gonna share my screen and I'm gonna move it to here and then we can just keep it moving.
+[3:46] HiM: Yeah.
+[3:49] HiM: Yeah.
+[3:51] HiM: Yeah, apologies, man.
+[3:51] HiM: I mean it happens from time to time, right?
+[3:53] HiM: You get all the technical issues.
+[3:56] HiM: Okay, cool. HiM: like I said, um, so five point three is sort of like the hottest thing happening um, you know, this week in terms of models that you can run locally.
+[4:04] HiM: You can run them on two DGX box.
+[4:06] HiM: There are recipes that allow you to run them on one.
+[4:09] HiM: Um if you have a two five six Mac book, um sorry, two five six Mac Mini, you can run it on it.
+[4:15] HiM: Obviously, if you have a five one two, definitely you can run it on it.
+[4:18] HiM: I think they're working on quantizations that allow you to
+[4:21] HiM: running on a one two eight.
+[4:22] HiM: Okay. HiM: So that's the main thing happening.
+[4:25] HiM: But obviously another big thing that happened this week is that Queen 3.6 flash model, next flash model came out.
+[4:34] HiM: this model is supposed to be select based on the new architecture for Slight Queen 4.
+[4:41] HiM: so um but yeah but that's that's in the universe of
+[4:45] HiM: of of GLM five point three.
+[4:47] HiM: I haven't used it as well.
+[4:48] HiM: Um I think Andy has.
+[4:50] HiM: And you wanna put in like twenty seconds.
+[4:52] HiM: Um did you try Queen Queen Next Flash?
+[4:57] AndyML: ah No, I tried I tried 3.8 max um and if if if it's any if it's any indication It's going to be a great month
+[5:06] HiM: Yeah. HiM: Well guys, if you click on the if you click on the if you get the agenda that we put on the thing and you click on it, it will lead you to um
+[5:13] HiM: Um we did to where you can see the benchmarks.
+[5:15] HiM: Um I didn't have enough time to put all the screenshots in the deck.
+[5:19] HiM: But yeah, but cool two things that happened with the open AI.
+[5:23] HiM: OpenAI hat was in the news two times um this week.
+[5:26] HiM: they launched like a what like a best performing chip.
+[5:30] HiM: Um I mean it hasn't launched yet, but it came out Jalapino.
+[5:34] HiM: They announced that a few weeks ago, and so the benchmarks have now come out and the chip apparently performs very, very, very good.
+[5:41] HiM: Um on par with you know
+[5:43] HiM: the NVIDIA almost frontier almost frontier chips.
+[5:46] HiM: Um I think one of the highlights I got from it was that it's I mean yeah you could see that um it's able to it wins actually so it says hey first custom in France cheap vendor
+[5:57] HiM: reported wins versus the black well per wat.
+[6:00] HiM: So it's um you're getting like even much better performance per per energy.
+[6:05] HiM: but that wasn't also the only thing so some and and and
+[6:09] HiM: and and Brockman were in in time cover um two days ago and um according to the news some somewhere in there Sam says that we should expect AGI between now and December.
+[6:21] HiM: Um that that
+[6:22] HiM: They think that they've reached AGI with like the new model that they have, which is the model after Astra.
+[6:29] HiM: Astra should be coming out like in a few weeks.
+[6:31] HiM: So after Astra, the model that they're currently reinforcement training, they think that that is a GI.
+[6:38] HiM: Obviously I don't believe that, but sure.
+[6:42] HiM: Okay, yeah, Andy, do you wanna move to the next um thing?
+[6:48] HiM: Alright, um and then the rest in the news.
+[6:50] HiM: Okay, cool. HiM: I I I didn't know I had this on the slide, but yeah, I talked about Queen Flash.
+[6:54] HiM: Um it's uh it's a one twenty five B parameter model.
+[7:00] HiM: it can run on one spec comfortably.
+[7:02] HiM: Um and obviously with some quantization you should be able to run it like on like much, much smaller devices.
+[7:07] HiM: It only has six billion active um mixture of expat expads, so he only needs like six
+[7:15] HiM: whatever to actively run.
+[7:16] HiM: So it will run on much smaller devices.
+[7:18] HiM: Um now still on the same I think the rest of actually the rest of what I have okay cool.
+[7:26] HiM: You know, let's talk about perplexity.
+[7:27] HiM: So perplexity we all know of Perplexity Computer, which is sort of their harness that is similar to OpenClaw and Hermes ETC.
+[7:37] HiM: so they um they announced you know this week that Perplexity computer
+[7:44] HiM: um could now run on a DGX spack um that has a a a Queen two point five three Queen three point eight twenty seven B model fully locally, right?
+[7:56] HiM: So you don't need like a cloud anymore for that.
+[7:58] HiM: Um there are pros and and cons of that, but yeah you can click on the thing and and read more about it.
+[8:07] HiM: Another cool thing that happened, me and Andy were talking about this.
+[8:10] HiM: I haven't gotten to the end of it, um, but headlong um is is a research preview kind of like harness that runs twenty four hours.
+[8:19] HiM: It never stops.
+[8:20] HiM: Um so with with OpenClaw and Hermes and and RogueBot and the rest of them, you have to s like send a message um to start a session and then you know, if you see when the session
+[8:31] HiM: is like if there's nothing happening, the agent is basically like waiting for you to say something and you know it's reactive.
+[8:37] HiM: but we're headlong.
+[8:38] HiM: Um they it's like proposing it as the first like proactive like agent harness.
+[8:43] HiM: The agent is constantly thinking forever.
+[8:46] HiM: Like the stream is just constantly like thinking.
+[8:49] HiM: If you're connect if you connected it to like tools or like you know, MCPs, it's just constantly like polling things, asking itself what should I do next?
+[8:58] HiM: Then it does that, asks itself what should I do next.
+[9:01] HiM: It's just like a constant thing.
+[9:03] HiM: Um I have it installed, I haven't started running it yet.
+[9:06] HiM: I
+[9:07] HiM: was trying to decide so I asked, you know, one of my agents to figure out which model, which local model we should have it um on.
+[9:15] HiM: so so we we have it on my my one to eight Mac uh and and the recommended model to use for this is um the three point eight Queen model, the twenty seven B.
+[9:25] HiM: Even though Andy is telling me that the art on it nine B model should be reliable enough.
+[9:31] HiM: Um but yeah, but hopefully speaking maybe next week I would have
+[9:35] HiM: run the experiment and then I can kinda like bring it back.
+[9:37] HiM: But if any of you as well gets ahead of us, um please bring it to the show.
+[9:43] HiM: And then I'm I'm not sure if I have any other slide Andy.
+[9:45] HiM: Um maybe the the instinct is this thing me and you would would talk about.
+[9:49] HiM: Is there yeah, okay cool.
+[9:50] HiM: So so yeah so instinct Andy maybe I'll get your thoughts on this.
+[9:54] HiM: I don't think I've sent you an invite for it yet.
+[9:56] HiM: Um but instinct is this um instinct um is this
+[10:03] HiM: So so guys, the way I kinda like s talk about this is in the beginning of the year there was
+[10:08] HiM: Claude Code, I got into the year Claude Code period.
+[10:10] HiM: I was I built like incredible two hundred thousand lines of code in seven days in December.
+[10:16] HiM: That got me like, Wow, the world is totally different.
+[10:19] HiM: And so I came into the year with Claude Code and I think I was like the best thing um happening in the world.
+[10:24] AndyML: And then first week of January I met OpenClaw, right?
+[10:26] AndyML: And that changed everything, right?
+[10:28] AndyML: It's like, wow.
+[10:29] AndyML: And then for the next few months it was like OpenCore.
+[10:31] AndyML: Um but between OpenClaw there was there was what
+[10:36] HiM: Cowork, 'cause co-work came out.
+[10:37] HiM: I I wasn't a co-work peewed guy, but you know, that took over other people's open core.
+[10:41] HiM: People were like, Yeah, I don't need open core anymore.
+[10:42] HiM: Cowork works.
+[10:43] HiM: Uh we went from cool work to I think we went to Hermes, because everybody's like, Okay, it's Hermes agent now, you know, co-work is open core is there, whatever.
+[10:51] HiM: And then we went from Hermes and then Codex is still like very hot.
+[10:56] HiM: and then in between Codecs and and the last week or two, it's Grogbot, right?
+[11:01] HiM: If you're on X now, everybody's talking about how Grogbot is the best thing.
+[11:05] HiM: after sliced bread, it's like, you know, the world is different now because of Grob Bot.
+[11:08] HiM: Um and and so yeah.
+[11:11] HiM: So the new thing that happened.
+[11:13] HiM: So we you can see in the industry we ch we we're always chasing a new hype.
+[11:17] HiM: We we love new hypers.
+[11:19] HiM: Um so yeah, so the newest hype as of this week is Inkstinct, which is like this company that launched like last week and between last week and and now like they're going viral.
+[11:30] HiM: It's basically OpenCore and Hermes
+[11:33] HiM: And Grogbot, but for like nommies, right?
+[11:36] HiM: It's like you're not doing any configuration.
+[11:38] HiM: You just sign in, ask you for your phone number or like your your WhatsApp, and then that's it.
+[11:44] HiM: And then, you know, it doesn't have access to your own computer, but just like Grogbot, it has some computer in the cloud that it can use to do stuff.
+[11:52] HiM: Um, it has a great personality.
+[11:55] HiM: you know.
+[11:56] HiM: So yeah, so that's um that's that.
+[11:58] HiM: Andy, I think I wanted to send you an invite.
+[12:00] HiM: I don't think I ended up sending you an invite.
+[12:03] HiM: but did you hear about Instinct?
+[12:04] HiM: The crazy thing about them is that they launched and they're already worth two point five billion, right?
+[12:08] HiM: So they raised about three hundred or three hundred and fifty million dollars and they're worth like two point five billion already.
+[12:14] HiM: Actually I think someone on X was like they're already raising another round on like at like five or ten billion already or something like that.
+[12:21] AndyML: my gosh.
+[12:22] AndyML: mean, I saw announcements and I thought I didn't want to spoil it.
+[12:25] AndyML: I want to try it.
+[12:26] AndyML: Um, it's, it's an exciting idea.
+[12:30] AndyML: You know, we'll, have to see where it goes and whether or not it lives up to the hype.
+[12:37] HiM: Yeah. HiM: Well, okay.
+[12:39] HiM: Um Angie, did you join back on the stream?
+[12:41] HiM: Is it working yet?
+[12:42] HiM: Yeah.
+[12:44] AndyML: All right. AndyML: we're going to press, we're going to press on.
+[12:46] AndyML: Um, this episode is brought to you by vertical integrations, least favorite company.
+[12:54] AndyML: Well, everyone else bundles your chip, your model, your monthly seat, heritage telecom does, does the thing.
+[13:00] AndyML: Uh, it's actually good at UCAS and voiceover IP phone service for businesses, um, for businesses that just need their calls to work independent, boring, reliability, zero
+[13:11] AndyML: telemetry.
+[13:12] AndyML: Heritage Tell Duck.
+[13:16] AndyML: And today I'm excited uh to go over this video.
+[13:22] AndyML: I know we've basically moved off of OpenClaw specific coverage.
+[13:26] AndyML: And just to be completely honest, I'm putting a 46 minute OpenClaw video in front of you for two reasons.
+[13:33] AndyML: um The original agent that mattered.
+[13:37] AndyML: That's what OpenClaw was, is, I mean, this community knows as well as anyone how far
+[13:46] AndyML: um Advancement is has continued.
+[13:49] AndyML: um Whatever you're building on now inherited vocabulary.
+[13:56] AndyML: Patterns and in a lot of cases, actual architecture are from this project.
+[14:00] AndyML: um When Peter Steinberger shipped a WhatsApp relay in November and it it turned into this and it set the terms everybody else has been working inside of ever since.
+[14:11] AndyML: That's worth an hour of your attention.
+[14:13] AndyML: It's an entertaining video.
+[14:14] AndyML: um
+[14:15] AndyML: Some maintainers that you've probably met on Discord are featured in the panel with Peter.
+[14:21] AndyML: I see Val and Vincent just on the slide.
+[14:25] AndyML: yeah, worth watching for sure.
+[14:28] AndyML: The second reason, though, is the real one.
+[14:31] AndyML: When you look at the numbers that GitHub published alongside this, roughly 388,000 stars, 81,000 forks, and more than 80,000 commits in nine months,
+[14:45] AndyML: On the couch, they put it at close to a hundred thousand issues and PRs combined from over 2000 individual contributors managed by 70 maintainers.
+[14:56] AndyML: Nobody's ever run a project at those ratios before.
+[15:00] AndyML: And the reason they're at those ratios is that agents can now open PRs.
+[15:06] AndyML: OpenClaw didn't get there because it's beloved.
+[15:09] AndyML: It got there because it was the first code base where the cost of producing a contribution went
+[15:14] AndyML: to roughly zero.
+[15:16] AndyML: And what sealed it for me is that Peter says it out loud.
+[15:19] AndyML: About seven minutes in, he's describing how much they had to invent from scratch just to keep building because they kept hitting problems nobody had hit before.
+[15:28] AndyML: And then he says, I feel more projects will eventually hit this.
+[15:33] AndyML: We're just the first one because we're the fastest growing.
+[15:36] AndyML: ah That's the creator of the thing telling you that this is not an open-close story.
+[15:41] AndyML: It's a preview of your story.
+[15:43] AndyML: Watch it as a field report from the front, not as open-claw news.
+[15:48] AndyML: And here's what breaks first.
+[15:50] AndyML: Throughput.
+[15:52] AndyML: Peter says that for a while, their issues and PRs were like spam markets, almost people abusing the tracker for advertising and other, you know, non-open-claw related, non-issue
+[16:06] AndyML: related content.
+[16:07] AndyML: And then he delivers the line for the whole video.
+[16:10] AndyML: It's like the quote.
+[16:12] AndyML: He doesn't call and we've all heard this before, but it brought the whole thing together.
+[16:17] AndyML: He doesn't call them pull requests anymore.
+[16:19] AndyML: He calls them prompt requests.
+[16:21] AndyML: Now this isn't news, but when you look at the perspective of what we're talking about, the fastest growing open source project ever, the most number of PRs, the most number of
+[16:32] AndyML: issues, the most number of installs, Vincent at one point says he thinks there's north of 10 million installs with some confidence.
+[16:42] AndyML: Um, prompt requests and it's like a new, it's not really new to us, but in the architecture of software development, it's a new paradigm.
+[16:53] AndyML: Josh layman describes contributors running what he called automated software factories, hundreds of PRS open at once, mining the issue tracker for anything to fix.
+[17:03] AndyML: And the fix they landed on is almost aggressively unglamorous.
+[17:07] AndyML: As some of us know, they hard capped,
+[17:11] AndyML: 10 open PRs per contributor at any one time.
+[17:15] AndyML: Val Alexander says that without the cap, they'd be at crazy amounts, over 10,000 easily.
+[17:21] AndyML: What I want you to notice is that the constraint isn't on quality, it's literally on volume per person, because the bottleneck stopped being how many contributions exist and
+[17:32] AndyML: became how many humans can meaningfully look at.
+[17:35] AndyML: The second thing that breaks is trust.
+[17:37] AndyML: ah And so your teams should watch this.
+[17:41] AndyML: OpenClaw had merge count badges, which we've seen.
+[17:45] AndyML: How many of your PRs got merged?
+[17:48] AndyML: Perfectly sensible signal right up until producing a PR cost nothing.
+[17:53] AndyML: Vincent explains what happened.
+[17:55] AndyML: People started duplicating other people's PRs because the badges were a trust signal to maintainers.
+[18:01] AndyML: So more merges meant more credibility.
+[18:04] AndyML: Contribution history became an attack surface.
+[18:07] AndyML: Peter adds the version that made me laugh out loud.
+[18:10] AndyML: He won't name the company, but he describes one that made an advertisement for their new cloud product where they typed, fix open- clot-issue-slash-random-number, opened a PR, and
+[18:20] AndyML: marketed how autonomous their system was.
+[18:23] AndyML: And the cost of that isn't just noise.
+[18:25] AndyML: He points out you burned GitHub API tokens having your own agent search for near duplicates, trying to work out which one was the original.
+[18:34] AndyML: So what replaced the broken signal?
+[18:36] AndyML: Heater-specific and
+[18:38] AndyML: It's the most portable thing in the video.
+[18:40] AndyML: So we can take it with us.
+[18:42] AndyML: Attach your agent transcripts.
+[18:45] AndyML: There's a skill now that just uploads them.
+[18:47] AndyML: when maintainers can see, when maintainers open your PR, they can see how you arrived at the change that you proposed and what you discussed with the model.
+[18:56] AndyML: ah It's literally bringing the receipts.
+[18:58] AndyML: They're not saying you can't use AI to code for OpenClaw.
+[19:01] AndyML: ah They're not saying, this is pretty good slop.
+[19:05] AndyML: They're saying.
+[19:07] AndyML: What process was invested into this PR?
+[19:11] AndyML: He says, attach screenshots proving you tested it.
+[19:14] AndyML: In the noise, it's very difficult to tell five minutes of work from five hours of work.
+[19:18] AndyML: um And nobody cares if you wrote the code or not anymore.
+[19:24] AndyML: But we do care if you actually thought about the feature.
+[19:26] AndyML: So the signal moved from who produced this to show me your reasoning.
+[19:31] AndyML: And if you maintain anything, that's a policy change that might be in your future.
+[19:38] AndyML: Thirdly, the economics of review invert.
+[19:42] AndyML: Josh Lehman says this was the first project where he saw it become normalized that when someone submits a PR as a maintainer, you just edit it.
+[19:51] AndyML: You just make it right.
+[19:53] AndyML: You don't bounce it with review comments and wait.
+[19:56] AndyML: Peter frames the same policy from the other side.
+[19:59] AndyML: Instead of pushing back, expecting the contributor to be a developer, they just do the last changes required and push it through.
+[20:07] AndyML: And Vincent notes the consequences.
+[20:09] AndyML: A good proportion of first-time contributions that got merged came from non-developers, people who had a specific problem and used an agent to open a PR.
+[20:19] AndyML: It only works because finishing someone's work got cheap.
+[20:24] AndyML: Val describes hitting the co-pilot review button on incoming PRs just as a matter of procedure, letting it explain which files changed and why, and says the side effect is
+[20:34] AndyML: that she learns the code base faster.
+[20:36] AndyML: agents reviewing agent code with a human deciding.
+[20:39] AndyML: uh Fourth, your security posture and your visibility both change shape.
+[20:46] AndyML: Vincent says the supply chain attacks push them to go through their dependencies with a fine tooth comb.
+[20:52] AndyML: And the outcome was to reduce core dependencies and actually build relationships with the maintainers they depend on for them.
+[20:59] AndyML: His framing is that in business, you know who's bringing the goods to your door.
+[21:04] AndyML: And in open source, you have
+[21:06] AndyML: No idea, but probably should.
+[21:09] AndyML: Then Peter gives the best illustration of why secure by default isn't a setting you can really pick.
+[21:16] AndyML: They locked it so the agent can only touch your configured workspace.
+[21:19] AndyML: Well, users immediately started symlinking other folders in.
+[21:23] AndyML: So they blocked that in the code.
+[21:25] AndyML: I mean, it's breaking out of the boundary and it's just gonna cause a security issue.
+[21:29] AndyML: uh It broke a lot of setups when they broke that, when they blocked it, symlinks and got flooded.
+[21:36] AndyML: and flamed with complaints.
+[21:39] AndyML: So don't block it and you get flooded with security incidents.
+[21:44] AndyML: Block it and you get flooded with complaints.
+[21:47] AndyML: It's often, Peter says, it's often a hard game to find the right balance between convenience and safe enough as a default.
+[21:55] AndyML: And the visibility piece is the kind of the last thing that sticks with me.
+[21:59] AndyML: um Asked how many active users OpenClaw has, Peter says they don't know.
+[22:06] AndyML: because as we know, there's no telemetry, zero.
+[22:09] AndyML: His guess is tens of millions and he's explicit that it's just a wild ass guess.
+[22:15] AndyML: So instead they built crawlers over Discord, Twitter and GitHub and run agents across everything those pull in, looking for whether a new issue is forming or what deserves
+[22:25] AndyML: attention.
+[22:26] AndyML: There's a second version on the couch, Codex Automations that read the issue and open PRs and report back to the top.
+[22:33] AndyML: problems ranked P0, P1, P2 across the control UI, the iOS app, and the macOS app.
+[22:40] AndyML: If you can't instrument your users, instrument the public exhaust and put an agent on it.
+[22:47] AndyML: So that's what they've done.
+[22:49] AndyML: So the last thing I would say that's relevant to those of us living with this thing um is where it's thought to be going.
+[23:00] AndyML: Peter's own claw asked him which part of the architecture he's most proud of.
+[23:04] AndyML: And he talks about something they're calling code mode on a branch.
+[23:07] AndyML: Now his framing is that every prompt is better with code.
+[23:12] AndyML: went from chat to agents making structured tool calls.
+[23:16] AndyML: And he thinks even the tool call becomes code.
+[23:20] AndyML: the agent basically writing JavaScript to do its own tool calling fewer loops, better performance and a unified way to call MCPs or other, other tools.
+[23:30] AndyML: Then he says, um of the nugget that justifies spending 46 minutes watching the video, it reminded him that we're all still so early.
+[23:41] AndyML: It feels like...
+[23:42] AndyML: um
+[23:46] AndyML: We're just so early collectively in figuring out how this technology actually works.
+[23:51] AndyML: He says that in AI, month is like a year and it's been eight months, but it feels like eight years.
+[23:59] AndyML: But the reality is it really is just eight months of agentic AI.
+[24:03] AndyML: And then we were into loops and then we were into graphs.
+[24:06] AndyML: And, you know, now we're into desktop inference for the masses.
+[24:11] AndyML: And this is the guy with 388,000 stars.
+[24:15] AndyML: There's really nobody that much ahead of us um other than Peter.
+[24:21] AndyML: And he's got a pretty interesting perspective.
+[24:25] AndyML: anyway, I thought you'd enjoy the video.
+[24:27] AndyML: um I thought instead of just reviewing it outright, I would try to tease out some takeaways that might be applicable um in the larger agentic AI um ecosystem.
+[24:40] AndyML: So hope you enjoyed that.
+[24:44] HiM: Very cool.
+[24:50] AndyML: ah We've got a tool fight or a hot take I think Ada couldn't decide it's a little bit of both um NVIDIA is gonna buy hugging face
+[25:03] AndyML: Is that gonna be good for open source?
+[25:07] AndyML: What do you think, Henry?
+[25:09] HiM: yeah. HiM: Um, so I wonder, right, I mean I guess you got yeah, I'm not on the thing, so let me know what people are saying on the chat.
+[25:17] HiM: Um so it's it's a very interesting I'm obviously very I'm gonna just human the the the the bear bear case.
+[25:25] HiM: Um I'm just gonna pick one bear case for this.
+[25:27] HiM: I'm sure there are a lot more than I'm a big Jensen fan.
+[25:30] HiM: Um so
+[25:32] HiM: So I I do think that it's net going to be positive.
+[25:36] HiM: But one as I was thinking about it, one one thing that did come up as a possible downside to this transaction is, you know, obviously everybody here most likely knows that in the
+[25:50] HiM: over the last few weeks that Anthropic has been um, you know, kinda leading the charge in terms of trying to get the government to regulate like AI and um especially like
+[26:02] HiM: You know, even that open source is bad, right?
+[26:05] HiM: It's like open source is super dangerous, it's unsafe.
+[26:07] HiM: Um, and you know, everybody people have their own thoughts in terms of why they think this company is doing this.
+[26:14] HiM: I think it's regulatory crap to all.
+[26:17] HiM: but you know, so it hasn't happened yet.
+[26:21] HiM: Um, but you know, there's possibly still works things in the works that could happen.
+[26:27] HiM: Um and so what you could happen and and then obviously when that was happening, for instance, like when people lost access to Fable and so on and so forth, the sort of vibe
+[26:35] HiM: was that hey, listen, if in the future of the government bans us from using a model, um we have open source.
+[26:42] HiM: We will buy our own hardware and then we'll host it at home, right?
+[26:45] HiM: So if the government says to Anthropic or OpenAI or any of the other models, American companies, hey, you can't serve this models.
+[26:52] HiM: um you know
+[26:55] HiM: for some reason, right?
+[26:56] HiM: If the person is X, like or from X, right, you can't serve them as models, right?
+[27:02] HiM: open source stands in the in the gap to be that, you know, you can set up your own infrastructure and then you can run it yourself, or there'll be people who will not s like
+[27:12] HiM: be subject to that government jurisdiction.
+[27:15] HiM: Um
+[27:16] HiM: So Hoggingface being the the sort of like marketplace for every single type of open source.
+[27:22] HiM: I mean, I'm sure there are other ones, but it's the most renowned, is the most trusted.
+[27:27] HiM: Um and so if that is owned by an American company that is subject to American laws, that is potentially subject to again a short term a potential policy change over the next few
+[27:41] HiM: months. HiM: Um
+[27:43] HiM: whether policy is gonna be anti open source to some extent or even if it's not anti open source, have some s restrictions around what can be opened and who can access it and and
+[27:54] HiM: so on and so forth.
+[27:55] HiM: Um
+[27:57] HiM: Then this if that happens, obviously NVIDIA NVIDIA over the last few years um lost their market share in China, right?
+[28:05] HiM: Because of a government regulation that said they could no longer sell chips um to the to the Chinese, right?
+[28:10] HiM: The export export controls.
+[28:12] HiM: So they went from like a setting percentage of market share and in GPUs to zero, right?
+[28:16] HiM: And obviously they're trying to climb out of that now.
+[28:19] HiM: But the point is it's happened before where NVIDIA was said here you can't do business with X type of people and they have to stop.
+[28:26] HiM: So if that HiM: happens in the near future where the government says, Yeah, listen, um, we don't think you know we should be using anybody in America should be using any of the Chinese models.
+[28:35] HiM: you know, if whatever, we don't think it's safe, just take them off, ban them, then it it will it will it would sort of like paint this transaction as being a bit of a threat to
+[28:46] HiM: the kind of like open source movement.
+[28:48] HiM: But let me know what you think on the charts.
+[28:50] HiM: Yeah.
+[28:51] AndyML: Yeah. AndyML: Yeah. AndyML: I mean, it's kind of a bleak, read and, and I hope you're wrong, but I mean, I obviously I'm not going to pretend that, uh, our government government's not going to try to
+[29:05] AndyML: regulate, uh, open source and hugging face was not a U S entity.
+[29:12] AndyML: having it controlled by a U S entity obviously gives, gives the U S government some arms.
+[29:18] AndyML: Um, I would say
+[29:19] AndyML: At least from an open market perspective, from a sort of purely capitalistic perspective, it's uh in NVIDIA's best interest to leave the market wide open uh as far as open source
+[29:32] AndyML: is concerned.
+[29:33] AndyML: Their total addressable market uh is going to be, it already overlaps with hugging face.
+[29:44] HiM: And um if they lock down hugging face, they're just restricting their own growth.
+[29:49] AndyML: So uh open source is open source.
+[29:53] AndyML: think reasonably if hugging face gets regulated, another organization will come along, another platform will come along.
+[30:00] HiM: Maybe one of us will come along and build something to uh provide the same services.
+[30:06] HiM: uh And NVIDIA, think, probably want, it's certainly in their interest to push back against the necessity of such a platform.
+[30:15] HiM: So yeah, I'd like to think.
+[30:18] AndyML: After Nemo Tron and after uh NVIDIA's contributions to the open clock community and any number of other open source, know, that that Jensen has sort of shown his benevolence to
+[30:29] AndyML: open source. AndyML: um His heart seems to be in it.
+[30:32] AndyML: He's a Linux guy.
+[30:34] AndyML: And I don't know.
+[30:37] AndyML: I think it's probably a net positive if the regulatory doomsday stuff doesn't happen.
+[30:43] HiM: Yes.
+[30:44] HiM: Yeah, of course we hope it doesn't happen.
+[30:45] HiM: I mean that's again I'm still manning it.
+[30:47] HiM: I don't I don't actually believe that that's going to go ha what's going to happen.
+[30:51] HiM: like you said, um open source is good for NVIDIA.
+[30:54] HiM: Um if if we go from, you know, maybe a couple of hund a couple of million people today who are power users being op anthropic and an open AI two hundred bucks and we go to a world
+[31:06] HiM: where everybody
+[31:07] HiM: buys like a two thousand dollar PC just so they can run all their models offline.
+[31:12] HiM: That's great for NVIDIA because they're the ones that sell all the GPUs and in some of these like AI devices.
+[31:19] HiM: Um if you buy a DGX Spark, NVIDIA gets gets um gets value from it.
+[31:25] HiM: I guess another cool thing that happened this week that I totally lost track of um but it's good to mention is that Apple announced their next lines of of of Mac minis and Mac
+[31:34] HiM: Studios and they're great.
+[31:37] HiM: Yeah.
+[31:39] HiM: Cool. AndyML: I mean, that is exciting news.
+[31:41] AndyML: And frankly, I'm surprised we didn't put it in the slides.
+[31:46] AndyML: The benchmarks on the processors are looking really promising.
+[31:51] AndyML: They've promised to ship a 512-gigabyte model.
+[31:54] AndyML: Is that this year, end of this year?
+[31:56] HiM: Um five hundred and five hundred and twelve um gigabyte uh RAM unified memory.
+[32:03] AndyML: Yeah, yeah, exactly.
+[32:05] HiM: it's only m $17,000.
+[32:11] HiM: yeah, they put a price to it already?
+[32:13] HiM: Interesting. HiM: Yeah.
+[32:16] AndyML: Interesting.
+[32:17] AndyML: Interesting.
+[32:18] AndyML: Yeah, no, I'm definitely gonna um yeah, so I mean obviously uh the 5.12 I was really looking forward to it and I had to buy the sparks because I couldn't get the five one two.
+[32:27] AndyML: But now now it's not because the five one two you can very easily l run the GLM flash model because that's a three twenty you know, uh gigabyte
+[32:38] HiM: thing, um but with the with with the five one two you can comfortably run it and then maybe run like a much smaller model, like run a bunch of um on its or queens at at the
+[32:49] HiM: same time.
+[32:50] AndyML: For sure, yeah.
+[32:52] AndyML: when we were living in the world where DeepSeq 4 Flash was the quintessential 128 gig model to run with, yeah, it feels like six months, right?
+[33:07] HiM: The limitation at that point was no vision.
+[33:10] HiM: And so if you can load QWEN 3.8 27b in addition to, yeah, mean, you're good to go.
+[33:18] HiM: Yeah, hundred percent.
+[33:20] AndyML: Well that's let's wrap it up.
+[33:23] AndyML: Sure, ah Big thanks to Herald Labs and Applied AI Product Lab, where humans and agents build together.
+[33:30] AndyML: Labs.TheHerald.co.
+[33:33] AndyML: Thank you, Henry.
+[33:36] HiM: Thank you, Andy.
+[33:38] AndyML: yeah, I mean, that's basically it, right?
+[33:40] AndyML: uh
+[33:43] AndyML: The slides and the recordings will be available for this episode at weeklyclaw.ai.
+[33:52] AndyML: We've got our full episodes on YouTube.
+[33:54] AndyML: um I believe we're streaming to YouTube and X with some level of reliability, although you guys didn't have any audio, so I'm hopeful that those turned out OK.
+[34:06] AndyML: Weekly Claw Discord, there's a QR code on the screen.
+[34:09] AndyML: By all means, join us.
+[34:10] AndyML: We'd love your...
+[34:11] AndyML: um AndyML: comments and feedback on the show.
+[34:15] AndyML: And we're really open to feedback.
+[34:18] AndyML: Please do give us feedback on the show.
+[34:20] AndyML: And I think you'll find that we react very quickly to it.
+[34:24] AndyML: We haven't gotten a lot, but we'd like to be able to appeal to more of you guys.
+[34:32] AndyML: So thank you very much.
+[34:34] AndyML: This was episode 27, and we will look forward to speaking with you next week.

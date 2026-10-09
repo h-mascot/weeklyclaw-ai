@@ -1,0 +1,1056 @@
+YouTube transcript
+Video ID: -4LahKeV7hc
+Language: en
+Captions: authored or unspecified
+
+[0:00] So first of all, welcome to the weekly claw episode twenty-eight.
+[0:04] the agreement landed, the models answered.
+[0:07] I'm Andy Lauppe, your host, Andy ML on Discord in
+[0:13] the OpenClaw community and others.
+[0:15] My co-host Henry Mascot. screen name is H I
+[0:21] And we are your hosts.
+[0:21] Him that him is actually
+[0:23] like I you don't know what him means?
+[0:25] So him is just an acronym for my name,
+[0:27] right? It's like Henry and then Ethan is like my middle name and then a mascot.
+[0:32] That's that's what him is. This is basically my name.
+[0:34] What is ML? It's just like machine learning?
+[0:38] It's the s no, it's the same as yours.
+[0:39] is after my middle name McLaren and L is my last name Lauppe.
+[0:43] it's laughter. I didn't yeah,
+[0:45] I didn't know your middle name,
+[0:46] so I th I think Okay. It's the same thing.
+[0:49] Okay. A ML. Anti money laundering,
+[0:50] Yeah. That's great.
+[0:53] Andy.
+[0:57] Fantastic. I love it.
+[1:00] Well, welcome back to everyone for sure.
+[1:02] We're glad to have you. we're thrilled that the audio is working
+[1:02] We appreciate it. Yeah, we're excited to be back.
+[1:02] Thank you. Nvidia made Hugging Faces deal official.
+[1:06] Anthropic ship some safeguard tiers.
+[1:08] OpenClaw came back from seven quiet weeks.
+[1:11] And New York decided the classroom was not ready.
+[1:14] we've got some slides for you.
+[1:18] We've got a video to review that is not represented in the slide because we're cool
+[1:23] like that.
+[1:27] Henry, you know, what what are you thinking?
+[1:30] You said it was a big week.
+[1:32] Yeah, yeah, yeah, hundred percent.
+[1:34] No, it was a big week, definitely.
+[1:36] but you guys, I mean, I I kinda like started talking about this last week.
+[1:40] I'm a bit like I'm already I mean it's a big week,
+[1:44] right? lost I think it was like four or five big model launches.
+[1:47] Astra is supposed to be the mod biggest model launched to date.
+[1:51] Before that, that was Fable.
+[1:54] So yeah, so I think it's it's a super cool week.
+[1:56] It's exciting. Yeah.
+[1:58] Yeah, agreed. Agreed. This episode is brought to you by Herald Labs,
+[2:03] an applied AI product lab where humans and agents build together.
+[2:07] Entity is mission control for agent teams,
+[2:10] and the lab is building the practical layer behind the hype.
+[2:13] Build with humans, ship with agents,
+[2:16] find it at labs.theherald.co.
+[2:21] What happened this week, mate?
+[2:24] Right. there you are. Okay,
+[2:27] cool guys. obviously one of the things we tried to do is cut down a little
+[2:31] bit of so I I put a lot more things in the agenda in terms of what happened this
+[2:35] week. but so like the trade-off is I spend a lot less time sort
+[2:41] of like analysing and and s like describing what what went on.
+[2:44] but I cover a little bit more ground and and this was feedback from again
+[2:49] one of my friends that, you know,
+[2:50] listens to the show on YouTube post.
+[2:53] And it's like a dope engineer and he's like he he just prefers to have
+[2:57] a breadth of what happened in the week,
+[2:59] versus just going deep on one thing,
+[3:01] right? He wants to grok all the technical stuff that happened.
+[3:05] So yeah. just in case you you didn't get the memo last week when
+[3:10] I flipped to this this this method.
+[3:12] but what we're doing is obviously this you can see the URL up there,
+[3:16] it's weeklyclaw.ai the the slides are probably up already on the website,
+[3:21] so you can always sort of
+[3:23] Open the slides, click through,
+[3:24] and then you can see the full story yourself.
+[3:27] All right. I think the biggest thing that happened this week is
+[3:30] NVIDIA bought Hugging Face. you know,
+[3:34] Hugging Face is like a 12, 10 to 12 year old company.
+[3:38] so they've had their run. so I think the CEO's sort like got a bit tired,
+[3:44] or the team is starting to get get a bit tired of kind of like running
+[3:47] the business and they were looking for a home.
+[3:49] and in the summer.
+[3:51] Clem reached out to Jensen to say,
+[3:53] Hey, can can you c can we can we
+[3:59] do something together or and then Jensen,
+[4:01] yeah, Jensen thought it was super cool.
+[4:03] I think the initial price was gonna be like seven or nine billion.
+[4:06] that didn't quite work and then ended up being like twelve point something billion.
+[4:11] there's nothing else on my stage anymore.
+[4:14] it's it's gone away.
+[4:20] Yeah. but yeah, but that that's Hogging Face.
+[4:22] Hugging Face. just a interesting commentary.
+[4:26] So Hogg Hugging Face, Clem and Jensen really right now are kinda like I think
+[4:32] two of the really sort of like best AI CEOs really in the world on the in the West.
+[4:37] I mean, kinda like in terms of what I mean is AI has a really bad rep in the West,
+[4:44] right? It's like in America, like everybody kinda like I mean
+[4:47] the Americans just Bernie just
+[4:50] Pastor proposed the bill, yeah.
+[4:52] And then we're gonna talk about it little bit,
+[4:54] to ban AI. So it's super unpopular in in a lot of circles.
+[4:57] and the CEOs aren't aren't very charismatic.
+[5:00] So Hugging Face is a company that is super interesting.
+[5:04] They bought a company early a few months ago called Pollen Robotics.
+[5:08] And these guys make like really cool,
+[5:10] cute robots, right? So they make robots that make you really love robots,
+[5:15] right? And and it's not threatening.
+[5:17] You don't think you're gonna be terminated or just like really cool.
+[5:20] Robots. the first one was Reachy.
+[5:22] Reachy Mini. I almost bought that.
+[5:24] so Reachy Mini is super cute,
+[5:26] can talk to you. and then last week they put out Docky or something.
+[5:33] Dock something, right? That's the one that looks like a dock that works.
+[5:36] Did you see that, Andy? Yeah. yeah.
+[5:38] I saw videos of it jumping around.
+[5:40] I wanna say Marquez did a video on it,
+[5:42] right?
+[5:43] Yeah, I didn't see the video, but I bought one.
+[5:45] I paid for one. But you pre-order and like it's six months.
+[5:48] It's like it comes out in December.
+[5:49] So but anyways, the reason I'm mentioning them is like because that company
+[5:52] is investing in doing cool stuff that makes AI look non-threatening,
+[5:56] super cool, fun. and then the on the on the other hand,
+[5:59] Jensen is like super optimistic,
+[6:01] it's like out there just talking about the great things happening about AI.
+[6:05] I believe you're gonna review one of his his video on the G20.
+[6:08] So yeah. I mean, each
+[6:08] Yeah, yeah.
+[6:09] time I watch Jensen's video when he talks about AI,
+[6:13] and I'm super technical, I've run an AI company for almost a decade,
+[6:16] I'm always like, wow.
+[6:18] You know, which is why they call him the professor,
+[6:19] right? He's like such incredible insights.
+[6:22] Okay, cool. so that happened.
+[6:25] I mean obviously maybe I'll let Andy.
+[6:27] I don't obviously I'm not a I'm not a fan of Anthropic at all.
+[6:31] It's like gotten worse over the last few few months.
+[6:34] So I didn't use Fable at all. And I actually don't have an anthropic sob,
+[6:38] but Andy is is an anthropic stand.
+[6:40] So maybe tell us a little bit about Fable,
+[6:42] right? Like how's that going?
+[6:44] I
+[6:45] I I'm I'm a reluctant fan. I've been happy with a lot of the outputs
+[6:50] and I built a production SAS using Claude Code.
+[6:54] and so I have some loyalty to it just so that I don't break the
+[6:59] SAS as I'm continuing my development.
+[7:02] But I have I'll I'll tell you I did make the first commit using Codex this week
+[7:07] and it was totally seamless. I will say,
+[7:11] yeah, I mean Fable is smart.
+[7:14] And it's it's insightful and it it's able to and I and I I assume we'll
+[7:19] get the same from Astra, but it's able to read between the lines
+[7:25] a little bit more like a person would do.
+[7:27] And so you end up with yeah,
+[7:30] I do a lot of analysis of call recordings.
+[7:32] I do a lot of like in my sales process for my business,
+[7:37] I'll take you know, a transcript of a call with a
+[7:42] like a cold calling agent and the the prospect and then the notes from
+[7:45] the agent and then you know,
+[7:48] research and I'll have it I'll have it build a a a prep deck for me
+[7:54] and then I'll sit on a call with the with the client and then I'll take
+[7:57] the the transcript from that meeting and add it to the conversation
+[8:01] and and the insight that it draws is often kind of beyond my expectations.
+[8:06] It's it's less and less
+[8:09] I'm I'm less and less impressed by aggregating data from s stuff that
+[8:12] I just gave it, right? what I want is like,
+[8:15] you know, I'm I'm dealing with funeral homes and I'll get
+[8:20] I'll get insight like you know the this funeral director
+[8:27] just purchased this funeral home four years ago.
+[8:31] They're probably at the end of,
+[8:32] you know, three year contract cycles.
+[8:34] And based on this comment, you know,
+[8:36] they're
+[8:37] you know, inclined to shop even though they say they don't have a budget.
+[8:40] Like it's it it goes a little bit further and I I appreciate it.
+[8:44] 5.1 is faster and it's at least a smarter,
+[8:50] smarter. So and I'm not telling any of you anything you don't know about Fable,
+[8:55] but I'm expecting the same from from Astra.
+[8:59] Yeah. Please do do let us know as well in the comments,
+[9:02] yeah, if you've if you if you're currently using fable.
+[9:04] I mean I was I was gonna open the benchmarks,
+[9:08] but I think we can open the benchmarks when we get to Astra.
+[9:11] Because I mean he he basically kinda like killed some of the benchmarks over Fable
+[9:16] Five, but then Astra just like massacres it everywhere,
+[9:20] right?
+[9:21] Yeah, yeah, yeah, yeah. It it's interesting
+[9:23] so
+[9:24] that that they've solved some of the cost issues,
+[9:26] right? The cache reads are cheaper in five point one.
+[9:29] Yeah. Yeah. Like it's seven seventy five percent.
+[9:30] the workloads twenty five percent cheaper.
+[9:33] Yeah.
+[9:33] Yeah, seventy five percent, like the
+[9:35] cost is seventy five percent cheaper.
+[9:37] Yeah, I saw that. Yeah.
+[9:37] Ye yeah,
+[9:38] yeah. And and and they're even saying highly agentic work could be
+[9:41] But but but but is is that is that
+[9:41] up to forty five percent cheaper.
+[9:43] them is that them solving a problem or is that just anthro anthropic just like
+[9:47] batting the dust and just like cutting their margins,
+[9:50] right? Because you think it got yeah,
+[9:53] It's a reasonable question. I I I don't know.
+[9:55] I don't know what I don't know which one it is.
+[9:57] Yeah. Anyways.
+[9:58] There's a lot of room
+[10:00] to solve problems in their harnesses.
+[10:02] I mean, Claude Code, as we know,
+[10:03] is like two tokens for every one.
+[10:05] Blue dead. Correct.
+[10:07] the results are are good. They're not better,
+[10:09] but they're good. but why does it use twice as many tokens?
+[10:13] Well, maybe the models were too verbose,
+[10:16] who knows?
+[10:18] Yeah. I think that's definitely what people complain about.
+[10:20] I mean OpenClaw, I mean obviously this week yeah,
+[10:23] OpenClaw got the biggest revamp.
+[10:25] I got a lot of love on X. you know,
+[10:29] I got I think I I wrote one tweet 'cause I logged into the control UI.
+[10:33] I don't know if you started using it,
+[10:34] but I think that's like the most exciting.
+[10:36] I still have three calls on on on on OpenClaw.
+[10:39] and so Scotty, which is one of my engineering agents.
+[10:42] I loaded up load up the control UI.
+[10:44] I could select any theme I wanted.
+[10:46] I mean he had themes before, but this is like a lot more cool.
+[10:50] it's definitely super mirror. I reckon everybody who's right here
+[10:53] in the community has updated, right?
+[10:54] so well, I'm not telling you anything you don't know.
+[10:57] but yeah, but that was my that was exciting for me.
+[11:00] That's the control UI is in this.
+[11:02] I've got it pinned now. and you know,
+[11:05] you could I could do multiple sites,
+[11:06] I could break multiple sessions.
+[11:10] And and yeah, so I think that's super cool and you know,
+[11:13] I could have GLM on here, I can have Seoul on here,
+[11:15] I can have Kimi, I can have like different sessions and different models
+[11:19] in front of me. And so I thought that was like definitely very cool.
+[11:23] I think a tweet I wrote about it also it's like got a lot of love,
+[11:26] maybe like thirty, forty K views.
+[11:28] so that was definitely cool.
+[11:30] yeah. Thoughts on OpenClaw and then we can run.
+[11:35] You know, I have not updated yet because I've I've got too many
+[11:37] now production workflows running in the
+[11:40] Yeah, yeah.
+[11:40] that first LTS version. I'm looking forward to testing it.
+[11:44] I'm I have a lot of faith in the team.
+[11:47] I I like what Peter's done taking the methodology of the team
+[11:53] and and you know building OpenClaw with OpenClaw,
+[11:58] doing their multiplayer mode and I'm excited
+[12:01] Yeah. Yeah.
+[12:02] to see what it can do. I really do think he's
+[12:04] His innovations are in the building process and less in the product anymore.
+[12:09] And they're personally I think they're brilliant and I'm excited to
+[12:13] see what comes from them. but yeah,
+[12:16] I I don't want to break anything today.
+[12:18] Yeah, I mean obviously I can see kind of like Jasing is on there.
+[12:21] And I mean I mean one of the feedback I was kinda giving to Hans a couple
+[12:25] of days ago was I I mean I am super technical,
+[12:28] right? I'm probably one of the most biggest power users of agents that I know.
+[12:32] but I did struggle a little bit to like understanding all the things happening
+[12:36] on the new UI. and I do think that and and and I don't know how what
+[12:41] the guys in the urgency I mean this is definitely feedback.
+[12:45] I don't think OpenClaw on Hermes,
+[12:47] which is again what I use, which is what like the book book of the Power users use.
+[12:50] I don't think it will cross the chasm anymore.
+[12:52] so my point of view is that the likes of Instinct,
+[12:56] I sent you an invite for that last week.
+[12:58] I sent it a few friends, Gronkbots,
+[13:01] I've got I've got that as well.
+[13:03] I think those experiences make you understand why OpenClaw on Hermes couldn't have
+[13:09] crossed the chasm. Like my friends,
+[13:10] because I remember in January when I started using OpenClaw,
+[13:12] I sent it to all my friends.
+[13:14] technical, non technical, and like very few of them got started,
+[13:17] right? Because you have to download the thing,
+[13:18] you have to install it. And like if you're just like a random business
+[13:22] guy or you're not like you're not technical.
+[13:24] You're not gonna do it. so yeah,
+[13:26] so setting up the grog bots and like what the experience looks like made
+[13:30] me realize that hey, listen, there's no way.
+[13:32] There was just no way like regular people could have used this.
+[13:34] Like it's just too complex. so a friend reach
+[13:37] And it and it was really never meant for them.
+[13:39] No, it wasn't it wasn't.
+[13:41] Yeah. So so yeah, so I mean but I think that there's a lot of effort right now,
+[13:44] even on the Hermes side and the OpenClaw side,
+[13:47] I I think the the the the beauters wanted to cross the chasm,
+[13:51] right? I I think that they wanted to they want more people to use it.
+[13:55] and so my feedback was if you want more people to use it,
+[13:58] the less you make them have to deal with.
+[14:02] Like the it has to be super if you my because I got Grogbot early access,
+[14:06] I I logged onto it.
+[14:08] It was too simple. Like there's literally only five pages.
+[14:11] There's only five views. So I didn't take it too seriously because
+[14:14] it was too simple. but you know,
+[14:16] after it came out of the mainstream and everybody lost it,
+[14:19] I realized that shit, that's actually how consumer products should look.
+[14:22] It should be like super simple,
+[14:23] nothing to configure, you don't have to do anything,
+[14:25] it just works. and so yeah, so the feedback I was kind of like given with
+[14:29] a new control, the new kind of like open core URLs.
+[14:31] I guess there's lot of things happening.
+[14:33] Maybe we should have two modes.
+[14:35] There's a mode for normal people where they don't see anything.
+[14:37] It's just like super simple, and then you can toggle to like an advanced mode
+[14:41] and then you can see everything.
+[14:42] Like it's like, you know, a chat GPT type view.
+[14:45] you know, but that's if the plan is for it to keep crossing the chasm.
+[14:50] But if the plan is for it to be super users like us,
+[14:53] then then that's fine. this feedback is also the feedback I've also given
+[14:57] to the Harmings team a few times or in Icon X.
+[15:00] because Hermes, the desktop app app is just like
+[15:04] Too bloated. Like I can't use it.
+[15:05] Like it's too complex. Okay,
+[15:09] cool. moving on.
+[15:11] It
+[15:11] is it is it worth mentioning that this this version touched literally every part
+[15:18] of the product and had sixteen hundred PRs?
+[15:21] Like, I mean it's just worth mentioning,
+[15:22] Yeah, you should mention that.
+[15:23] I think, right? It's
+[15:23] Yeah.
+[15:25] a hundred and six releases in two hundred and thirty days and more than sixteen
+[15:30] thousand PRs. it there there's a whole video
+[15:36] I
+[15:36] think it was something like 50%.
+[15:37] Yeah.
+[15:38] It's like 40% of all the commits of the lifetime of the project,
+[15:41] right? Something like that. Some ridiculous number like that.
+[15:42] Yeah. Yeah. Yep.
+[15:43] It's it's basically
+[15:44] like a rebirth of the whole thing,
+[15:45] isn't it? Yeah. Anyways.
+[15:46] Yeah. Yep. It's exciting.
+[15:49] Exciting. so yeah, so moving on to I mean this isn't a big deal.
+[15:56] Qwen 3.8 Max got a checkpoint.
+[15:59] so it's not a it's not a big deal,
+[16:01] guys. I'm gonna move on from this one because we've had way more time.
+[16:03] But but checkpoint is like it to just launch a new version.
+[16:07] Something to note here, and I tweeted about this when this came out,
+[16:09] is Qwen is owned by Alibaba, right?
+[16:12] Libaba is one of the biggest companies in China,
+[16:14] right? So one of the biggest like the equivalent of Google or Microsoft in China.
+[16:17] I th and they have even though they sell this model,
+[16:22] I think that they get a lot more commercial value in their
+[16:26] own ecosystem by launching these models,
+[16:28] right? So what I mean is OpenAI would launch a new model because they're gonna sell
+[16:34] it. They're gonna sell it to me and you.
+[16:36] But Alibaba has like already like hundreds of millions,
+[16:39] if not billions, of users. That just launching any good enough model
+[16:44] in their ecosystem is massive value.
+[16:46] They don't have to sell API. And so I'm seeing,
+[16:49] and so I thought this was a really interesting thing happening that this company
+[16:53] is always launching a new model every week.
+[16:55] They launch a new model every week,
+[16:56] literally. not the ones we know.
+[16:58] They launch a new video model,
+[16:59] a new harness, a new world model,
+[17:01] a new audio model. They launch something every week,
+[17:03] right?
+[17:04] it's only been two weeks this since they launched like 3.827B,
+[17:07] right? And then this is so so and so I was advising,
+[17:11] and I was kind of like saying on X like,
+[17:13] hey, Google and like Microsoft and all the big companies should actually start doing
+[17:16] this. The only ones that need to wait for months to launch a new model
+[17:19] is like Anthropic and Open Air,
+[17:20] because that's their only business.
+[17:21] But if you own a big ecosystem,
+[17:23] then you should launch quickly because then if I use GBrain,
+[17:27] if sorry, if I use Gmail, then I get value immediately.
+[17:30] If I use
+[17:32] YouTube, then I get value, right?
+[17:33] Because your model is integrated like across your products.
+[17:36] and funny that I said it, Google launched 3.8 this week,
+[17:40] right? Like let's move to the next slide.
+[17:41] and so Google since they
+[17:44] had the Yeah.
+[17:48] So
+[17:49] I'm trying.
+[17:50] Google since they have the yeah,
+[17:51] yeah, you need to move to the next thing.
+[17:57] Yeah, but Google since they have the new kind of I mean two weeks ago,
+[18:01] a bunch of did I not have that here?
+[18:05] but yeah, but Google two weeks,
+[18:07] Google two weeks ago or three weeks ago,
+[18:09] all the big kind of like Jeff Dean,
+[18:12] who's the chief scientist, left the core team.
+[18:15] Demis, who's the CEO of DeepMind,
+[18:18] became the chairman. So they basically so they basically had like a shake
+[18:22] up on the Google log. and and I think that
+[18:26] That has probably led to where we are.
+[18:27] So I think in the last three weeks,
+[18:28] Google has launched three models.
+[18:30] They've gone from three point six to three point seven to three point eight.
+[18:33] Right. And so I I think I think there's been a change in ideology within
+[18:37] the within the business in terms of like how their AI team should operate.
+[18:42] And I think they've chosen to do iterative like launches.
+[18:45] They're no longer gonna wait like five months and then launch something big.
+[18:49] They're gonna launch if they get a new checkpoint and it's better,
+[18:51] they're gonna launch it. They get a new checkpoint.
+[18:53] Which is very similar to what Alibaba does.
+[18:55] And so this is how I think. so I think in feature we're gonna get like
+[19:01] the labs are gonna divide into two.
+[19:02] The ones that are already big c part of big companies,
+[19:05] Alibaba, Google, Microsoft, they're gonna launch newer models very quickly.
+[19:09] And then the ones part of like startups,
+[19:12] open AI sm are gonna kinda like take their time and launch.
+[19:15] Cool. let's see,
+[19:19] let's play the videos, right? so there was there is
+[19:23] the video model, all all us and then there's a cerebral thing.
+[19:28] Let's let's play those videos super quickly.
+[19:32] You type, you get the clip, it keeps going.
+[19:40] Step in anytime, the world keeps running.
+[19:44] It can be many kinds of real.
+[19:47] See, he started firing forward.
+[19:51] You're not watching a texture.
+[19:52] And then you wanna watch the second one?
+[19:52] Do you guys see the video
+[19:53] on Yeah? Cool.
+[19:56] Play the second one. But yeah,
+[19:59] but these are I guess like I should have put the slides of Ash so
+[20:02] so so there there are a few world models that launched this week.
+[20:05] okay.
+[20:10] So this is this is yeah. Go ahead.
+[20:13] This
+[20:14] exp this experience, by the way,
+[20:15] in real life is mind blowing. Fifteen hundred tokens per second of like Opus four
+[20:21] point six level vision enabled inference is amazing.
+[20:26] my developer and I were talking about it and I said,
+[20:31] Let's let's just try something.
+[20:32] And he said, Why don't you have it do a a Reno Air Races video game?
+[20:36] And so I it took me longer to type the prompt and then this thing just started
+[20:40] ripping. I mean, we were hitting
+[20:42] The 429, my I used the DeepSeek harness to ride it.
+[20:47] Honest. Yeah.
+[20:47] And
+[20:48] yeah, and the DeepSeek harness is really willing to keep going.
+[20:51] Like it just is like a dog with a bone.
+[20:54] And we would hit the 429 errors from Cerebras
+[21:00] more often than than issues.
+[21:02] I mean, it was just ripping. So we're at maybe 400,000 tokens of produced material.
+[21:09] I haven't played it yet because we were prepared.
+[21:12] prepping for the podcast, but it it went really well.
+[21:18] Shit, I need to so I'm looking at my phone because yeah.
+[21:19] I mean the I mean the models I was just gonna say,
+[21:23] I mean the
+[21:24] the model's legit, right? The benchmarks say it's legit.
+[21:27] I we ran it on my thirty ninety.
+[21:29] It was fast, it was smart. I was just like,
+[21:31] This is a s major unlock. And then Ornith one point five came out like
+[21:35] two days later at twice the tokens per second on the same hardware and
+[21:39] I was using that, but
+[21:40] Yeah.
+[21:41] I Cerebras puts Qwen real way ahead and it's cheap.
+[21:44] I think you you you you fell in love with with on it.
+[21:47] so I'm actually trying to see the cause I benchmark it,
+[21:50] right? So I have I have obviously my own internal benchmark that that
+[21:55] is made out made up of one sixty one sixty tasks,
+[22:00] right? Across like engineering and and business and like across everything I do,
+[22:06] right? and and so every single model that comes out I benchmark it.
+[22:11] And so I'm actually trying to see it and it takes hours for this benchmark to work.
+[22:14] Like maybe it takes like two hours or so for like a model to finish,
+[22:17] for every level, right? but I'm looking at this just before the call,
+[22:21] right? I just for the the show,
+[22:23] I I kinda like s started the benchmark for it.
+[22:25] And it's already done for non low,
+[22:28] medium, high. I think it's finally it's at the end of high at the moment.
+[22:32] So it's done all the if effort levels,
+[22:35] all the thinking levels.
+[22:38] Yeah, I'm trying to see what the result is,
+[22:39] but that's that's a bit slow. So it's already done.
+[22:41] It's so fast that it's what used to take hours.
+[22:44] It's like done in minutes. so yeah,
+[22:47] so if you're not using that, definitely check it out.
+[22:49] I put my card in in yeah.
+[22:50] There's a f the there's there's a free
+[22:52] tier and it's it's, you know, plenty useful.
+[22:57] Yeah, it is. okay. And let's look at the other slide before we do those two.
+[23:03] These two are kinda like pretty big big news,
+[23:05] right? And we can end with this we can end with two of them.
+[23:07] There's one more slide with with a bunch of stuff.
+[23:13] Where where are you thinking?
+[23:16] Spark.
+[23:16] Yeah, it's switched now. All right,
+[23:18] cool stuff. so yeah, let me talk about these.
+[23:21] obviously we talked about three point eight.
+[23:23] So Google launched three point eight.
+[23:24] I saw three point eight in the wild at two thousand eight hundred tokens per second.
+[23:30] Did you see that? It's ridiculous.
+[23:32] there, but but apparently this is like a ridiculously fast model.
+[23:36] so the the thing that the three point eight has in common with the the
+[23:41] H3 Max on there it is. I mean,
+[23:43] obviously the H3 model is is a mini max video model.
+[23:47] and then this video platform file took it and fine-tuned it and it became a max.
+[23:52] Mm.
+[23:54] And then they fine-tuned it again.
+[23:56] They did like three versions. So the new one is H3 Max Turbo.
+[24:00] So there's a max turbo. because this is using the wrong image,
+[24:03] but there is a max turbo because max came out last week or two weeks ago.
+[24:06] So what came out this week is a max turbo.
+[24:08] and the model
+[24:11] Is a video model that is like so fast that it takes you 15 seconds
+[24:15] to type the prompt. It takes the video model 10 seconds to generate the video,
+[24:19] right? It's like it generates 15 seconds what a video in like 10 seconds.
+[24:25] so it's it's an incredibly fast model.
+[24:29] I don't need it, right? Because I have like Gemini,
+[24:33] I have a ton of Gemini credits,
+[24:34] and Gemini has also has a super fast model called Omni.
+[24:37] but I'm considering like swiping my card.
+[24:40] for like file to just have access to it.
+[24:43] it's incredible.
+[24:44] Okay.
+[24:46] obviously Muse Spark launched.
+[24:48] you know Muse Spark, I guess the the cool thing about it is it's like
+[24:53] it feels like Zuckerberg is vindicated.
+[24:56] because a few months ago he had like started logging collecting data from
+[25:01] all all the employees' laptops to be able to train his model.
+[25:04] So yeah fast forward like two months or three months later
+[25:08] it looks like that worked out and and they have a frontier model.
+[25:11] this model benches very similar to Fable and like a few so like benchmarks,
+[25:18] but I haven't used it. I haven't tried it yet,
+[25:20] so I can't I can't say how good it performs.
+[25:23] and then I guess the final news which was in the kind of like
+[25:30] a previous slide, is so like two big things.
+[25:32] one of them we're gonna s like discuss a little bit,
+[25:34] which is like New York.
+[25:36] banned
+[25:37] AI in in in in Slack from Slack K two to K eight,
+[25:42] right? free school,
+[25:45] Yeah, preschool. Preschool to middle school.
+[25:47] yes. Yeah.
+[25:47] Yeah, end to middle school.
+[25:50] Yeah. So we're gonna talk about it,
+[25:51] right? I mean I mean Andy agrees.
+[25:53] I don't agree. So that's definitely something to kind of litigate a little bit.
+[25:56] And then the biggest news obviously of the week is Astra.
+[25:59] Andy can you click on the can you click on the thing so we can actually look
+[26:04] at the benchmarks a little bit,
+[26:05] yeah.
+[26:09] I I've actually
+[26:09] my gosh.
+[26:10] linked ill il link the No this is this is actually not it.
+[26:13] Can you scroll down to the end?
+[26:15] I click on on the footnote on six.
+[26:17] I think this is just this was the article before the actual launch.
+[26:22] yeah, but Astra, right? I mean,
+[26:25] Astra broke so Astra, you know Sam Altman and I think we talked about this last
+[26:31] week. So Sam Otman went on Times and and basically said that he thinks before
+[26:36] the end of the year that they would have Astra.
+[26:37] and then the model that has been kinda like hacking the whole internet.
+[26:42] I can see Zach no, not even Zach,
+[26:44] who is it? Someone mentioned the German thing today,
+[26:48] 'cause there's a hack as well.
+[26:50] They found like that. Basically the model that hack talking face is from this
+[26:54] s like pre-trained, right? So they train the whole
+[26:58] yeah. So that they they the the this pre-train is like a new kind of like class
+[27:02] of models that were trained on on that was trained on hundred thousand GPUs.
+[27:09] right. I think they're it's like I don't even know how I think this
+[27:13] is hundred thousand GPUs.
+[27:16] This either may be a one gigawatt watt cluster or like a two gigawatt cluster,
+[27:19] but it's like a it's a big model.
+[27:22] It's a really, really big model.
+[27:23] I can't remember what the parameter count is,
+[27:25] but I remember I think I've heard somewhere,
+[27:28] saw somewhere that it was probably like a 10 trillion parameter model,
+[27:31] something like that. but it's a really big model.
+[27:34] so yeah, so Brockman says it's AGI.
+[27:39] Sam says the next one is gonna be kind of like AGI.
+[27:43] open AI is so confident that they're gonna milk this model and they're gonna kinda
+[27:47] keep push training it and get a a few more things out of it for a while that they've
+[27:52] because they they they said it's that they're scared,
+[27:55] right, because of what the model has done.
+[27:57] So they shut down pre-training.
+[27:58] So open AI at this moment is no longer pre-training new models.
+[28:01] but they are still pushtraining this one and guardrailing it.
+[28:04] And so from this we're gonna get an Astra five point six point five or like,
+[28:09] you know. it's a big model. This is like the dumbest
+[28:13] Checkpoints. I think internal lead you already have like really strong
+[28:16] checkpoints. yeah, but on the benchmarks,
+[28:19] like Andy, I I can you did you can you scroll to the table?
+[28:22] There's the place that has the table with Fable and and and and
+[28:26] all the coast things. but yeah,
+[28:31] but if you look at the metrics,
+[28:32] right? There like there are only two metrics,
+[28:36] or two or three places that Fable 5.1 is better than in F.
+[28:41] Two of them are from artificial analysis.
+[28:43] And everybody agrees that artificial analysis,
+[28:45] like their benchmarks are dumb at this point,
+[28:47] right? 'cause I think even like Muse Spark 1.3 scores higher than like Astra.
+[28:54] Like, who does that, right? so it's like a really kind of like
+[28:58] old benchmark that no longer applies.
+[29:00] So everywhere, basically every single place it kind of like massacres table.
+[29:06] And it's like so efficient, like you know,
+[29:08] it's like, yeah, this is the table I'm looking for.
+[29:11] So for every single, you know,
+[29:13] for professional, you know, automation bench,
+[29:16] it's you know, it's like forty-one percent.
+[29:19] feeble five point one is thirty-one.
+[29:22] right? If you go to coding,
+[29:25] time out bench four, you know,
+[29:28] fifty-seven. Yeah, no, this is yeah,
+[29:30] so this is the one that's an analysis.
+[29:32] So all their in all their thing,
+[29:33] it performs badly, but like, so yeah,
+[29:37] deep SC SWE seventy four.
+[29:40] Right, that's like, you know, miles ahead.
+[29:43] and then the one when they launched,
+[29:46] the one where it's like the first thing that that five point
+[29:48] one actually launched was that the first thing on their benchmark
+[29:51] is Tamil Bench Science. you know,
+[29:54] it's a huge jump from February five,
+[29:56] mm, if you compare February five point one to February five,
+[29:59] but then now compare that with like Astra Astra is like on a different level.
+[30:03] I think RKGI was solved. So,
+[30:06] you know, I think I that's the first one on the on the on the on the
+[30:10] the stable list like saturated AKGI3 is done.
+[30:13] so yeah so it's a great model.
+[30:16] I I've watched a few videos.
+[30:20] I think every single influencer that I've kind of like watched their
+[30:23] v video talking about it has like been incredibly impressed.
+[30:25] they think it is better. I mean there are one or two people who still prefer
+[30:29] so like Fable for setting things.
+[30:31] Fable still wins for like everything kind of like front end visual.
+[30:35] but everybody still like agrees that this is like a
+[30:39] much, much better model. Yeah.
+[30:42] All right, Andy. I think with that I'll hand over to you.
+[30:45] This took way longer than I wanted it to.
+[30:48] No no, it's great. I don't have a slide for this one today,
+[30:51] but we typically will do a signal from the outside.
+[30:56] I like to review these YouTube videos,
+[30:59] interviews, podcasts, and this one was really interesting
+[31:06] to me because the the perspective is different,
+[31:10] right? We're talking to the G twenty and so we're not talking to a room full
+[31:15] of technicians.
+[31:17] we're talking to politicians and yeah.
+[31:21] So I want to start with the moment that made me stop the video and scrub back.
+[31:25] Jensen Huang is on stage in Chapel Hill with Howard Lutnick,
+[31:30] the commerce secretary, in front of trade ministers from most of the G twenty.
+[31:35] About twenty minutes in, Lutnick asks him a big picture question.
+[31:39] Where are we going? And Huang says,
+[31:42] We'll hit what people call AGI in the next couple of years,
+[31:46] and then quote.
+[31:47] I would argue that we're practically there today.
+[31:49] And that line got headlines,
+[31:52] but it's not really the interesting part.
+[31:55] The interesting part is what he does 90 seconds later,
+[31:58] which is take the claim and deflate it on purpose in front of
+[32:02] an audience of policymakers. He says,
+[32:05] even when we get to AGI, it's not as if every company's problems are going
+[32:09] to be solved. He walks it out.
+[32:11] You don't connect.
+[32:13] your company to an AI service and then sit back and watch productivity happen.
+[32:17] He says that's just not going to happen at all.
+[32:21] So this is the guy who sells the compute.
+[32:23] He just told the room of ministers that the compute is not the bottleneck.
+[32:28] and that's what this video is about.
+[32:30] We'll back up maybe 12 minutes.
+[32:32] there's a stretch in here where Huang gives a definition I hadn't heard stated
+[32:37] this cleanly about anybody at his altitude.
+[32:41] Lutnick asks him about AI as software versus the physical stuff,
+[32:46] factories, robots. And Jensen answers that AI started with large language models
+[32:52] and then says what made AI useful was putting an exoskeleton around the LLM.
+[32:57] And he calls it, of course, the agent harness.
+[32:59] And he lists what it is: retrieval,
+[33:01] working memory, tool use, the ability to collaborate.
+[33:04] And then he does something clever.
+[33:06] He takes the same agent and puts it in a body.
+[33:09] Well, now it's a robot.
+[33:11] Put it in four wheels. Now it's a self-driving car.
+[33:13] Put it in a manipulator. Now it's a pick and place arm.
+[33:16] Surgical robot. Autonomous drug discovery lab.
+[33:19] Same idea. His phrase is LOMs with an agentic system around it.
+[33:25] And the agentic system doesn't really care whether the tools it's holding
+[33:30] are digital or physical. I like this because it's a hardware CEO saying
+[33:35] the model is kind of the commodity layer.
+[33:38] The harness is the product.
+[33:41] Which brings us back to the AGI section.
+[33:43] Because he reaches for the same word again,
+[33:45] and I don't think it's an accident.
+[33:46] Jensen runs a thought experiment.
+[33:50] Everyone at Nvidia hires out of school is brilliant.
+[33:55] He says these are people from Stanford,
+[33:58] Harvard, MIT. And even so,
+[34:01] we still have to invest quite a bit in quote,
+[34:05] surrounding them with context.
+[34:07] He then closes the loop.
+[34:09] All of that surrounding the context,
+[34:11] the purpose, the relevance, the access,
+[34:13] that's the harness around the AI.
+[34:16] We we all know this, but you know,
+[34:19] imagine telling this to policymakers,
+[34:21] opening the the door to them, right?
+[34:24] So twice, 10 minutes apart, he mentions harnesses,
+[34:27] once about engineering, once about management,
+[34:29] and the claim that they're the same activity.
+[34:34] Even at AGI, you spend your energy the way you currently spend it onboarding
+[34:38] a PhD hire. That matches my experience uncomfortably well.
+[34:43] The model is rarely the thing that's failing anymore.
+[34:45] It's that the agent doesn't know what our repo does or why somebody made a call,
+[34:51] made a decision in the the development of it in 2024,
+[34:55] or which of three plausible answers is the one that won't get an engineer paged
+[34:59] at two in the morning. He follows it with.
+[35:03] A split that's four seconds long and the best compressed thing in the video.
+[35:07] The tasks are going to be automated,
+[35:10] but our jobs, the purpose, remain.
+[35:12] He says a job is defined by purpose,
+[35:16] context, and meaning. And inside that job,
+[35:18] there's a lot of typing and talking.
+[35:20] Well, the typing and talking is what's going to go away,
+[35:23] but calls the idea that all jobs getting eliminated as nonsense.
+[35:27] He says it's a blunt word from a man.
+[35:30] being otherwise very diplomatic.
+[35:32] He literally calls shenanigans on the Doomers,
+[35:36] which is kind of fun. Now, he's the single most interested party in the room
+[35:43] on the question. So we're we'll hold on to that.
+[35:47] And before I get to it, the practical bit,
+[35:49] it's the most concrete 30 seconds on the tape.
+[35:52] Jensen says Nvidia uses AI
+[35:56] across the whole company and he names names,
+[35:58] off-the-shelf models from Anthropic and OpenAI,
+[36:01] plus cursor, and then a lot of custom work off their own on the top.
+[36:05] His advice to the ministers is to use off the shelf wherever you can.
+[36:10] And then he says you can't outsource all of your intelligence to somebody else.
+[36:15] He's saying it to countries. It reads the same to an engineering organization
+[36:21] Buy the model, build the harness,
+[36:23] because the harness is where your context lives,
+[36:26] and your context is the part that nobody else can sell you.
+[36:28] And then he makes the architecture argument and hold your wallet,
+[36:33] because of course it's a sales pitch.
+[36:36] His claim is that AI infrastructure has gotten so expensive that specialization
+[36:42] is now a risk. He puts one gigawatt at fifty to sixty billion dollars.
+[36:48] And says NVIDIA is building toward 100 gigawatts by the end of the decade.
+[36:52] Models and algorithms change way too fast,
+[36:55] so specialized silicon can get obsoleted mid-build by the fungible thing that runs
+[37:01] everything. The tension underneath is real.
+[37:04] Algorithm churn does outrun hardware specialization cycles,
+[37:08] but notice who benefits from the framing.
+[37:10] And notice that Jensen has quoted a considerably higher per gigawatt number more
+[37:16] recently than this one.
+[37:17] So treat 50 to 60 as the floor,
+[37:19] he's comfortable saying out loud to customers.
+[37:21] Which brings me back to what I flagged.
+[37:24] The middle of this interview is Jensen making a policy argument.
+[37:28] And I want to lay it straight before I say anything about it.
+[37:31] He tells the ministers that the worst outcome in this industrial revolution
+[37:36] is that you don't take advantage of it and get left behind.
+[37:39] That, he says, is quote the single worst outcome.
+[37:43] He argues for regulating actual and practical harm.
+[37:47] Instead of hypothetical and theoretical harm.
+[37:49] And he claims that advancing the technology is what made it safer,
+[37:53] pointing at hallucination and grounding as problems that got solved
+[37:56] by moving faster rather than slower.
+[38:00] And he tells an airline story.
+[38:03] There was a period when carriers spent their advertising dollars on being safer than
+[38:09] the other carriers. And it turned out passengers didn't want to hear about it.
+[38:12] They wanted safety to be handled.
+[38:15] What they wanted to hear about is where they could go with it.
+[38:17] It's a good analogy. as the AI says,
+[38:21] it does a lot of work. the reason I lay it out rather than co-signing
+[38:26] it is that this argument is being made by the vendor to the customers,
+[38:29] and the customers here are governments deciding how much to buy.
+[38:33] You think the technical claim about grounding is basically right,
+[38:36] but I I mean I mostly do.
+[38:41] You still notice that the conclusion lands on build faster and buy more.
+[38:45] So take the harness material.
+[38:48] that's the part that survives contact with your Tuesday afternoon.
+[38:53] And and that's what I have to say about that video.
+[38:56] But I'm glad I'm glad I'm glad that Jensen was invited to the G two
+[39:01] to provide this context to policymakers who literally have no idea what
+[39:05] any of this stuff does. So
+[39:07] We such an incredible video. It was it was an incredible I learned
+[39:11] so much by watching that video,
+[39:12] I was like it's it's incredible.
+[39:14] It's an incredible
+[39:15] Well
+[39:16] video.
+[39:16] he's he's an incredible teacher.
+[39:18] He's got he communicates very clearly and his obviously his knowledge
+[39:24] on the topic is incredibly deep.
+[39:26] He's not you know, he's not a CEO pretending to understand his product.
+[39:31] So yeah, very
+[39:32] Yeah.
+[39:33] glad to hear from him.
+[39:34] Yeah. Is it you just think, you have AGI,
+[39:36] so what happens? A GI will do all the work.
+[39:38] Of course not. Like we have me and you have agents,
+[39:41] but like we have more work to do,
+[39:44] dude. Like what most people don't understand
+[39:46] Yeah. No.
+[39:49] is like again when you deploy agents in the world and I think everybody
+[39:52] in in the audience understands this,
+[39:53] when you deploy agents in the world then I mean it doesn't reduce your work,
+[39:57] like to some extent it might increase it.
+[39:59] But like 'cause then you
+[40:01] You know, depending on where you are,
+[40:03] you have to like review the work,
+[40:05] right? It's like, right, imagine if we didn't look at the slides and
+[40:09] we showed up here, like then, you know,
+[40:11] it's like we'll be super super surprised,
+[40:13] right?
+[40:13] Yeah, imagine.
+[40:15] Yeah, so so all of a sudden if if I'm able to do twenty software projects
+[40:20] and the past I could only do maybe five in a year and I could do twenty,
+[40:24] like, yeah.
+[40:26] That 20 still requires a lot of resource.
+[40:27] Like I need like humans to be able to look at that.
+[40:29] Like I show the quality and like help people get on board it.
+[40:32] Like, yeah, it's yeah,
+[40:35] there's all this like magical things like,
+[40:37] hey, we're all gonna lose our jobs and the AIs are just working
+[40:39] the company's like how? the the exciting thing for me about the future
+[40:45] is always this like concept. I'm like,
+[40:47] I'm sci-fi puted. I wanna I I kinda like live in a world where one
+[40:51] day we're kinda like all in the stars,
+[40:52] like
+[40:53] You know, where when you're flying,
+[40:54] you're no longer just flying from one continent to the other,
+[40:56] but you're flying from like one planet to another planet,
+[40:59] right? It's like you you know,
+[41:01] but you need robots to build those things,
+[41:03] right? You need to like build like super fast things very quickly.
+[41:07] human beings would always we would always move up,
+[41:11] like we move a level higher, right?
+[41:13] And then you know, we're no longer talking about you know going from
+[41:16] San Francisco to New York. We're talking about going from from Earth
+[41:20] Earth land to like Mars land, right?
+[41:22] And like we're going talking about going from one galaxy to another.
+[41:25] Like there's so much more so much more to do.
+[41:27] that I feel like people who feel like,
+[41:29] hey, this is where we are now,
+[41:31] we should keep these jobs we have today.
+[41:32] I think it was Sam's video. maybe next week we can look at Sam's video,
+[41:37] but it was I don't know if it was in his particular video or like another one,
+[41:41] because there are quite a few of them.
+[41:42] Elon spoke as well. the anthropic CEO Tom Brown also spoke in in those.
+[41:47] people always just tend to
+[41:50] You know, over index you wanna keep that this job you have.
+[41:52] Like dude, like fifty years ago there was no product manager.
+[41:57] There was there's no like podcaster.
+[41:59] Yeah. Alright.
+[42:01] No. No, it's different.
+[42:03] And
+[42:03] yet I think we're doing the AI thing now.
+[42:05] Yeah, this is you.
+[42:07] Let's
+[42:07] do it. Okay. so we've got this news,
+[42:13] right? New York City signed the mayor signed in
+[42:19] to I guess regulations, the one year AI moratorium.
+[42:23] Henry and I sort of both both agree that it's a mistake,
+[42:30] but as you might remember, I have seven kids.
+[42:33] We homeschool them and
+[42:36] Part of the reason for that is the way that the schools in
+[42:39] our area handle technology at younger ages.
+[42:43] And though I don't think it's wise to literally blan it ban it from the classroom,
+[42:48] generative AI.
+[42:52] can become a crutch pretty quickly.
+[42:55] and so my my argument is
+[43:00] AI literacy is important, but so is literal literacy.
+[43:05] Like being able to actually put thoughts together that are original,
+[43:10] that are understandable, being able to communicate clearly is
+[43:13] not something that you necessarily just inherit,
+[43:17] but rather is taught in schools.
+[43:19] And so, you know,
+[43:23] it's not a permanent ban, it's a scoped pause to let standards and rules and
+[43:29] privacy frameworks catch up. I mean,
+[43:32] I'd be lying if I didn't say I tried to build like a family AI portal that could,
+[43:36] you know, let my kids have age appropriate access to models and stuff.
+[43:40] I've definitely played with it.
+[43:42] But yeah, I don't know.
+[43:45] I mean one year in policy, one year is a very short timeline.
+[43:49] I'm I guess to those of us that are AI and agent pilled,
+[43:52] that's like twelve years. But you know,
+[43:56] you Henry pointed out like
+[43:58] Most members of of the citizenry are are looking at chat GPT and seeing
+[44:03] it the same way they saw it a year ago.
+[44:05] And I I suppose that makes sense.
+[44:06] So
+[44:08] hasn't changed for them.
+[44:09] yeah, and and it has real exceptions.
+[44:11] high school AI literacy modules,
+[44:13] supervised pilot, the bands just through grade eight.
+[44:17] I think grade seven and eight is kind of when that's that's when this tool's gonna
+[44:22] be useful. So I don't know, they didn't get the line too far off.
+[44:25] attention and human teaching have
+[44:28] Developmental value for sure. And th this pause allows schools
+[44:32] to build verified equitable infrastructure before rolling out AI.
+[44:36] what would change my mind?
+[44:40] maybe some evidence that supervised classroom AI improves learning
+[44:44] equitably without dependence or introducing privacy harm.
+[44:49] maybe. I I I don't actually don't think mine in mind would be that that hard
+[44:54] to change, but what what do you think?
+[44:59] yeah. No, no, obviously I I don't think it's a good idea,
+[45:04] right? but also d you know, I I get where they're coming from,
+[45:08] right? I get where they're coming from.
+[45:10] They're trying to be they're not trying to be Elliot doctors,
+[45:13] right? There might be some risks attached to having AI this young in in school.
+[45:19] There might be, right? It's it's not proven.
+[45:21] It's not like they came out with like they said,
+[45:22] Hey, here are twenty studies across the world that shows that this is super
+[45:26] bad and we should do it. It's not data driven.
+[45:28] Right. This is I mean depending on who you're talking to,
+[45:31] like the different kind of conspiracy theories around it.
+[45:34] And like this might be protecting teachers,
+[45:36] 'cause like, you know, we're going to a place where there's less humans like
+[45:41] teaching things and just much more technologies like guiding people through it.
+[45:44] so yeah, so it depends on where you I get where they're coming from.
+[45:49] But I I definitely do disagree with it.
+[45:51] and and obviously one of the one of the points is on the slide,
+[45:55] right?
+[45:56] I am AIPO. I don't think I'm I I'm fairly s like you know I am
+[46:03] at the edge of these things, right?
+[46:04] So my kids will have AI, right?
+[46:06] They will have access, right? They you know,
+[46:08] they you know, I would teach them,
+[46:09] right? You know, and so on and so forth.
+[46:11] But there are families who aren't like that,
+[46:12] right? They they don't know anything about AI.
+[46:14] They and so the the school is probably where they would learn some of those things,
+[46:19] right? Or where they would s like understand it.
+[46:21] and then obviously if you take that away,
+[46:23] then the rich
+[46:26] It's like upper class kids. Their parents are still gonna teach them yeah,
+[46:30] they might even have private tutors,
+[46:31] right? Even if they go to public schools,
+[46:32] they will these things will be taught at home.
+[46:34] They will have access to it. so you know,
+[46:39] so yeah, so that's number one.
+[46:41] and obviously I posted about this in a group and a group of men with a few friends,
+[46:45] and I gave an example with China,
+[46:49] right? China hasn't banned, I mean,
+[46:50] China is obviously a cute communist country.
+[46:52] They ban everything all the time,
+[46:54] but they haven't banned AI in like even like primary schools,
+[46:57] right? What they did do is to say you can't use it without supervision,
+[47:00] right? So there always has to be a teacher.
+[47:03] but but what I what I suspect needs to happen,
+[47:07] which is why I think this is a lazy move,
+[47:09] is that the the promise of AI and the promise of kind of like I mean,
+[47:13] the AI might not be there yet,
+[47:14] but I'm sure there are people working on technologies that make it like thus.
+[47:18] is like because when you're in you when you're in school.
+[47:21] Everybody's taught the same thing,
+[47:22] but not everybody understands the same way.
+[47:24] They're like kids with ADHD, kids with X Lit,
+[47:27] kids on a s different spectrum.
+[47:29] So not everybody's in the same place,
+[47:31] right? So that the the kind of like promise of AI,
+[47:34] even from like a super young age is you get personalized learning that
+[47:38] is able to sort of like, you know,
+[47:39] meet you where you are and then,
+[47:41] you know, follow through and and have real time feedback.
+[47:44] Or you don't understand this and then it figures out stories of how it's
+[47:47] to make you better understand it.
+[47:48] And so
+[47:50] What I think should be happening is in schools we should
+[47:52] be redesigning how education works.
+[47:56] and and the example I gave I c I don't think the way schools work today
+[47:59] was the way it worked like fifty years ago,
+[48:01] hundred years ago. The curriculum has changed,
+[48:02] No. yeah.
+[48:03] the technology has changed.
+[48:05] So of course it will change, right?
+[48:07] so yeah, but I get it, I get it.
+[48:09] New York is choosing not to be early adopters and there will be other states that
+[48:13] will figure these things out. and this is not this is not news.
+[48:17] Norway banned AI from
+[48:19] Again, I don't remember the screw,
+[48:20] but like a few like a month or so ago,
+[48:22] Norway did the same ban. So, I think over the next few weeks or months,
+[48:27] this is gonna be pretty kinda like common,
+[48:29] right? You're gonna have people who are you know,
+[48:32] who I mean, I think like America half of America is already kinda like s not half,
+[48:36] like eighty percent of Americans don't like AI.
+[48:38] So Bernie just came out with like let's ban AI yesterday.
+[48:42] Let's bend data
+[48:43] So
+[48:43] centers. He he wants to not build data centers,
+[48:44] Let's ban everything. He's like,
+[48:45] let's ban superintelligence.
+[48:46] yeah.
+[48:47] Let's ban AI. Let's ban it. Let's not let them be the AI anymore.
+[48:50] Let's just stop it. so I think this is just the start,
+[48:53] right? And this is also why I don't think it's a good idea,
+[48:56] 'cause when you start getting into s like this ban regime,
+[48:58] it's only kinda like it's a domino effect.
+[49:01] And so you're gonna get like more things getting banned.
+[49:03] yeah. Yeah. Cool stuff.
+[49:09] I don't know what you guys think on the in the on the on the thing,
+[49:12] you guys let us know. whether you
+[49:15] Yeah.
+[49:15] are you're a pro or or a con.
+[49:19] It's it's interesting to me.
+[49:24] I I like to think of what the the mayor in New York is doing as just a PR stunt.
+[49:31] I mean, this is a guy who's gotten terrible press.
+[49:33] He's probably a terrible mayor,
+[49:35] that's my opinion, but there's a lot of evidence.
+[49:37] Mm-hmm.
+[49:38] But the other side of this is like the public schools have
+[49:44] in in many cases somewhat abandoned data driven educational methods
+[49:51] methods. yeah.
+[49:51] Yeah, a long time ago. A long time ago.
+[49:54] Hundred percent.
+[49:54] And and
+[49:55] so the way the way, for example,
+[49:57] most public schools in the United States teach reading is the data
+[50:02] on the method is terrible. The the data on the method says that it's
+[50:06] it barely works. And what they find is that kids who are not naturally
+[50:11] drawn to reading don't really learn to read very well using that method.
+[50:15] And real methods exist and the teachers don't like them because it's they're
+[50:19] too much work or you know they're they're
+[50:22] Well w for whatever reason. I I'm not trying to editorialize.
+[50:25] I realize I'm being really bad at that effort,
+[50:27] but there will be data on
+[50:32] on education with and without AI and and with certain methods and other methods,
+[50:38] and that data is gonna tell us what's gonna really work.
+[50:41] And the question is whether or not the the schools are gonna follow the data anyway.
+[50:44] Yeah. Yeah. Not not
+[50:45] So we'll see.
+[50:46] I mean the data data like you said,
+[50:48] even like I don't think American public schools are doing very even with STEM,
+[50:51] right? I think there's been a few states that have like been super like pass like
+[50:54] some punitive policies around STEM.
+[50:57] you know, special education. It's like,
+[51:00] yeah, it's all right. all right,
+[51:02] cool. Andy, let's let's keep it moving.
+[51:04] I think we we're over time.
+[51:06] Yeah,
+[51:06] yeah. this this episode's also brought to
+[51:13] you by Heritage Telecom. While the AI industry bundles chips,
+[51:16] models, and seats, Heritage does the thing it's good at.
+[51:19] Unified communications as a service and VoIP phone service
+[51:23] for businesses that need their calls to work.
+[51:25] Independent, boring, reliable,
+[51:29] no telemetry except for all of your call recordings and all of your CDR records.
+[51:35] Find us at heritageel dot com.
+[51:41] And that's basically it, right?
+[51:44] Three things to watch
+[51:45] So
+[51:45] for after the show. you know,
+[51:48] we're excited to see Astra roll out.
+[51:50] I'm I'm interested to check and see if I have it yet.
+[51:53] Henry already does. API
+[51:56] Yeah.
+[51:56] users, like let's let's get our open clause connected to it.
+[52:00] we'll see what what independent benchmarks say once they have it.
+[52:05] And then let's see what regulators and companies say about Nvidia
+[52:08] and Hugging Face Agreement before it closes in 27.
+[52:11] And lastly, whether Visko can demonstrate a persistent world outside
+[52:16] the launch reel while New York measures the consequence of
+[52:19] a year-long classroom pause. So that's the week ahead.
+[52:22] We'll be back Friday, September 11th,
+[52:24] 4 p.m. Eastern. Follow the weekly claw at weeklyclaw.ai and join
+[52:29] the Discord through the link here on your screen.
+[52:33] we're really looking for users to provide you know,
+[52:37] interested users to provide feedback to us on the the segments and content.
+[52:41] you know, please by all means join us jo join us and join the conversation
+[52:47] and we'll look forward to seeing you next week.
+[52:51] Thank you guys. Let's just go do Astra.
+[52:53] Have a good one.

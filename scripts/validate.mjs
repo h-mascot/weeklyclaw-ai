@@ -27,6 +27,9 @@ const required = [
   'episodes/20/agenda.md',
   'episodes/20/agenda/index.html',
   'episodes/20/deck.html',
+  'episodes/32/deck.html',
+  'episodes/32/index.html',
+  'assets/youtube-thumbnails/w32-approved-c.png',
   'episodes/31/agenda.md',
   'episodes/31/agenda/index.html',
   'episodes/31/deck.html',
@@ -111,7 +114,10 @@ for (const needle of [
   '<meta name="twitter:card" content="summary_large_image">',
   'application/ld+json',
   'PodcastSeries',
-  'data-video-id="YCgg0TtGYu0"',
+  'data-video-id="RRYBhrJiyU8"',
+  'assets/youtube-thumbnails/w32-approved-c.png',
+  'GPT-6.1 Sol, Gemini 4 Argon &amp; NVIDIA’s Agent Safety Debate | WeeklyClaw #32',
+  'href="https://www.youtube.com/watch?v=YCgg0TtGYu0"',
   'assets/youtube-thumbnails/w31-approved-a.png',
   "Opus 5.5's Price War, GPT-6 Sol &amp; Luna, Grok 4.7 &amp; Financial AI | Weekly Claw #31",
 ]) {
@@ -189,7 +195,7 @@ if (changelogHtml.includes('Open changelog') || changelogHtml.includes('Host dec
 
 
 const episodesHtml = readFileSync(new URL('../episodes/index.html', import.meta.url), 'utf8');
-for (const needle of ['Weekly Claw Episodes', 'W31', 'data-video-id="YCgg0TtGYu0"', '/assets/youtube-thumbnails/w31-approved-a.png', 'Opus 5.5&#x27;s Price War', 'data-video-id="jAWCqtNs0ns"', '/assets/youtube-thumbnails/w30-approved-c.png', 'W29', 'data-video-id="-M4zet86U_A"', '/assets/youtube-thumbnails/w29-approved-a.png', 'W27', 'W26', 'The agent owns the loop', 'The Sandbox Failed', '/episodes/27/deck', '/episodes/22/deck', 'data-video-id="vqUkh8w2L8g"', 'data-video-id="f2yugYwXOBo"', 'data-video-id="dquJyEBQWpE"', 'data-video-id="MSRFmpDfaTg"', 'data-spotify-id="5t1xYX7e4DUv6l9DKUAi21"', 'data-spotify-id="58kOYSrhrMLArnNfVY41RQ"', 'data-spotify-id="2GywqAyfGJMXafRHRbdIa6"', 'data-spotify-id="1rzUjx7BfqL07H5fYDqr9e"', 'data-spotify-id="3LqMk9YFrbHkQhR3s7exJI"', '/assets/youtube-thumbnails/w27.png', '/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>10</strong>', 'video episodes']) {
+for (const needle of ['Weekly Claw Episodes', 'W32', 'data-video-id="RRYBhrJiyU8"', '/assets/youtube-thumbnails/w32-approved-c.png', 'W31', 'data-video-id="YCgg0TtGYu0"', '/assets/youtube-thumbnails/w31-approved-a.png', 'Opus 5.5&#x27;s Price War', 'data-video-id="jAWCqtNs0ns"', '/assets/youtube-thumbnails/w30-approved-c.png', 'W29', 'data-video-id="-M4zet86U_A"', '/assets/youtube-thumbnails/w29-approved-a.png', 'W27', 'W26', 'The agent owns the loop', 'The Sandbox Failed', '/episodes/27/deck', '/episodes/22/deck', 'data-video-id="vqUkh8w2L8g"', 'data-video-id="f2yugYwXOBo"', 'data-video-id="dquJyEBQWpE"', 'data-video-id="MSRFmpDfaTg"', 'data-spotify-id="5t1xYX7e4DUv6l9DKUAi21"', 'data-spotify-id="58kOYSrhrMLArnNfVY41RQ"', 'data-spotify-id="2GywqAyfGJMXafRHRbdIa6"', 'data-spotify-id="1rzUjx7BfqL07H5fYDqr9e"', 'data-spotify-id="3LqMk9YFrbHkQhR3s7exJI"', '/assets/youtube-thumbnails/w27.png', '/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>13</strong>', 'video episodes']) {
   if (!episodesHtml.includes(needle)) {
     console.error(`Episodes index missing expected copy: ${needle}`);
     process.exit(1);
@@ -211,9 +217,10 @@ for (const needle of [
     process.exit(1);
   }
 }
+const minimumVideoEraCount = 12;
 const summaryCount = (episodesHtml.match(/class="summary-item"/g) ?? []).length;
-if (summaryCount !== 12) {
-  console.error(`Episodes index should render 12 video-era episode summaries, found ${summaryCount}`);
+if (summaryCount < minimumVideoEraCount) {
+  console.error(`Episodes index should retain at least ${minimumVideoEraCount} video-era episode summaries, found ${summaryCount}`);
   process.exit(1);
 }
 if (episodesHtml.includes('data-summary-week="19"')) {
@@ -234,18 +241,28 @@ for (const needle of [
   }
 }
 const feedItemCount = (feedXml.match(/<item>/g) ?? []).length;
-if (feedItemCount !== 12) {
-  console.error(`RSS feed should contain 12 items, found ${feedItemCount}`);
+if (feedItemCount < minimumVideoEraCount) {
+  console.error(`RSS feed should retain at least ${minimumVideoEraCount} items, found ${feedItemCount}`);
   process.exit(1);
 }
 const episodesJson = JSON.parse(readFileSync(new URL('../episodes.json', import.meta.url), 'utf8'));
-if (episodesJson.episodes.length !== 12) {
-  console.error(`episodes.json should contain 12 episodes, found ${episodesJson.episodes.length}`);
+const releasedE32 = episodesJson.episodes.find((episode) => episode.week === 32);
+const e32Page = readFileSync(new URL('../episodes/32/index.html', import.meta.url), 'utf8');
+if (releasedE32?.videoId !== 'RRYBhrJiyU8' || releasedE32?.thumbnailUrl !== '/assets/youtube-thumbnails/w32-approved-c.png'
+    || !e32Page.includes('https://www.youtube-nocookie.com/embed/RRYBhrJiyU8?rel=0')
+    || !e32Page.includes('content="https://weeklyclaw.ai/assets/youtube-thumbnails/w32-approved-c.png"')
+    || !feedXml.includes('weeklyclaw-episode-32') || !episodesHtml.includes('data-summary-week="32"')
+    || !html.includes('href="https://www.youtube.com/watch?v=RRYBhrJiyU8" target="_blank" rel="noopener">Watch the latest')) {
+  console.error('E32 release metadata, player, thumbnail, latest link or summary is missing');
+  process.exit(1);
+}
+if (!Array.isArray(episodesJson.episodes) || episodesJson.episodes.length < minimumVideoEraCount) {
+  console.error(`episodes.json should contain at least ${minimumVideoEraCount} episodes, found ${episodesJson.episodes?.length ?? 0}`);
   process.exit(1);
 }
 for (const episode of episodesJson.episodes) {
-  if (!episode.videoId || !Array.isArray(episode.summary) || episode.summary.length < 5) {
-    console.error(`episodes.json entry for W${episode.week} is incomplete (need videoId and 5+ summary topics)`);
+  if (!Number.isInteger(episode.week) || typeof episode.title !== 'string' || !Array.isArray(episode.summary) || (episode.videoId && episode.summary.length < 5)) {
+    console.error(`episodes.json entry for W${episode.week ?? '?'} is incomplete (need week, title, and summary; video episodes need 5+ summary topics)`);
     process.exit(1);
   }
 }
@@ -307,7 +324,7 @@ if (featuredCopy.includes('Open episode') || featuredCopy.includes('class="lates
   process.exit(1);
 }
 const latestCtas = [...html.matchAll(/href="(https:\/\/www\.youtube\.com\/watch\?v=[\w-]{11})"[^>]*>Watch the latest/g)].map((match) => match[1]);
-if (latestCtas.length !== 3 || latestCtas.some((url) => url !== 'https://www.youtube.com/watch?v=YCgg0TtGYu0')) {
+if (latestCtas.length !== 3 || latestCtas.some((url) => url !== releasedE32.url)) {
   console.error('Homepage latest-episode CTAs do not all target the verified current episode');
   process.exit(1);
 }

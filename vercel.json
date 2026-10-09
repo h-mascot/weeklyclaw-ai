@@ -3,6 +3,11 @@
   "outputDirectory": ".",
   "redirects": [
     {
+      "source": "/admin",
+      "destination": "https://weeklyclaw-admin.vercel.app/login/",
+      "permanent": false
+    },
+    {
       "source": "/discord",
       "destination": "https://discord.gg/jfv8NezYC",
       "permanent": false

@@ -1,0 +1,989 @@
+YouTube transcript
+Video ID: YCgg0TtGYu0
+Language: en
+Captions: authored or unspecified
+
+[0:00] Awesome.
+[0:02] Well, welcome back to the weekly claw, episode 31.
+[0:07] Uh last week this show asked whether the models would stop chatting and start deciding.
+[0:13] This week they answered with an invoice.
+[0:16] Anthropic and OpenAI fired same-day flagship price wars.
+[0:19] Uh open white open weights kept pace.
+[0:22] Uh, and the agents?
+[0:24] One ordered Henry's SSDs, one discovered an enzyme, one hacked the Australian government.
+[0:31] and then told them by email three months later.
+[0:34] So it's it's been an it's been an interesting week.
+[0:38] It's been a model week, I think.
+[0:41] It has.
+[0:42] It's been a it's been a model week.
+[0:44] It's been a it's been a minute since we got a model week.
+[0:46] So I think yeah, we're there now.
+[0:49] Um we're getting a model week.
+[0:51] I guess the theme for the for the model week is just cheaper, cheaper, cheaper, cheaper.
+[0:55] Um I think we're in a couple of weeks there's been all the drama around pacing.
+[1:01] So a lot of people say, hey, we're now at the pacing, pacing.
+[1:04] the frontier models are paced now.
+[1:07] so we didn't necessarily I mean like to be honest, we got great models.
+[1:10] Someone was like
+[1:10] Hey, like we didn't really get group models, we just got cheaper prices.
+[1:13] But no, not really.
+[1:14] Opus was great.
+[1:15] Um so far Opus has been five point five has been awesome.
+[1:18] So yeah.
+[1:20] I don't think Anthropic is spacing at all.
+[1:23] Well, s you know, it's funny, it made me think so in Brazilian jujitsu in the gyms there's this uh concept of flow rolling, this idea where you agree with your partner ahead of time
+[1:34] that you'll go very slow and um the idea is just to focus on technique, um and less on energy, bursts of energy, speed, strength, um
+[1:45] And i it's this sort of typical uh white belt energy where like you know, maybe a slightly more experienced white belt will will tell someone else with a with more experience, like,
+[1:57] hey, let's let's flow roll and that you know everyone agrees and then as soon as you bump fists, the white belt goes all out.
+[2:05] And it's like you know, you you ha you actually have to pace if you're gonna say you're gonna pace.
+[2:12] you're supposed to and and
+[2:14] you know, if you don't, you get that that quick little heads up at the very beginning uh that puts you ahead and I don't know.
+[2:22] It doesn't seem to be good cricket, but I think it's what we're getting.
+[2:26] Um, just a quick note, I am on location in Saint Charles, Missouri.
+[2:30] Uh we're gonna record this episode offline.
+[2:33] This is our first attempt.
+[2:34] Um, so please be gentle.
+[2:36] But Henry, thanks for coordinating it with me.
+[2:39] It looks like it's actually daytime in London.
+[2:42] Yeah, 100%, 100%.
+[2:44] It's it's our first first episode that's during the day.
+[2:47] But again, we're expect do more of these, don't we?
+[2:50] we're expect do more and we're gonna have Yeah, yeah, 100%.
+[2:56] Um obviously pre-time, again, obviously introducing pre-time.
+[3:01] We're gonna introduce pre-time and and who's also so we're gonna do a lot more shows where we're gonna um bring up bring a few a lot more people, like you know, beyond just our
+[3:10] weekly roundup.
+[3:11] it's just gonna be exciting.
+[3:12] We're just starting out, man.
+[3:13] We've got we're just starting out.
+[3:14] It's gonna be exciting.
+[3:15] It's gonna be awesome.
+[3:17] Love it.
+[3:18] Love it.
+[3:19] Excellent.
+[3:19] Well, um, episode thirty one uh on the way.
+[3:24] Let's see the next slide.
+[3:29] Um so I mean yeah, so it's kinda like getting into the week.
+[3:31] Um okay, Herod Labs.
+[3:35] Sure, sure, sure.
+[3:36] Um, as you may remember, the weekly claw is brought to you by the Herald Labs.
+[3:40] Um, an applied AI product lab where humans and agents build together.
+[3:45] Entity is mission control for agent teams and they run hacker houses worldwide.
+[3:50] build with humans, ship with agents.
+[3:51] That's labs.theherald.co.
+[3:56] Let's see what happened this week.
+[3:58] Yeah.
+[3:59] Um again, we already started talking about it.
+[4:01] Um it really is model.
+[4:04] It's it's uh it's it's really model weak.
+[4:06] Um but again, obviously a lot of it is optimized around prices, right?
+[4:11] Um so on the same day um we saw OpenAI and Anthropic launch like new models.
+[4:19] Um I mean kind of like starting out with the Anthropic model, um, which is Opus five point five.
+[4:26] Um they put out I mean so far, man, I like um I saw I'm gonna share a graphic um shortly.
+[4:34] Um I saw the I saw someone did a a video or did an image that that showed um Dario in kind of like his normal form, like a picture of Dario, um four point six was a picture of
+[4:49] Dario, and then four point seven was a caricature of Dario and then four point eight was like
+[4:55] caricature of Dario in black and white and then five was a was like a dud doodly caricature of Dario and then five point five is like Dario like as a muscle builder,
+[5:08] right?
+[5:08] Um so so that that that sort of like that that that describes it a little bit.
+[5:15] Um you guys can kinda like see how we wait.
+[5:20] Um so we went from agentic coding
+[5:24] Atlas was so like leading the way for the last few weeks at 57.9.
+[5:29] Now Opus is 5.5, almost like 10 10 points, 10% higher, right?
+[5:35] It's it's it's an 11-point jump from Facebook 5.1.
+[5:39] I mean, there's nothing, there's nothing um piece paced about this, right?
+[5:43] Going from Fable was their best model that launched like less than a month ago, to 5.5 now, being 10 points higher.
+[5:51] It's just like incredible.
+[5:52] Right.
+[5:53] Um, so you could see agentic coding, um, terminal binge four point zero, that's what I was talking about.
+[5:59] And then there's frontier code v um version one point one.
+[6:03] Um, opus five point five is still higher, four points higher than on feeble, but only about one point higher than Astra, right?
+[6:10] So that means in certain types of coding, um, Astra might still be best at it.
+[6:15] Or they're just neck.
+[6:16] Um agentic coding, it is again much higher than feeble.
+[6:23] knowledge work hundred points higher than than than feeble, um almost three hundred points higher than Astra.
+[6:31] So yeah, so at all the metrics, it's just like a beast of a model.
+[6:34] Um it's just like absolutely like ridiculous.
+[6:38] I guess one of the other things that is valid to like mention is this slide.
+[6:43] There's a slide that was in the announcement that I that I thought was interesting where
+[6:48] Um, okay, cool.
+[6:49] I think it's on the tweet.
+[6:50] They don't have it on here.
+[6:51] Okay, there you are.
+[6:52] This is a slide.
+[6:53] No, it's not this one.
+[6:54] Hunt some second.
+[6:55] Let me find.
+[6:55] Yeah, this is the one I'm looking for.
+[6:57] So this slide was super interesting.
+[6:59] This is for Frontier Code.
+[7:00] Again, I I need a kind of like an empty.
+[7:02] I don't know if you know the difference between like Frontier Code, a terminal bench, and Frontier Code and Cursor Bench, but I thought this was interesting because Mead is
+[7:12] basically the same as Max.
+[7:15] Even though it costs like almost ten times less.
+[7:19] Right?
+[7:20] So this costs like 0.8 for 54%.
+[7:24] this costs the same fifty four actually, this cost this is actually lower.
+[7:27] This is fifty four point six.
+[7:29] Max is fifty four point four.
+[7:31] This costs less than one dollar.
+[7:32] This is six.
+[7:34] Right?
+[7:35] so yeah, so I thought this was interesting because I mean this maybe means that you should never use your your five point five if you're doing coding beyond like
+[7:43] mead.
+[7:44] I don't know.
+[7:44] This is what I kinda like reading to this.
+[7:46] But yeah, Andy, I'll let you respond to Opus.
+[7:51] Yeah, yeah.
+[7:52] No, it's a it's an exciting development for sure.
+[7:54] Um, we see Anthropic obviously trying to lower prices and and give us access to um frontier knowledge with you know, some of their lower models.
+[8:04] We're seeing it with open AI as well.
+[8:06] Uh a lot of a lot of talk out of development groups saying that Luna's actually quite capable and Luna's just a fraction of the price of Astra.
+[8:15] Um
+[8:17] You know, I it it puts us back into the model router category.
+[8:20] It puts us back into conversations about JEV.
+[8:23] And um there's no question once we figure out you know, it I don't know if we're gonna end up keeping these models as the frontier long enough for everyone to sort of figure out
+[8:34] whatever each one is really good at and then routing all those requests appropriately.
+[8:38] But you know, that would be the dream.
+[8:40] And we're gonna see the same thing with open source models.
+[8:43] Some highly efficient open source models are gonna be very good at certain tasks.
+[8:47] tasks and if we can route to them, you know, a corporation can build a very efficient you know, I it makes you wonder if um post training is gonna be as important as routing.
+[8:58] Um I think anyone with enough resources to do both post training and routing um
+[9:04] is gonna find that they can do AI very efficiently within their use cases.
+[9:09] and this is I I think another example of this.
+[9:11] We we don't know.
+[9:13] They may be doing routing at Anthropic to get these results through Opus, right?
+[9:18] Opus might be a conglomeration of their existing models, um, maybe not strictly trained into its own.
+[9:24] I don't know for sure.
+[9:26] I'm speculating.
+[9:28] Wild, wild speculation.
+[9:30] why not, right?
+[9:31] and I I think I've probably had this before, 'cause why not, right?
+[9:33] 'Cause if they can figure out because they maybe they found a a great way to figure out what you need and then they give you what you need with the best model and then they write
+[9:42] you to like a expensive model, but then most of the time you get something made.
+[9:46] That's that's actually an interesting perspective.
+[9:49] Um would we know if they're doing routing?
+[9:51] We wouldn't know, would we?
+[9:52] uh We wouldn't.
+[9:54] It wouldn't.
+[9:55] no.
+[9:55] And especially if they're if they're doing it at their end right, they can reuse the cash.
+[9:59] And yeah, I think we're gonna be um seeing really interesting developments and I I like this I like this direction with the price.
+[10:08] I think it's the right move.
+[10:10] uh
+[10:20] Yeah.
+[10:21] Um so we see kinda like you kinda like started talking about it already.
+[10:24] but yeah, but there was GPT six Soul and and GPT six Luna.
+[10:30] Um and and you can kinda like see, right?
+[10:33] I mean it depends on what their strategy is, if they really do believe and and we're not doing a video review today, but maybe next week.
+[10:40] Andy, you should definitely do the video review um of um of of um of Jensen and and and uh
+[10:48] he was at a podcast, which was um what what's this guy's name?
+[10:52] but but Jensen was at a great podcast.
+[10:54] It was really good.
+[10:55] but yeah, but but let's if we assume that these guys have a greater pace.
+[10:58] you could see OpenAI, the new models they launch very capability launches.
+[11:03] They're more like price launches, right?
+[11:04] So you could see this is um this is f Luna um five point six.
+[11:09] This is the this is the older Luna, right?
+[11:13] So the older Luna costs a lot more.
+[11:15] Um you you're getting a lot more for low.
+[11:17] So the low used to be like what fifteen?
+[11:20] Yeah, fifteen point four.
+[11:22] The new Luna, it's jumped to like about twenty-five.
+[11:25] So yeah.
+[11:25] So even if you're using the same Luna, it costs like way less for the same.
+[11:29] So you can see Luna, it's definitely like better.
+[11:32] I think the one that people and but people are so like the response I've been kind of like seeing on socials, people have sort of like been saying that these models thing.
+[11:40] So let's look at so five point six.
+[11:43] This is um this is five point six.
+[11:45] And then this is um sorry, this is six GPT so six, and then this is five point six.
+[11:50] Um on paper on for Frontier Code, five six is definitely much higher.
+[11:56] Um, but yeah, but I've also been seeing people who have been saying yeah, it's basically the same thing.
+[12:00] But yeah, but we can see here it's slightly different.
+[12:02] It costs much lower.
+[12:04] You can see for low, um, for for just the same, almost the same.
+[12:09] This is um thirty-seven point three.
+[12:13] This is thirty five, right?
+[12:14] But then the cost is, you know, way low.
+[12:18] It's like this is two used this used to be one point six, something like that.
+[12:21] Yeah, one point nine.
+[12:23] But now we're getting it for point four five.
+[12:27] That's a huge drop, isn't it?
+[12:30] Yeah.
+[12:31] Well and look at look at Luna uh X High.
+[12:35] GPT six Luna X High.
+[12:37] Yeah, so we get we get more for eleven cents.
+[12:40] Yeah.
+[12:40] It's like extremes like forty two point foint for two point forty two and then the old Lunar used to be thirty eight, right?
+[12:47] And so it's like wow, this is like huge, huge, huge, huge cuts, right?
+[12:52] Um so yeah, so for open AI, if you're if you're interested in like what happens, for open AI this wasn't a capability launch.
+[12:59] Um there are definitely capability bumps in this thing, but this looks like I think that they've looked at their model and Angie, I don't know what you think about this.
+[13:06] Um you know it
+[13:08] It's been the case that enterprises have started to pivot away from from these closed source models into kind of like open source.
+[13:16] I'm not sure if you saw the chart, but this week the chart showed that um closed source models now at open router, things like open router, ramp, closed source models are now at
+[13:26] like 30%.
+[13:27] They were like 70% at the beginning of the year, they're not at 30%, and then the open source models are like 70%.
+[13:32] um, and so there was also some chart that showed sometime last week that.
+[13:38] On you know, most of the end open air and anthropic revenues are one percent of the population of the enterprises that that do this, and those guys have dipped by ten percent
+[13:47] in the last month.
+[13:48] So they're dropping.
+[13:49] Um so I think open AI is looking at their data and they're they're trying to say, hey, listen, um, we have all this great capability, but you know, the the open source models
+[13:57] don't have as much capability, but people are choosing them instead.
+[14:00] So we need to do something about our costs.
+[14:03] Um, so I I mean let's see what it looks like.
+[14:07] because now
+[14:08] Anthropic is put out five point five.
+[14:11] OpenAI has put out six.
+[14:14] Open AI did more cost optimization.
+[14:16] Anthropic went more capability, even though there was a huge cut as well.
+[14:20] I think it cut by like thirty percent or something like that.
+[14:22] Um so let's see who let's see how the market reacts to these two things capability and a little bit of a drop versus no capability bump and a lot of drop.
+[14:31] Let's see if the enterprises are picking price over kind of capability.
+[14:37] Yeah?
+[14:38] Yeah, it'll be interesting specifically to see if the decisions are being made on price or if they're being made on trust in those organizations.
+[14:46] And and when they lower their prices, um inevitably they're gonna see some adoption.
+[14:52] But yeah, is it going to be the same as the original shift to open source or is it a trust question?
+[15:00] Yeah.
+[15:02] Okay.
+[15:02] Um, all right, cool.
+[15:04] Um moving moving on to um the next thing.
+[15:08] Obviously the next thing is grok.
+[15:09] Um I don't think you you're I don't think you're necessarily a big fan of grok, are you?
+[15:15] Um have you been have you been using any of the grok products?
+[15:18] idea of Grok, Henry.
+[15:21] I r I I really like the idea of Grok.
+[15:23] I like you know, I uh Elon has built a little bit of trust, I think,
+[15:30] with the way that he's handled these organizations, promises he's made on X.
+[15:34] Someone, for example, early on posted something like, I'd like to g you know, give Grok access to my savings and optimize it, but I'd hate for Grok to lose it all.
+[15:44] And E Elon replied and said, Let us know if it loses it all and we'll make you right.
+[15:48] And it it's just I don't know, it it feels very much like he's in it for humanity's best interest.
+[15:55] Um I think we're seeing some of that in the way that uh
+[16:00] Grok is being leveraged.
+[16:02] It maybe that's dramatic to say, but um XAI buying cursor I think was a a great move and the fact that they haven't just
+[16:12] quadrupled pricing and I don't know.
+[16:15] I like Grok.
+[16:17] I have not taken a lot of time to get comfortable in the models.
+[16:20] I have not implemented them in my workflow.
+[16:23] But um people that I know and trust definitely do and they've been very happy with the results.
+[16:29] the prices are somewhat reasonable.
+[16:31] They're capable models.
+[16:33] Um I'm I'm excited to see what four point seven will do, but I it's it's difficult to make the commitment to
+[16:41] you know, move all my workflows over to a totally sort of unknown uh model set.
+[16:47] So I haven't done that yet.
+[16:49] maybe shame on me.
+[16:49] Yeah.
+[16:51] No, no, no.
+[16:52] I mean, even for me, I I don't I'll be honest with you, I haven't used a lot of Grok, right?
+[16:56] Because I mean obviously, um I mean I I recently cancelled my anthropic subscription, even though I got an open router, but I barely use the open router, right?
+[17:04] I still use my my codecs.
+[17:06] I have two codecs and then I use GLM and then they've been to be honest, so for someone like me, I mean remember I started the year um I st I started the year on on welcome
+[17:17] preterm.
+[17:19] Hey, hi everyone.
+[17:21] how's it going, man?
+[17:22] Welcome.
+[17:23] Yeah, good, good.
+[17:25] I mean just to introduce Pritam, maybe I'll Yeah, good to have you.
+[17:29] I'm not sure if you're able to join on video, but it's fine if you can't.
+[17:31] we'll just add your picture there somewhere.
+[17:33] Um just um for for the guys on the video, obviously we wanted to have Pritam here.
+[17:37] um Pritam is a pretty good friend of mine.
+[17:40] Um I I like to think of him as running an AI hedge fund, but I'll let him introduce himself.
+[17:47] you know, and yeah, he's he's he's kinda like we're gonna be joining us and talking about what happened this week.
+[17:52] And then hopefully over the next few weeks we're gonna have a
+[17:55] like an episode where we actually uh get into what he does and like, you know, his business and and what he does with AI is is awesome.
+[18:03] All right, Petam, do you wanna tell us a bit more?
+[18:05] It's like an a minute or two and then we'll get back to the session.
+[18:12] So my name is Pretom and I uh on the AI front I I'm running a company called money mark.ai, which focuses exclusively on building financial AI.
+[18:25] And uh we do train train our own models.
+[18:29] So so the the problem we found is that the frontier labs like anthropic, claude, grok, whenever you test them for like uh deep
+[18:42] or specific financial domain, they they're pretty bad.
+[18:45] They're they're pretty bad at general financial reasoning, uh advice, domains like, you know, if you get into stock analysis or something like market making or credit
+[18:56] underwriting.
+[18:57] Uh they're very generic.
+[18:59] So so we kind of thought about why they'd be so bad at it and figured out the the the actual block of a great financial AI and why it it's not as good as coding.
+[19:11] is because uh a lot of the the really good information sits in the heads of people.
+[19:18] so we started company Money Mark basically to create the high quality financial data like reasoning traces, uh even licensing, uh structured data between fintechs and banks, and uh
+[19:33] even code data, which has like, you know, code integrations to the Fed and stuff like that.
+[19:39] Um so that's what we're doing on the AI front.
+[19:42] for the past ten years I've been, you know, through my company building fintech basically in the credit payments and um investment space.
+[19:55] So yeah, in in a nutshell that's what I'm doing.
+[19:57] Very, very cool.
+[19:58] Um, yeah, definitely check out money mark.
+[20:00] I obviously it's Bd B, so I don't think it's anything, it's not consumers, there's nothing to do on the the website.
+[20:07] Right, well completed.
+[20:08] So we're talking about Grok, right?
+[20:09] Um we're talking about I mean, talking about the models that launched this week and and we're at Grok.
+[20:14] Um so so so like I was saying Andy, um I haven't used it as well, right?
+[20:21] Because again, I I I I need to go buy a sob.
+[20:23] I don't have a sob.
+[20:24] But what I've done is um I have about, you know
+[20:27] I have three or four like X accounts and you know, for like the different Ada has one, I have one, um Herald has one and it's the weekly claw sort of stuff.
+[20:38] And so they give you like s and they're all premium I it's like premium X accounts, right?
+[20:42] So you pay like twenty bucks a month, something like that, or ten bucks, I don't remember.
+[20:46] And so they give you some allocation.
+[20:48] I don't use it 'cause it's super low.
+[20:50] Um but I have it wired into like my my model router if I needed to, but I just and don't end up using
+[20:56] using it as much.
+[20:57] I will try.
+[20:58] I started yesterday to try to use it, but I haven't really used it for for any any cool stuff yet.
+[21:04] But let's look at the let's look at what the benchmarks say.
+[21:09] You know what, Henry?
+[21:10] Um, as you were mentioning that, uh I I have found a use case for Grok.
+[21:15] and you mentioned having it, you know, sort of as part of an allocation with your X account.
+[21:20] I found that Grok has the sort of fastest I mean it makes sense, it's so wired into X.
+[21:27] It has the ability to search the current events and you know, all of the X posts.
+[21:35] And so uh when I
+[21:38] have a friend who has a piece of equipment and I'm convincing them that they should get into AI and try it.
+[21:43] I'll usually go to X and say, you know, my friend has a 4070 in his laptop.
+[21:47] He wants to try to do this.
+[21:49] What's gonna be the most modern, you know, sort of cutting edge recipe today uh for that model.
+[21:56] And it
+[21:58] It's able to grab, you know, 'cause that 'cause X is where all that stuff is happening.
+[22:02] You know, one guy has this piece of equipment and spends all night optimizing it with Fable or Astra and you know, it's getting it to a hundred and twenty tokens per second on
+[22:11] an eight gig GPU.
+[22:14] So anyway, that's that's what I've used Grock for and it's been very good at it.
+[22:17] Everything that it's given me has has been verifiable.
+[22:20] So anyway, that's been my use case.
+[22:21] I said I wasn't using it, but actually that's that's what I use it for.
+[22:24] Yeah.
+[22:25] the I used the I either use the last thirty day skill or I used the bird bird bird skill from from Peter or the old bird skill.
+[22:32] It's no longer public.
+[22:33] Um I actually did it this morning, 'cause I was trying to um I was trying to do uh a two points a three point Queen three point eight twenty seven B model.
+[22:43] I was trying to find the fastest version that is uncensored.
+[22:46] So um, you know, the one I had was like at eighteen
+[22:50] tokens per second.
+[22:50] I was like, hey, what's the fastest tokens per second that people are talking about on X?
+[22:54] So you went and found one.
+[22:55] I think I'm on up to like fifty now because they found a bunch of recipes.
+[22:58] We had to install other latest version of OLMX, um, and so on and so forth.
+[23:03] So yeah.
+[23:03] So okay, cool.
+[23:04] Very cool.
+[23:04] So I should I should update that skill to use um use use that going board.
+[23:09] Um Pritam, have you tested have you do you use any Grok models?
+[23:12] Have you tested four point seven?
+[23:14] do you have any thoughts generally on like Elons?
+[23:16] I know me and you spent we've spent quite a bit of time talking about Elon.
+[23:20] do you have any thoughts on like his strategy?
+[23:24] Um so with regards to GrocPot, uh they've uh they've enabled it in Tesla recently.
+[23:30] So you can actually do work while you're driving.
+[23:33] I don't know if you guys saw that.
+[23:35] Yeah, yeah.
+[23:36] I remember.
+[23:37] Shit, that's a cool news to bring up.
+[23:39] Thank you for bringing that up.
+[23:41] Yeah.
+[23:42] yeah, I mean I haven't I haven't like really delved deep into grogpot uh on like on like my my computer, but uh in the Tesla I use Grok a lot.
+[23:57] and I do plan to kind of uh connect up grogbot, at least to do like things like uh calls and emails and things like that while you're driving.
+[24:07] I think that would be really cool.
+[24:09] So yeah.
+[24:10] today.
+[24:10] There was um there's um actually yeah, it might be good add that in the show notes.
+[24:15] So it was it was I was Alex the I Alex to call the guy the sh the ultimate Schiller, right?
+[24:20] He shows all the kind of like pronoun Alex Finn.
+[24:22] Um I'm gonna show you guys real quick.
+[24:25] Um I'm gonna go show you guys real quick.
+[24:28] Hope I find it real quick.
+[24:30] But I watched the video, there you are.
+[24:31] Um did my thing
+[24:38] Can you guys see this?
+[24:42] No, we're still looking at the Grok benchmarks.
+[24:47] Yeah, it's not really it's not moving.
+[24:48] One second, let me try it from here.
+[24:50] Um Okay.
+[24:54] [Host] Um Okay.
+[24:54] [Host] Guys can sit now?
+[24:57] [Pritam] Yeah.
+[25:06] [Video audio] It's like GrokBot inside of self-driving Teslas.
+[25:10] [Video audio] Let's go.
+[25:12] [Video audio] All right, here we go.
+[25:13] [Video audio] Let's get inside here.
+[25:14] [Video audio] Let's go.
+[25:15] [Video audio] We are going to set this up.
+[25:17] [Video audio] All you have to do to start using your GrokBots is talk to Grok.
+[25:23] [Video audio] Let's not get DCA'd here.
+[25:25] [Video audio] Here we go.
+[25:26] [Video audio] Put this in.
+[25:27] [Video audio] Here's what we're going to do.
+[25:29] [Video audio] Let's start right now.
+[25:30] [Video audio] Hey, Grok, can you see my GrokBots?
+[25:36] [Video audio] You've got 17 GrokBots, all idle right now.
+[25:40] [Video audio] Your exec team is Slate as Chief of Staff, Build as CTO, Barry for Content, Dusty for Community, and Kelly for HIM.
+[25:49] [Video audio] On the shelf side, you've got Mirror.
+[25:51] [Host] he's into it. [Video audio] Running Product.
+[25:52] [Video audio] As you can see, you can see all of my Groks.
+[25:54] [Video audio] Let's put this pause for a second.
+[25:56] [Video audio] It has awareness of all your GrokBots you have, and you can just start talking.
+[26:01] Yeah.
+[26:02] So that was um so that happened.
+[26:04] I'll probably put the links in the in the show notes.
+[26:07] It's it's absolutely like incredible, right?
+[26:09] So he can he can pretty much like go in and and and use it.
+[26:13] So when you're driving, you can so I think that's a great I think I mean we'll talk about we'll talk about Muse when we get there, but we're starting to see some of these bigger
+[26:20] companies who already have distribution, right, use their distribution.
+[26:24] They are not they're not afraid to use their distribution.
+[26:26] So Elon is definitely using
+[26:28] Tesla.
+[26:28] Like he already has like Tesla and has millions of users who buy it.
+[26:32] Um and so this is another kind of like channel to make sure that people are are using or adopting his product as fast as they can.
+[26:40] And we'll talk about Muse shortly.
+[26:42] Um they're also doing the same thing.
+[26:43] So this is incredible.
+[26:44] I think I think it's awesome.
+[26:46] I I'd also add that uh in Tesla when they first introduced Grog, it was yeah, it was mainly something you talk to, but slowly they've been integrating more and more of the
+[26:56] cost functionality into Grok.
+[26:58] So you can you know ask Groc.
+[27:00] to play stuff, to change settings, and more and more of the control of the car is kind of, you know, coming into Grog and it's it's pretty cool.
+[27:12] Yeah.
+[27:13] Fantastic.
+[27:14] I mean, yeah, just kinda like fin finalizing on on Grox four point seven, which is kinda like the new model.
+[27:19] Um, I mean it it is definitely cheaper than you know, on terms of input tokens, CIMA four point six, output token, I thought it was a bit expensive.
+[27:30] I wonder what it is.
+[27:31] because I I think I saw in the news when it came out that it is it was slightly more expensive, but
+[27:37] I mean looking at the charts, it's pretty much the same thing.
+[27:39] Maybe they updated it.
+[27:40] So it's the same price as four point.
+[27:41] Okay, cool.
+[27:42] I think people were comparing it with to four point five.
+[27:45] So it's it's more expensive than four point five.
+[27:46] The same price as four point six.
+[27:49] Um in terms of performance, it's not still um, you know, uh cursor bench, yeah, it's higher cursor bench um than um five point six.
+[27:58] So but you can see they don't have any Astra here.
+[28:00] So they're they're they're being smart, they're not including Astra, 'cause Astra would probably be doing way better at these things.
+[28:07] than than it is.
+[28:08] Um software engineering, yeah, it is better than seven than than Seul.
+[28:16] But again, there is no Astra.
+[28:17] And Astra is much better.
+[28:18] So yeah, so you can see they're being a bit smart and cute here.
+[28:21] They're not really including the the the latest models.
+[28:25] But you can't blame them for not including okay cool there you are.
+[28:28] The knowledge work um you know yeah so they they're kind of like being f smart and cute around
+[28:35] what they're showing.
+[28:36] Let's see.
+[28:36] Am I selecting the wrong?
+[28:38] Yeah, they don't just don't have you just don't have the other other they just picked where they are.
+[28:44] So it's fine.
+[28:45] Um so if you should definitely give it a shot.
+[28:47] It's it's cheaper than but I don't know with with with with GPT six now soul I I don't I don't know where it stands.
+[28:55] to be honest I think people were pretty disappointed with this model.
+[28:57] Um I expected this model so with the launch um the launch has pretty much been a bit of a flop.
+[29:04] To be honest, um, people were pretty disappointed.
+[29:08] People are very disappointed on X with like 4.7, but I wasn't surprised, right?
+[29:12] Because about a week or two ago, um, Elon did a did a response tweet um where he said something like, Hey, 4.7, um 4.7 is going to be um yeah, okay, Andy, I saw that.
+[29:29] 4.7 is going to be okay, 4.8 is gonna be.
+[29:34] Astra level, four point nine is gonna be AGI, five point is gonna be so he kinda like gave a roadmap um a few weeks ago.
+[29:42] And so when I saw that I was like, my god, wow, four point seven is definitely gonna be crap, right?
+[29:46] 'Cause Elon 'cause Elon's vibe is always like being overconfident, over promising, always, you know, being of extremely optimistic about timelines.
+[29:55] So if he by himself self regulated, chose conservative timelines, then you should like expect you should know that, you know, it's gonna be really bad.
+[30:03] So
+[30:04] I spected it up.
+[30:05] Yeah, go ahead.
+[30:06] the difference is uh with with the Grok sort of stuff that Elon's saying, I think he's giving the best case scenario.
+[30:14] But I I think with OpenAI and Claude, it's hard to know how good they already are because I think they stage their models and with RSI kicking in, the rate at which they're gonna
+[30:27] which they're improving is a lot faster now.
+[30:31] So it's kind of hard to know how far behind Groc really is.
+[30:35] Yeah.
+[30:36] I mean I that's that's a fantastic point to make, right?
+[30:38] Like it's a a fantastic cause the models we're getting, Andy, you remember I have this thing where I I call like models level one, level two, and level what level three, where I
+[30:47] always say the models we get are like level two or level three.
+[30:49] Like the models companies, the labs have like much more advanced models, like three to six months ahead of anybody, right?
+[30:56] So we don't actually know where Frontier is today, right?
+[31:00] Um, but yeah, this yeah is an interesting tweet to kinda like pull into the conversation.
+[31:04] So someone is like
+[31:05] Elon like, I'm cautiously optimistic that SpaceX will have a Fable War GPT-6 level model in two to three months, right?
+[31:11] So this is what he said yesterday, right?
+[31:14] And then someone is like, it's over for SpaceX AI.
+[31:18] In two to three months, anthropic and open AI will have like much, much better models, which is again what Pritam just said.
+[31:23] And then here's Elon's response.
+[31:25] We will keep accelerating.
+[31:26] Our AI efforts are only two to three years old versus six um and ten years old, anthropic, blah, blah, blah.
+[31:32] I always think that whenever someone says stuff like this.
+[31:35] We call it explaining.
+[31:36] Like whenever you explain, you know that, like, yeah, you're just explaining, right?
+[31:39] You're not, you're not, you know, you're not gonna win.
+[31:40] So you have you find excuses.
+[31:42] Um, and and so yeah, he's like, once you exceed the caliber.
+[31:46] And so, yes, this second point is is maybe something we should talk about a little bit, right?
+[31:50] And this has been my perspective for the last three months.
+[31:52] Um, so I only use Andy, remember I use GLM five point three, that is what I use as my default model.
+[32:01] Luna is even what I use for yeah, exactly.
+[32:05] Exactly.
+[32:05] So Elon is saying exactly the same thing.
+[32:07] Elon is like, uh once you exceed the caliber of intelligence needed for the class of tasks, additional intelligence is pointless.
+[32:14] You don't need it.
+[32:16] It will be cruel to Bro, like what do you mean?
+[32:19] You mean we don't need A ASI anymore?
+[32:21] We don't need AGI anymore?
+[32:22] What do you mean, Elon?
+[32:23] What are you talking about?
+[32:25] Yeah.
+[32:26] Yeah yeah.
+[32:27] They're not sentient.
+[32:29] And they're not about to be.
+[32:34] I mean, I I think one way to look at this is maybe he's saying that different tasks require different levels of intelligence and there's there's no no need to use open tokens
+[32:48] in the the best of the best model for something that doesn't require that level of intelligence.
+[32:53] Yeah.
+[32:54] But what does that mean?
+[32:55] Like why would you build ASI?
+[32:57] Because Elon's point is, hey, my model is just gonna be good enough for most tasks.
+[33:01] So I don't need to like always be in the frontier.
+[33:03] This sounds like what I feel like he's saying.
+[33:05] And if that's what he's saying, no?
+[33:08] What is what is he saying, Andy?
+[33:09] What do you think?
+[33:10] I I I okay, so he he could be saying that, but the intent that I read is not so much that our model is gonna be the one that's just good enough for the tasks that you're gonna use
+[33:23] it for.
+[33:23] It seems to me like what he's saying is once our models like okay, just take Quen three point eight and the fine tunes that have come out in the last two weeks.
+[33:34] There it th they were almost good enough coming out of Alibaba.
+[33:40] They've been fine tuned, they've been optimized.
+[33:42] And now in many cases they're really good enough.
+[33:44] I mean, if you're a corporation that has uh processes and data sets that you're trying to automate to a thousand X year business, you can use Quen three point eight to do that.
+[33:54] It doesn't need to be
+[33:56] Fable class and and Astra class, um, tier one, tier two, you would call them models.
+[34:02] These are you know, there's like a an actual scope of usage, right?
+[34:07] If you've got a harness that has a responsibility set, you can optimize you know, a nine B model to run that particular harness really fast, really inexpensive.
+[34:18] And it's gonna make sense to do that.
+[34:20] Tesla's gonna do the same thing in their vehicles.
+[34:23] I think they already have
+[34:25] And so w I think what he's saying is like once we have the capability of an Astra class model, uh, at Grok, so that'll be what, four point eight,
+[34:38] the things we're going to be able to optimize and a pr and improve substantially, it'll be a very, very long list to the extent that going to Grok five may not really be necessary
+[34:52] until we're talking about, you know, optimizing particle physics research.
+[34:58] Not so much that they don't intend to do it, but that they're on the edge of it, you know, and and that they can
+[35:03] but essentially he's making a point, generally, that most humans will not need to use that next model.
+[35:12] Unless it's like
+[35:13] review my email.
+[35:15] Yeah, it it it depends on whether they want to produce a product for most humans to solve
+[35:22] uh you know for their everyday kind of workflows and thus and doing their job, which is fine.
+[35:28] But then the whole idea of getting to super intelligence and AI was to do things like do you remember move thirty seven uh from like the Deep Mind Go um AI where move thirty seven
+[35:47] was such a kind of unique move.
+[35:51] very creative yeah.
+[35:53] yeah none of the best players in the world could make sense of it or would ever play it but the AI came up with that move and that's why you know Google's building in King's
+[36:03] Cross is called platform 37.
+[36:06] So I see the promise or at least the attempt to build super intelligence is trying to find things like move 37, which humans would not, you know
+[36:19] probably obviously figure out themselves.
+[36:21] So in that respect, I don't understand point two.
+[36:25] But if he's just talking about, you know, everyday, you know, AI for humans, uh, to go about your day, you know, robots to to help you do stuff, then maybe that's what he means.
+[36:38] But it's not gonna get us out of the solar system, right?
+[36:41] Yeah, it isn't.
+[36:42] No, I get it, right?
+[36:43] But but but but I g I I guess it yeah, go ahead and
+[36:47] I'm sorry, I so first of all, for those of us not familiar with Move thirty seven, um Go is has is this um board game that's been played for thousands of years I suppose.
+[36:58] And Alpha Go came up with a new move um that had a roughly one in ten thousand probability of uh of being made and it it made a difference um in the assessment.
+[37:10] The fact that this move had never been discovered by humans, I think is the relevant part.
+[37:14] But the
+[37:17] I think the thing to keep in mind is that Grok is gonna be the model that's running in the satellites that have unlimited power and cooling.
+[37:25] And um so we're we're going to see scale and advancement f from more than just intelligence from Grok.
+[37:33] And I I I sort of
+[37:35] I'm having a hard time articulating it, but I I think I see Elon's point.
+[37:39] It's less, I think, about the models being good enough to check your email and and do the tasks that people want, and more about um if we put fifty percent of our AI cap capability
+[37:50] into space, as long as that fifty percent can handle fifty percent or more of the usage, uh, then they're keeping pace, essentially.
+[37:58] Right, right.
+[37:59] Fair enough.
+[38:00] All right.
+[38:01] Running gentlemen, um, moving on to the next item on the Docker.
+[38:06] I don't think I'm gonna talk about this concierge thing.
+[38:08] I think it's interesting, but I don't think it's validated.
+[38:11] Um but but um Antie, I mean me and you do talking a little bit about this.
+[38:14] I think a most more interesting thing to kinda like highlight as we're talking about meta, um, is that meta with the muse agent is on a generational run.
+[38:25] Um, if you don't have a news agent yet, you're kinda like, you know, missing out a little bit.
+[38:30] Um, they're they're really killing it.
+[38:31] The agent is really good.
+[38:33] I'm using it day on day now.
+[38:34] It's like more of my personal agent.
+[38:36] I haven't given you access to work stuff, so I'm using it for like um other kind of like work stuff.
+[38:41] It's gotten really, really, really good.
+[38:44] and obviously Meta had their their kind of like dev conference called Meta Connect and they announced like incredible stuff, right?
+[38:52] obviously one of the things they announced was the meta.
+[38:55] um X X Met meta VR glasses.
+[38:59] Um I I'm a big I use Quest 3.
+[39:01] I have my Quest 3 here.
+[39:02] if you watch the past episodes you see it like hanging on my thing.
+[39:06] Um so this is one I mean they announced a lot of very cool stuff, but this has been my biggest kind of like news.
+[39:14] Um and so it's basically the Quest three um which is also like Apple has their own have their own also is the same thing.
+[39:22] But the difference with this is like it looks like a regular glass.
+[39:25] Um, but then it has the same power, um, the same kind of like visual, whatever as as the quests.
+[39:31] And then on top of that, you can use your Muse agent inside it.
+[39:34] So you can talk to the agent as you're working and so on and so forth.
+[39:38] So it's been absolutely incredible.
+[39:39] They had a lot of very cool launches as well.
+[39:41] They launched uh a device, hardware that you just hold in, you know, it's like I'm not sure if you saw that Andy, but it's like a round device.
+[39:49] Sounds very similar to what OpenAI plans to launch.
+[39:53] which is like an AI device that sits on the table and you can talk to it, you can carry it anywhere.
+[39:57] Um it's not it's not a phone, it's not it's just like an audio thing that has a screen that that like can show things like a watch without the handle.
+[40:06] so Meta also launched a similar thing.
+[40:08] Um and then they had lots of innovations around their previous glasses.
+[40:11] they have a glass now that is no camera, just audio only, and you can talk to your muse agent through it and it can do anything for you.
+[40:18] Um did you guys follow the the Meta news this week?
+[40:22] Saw the announcements, yeah.
+[40:24] I guess my my first thoughts were like, why would this just not be integrated into into my iPhone?
+[40:30] Uh at least for the you know, the device that's listening.
+[40:37] Yeah.
+[40:38] I mean I guess like um the the issue the the the the issue with that is I suspect that unless meta makes a device, iPhone would not be willing to do that.
+[40:48] Um I think um iPhone is sort like betting on or the m the the the Apple ecosystem is betting on a on a device AI.
+[40:59] And so until device AIs get powerful where you can have like an offline age
+[41:06] device.
+[41:06] Yeah.
+[41:07] I don't think Apple is gonna do an agent that that so Apple has just been unwilling to do that.
+[41:14] Andy?
+[41:16] Journey Faust?
+[41:17] Yeah, no, I mean th th they've obviously built um
+[41:21] you know, some of these capabilities into their existing apps.
+[41:23] I've I haven't personally used the Muse agent, but I did notice in Facebook Messenger that it it popped up at the top of my list.
+[41:32] Did you know you have a Muse agent and you can talk to it and yeah, so y i they're gonna they're gonna build that um interactivity into the devices that people have in their
+[41:42] pockets.
+[41:42] Um if it if it isn't fully developed today it will be soon.
+[41:46] It's interesting that Zuck is focused on
+[41:50] these extra devices and and I'm wondering I don't think he's grasping at straws.
+[41:54] I think there's a vision where there is going to be a device that supersedes the iPhone.
+[42:02] Um and I think he'd like to be the one that produced it.
+[42:05] And I think he's m maybe shooting in the dark, trying to feel like well maybe it's glasses.
+[42:10] Maybe it's a watch.
+[42:11] Well maybe it's this dongle.
+[42:13] I don't know.
+[42:13] Um but something might hit.
+[42:15] People are gonna find use cases for these things, especially um
+[42:20] these are VR glasses.
+[42:21] I think augmented reality is gonna be crazy powerful.
+[42:24] Um but of course they're gonna have to put crazy powerful silicon in the glasses.
+[42:28] Yeah.
+[42:28] This is gonna get there.
+[42:29] I suspect this will get there.
+[42:30] So you so um I actually I listened to a few s like Zoc interviews this week.
+[42:34] Um and actually what you just said is exactly the point he made.
+[42:38] He he thinks that devices ha have always been getting smaller over the last decades, right?
+[42:45] There used to be a supercomputer that used to fill a whole room and then it became like kind of like whatever that used to be on the big desk, now it became a laptop and then it
+[42:52] became a mobile phone.
+[42:54] And so he thinks the next form factor is the glasses.
+[42:56] So he's betting on the glasses.
+[42:58] Um, he thinks that.
+[42:59] Well, Apple feels potentially feel the same as well because they said Vision Pro is uh kind of planned for over a decade or something and where they want to actually be with it
+[43:11] is nowhere close to where they are at the moment.
+[43:14] So they're running that bet as well, I think.
+[43:17] Yeah.
+[43:17] So my so and obviously Meta the VR glasses because I have the quest, right?
+[43:22] And I use them almost every day.
+[43:24] But like the only way I use them reliably is if I'm lying down.
+[43:27] So it's like I'm lying down and then it's like I'm using it.
+[43:29] And so it's not that great yet to use it for anything.
+[43:33] I can't use it to do work.
+[43:34] So I use it like I'm watching something and then I'm talking to my agents.
+[43:37] Um it's been great.
+[43:38] I've actually been reviewing recently with meta AI is getting better.
+[43:42] So I can say, Hey, Meta AI, close this browser, open this for me.
+[43:44] It's gotten better than
+[43:46] you know, clicking through.
+[43:48] so I can just talk to the the the device.
+[43:50] And then recently what I've been doing is I've been using my my chat GPT agent in it as well.
+[43:54] So I open the browser and then I open the voice mode and I just talk to the agent, right?
+[43:58] Um so the only issue is I can't use codex on the device yet.
+[44:03] but as soon as I can use codex, I can imagine then I can have an agent do work.
+[44:07] I can talk to hey open this thread, do this work, and so on and so forth.
+[44:11] Right.
+[44:11] Um meta meta meta also launched a voice
+[44:15] voice a voice um featured with the muse agent and and so now you can call your muse agent on the phone, you can open a video chat with your muse agent where you guys you can see
+[44:24] the avatar, the avatar is moving.
+[44:26] so the voice form factor is definitely gonna be a strong component to to these things.
+[44:32] Yeah?
+[44:33] Yeah.
+[44:34] Very interesting.
+[44:35] It'll be interesting to see.
+[44:37] Yeah.
+[44:37] Gentlemen, obviously I have to run.
+[44:39] Um, so I think let's talk about one more thing and then maybe I'll let you guys kind of like finish up.
+[44:44] so um open AI I mean there are lots of again, Andy would do a video of Jensen responding to kind of like all this all the doomerism and all the AI would kill us.
+[44:56] You guys know we're not we're not we don't think that AI is gonna kill you anytime soon.
+[45:00] We think that that that doomers are just trying to do regulatory capture.
+[45:04] Um there is some risk, but it's not as as as as it it is made.
+[45:08] so another news again following on the same thread is that in the last week, um or this week it came out that um open AI's agents, um during the the few weeks that it was going
+[45:20] it was doing a rampage of of the internet, it also hacked into you know, the Australian kind of like Medicare website, which is a government website, right?
+[45:30] Um
+[45:32] Uh and I mean it's not news.
+[45:34] It happened in June.
+[45:35] It's just that open AI is just letting them know, this also happened.
+[45:40] Um, but I but again to open AI's defense, um, I I think for them it would have been a when these things happened, it wasn't a big deal.
+[45:46] Agents crawl the internet a lot of times, they write stuff a lot of times, so they didn't feel it was important to report to everybody.
+[45:53] the agent came to your website.
+[45:54] Um, but now because it's become such a big deal and you know it's it's become uh a
+[46:00] So now they're I guess they're reaching out to every single person that their agents went to their their their infrastructure and did something.
+[46:06] Hey, by the way, uh agent agents agents visited you and and left a few a few notes on your stuff and and so on and so forth.
+[46:15] Um again, just to again make this a little less dramatic, um, when you go through the news, people said hey, people who kinda gone into the details, it didn't hack any website.
+[46:25] the government had some public data.
+[46:29] that was didn't have a URL.
+[46:30] So it the data was public, even though it wasn't on their website, but was public.
+[46:34] Anybody could find it if you were searching.
+[46:36] Um so it's not a hack, but of course, um it's it's worth mentioning in the news.
+[46:42] Do you guys want to respond to this?
+[46:46] You know, I think the it fits the narrative.
+[46:52] You know, as you say, this is not a dangerous compromise.
+[46:54] Um and it's old news.
+[46:57] It's almost like they're just trying to justify pacing and
+[47:04] Yeah, I I guess I'm not super worried about it.
+[47:06] I the other thing though that I'm kinda curious about is like where are all the lawsuits?
+[47:10] You know, there are lo there are already laws against this.
+[47:13] Uh i against if it were an illegal compromise, you know, why wouldn't the Australian government su sue OpenAI yeah.
+[47:20] Yeah.
+[47:21] I'm surprised.
+[47:22] I'm like I'm surprised why but I guess like the issue, right?
+[47:24] I I've seen you you listen when you listen to the Johnson thing, right?
+[47:27] I guess like they haven't really caused any harm yet.
+[47:29] So that's probably why nobody has sued them.
+[47:31] Right?
+[47:32] So there's there's probably no law against going to my website and like writing on my blog or anything like I but I guess you hacked my blog, right?
+[47:39] So there should be a law of like if you can like get into my blog and start writing on my blog, right?
+[47:46] Yeah.
+[47:47] Um Peter?
+[47:48] it's it's tr it's tricky, right?
+[47:50] It's tricky because on on the one hand, you know, you're thinking that is this like in a way marketing, is it to sort of show how dangerous AI can be and
+[48:04] get into that whole regulatory capture argument.
+[48:08] but on the other hand, it could also be important information and a lot of worse things could happen.
+[48:15] Uh the thing
+[48:18] At least LLMs are really good at is code, right?
+[48:22] And so one of the best fit problems for them is infiltrating technical systems.
+[48:29] They've like tried to scrape every bit of code they could find on the web to train and you know, bought codes in the billions.
+[48:37] So you can't dismiss it.
+[48:39] And at the same time, there could be a bit of marketing and hey, look what this did.
+[48:45] Kind of thing happening.
+[48:47] Yeah.
+[48:47] So it's um I think we have to not be too skeptical and also like you don't you don't wanna be you wanna pay attention to it.
+[48:58] Yeah.
+[48:58] No, to be honest, like again, Pritam, I absolutely agree with you.
+[49:01] It's just like it's not new.
+[49:02] Like cyber is not new.
+[49:04] Anybody, so the issue here is like I like what you said.
+[49:08] One of the biggest issues is that the agents are pretty good with like cyber.
+[49:12] So what do we do?
+[49:13] We need to make them very good at defense and deploy them, right?
+[49:17] Um exactly, right?
+[49:20] It's not AI against humans.
+[49:21] It's like the same way everybody that the AI is gonna hack everything.
+[49:24] You just built the product to defend.
+[49:26] It's it can't be AI versus human.
+[49:27] It has to be AI versus AI.
+[49:29] Where are the defense products?
+[49:32] Exactly.
+[49:34] Exactly.
+[49:34] can't have a human look at something.
+[49:36] I mean the AI has moved on.
+[49:37] Uh so interestingly, I I did meet uh this guy who spearheaded the agentix product at Palo Alto Networks um at the AI engineer conference a couple of days ago.
+[49:51] And um he was talking about how uh Nikesh the CEO gave them two months.
+[49:59] to launch the agentix product once he told them that look, we're gonna be fighting this and etc, etc.
+[50:06] And the case said, okay, I'll give you two months.
+[50:07] Uh and they managed to do it.
+[50:09] And apparently it's it's a hugely successful product uh for them now.
+[50:14] So um it's basically going to be AI against AI.
+[50:18] Uh and especially things like finance, which is kind of my area like fintech, uh you're going to have to have agent against agent pretty quickly.
+[50:29] We're gonna hear more of these scary stories.
+[50:32] Yeah.
+[50:32] No, I th I think it's a good segue, right?
+[50:34] Obviously guys, I'm gonna be off video now 'cause I need a jump soon.
+[50:37] So Andy, I'll let you um you and you and Pretem finish up.
+[50:40] But I think pretem I think you had like some pretty good experience at the AI Engineer in Paris this week.
+[50:45] Um that might be valuable for us like the audience.
+[50:48] So um so maybe we can have you kinda like share a little bit about like like how how that's going on, how that went.
+[50:57] Yeah, sure.
+[50:58] Um it w it was Yeah.
+[51:01] It was it it was interesting.
+[51:04] Um I missed the London one and uh essentially the TLDR, which might which sound funny to some people, uh I told, was that it takes an afternoon to build an agent but like an
+[51:18] eternity to make it reliable.
+[51:21] And in fact su
+[51:26] Some people were hinting that a lot of people not really being completely honest about how reliable the agent is or the fact that it's very hard to solve some of those problems to
+[51:36] make it reliable.
+[51:36] Um, but anyway, uh it is a field that's developing and uh I think like just working at these problems, uh a lot of things can happen.
+[51:49] There's innovations that can happen on the algorithm side and all sorts.
+[51:53] So ah
+[51:56] Most of the the kind of people there were like at some part of the infrastructure layer for agents.
+[52:04] So you'd have people like Langfuse working on, you know, evals, um and and tools, tools for that area.
+[52:12] Then there was Model, for for GPUs.
+[52:19] There's there was there were like these auth there was an auth company that does like
+[52:24] auth four agents and humans together.
+[52:28] So like they would auth the you know these five agents that you that claim they're yours are in fact yours.
+[52:37] And there was some really interesting like two to three month old startups.
+[52:42] Uh one of them was actually trying to trying to infer from prompt information what trends are from
+[52:54] From the kind of prompts people ask.
+[52:56] But the big problem with that is obviously none of the model companies are going to open up their prompts to them.
+[53:01] So they kind of crowdsource users uh to share or I don't know, somehow see their prompts.
+[53:10] And apparently they've been getting data that way.
+[53:14] And they're they're trying to sort of infer things about people, what products they look for, what questions they ask.
+[53:23] from that and and kind of make that a business.
+[53:27] It it was a bit of a tough one.
+[53:28] Um there's also ah there's also someone uh someone who was backed by founders fund preced very early stage.
+[53:40] in fact the the the guy who had spearheaded the agentics product at Palo Alto Networks um he he kind of reached out to chat
+[53:52] I think they're in stealth and don't want to talk too much about what they're doing.
+[53:56] But essentially it's like a sort of at scale B2B solution for automating companies, uh workflows or agents for companies.
+[54:08] Uh but very, very smart guy.
+[54:11] so that was interesting.
+[54:13] Then there was a fair bit of discussion on security and prompt injections to sort of divulge.
+[54:20] information that shouldn't be in you know the challenges around that there were loads of workshops there was discussions on how to build a software factory um so it was
+[54:33] interesting uh it's it's certainly well worth going for so yeah
+[54:43] Interesting.
+[54:44] Okay.
+[54:46] how long was the conference?
+[54:49] I would say most of it happened like in one day and the day before it kind of starts at like five thirty in the evening and they have a few hours of like Mistral was the
+[54:58] organizer, so Mistral like presented sort of what they were doing and there was like networking.
+[55:03] So the main conference is like a day.
+[55:06] So it's it's fairly manageable.
+[55:09] Okay.
+[55:11] so I guess two sort of the same question but from two different perspectives.
+[55:16] Um what was the most um sort of useful and actionable takeaway that you found for your business?
+[55:23] And then look at it from the perspective of um other agentic builders, people that are gonna be in our audience, what would be you think the the most um poignant takeaway that
+[55:34] was revealed to you that might be interesting uh to our audience?
+[55:40] So for for like our business, uh the biggest takeaway was like I I got to speak to, you know, people on the technical side of models and essentially what we're trying to do is
+[55:56] enable expert financial AI uh in different domains at the same level you have for code.
+[56:02] And uh like in the intro, I'd said that a lot of
+[56:07] financial know-how sits in the heads of people and in the way that they reason.
+[56:13] So what we're trying to do is build reasoning traces from the best of the field and then sort of take open weights models and and either fine-tune them or continually pre-train to
+[56:30] make them really, really good uh in those fields.
+[56:34] So I did have some
+[56:36] pretty, pretty promising discussions with even even people from Mistral and um, you know, other kind of model builders and this seemed uh pretty at least for all the people I spoke
+[56:48] to, they seemed like it was very interesting, uh, what we were trying to do and just trying to focus on this one field and Hill Climb, uh, so that the level of AI gets very
+[57:00] high.
+[57:00] They also agreed that the the Frontier Labs are not very good at finance.
+[57:05] and the the evals are poor and all sorts of things.
+[57:09] So so that was that was that was what what our takeaway is for I guess for the listeners there's certainly a hugely rich ecosystem developing and things are moving very fast.
+[57:28] Uh there were actually a lot of VCs there as well just randomly coming up and chatting and very keen to
+[57:35] To back things, uh, which is certainly different from uh, you know, how it used to be.
+[57:42] And I do feel that it's still early and there are all these problems that need to be solved, and you know what everyone's saying about agents not being reliable is true so
+[57:58] far, but there is an opportunity and
+[58:04] I think it's as much about design as it is about, you know, AI and all the technical stuff.
+[58:11] So yeah.
+[58:12] You we
+[58:13] We we found this with OpenClaw early on.
+[58:16] So Henry and I and and uh I assume the vast majority of our audience were all in sort of involved very early on in OpenClaw.
+[58:24] And i it was kind of the same thing.
+[58:27] Um Peter released this tool that um could do these these things, right?
+[58:32] He had he I don't know if you know the story, but he had the he he had these things in his life that he wanted to accomplish and so he threw together a harness to talk to Pi, coding
+[58:42] agent.
+[58:43] And um before long it became open claw was this very flexible and undefined scope product that could be used for a multitude of things, mo most of which hadn't been invented yet.
+[58:57] And it seems like we're probably still in this age where those of us that have played with all of these agent harnesses understand that they can do really big things and that we
+[59:11] probably haven't discovered
+[59:13] you know, more than five or ten percent of the the real useful scope of them.
+[59:17] I wonder I mean
+[59:20] It's definitely worth noting, people are discovering these surfaces day after day.
+[59:25] Like, oh, I tried to use this agent to do this thing and it turned that nobody's nobody's tried to use an agent for, and it turned out it was really good at it.
+[59:34] And then, you know, maybe it turns into a product.
+[59:36] I was recently exposed to Devon, which is this like scoped code development support agent that's um, you know, a pay-to-play corporate product.
+[59:46] And i it sounds like we're really in the early ages
+[59:50] of s of seeing what these things can do.
+[59:52] That would you agree that you know you got you picked that up coming out of this conference.
+[59:59] Yeah, yeah.
+[1:00:00] And and and there's an excitement as well.
+[1:00:02] We are early.
+[1:00:03] There are problems to solve.
+[1:00:05] Um I feel people talk more about the technical problems than the design ones.
+[1:00:10] Um because maybe it's a case of working with the shortcomings of AI and and you know how you build fault tolerant UIs and you you try to work the user experience uh extremely uh
+[1:00:29] astutely to sort of overcome the faults that exist or or or not like fall into them.
+[1:00:37] So I feel less people are talking about the design
+[1:00:42] printem looks I I caught that I caught just the um beginning and end of that.
+[1:00:47] You try to build the UI experi the user experience for what?
+[1:00:52] Uh so you want to build fault tolerant UIs for AI, right?
+[1:00:56] And um whereas a lot of people talk about solving the actual sort of faults, uh, I think really smart design can can help you focus around the use cases the product is good for
+[1:01:11] and wrap it in a way that's that's still really useful for the user.
+[1:01:15] Um so one thing I I did like about sort of the founders fund.
+[1:01:21] pre-seed guys was that they actually understood the importance of design.
+[1:01:26] I think Instinct also understands the importance of design.
+[1:01:32] so maybe with what we have now with smarter design and use case choice, there's there's a lot of value to extract.
+[1:01:43] Got it.
+[1:01:43] Well, I guess we'll look forward to seeing how people extract that value and I know Henry and and it sounds like you are are trying to be at the front end of figuring that out for
+[1:01:58] certain use cases and i I think it's just gonna be exciting to watch, you know.
+[1:02:04] Um everyone sort of has a dream of of being the one to figure out how to extract that value in a particular
+[1:02:11] Market and yeah.
+[1:02:15] Yeah.
+[1:02:17] W one thing I would add is is is one more thought I have uh
+[1:02:21] more segment.
+[1:02:22] I know you haven't prepared for the go ahead, please.
+[1:02:26] Is um that you know, you have AI researchers, people who understand AI really well, the algorithms, the whole infrastructure, and then you have the use cases like law, finance,
+[1:02:39] uh coding.
+[1:02:40] Uh coding is probably a natural fit for a researcher, which is why it's good.
+[1:02:44] But I sometimes feel that teaching, say, a doctor, AI research or the ins and outs of the algorithm might be better at uncovering use cases than the other way around.
+[1:03:01] That's well put.
+[1:03:02] I know there's efforts to that end.
+[1:03:05] one of the guests that we were hoping to bring on is essentially is is essentially doing that.
+[1:03:10] He's built a research harness that's kind of a meta concept, right?
+[1:03:15] It's it's to teach the the model to be really good at doing this, for example, um sort of deep theoretical scientific research so that
+[1:03:26] it it can go out and and do that effectively.
+[1:03:28] Um and then researching AI capabilities with it.
+[1:03:35] Yeah.
+[1:03:38] Interesting.
+[1:03:39] Good.
+[1:03:40] Well, it will be I think enlightening to watch all those things come to fruition.
+[1:03:46] So we we have one more segment.
+[1:03:47] Um I know you haven't prepared for this yet, so if it doesn't land we maybe had Henry can edit it out.
+[1:03:53] But um often at the end of our show we'll do what we call a hot take and it's a little bit of a joke because um Henry's agent writes the segment and um guesses which one of us will
+[1:04:04] take the which position and um
+[1:04:08] often we'll mistake the b both you know who's who believes what and it'll also mistake like how severe the argument really is.
+[1:04:17] So let me set it up and um I'll make Henry's arguments and then uh we'll see if you can steel man the other side of this conversation.
+[1:04:25] Uh oftentimes we'll we'll get through this and both just be like, what was Ada thinking?
+[1:04:29] Um that this would be an interesting uh hot take.
+[1:04:33] But anyway,
+[1:04:36] So th th the sort of proposition is um in the same seven days we saw Claude discovering an enzyme system from one prompt.
+[1:04:45] We saw um the r the news release of OpenAI hacking Medicare in Australia, uh but both stories were broken by someone outside either company, o outside the company that caused
+[1:04:58] them.
+[1:04:59] So Fenzang's lab eyes and transluse URL monitor,
+[1:05:06] The idea here is that autonomous capability is compounding faster than the verification layer.
+[1:05:11] And Anthropic's answer to checking itself was to fund an embedded evaluator, Accenture, and its own answer to safety was to brief the UN.
+[1:05:21] Um Discovery is now outpacing audit by design because audit is still sa staffed like a department.
+[1:05:29] So you know, the idea that
+[1:05:33] If we were to maybe see independent replication of ART inside of thirty days or open AI shipping a real time third party agent uh feed before the next incident, these things
+[1:05:45] might prove that the verification layer can move at capability speed.
+[1:05:49] Um, but my argument would be that the that the verification layer is is you know, not not gonna be able to keep up.
+[1:06:01] So, um
+[1:06:02] you know, do you think it's possible that the verification layer can keep up and um what framework do you think would make sense to you know, is there a better way for us to be
+[1:06:13] looking at at this problem?
+[1:06:17] Um, I think it's important that the verification layer should keep up.
+[1:06:21] Uh I don't think we could progress AI much without that, or we just keep having scary things happen.
+[1:06:30] Um it is bureaucratic right now.
+[1:06:36] So oh I guess we're gonna have to to reach some point of equilibrium and sort of uh you know.
+[1:06:46] the discoveries versus the the verification layer.
+[1:06:52] I also, you know, you mentioned, you know, Antopics come up with these long sort of explanations on why they want to slow down the frontier and have like validators.
+[1:07:05] And after all that they came out and announced that Accenture would be doing the validation, which at least I don't feel that excited about.
+[1:07:17] I don't see how they're at the forefront of AI, that they think deeply about the problems.
+[1:07:23] Uh they're essentially like an enterprise company that's trying to sell services, right?
+[1:07:28] So I I I couldn't figure out why they would be the right choice to do that evaluation.
+[1:07:37] Yeah.
+[1:07:38] It it's it it's an interesting thing.
+[1:07:40] I mean the the safety layer has always been kind of behind.
+[1:07:46] I mean you look at the development of aviation, um or pharma or finance, y the the binding constraint has really never been the auditors calendar, but that but that was the failure
+[1:08:01] rate.
+[1:08:02] And I don't know.
+[1:08:04] I mean I think I think we saw
+[1:08:07] Saw it cut both ways um this week, right?
+[1:08:10] Anthropic shipped with external evaluators, but Talos gave away open source toolkits for tracking AI malware.
+[1:08:16] So um with Transloose releasing its dataset privacy publicly.
+[1:08:21] Uh I it feels like maybe the validation layer kept up.
+[1:08:25] I'm I'm not entirely sure.
+[1:08:27] Uh it's it's interesting to watch.
+[1:08:31] Yeah, you're you're right that like, you know, it's uh these things happen and then you think about validation.
+[1:08:37] But it shouldn't lag for too long once you have information that uh you know that uh we should probably do some more checks here.
+[1:08:52] Yeah.
+[1:08:53] Good.
+[1:08:54] Good.
+[1:08:55] Well, Pritam, thank you so much for joining us.
+[1:08:57] I um we're really grateful to have you on the show.
+[1:09:01] looking forward to our interview.
+[1:09:04] Yeah, thank you very much.
+[1:09:07] before we close, I just um you know, another sponsor
+[1:09:11] Yeah, you're very, very, very welcome.
+[1:09:15] before we close, the weekly claw is also brought to you by Heritage Telecom, Unified Communications as a service and voiceover IP for businesses that just need their calls to
+[1:09:24] work.
+[1:09:24] It's boring, it's independent, there's no telemetry, and it's reliable.
+[1:09:29] So quietly essential, heritage tel dot com contact us if you need phone systems for your business.
+[1:09:38] and then
+[1:09:40] I would say we're just gonna watch, you know, the following week.
+[1:09:42] We're looking for Quen Four.
+[1:09:44] Uh Alibaba brought a slide deck.
+[1:09:47] you know, so we'll be interested to see the weights and try the model.
+[1:09:51] Um, we're expecting that to be a lead story next week.
+[1:09:55] And Henry's already on record waiting for it.
+[1:09:57] Gemini four now teased ahead of schedule.
+[1:10:01] And then just sort of quiet execution.
+[1:10:04] AI, uh OpenAI's Sora 2 uh video APIs shut down on September 24th with no listed replacement.
+[1:10:13] if you built on them, you must have migrated somewhere.
+[1:10:16] So that's the show.
+[1:10:17] Prices half halved, agents everywhere, verification trailing, uh or is it?
+[1:10:23] Um we'll see you next week, Friday, October 2nd, again, 4 p.m.
+[1:10:27] Eastern.
+[1:10:28] Um subscribe on YouTube, clips on X.
+[1:10:31] We've got a Discord QR screen a Discord um QR code on the screen.
+[1:10:36] Uh and so that's episode thirty one.
+[1:10:40] Have a great week, everyone.
+[1:10:41] Thank you so much.
+[1:10:43] Welcome back, Henry.
+[1:10:52] Good.

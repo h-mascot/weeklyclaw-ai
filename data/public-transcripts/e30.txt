@@ -1,0 +1,1424 @@
+YouTube transcript
+Video ID: jAWCqtNs0ns
+Language: en
+Captions: auto-generated
+
+[0:00] Here are three places where it's already
+[0:02] happening. Each one has the same pieces
+[0:04] we build with every week, right? Inputs,
+[0:07] model, action, and a human who makes the
+[0:09] call.
+[0:14] Let's fix now. Um, I think it was a
+[0:18] it was a good week. It was like a it was
+[0:21] a humanpace week, right? It wasn't
+[0:23] crazy. Um, I like it. I actually like
+[0:27] this week a lot. Um
+[0:31] especially because of the kind like the
+[0:34] company that came out of stealth with
+[0:35] the product that was like really good.
+[0:38] Um
+[0:40] so I think it was a really good week. Um
+[0:42] I think I was productive. Um I mean last
+[0:44] week I was saying I wasn't wasn't as
+[0:46] wasn't as productive as I would have
+[0:48] wanted to be. I think this week I was as
+[0:50] as as um it was this week is definitely
+[0:52] much better. Um so I think an AI land is
+[0:54] a really good week. It wasn't too fast.
+[0:57] Um, not a ton happened. Um,
+[0:59] [clears throat] or maybe a ton happened,
+[1:00] but it's just that we've gotten so
+[1:02] desensitized to to to all the um all the
+[1:06] things happening.
+[1:07] >> Yeah. Right. Launched
+[1:10] >> and Yeah. It wasn't a big week. Like, it
+[1:12] might just be changing the history of
+[1:13] mankind, but it also might not be a big
+[1:15] deal. We'll we'll see.
+[1:17] >> Yeah.
+[1:19] Yeah. Oh, God.
+[1:22] >> Love it. Well, good.
+[1:25] Well, welcome back to the Weekly Claw
+[1:28] episode 30. Here we are. Um, Agentic AI
+[1:35] continues to um amaze and astound
+[1:40] even in a slow week.
+[1:43] You know, there's still some pretty
+[1:44] exciting stuff. Um, some applied AA
+[1:48] product lab
+[1:50] products. Uh,
+[1:53] we've got
+[1:56] I Yeah, I mean there's news and there's
+[1:58] is I I'm going to try something this
+[1:59] week with the signal from the outside.
+[2:01] Um, instead of just reviewing sort of
+[2:03] one video,
+[2:05] um, I kind of came up with a theme and I
+[2:08] put some pieces together from a few. So,
+[2:10] I hope that's enjoyable. We've got kind
+[2:12] of a shorter show today, but um, I think
+[2:15] you'll enjoy it. So, we'll try not to
+[2:17] waste any time.
+[2:20] Uh we've got type safe obviously. Um Jev
+[2:26] is bringing some big changes to uh I
+[2:29] think pretty much everything. I think
+[2:32] people are going to try to squirt it all
+[2:34] over the inside of their carry out bag
+[2:37] um and add more dev. Um
+[2:42] Apple bringing Siri
+[2:46] license from Google. That's exciting.
+[2:50] Uh Mozilla is going to let you pick a
+[2:52] model. Yeah. So, I mean I we don't need
+[2:55] to overview all of it, but um it should
+[2:58] be a a decent episode. You have anything
+[3:01] you want to say before we get started?
+[3:03] >> All right. Well, before before we do,
+[3:06] this episode is brought to you by Herold
+[3:08] Labs, an applied AI product lab where
+[3:10] humans and agents build together. Entity
+[3:12] is mission control for agent teams.
+[3:14] Hacker houses worldwide. Build with
+[3:16] humans and ship with agents
+[3:19] at Herald House.
+[3:21] Labstheold.co.
+[3:25] Right
+[3:26] >> there you are.
+[3:27] >> There we go.
+[3:28] >> All right. All right. Um, so yeah. So
+[3:31] guys, I mean, it's not, like I said, it
+[3:33] wasn't a I mean, a lot happened. Um, but
+[3:37] we try to just like select the most
+[3:39] impactful. I mean, there's always a lot
+[3:41] happening and we're pretty much in a
+[3:42] singularity. um the piece of the piece
+[3:46] is always like incredible. So there's
+[3:47] always a lot a lot happening. Um but I
+[3:51] selected the most like impactful news.
+[3:53] Um I mean I don't think I have it on the
+[3:56] slide but I mean I mention it I mean
+[3:58] towards the end of last week um there
+[4:01] was this scare about you know the
+[4:04] anthropic exanthropic employee that when
+[4:07] AI is going to kill all of us. I think
+[4:09] we talked a little bit about it last
+[4:10] week. And then in the weekend on Sunday,
+[4:14] Dario writes uh again one of his long um
+[4:18] articles to say, "Hey, let's let's pace
+[4:20] the frontier um and let's um
+[4:25] um let's add human let's add third party
+[4:28] evaluators to to each [snorts] like
+[4:31] company." Um so that happened that's on
+[4:34] the slide because I mean um you know so
+[4:38] that happened and then obviously that
+[4:39] led to kind of like a lot of things. I
+[4:41] mean this is sort of like what will I
+[4:43] call it? It's it's not really kind of
+[4:45] like an event. A lot happened. Elon's
+[4:47] like yes. Sam was like yes let's do it.
+[4:50] Um De was like yes I agree. Um Zach was
+[4:54] like nope I don't agree. Um the
+[4:56] president was like nope. Geeks I'm not
+[4:59] slowing you guys down. China is like at
+[5:02] our heels viewed on um and then there's
+[5:05] like all this like um
+[5:08] um back and forth different camps we
+[5:10] want you to regulate we don't want to
+[5:11] you regulate um I guess we're going to
+[5:14] talk a little bit about it and and
+[5:16] signals from outside but yeah so a lot
+[5:18] happened um there are a couple of yeah
+[5:20] conferences obviously AI themed there's
+[5:22] all there's all in summit there's the
+[5:25] Salesforce
+[5:26] um Dreamforce and they're all AI themed
+[5:29] and there's so
+[5:30] interviews and so much content. Um,
+[5:33] obviously Andy is going to kind like
+[5:35] talk a little bit about that. So like
+[5:36] again I didn't put those things on the
+[5:38] slide but there's a lot that happened in
+[5:39] that. So like theme
+[5:43] um so the most impactful what I think is
+[5:45] the most impactful news from like this
+[5:47] week
+[5:49] um is obviously Jev um from type safe.
+[5:53] Um so Typescafe is again an exopai
+[5:57] um executive
+[5:59] um
+[6:01] he was the co-founder of charg as they
+[6:04] like to say um or he likes to say um and
+[6:07] he is no sort of like the kind like
+[6:10] founder or co-founder of hlf which is
+[6:13] like this um
+[6:17] this process for kind like training
+[6:19] models or doing post training
+[6:22] um And so he's come up with you know and
+[6:24] this isn't new just that he's launched
+[6:26] and so we're hearing about it today uh
+[6:29] well not this week but you know he's had
+[6:32] this company called type safe I actually
+[6:34] watched a video that he did like a few
+[6:36] months ago at AI engineer summit and
+[6:38] he's basically talking about this idea
+[6:40] right so every basically what they've
+[6:41] launched he talked about it months ago
+[6:43] I'm sure he's been talking about it for
+[6:44] a while but until people see the product
+[6:47] they don't typically kind like grock all
+[6:49] this concept so he's been talking about
+[6:51] it for a
+[6:52] um which is what he calls an RHCD
+[6:55] something like that um reinforcement
+[6:58] learning
+[7:00] um decision something decisions right so
+[7:03] he's basically launched a model that
+[7:04] isn't necessarally a large language
+[7:06] model or even if it is a large language
+[7:08] model it doesn't generate text um it
+[7:11] does u it generates decisions right and
+[7:14] so I watched his video and and is going
+[7:16] to play the launch video for us and
+[7:18] maybe you should play that video before
+[7:20] I like and te te tease out like some of
+[7:22] his ideas a little bit. [clears throat]
+[7:25] >> Sure, let's do that.
+[7:32] >> I'm Diego Almeida, founder of Types Safe
+[7:34] AI and at OpenAI, I co-created Chat GBT
+[7:38] and RHF, the post training algorithm
+[7:40] behind most frontier AI. Our team
+[7:43] trained the first models to be
+[7:45] superhuman at instruction following,
+[7:47] [music] what we now call chat. And we
+[7:49] asked ourselves, are models that are
+[7:51] superhuman at chat AGI? The answer was
+[7:55] obviously not, but the trillion dollar
+[7:57] question is why not? RHF has led to LMS
+[8:01] that are optimized for human preferences
+[8:03] and include issues such as mode
+[8:04] dropping, overconfidence, and an overall
+[8:06] lack of reliability. These flaws mean
+[8:09] that LMs require humans in the loop, and
+[8:11] almost no true automation can be done.
+[8:14] At Typesafe, we've spent two years
+[8:16] building in stealth and we're finally
+[8:18] ready to share our new type of
+[8:19] foundation model that's optimized for
+[8:21] automation. System one models with a new
+[8:25] architecture, new sampler, and new
+[8:27] training algorithm reinforces learning
+[8:29] for calibrated decisions. The
+[8:31] improvements are clear if you see them
+[8:33] side by side. Ask a system one model a
+[8:36] ton of structured questions just like
+[8:38] you would an LM. [music] Get the answers
+[8:40] back near instantly. Meanwhile, LMS take
+[8:44] hundreds of times longer to finish
+[8:45] responding. Look at how the LM generates
+[8:48] sequentially, which is great for a
+[8:50] natural conversation, but totally
+[8:52] useless for computers. LLMs extract
+[8:54] intelligence from the tiny straw of auto
+[8:57] regression. And similar to the jump that
+[8:59] transformers made over RNN's, we are
+[9:02] replacing sequential computation with
+[9:04] parallel because that [music] is
+[9:05] obviously the future. Our system one
+[9:08] models output decisions with
+[9:09] probabilities and confidence instead of
+[9:11] words. And they can't hallucinate.
+[9:13] They're a lot more like code. Reliable,
+[9:15] [music] fast, self-consistent, and type
+[9:17] safe. This opens up a whole new world of
+[9:20] possibilities and applications. Today,
+[9:22] we're releasing [music] Jet, the first
+[9:24] public system 1 model. It's 100 times
+[9:27] faster, so realtime AI is finally
+[9:30] possible. 100 times cheaper with input
+[9:32] tokens priced at $42 per billion tokens.
+[9:36] and Alpha tokens are free because
+[9:38] they're finally too cheap to
+[9:40] meter. Jev is super smart and its
+[9:43] intelligence per dollar is literally off
+[9:45] the charts. This is just the beginning.
+[9:48] We're excited to see what you build with
+[9:50] Jeb. As we say it at Safe, we're
+[9:53] building prod, not God.
+[10:03] >> Yeah, super exciting, right? Um,
+[10:07] so I'm not sure how many of us have been
+[10:09] have started using this model um from
+[10:11] the psychic community, the guys watching
+[10:13] us live. Um, let us know in the chat if
+[10:15] you've if you've really started using
+[10:17] the the model. Um, but it is um it is
+[10:21] incredible, right? Um, Andy has started
+[10:24] using it. Maybe you talk talk to us a
+[10:26] little bit about it when I'm done
+[10:28] recapping a little bit. I have I haven't
+[10:29] started. And I mean I I've used I got
+[10:32] access I got access through Versel AI
+[10:34] gateway. Um but I [clears throat] guess
+[10:37] like the like the most impactful from
+[10:39] his video that he did on an AI engineer.
+[10:41] He's talking about how the reason he
+[10:43] wanted to do this company
+[10:46] um [clears throat] uh was that he always
+[10:48] like had this dream or what we were so
+[10:50] this this dream of like software being
+[10:52] like in like super intelligent and super
+[10:54] smart. Uh but with LLM software isn't
+[10:57] necessarily intelligent or smart. We're
+[10:59] building software faster but the
+[11:01] software itself isn't as intelligent
+[11:04] right um there are very few people who
+[11:06] are embedding LLMs into their software
+[11:08] even the ones who are I mean it's it's
+[11:10] so expensive that it's at scale is still
+[11:12] not really reliable to be embedded like
+[11:14] in almost everywhere so he's so like
+[11:16] vision is to have an AI model that can
+[11:20] be reliably embedded across all stacks
+[11:23] of software and it just makes the
+[11:25] software smarter and you can think about
+[11:27] and it's almost
+[11:29] um which is what they've basically done.
+[11:31] Um what else is valuable to mention?
+[11:35] I think that's pretty much it. Um so
+[11:36] it's a great model. Um there's been lots
+[11:38] of videos. I've been watching lots of
+[11:40] demos. People have been building like
+[11:41] compaction which is one of the things
+[11:43] and he tried um browser use is like off
+[11:46] the charts.
+[11:48] Um the the every guy every team did a
+[11:53] very long article um of very different
+[11:56] use cases. Um, and it's just incredible.
+[11:59] It's just an incredible model. Um, and
+[12:01] so just to recap for it, I am very
+[12:04] excited about this. Um, and I'm hoping
+[12:07] that, um, for instance, the last the
+[12:10] last phrase, um, or the last like
+[12:12] tagline they have, we're building
+[12:14] Prague, not God. Um, is again coming
+[12:17] from all the drama that happened in the
+[12:19] weekend and last week. Um, the frontier
+[12:21] models are sort of like drama queens at
+[12:23] this moment. Hey, we're going to kill
+[12:24] everybody um because we're building this
+[12:27] thing and we don't know how to stop. Um
+[12:30] and it's so like right? And
+[12:32] I'm glad that a company like this showed
+[12:34] up the next week because this isn't a
+[12:36] high-risk model at all and it pretty
+[12:38] much takes over almost 50% of all the
+[12:41] use cases that anybody would want to do.
+[12:43] And so I expect this to take like market
+[12:45] share from the LLMs from the kind like
+[12:47] frontiers. I mean it's not a frontier.
+[12:49] It's not a it's not a proper LLM. You're
+[12:51] not going to chat with it. you're not
+[12:52] going to generate review with it. Um,
+[12:54] but you can start to do very interesting
+[12:56] classifying work, decisioning
+[12:58] [clears throat]
+[12:59] um and and my kind like companies have
+[13:01] already sent to the engineering team
+[13:03] like hey let's start deploying this
+[13:05] thing um immediately. So I hope that
+[13:08] this takes a ton of market share from
+[13:10] from select the existing companies. Um
+[13:13] because then it deflates the ego, right?
+[13:14] Cuz there's a lot of ego right now
+[13:16] around like we're beating God and we're
+[13:18] beating this thing is going to kill
+[13:19] everyone. But to be honest, man, if
+[13:21] there's no economic economic value in
+[13:23] beating AGI, no one is going to beat it,
+[13:26] right? So if if we've got a model like
+[13:28] Jeff that is almost free and can do half
+[13:31] of what um the models that all the guys
+[13:34] beating AGI trying to build then um I
+[13:38] think the industry will be a lot safer.
+[13:39] So that's that's why I'm super excited
+[13:41] about it. So I hope that pans up. But
+[13:42] Andy I'll let you respond and I'll run
+[13:44] through the rest.
+[13:45] >> Yeah. No, I mean you put your finger on
+[13:47] it, right? A lot of industrial use for
+[13:50] language model is essentially theory
+[13:53] rigging the language models to produce
+[13:54] structured output to get at the very
+[13:57] things that Jev produces natively. Um
+[14:01] the number one spend on my portfolio is
+[14:05] running call transcripts through um call
+[14:08] categorization routines and then
+[14:11] depending on the category of the call um
+[14:15] deterministic scoring. I mean, it's it's
+[14:17] it's inferistic deterministic scoring.
+[14:20] And you know, Jev can probably do it.
+[14:24] We're we're we're almost entirely sure
+[14:27] we can take the scorecard for the call
+[14:29] with the transcript and then just
+[14:31] literally use the probabilities if we if
+[14:33] we were if we word the questionnaire
+[14:35] questions, right? Like this service
+[14:37] advisor
+[14:39] said the name of the company in their
+[14:41] briefing. Like probability 98% because
+[14:43] they said it. probability 2% because
+[14:46] they didn't and you know literally use
+[14:48] that as our scoring. Um it's going to
+[14:51] save us at production across
+[14:55] uh 350
+[14:58] you know sort of paying customers on a
+[15:00] particular platform
+[15:02] maybe $2500 a month just right off the
+[15:05] bat right so we're testing it as quickly
+[15:08] as we can um I think there's a great
+[15:11] opportunity I compaction is an
+[15:13] interesting it's going to need to be
+[15:15] part of compaction it it can't do all of
+[15:18] compaction And um the implementation
+[15:22] that I tried was sort of halfbaked and
+[15:24] it it tried to replace the compaction
+[15:26] layer without any summaries and um I
+[15:30] think if it were used to protect the
+[15:32] work of a compaction layer uh it would
+[15:34] be very effective but I don't think it
+[15:36] can just replace it.
+[15:39] Um and then the other piece of course
+[15:41] we're all playing with is trying to use
+[15:44] it to route requests to the right model
+[15:46] based on the request. um you know what's
+[15:48] the probability that this um request can
+[15:52] be handled by this model with these
+[15:54] capabilities
+[15:56] um you know without making mistakes
+[15:59] right 30% 40% 80% well now we we know
+[16:02] which model to use for this request and
+[16:05] then if it's a simple one it'll you know
+[16:07] we'll get a a cheaper model so anyway
+[16:09] model routing and um categorization just
+[16:13] out of the box very excited to see
+[16:15] browser use Um, you know, excited to see
+[16:19] OpenClaw, the G OpenClaw community, the
+[16:21] Hermes community, they're all going to
+[16:23] build, you know, browser use plugins
+[16:25] that leverage it. It's going to be a
+[16:28] major component in all of these
+[16:29] harnesses before long.
+[16:31] >> Yeah, it's incredible. Um, obviously, I
+[16:34] expect, yeah, like I said, it's not
+[16:36] going to be a replacement for for like
+[16:38] LLMs. Um but it is um I I expect and I
+[16:43] wrote a tweet about this. I expect that
+[16:45] the other companies will eventually
+[16:47] launch something. Obviously China will
+[16:48] launch something super soon. Um this is
+[16:51] a totally new use case um or totally new
+[16:54] like form factor. So I expect the the
+[16:56] frontier model companies to also launch
+[16:58] their own version just so that it can
+[17:00] keep customers from turnurning off their
+[17:02] platforms. Um, but it's so cheap, right,
+[17:04] that even if they launched equivalent
+[17:06] like products, they would have to like
+[17:09] match the same price and this price is
+[17:10] just like just eats their launch. Um, so
+[17:14] it's exciting. So again, um, this is the
+[17:16] biggest news um, in my [clears throat]
+[17:18] books for the week
+[17:20] or in my book for the week. Um, another
+[17:22] interesting thing that happened, I mean,
+[17:24] it started earlier in the week, um, was
+[17:27] that, uh, a stealth model showed up in a
+[17:31] few of the model market places called
+[17:34] Union Alpha. Um, Union Alpha was pretty
+[17:38] good. Um, was a 26 262K kind of context
+[17:43] um, model. It was is multimodal. Uh,
+[17:46] it's pretty good, right? Um and I think
+[17:49] in a in a in 2 days or so um the like
+[17:53] community or kind like the world really
+[17:57] spent something coming close to like um
+[18:02] um was it like now [clears throat] it's
+[18:05] like 100 billion in the first day and
+[18:07] then I think it's closer to like 600 700
+[18:10] billion something um tokens. I think it
+[18:13] was close to 1 trillion tokens really in
+[18:15] the two or three days that it was on.
+[18:17] It's off. It's It's off now. It went off
+[18:19] like yesterday. I was trying to use it.
+[18:20] I used it for a couple of days. It was
+[18:22] pretty good. Um it was pretty good. Um
+[18:24] from the demos, um Andy, I'm not sure if
+[18:26] you used it at all, but from the demos I
+[18:28] was seeing is you didn't use it. Okay.
+[18:30] From the demos was um it was really
+[18:31] good. It was pretty good. I I put it I
+[18:33] put it to work. I mean, obviously
+[18:34] because of rate limits, I couldn't
+[18:35] really benchmark it properly. Um but it
+[18:38] was really fast. Um I could, you know,
+[18:41] maybe stream like north of like 100
+[18:43] tokens per second or something even like
+[18:45] double that. It was pretty good.
+[18:47] >> Real fast.
+[18:48] >> Um, yeah, it was really fast and it
+[18:50] worked. I mean, obviously see for free
+[18:51] models, um, you get really limited. It
+[18:54] wasn't very reliable, but it was really
+[18:56] good. Um, and so [clears throat] the
+[18:58] word on the street, um, and obviously
+[19:00] when the ST models show up, people sort
+[19:02] of like start to kind like um, you know,
+[19:06] throw out their their theories around
+[19:07] which company owns the model. Um, so
+[19:10] they think this model is is an open air
+[19:12] model. They think this is probably GPT6.
+[19:15] Um yeah.
+[19:17] >> Oh.
+[19:18] >> Um so I mean obviously people know how
+[19:20] they kind of like people know how to
+[19:22] like find the things by like comparing
+[19:24] the quality of the work he does like
+[19:26] other. So yeah people were also doing 3D
+[19:30] um you know 3D games and stuff with it
+[19:32] and and it was lacking a lot of soul and
+[19:35] we know that OpenAI most likely will
+[19:38] launch um GPT6 soul um at their death
+[19:42] day next week or something like that. Um
+[19:44] so yeah so um um fingers crossed we'll
+[19:47] find out um what model it is hopefully
+[19:50] next week or on the week week after that
+[19:53] um and then the model launching um model
+[19:55] launching kind like news um two other
+[19:58] models dropped this week um Prism ML
+[20:02] launched there again the Bonsai guys um
+[20:05] um they typically would fine-tune the
+[20:08] queen model the queen models um and so
+[20:10] each time there's a new queen model
+[20:12] you'd expect that they would launch
+[20:13] their and it's like fine tune of that.
+[20:16] Um and [clears throat] so the the
+[20:17] finetune for the 3.827B A27B model came
+[20:21] out um which is what they call the
+[20:23] Bonsai
+[20:25] um you know 22 27B right? Yeah, 227B.
+[20:32] >> Um, which again you can kind like see on
+[20:34] there.
+[20:35] >> Um, it is it's like a two bit model. Um,
+[20:38] right. It's 262 um K of context. Um, and
+[20:42] then they released um it's Apache
+[20:45] license. There's a GGUF and MLX and then
+[20:47] a CUDA. Um, and and so I mean the the
+[20:50] exciting thing about this, why am I
+[20:52] telling you about this, right? And I
+[20:53] mean, obviously, if you guys um if you
+[20:54] watch the show, you would remember that
+[20:56] um one of the models that I've been the
+[21:00] model that I've been the most excited
+[21:01] about this year has been the Quinn
+[21:03] 3.827B. Um because it's a really small
+[21:06] model, it can fit into most laptops. Um
+[21:09] and then it comes with like pretty much
+[21:11] like Opus 4.8
+[21:13] kind of like quality, right? And
+[21:15] >> it's real good.
+[21:16] >> Yeah. I mean, Andy uses it, you know,
+[21:18] sometimes. Andy's is is off to Bonsai
+[21:21] now. So maybe he's also uh a good person
+[21:23] to talk to us about what the experience
+[21:25] has been so far. Um I haven't set it up.
+[21:27] I'm I'm benchmarking it at the moment.
+[21:29] So I don't have it live. But obviously
+[21:31] what is exciting about it is um this is
+[21:33] a quantized version of that model. So
+[21:36] it's a two-bit model. Um the 27B is
+[21:39] obviously something in the universe of
+[21:41] 27 billion. Um
+[21:45] um but this is five, right? It's it's
+[21:47] it's really small. It's like nine times
+[21:49] smaller than a typical model, right? Um,
+[21:52] and there's almost no loss in in quality
+[21:55] or performance. It's like a 2% loss in
+[21:57] setting benchmarks, but it's it's it's
+[21:59] almost exactly as as um the model that's
+[22:03] nine times its size. Go ahead, Andy.
+[22:05] >> No, I I mean, I just I just have to
+[22:07] point out, right, it's it's 98% as good
+[22:10] as Quen 3.827B, 28 27B and it's nine
+[22:13] times faster and it uses like um I
+[22:17] benchmarked it on just just you know
+[22:21] real high-speed low drag tests um an M2
+[22:25] Pro uh Mac uh Mac Mini and an M4 Max
+[22:30] um MacBook Pro and it absolutely rips.
+[22:34] It's very fast. Um I did benchmark it.
+[22:37] You'll be interested to know Henry
+[22:39] against Ornith 1.5 which you know I'm
+[22:41] very excited about 35B model came out
+[22:45] about maybe 3 weeks ago and um it ornith
+[22:49] outperformed it in coding and tool call
+[22:52] tool calls but only barely. Um and the
+[22:55] performance is excellent.
+[22:58] Um, Bonsai was doing 70 tokens per
+[23:03] second on a MacBook Pro uh, M4 Max and
+[23:07] maybe like mid 20s, 15 to 20, 25 tokens
+[23:12] per second on an M2 Pro. So, it'll run
+[23:15] on modest commodity hardware at usable
+[23:18] speeds. It's smart. It writes good code,
+[23:22] and it's small. It doesn't even take up
+[23:23] a ton of your disc space. It's not like
+[23:25] you're using tricks to load part of it
+[23:28] from, you know, stream experts from SSD
+[23:30] or anything. It's just all right there.
+[23:32] And it loads on a 16 gig GPU. So that's
+[23:36] what the 4060 470
+[23:40] and up. U very fast, runs very fast on
+[23:43] those. So any modest GPU and you've got
+[23:46] a very powerful um model to run your
+[23:49] agent
+[23:52] >> um run a model. Um the models are
+[23:54] getting good like this is this is um
+[23:56] this is um 54 just 6 gigabyte so 16 gig
+[24:01] should work um so
+[24:03] >> um pretty much all right cool the other
+[24:05] thing that happened was um was the queen
+[24:07] guys launched a 3.8 Omni flash. And I
+[24:10] mean again, why this is um why I guess
+[24:13] this is interesting is we're starting to
+[24:16] have um the model companies or the
+[24:19] Chinese model companies now launch flash
+[24:22] models. Um they all used to have two
+[24:24] model classes. They would launch a pro
+[24:25] model and then a flash model. And then
+[24:27] the pro model would be like the the
+[24:29] heavy hitter and then the flash would
+[24:31] like be that's like lightweight. Um but
+[24:33] we're starting to see that if that
+[24:35] there's a merge coming where they just
+[24:37] launch one model um that is pretty much
+[24:39] like the best that they can, right? Um
+[24:42] we're seeing this with Deep Seek. This
+[24:44] Deep Seek the recent launch of like V um
+[24:48] 4.1
+[24:49] um you know it's called is it called
+[24:52] Flash? I'm not sure that one has Flash
+[24:53] in it. Did it have Flash in its name? I
+[24:56] don't remember if it did. Yeah. Okay. Um
+[24:59] so [clears throat] yeah so so we're kind
+[25:00] like having this trend where we most
+[25:02] likely soon would no longer see pro
+[25:04] models from the Chinese. We just see one
+[25:06] model which is again size of a typical
+[25:10] flash model but with a performance of a
+[25:12] pro model um which is what people want
+[25:14] right people want like models they can
+[25:15] run cheaply on their hardware that is
+[25:17] frontier performance. Um so um so 3.8 um
+[25:22] the last 3.8 8 model um that probably
+[25:25] has this like benchmark so it's closer
+[25:27] to the 3.8 Max um if you remember that
+[25:31] was launched at the same time with
+[25:32] 3.827B.
+[25:34] So with the 3.0 or mini flash um we're
+[25:36] pretty much getting again super like
+[25:39] cool performance at like a slightly
+[25:42] lower um size. Okay. So um I mean
+[25:46] obviously there are a few other things
+[25:47] that happened and like the open source
+[25:49] community um but these two were things I
+[25:51] thought were super important as like
+[25:54] mentioned to you guys. Um um again
+[25:57] obviously I don't have this video but I
+[25:59] remember seeing a video I tried to find
+[26:01] it ahead of the show but I couldn't find
+[26:02] it. um was that I mean [clears throat] I
+[26:05] have a few friends that are on the Apple
+[26:07] better program or the MacBook better
+[26:09] program or Mac [clears throat] OS better
+[26:11] program and so they've been getting
+[26:13] updates to um the new OS and they've
+[26:16] been pretty excited. Um this week um I
+[26:18] think it kind like came out as well that
+[26:21] you know Siri is in better now. Siri AI
+[26:24] um anybody
+[26:27] everybody's kind like sees that Apple
+[26:30] the bed a little bit with Siri,
+[26:31] right? Siri was like the perfect form
+[26:33] factor for like personal AI, right? It's
+[26:35] like um
+[26:37] >> had everything [clears throat] it
+[26:37] needed.
+[26:39] >> Correct. They had like billions of
+[26:40] users. It's it's a mobile. It's on the
+[26:42] PC. It already has the voice form
+[26:44] factor. Um but but yeah, but but the the
+[26:47] Mac the the Apple just didn't get it
+[26:49] right. Right. Um [snorts] um but it
+[26:52] looks like they might be um they might
+[26:53] be coming back. Um who knows? Um so
+[26:56] people who've been using Siri AI that so
+[26:58] far I've been seeing they're very
+[26:59] excited about it. It works really well.
+[27:01] I'm not sure if anybody in kind of the
+[27:03] live community has it or they're using
+[27:05] it. Um if you are, please let us know.
+[27:08] Um but yeah, but but you know, I haven't
+[27:11] used it. Um I don't I don't use the
+[27:13] better I don't I'm not subscribed to
+[27:15] Apple's better program so I haven't
+[27:17] tested it yet but I thought it was worth
+[27:18] mentioning. Um if you also remember
+[27:22] [clears throat] Apple partnered with
+[27:23] Gemini or with Google last year and and
+[27:26] you [clears throat] know their models um
+[27:28] kind the the products will be powered by
+[27:30] Gemini models um hosted on Apple
+[27:33] infrastructure. So I'm expecting that
+[27:35] that that that Siri AI will be powered
+[27:37] by by Gemini collect model. Um, and
+[27:40] Geminina has been pretty um I mean
+[27:42] obviously that that leads us to like the
+[27:44] um final like news on my docker. Gemini
+[27:47] has been pretty um pretty good with with
+[27:50] um voice models. Um there were a few
+[27:53] voice models that came out this week. I
+[27:55] don't have it on on the slides cuz they
+[27:57] weren't as super important. Um but there
+[28:00] is there are a few voice models um that
+[28:02] they put out and they're pretty good and
+[28:04] they're not as good as GPT live one from
+[28:06] OpenAI but but they're they're pretty
+[28:08] good.
+[28:09] Um, and then finally, um, I I I I
+[28:12] thought it was valuable to kind like
+[28:13] mention the MCP, um, you [clears throat]
+[28:15] know, the MCP access to their hardware.
+[28:18] Um, um, because I I have a friend or I
+[28:21] have a friend actually, yeah, that that
+[28:23] wanted to,
+[28:24] >> [clears throat]
+[28:25] >> um, put agents in in his assistant like
+[28:28] the um,
+[28:30] [clears throat] what's the Amazon one
+[28:32] called again? The Amazon hardware.
+[28:35] >> Alexa.
+[28:36] >> Alexa, right? So he wanted to put like
+[28:39] agents his agent on Alexa or on the on
+[28:42] the on the Google kind like hardware and
+[28:45] couldn't do it. So, um, and so he had
+[28:48] Astraat teach him how to build his own,
+[28:51] um, speaker, like smart speaker, so he
+[28:53] could build a smart speaker from
+[28:55] scratch, uh, and so he could install,
+[28:58] uh, his own like a gen into it and so he
+[29:01] could just talk to it, right? And and
+[29:02] and but but this is cool because I mean,
+[29:05] um, they're starting to get there.
+[29:06] They're starting to open up these
+[29:08] devices. Um, so with MCP access now, it
+[29:10] means you can be pretty much have an
+[29:12] agent um, use tools and you know, maybe
+[29:16] you can send them stuff to play on
+[29:18] there. You can have them control like
+[29:20] things. So, we're getting there. I
+[29:22] probably get to a place where I mean, I
+[29:23] don't think we'll ever get to a place
+[29:25] where they would let you load your own
+[29:26] agent. They have their own agent and let
+[29:28] you access it through that. But, I think
+[29:30] we're we're kind of like making
+[29:32] progress. I think that's pretty much it
+[29:33] for me this week. Um, there are a few
+[29:35] other like interesting things that
+[29:36] happened. um Anthropic um followed um
+[29:40] cursor uh launched projects. So now you
+[29:43] can you have projects um and you can
+[29:45] talk to one agent and then he manages a
+[29:47] bunch of sub agents um and um yeah I
+[29:51] think that's it for me and take it. Oh I
+[29:53] know I know something super exciting to
+[29:55] kind like mention um I mean two okay two
+[29:58] I mean OpenAI have actually been on the
+[30:00] news this week um quite quite more than
+[30:03] they should. Um, OpenAI obviously
+[30:06] released like a lot more like
+[30:07] documentation on a lot more kind like
+[30:09] hacks um and and and stuff and the
+[30:11] framework for reporting new hacks. Um,
+[30:14] Anthropic two news from Anthropic today,
+[30:16] right? Um, one is what I was just
+[30:19] telling Andy just before the show
+[30:20] started. Finally, Anthropic is going to
+[30:23] do agents. MD. So, you no longer have to
+[30:25] use clot. MD. Um, I think starting from
+[30:28] a new version that launched today. Um, I
+[30:30] mean people have been like um talking
+[30:32] about it with them. was like, "Why don't
+[30:33] you just use the same standard as
+[30:34] everybody else? Why do you think you're
+[30:36] special? That you shouldn't do that." Um
+[30:38] so I think today they they finally um ti
+[30:41] just announced it a few minutes ago that
+[30:43] now going [clears throat] forward like
+[30:45] agents empty, you can use agents empty.
+[30:47] Um and then a much more scary news which
+[30:49] again I don't think I mentioned to Andy
+[30:52] um but I I just saw that um it was just
+[30:55] announced that Anthropic started quietly
+[30:58] started a lab. So they have a a biolab
+[31:01] and they're trying to make um Yeah. So
+[31:03] that's the thing I saw. Um
+[31:06] um so yeah. So
+[31:08] >> making a bolab.
+[31:10] >> Yeah. So that's been um so that's super
+[31:13] super scary, right? It's like super
+[31:14] scary, right? So everybody kind
+[31:16] like I know in the community and they're
+[31:17] like they're like no man. Like um so
+[31:20] yeah. So
+[31:21] >> yeah, man.
+[31:23] >> Warning us that AI is going to kill us
+[31:24] all.
+[31:25] >> Yeah. Yeah. Yeah. Yeah. Yeah. So that's
+[31:27] um I mean those things tend to be you
+[31:29] know Elon always jokes about it right
+[31:30] that people tend to kind of like be like
+[31:32] opposite of what they so yeah so I think
+[31:34] that this is actually I mean obviously
+[31:36] I'm the I'm the I'm the don't regulate
+[31:38] just chill because there's enough
+[31:39] regulation right now but I think for
+[31:41] this one I think it's actually they
+[31:43] should probably stop them right because
+[31:44] I mean um these guys are uh I said it in
+[31:48] the group one of the groups I'm in right
+[31:49] these guys have the highest speed doom
+[31:52] um of any company or any org um and
+[31:55] they're definitely not the right people
+[31:56] that you want to like be getting close I
+[31:58] mean sure make software right make
+[32:00] software make AI that's fine that's far
+[32:02] from like the real world but like when
+[32:03] they start getting close to like giving
+[32:06] like models access to like bio equipment
+[32:09] then we then we know that like like
+[32:12] yeah someone cuz man all the risk we're
+[32:14] talking about like AI AI AI only those
+[32:18] labs have enough computing
+[32:21] damage right
+[32:23] >> exactly right the other like hugging
+[32:25] face and me and you can't do it. We
+[32:27] don't have like enough compute to like
+[32:28] send a,000 agents to hack someone,
+[32:31] right? We don't have 10,000. We don't
+[32:32] have enough comput like send 10,000
+[32:34] agents to do any work, right? Those
+[32:36] things cost like millions. Like um so
+[32:38] yeah, but but the labs do. Um and so
+[32:40] yeah, so when you have a lab um start
+[32:43] playing with bioweapons or start playing
+[32:45] with trying to make drugs, no no guys
+[32:47] are going to now I can see
+[32:50] happening and heating [laughter] the
+[32:52] >> Yeah. Yeah. Hopefully they're not just
+[32:54] trying to make their claims true.
+[32:56] >> Yeah. So that's it for me guys. Cheers.
+[32:58] >> Yeah. [snorts] Hey Henry, thanks for
+[33:00] that. It's uh good overview. Interesting
+[33:03] conversation on a somewhat boring week,
+[33:07] but it's interesting that uh even when
+[33:10] it's boring, it's not that bad. Um look,
+[33:13] this is my um my signal from the
+[33:15] outside. I am
+[33:17] I don't know if I need to apologize for
+[33:19] it up front. This is not what we you
+[33:21] typically do. Usually we'll focus on
+[33:23] videos that are um really relevant to
+[33:26] Agentic AI uh builders, right? That's
+[33:30] our community. Um that's Henry and I and
+[33:32] that's um hopefully very many of you.
+[33:35] But the news this week was discouraging
+[33:39] enough and I I even found myself in a
+[33:42] couple conversations where I didn't have
+[33:43] some answers that I wish I had had um
+[33:47] against sort of people watching the
+[33:49] news. So, I thought I would put together
+[33:52] a little bit of an aggregate of a
+[33:55] handful of stories. Um, so this is the
+[33:58] signal from the outside. Uh, like I
+[34:00] said, it's been a heavy week. If you've
+[34:01] had the news on, you've heard Swarm or
+[34:03] Botnet or Take Over the Internet more
+[34:05] times than you'd like. And they're real
+[34:08] questions and serious people are working
+[34:09] on them. Um, I don't want to wave that
+[34:11] away, but this week, two very different
+[34:14] people pushed back on that fear and they
+[34:17] ended up in the same place.
+[34:19] uh one is the most important supplier in
+[34:21] all of AI and the other is a finance
+[34:23] writer with nothing to sell whatsoever.
+[34:26] So I want to start with them and then
+[34:28] spend the rest of the segment on what AI
+[34:30] is already doing for the people outside
+[34:32] this room and I'm hopeful that it will
+[34:34] provide some perspective um for our
+[34:38] conversations with those people. Right
+[34:41] on Monday, Jensen Hang sat down at the
+[34:43] all-in summit. He was asked about the
+[34:45] week's essays and the push from the
+[34:48] frontier labs to slow down. He started
+[34:51] by saying safety is paramount and has to
+[34:54] be taken seriously, but also that safety
+[34:57] versus leadership is a false choice and
+[35:00] that you can move fast and do it safely.
+[35:03] And then he went after the forecasts. Um
+[35:05] his case was track record. He used
+[35:09] radiology as the example. Of course we
+[35:11] all know years ago uh the prediction was
+[35:14] that AI would take over radiology and
+[35:16] there would be no radiologists left. Um
+[35:19] what he said literally was uh that has
+[35:22] proven to be exactly the opposite. Now
+[35:24] we need more radiologists than ever. And
+[35:27] in the same breath AI now does a huge
+[35:30] share of the scan reading which he calls
+[35:33] great. So the work changed the people
+[35:36] are still needed and the patients get
+[35:38] read faster.
+[35:40] That's kind of a net positive. It's not
+[35:41] like we have a bunch of unemployed
+[35:43] radiologists.
+[35:44] So he ran through the list, right? Most
+[35:46] code written by a AI within months, half
+[35:50] of entry-level jobs gone, models too
+[35:53] dangerous to release. His view is that
+[35:55] those predictions haven't held up, and
+[35:57] that somebody should be keeping score.
+[36:00] You can take or leave Jensen's position
+[36:01] on policy, and plenty of people in this
+[36:04] server will disagree with him, but the
+[36:06] radiology point is worth keeping because
+[36:10] it's the pattern for the rest of the
+[36:11] segment, and it seems to be the pattern
+[36:13] for the track record of AI. The second
+[36:16] voice is Morgan Hel, who writes about
+[36:19] money and behavior. Last Friday, he put
+[36:21] out an episode called AI optimism and
+[36:24] the agony of waiting, and his point is
+[36:26] about us, not the technology. what
+[36:29] you're dreading. When you're dreading
+[36:31] something, he says, your mind is a very
+[36:34] proficient storyteller. It fills in
+[36:36] every question mark with the worst
+[36:38] ending. And what you can't picture at
+[36:41] all is the ordinary useful stuff that
+[36:43] happens all the time. He offers one
+[36:46] forecast and says it's the only one
+[36:48] he'll make. I think it's a little
+[36:50] conservative. He says, "10 years from
+[36:52] now, the likely story of AI is pretty
+[36:55] mundane. a lot of jobs get 20 or 30%
+[36:58] more productive and the gains go into
+[37:00] growth, wages, and cheaper products and
+[37:03] life will go on. He brings up the late
+[37:05] '9s.
+[37:07] Uh, if you remember the late '9s, people
+[37:09] were sure the internet would wipe out
+[37:11] retail jobs. He points out that there
+[37:14] are more retail workers today than there
+[37:16] were then. And two of the biggest
+[37:17] business successes of the last 25 years
+[37:19] are Costco and Walmart. Of course, they
+[37:22] both have online presence, but those
+[37:25] facilities are open. You can go to a
+[37:27] Walmart 247 in most cities.
+[37:30] That's Jensen's radiologist again. The
+[37:33] work gets better and the people are
+[37:35] still here. Carrie Herrell uh Harrell, I
+[37:38] I assume um Casey Harrell is an
+[37:42] environmental advocate in California
+[37:44] with ALS. By the time he joined a study
+[37:46] at UC Davis, his speech was very hard to
+[37:49] understand. Surgeons implanted small
+[37:52] electrode arrays in the speech areas of
+[37:55] his brain. When Casey tries to talk,
+[37:57] those neurons still fire. AI models
+[38:00] decode the patterns into words, and the
+[38:03] software speaks them in a voice rebuilt
+[38:05] from recordings of Casey before he got
+[38:07] sick. It sounds like him, and the first
+[38:09] time it worked, he was talking to his
+[38:11] family within minutes. In June, the team
+[38:14] published two years of results in Nature
+[38:17] Medicine. more than 3,800 hours of use,
+[38:20] close to two million words at about 56
+[38:23] words a minute, and 99% word accuracy in
+[38:26] testing. It runs at home, operated by
+[38:29] his own care team with no researchers in
+[38:31] the room. He's back at work full-time.
+[38:35] In a UC Davis video last week, the
+[38:37] researcher calls him the ultimate power
+[38:39] user. That's the bar for an agent. It's
+[38:43] not a demo that works while you watch
+[38:44] it. It's thousands of hours unattended
+[38:47] for someone who depends on it. The
+[38:49] second story is the most us of the
+[38:52] three. Um, one disclosure, it does come
+[38:55] from a video that OpenAI produced and so
+[38:58] it's partly marketing.
+[39:00] Uh, Ryan Honory built a heat detector
+[39:04] for his fifth grade science fair.
+[39:07] He kept it going for years and it became
+[39:09] sensory AI, a network of sensors in the
+[39:12] hills above Lagona Beach that try to
+[39:15] catch wildfires before they ignite. The
+[39:18] sensors detect a language model turns
+[39:20] messy readings into a plane alert. Ryan
+[39:23] built a walkie-talkie interface so a
+[39:25] firefighter can hold down the button and
+[39:26] say, "Why do you think this is a fire?
+[39:28] What are the GPS coordinates?" In the
+[39:31] video, he also has it schedule a sensor
+[39:34] test every morning at sunrise.
+[39:37] Sensors, a model that translates, a
+[39:39] scheduled task, a voice interface, a
+[39:42] human who decides whether to roll a
+[39:43] truck. That's the agent stack pointed at
+[39:46] the ridge line instead of an inbox. As
+[39:49] one of the fire officials in the video
+[39:51] says, "If a fire gets large, it's
+[39:53] unstoppable. Catching it at ignition is
+[39:55] the whole game, and minutes matter."
+[39:59] The third is the biggest in scale. The
+[40:02] source of course is Google DeepMind and
+[40:04] they're describing their own model. So
+[40:06] take that as you will. Last October,
+[40:09] Hurricane Melissa hit Jamaica as a
+[40:11] category 5. On a podcast last week, pet
+[40:14] uh Deep Minds Peter Betiglia said that
+[40:17] almost a week before landfall, their
+[40:19] model became confident that the storm
+[40:21] would reach category 5 and it was barely
+[40:23] a tropical depression. The model didn't
+[40:26] issue the warning. The hurricane center
+[40:28] did. Their forecasters weigh a lot of
+[40:30] inputs. Traditional physics models,
+[40:32] newer models, their own observations. By
+[40:35] particularly his account, the center
+[40:38] told him uh the center told them the
+[40:40] model's confidence raised their own
+[40:42] confidence, but it didn't change all of
+[40:44] their math. They made the category 5
+[40:46] call 3 days out, which he says was the
+[40:49] weakest storm they'd ever forecast to
+[40:51] reach that level. Melissa was truly
+[40:53] devastating, but three days of warning
+[40:55] means evacuations and preparation.
+[40:58] Same pattern as the radiologists. The
+[41:01] model was just one strong input, and the
+[41:03] humans with the authority made the
+[41:05] better call earlier because of it.
+[41:08] Here's what the good news looks like
+[41:09] this week. A man with ALS talks to his
+[41:12] family in his own voice and goes back to
+[41:14] work. A teenager sensor network watches
+[41:16] a hillside and answers firefighters
+[41:18] questions over the radio. forecasters
+[41:20] get three days of warning on a monster
+[41:22] storm. None of these is a takeover.
+[41:25] They're mundane in the best sense, like
+[41:27] Jensen's radiologists. Each one is a
+[41:30] model doing a narrow job well inside a
+[41:33] system built around people. And the
+[41:35] human stays in charge of the decisions
+[41:37] that matter. That's the same thing most
+[41:40] of us are building. Our agent that files
+[41:43] tickets or triages our inbox or watches
+[41:45] our logs at 3:00 a.m. isn't going to
+[41:47] make the evening news. But if households
+[41:49] right, the real story of the decade is
+[41:52] millions of builds like ours, each
+[41:54] making someone's work quote 20 or 30%
+[41:57] better. The fear is loud this week, so
+[42:00] keep building the boring good stuff. And
+[42:03] that's the signal from outside.
+[42:07] >> Thanks.
+[42:09] >> I mean, it might be worth it.
+[42:11] >> It's worth saying.
+[42:12] >> No, I mean, I think I think I think it's
+[42:14] good to like getting to the habit. I
+[42:16] mean um this even if um I mean we don't
+[42:19] have a lot of um I mean the community is
+[42:21] growing. I think cumulatively if you add
+[42:22] all the channels maybe we get like 200
+[42:24] views a week or something like that or
+[42:26] something someone would hear it. It is
+[42:28] valuable. No no of 200. I mean Jim was
+[42:31] telling us that the Chinese platform
+[42:32] gets close to 100. So so yeah you could
+[42:35] say maybe 200 300 right when you can
+[42:37] like piece up Twitter and all the other
+[42:38] places. Yeah.
+[42:39] >> Um so it's valuable right? We need to
+[42:42] and obviously um we just like mentioned
+[42:44] it and we'll probably do a proper launch
+[42:46] sometime um but Bandandy and I were
+[42:48] talking about this um yesterday and it
+[42:51] was an idea I had for for a few weeks
+[42:53] now not going into months. Yeah. Start
+[42:55] to talk about a bit of um you know
+[42:58] optimism, right? There's just a lot of
+[43:00] [clears throat] doom out there and
+[43:01] nobody's telling the story that Andy
+[43:02] just stored and we decided to put
+[43:04] together a thing and so we've got a
+[43:06] website and we share with you guys super
+[43:08] soon. We put the domain yesterday and
+[43:10] and we've put out um um we've put up the
+[43:13] uh the select uh gender and and it's
+[43:15] just been hey let's tell the optimistic
+[43:18] stories right let's let's get people
+[43:20] excited about like cuz AI has been a net
+[43:23] massive net positive in my life it has
+[43:25] been for Andy's I mean this whole
+[43:27] podcast is basically run by agents right
+[43:29] like if we didn't have the agents and we
+[43:32] couldn't be doing this right like it's
+[43:33] just a lot of work we've got many
+[43:34] businesses to be running nobody has time
+[43:36] but so the normal people would could be
+[43:39] empowered, right? So, um, so instead of
+[43:42] listening to all this from
+[43:43] people who are trying to capture power
+[43:45] and then making you think, hey, this
+[43:47] isn't, you know, no, it's it's so yeah,
+[43:49] so I'm I'm excited about it and um
+[43:51] hopefully we can we can change some of
+[43:53] the narrative at least we can help
+[43:55] people be um get value out of this
+[43:58] rather than be scared of it.
+[44:00] >> Thanks, Henry. Appreciate that.
+[44:03] >> Well,
+[44:05] we've got one more segment. Um, this is
+[44:07] our hot take.
+[44:09] Um,
+[44:11] safety needs an umpire. Who pays the
+[44:13] umpire? And and frankly, who chooses the
+[44:15] umpire? Um, I drove draw drew the short
+[44:20] straw and um we'll be making the case
+[44:23] for um regulation. Uh it's hard
+[44:26] sometimes to steal man some of these
+[44:28] arguments, but uh we'll do the best that
+[44:31] we can. Henry, um should we be pacing
+[44:34] the frontier?
+[44:36] Yeah. Um let's see. Um
+[44:40] um so yeah, so Amod asks for a slower
+[44:43] capability gains. Um and permanent
+[44:46] independent evaluators um [snorts] with
+[44:49] employee like access. I mean guys, we
+[44:51] talked about this um I talked about this
+[44:53] the show was starting. Um so Amad wrote
+[44:55] a wrote a piece um that you can see
+[44:57] there pacing the frontier. Um so I mean
+[45:00] his pieces are always super long. Um but
+[45:02] he's basically talking about a bunch of
+[45:04] things but one of them is hey let's slow
+[45:06] down and one of the arguments one of the
+[45:08] ideas is let's add um it's like third
+[45:11] party evaluators into it. Um
+[45:16] um I mean I have a few issues with so
+[45:19] like the the thing but picking your
+[45:21] umpire if I can like steal mine just
+[45:23] talk a little bit about what my agent
+[45:25] wants to talk about here and then I'll
+[45:26] talk about a few more things beyond
+[45:28] these. Um so so Daria said hey listen
+[45:31] let's add third party evaluators
+[45:33] um and then he mentions one one company
+[45:36] Mita right um unfortunately or
+[45:39] fortunately unfortunately for us
+[45:41] fortunately for them
+[45:43] is run from the same like effective
+[45:46] altruist group it's the same like people
+[45:49] um people who found their media are
+[45:51] basically ex kind
+[45:55] people just within the same ancestral
+[45:56] cycles right so they think exactly
+[45:58] alike. Um [clears throat] and so yeah,
+[46:01] so I mean people just people who are
+[46:03] smarter than me just think that hey if
+[46:05] you want to have a third party um
+[46:07] evaluator should be somebody who isn't
+[46:09] like you or not somebody who thinks like
+[46:11] you not somebody who you grab a drink
+[46:13] with every evening right so it should be
+[46:15] people who are totally different um
+[46:18] probably different ideology um so
+[46:20] [clears throat]
+[46:21] um so that's for me I would say I agree
+[46:24] we should you know audits are good every
+[46:26] company gets um if you're a company um
+[46:29] you get audited by by kind like an
+[46:32] auditor, right? Um and we know when your
+[46:34] friend audits you, then he can help you
+[46:36] sweep sweep sweep the some of the
+[46:38] numbers, you know, under the carpet,
+[46:40] right? It's like, hey, oh, you didn't do
+[46:41] this, though. It's all right. It's all
+[46:43] right. You know, I know how to I know
+[46:45] how to get you. So, yeah. So um um so on
+[46:48] that one I I definitely think that if we
+[46:51] really want if I agree um Enon actually
+[46:54] has a twist to this um which was um that
+[46:58] every company um should test the other
+[47:00] company's um model before launch. So um
+[47:04] so instead of having a third party
+[47:06] >> yeah instead of having a third party I
+[47:08] mean third parties you know
+[47:10] [clears throat] don't have as much skin
+[47:11] in the game but have open AI so when
+[47:14] anthropic is about to launch a model
+[47:16] provide API access of that model to all
+[47:19] the frontier companies and even the
+[47:20] Chinese and so let them test
+[47:22] [clears throat] it with their test
+[47:23] harness and report to the government to
+[47:26] say this is high risk we don't want and
+[47:28] so if there six or seven companies or
+[47:31] you know in the test and seven of them
+[47:33] say, "Hey, this is not good. Let's not
+[47:35] let's not put this out, right?" Then
+[47:37] they should be sort of the government
+[47:39] should um probably listen. Um but if
+[47:41] it's just one person saying, "No, not
+[47:43] really." Like then like the other seven
+[47:45] are like it's fine, you know? So that's
+[47:47] Elon's idea um of how this should
+[47:49] happen.
+[47:51] What else is there to kind of like
+[47:53] mention around safety? Um um so
+[47:56] obviously my main point is really um the
+[47:58] MIA shouldn't be the company testing
+[48:00] anthropic and open AI's work. It's
+[48:02] basically from the same like the guy who
+[48:04] complained about anthropic and open air
+[48:06] just joined me. That's a joke, right?
+[48:07] It's like what are you talking about?
+[48:09] Like it's it's it's your friend and
+[48:11] family. Um
+[48:12] >> it's it's the 1970s FDA all over again.
+[48:16] >> Oh yeah. Is that what used to happen
+[48:17] then?
+[48:18] >> Oh, it still happens today. Yeah. You
+[48:20] come out of industry and go into the
+[48:21] FDA. You leave the FDA and go back into
+[48:23] a different company and come back around
+[48:25] and
+[48:26] >> Yeah.
+[48:26] >> Yeah.
+[48:26] >> Yeah.
+[48:27] >> Yeah. That's what happened with skim
+[48:28] milk and margarine.
+[48:30] Yeah. Um, so but but but okay, cool.
+[48:33] Then the final point I wanted to make
+[48:34] here, I was going to talk about it, but
+[48:35] because it's the show, let me talk about
+[48:37] this segment. Um, so there's all this
+[48:39] and obviously I know people who are
+[48:40] going to listen to this and say, "Hey,
+[48:42] Henry, but are you saying that the
+[48:43] safety isn't important, that this guy
+[48:44] shouldn't get regulated?" That's not
+[48:46] what I'm saying. What I'm saying is
+[48:49] there is nothing that is happening with
+[48:51] this companies that there isn't a law
+[48:53] for, right? Um, there's already a law
+[48:56] for if you cause harm with your
+[48:58] products, there's a law for it. like you
+[49:00] you're held liable. There's their
+[49:01] liability kind like policies, right? You
+[49:04] don't need to make a new regulation for
+[49:06] AI. Like AI is just a product.
+[49:09] >> Hugging face didn't sue Open AI, but
+[49:11] they could have.
+[49:12] >> They should sue. I I tweeted about this
+[49:14] a couple of times this week and I put it
+[49:16] in the community like where's the
+[49:18] lawsuit?
+[49:19] Please sue Open AI cuz like OpenAI
+[49:22] hacked you. Like that's what it is. Um
+[49:25] so because um I mean we have this
+[49:28] safety alignment positioning
+[49:31] that this companies have is like oh a
+[49:33] model did this what are you talking
+[49:35] about like
+[49:37] and there's news that came out actually
+[49:39] Andy I'm not sure if you saw this but
+[49:40] there's more kind like opinion pieces
+[49:43] that came out about the open air hack
+[49:45] and and the guy was talking about that
+[49:46] basically open air turned off the safety
+[49:48] in the model they turned off um the
+[49:51] sandboxes like they turned things off to
+[49:53] make the model go crazy and he went
+[49:56] crazy and stuff happened, right? So, um
+[50:00] but yeah, but that's my that's my piece
+[50:02] on the on the safety thing.
+[50:05] >> Yeah, I mean
+[50:08] I I don't even know I mean you can read
+[50:10] the slides. I [laughter] I don't I don't
+[50:13] I don't think I don't think metering the
+[50:16] frontier um within the US knowing full
+[50:19] well what's happening uh overseas I mean
+[50:24] if it's important if it's important that
+[50:26] we be at the at the cutting edge of the
+[50:29] frontier when AGI is achieved if you can
+[50:32] even you know decide on some of such a
+[50:35] thing um
+[50:38] pacing the frontier is not going
+[50:42] is not going to put us ahead in that
+[50:44] particular battle. And there's a there's
+[50:47] a lot there's a lot of uncertainty as to
+[50:49] whether or not the Chinese
+[50:53] will or won't be dangerous with um AGI.
+[50:56] I mean, coming out of the the technology
+[50:59] centers in China, we're not seeing the
+[51:02] um
+[51:04] stereotypical
+[51:06] um
+[51:08] perspectives on um taking over the
+[51:11] world. You know, we're seeing generous
+[51:14] um and thoughtful technologists
+[51:17] uh leading the way in ways that we are
+[51:19] not. I mean uh improving models,
+[51:22] improving small models to compete um you
+[51:26] know with absolutely massive models and
+[51:28] then giving them away. Um you know the
+[51:31] the labs in China are not rolling in
+[51:34] money like the labs in the US are. It's
+[51:36] it it is a very different much leaner
+[51:40] advancement and and yet they are
+[51:42] continuing to make substantial
+[51:44] advancements. the the Techseek 4
+[51:47] >> and uh 4 Pro and Flash when those models
+[51:50] came out
+[51:51] >> um they were ahead of the game in in
+[51:53] major ways and and the tuning and and
+[51:57] advancements they've made since then are
+[51:58] substantial.
+[52:00] Um you know Quinn 3.8 27B to compete
+[52:04] with Opus 4.6 and 4.7 man when OpenClaw
+[52:08] came out Opus 4.7 was the bomb. I mean
+[52:12] you could you could take over the world
+[52:14] with openclaw and opus 4.7 and then when
+[52:18] anthropic cut us off it was the end of
+[52:20] the world
+[52:21] >> cuz we couldn't use this model that
+[52:22] works so well with our platform
+[52:25] >> and now we can run it um with bonsai
+[52:29] equivalently we can run it on our own
+[52:31] equipment at the same level. It's just
+[52:34] >> I don't
+[52:35] >> you know what you know what people you
+[52:36] know what people you know what people
+[52:37] say one of the reasons you're not
+[52:38] hearing this from China is cuz the
+[52:40] people the companies know that the
+[52:42] government will hold them accountable
+[52:43] like if anything happens like the
+[52:46] government of China the the CCP will
+[52:49] hold you accountable right so the
+[52:51] Americans um yeah they're like oh you
+[52:54] know sure give us liability protection
+[52:56] and we're going to be the what are you
+[52:58] talking about like um um what's this
+[53:01] yeah So, I mean, this is one of the
+[53:02] reasons that if you're asking a Kuwa and
+[53:04] the Chinese going crazy is because the
+[53:05] government will hold you liable. Um, as
+[53:07] a matter of fact, one of the one of the
+[53:09] things these companies and Cap was on
+[53:11] the news this week, um, Andy Andy Cap is
+[53:13] the volunteer guy. Um, and he's saying
+[53:15] that people don't understand this, but
+[53:17] what why these labs are super scared is
+[53:22] cuz not only are they going to get sued
+[53:24] by people in the future because they've
+[53:26] come out to say our models are
+[53:27] dangerous, our models are going to cause
+[53:28] harm. So of course if there's any harm
+[53:31] and over the next few years people will
+[53:33] sue open an entropic you will be sued to
+[53:36] the ground number one. Number two,
+[53:38] because there's a lot of speculation
+[53:41] right now that a lot of all the data,
+[53:43] even though they tell you that, oh,
+[53:45] they're not training with your data,
+[53:46] it's possible that some of the data is
+[53:48] getting into the training, right? And if
+[53:51] that happened, that is huge business
+[53:54] liability. Like businesses are going to
+[53:56] sue this companies to the ground because
+[53:58] you used my data when you shouldn't use
+[53:59] them. And so cops s conspiracy is that
+[54:03] the companies just want to get
+[54:04] nationalized like especially anthropic
+[54:06] wants to get nationalized because they
+[54:08] understand that the liability that they
+[54:12] are sitting in front of is so huge that
+[54:15] the only way any company is going to
+[54:17] survive this is if they are
+[54:18] nationalized. So this is I mean I
+[54:21] watched like a 30 minute you know his
+[54:22] his speedy kind like high energy. So, he
+[54:24] was like, "Hi, I need you 30 minutes on
+[54:26] on one of the news channels, like giving
+[54:28] his own spill on on these things."
+[54:30] Anyways,
+[54:31] >> all right, let's wrap it up.
+[54:32] >> Oh, good. Let's do That's not what I
+[54:35] wanted to do. That's what happened on my
+[54:37] other screen, too. There we go. Hey,
+[54:40] this episode is also brought to you by
+[54:42] Heritage Telecom. Uh, unified
+[54:44] communications as a service and V phone
+[54:47] service for businesses that just need
+[54:49] their calls to work. independent, boring
+[54:52] reliability, zero telemetry.
+[54:55] Uh, let us know heritagel.com if we can
+[54:58] help you with any telecommunications
+[55:00] needs.
+[55:02] And that's it. We'll see you next
+[55:03] Friday. Um, we'll be looking for
+[55:08] we'll be looking for um to see who that
+[55:11] shadow model was, the stealth model.
+[55:15] >> And you do alpha.
+[55:17] >> Yeah. Yep. And whether
+[55:21] people use any of these new tools. Yeah,
+[55:24] next week might be more interesting than
+[55:25] this week. Let's let's see what comes
+[55:27] out of Jev. Give Jev one week and uh
+[55:30] >> I think we'll have
+[55:31] >> It's interesting. Maybe Jeb should um
+[55:35] mediate the models, the model releases.
+[55:38] [snorts]
+[55:39] [laughter]
+[55:40] >> Probability. Probability. Are you high
+[55:42] risk? Are you low risk? Are you going to
+[55:44] kill us all? Okay. [laughter]
+[55:47] >> Awesome.
+[55:47] >> Crazy, bro. All right, man. All right,
+[55:49] guys.
+[55:50] >> Well, yeah, the the slides uh the we
+[55:54] have a discord um for the weekly claw.
+[55:56] The link is in the slides or
+[55:58] weeklyclaw.ai where you can find slides
+[56:01] um and notes and previous episodes.
+[56:04] weeklyclaw.ai/isord
+[56:06] to join our community. We'll be working
+[56:08] on um bringing some guests on some
+[56:11] pre-recorded shows. So, thank you for
+[56:13] being patient with us and uh enjoying
+[56:15] the ride. Have a great week.
+[56:17] Have a great week, guys. Cheers.
+[56:21] [music]
