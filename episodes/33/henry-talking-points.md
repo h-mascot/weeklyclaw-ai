@@ -1,81 +1,128 @@
-# Episode 33 — Henry's Sections (rev2)
+# Episode 33 — Henry's Talking Points
 
-Everything Henry owns on air: Grid A, the SFO bridge, Grid B, Grid C (Friday late-news add), the hot-take proposition, and One to Watch.
+Grid order and card numbering follow the 11-slide deck. Budgets: Grid A 8:00, Grid B 8:00, Grid C 4:00. Keep product availability, preview status, and sourced claims separate.
 
-## Grid A — "The trillion-parameter open-weight promise" (8:00)
+## Slide 4 — Grid A: scale, science, and local execution (8:00)
 
-**Card 1 — Mistral Large 4 "Le Chonk"**
-- Numbers: 1T total, 52B active, natively multimodal. Preview API: $1.36/M in, $4.18/M out — Mistral's page and Artificial Analysis agree. AA Intelligence Index 38 (median 26). Verbosity: 200M eval output tokens vs 81M median — "very verbose" per AA. Weights: end of October, red-teaming until then.
-- Landing line: "Mistral says it surpasses frontier closed models. The independent index says 38 against a median of 26. Both things are on the same page — that's not a dunk, that's a preview."
-- If asked about the name: "Le Chonk is Mistral's own name for it — 'unofficially ML4, very officially: le Chonk.'"
+### Card 1 — Mistral Large 4 (about 2:00)
 
-**Card 2 — Reflection Beam**
-- Numbers: 501B total, 23B active, sparse MoE, built for agentic coding. Announced Oct 5. Weights + tech report + model card "later this month"; early access is invite-only.
-- Landing line: "Second trillion-scale preview in one week, and the benchmark chart on screen is Reflection's own. I'll run it the day weights land — until then this is a promise with a logo on it."
+- **Receipt:** Mistral reports 1T total parameters and 52B active for Large 4. The API preview is available; Mistral says weights are due at the end of October. They have not shipped as of this briefing.
+- **Independent context:** Artificial Analysis lists an Intelligence Index of 38 versus a 26 median and unusually high output volume. Attribute “surpassing frontier closed models” to Mistral, not the index.
+- **Landing line:** “A trillion-parameter headline is the promise. The useful question is how the preview performs per task, and the weights are still pending.”
+- **Source:** [Mistral](https://mistral.ai/news/mistral-large-4) · [Artificial Analysis](https://artificialanalysis.ai/models/mistral-large-4).
 
-**Card 3 — OpenAI 722 manuscripts**
-- Numbers: 722 papers, 372 result families, 235 with Lean formalizations, Apache-2.0, zero peer review. One-night dump. Includes a solution to the Unitary Synthesis Problem (posed by Aaronson and Kuperberg, 2007).
-- Landing line: "The largest math drop in history, unrefereed, under an open license, from a model OpenAI still hasn't named. Peer review just got a volume problem."
+### Card 2 — Reflection Beam (about 2:00)
 
-**Card 4 — The math reception**
-- Numbers: Williams–Alman, arXiv 2610.06783, submitted Oct 5: deterministic 3SUM in n^1.9992, APSP in n^2.9995 — refutes the 3SUM and APSP hypotheses. Human authors. Same week.
-- ON AIR ACTION: open scottaaronson.blog/?p=9137 manually BEFORE quoting Aaronson; Tao's thread per curator receipt — both Cloudflare-gated/unverified this build.
-- Muse Spark name-drop (one line): "And in plain chat, no scaffold — Muse Spark co-authored six papers this month, five of them solving open problems."
-- Landing line: "The 722 needed an answer, and the field answered the same week — with a refutation of fifty-year-old conjectures, typed by humans."
+- **Receipt:** 501B total parameters, 23B active. Reflection has promised weights, a technical report, and a model card later this month. The displayed benchmark chart is Reflection's own.
+- **Caveat:** Do not call it a released open-weight model or present the preview chart as an independent result. Compare independently when weights arrive.
+- **Landing line:** “A second huge preview, but this is still a promise with the benchmarks supplied by the lab. The independent run starts when the weights land.”
+- **Source:** [Reflection Beam announcement](https://www.reflection.ai/blog/introducing-beam).
 
-## SFO bridge (after Theo's clip, ~40s)
-- "Theo's whole point is tokens-per-second is a meaningless metric — and he's right, because the bill doesn't read tokens per second. It reads tokens per task. My own numbers this week: Haiku 5.5 maxes around 162K output tokens per task; GPT-6 Luna around 50K. Same job, three times the tokens, three times the bill. Ultrafast is the same tax with a nicer interface. The harness is the product. The model is a line item."
+### Card 3 — OpenAI math release and the separate Alman–Williams paper (about 2:00)
 
-## Grid B — "Agents get graded, routed, and locked down" (8:00)
+- **OpenAI receipt:** OpenAI launched 722 manuscripts across 372 result families. Three were withdrawn on October 7, leaving 719; 14 other manuscripts received substantive repairs. **300 of 719 top-line results are formalized (~42%).** The repository is Apache-2.0; the manuscripts are not peer reviewed.
+- **Separate paper:** The Alman–Williams paper says Claude discovered the faster algorithm. Josh Alman and Virginia Vassilevska Williams developed and authored the paper. Keep this paper distinct from OpenAI's repository; do not attribute the paper to OpenAI. If mentioning Unitary Synthesis, qualify it as suitable for a Boolean oracle.
+- **Caveat:** Keep the repository, algorithm discovery, and paper authorship distinct. Do not attribute the paper to OpenAI.
+- **Landing line:** “This card joins two separate receipts: OpenAI's large, revisable manuscript release, and an Alman–Williams paper describing an algorithm Claude discovered and the authors developed.”
+- **Sources:** [OpenAI project history](https://github.com/openai/math/blob/main/history.md) · [OpenAI project overview](https://github.com/openai/math/blob/main/overview.tex) · [Alman–Williams paper](https://arxiv.org/html/2610.06783v1).
 
-**Card 5 — ThinkingBox**
-- Numbers: 121,680 valid trials, 12 models, 79,853 failed — two-thirds. Microsoft + Hugging Face; paper 2608.19741.
-- Quote: "An agent can sound correct while leaving the wrong value, changing the wrong record, or creating an extra side effect. Only the records it leaves behind settle the question."
-- Landing line: "Grading the database, not the demo. Twenty times in a row is the actual bar."
+### Card 4 — Microsoft Windows hybrid intelligence (about 2:00)
 
-**Card 6 — ReviewBench**
-- Numbers: 103.9M pull requests, live leaderboard, grounded and augmented precision/recall, research preview, submissions open.
-- Landing line: "Two agent benchmarks shipped the same week — the measurement layer is being built in public, right on schedule."
+- **Receipt:** Windows 11 Execution Containers are generally available and support OpenClaw. HydraFusion is an experimental preview expected later in October. Copilot local context, actions, and models are planned for coming months on Copilot+ PCs; Windows also has a native OpenClaw gateway.
+- **Caveat:** Say which part is GA, which is experimental, and which is planned. Do not imply the future Copilot pieces are shipping now.
+- **Landing line:** “The interesting shift is that the agent can move closer to the user's machine. That can cut a metered API bill, but it also makes hardware and local operations part of the cost.”
+- **Source:** [Building Windows for hybrid intelligence](https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/).
 
-**Card 7 — Grok Bot routing**
-- Verbatim: "Going forward, @SpaceX will use the best back end model for any given task, including Claude Opus 5.5, MidJourney, Suno and other leading APIs. Whatever is most likely to give you the best outcome." Oct 7. 106.1K likes.
-- Landing line: "The loudest model-lock founder just conceded the harness wins. Route to the best model per task — that's been this show's benchmarking thesis since episode one."
+## Slide 5 — Grid B: agents meet the systems around them (8:00)
 
-**Card 8 — Apple Full Disk Access**
-- Numbers: Oct 2 developer update; per-app user prompts replace silent FDA paths; Apple's own text cites autonomous agents sidestepping controls.
-- Landing line: "When Apple writes OS policy because of your industry, your industry arrived. Agents are now a threat model — treat them like one."
+### Card 5 — ThinkingBox (about 2:00)
 
-## Grid C — "The rules layer arrives" (4:00, Friday late-news add)
+- **Receipt:** Microsoft and Hugging Face test stateful reliability: whether an agent leaves the requested records and side effects behind. In a common-set ablation across 12 models, 79,853 of 121,680 valid trials failed.
+- **Caveat:** That is this benchmark's common-set ablation, not a universal failure rate for every agent task.
+- **Landing line:** “A confident answer is not enough if the database ends up wrong. This benchmark checks the state the agent leaves behind.”
+- **Sources:** [Microsoft / Hugging Face overview](https://huggingface.co/blog/microsoft/thinkingbox) · [paper](https://arxiv.org/abs/2608.19741).
 
-**Card 9 — Anthropic cruelty policy (C36)**
-- The line: Oct 8 Usage Policy update, effective Nov 12 — prohibition on "sustained and needless abusive or cruel behavior toward our models." First frontier-lab policy line protecting the model itself (checked against OpenAI's current usage policies — person-directed protections only).
-- Carve-outs verbatim on air: does NOT apply to "common versions of user frustration, pushback, dark creative themes, or model testing and research." Extreme cases only.
-- Enforcement: the policy page does not name the lever — The Verge reports it's Claude ending conversations. Say it as Verge reporting, not policy text.
-- The sleeper: same update REMOVES the blanket personalized voter-targeting ban. Anthropic's stated reason: it "covered legitimate civic work" — multilingual voter info, ballot-cure notices. Carry that rationale if you air the "quietly loosens" angle; don't present it as unexplained deregulation.
-- Reception: your own morning feed — "It's a fucking tool guys… Don't tell me how to talk to MS Word." Host-evidence, and the audience heat is the point.
-- Landing line: "Anthropic wrote the model's feelings into the terms of service — and quietly rewrote the elections section in the same document. One of those is trending; the other matters."
+### Card 6 — Grok Bot routing (about 2:00)
 
-**Card 10 — LMCache root RCE (C35)**
-- Numbers: CVE-2026-105192, CVSS 9.8, JFrog Security Research, published Oct 7, discovered by Yuval Moravchick. NO fixed version. Public PoC same day.
-- The path, plain: distributed LMCache opens a ZeroMQ ROUTER socket on default port 5555 — no auth. One crafted message reaches pickle.loads before any validation. Official container images run as root. Affected: 0.3.9–0.5.5, 0.5.6rc3, dev.
-- Scoped caveat ON AIR: default localhost binds are NOT remotely reachable. Risk concentrates in multi-node deployments with routable addresses — and GKE Inference, CoreWeave, NVIDIA Dynamo, and IBM reference stacks all pair LMCache with vLLM.
-- Henry angle: "The standard recipe for cheap inference is vLLM plus LMCache, and that stack ships a no-patch root hole. If you run local or OSS serving — my whole thesis — this is the week to check what's listening on 5555."
-- Landing line: "One policy paragraph protects the model's feelings. No patch protects your root. That's the rules layer in 2026."
+- **Receipt:** Cursor's Grok Bot documentation says it can route requests to Claude Opus 5.5. The documentation describes backend routing; users do not get a per-user model picker and there is no added per-token charge merely for Opus routing. Separately, Grok Bot supports native X search, reading, and monitoring for all users without configuring an X connector.
+- **Caveat:** Do not say every request goes to Claude; do not call the X feature free or unlimited.
+- **Landing line:** “There are two product shifts: the bot can route to a backend for the task, and Grok can work directly with X without each user wiring up a connector.”
+- **Sources:** [Cursor Grok Bot models](https://cursor.com/help/grok-bot/models) · [X search](https://x.com/bot/status/2107949161878606089) · [X reading and monitoring](https://x.com/bot/status/2107949163191353358).
 
-## Hot take proposition (2:00)
-- "The free-compute era ended on schedule — and that's healthy. Tomorrow, Gemini's free tier locks to 3.5 Flash-Lite. October 30, OpenAI halves Pro 200 — 20x to 10x Plus on Work and Codex, GPT-6 Pro chat from 200 to 100 a week — same $200. My line: with 6.1 you get 2.5x more usage on the new 10x plan. Prices are finally telling the truth about inference. Everyone who learned on subsidies now has to build unit economics that survive contact with a real bill. That's not the apocalypse; that's graduation."
+### Card 7 — Gemini agent (about 2:00)
 
-## One to Watch (1:15)
-- "Tomorrow — October 10 — Alibaba retires every third-party model from Model Studio. 100-plus models, four waves, 60-plus snapshots. DashScope migrations break Saturday morning. The irony writes itself: DeepSeek-V4.1-Flash is now served on rival Qwen's consumer platform while Alibaba delists everyone else's. Platform neutrality, one direction only. And set a reminder for the free tier: if retention holds after tomorrow's Flash-Lite lock, the subsidy was never load-bearing."
+- **Receipt:** At Gemini at Work 2026 on October 8, Google announced the Gemini agent: a shared workplace agent with persistent cloud execution and coworker agents that share memory and have dedicated identities, with orchestration across Gemini and Claude. Spend caps can pause work at the limit.
+- **Availability:** Small-business early access is available; broader access is planned. The announcement has no universal price or date, and this is not a tested launch.
+- **Landing line:** “Google is selling continuity and coordination: shared context across a workplace, and a way to orchestrate more than one model.”
+- **Sources:** [Gemini at Work](https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026) · [small-business access](https://cloud.google.com/blog/topics/startups/how-to-grow-your-small-business-using-google-gemini).
 
-## Sourcing notes for Henry
-- Mistral facts: mistral.ai/news/mistral-large-4 + artificialanalysis.ai/models/mistral-large-4 (both opened this build).
-- Beam: reflection.ai/beam (self-reported chart on screen).
-- 722: github.com/openai/math. Williams–Alman: arxiv.org/abs/2610.06783.
-- ThinkingBox: huggingface.co/blog/microsoft/thinkingbox + arxiv.org/abs/2608.19741.
-- Musk post: x.com/elonmusk/status/2107724314451878104 (verbatim verified 2026-10-08).
-- Apple: developer.apple.com/news/?id=101stbvu.
-- Tier changes: 9to5google.com/2026/10/03/gemini-model-limits-oct-26/ + help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers.
-- DashScope: therouter.ai Oct-2026 sunset guide + nfero.com listing.
-- Anthropic policy: anthropic.com/news/2026-usage-policy-update (opened + read in full 2026-10-09; quotes verbatim) + theverge.com enforcement reporting.
-- LMCache: research.jfrog.com JFSA-2026-001694382 (opened + read in full 2026-10-09) + thehackernews.com corroboration.
+### Card 8 — Nous Research (about 2:00)
+
+- **Receipt:** Nous announced a $90M raise and its intent to build Hermes for Businesses.
+- **Caveat:** Hermes for Businesses has not launched. Do not present the fundraise announcement as an available business product or as evidence of consumer-agent abandonment.
+- **Landing line:** “The developer project is established; the business edition is the plan attached to this raise. We should judge the product when it exists.”
+- **Source:** [Nous Research fundraise note](https://nousresearch.com/a-note-on-our-fundraise).
+
+## Slide 6 — Grid C: policy, serving security, and naming (4:00)
+
+### Card 9 — Anthropic usage policy (about 1:20)
+
+- **Receipt:** The October 8 Usage Policy update takes effect November 12. It prohibits sustained, needless abusive or cruel behavior toward models. The carve-outs cover common user frustration and pushback, dark creative themes, and testing or research.
+- **Enforcement:** Anthropic's announcement describes ending the conversation as the principal enforcement. Attribute that to the primary announcement. Do not call this the first lab policy of its kind.
+- **Landing line:** “The policy draws a narrow line around sustained cruelty and spells out ordinary frustration, fiction, and research as carve-outs.”
+- **Source:** [Anthropic Usage Policy update](https://www.anthropic.com/news/2026-usage-policy-update).
+
+### Card 10 — LMCache RCE (about 1:20)
+
+- **Receipt:** JFrog disclosed unauthenticated code execution in the multiprocess ZeroMQ transport. If the network listener is reachable, a crafted message can reach pickle deserialization with the LMCache process's privileges. Official containers run as root. No fix was published as of October 7.
+- **Scope:** The default localhost bind is not remotely reachable. Focus on exposed, routable deployments; qualify the risk before describing the impact.
+- **Landing line:** “Check what is listening and what account it runs as. The issue matters when the transport is reachable, and the official container privilege makes that deployment detail important.”
+- **Source:** [JFrog advisory JFSA-2026-001694382](https://research.jfrog.com/vulnerabilities/lmcache-is-vulnerable-to-unauthenticated-remote-code-execution-via-pickle-deserialization-on-the-multiprocess-zmq-transport-cve-2026-105192-jfsa-2026-001694382/).
+
+### Card 11 — Peter announces .claw incoming (about 1:20)
+
+- **Lead:** On October 8, Peter Steinberger posted, “WE GOT IT! .claw incoming!” The displayed timestamp is 18:50. He quotes David Rodecker calling the OpenClaw Foundation a winning applicant.
+- **Status:** ICANN's application remains **Active Pre-Evaluation Processing**. No final delegation or domain-registration availability is established. The post is an announcement; the ICANN record is the status receipt.
+- **Landing line:** “Peter says .claw is incoming. The application is still in pre-evaluation, so we have an announcement and a live process, not a delegated domain.”
+- **Sources:** [Peter Steinberger, October 8](https://x.com/steipete/status/2108374513931165759) · [David Rodecker](https://x.com/drodecker/status/2108372568843448769) · [ICANN application summary](https://newgtldprogram-aps.icann.org/applications/OF2656T-T69841/summary).
+
+## Slide 7 — Signal From Outside: Henry's bridge (after Andy's intro and Theo clip)
+
+- The clip's cost ladder is one practitioner's account: Theo contrasts about $50/M output tokens on Astra with $300/M on Ultrafast and $450/M for long context. Do not present it as a general benchmark.
+- **Bridge:** “Tokens per second is not the bill. Look at the tokens and time needed to finish the task, then compare the total cost. Theo is one example; Microsoft's local-execution story asks whether moving work onto the machine changes that equation.”
+- Keep the pivot short, then hand back to Andy for the remaining segment cue if needed.
+
+## Slide 8 — Hot take: who wins the consumer agent? (4:00)
+
+- **Beat 1 — Henry's October 7 thesis (about 1:30):** Henry argues that polished UX may pull users away from open-source harnesses toward Grok Bot, Muse, and Dot. He interprets the emphasis on enterprise, coding, and science as a retreat from consumer use. This is his reading of product direction, not measured abandonment or market share.
+- **Beat 2 — Teknium's verified position (about 1:15):** In an October 6 post, Teknium says consumer assistants are “not our only demographic,” naming scientists, cybersecurity professionals, developers, and knowledge workers. He also says mobile will be almost exclusively consumer-focused. Frame this as a wider audience strategy that retains a consumer mobile path.
+- **Beat 3 — question (about 1:15):** “Can an open, model-agnostic agent deliver mainstream ease without giving up user control?” Let the competing readings stand; do not claim the market has decided.
+- **Editorial note — host only:** Henry recalls a separate company-position post with “not a consumer company” wording, but its exact source and wording are unverified. Exclude it from on-air copy; use the October 6 post as the verified Teknium position.
+- **Sources:** [Henry, October 7](https://x.com/iAmHenryMascot/status/2107753255304335618) · [Teknium's October 6 position](https://x.com/Teknium/status/2107712074038288806) · [Teknium's October 7 reply to Henry (secondary)](https://x.com/Teknium/status/2107755286761202033).
+
+## Host-only context — do not expand slide 8
+
+- **OpenAI Pro 200:** Eligible subscribers keep their previous allowance through October 29; lower allowances begin October 30 at the same $200 price. Keep eligibility and timing attached; use current help-page wording. [Pro tier guidance](https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers).
+- **Gemini free tier:** Google's updated support page, reported by 9to5Google, says Gemini free-tier users move to 3.5 Flash-Lite on October 9. Attribute it to the updated page/report; no separate vendor-dated announcement is in this packet. [9to5Google](https://9to5google.com/2026/10/03/gemini-model-limits-oct-26/).
+- **Ownership / lock-in context:** Kun Chen's October 3 argument is optional context for the user-control question, not a new card. [Kun Chen](https://x.com/kunchenguid/status/2106612888987443424).
+
+## Slide 10 — One to Watch: Alibaba Model Studio
+
+- The notice schedules listed model IDs for retirement at **00:00 China Standard Time, October 10** — **16:00 UTC / noon ET, October 9**, four hours before the 20:00 UTC show.
+- The notice covers its listed IDs. It does not establish that every third-party model is being retired.
+- Because the scheduled time is four hours before airtime, check the affected IDs and migration guidance before speaking. Do not describe the cutoff as completed unless you verify the actual state.
+- **Source:** [Alibaba notice](https://www.aliyun.com/notice/118345) · [Model Studio depreciation guide](https://help.aliyun.com/zh/model-studio/model-depreciation).
+
+## Optional briefs — not in the core grids
+
+- **Apple Full Disk Access:** Apple's October 2 developer note describes planned changes that require an explicit user action. Say “planned”; do not say prompts shipped or macOS policy was rewritten. [Apple Developer News](https://developer.apple.com/news/?id=p6zjojqw).
+- **ReviewBench:** GitHub's wider corpus is 103.9M PRs; its benchmark sample is 219 PRs from 187 repositories across 19 languages. Keep the sample and wider corpus separate. [GitHub announcement](https://github.blog/ai-and-ml/reviewbench-an-open-benchmark-for-ai-code-review/).
+
+## Sources and host checks
+
+- **Before air:** Open the Theo video manually: [“I love Ultrafast (it's unusable)”](https://www.youtube.com/watch?v=pJljViiUEPw). Never autoplay. Re-locate each cue after opening because transcript timestamps can drift.
+- **Cue map to verify on the opened video:** 00:00–00:40 live Astra edit; 01:00–01:17 cost ladder; around 02:40 the Graptile/T-Rex sponsor segment (skip); find the closing verdict at the end. These are locator cues, not guaranteed transcript timecodes.
+- **If video playback fails:** Andy can say: “Theo shows an Astra edit live, then compares his token bill: about $50 per million output tokens on Astra, $300 on Ultrafast, and $450 for long context. His point is that speed alone misses what a task costs. That's one practitioner's example, not a general benchmark.” Use the price-ladder visual.
+- **Math source check:** Review the project history and paper before air; retain the attribution split between the OpenAI manuscript release and the separate Alman–Williams paper.
+- **Consumer-agent source check:** Keep Henry's thesis and Teknium's October 6 positioning—and October 7 reply, if used—attributed to their posts. Do not turn either interpretation into measured migration or market-share data.
+- **Alibaba check:** Confirm the notice's listed retiring IDs and current migration status before describing the scheduled cutoff in past tense.
