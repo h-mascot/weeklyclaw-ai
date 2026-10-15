@@ -59,11 +59,13 @@
 
 ## Signal From Outside
 
-- **The lesson is routing, not ranking.** Argon is good at some work and a 70% failure rate at review work.
-- "Which model is best" is the wrong question — same lesson as the router beating every single model on the agent board.
-- **My own practice:** the harness and the task matter more than the leaderboard position. This is lived material.
+- **Henry reacts — Andy anchors.** Andy's pick: Anthropic's own technical leadership, on an optimism show, on the record.
+- **10x cheaper per year (36:45):** they say it happens *without distillation* — natural progression. My local lanes are the receipt: the lagging edge gets commoditized on a schedule.
+- **Cyber flips defense-dominant in two years (22:00):** dated and checkable. Hold it against the Senate letter and the Grok Bot incident architecture.
+- **"So far we've slowed ourselves down much more than anyone else" (26:00):** their answer to the regulatory-capture charge, and the counter-argument in the open-weights fight.
+- **AGI definition (9:35):** "everything a human can do on a computer." Pin it — every goalpost move this year gets measured against this line.
 
-**Handoff question:** "If the week's biggest model is best-in-class at one task and a 70% failure rate at the next, what does 'best model' even mean?"
+**Handoff question:** "If the next couple of years really does mean AGI on a computer, and intelligence gets ten times cheaper every year — what exactly are you still renting?"
 
 ---
 

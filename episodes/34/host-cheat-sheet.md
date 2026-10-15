@@ -16,7 +16,7 @@
 | 3:30–11:00 | Grid A | `s-seg-grid-a` | **Henry** | Local stack; 4 cards |
 | 11:00–18:30 | Grid B | `s-seg-grid-b` | **Henry** | Trust + money; 4 cards |
 | 18:30–22:00 | Grid C | `s-seg-grid-c` | **Henry** | NVIDIA/Reflection; 1 card, first cut |
-| 22:00–28:00 | Signal From Outside | `s-signal-outside` | Andy anchors | Theo/Gemini 4; MANUAL OPEN |
+| 22:00–28:00 | Signal From Outside | `s-signal-outside` | Andy anchors | American Optimist: Anthropic researchers (Douglas/Marwell); MANUAL OPEN |
 | 28:00–32:00 | Hot take | `s-hot-take` | Both | Cheapest-agent perimeter |
 | 32:00–33:30 | Sponsor 2 | `s-sponsor-herald` | Andy | Herald Labs — approved copy |
 | 33:30–36:00 | One to watch + close | `s-watch` | Henry + Andy | ONE recap, then out |
@@ -56,8 +56,9 @@
 | Anthropic valuation talk | **~$2T** | reported; November window |
 | Reflection AI | **$25B March valuation, ~$800M invested** | talks-stage; no confirmation |
 | Scientists' letter | **406 signatories, 34 countries** | incl. Hinton, Bengio |
-| Theo's audit | **78 findings, 56 wrong = 70%** | his own product; single reviewer |
-| Theo video | **38:30, 184,689 views** | uploaded 2026-10-14 |
+| Anchor video | **58:40, uploaded 2026-10-02, 119,904 views** | American Optimist; manual open only, no autoplay |
+| Cyber "defense-dominant" claim | **within 2 years** | dated + falsifiable; pairs with the Senate letter |
+| Intelligence cost curve | **~10x cheaper per year, no distillation** | frontier claim; point to AA dashboards |
 
 ---
 
@@ -78,7 +79,7 @@
 1. `https://ai-security-letter.org/` — quote exactness for the three recommendations.
 2. `https://www.commerce.senate.gov/wp-content/uploads/2026/10/AI-and-Cybersecurity_Cantwell-and-Rounds_10.13.26.pdf` — 403s to server fetch; open in a browser.
 3. `https://blogs.nvidia.com/blog/rtx-spark-nemotron/` — 404'd to keyless extraction; open directly before quoting RTX Spark pricing.
-4. Theo video `NE006pkiAnk` — re-locate cues: 03:04, 04:36, 26:38, 27:35. **No autoplay anywhere.**
+4. Anchor video `6D1wC95htTM` (American Optimist / Anthropic researchers) — re-locate cues: 0:00, 9:35, 22:00, 26:00, 36:45. **No autoplay anywhere.**
 
 ---
 
@@ -87,7 +88,7 @@
 1. **Grid C** — fold the FT line into Grid B's close. (First cut.)
 2. Grid A card 4 — fold hardware into card 2 as one line.
 3. Andy's hot-take steel → 90 seconds.
-4. Signal cues → compress to 04:36 + 27:35 (3:30).
+4. Signal cues → compress to 0:00 + 22:00 + 36:45 (3:30).
 5. Sponsor reads → 45s each. Never cut either slot entirely.
 
 **Never cut:** Signal From Outside (permanent anchor), Grid B card 3 (money beat), the QR/social close.
