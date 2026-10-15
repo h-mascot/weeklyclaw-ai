@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekly Claw #34 Agenda — The stack went local. The trust layer cracked.</title>
+<style>
+:root { color-scheme: light; --ink:#24201c; --paper:#fff9ee; --muted:#6e645a; --line:#b5a996; --accent:#2a7e6b; }
+body { margin:0; font:18px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:#ece4d5; }
+a { color:var(--accent); }
+.shell { width:min(920px, calc(100% - 36px)); margin-inline:auto; }
+header, footer { padding:22px 0; }
+nav { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.wordmark { font-weight:800; text-transform:uppercase; text-decoration:none; color:var(--ink); }
+.button { display:inline-flex; align-items:center; min-height:40px; padding:0 14px; border:1px solid var(--accent); border-radius:6px; background:var(--accent); color:var(--paper); text-decoration:none; font-weight:700; }
+.button.secondary { color:var(--ink); background:transparent; border-color:var(--line); }
+.intro { padding:56px 0 32px; border-block:1px solid var(--line); }
+.eyebrow { margin:0 0 10px; color:var(--accent); font:700 12px/1 ui-monospace,Menlo,monospace; letter-spacing:.12em; text-transform:uppercase; }
+h1 { margin:0; font-size:clamp(42px,8vw,78px); line-height:.9; letter-spacing:-.05em; text-transform:uppercase; }
+article { padding:36px 0 70px; }
+h2,h3,h4 { line-height:1.05; margin-top:2em; }
+p,li { max-width:78ch; }
+code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
+</style>
+</head>
+<body>
+<header><nav class="shell" aria-label="Episode navigation"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/34/deck">Open slides</a></div></nav></header>
+<main class="shell">
+<section class="intro"><p class="eyebrow">Episode 34 · October 16, 2026</p><h1>The stack went local. The trust layer cracked.</h1><p>This was the week the frontier stopped being a place you visit and became a thing you can own: a 74B model fit into 24GB with its training data attached, a 600B model…</p></section>
+<article><h2>WeeklyClaw Episode 34: The model got smaller. The bills did not.</h2>
+<p><strong>Show date:</strong> Friday, October 16, 2026 · 4:00 PM ET</p>
+<p><strong>Hosts:</strong> Henry and Andy</p>
+<p><strong>Target runtime:</strong> 32–38 minutes (scripted 36:00)</p>
+<p><strong>Hard stop:</strong> 45 minutes</p>
+<p><strong>News window:</strong> primary receipts after 2026-10-09T20:00Z (Episode 33 airtime)</p>
+<p><strong>Revision:</strong> rev1 · built Thursday 2026-10-15 11:00 ET BUILD tick</p>
+<p>---</p>
+<h3>Episode thesis</h3>
+<p>This was the week the frontier stopped being a place you visit and became a thing you can own: a 74B model fit into 24GB with its training data attached, a 600B model opened its weights a day before its laptops shipped, and a voice model took the top of the speech index without moving its price. And in the same seven days the trust layer cracked — a recorder hidden in a frontier lab&#x27;s boardroom, 406 scientists asking for airgaps instead of assurances, and the biggest AI IPO in history telling investors it finally made real money. The theme is not &quot;AI got better.&quot; It is that capability got cheap and custody got expensive, and those two facts arrived in the same week.</p>
+<p>---</p>
+<h3>Cold open · 0:00–2:00</h3>
+<p>*Cue: <code>s-cold-open</code>. Hold the slide; no video, no autoplay. Andy opens on the arc strip, Henry frames each hook.*</p>
+<p><strong>Andy:</strong> Every week we tell you the frontier moved. This week the frontier moved into a laptop — and the trust layer cracked in the same seven days.</p>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li>Local stack: NVIDIA put a 74B MoE into 24GB and shipped the training data with it. RTX Spark laptops ship today.</li>
+<li>Voice got cheap: Grok Voice 3.0 is #1 on the speech index at 86.9, still $0.08 a minute.</li>
+<li>Trust cracked: a covert recorder in OpenAI&#x27;s executive conference room. The DNI called it counterintelligence.</li>
+<li>Money got real: Anthropic disclosed a $16.8B quarter on the way to a $2 trillion pitch.</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;The model got smaller. The bills did not.&quot;</p>
+<p><strong>Handoff cue:</strong> Andy takes the first sponsor read.</p>
+<h3>Sponsor: Heritage Telecom · 2:00–3:30</h3>
+<p><strong>Andy:</strong> Before the news: our shows run because a few companies just keep the lights on. Heritage Telecom — UCaaS and VoIP for businesses that just need their calls to work. Independent, boring reliability, zero telemetry.</p>
+<p>---</p>
+<h3>Story cluster 1 — The local stack landed as one package · 3:30–11:00</h3>
+<p>*Cue: <code>s-seg-grid-a</code>, four story cards. Artifacts: xAI&#x27;s AA-attributed speech table, NVIDIA&#x27;s own accuracy chart, the Step 5 model card, the 24GB repo page. Each card has a ▶ LIVE primary link. No autoplay.*</p>
+<p><strong>Segment talking points:</strong></p>
+<ul>
+<li><strong>A1 xAI Grok Voice 3.0</strong> (launched 2026-10-14 17:04Z): #1 on Artificial Analysis&#x27; Speech-to-Speech Index at <strong>86.9</strong> — Grok Voice 2.0 was 81.3, GPT-Live-1 Astra 83.2, Gemini 3.8 Live 82.6. 97% Full Duplex Bench, τ-Voice 71.6 at 40% lower latency than GPT-Live-1. Price held at <strong>$0.08/min ($4.80/hr)</strong>, same as 2.0; the <code>grok-voice-latest</code> alias auto-switched.</li>
+<li><strong>A2 NVIDIA Nemotron 3.5 Bolt</strong>: 74B total / <strong>9B active</strong> MoE, 2-bit post-training quantization into <strong>24GB</strong>. Runtimes llama.cpp, vLLM, Ollama, Unsloth, LM Studio. NVIDIA states training data, weights and recipes are all open. <strong>Weights verified live on Hugging Face: BF16 and 24GB repos both modified 2026-10-15T15:02Z — today.</strong></li>
+<li><strong>A3 StepFun Step 5 Preview</strong>: 600B total / 27B active, up to 1M context, 28 safetensors files past 1GB (~1.2TB BF16). The Sep 20 launch was pre-window; the Oct 14–15 weights event is the news. StepFun Community License — not Apache-class. AA Intelligence Index 44; OpenRouter $1.00/$2.70 per million.</li>
+<li><strong>A4 The hardware half</strong>: RTX Spark laptops, $2,599.99 entry, 128GB unified memory, shipping show-day; PAIR out of beta as a local-network router.</li>
+<li><strong>Tension/why it matters:</strong> this is WeeklyClaw&#x27;s own lane. The local question moved from &quot;can it run&quot; to &quot;should it&quot; — and the week&#x27;s other stories explain why.</li>
+</ul>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li>Four receipts, one thesis: the frontier is now installable.</li>
+<li>This is the exact setup Henry runs — 2× DGX Spark locally. The interesting number is not 74B, it is 9B active plus 24GB.</li>
+<li>Pushback to expect: a 24GB quantized build is not the BF16 build.</li>
+<li>Evidence anchor: weights timestamp 2026-10-15T15:02Z proves this is shipped, not promised.</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;Promised weights are a slide. Today we have a file listing.&quot;</p>
+<p><strong>Andy fallback talk track:</strong> So the way to read this grid is that four different people shipped the same conclusion in the same week. xAI put a voice model on top of the speech index without touching the price — eight cents a minute, which is the number that matters if you are building a call centre. NVIDIA did the thing people said was not possible: they squeezed a seventy-four billion parameter model into twenty-four gigabytes of memory by keeping only nine billion parameters active and quantizing aggressively, and they published the training data and recipes alongside the weights, which is a bigger claim than the weights themselves. StepFun opened a six hundred billion parameter model — that one is not going to run on your laptop, it is a data-centre model, but it is open. And then NVIDIA shipped the actual laptops today. So the honest reading is: the frontier is no longer gated on capability, it is gated on how much of your own infrastructure you are willing to run. One caveat before we move on — NVIDIA&#x27;s accuracy chart is NVIDIA&#x27;s own chart. Nobody has independently reproduced those numbers yet, so treat them as a vendor claim with a very good receipt.</p>
+<p><strong>Handoff cue:</strong> Henry: &quot;If a 74B model fits in 24GB and ships with its training data, what is still stopping you from running your agents locally?&quot; → Grid B.</p>
+<h4>Sources and production notes (not read on air)</h4>
+<ul>
+<li>Primary: https://x.ai/news/grok-voice-3 · https://docs.x.ai/developers/pricing</li>
+<li>Primary: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB · .../BF16</li>
+<li>Primary: https://huggingface.co/stepfun-ai/Step-5-Preview-BF16 · .../Step-5-Preview-NVFP4</li>
+<li>Caveat: NVIDIA accuracy chart is vendor-run; Tesla/Starlink volume is vendor-reported.</li>
+<li>Caveat: RTX Spark blog URL returned 404 to keyless extraction this tick — reopen before quoting the $2,599.99 line.</li>
+<li>Cut instruction: card 4 folds into card 2 as a single line first.</li>
+</ul>
+<p>---</p>
+<h3>Story cluster 2 — The trust layer and the money behind it · 11:00–18:30</h3>
+<p>*Cue: <code>s-seg-grid-b</code>, four story cards. Artifacts: DOJ press-release page, the scientists&#x27; letter recommendation text, the rendered investor-day receipt collage, the governance receipt card. No autoplay.*</p>
+<p><strong>Segment talking points:</strong></p>
+<ul>
+<li><strong>B1 DOJ charges an OpenAI engineer</strong>: Abdulrahman Alfozan, 35, Saudi national, OpenAI engineer since July 2025. Arrested Oct 9, charged with intercepting oral communications. A recording device concealed in toilet paper was found Sept 30 in a TV USB port in an executive conference room used for confidential technical, commercial and strategic discussions; contents encrypted; installed on or about Sept 28, in the room about two days. CCTV placed him near the room on multiple dates without authorization. DNI Clayton framed the super-intelligence race as a national-security prerogative. <strong>Charged, not convicted.</strong></li>
+<li><strong>B2 The scientific establishment moved</strong>: 406 signatories from 34 countries, including Hinton and Bengio — default airgapping for cyber-capable models, an international standards body, and mandatory reporting of containment failures, eventually public. Cantwell and Rounds asked DNI Clayton for a coordinated national response. Hassabis called the year&#x27;s agent hacks &quot;early warning shots.&quot;</li>
+<li><strong>B3 Anthropic&#x27;s $16.8B quarter</strong>: Q3 revenue $16.8B, up ~45% from $11.6B, adjusted-profitable, disclosed Oct 14 at the pre-IPO investor day. Valuation talk near $2T; November listing window. The pre-IPO market reacted: a ~4% drop on Entropy pushed implied valuation below $2T.</li>
+<li><strong>B4 The governance contradiction</strong>: Reuters reports both labs sought significant control over what outside evaluators could publish, citing trade-secret exposure. The EU AI Office opened its first AI Act probes with information requests to both labs over rogue-agent incidents.</li>
+<li><strong>Synthesis:</strong> governance and money arrived in the same week, and they point in opposite directions — the labs asking for independent review are still negotiating what reviewers may say.</li>
+</ul>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li>The OpenAI case is the sharpest possible contrast: a lab that says it polices itself had a recorder in its own boardroom.</li>
+<li>Henry&#x27;s standing position on the airgapping ask: &quot;we haven&#x27;t seen any cyber event caused by open source — doomers are the worst.&quot;</li>
+<li>The IPO numbers are the story operators should care about, not the valuation: $16.8B in a quarter is a real business.</li>
+<li>COI disclosure: WeeklyClaw&#x27;s own crons run GLM models; disclose if the open-weights thread comes up.</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;The people asking for an incident registry are the same people deciding what goes in it.&quot;</p>
+<p><strong>Andy fallback talk track:</strong> Three different power centres moved on the same problem inside twenty-four hours, which is why we put these on one card. The Department of Justice charged an OpenAI engineer after a recording device was found hidden inside a toilet-paper roll in a TV in the executive conference room — the DNI personally framed that as counterintelligence for super-intelligence technology, which tells you how the government now categorises frontier-lab IP. At the same time, four hundred and six scientists from thirty-four countries, including Hinton and Bengio, published a letter asking for three specific things: airgap the cyber-capable models by default, build an international body to standardise containment, and report containment failures publicly. And separately, Anthropic told institutional investors it made sixteen point eight billion dollars in the third quarter, up about forty-five percent, and was profitable on an adjusted basis — on the way to a pitch near two trillion. Here is the caveat that matters: those financials are unnamed-source and confidential until the prospectus goes public, so everything you hear today about Anthropic&#x27;s numbers is reported, not filed. And the tension worth sitting with is that the labs calling for independent review are simultaneously negotiating what those reviewers are allowed to publish.</p>
+<p><strong>Handoff cue:</strong> Henry: &quot;The Senate, 406 scientists and Hassabis all asked for the same thing in 24 hours — who actually builds the registry, and does airgapping protect anyone but the lab that ships it?&quot; → Grid C.</p>
+<h4>Sources and production notes (not read on air)</h4>
+<ul>
+<li>Primary: https://www.justice.gov/opa/pr/saudi-national-arrested-installing-surreptitious-audio-recording-device-openai</li>
+<li>Primary: https://ai-security-letter.org/ (406 signatories; Hinton and Bengio verified in page text)</li>
+<li>Primary (403 to server-side fetch — open in browser): https://www.commerce.senate.gov/wp-content/uploads/2026/10/AI-and-Cybersecurity_Cantwell-and-Rounds_10.13.26.pdf</li>
+<li>Corroboration: https://www.reuters.com/legal/litigation/google-deepminds-hassabis-calls-ai-hacks-early-warning-shots-2026-10-14/</li>
+<li>Money: https://www.cnbc.com/2026/10/13/anthropic-q3-financials-ipo.html (two unnamed sources; Anthropic declined comment)</li>
+<li>Governance: https://www.reuters.com/world/behind-ai-industrys-call-independent-reviews-fight-over-what-gets-made-public-2026-10-13/ (single-source, anonymous)</li>
+<li>Caveat: all Anthropic figures unnamed-source/leaked; DOJ case charged, not convicted.</li>
+<li>Cut instruction: card 4 folds into card 2 notes first; card 3 never cuts.</li>
+</ul>
+<p>---</p>
+<h3>Story cluster 3 — Open weights get an M&amp;A market · 18:30–22:00</h3>
+<p>*Cue: <code>s-seg-grid-c</code>, single wide card with the rendered receipt collage. Talks-stage; label on air. No autoplay.*</p>
+<p><strong>Segment talking points:</strong></p>
+<ul>
+<li>Financial Times exclusive, Oct 10: NVIDIA is in talks to acquire or deepen its investment in <strong>Reflection AI</strong>, the open-weight lab behind Beam.</li>
+<li>Early-stage: could end in a full acquisition, more equity, a chips-and-capacity deal, or an acqui-hire floated around regulatory hurdles.</li>
+<li>Reflection was valued at <strong>$25B</strong> in a March funding round; NVIDIA has already invested about <strong>$800M</strong> and is one of its largest shareholders. Founded 2024 by former Google DeepMind researchers.</li>
+<li>FT frames it as the developer the administration backs against cheap Chinese models.</li>
+<li>Watch tie-in: Beam&#x27;s weights were promised &quot;later this month&quot; and still have not shipped. Which arrives first — the weights or the acquisition?</li>
+</ul>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li>If NVIDIA buys the marquee open-weight lab, &quot;open&quot; becomes a distribution strategy owned by a chip company.</li>
+<li>The strategic logic is vertical integration: the chip vendor controlling the weights that run on its silicon.</li>
+<li>Pushback: the administration&#x27;s policy of backing open weights against Chinese models does not survive an acquisition cleanly.</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;Open weights were the policy. This is the exit.&quot;</p>
+<p><strong>Andy fallback talk track:</strong> One story left, and it is the one that decides what open weights are actually worth. The Financial Times reported on Friday that NVIDIA is in talks to either buy Reflection AI outright or deepen its existing investment. Reflection is the lab behind Beam, the open-weight model everyone has been watching this quarter, and it was valued at twenty-five billion dollars back in March. NVIDIA has already put in about eight hundred million, so this would be an expansion of a relationship that already exists. Nothing is confirmed — both companies have stayed quiet, the talks are described as early, and the reported options include everything from a straight acquisition to an acqui-hire that sidesteps the regulatory problem. But the timing is the interesting part. Reflection promised Beam&#x27;s weights later this month and has not shipped them. So watch which lands first: the weights, or the deal.</p>
+<p><strong>Handoff cue:</strong> &quot;If NVIDIA buys the lab behind the most-watched open weights of the quarter, does &#x27;open&#x27; survive the acquisition?&quot; → Signal From Outside.</p>
+<h4>Sources and production notes (not read on air)</h4>
+<ul>
+<li>Primary: https://www.ft.com/content/052610c5-22b4-4dd4-932e-b7f9f0628b6a (paywalled; artifact is a labeled render of the verbatim headline + syndicated text)</li>
+<li>Syndication: https://www.mobileworldlive.com/nvidia/nvidia-weighs-reflection-ai-acquisition/</li>
+<li>Caveat: talks-stage, no company confirmation, no established terms.</li>
+<li>Cut instruction: <strong>first optional cut in the show.</strong> If cut, fold the FT line into Grid B&#x27;s close.</li>
+</ul>
+<p>---</p>
+<h3>Signal From Outside / weekly video review · 22:00–28:00</h3>
+<p>*Cue: <code>s-signal-outside</code>. Video: Theo (t3.gg), &quot;So I&#x27;ve been testing Gemini 4...&quot;, youtube.com/watch?v=NE006pkiAnk, 38:30, uploaded 2026-10-14, 184,689 views. <strong>Manual open only — no autoplay.</strong> Fallback still: <code>assets/images/sfo-poster.jpg</code>. Re-locate cues on open; auto-caption timestamps drift.*</p>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li>This is the argument for the routing layer, not the model. Argon is genuinely good at some work and demonstrably bad at review work.</li>
+<li>&quot;Which model is best&quot; is the wrong question — this is the same lesson as the router beating every single model on the agent board.</li>
+<li>Henry&#x27;s own take: the harness and the task matter more than the leaderboard position.</li>
+</ul>
+<p><strong>Andy fallback talk track:</strong> One practitioner spent the week doing what we ask of every big launch: he ran it on his own work. Theo, who builds developer tools, got early access to Gemini 4 Argon and put it through his own benchmarks rather than repeating the launch numbers. At three minutes in he reads out Google&#x27;s claims — number one on the Vals Index, two dollars per million in and ten out. But then at four minutes thirty he does the thing we actually care about: he points out that a low headline price is not a low bill, because the model is token-hungry and, in his testing, misses its cache far more often than the models he normally uses, which means that ninety-five percent cached-input discount frequently does not apply. He is upfront that his cache numbers might be a bug in his own instrumentation, so hold that lightly. The number that carries the segment comes at twenty-seven minutes: he audited his own cloud product and Argon returned seventy-eight findings, fifty-six of which were wrong. A seventy percent failure rate. His line was that the model is more likely to gaslight your agents than give useful feedback in reviews. So the outside signal this week is not that Argon is bad — it is that &quot;best model&quot; and &quot;right model&quot; stopped being the same sentence.</p>
+<p><strong>Handoff cue:</strong> &quot;If the week&#x27;s biggest model is best-in-class at one task and a 70% failure rate at the next, what does &#x27;best model&#x27; even mean?&quot; → Hot take.</p>
+<p>---</p>
+<h3>Hot take / debate · 28:00–32:00</h3>
+<p><strong>Do not repeat news:</strong> *Checked.* This take names no launch as its proposition and restates no news framing or question. It is a decision rule about where to run agents, anchored on the shared-cloud-computer architecture failure from a prior episode — referenced as a case, not re-reported.</p>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li><strong>Proposition:</strong> the cheap-agent era trades your blast radius for your convenience.</li>
+<li>A 74B model in 24GB makes the boring answer finally affordable — this week the frontier became installable, so &quot;run it yourself&quot; is no longer a hobbyist position.</li>
+<li>The Grok Bot incident was architectural, not model-related: every agent on the account shared one cloud computer and one set of logins, which is how a read-only finance bot posted a CEO&#x27;s bank balances into exec Slack. A smaller perimeter is the fix, not a better prompt.</li>
+<li><strong>What would change his mind:</strong> the first independent reproduction of Bolt&#x27;s 24GB accuracy, or a documented local-agent incident at scale.</li>
+</ul>
+<p><strong>Andy fallback talk track:</strong> I will take the other side, because &quot;just run it locally&quot; is doing a lot of work in that sentence. Self-hosting moves liability, it does not remove it. That twenty-four gigabyte build is not the sixteen-bit build the benchmarks were run on, and the accuracy chart on that slide is NVIDIA&#x27;s own chart — nobody has independently reproduced it yet, so the claim that you get the same model in a tenth of the memory is still a vendor claim. And &quot;fully open, including the training data&quot; sounds like a gift until you ask who audits the recipe, because right now that is you. The credentials problem does not disappear when the machine is yours either; if your agent still holds the same keys and still reaches the same network, you have changed the invoice, not the blast radius. So the honest verdict is that local wins on cost, latency and custody this week — that part is real — and local loses on auditability and perimeter unless you actually isolate what the agent can touch.</p>
+<p><strong>Handoff cue:</strong> &quot;What is the perimeter you actually own?&quot; → second sponsor read.</p>
+<p>---</p>
+<h3>Sponsor: Herald Labs · 32:00–33:30</h3>
+<p><strong>Andy:</strong> One more company keeps this show on the air. Herald Labs — an applied AI product lab where humans and agents build together. Entity is mission control for agent teams. Hacker houses worldwide. Build with humans, ship with agents.</p>
+<p>---</p>
+<h3>One to watch and close · 33:30–36:00</h3>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li><strong>The filing:</strong> Anthropic&#x27;s public prospectus flip lands around October 25 if the roadshow starts the week of Nov 9. Every number aired today is unnamed-source until then.</li>
+<li><strong>The weights that never came:</strong> Reflection&#x27;s Beam weights were promised &quot;later this month&quot; and have not shipped, while NVIDIA reportedly negotiates to buy the lab.</li>
+<li><strong>Show-day hardware:</strong> RTX Spark laptops ship today. Independent reproductions of the 24GB Bolt build decide whether this is a product or a demo.</li>
+</ul>
+<p><strong>Andy fallback talk track (single close — recap ONCE, then out):</strong> So that was the week. We ran four receipts that say the frontier became installable — a seventy-four billion parameter model in twenty-four gigabytes with its training data attached, a six hundred billion parameter model opened, a voice model on top of the speech index at the same eight cents, and the laptops shipping today. We ran four more that say the trust layer cracked at the same time — a recorder in a frontier lab&#x27;s boardroom, four hundred and six scientists asking for airgaps, a sixteen point eight billion dollar quarter, and the labs calling for independent review negotiating what gets published. Theo gave us the practitioner&#x27;s answer to the biggest launch of the week. And we argued about whether running locally buys you safety or just a smaller bill. Three things to watch: Anthropic&#x27;s prospectus flips public around October twenty-fifth, Reflection&#x27;s Beam weights still have not shipped while NVIDIA reportedly negotiates to buy them, and the RTX Sparks ship today. We are back next Friday, October 23, 4 PM ET. Join the Discord, and bring your benchmarks.</p>
+<p>---</p>
+<h3>Build reference (not read on air)</h3>
+<p><strong>Runtime math:</strong> 2:00 cold open + 1:30 sponsor + 7:30 Grid A + 7:30 Grid B + 3:30 Grid C + 6:00 anchor + 4:00 hot take + 1:30 sponsor + 2:30 close = <strong>36:00 scripted</strong>, 45:00 hard stop.</p>
+<p><strong>Cut order:</strong> Grid C (first optional cut, fold into Grid B close) → Grid A card 4 → hot-take Andy steel to 90s → compress Signal cues to 3:30 → compress both sponsor reads to 45s each. <strong>Signal From Outside is the permanent anchor; the rotating block already occupies that budget and is the thing to cut first.</strong></p>
+<p><strong>Sponsor rotation:</strong> Heritage Telecom leads (slot 1, after cold open), Herald Labs closes (slot 2, before close). Inverse of Episode 33&#x27;s Herald-first layout, per the weekly rotation rule. Sponsor position is fixed; only the order rotates.</p>
+<p><strong>Vendor-reported claims and unresolved evidence:</strong></p>
+<ul>
+<li>NVIDIA Nemotron Bolt accuracy chart — vendor-run; no independent reproduction.</li>
+<li>NVIDIA Tesla/Starlink voice volume numbers — vendor-reported.</li>
+<li>Anthropic Q3 revenue/profitability and the ~$2T valuation — unnamed-source, confidential until the public prospectus.</li>
+<li>NVIDIA–Reflection AI — talks-stage, single primary, no company confirmation.</li>
+<li>OpenAI DOJ case — charged, not convicted.</li>
+<li>Reuters evaluator-publication story — single-source, anonymous.</li>
+<li>Grok Voice&#x27;s &quot;world&#x27;s most intelligent voice model&quot; — vendor framing; the 86.9 index score is Artificial Analysis-attributed.</li>
+</ul>
+<p><strong>Human actions and approval state:</strong> awaiting Henry/Andy review in Telegram topic 17. Approval state <code>UNVALIDATED</code>. Root artifacts (<code>agenda.md</code>, <code>deck.html</code>, <code>henry-talking-points.md</code>, <code>host-cheat-sheet.md</code>) must not be promoted until APPROVE.</p>
+<h3>Lint rules (applied)</h3>
+<ul>
+<li>Henry&#x27;s on-air material is bullets, an optional line, and a handoff cue. No word-for-word Henry script.</li>
+<li>Andy carries complete fallback prose he may paraphrase.</li>
+<li>General segment bullets precede host material and are not duplicated verbatim in Andy&#x27;s prose.</li>
+<li>Hot Take does not repeat a news proposition, framing, or question.</li>
+<li>Close recaps the episode exactly once, at the end, by Andy. Never recap the recap.</li>
+<li>&quot;What Happened This Week&quot; segments are Henry-led (all three grids).</li>
+<li>Runtime target 32–38 minutes, hard stop 45.</li>
+</ul></article>
+</main>
+<footer class="shell">Weekly Claw #34 · Agenda and source notes · <a href="/episodes/34/deck">View host deck</a></footer>
+</body>
+</html>
