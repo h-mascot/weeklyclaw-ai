@@ -25,7 +25,7 @@ This was the week the frontier stopped being a place you visit and became a thin
 - Local stack: NVIDIA put a 74B MoE into 24GB and shipped the training data with it. RTX Spark laptops ship today.
 - Voice got cheap: Grok Voice 3.0 is #1 on the speech index at 86.9, still $0.08 a minute.
 - Trust cracked: a covert recorder in OpenAI's executive conference room. The DNI called it counterintelligence.
-- Money got real: Anthropic disclosed a $16.8B quarter on the way to a $2 trillion pitch.
+- Money got real: Anthropic disclosed a $16.8B quarter — and then investors started marking the listing down.
 - Desktop open weights: Meta opened Muse Spark Open — 816B parameters, built for Apple silicon, two Mac Studios as the reference rig.
 
 **Henry line (optional):** "The model got smaller. The bills did not."
@@ -79,7 +79,7 @@ This was the week the frontier stopped being a place you visit and became a thin
 **Segment talking points:**
 - **B1 DOJ charges an OpenAI engineer**: Abdulrahman Alfozan, 35, Saudi national, OpenAI engineer since July 2025. Arrested Oct 9, charged with intercepting oral communications. A recording device concealed in toilet paper was found Sept 30 in a TV USB port in an executive conference room used for confidential technical, commercial and strategic discussions; contents encrypted; installed on or about Sept 28, in the room about two days. CCTV placed him near the room on multiple dates without authorization. DNI Clayton framed the super-intelligence race as a national-security prerogative. **Charged, not convicted.**
 - **B2 The scientific establishment moved**: 406 signatories from 34 countries, including Hinton and Bengio — default airgapping for cyber-capable models, an international standards body, and mandatory reporting of containment failures, eventually public. Cantwell and Rounds asked DNI Clayton for a coordinated national response. Hassabis called the year's agent hacks "early warning shots."
-- **B3 Anthropic's $16.8B quarter**: Q3 revenue $16.8B, up ~45% from $11.6B, adjusted-profitable, disclosed Oct 14 at the pre-IPO investor day. Valuation talk near $2T; November listing window. The pre-IPO market reacted: a ~4% drop on Entropy pushed implied valuation below $2T.
+- **B3 Anthropic's $16.8B quarter**: Q3 revenue $16.8B, up ~45% from $11.6B, adjusted-profitable, disclosed Oct 14 at the pre-IPO investor day. November listing window. The valuation moved within a day: the pre-IPO market's ~4% Entropy drop pushed implied valuation below $2T, and on Oct 15 Reuters reported institutional investors weighing **~$1.5T** for the sale — down from the **~$2T** they had previously expected, on slower sequential growth and rising AI financing costs. **Reuters, four unnamed sources; nothing filed until the S-1.**
 - **B4 The governance contradiction**: Reuters reports both labs sought significant control over what outside evaluators could publish, citing trade-secret exposure. The EU AI Office opened its first AI Act probes with information requests to both labs over rogue-agent incidents.
 - **Synthesis:** governance and money arrived in the same week, and they point in opposite directions — the labs asking for independent review are still negotiating what reviewers may say.
 
@@ -91,7 +91,7 @@ This was the week the frontier stopped being a place you visit and became a thin
 
 **Henry line (optional):** "The people asking for an incident registry are the same people deciding what goes in it."
 
-**Andy fallback talk track:** Three different power centres moved on the same problem inside twenty-four hours, which is why we put these on one card. The Department of Justice charged an OpenAI engineer after a recording device was found hidden inside a toilet-paper roll in a TV in the executive conference room — the DNI personally framed that as counterintelligence for super-intelligence technology, which tells you how the government now categorises frontier-lab IP. At the same time, four hundred and six scientists from thirty-four countries, including Hinton and Bengio, published a letter asking for three specific things: airgap the cyber-capable models by default, build an international body to standardise containment, and report containment failures publicly. And separately, Anthropic told institutional investors it made sixteen point eight billion dollars in the third quarter, up about forty-five percent, and was profitable on an adjusted basis — on the way to a pitch near two trillion. Here is the caveat that matters: those financials are unnamed-source and confidential until the prospectus goes public, so everything you hear today about Anthropic's numbers is reported, not filed. And the tension worth sitting with is that the labs calling for independent review are simultaneously negotiating what those reviewers are allowed to publish.
+**Andy fallback talk track:** Three different power centres moved on the same problem inside twenty-four hours, which is why we put these on one card. The Department of Justice charged an OpenAI engineer after a recording device was found hidden inside a toilet-paper roll in a TV in the executive conference room — the DNI personally framed that as counterintelligence for super-intelligence technology, which tells you how the government now categorises frontier-lab IP. At the same time, four hundred and six scientists from thirty-four countries, including Hinton and Bengio, published a letter asking for three specific things: airgap the cyber-capable models by default, build an international body to standardise containment, and report containment failures publicly. And separately, Anthropic told institutional investors it made sixteen point eight billion dollars in the third quarter, up about forty-five percent, and was profitable on an adjusted basis — and then the number moved: the next day Reuters reported that investors are weighing about one point five trillion for the November sale, down from the roughly two trillion they had been expecting, because the sequential growth slowed. Cheaper, not broken. Here is the caveat that matters: those financials are unnamed-source and confidential until the prospectus goes public, so everything you hear today about Anthropic's numbers is reported, not filed. And the tension worth sitting with is that the labs calling for independent review are simultaneously negotiating what those reviewers are allowed to publish.
 
 **Handoff cue:** Henry: "The Senate, 406 scientists and Hassabis all asked for the same thing in 24 hours — who actually builds the registry, and does airgapping protect anyone but the lab that ships it?" → Grid C.
 
@@ -190,7 +190,7 @@ This was the week the frontier stopped being a place you visit and became a thin
 ## One to watch and close · 33:30–36:00
 
 **Henry talking points:**
-- **The filing:** Anthropic's public prospectus flip lands around October 25 if the roadshow starts the week of Nov 9. Every number aired today is unnamed-source until then.
+- **The filing:** Anthropic's public prospectus flip lands around October 25 if the roadshow starts the week of Nov 9. Every number aired today is unnamed-source, and the valuation is already moving: Reuters reported on Oct 15 that investors are weighing ~$1.5T against the ~$2T they had expected.
 - **The weights that never came:** Reflection's Beam weights were promised "later this month" and have not shipped, while NVIDIA reportedly negotiates to buy the lab.
 - **Show-day hardware:** RTX Spark laptops ship today. Independent reproductions of the 24GB Bolt build decide whether this is a product or a demo.
 
@@ -209,7 +209,7 @@ This was the week the frontier stopped being a place you visit and became a thin
 **Vendor-reported claims and unresolved evidence:**
 - NVIDIA Nemotron Bolt accuracy chart — vendor-run; no independent reproduction.
 - NVIDIA Tesla/Starlink voice volume numbers — vendor-reported.
-- Anthropic Q3 revenue/profitability and the ~$2T valuation — unnamed-source, confidential until the public prospectus.
+- Anthropic Q3 revenue/profitability and the investor valuation talk (~$1.5T weighed against the ~$2T previously expected) — unnamed-source, Reuters-reported, confidential until the public prospectus.
 - NVIDIA–Reflection AI — talks-stage, single primary, no company confirmation.
 - OpenAI DOJ case — charged, not convicted.
 - Reuters evaluator-publication story — single-source, anonymous.

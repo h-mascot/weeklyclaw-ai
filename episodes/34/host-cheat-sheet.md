@@ -1,4 +1,4 @@
-# Weekly Claw #34 — Host cheat sheet (rev1)
+# Weekly Claw #34 — Host cheat sheet (rev3)
 
 **Show:** Friday, October 16, 2026 · 4:00 PM ET / 9:00 PM UK
 **Approval:** UNVALIDATED — awaiting Henry/Andy in Telegram topic 17
@@ -11,7 +11,7 @@
 
 | Time | Beat | Slide | Lead | Notes |
 |---|---|---|---|---|
-| 0:00–2:00 | Cold open | `s-cold-open` | Andy opens, Henry frames | Four hooks on screen; hold the slide |
+| 0:00–2:00 | Cold open | `s-cold-open` | Andy opens, Henry frames | Five hooks on screen; hold the slide |
 | 2:00–3:30 | Sponsor 1 | `s-sponsor-heritage` | Andy | Heritage Telecom — approved copy |
 | 3:30–11:00 | Grid A | `s-seg-grid-a` | **Henry** | Local stack; 4 cards |
 | 11:00–18:30 | Grid B | `s-seg-grid-b` | **Henry** | Trust + money; 4 cards |
@@ -53,7 +53,7 @@
 | Step 5 Preview | **600B total / 27B active / 1M ctx** | StepFun license, NOT Apache |
 | RTX Spark entry | **$2,599.99 / 128GB unified** | ships show-day; re-open blog before quoting |
 | Anthropic Q3 | **$16.8B, +45% from $11.6B** | unnamed-source until prospectus |
-| Anthropic valuation talk | **~$2T** | reported; November window |
+| Anthropic valuation talk | **~$1.5T weighed vs ~$2T expected** | Reuters Oct 15, four unnamed sources |
 | Muse Spark Open | **816B total / 42B active / 1M ctx** | Meta vendor-reported; repos gated; eval report unpublished |
 | Muse Spark reference rig | **two 512GB Mac Studios (~$19K), ~493GB at 4-bit** | Meta + Apple statements, not independently tested |
 | Muse Spark license | **Muse Model License — limited commercial terms** | NOT fully open; say it plainly |
@@ -77,6 +77,8 @@
 - "Tesla runs 20,000 calls a day" as fact — vendor-reported volume.
 - "Mistral/Beam weights shipped" — Beam weights still have not shipped.
 - Anything about Anthropic's numbers as confirmed figures.
+- "Anthropic is going public at $1.5 trillion" or "at $2 trillion" — both are investor talk. Say "investors are weighing."
+- "Anthropic's growth slowed" as a fact — Reuters reports sequential growth slowed after Q2 more than doubled; Q3 itself was still +45%.
 
 ---
 

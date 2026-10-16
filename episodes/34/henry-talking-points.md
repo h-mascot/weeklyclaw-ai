@@ -1,4 +1,4 @@
-# Weekly Claw #34 — Henry's view (rev1)
+# Weekly Claw #34 — Henry's view (rev3)
 
 *Henry's own material only, bullet-first. No word-for-word script required. Handoff cues included where Henry takes the next beat.*
 
@@ -10,7 +10,7 @@
 - Local stack: 74B → 24GB, training data included, laptops ship today.
 - Voice: #1 on the speech index at 86.9, price unchanged at $0.08/min.
 - Trust: a recorder in OpenAI's boardroom; the DNI called it counterintelligence.
-- Money: $16.8B quarter, $2T pitch.
+- Money: $16.8B quarter, and a listing investors are now pricing lower ($1.5T talk vs the $2T they expected).
 - Desktop open weights: Meta opened Muse Spark Open — 816B parameters built for Apple silicon, two Mac Studios as the reference rig.
 - **Landing line (optional):** "The model got smaller. The bills did not."
 
@@ -38,7 +38,7 @@
 - **B1 The OpenAI case is the sharpest contrast available.** A lab that argues it polices itself had a recorder hidden in its own executive conference room. Recorded device concealed in toilet paper, encrypted contents, in the room about two days. Charged, not convicted.
 - **B2 My standing position, unchanged:** we have not seen a major cyber event caused by open source. Doomers are the worst predictors in this industry.
 - **But the letter is a primary document** signed by 406 people including Hinton and Bengio, and it asks for airgapping, an international body, and a published failure registry. That is a real ask with real names on it.
-- **B3 The money is the operator story, not the valuation.** $16.8B in one quarter, up 45%, adjusted-profitable. That is a real business at real scale.
+- **B3 The money is the operator story, not the valuation.** $16.8B in one quarter, up 45%, adjusted-profitable. That is a real business at real scale — and the markdown to ~$1.5T talk is the market saying the growth rate, not the size, was the pitch.
 - **The tension:** the labs calling for independent review are negotiating what reviewers may publish. Governance and money pointed in opposite directions this week.
 - **COI disclosure:** our own crons run GLM models. Say it if the open-weights thread comes up.
 
@@ -86,6 +86,6 @@
 
 ## Close
 
-- Prospectus flip ~Oct 25 → the receipt that settles the $2T question.
+- Prospectus flip ~Oct 25 → the receipt that settles the valuation question; Reuters already has investors weighing ~$1.5T against the ~$2T expected.
 - Beam weights still unshipped while the acquisition is reported.
 - RTX Sparks ship today; independent Bolt reproductions are the watch item.
