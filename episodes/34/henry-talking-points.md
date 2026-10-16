@@ -11,6 +11,7 @@
 - Voice: #1 on the speech index at 86.9, price unchanged at $0.08/min.
 - Trust: a recorder in OpenAI's boardroom; the DNI called it counterintelligence.
 - Money: $16.8B quarter, $2T pitch.
+- Desktop open weights: Meta opened Muse Spark Open — 816B parameters built for Apple silicon, two Mac Studios as the reference rig.
 - **Landing line (optional):** "The model got smaller. The bills did not."
 
 **Handoff:** Andy takes the first sponsor read.
@@ -47,13 +48,16 @@
 
 ## Grid C — open weights get priced (Henry leads)
 
-- **One story:** NVIDIA reportedly in talks to buy Reflection AI, the lab behind Beam. $25B March valuation, ~$800M already invested.
-- **The strategic read:** the chip vendor wants to own the weights that run on its silicon. That is vertical integration, not charity.
-- **The policy read:** the administration backs open weights against cheap Chinese models. An acquisition complicates that story.
-- **Landing line (optional):** "Open weights were the policy. This is the exit."
+- **C1:** NVIDIA reportedly in talks to buy Reflection AI, the lab behind Beam. $25B March valuation, ~$800M already invested.
+- **C2 (added Friday 11:00 ET):** Meta opened Muse Spark Open — 816B total / 42B active / 1M context, optimized for Mac Studio M5 Ultra in MLX. Reference rig is two 512GB Mac Studios (~$19K); ~493GB at 4-bit. Muse Model License with limited commercial terms — **not fully open**. Repos are gated; no independent scores yet.
+- **The strategic read (C1):** the chip vendor wants to own the weights that run on its silicon. That is vertical integration, not charity.
+- **The counter-read (C2):** Meta pointed the reference platform at Apple silicon, not a GPU cluster. That is the direct shot at the NVIDIA-locked serving stack — and it is our own rig lane.
+- **The policy read:** the administration backs open weights against cheap Chinese models. An acquisition complicates that story; a free-on-your-desk release complicates it differently.
+- **Landing line (optional):** "Open weights were the policy. This is the exit. Meta just made it the desktop."
 - **Watch tie-in:** Beam's weights were promised "later this month" and have not shipped. Which lands first — the weights or the deal?
+- **Pushback I expect:** two Mac Studios plus $19K is a small cluster, not "your office." It is a demo until someone independent reproduces it.
 
-**Handoff question:** "If NVIDIA buys the lab behind the most-watched open weights of the quarter, does 'open' survive the acquisition?"
+**Handoff question:** "If NVIDIA buys the lab behind the most-watched open weights of the quarter, and Meta hands you the weights for your desk — does 'open' survive either one?"
 
 ---
 

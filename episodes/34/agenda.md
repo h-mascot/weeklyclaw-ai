@@ -26,6 +26,7 @@ This was the week the frontier stopped being a place you visit and became a thin
 - Voice got cheap: Grok Voice 3.0 is #1 on the speech index at 86.9, still $0.08 a minute.
 - Trust cracked: a covert recorder in OpenAI's executive conference room. The DNI called it counterintelligence.
 - Money got real: Anthropic disclosed a $16.8B quarter on the way to a $2 trillion pitch.
+- Desktop open weights: Meta opened Muse Spark Open — 816B parameters, built for Apple silicon, two Mac Studios as the reference rig.
 
 **Henry line (optional):** "The model got smaller. The bills did not."
 
@@ -107,34 +108,44 @@ This was the week the frontier stopped being a place you visit and became a thin
 
 ---
 
-## Story cluster 3 — Open weights get an M&A market · 18:30–22:00
+## Story cluster 3 — Open weights get a market · 18:30–22:00
 
-*Cue: `s-seg-grid-c`, single wide card with the rendered receipt collage. Talks-stage; label on air. No autoplay.*
+*Cue: `s-seg-grid-c`, two cards: the rendered NVIDIA/Reflection receipt collage and the Meta Muse Spark Open launch capture. Reflection is talks-stage; Muse Spark is vendor-reported. Label both on air. No autoplay.*
 
 **Segment talking points:**
-- Financial Times exclusive, Oct 10: NVIDIA is in talks to acquire or deepen its investment in **Reflection AI**, the open-weight lab behind Beam.
-- Early-stage: could end in a full acquisition, more equity, a chips-and-capacity deal, or an acqui-hire floated around regulatory hurdles.
-- Reflection was valued at **$25B** in a March funding round; NVIDIA has already invested about **$800M** and is one of its largest shareholders. Founded 2024 by former Google DeepMind researchers.
-- FT frames it as the developer the administration backs against cheap Chinese models.
-- Watch tie-in: Beam's weights were promised "later this month" and still have not shipped. Which arrives first — the weights or the acquisition?
+- **C1 NVIDIA / Reflection AI** — Financial Times exclusive, Oct 10: NVIDIA is in talks to acquire or deepen its investment in **Reflection AI**, the open-weight lab behind Beam.
+  - Early-stage: could end in a full acquisition, more equity, a chips-and-capacity deal, or an acqui-hire floated around regulatory hurdles.
+  - Reflection was valued at **$25B** in a March funding round; NVIDIA has already invested about **$800M** and is one of its largest shareholders. Founded 2024 by former Google DeepMind researchers.
+  - FT frames it as the developer the administration backs against cheap Chinese models.
+  - Watch tie-in: Beam's weights were promised "later this month" and still have not shipped. Which arrives first — the weights or the acquisition?
+- **C2 Meta Muse Spark Open** (added Friday 11:00 ET REFRESH, Candidate 20, score 9.1) — Meta's own launch post, Oct 15: **816B total / 42B active**, **1M-token context**, natively multimodal, built for coding and agentic work.
+  - **The Apple angle is the story:** Meta optimized it for **Mac Studio M5 Ultra in MLX** and says the reference rig is **two 512GB Mac Studios** (~$19K) holding the whole model — ~493GB at 4-bit, 1.2TB/s memory bandwidth per machine, "two Mac Studios behave like one supercomputer."
+  - Availability: Hugging Face **meta-models** collection (repos are **gated**), plus Together AI, Fireworks, Baseten, Modal, OpenRouter. Community MLX/GGUF quants landed within hours.
+  - License: **Muse Model License with limited commercial terms** — "many developers use it for free" is Meta's phrasing; this is **not fully open**.
+  - Evidence caveat: the repos are gated, the evaluation report is "available soon," and there are **no independent scores** — no AA/LMArena placement yet.
 
 **Henry talking points:**
-- If NVIDIA buys the marquee open-weight lab, "open" becomes a distribution strategy owned by a chip company.
-- The strategic logic is vertical integration: the chip vendor controlling the weights that run on its silicon.
+- Two ends of one week: the marquee open-weight lab is a reported acquisition target, and Meta shipped the year's biggest US open-weight release straight onto the desktop.
+- If NVIDIA buys the lab behind Beam, "open" becomes a distribution strategy owned by a chip company. The strategic logic is vertical integration: the chip vendor controlling the weights that run on its silicon.
+- Meta's move points the other way — the reference platform is Apple silicon, not a GPU cluster. That is a direct shot at the NVIDIA-locked serving stack, and it is Henry's own rig lane.
+- Pushback: 816B on two Mac Studios is a demo until someone independent runs it. Two Studios plus $19K is not "your office," it is a small cluster.
 - Pushback: the administration's policy of backing open weights against Chinese models does not survive an acquisition cleanly.
 
-**Henry line (optional):** "Open weights were the policy. This is the exit."
+**Henry line (optional):** "Open weights were the policy. This is the exit. Meta just made it the desktop."
 
-**Andy fallback talk track:** One story left, and it is the one that decides what open weights are actually worth. The Financial Times reported on Friday that NVIDIA is in talks to either buy Reflection AI outright or deepen its existing investment. Reflection is the lab behind Beam, the open-weight model everyone has been watching this quarter, and it was valued at twenty-five billion dollars back in March. NVIDIA has already put in about eight hundred million, so this would be an expansion of a relationship that already exists. Nothing is confirmed — both companies have stayed quiet, the talks are described as early, and the reported options include everything from a straight acquisition to an acqui-hire that sidesteps the regulatory problem. But the timing is the interesting part. Reflection promised Beam's weights later this month and has not shipped them. So watch which lands first: the weights, or the deal.
+**Andy fallback talk track:** Two stories that pull in opposite directions, and they landed the same week. The Financial Times reported that NVIDIA is in talks to either buy Reflection AI outright or deepen its existing investment — Reflection is the lab behind Beam, valued at twenty-five billion back in March, and NVIDIA has already put in about eight hundred million. Nothing is confirmed, the talks are described as early, and the options reportedly run from a straight acquisition to an acqui-hire that sidesteps the regulatory problem. Meanwhile Meta opened Muse Spark Open: eight hundred and sixteen billion parameters, forty-two billion active, a million-token context — and the reference rig is not a data centre, it is two Mac Studios. They put it on Apple silicon on purpose. The caveats matter here: Meta's numbers are Meta's numbers, the repos are gated, the evaluation report is not published, and that license has limited commercial terms, so "open" is doing some work in that sentence. So the honest reading is that the open-weights fight has become a platform fight. One side is buying the lab; the other is handing you the weights for your desk. Watch which one builders actually pick up.
 
-**Handoff cue:** "If NVIDIA buys the lab behind the most-watched open weights of the quarter, does 'open' survive the acquisition?" → Signal From Outside.
+**Handoff cue:** "If NVIDIA buys the lab behind the most-watched open weights of the quarter, and Meta hands you the weights for your desk — does 'open' survive either one?" → Signal From Outside.
 
 ### Sources and production notes (not read on air)
 
 - Primary: https://www.ft.com/content/052610c5-22b4-4dd4-932e-b7f9f0628b6a (paywalled; artifact is a labeled render of the verbatim headline + syndicated text)
 - Syndication: https://www.mobileworldlive.com/nvidia/nvidia-weighs-reflection-ai-acquisition/
+- **C2 Primary (added Friday 11:00 ET):** https://research.meta.ai/blog/muse-spark-open · https://huggingface.co/collections/meta-models/muse-spark-open
+- C2 verification this tick: Meta launch post fetched and opened in full (title/specs/Mac Studio/license/partners verbatim); HF API shows `meta-models/Muse-Spark-Open-816B-A42B` (gated=manual, 78 files, lastModified 2026-10-15T15:46Z) and `-NVFP4` (141 files, 2026-10-15T17:18Z); raw README returns 401 unauthenticated — spec figures come from the vendor post and the model card license text, OCR-verified from the page captures.
 - Caveat: talks-stage, no company confirmation, no established terms.
-- Cut instruction: **first optional cut in the show.** If cut, fold the FT line into Grid B's close.
+- Caveat: Muse Spark figures vendor-reported; repos gated; eval report unpublished; Muse Model License = limited commercial terms.
+- Cut instruction: **first optional cut in the show.** If cut, fold the FT and Muse lines into Grid B's close as one sentence.
 
 ---
 
@@ -183,15 +194,15 @@ This was the week the frontier stopped being a place you visit and became a thin
 - **The weights that never came:** Reflection's Beam weights were promised "later this month" and have not shipped, while NVIDIA reportedly negotiates to buy the lab.
 - **Show-day hardware:** RTX Spark laptops ship today. Independent reproductions of the 24GB Bolt build decide whether this is a product or a demo.
 
-**Andy fallback talk track (single close — recap ONCE, then out):** So that was the week. We ran four receipts that say the frontier became installable — a seventy-four billion parameter model in twenty-four gigabytes with its training data attached, a six hundred billion parameter model opened, a voice model on top of the speech index at the same eight cents, and the laptops shipping today. We ran four more that say the trust layer cracked at the same time — a recorder in a frontier lab's boardroom, four hundred and six scientists asking for airgaps, a sixteen point eight billion dollar quarter, and the labs calling for independent review negotiating what gets published. Anthropic's own researchers gave us the practitioner's answer to the biggest launch of the week. And we argued about whether running locally buys you safety or just a smaller bill. Three things to watch: Anthropic's prospectus flips public around October twenty-fifth, Reflection's Beam weights still have not shipped while NVIDIA reportedly negotiates to buy them, and the RTX Sparks ship today. We are back next Friday, October 23, 4 PM ET. Join the Discord, and bring your benchmarks.
+**Andy fallback talk track (single close — recap ONCE, then out):** So that was the week. We ran four receipts that say the frontier became installable — a seventy-four billion parameter model in twenty-four gigabytes with its training data attached, a six hundred billion parameter model opened, a voice model on top of the speech index at the same eight cents, and the laptops shipping today. We ran four more that say the trust layer cracked at the same time — a recorder in a frontier lab's boardroom, four hundred and six scientists asking for airgaps, a sixteen point eight billion dollar quarter, and the labs calling for independent review negotiating what gets published. Then the open-weights fight split in two directions the same week: NVIDIA reportedly negotiating to buy the lab behind Beam, and Meta handing out eight hundred and sixteen billion parameters built to run on two Mac Studios. Anthropic's own researchers gave us the practitioner's answer to the biggest launch of the week. And we argued about whether running locally buys you safety or just a smaller bill. Three things to watch: Anthropic's prospectus flips public around October twenty-fifth, Reflection's Beam weights still have not shipped while NVIDIA reportedly negotiates to buy them, and the RTX Sparks ship today. We are back next Friday, October 23, 4 PM ET. Join the Discord, and bring your benchmarks.
 
 ---
 
 ## Build reference (not read on air)
 
-**Runtime math:** 2:00 cold open + 1:30 sponsor + 7:30 Grid A + 7:30 Grid B + 3:30 Grid C + 6:00 anchor + 4:00 hot take + 1:30 sponsor + 2:30 close = **36:00 scripted**, 45:00 hard stop.
+**Runtime math:** 2:00 cold open + 1:30 sponsor + 7:30 Grid A + 7:30 Grid B + 3:30 Grid C + 6:00 anchor + 4:00 hot take + 1:30 sponsor + 2:30 close = **36:00 scripted**, 45:00 hard stop. Grid C's 3:30 allotment is unchanged and now covers two cards.
 
-**Cut order:** Grid C (first optional cut, fold into Grid B close) → Grid A card 4 → hot-take Andy steel to 90s → compress Signal cues to 3:30 → compress both sponsor reads to 45s each. **Signal From Outside is the permanent anchor; the rotating block already occupies that budget and is the thing to cut first.**
+**Cut order:** Grid C (first optional cut, fold both lines into Grid B close) → Grid A card 4 → hot-take Andy steel to 90s → compress Signal cues to 3:30 → compress both sponsor reads to 45s each. **Signal From Outside is the permanent anchor; the rotating block already occupies that budget and is the thing to cut first.**
 
 **Sponsor rotation:** Heritage Telecom leads (slot 1, after cold open), Herald Labs closes (slot 2, before close). Inverse of Episode 33's Herald-first layout, per the weekly rotation rule. Sponsor position is fixed; only the order rotates.
 

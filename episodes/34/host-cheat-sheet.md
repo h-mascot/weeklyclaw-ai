@@ -15,7 +15,7 @@
 | 2:00–3:30 | Sponsor 1 | `s-sponsor-heritage` | Andy | Heritage Telecom — approved copy |
 | 3:30–11:00 | Grid A | `s-seg-grid-a` | **Henry** | Local stack; 4 cards |
 | 11:00–18:30 | Grid B | `s-seg-grid-b` | **Henry** | Trust + money; 4 cards |
-| 18:30–22:00 | Grid C | `s-seg-grid-c` | **Henry** | NVIDIA/Reflection; 1 card, first cut |
+| 18:30–22:00 | Grid C | `s-seg-grid-c` | **Henry** | NVIDIA/Reflection + Meta Muse Spark (Friday add); 2 cards, first cut |
 | 22:00–28:00 | Signal From Outside | `s-signal-outside` | Andy anchors | American Optimist: Anthropic researchers (Douglas/Marwell); MANUAL OPEN |
 | 28:00–32:00 | Hot take | `s-hot-take` | Both | Cheapest-agent perimeter |
 | 32:00–33:30 | Sponsor 2 | `s-sponsor-herald` | Andy | Herald Labs — approved copy |
@@ -32,7 +32,7 @@
 | Cold open | Andy opens | — |
 | Grid A local stack | **Henry** | caveat + fallback |
 | Grid B trust/money | **Henry** | fallback |
-| Grid C Nvidia/Reflection | **Henry** | fallback |
+| Grid C Nvidia/Reflection + Muse Spark | **Henry** | fallback |
 | Signal From Outside | Andy | anchor + fallback |
 | Hot take | Both | steelman |
 | Close | Henry watch, Andy close | single recap |
@@ -54,6 +54,9 @@
 | RTX Spark entry | **$2,599.99 / 128GB unified** | ships show-day; re-open blog before quoting |
 | Anthropic Q3 | **$16.8B, +45% from $11.6B** | unnamed-source until prospectus |
 | Anthropic valuation talk | **~$2T** | reported; November window |
+| Muse Spark Open | **816B total / 42B active / 1M ctx** | Meta vendor-reported; repos gated; eval report unpublished |
+| Muse Spark reference rig | **two 512GB Mac Studios (~$19K), ~493GB at 4-bit** | Meta + Apple statements, not independently tested |
+| Muse Spark license | **Muse Model License — limited commercial terms** | NOT fully open; say it plainly |
 | Reflection AI | **$25B March valuation, ~$800M invested** | talks-stage; no confirmation |
 | Scientists' letter | **406 signatories, 34 countries** | incl. Hinton, Bengio |
 | Anchor video | **58:40, uploaded 2026-10-02, 119,904 views** | American Optimist; manual open only, no autoplay |
@@ -67,6 +70,9 @@
 - "NVIDIA proved Bolt matches the BF16 model" — the chart is vendor-run, unreproduced.
 - "Anthropic reported to the SEC" — nothing is filed public; figures are unnamed-source.
 - "NVIDIA bought Reflection AI" — **in talks**, no confirmation.
+- "Muse Spark Open is fully open" — Muse Model License has limited commercial terms; repos are gated.
+- "Muse Spark runs on any Mac" — the reference rig is two 512GB M5 Ultra Studios, ~$19K; not a laptop claim.
+- "Muse Spark benchmarks beat X" — no independent scores exist yet; eval report unpublished.
 - "OpenAI's engineer was convicted" — **charged**, not convicted.
 - "Tesla runs 20,000 calls a day" as fact — vendor-reported volume.
 - "Mistral/Beam weights shipped" — Beam weights still have not shipped.
