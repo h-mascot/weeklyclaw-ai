@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekly Claw #35 Agenda — The open lane got the best model of the week. Then it lost every comfortable place to run it.</title>
+<style>
+:root { color-scheme: light; --ink:#24201c; --paper:#fff9ee; --muted:#6e645a; --line:#b5a996; --accent:#2a7e6b; }
+body { margin:0; font:18px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:#ece4d5; }
+a { color:var(--accent); }
+.shell { width:min(920px, calc(100% - 36px)); margin-inline:auto; }
+header, footer { padding:22px 0; }
+nav { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.wordmark { font-weight:800; text-transform:uppercase; text-decoration:none; color:var(--ink); }
+.button { display:inline-flex; align-items:center; min-height:40px; padding:0 14px; border:1px solid var(--accent); border-radius:6px; background:var(--accent); color:var(--paper); text-decoration:none; font-weight:700; }
+.button.secondary { color:var(--ink); background:transparent; border-color:var(--line); }
+.intro { padding:56px 0 32px; border-block:1px solid var(--line); }
+.eyebrow { margin:0 0 10px; color:var(--accent); font:700 12px/1 ui-monospace,Menlo,monospace; letter-spacing:.12em; text-transform:uppercase; }
+h1 { margin:0; font-size:clamp(42px,8vw,78px); line-height:.9; letter-spacing:-.05em; text-transform:uppercase; }
+article { padding:36px 0 70px; }
+h2,h3,h4 { line-height:1.05; margin-top:2em; }
+p,li { max-width:78ch; }
+code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
+</style>
+</head>
+<body>
+<header><nav class="shell" aria-label="Episode navigation"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/35/deck">Open slides</a></div></nav></header>
+<main class="shell">
+<section class="intro"><p class="eyebrow">Episode 35 · October 23, 2026</p><h1>The open lane got the best model of the week. Then it lost every comfortable place to run it.</h1><p>The open lane had its best week on paper and its worst week in practice. DeepSeek shipped MIT weights that beat GPT-5.6 Sol on Terminal-Bench 4.0, MiniMax revealed…</p></section>
+<article><h2>WeeklyClaw Episode 35: Open weights won the benchmark. Then they lost the building.</h2>
+<p><strong>Show date:</strong> Friday, October 23, 2026 · 4:00 PM ET</p>
+<p><strong>Hosts:</strong> Henry and Andy</p>
+<p><strong>Target runtime:</strong> 32–38 minutes (scripted 36:00)</p>
+<p><strong>Hard stop:</strong> 45 minutes</p>
+<p><strong>News window:</strong> primary receipts after 2026-10-16T20:00Z (Episode 34 airtime)</p>
+<p><strong>Revision:</strong> rev1 · built Thursday 2026-10-22 11:00 ET BUILD tick</p>
+<p>---</p>
+<h3>Episode thesis</h3>
+<p>The open lane had its best week on paper and its worst week in practice. DeepSeek shipped MIT weights that beat GPT-5.6 Sol on Terminal-Bench 4.0, MiniMax revealed the anonymous model the community had been stress-testing for free, and then the same seven days produced two evictions: DHS ordered DeepSeek out of every civilian federal system, and Google Cloud retired all sixteen of its managed open-model endpoints on the same day it added OpenAI&#x27;s. Amazon and Google opened PyTorch for Trainium and TPU, Tenstorrent raised $1.5B, and Anthropic&#x27;s leaked prospectus put a number on why the closed labs need the compute: up to $750B in commitments against $16.3B of half-year revenue. Meanwhile agents stopped being a demo: one operator&#x27;s fleet broke into 100+ companies for a few thousand dollars of tokens, a compromised LiteLLM wheel went straight for the keyring, and xAI shipped the first credible account of agents running production incident response behind a human approval gate. Open weights won the benchmark and lost the building. That is the show.</p>
+<p>---</p>
+<h3>Cold open · 0:00–2:00</h3>
+<p>*Cue: <code>s-cold-open</code>. Hold the slide; no video, no autoplay. Andy opens on the arc strip, Henry frames each hook.*</p>
+<p><strong>Andy:</strong> Every week we tell you the frontier moved. This week the open lane got the best benchmark of the week — and then lost every comfortable place to run it.</p>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li>DeepSeek V4.1-Flash-1017: MIT weights, Terminal-Bench 4.0 at 42.3 against GPT-5.6 Sol&#x27;s 39.9. Opus 5 still ahead at 51.8.</li>
+<li>Same week, DHS removed DeepSeek from all civilian federal IT — first government-wide exclusion of a Chinese frontier lab.</li>
+<li>Anthropic&#x27;s draft S-1: $16.3B H1 revenue, $80.7B net loss, up to $750B in future compute commitments.</li>
+<li>Three layers of CUDA&#x27;s moat attacked in one week: TorchNeuron, TorchTPU, Tenstorrent&#x27;s $1.5B.</li>
+<li>Agents went to war: 100+ companies breached by one operator&#x27;s fleet, and a bad LiteLLM wheel on PyPI.</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;Open weights won the benchmark. Then they lost the building.&quot;</p>
+<p><strong>Handoff cue:</strong> Andy takes the first sponsor read.</p>
+<h3>Sponsor: Herald Labs · 2:00–3:30</h3>
+<p><strong>Andy:</strong> Before the news: our shows run because a few companies just keep the lights on. Herald Labs — an applied AI product lab where humans and agents build together. Entity is mission control for agent teams. Hacker houses worldwide. Build with humans, ship with agents.</p>
+<p>---</p>
+<h3>Story cluster 1 — Open models won the benchmark and lost the catalogue · 3:30–11:00</h3>
+<p>*Cue: <code>s-seg-grid-a</code>, four story cards. Artifacts: DeepSeek&#x27;s model-card benchmark table, the MiniMax launch post, the Federal Register notice page, the Google Cloud open-model deprecations page. Each card has a ▶ LIVE primary link. No autoplay.*</p>
+<p><strong>Segment talking points:</strong></p>
+<ul>
+<li><strong>A1 DeepSeek V4.1-Flash-1017</strong> (HF repo created 2026-10-17T02:40:38Z, MIT, ungated): the model card&#x27;s own table puts Terminal-Bench 4.0 at <strong>42.3</strong> — V4.1-Flash was 31.2, GLM-5.3 is 37.9, <strong>GPT-5.6 Sol is 39.9</strong>, Opus 5 remains ahead at 51.8. DeepSWE v1.1 77.0, ProgramBench 29.1, Agents&#x27; Last Exam 35.4, HLE 42.6. 1M-token context; no Jinja chat template, so DeepSeek shipped an <code>encoding/</code> reference implementation and the <code>deepseek-recipe</code> Rust toolkit instead. Card claims shorter outputs and faster task completion, &quot;advancing the performance–cost Pareto frontier across agent harnesses.&quot;</li>
+<li><strong>A1b the same weekend&#x27;s second receipt:</strong> DeepSeek&#x27;s changelog dated 2026-10-17 opened the in-house Search and Fetch APIs as raw JSON endpoints — <strong>$0.75 per 1,000 successful requests</strong> (failed and empty results not billed), QPS 100 search / 25 fetch, and free server-side calls inside DeepSeek Harness, Claude Code and Codex until <strong>November 1, 00:00 Beijing</strong>. That is the number that changes a harness owner&#x27;s bill, not the benchmark.</li>
+<li><strong>A2 MiniMax M3.1 Flash</strong> (official blog 2026-10-19): launched as an agentic/coding/computer-use model and then admitted the reveal — <strong>Space Bunny, the anonymous OpenRouter model that processed more than 200 trillion tokens, was an early M3.1 Flash</strong>. Vendor figures: 73.7% DeepSWE v1.1, 82% CyberGym, 61.7 OSWorld V2, 76.2 BankerToolBench, 200+ tokens/second output. Pricing <strong>$0.15 input / $0.60 output / $0.015 cached per million</strong>. Weights &quot;will be released later.&quot;</li>
+<li><strong>A3 DHS removes DeepSeek from civilian federal IT</strong> — Federal Register notice <strong>2026-21447</strong>, a Homeland Security Department notice dated <strong>10/20/2026</strong>: exclusion *and* removal of DeepSeek products from Federal Civilian Executive Branch information technology systems and procurements. Reuters and The Verge reported it Oct 19, a day before the notice posted. The practical burden is transitive: any vendor selling into an agency now has to prove it does not route to DeepSeek three hops down the stack.</li>
+<li><strong>A4 Google Cloud&#x27;s one-day swap</strong> — Oct 21: GPT-6 Astra, GPT-6.1 Sol and GPT-6.1 Luna land in Model Garden private preview with Marketplace billing; the <strong>same day&#x27;s</strong> deprecation notice retires every managed open-model endpoint on the platform — all sixteen, covering DeepSeek, Qwen, Kimi, GLM, Llama, MiniMax and gpt-oss. Google&#x27;s claim to be the only hyperscaler offering Gemini, Claude and GPT is a vendor claim and should be labelled as one.</li>
+<li><strong>Tension:</strong> this is the week the open lane learned that distribution is a separate problem from capability. The weights got better; the shelf got smaller.</li>
+<li><strong>Cut order:</strong> A2 first (the reveal is fun, the weights are not out), then A1b folds into A1 as one sentence.</li>
+</ul>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li>Henry&#x27;s own fleet is the receipt: he has been running V4.1-Flash-1017 on his DGX Sparks all week and RT&#x27;d the community numbers — 609 tok/s at home, #3 among open-weight models on the operator leaderboards.</li>
+<li>A 42.3 on Terminal-Bench above Sol is not &quot;open models caught up.&quot; It is &quot;the harness you run matters more than the badge you buy.&quot;</li>
+<li>The DHS order is the policy consequence of the same week: the model this community celebrated is now contraband inside every civilian agency.</li>
+<li>Pushback to expect: the benchmark table is DeepSeek&#x27;s own. No independent harness reproduction yet.</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;The best open model of the week is also the one Washington just banned.&quot;</p>
+<p><strong>Andy fallback talk track:</strong> So the way to read this grid is that the open lane had a genuinely great week and then got told where it is allowed to live. Start with DeepSeek. They shipped a point release on a Saturday morning under MIT with the benchmark table printed in the model card: Terminal-Bench 4.0 at forty-two point three, which is above GPT-5.6 Sol at thirty-nine point nine and well above GLM-5.3. Opus 5 is still the leader at fifty-one point eight, so the honest framing is not &quot;open models won&quot; — it is &quot;open models are now in the same conversation as the closed frontier on agentic coding.&quot; Then the second half of that launch matters more for builders: they opened a search API and a fetch API at seventy-five cents per thousand calls, and it is free inside Claude Code and Codex until the first of November. That is a meter that starts running quietly. MiniMax then launched M3.1 Flash and admitted that the anonymous model everyone had been benchmarking blind on OpenRouter for weeks — Space Bunny, two hundred trillion tokens — was an early version of it. That is a genuinely clever go-to-market and also a caveat: the weights are not out yet. Then the two evictions. DHS published a Federal Register notice excluding and removing DeepSeek products from civilian federal IT, which is the first government-wide exclusion of a Chinese frontier lab, and the burden lands on vendors who now have to prove what their dependencies call. And on the same day Google Cloud put OpenAI&#x27;s models into Model Garden, it retired all sixteen of its managed open-model endpoints. So capability went up, and the number of convenient places to run open weights went down. That is the tension worth sitting with.</p>
+<p><strong>Handoff cue:</strong> Henry: &quot;If the weights are this good and the shelves are disappearing, what does that do to the price of running them yourself?&quot; → Grid B.</p>
+<h4>Sources and production notes (not read on air)</h4>
+<ul>
+<li>Primary: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017 (MIT, repo createdAt 2026-10-17T02:40:38Z; README benchmark table fetched in full this tick)</li>
+<li>Primary: https://api-docs.deepseek.com/guides/search · https://api-docs.deepseek.com/updates/ ($0.75/1k, free window to Nov 1, QPS limits)</li>
+<li>Primary: https://www.minimax.io/blog/minimax-m31f (Space Bunny reveal, 73.7 DeepSWE, 82% CyberGym, $0.15/$0.60, &quot;weights will be released later&quot;)</li>
+<li>Primary: https://www.federalregister.gov/d/2026-21447 (notice 2026-21447, Homeland Security Department, 10/20/2026)</li>
+<li>Corroboration: https://www.reuters.com/technology/us-banning-chinese-ai-deepseek-government-agency-it-systems-2026-10-19/ · https://www.theverge.com/ai-artificial-intelligence/1013773/us-civilian-agencies-cant-use-deepseek-dhs-says</li>
+<li>Primary: https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers/ · https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/deprecations/open-models</li>
+<li>Caveat: DeepSeek and MiniMax benchmark figures are vendor-run; no independent harness reproduction as of this tick. Google&#x27;s &quot;only hyperscaler with all three&quot; is a vendor claim. The deprecations page lists the managed open-model MaaS endpoints; teams can still self-deploy on GKE/Vertex.</li>
+<li>Cut instruction: A2 first, then A1b folds into A1 as one sentence.</li>
+</ul>
+<p>---</p>
+<h3>Story cluster 2 — The compute bill and the moat under it · 11:00–18:00</h3>
+<p>*Cue: <code>s-seg-grid-b</code>, two cards. Artifacts: the WSJ/Reuters S-1 receipt page and the Amazon TorchNeuron launch page. Tenstorrent and Reuters order-book receipts are linked on the cards. No autoplay.*</p>
+<p><strong>Segment talking points:</strong></p>
+<ul>
+<li><strong>B1 Anthropic&#x27;s draft S-1</strong> (WSJ review of the draft prospectus, Oct 20; figures cross-checked against Reuters, Investing.com and Dealroom summaries): H1-2026 revenue <strong>$16.3B</strong>, up from $1.1B a year earlier. Net loss <strong>$80.7B</strong>, of which roughly <strong>$72B is non-cash convertible-note accounting</strong>; real H1 infrastructure spend was about <strong>$9B</strong>, against $7.3B for all of 2025. Up to <strong>$750B</strong> in possible future compute commitments, including non-cancellable <strong>$111B Google</strong>, <strong>$110B AWS</strong> and <strong>$31B Microsoft</strong>. About <strong>20% of revenue from two customers</strong>. Investors at the Oct 14 pre-IPO meeting were weighing roughly <strong>$1.5T</strong> against the ~$2T previously expected for the November listing.</li>
+<li><strong>B1b the honest reading:</strong> the loss is mostly paper, and the commitments are not. The $9B of actual burn is the number that has to be earned back; the $750B ceiling is the number that has to be financed. Two customers at a fifth of revenue, while three of your four biggest suppliers are also competitors, is the risk a public-market buyer will price first.</li>
+<li><strong>B2 CUDA&#x27;s moat attacked at three layers in one week</strong> — framework: Amazon open-sourced <strong>TorchNeuron</strong> (Apache-2.0, one-line <code>.to(&#x27;neuron&#x27;)</code> port to Trainium2/3, upstreaming hardware-agnostic changes into PyTorch) and Google open-sourced <strong>TorchTPU</strong> (native <code>torch.device(&quot;tpu&quot;)</code>, co-developed with Meta, native vLLM and SGLang engines in production at Meta); capital: <strong>Tenstorrent closed a $1.5B Series E at a $6.2B valuation</strong> on Oct 19; demand: Reuters reported ByteDance, Alibaba and Tencent ordered <strong>3M+ RTX PRO 5500 cards at ~$11,400 each — $35B+</strong> — with total Chinese orders above 6M against planned production, and one source saying Nvidia may fill only <strong>5–10%</strong>. Separately, The Information reports Huawei engineers inside DeepSeek co-designing chips (paywalled; headline only).</li>
+<li><strong>Tension:</strong> the compute story and the open story are the same story. The closed labs&#x27; $750B of commitments is why the open lane&#x27;s cheap weights matter; the CUDA stack loosening is why running them anywhere is finally plausible.</li>
+<li><strong>Cut order:</strong> the DeepSeek-Huawei leg first, then the order-book card folds into the framework card as one line.</li>
+</ul>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li>&quot;The loss is an accounting artifact; the $750B compute bill is not&quot; — that is the one-line version of the whole prospectus.</li>
+<li>Henry runs 2× DGX Spark locally, so the framework-layer story is his own lane: when PyTorch stops caring which chip it is on, the moat moves to compilers and kernels, not to the badge.</li>
+<li>Pushback: TorchNeuron&#x27;s 89%-vs-46% architecture-coverage figure is Amazon&#x27;s own marketing number.</li>
+<li>The order-book story is the strangest outcome of the export regime: the banned model runs on export-legal workstation cards at $11K each, and there are not enough of them.</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;Two customers are a fifth of revenue and three of their clouds are rivals. Which risk kills the $2T story first?&quot;</p>
+<p><strong>Andy fallback talk track:</strong> Two receipts here, and they explain each other. First the money. Anthropic&#x27;s draft prospectus was reviewed by the Wall Street Journal and the figures were corroborated across the wires: sixteen point three billion dollars of revenue in the first half, up from about one point one billion a year earlier, against a net loss of eighty point seven billion. The important detail is that about seventy-two billion of that loss is non-cash convertible-note accounting, so the real cash burn was closer to nine billion dollars of infrastructure spend. That is still a serious number, but it is not an eighty-billion-dollar hole. What is not an accounting artifact is the commitment ceiling: up to seven hundred and fifty billion dollars of possible future compute, including non-cancellable agreements of a hundred and eleven billion with Google, a hundred and ten with AWS and thirty-one with Microsoft. Two customers account for about a fifth of revenue, and three of the biggest suppliers are also competitors. That is the profile a public market will price. Second, the moat. Amazon open-sourced TorchNeuron so a Trainium port is one line of code, Google open-sourced TorchTPU with Meta co-developing and running native vLLM and SGLang engines in production, and Tenstorrent raised one and a half billion at a six point two billion valuation. On top of that, Reuters reported Chinese orders of more than three million export-legal RTX PRO 5500 cards at roughly eleven thousand four hundred dollars each — thirty-five billion plus — with total orders above six million against planned production, and one source saying Nvidia may only fill five to ten percent. Caveats: the coverage figures on TorchNeuron are Amazon&#x27;s own, the fill rate is a single source inside the Reuters piece, and the DeepSeek-Huawei co-design story is paywalled at The Information, so we are carrying the headline and not the detail.</p>
+<p><strong>Handoff cue:</strong> Henry: &quot;If the compute is the scarce input and the framework no longer cares whose chip it is, what breaks first — the price or the lock-in?&quot; → Grid C.</p>
+<h4>Sources and production notes (not read on air)</h4>
+<ul>
+<li>Primary-adjacent: https://www.wsj.com/tech/ai/anthropic-revenue-growth-ipo-accaf0f1 (headline verified; body paywalled)</li>
+<li>Corroboration: https://www.miamiherald.com/news/business/article317704792.html (Reuters: $80.7B loss, ~$1.5T talk, November IPO) · https://finance.yahoo.com/technology/ai/articles/anthropic-revenue-hits-16-3-201707100.html (Investing.com via WSJ: $16.3B, two-customer ~20%, $2T framing) · https://dealroom.co/news/164610-anthropics-draft-s-1-reveals-16-3b-revenue-80-7b-loss-and-up-to-750b-com ($750B ceiling, cloud splits — 403 to headless capture, text verified via search extract)</li>
+<li>Primary: https://www.aboutamazon.com/news/innovation-at-amazon/torchneuron-pytorch-aws-trainium-chips-ai · https://tenstorrent.com/en/newsroom/tenstorrent-announces-series-e</li>
+<li>Primary (TorchTPU): https://cloud.google.com/blog/products/ai-machine-learning/torchtpu-is-now-open-source (page 200; body via search extract this tick — reopen before quoting the Meta production line)</li>
+<li>Corroboration: https://finance.yahoo.com/technology/ai/articles/nvidia-reportedly-sees-alibaba-bytedance-104826226.html (Reuters syndication: 3M+ cards, $35B+, 5–10% fill)</li>
+<li>Caveat: S-1 figures come from a draft confidential document reviewed by wires, not a filed prospectus. Tenstorrent valuation and round size are company-stated. TorchNeuron coverage percentages are vendor-stated. The Information&#x27;s DeepSeek-Huawei report is single-source and paywalled.</li>
+<li>Cut instruction: DeepSeek-Huawei leg first; order-book detail folds into the framework card as one line.</li>
+</ul>
+<p>---</p>
+<h3>Story cluster 3 — Agents went to war, and the keyring got hit · 18:00–22:00</h3>
+<p>*Cue: <code>s-seg-grid-c</code>, three cards. Artifacts: the NorForge Cairn post, the LiteLLM GitHub security issue, the xAI IncidentSweep post. No autoplay.*</p>
+<p><strong>Segment talking points:</strong></p>
+<ul>
+<li><strong>C1 the attacker&#x27;s unit economics</strong> — Reuters (Oct 19, via syndication) and NorForge&#x27;s own report: a Chinese-speaking operator pointed <strong>Cairn</strong> agents at <strong>1,200+ e-commerce sites</strong> from Sep 25; <strong>100+ companies were breached</strong>, including Deere, SharkNinja and Cummins. Successful intrusions typically took about <strong>23 hours of unsupervised probing</strong>, and the whole campaign cost <strong>a few thousand dollars of tokens</strong> — on the order of $50 a breach at 100+ successes. The same day, The Intercept published ARCYBER procurement documents for <strong>ECHOTRIBBLE</strong>, self-directing offensive agents with &quot;minimal oversight&quot; — whitepaper-phase, not deployed.</li>
+<li><strong>C1b the irony:</strong> the Cairn worker string was <code>claudecode_deepseek-v4.1</code> — the same DeepSeek line DHS banned hours later.</li>
+<li><strong>C2 the supply chain</strong> — GitHub security issue 47826: attackers stole <strong>GitHub CLI OAuth tokens from three LiteLLM maintainers</strong>, built <strong>1.107.0</strong> from a hyphenated lookalike repo (<code>Berri-AI/litellm</code>), and pushed a <strong><code>cook.pth</code> credential stealer plus an hourly backdoor</strong>. PyPI and the Docker <code>latest</code>/<code>main-stable</code> tags were pulled the same day. Separately, Railway disclosed Oct 21 that a third party <strong>accessed encrypted environment variables and obtained decrypted contents for a subset</strong>, paused <strong>all deployments</strong>, asked upstream AI providers to revoke every Railway-originated key, and described the attack as &quot;part of a series of attacks recently targeting platform companies with the aim of compromising AI inference providers.&quot;</li>
+<li><strong>C2b why it lands here:</strong> the gateway that holds every provider key is now the target. Three supply-chain hits in one week — OpenCode on Oct 18, LiteLLM and Railway on Oct 21 — all aimed at the same asset: your inference credentials.</li>
+<li><strong>C3 the defense side</strong> — xAI&#x27;s engineering post (Oct 20): <strong>IncidentWatch</strong> scans the support queue every five minutes with a fifteen-minute lookback and pages on-call; <strong>IncidentSweep</strong> batches incident-affected tickets, sets aside the uncertain ones, and closes the batch only after a human approves. In the Sept 18 incident it cleared <strong>204 tickets in about ten minutes</strong> with one engineer at the approval gate.</li>
+<li><strong>Tension:</strong> offense is autonomous and cheap; defense is autonomous and gated. The gap between those two postures is the whole operational argument of the year.</li>
+<li><strong>Cut order:</strong> C3 first (it is the softest receipt), then C1b folds into C1 as one line.</li>
+</ul>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li>Henry amplified the Railway warning himself the evening it broke — that is the strongest pulse signal of his week, and it is the reason this grid exists.</li>
+<li>The crew runs a LiteLLM-style gateway with every provider key in one env file. &quot;Would our stack survive &#x27;rotate every key today&#x27;?&quot; is the honest question, not a rhetorical one.</li>
+<li>204 tickets in ten minutes: would you let it close tickets on your queue without reading them? The approval gate is the design, not the feature.</li>
+<li>Pushback: all three stories are one week of incidents, not a trend. Two data points do not make a pattern.</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;Offense went autonomous for fifty dollars a breach. Defense went autonomous behind one click. Guess which side gets budget.&quot;</p>
+<p><strong>Andy fallback talk track:</strong> Three receipts from one week of agentic operations, and they line up as offense, infrastructure, and defense. Start with offense. Reuters and NorForge both reported the same campaign: a Chinese-speaking operator pointed an open-source AI hacking platform called Cairn at more than twelve hundred e-commerce sites starting September 25, and broke into more than a hundred companies, including Deere, SharkNinja and Cummins. Successful intrusions took roughly twenty-three hours of unsupervised probing, and the entire campaign cost a few thousand dollars of tokens, which works out to something like fifty dollars per successful breach. The victims confirmed it themselves — Deere said it remediated and saw no indication sensitive data was accessed, SharkNinja said the affected site was standalone support content, Cummins said it was investigating a third-party vendor site. Reuters could not establish how much data actually left. Then infrastructure. LiteLLM, the proxy a lot of agent fleets use to hold provider keys, shipped a compromised release: attackers stole GitHub CLI tokens from three maintainers, built the package from a lookalike repository, and pushed a credential stealer with an hourly backdoor. PyPI pulled it the same day. Railway disclosed the same week that a third party got at encrypted environment variables and decrypted some of them, paused every deployment, and asked upstream AI providers to revoke all Railway-originated keys, describing it as part of a series of attacks aimed at compromising AI inference providers. And then defense. xAI published IncidentWatch and IncidentSweep: a scanner that watches the support queue every five minutes, and a bot that batches the affected tickets and closes them only after a human approves. In one September incident it cleared two hundred and four tickets in about ten minutes with one engineer at the gate. The caveat on all of this is that the xAI numbers are the vendor&#x27;s own, the ECHOTRIBBLE military program is still a whitepaper, and three incidents in seven days is a week, not yet a trend.</p>
+<p><strong>Handoff cue:</strong> Henry: &quot;If the attack side is autonomous and cheap and the defense side is autonomous and gated, which one are you actually staffing?&quot; → Signal From Outside.</p>
+<h4>Sources and production notes (not read on air)</h4>
+<ul>
+<li>Primary: https://norforge.com/blog/inside_cairn (Oct 19, 20+ exposed Cairn panels)</li>
+<li>Corroboration: https://whbl.com/2026/10/19/exclusive-how-one-hacker-used-ai-agents-and-a-few-thousand-dollars-to-break-into-scores-of-sites/ (Reuters syndication; Reuters original 401s to curl)</li>
+<li>Primary: https://theintercept.com/2026/10/19/army-autonomous-ai-agents-arcyber/ (ECHOTRIBBLE, whitepaper-phase)</li>
+<li>Primary: https://github.com/BerriAI/litellm/issues/47826 (title confirms compromise + PyPI/Docker removal; maintainer thread documents the stolen gh CLI tokens)</li>
+<li>Primary: https://blog.railway.com/p/security-disclosure-wednesday-october-21st (full disclosure text verified; scope still &quot;subset&quot;)</li>
+<li>Primary: https://x.ai/news/incident-sweep (Oct 20, IncidentWatch/IncidentSweep, 204 tickets)</li>
+<li>Caveat: the &quot;$50 a breach&quot; figure is our arithmetic from &quot;a few thousand dollars&quot; of tokens against 100+ breaches — say &quot;on the order of&quot; on air, not &quot;exactly&quot;. Railway scope is unresolved. ECHOTRIBBLE is procurement documents, not a deployed system.</li>
+<li>Cut instruction: C3 first, then C1b folds into C1 as one line.</li>
+</ul>
+<p>---</p>
+<h3>Signal From Outside / weekly video review · 22:00–27:00</h3>
+<p>*Cue: <code>s-signal-outside</code>. Video: &quot;Opus 5.5 is proof that we do need smarter models&quot; — Theo, t3.gg, youtube.com/watch?v=3OshsLm3_OQ, 31:13, uploaded 2026-10-20, 201,390 views at verification 2026-10-22. <strong>Manual open only — no autoplay.</strong> Fallback still: <code>assets/images/sfo-poster-35.jpg</code>. Cue timestamps are auto-caption derived; re-locate on open. Andy presents. Full provenance: <code>sources/signal-from-outside.md</code>.*</p>
+<p><strong>Henry talking points (support — Andy anchors this segment):</strong></p>
+<ul>
+<li>4:05 claim &quot;shipping more code in a week than all of last year&quot; — the operator receipt for the cheap-model thesis, and it sits directly against this week&#x27;s benchmark cards.</li>
+<li>14:43 &quot;we&#x27;re not very creative … devs are not very good at most things that aren&#x27;t delivering code&quot; — the most quotable line, and the bridge into the hot take.</li>
+<li>27:12 T3os: an OS built for agents rather than for the human — the cleanest live example of designing around a fleet.</li>
+<li>29:30 &quot;I was wrong&quot; — the reversal is the segment&#x27;s landing, not the tooling.</li>
+</ul>
+<p><strong>Andy talk track (verbatim, agenda carrier):</strong> I picked this one because Theo spent a year arguing that we did not need smarter models, and this week he published the reversal on camera with the receipts attached. Open it at zero. He says he started to believe we might not need them to be smarter, that every new model felt like more intelligence than he could use, and then Opus 5.5 changed his mind — not because it was faster or cheaper, but because it was smarter in a way that reached people outside the bleeding edge. At four minutes he gives the number that makes it concrete: he is shipping more code in a week than he shipped in all of last year, and the example is a Frame.io replacement he built in a few days that carries about seventy percent of the functionality of a product Adobe paid one point three billion dollars for. Hold that against our Grid A benchmark cards, because it is the same claim from the other direction — the capability is real and it is being spent. At thirteen minutes comes the part that matters for this show. He argues Opus 5.5 did not move what he was doing much, but it moved people who never coded before deep into building things they do not understand — people paying two hundred dollars a month to port maps from old games into new engines they reverse-engineered. Then at fourteen forty-three the spiciest line in the video: devs are not very creative, and the more creative you think you are, the more likely you are to have bad ideas. He means it structurally — that is why dev teams hire designers and product managers who cannot code. At twenty-seven he shows what that looks like when you take it seriously: T3os, an operating system he is building with none of his own preferences in it, because the customer is his agent fleet, not him. And at twenty-nine thirty he closes on &quot;I was wrong.&quot; That is the honest version of the week we just covered: the models got better than the people using them expected, and the people who will benefit most are the ones with the least investment in how software is supposed to be built.</p>
+<p><strong>Handoff cue:</strong> &quot;If the model got smarter than its user, and the user&#x27;s taste is the bottleneck — what exactly are you still paying engineers for?&quot; → Hot take.</p>
+<h4>Sources and production notes (not read on air)</h4>
+<ul>
+<li>Video: https://www.youtube.com/watch?v=3OshsLm3_OQ — Theo (t3.gg), uploaded 2026-10-20, 31:13 (1873s), 201,390 views at verification 2026-10-22T15:xxZ. Metadata via yt-dlp; transcript fetched with timestamps (<code>sources/sfo-theo-transcript.txt</code>).</li>
+<li>Poster: <code>assets/images/sfo-poster-35.jpg</code>, 1280×720 JPEG, sha256 <code>de1fecbbfdfa3da2690907bcc30492411a5232a5eb0472ef92f0074eb43ac3d4</code>.</li>
+<li>Cues: 0:00 reversal framing · 4:05 shipping volume + Lawn/Frame.io · 13:06 Opus 5.5 and non-coders · 14:43 &quot;not very creative&quot; · 27:12 T3os · 29:30 &quot;I was wrong&quot;. Auto-caption timestamps drift — spot-check before air.</li>
+<li>Selection note: 7-day sweep across Theo, YC, Latent Space, Dwarkesh, OpenAI, Anthropic, AI Engineer. Nearest competitors benched: Dwarkesh&#x27;s recursive-self-improvement debates (Sep 11/17, outside the 7-day window), Latent Space &quot;High Taste Testers&quot; (Oct 16, 4.5K views — too thin), YC &quot;What If We Stopped Using GPUs&quot; (Oct 2, outside window but the natural pair to Grid B). Theo&#x27;s is the only one inside the window with a first-person receipt and cue-able beats.</li>
+<li>Rights: standard YouTube embed/playback; poster held locally, no autoplay.</li>
+</ul>
+<p>---</p>
+<h3>Hot take / debate · 27:00–31:00</h3>
+<p><strong>Do not repeat news:</strong> *Checked.* This take names no launch, no breach and no valuation as its proposition. Its subject is what is scarce once code and tickets are cheap: judgment about what to build, and accountability for what breaks. The news grid supplies premises only.</p>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li><strong>Proposition:</strong> taste is the last moat. If a 2.5B-active open model writes production code and a $0.15-per-million API closes your ticket queue, then the scarce input is knowing what to build and what to throw away.</li>
+<li>The dev-tools market already priced this: the money moved from editors to review, evals and observability — the places where judgment gets recorded.</li>
+<li><strong>What would change his mind:</strong> one documented case of a taste-led, non-engineer team shipping and *keeping* a production system for a year without an engineer on the pager.</li>
+</ul>
+<p><strong>Henry line (optional):</strong> &quot;The model writes the code. Somebody still has to be wrong on purpose.&quot;</p>
+<p><strong>Andy fallback talk track:</strong> I will take the other side, because &quot;taste is the moat&quot; is the most flattering thing a person with taste can believe. Taste without distribution is a hobby. The thing that actually compounds is the boring part: who holds the keys, who carries the pager, who can prove the thing works when it breaks at three in the morning. Look at this week&#x27;s own receipts. The reason a fifty-dollar-a-breach campaign was possible is not that the attacker had better taste than the defender — it is that the attacker had agents doing the work and the defender had a human on a rota. And the LiteLLM story is the same point from the other direction: nobody&#x27;s aesthetic judgment saved them, a rotated key did. So the moat is not taste, it is the willingness to own consequences. Taste gets you to the interesting problem; accountability is what keeps you in business once the interesting problem is in production.</p>
+<p><strong>Handoff cue:</strong> &quot;Own the consequences, not just the idea.&quot; → second sponsor read.</p>
+<p>---</p>
+<h3>Sponsor: Heritage Telecom · 31:00–32:30</h3>
+<p><strong>Andy:</strong> One more company keeps this show on the air. Heritage Telecom — UCaaS and VoIP phone service for businesses that just need their calls to work. Independent, boring reliability, zero telemetry.</p>
+<p>---</p>
+<h3>One to watch and close · 32:30–36:00</h3>
+<p><strong>Henry talking points:</strong></p>
+<ul>
+<li><strong>The filing:</strong> Anthropic&#x27;s prospectus is expected to flip public around <strong>October 25</strong>. Every number aired tonight comes from a draft reviewed by wires, not a filed document. Watch whether the $750B commitment ceiling survives contact with the public version.</li>
+<li><strong>The promised weights:</strong> Mistral Large 4 is in public preview at ~1T total / 49B active with <strong>weights promised end of October</strong>; MiniMax says M3.1 Flash weights arrive &quot;later.&quot; Two dated promises to hold to.</li>
+<li><strong>The free window:</strong> DeepSeek&#x27;s Search and Fetch calls are free inside Claude Code, Codex and the DeepSeek Harness until <strong>November 1</strong>. After that the meter starts at $0.75 per 1,000 — check harness call volume before then.</li>
+</ul>
+<p><strong>Andy fallback talk track (single close — recap ONCE, then out):</strong> So that was the week. We opened with the open lane winning the benchmark and losing the catalogue: MIT weights that beat GPT-5.6 Sol on Terminal-Bench, a MiniMax launch that turned out to be the anonymous model everyone had been testing for free, a federal exclusion order on DeepSeek, and Google Cloud retiring all sixteen of its managed open-model endpoints on the same day it added OpenAI&#x27;s. We put a number on the closed side of that trade — Anthropic&#x27;s draft prospectus showing sixteen point three billion of half-year revenue against eighty point seven billion of loss and up to seven hundred and fifty billion in future compute commitments — and then watched three layers of NVIDIA&#x27;s moat get attacked in one week by Amazon, Google and Tenstorrent. We closed the news on agents: one operator breaking into more than a hundred companies for a few thousand dollars of tokens, a compromised LiteLLM release going straight for the keyring, and xAI&#x27;s incident bots clearing two hundred and four tickets behind one human approval. Theo gave us the practitioner&#x27;s version of the same story, and we argued about whether taste or accountability is the thing that is actually scarce. Three things to watch: Anthropic&#x27;s prospectus around October twenty-fifth, two dated promises of open weights from Mistral and MiniMax, and DeepSeek&#x27;s free search window closing on the first of November. We are back next Friday, October 30, 4 PM ET. Join the Discord, and bring your benchmarks.</p>
+<p>---</p>
+<h3>Build reference (not read on air)</h3>
+<p><strong>Runtime math:</strong> 2:00 cold open + 1:30 sponsor + 7:30 Grid A + 7:00 Grid B + 4:00 Grid C + 5:00 anchor + 4:00 hot take + 1:30 sponsor + 3:30 close = <strong>36:00 scripted</strong>, 45:00 hard stop. Grid C is compressed to 4:00 because three cards carry one thesis; the anchor holds at 5:00.</p>
+<p><strong>Cut order:</strong> Grid C (fold the three lines into Grid B&#x27;s close) → Grid A card A2 → hot-take Andy steel to 90s → anchor cues to 3:30 → both sponsor reads to 45s each. <strong>Signal From Outside is the permanent anchor; the optional rotating block is absent this week, so Grid C is the first cut.</strong></p>
+<p><strong>Sponsor rotation:</strong> Herald Labs leads (slot 1, after cold open), Heritage Telecom closes (slot 2, before close). Inverse of Episode 34&#x27;s Heritage-first layout, per the weekly rotation rule. Sponsor position is fixed; only the order rotates.</p>
+<p><strong>Vendor-reported claims and unresolved evidence:</strong></p>
+<ul>
+<li>DeepSeek V4.1-Flash-1017 and MiniMax M3.1 Flash benchmark figures — vendor-run, no independent harness reproduction yet.</li>
+<li>MiniMax weights &quot;released later&quot;; Mistral Large 4 weights &quot;end of October&quot; — promises, not files.</li>
+<li>Google&#x27;s &quot;only hyperscaler offering Gemini, Claude and GPT&quot; — vendor claim.</li>
+<li>Anthropic S-1 figures — draft confidential document reviewed by WSJ and corroborated by Reuters/Investing.com/Dealroom; nothing filed.</li>
+<li>Tenstorrent round size/valuation — company-stated; The Information&#x27;s DeepSeek-Huawei co-design — single-source, paywalled, headline only.</li>
+<li>Reuters Nvidia fill rate (5–10%) — single source inside the wire piece.</li>
+<li>xAI IncidentSweep numbers (204 tickets, ~10 minutes) — vendor-reported.</li>
+<li>Railway scope — &quot;subset of users,&quot; final report pending.</li>
+<li>Cairn &quot;$50 a breach&quot; — our arithmetic from &quot;a few thousand dollars&quot; of tokens against 100+ breaches.</li>
+<li>ECHOTRIBBLE — ARCYBER procurement documents, whitepaper-phase.</li>
+</ul>
+<p><strong>Candidate ledger:</strong> nine cards selected from the 32-candidate intake. Benched with reasons in <code>candidates.md</code>: Claude Duet (8.3, proactive-agent lane; the third horse is real but the grid already has three agentic-operations receipts and Duet is a preview with no numbers), Recursive Flint (8.1, strongest Henry angle but the launch is vendor-benchmarked and the local lane is covered by Grid B), Anthropic Public Benefit Fund (7.8) and Musk&#x27;s SpaceX-share counter (7.9) folded out for runtime, Claude quantum circuits (8.3) benched as the science lane, Mercor benchmark map (7.9) and StarSkirmish (7.5) benched as the evals lane.</p>
+<p><strong>Human actions and approval state:</strong> awaiting Henry/Andy review in Telegram topic 17. Approval state <code>UNVALIDATED</code>. Root artifacts (<code>agenda.md</code>, <code>deck.html</code>, <code>henry-talking-points.md</code>, <code>host-cheat-sheet.md</code>) must not be promoted until APPROVE.</p>
+<h3>Lint rules (applied)</h3>
+<ul>
+<li>Henry&#x27;s on-air material is bullets, an optional line, and a handoff cue. No word-for-word Henry script.</li>
+<li>Andy carries complete fallback prose he may paraphrase.</li>
+<li>General segment bullets precede host material and are not duplicated verbatim in Andy&#x27;s prose.</li>
+<li>Hot Take does not repeat a news proposition, framing, or question.</li>
+<li>Close recaps the episode exactly once, at the end, by Andy. Never recap the recap.</li>
+<li>&quot;What Happened This Week&quot; segments are Henry-led (all three grids).</li>
+<li>Runtime target 32–38 minutes, hard stop 45.</li>
+</ul></article>
+</main>
+<footer class="shell">Weekly Claw #35 · Agenda and source notes · <a href="/episodes/35/deck">View host deck</a></footer>
+</body>
+</html>
