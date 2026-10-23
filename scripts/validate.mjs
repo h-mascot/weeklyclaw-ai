@@ -57,6 +57,7 @@ const required = [
   'w18/changelog/index.html', 'w19/changelog/index.html',
   'sitemap.xml',
   'assets/og-image.jpg',
+  'assets/andy-portrait-20261023.jpg',
 ];
 
 const weeks = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
@@ -94,6 +95,7 @@ for (const needle of [
   'https://heritagetel.com/',
   'assets/sponsors/heritage-logo.png',
   'assets/weeklyclaw-hosts-source.png?v=20260717-light-smile',
+  'background-image: url("assets/andy-portrait-20261023.jpg");',
   'https://x.com/weeklyclaw',
   'https://youtube.com/@weeklyclaw',
   'https://space.bilibili.com/3707046262213278/',
