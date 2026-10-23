@@ -46,8 +46,9 @@ Your operator lane: same question as A1, sharper — if the Nov 4 weights land c
 
 Two-beat frame: (1) the loss is mostly paper — the accounting converts, the commitments don't; (2) $9B of real burn has to be earned while three of your four biggest suppliers are competitors and a fifth of revenue rides on two customers. That's the IPO story in one breath.
 
-**B2 the CUDA moat, attacked at three layers.** Framework layer: Amazon's **TorchNeuron** (Apache-2.0; `.to('neuron')`; Amazon claims 89% of top-100 text-gen architectures work vs 46% under Optimum Neuron) and Google's **TorchTPU** (open source, `torch.device("tpu")`, co-developed with Meta, native vLLM/SGLang at Meta, Apache-2.0). Capital layer: **Tenstorrent Series E $1.5B at $6.2B**, led by Trace Capital and Innovation X, with ARK, Fidelity, Morgan Stanley, SanDisk, Tether. Demand layer: Reuters — ByteDance, Alibaba, Tencent ordered **3M+ RTX PRO 5500s at ~$11,400 each ($35B+)**, total Chinese orders above 6M against planned production, one source says Nvidia may fill only 5–10%.
-
+**B2 AI giving — the pledges (your card).**
+Receipts: anthropic.com/news/public-benefit-fund (Oct 18) — 5% of shares to the Anthropic Public Benefit Fund, +2% per 50% valuation step-up at board discretion; combined with founder (80%) and employee-match pledges, ~20% of the company for public good. LLC structure, no lobbying or political spend. Then Oct 19: Musk pledges one of his 4.8B SpaceX shares to every American child (~$10.7B at current prices, Forbes estimate); WaPo totals Musk + two rivals at ~$300B.
+Story to tell: the week the labs started pledging the winnings back — weeks before their IPO windows. Anthropic prices its conscience into the prospectus; Musk makes it a lottery ticket for every kid. Ask on air: generosity, or pre-IPO reputation repair with paper?
 **B2b (reported, single-source):** The Information says Huawei engineers are stationed inside DeepSeek co-designing future AI chips. Corroborated only as a headline (DigiTimes/Techmeme). Say "reported," move on.
 
 Synthesis line to land: the compute story and the open story are one story — the closed labs' $750B ceiling is why cheap open weights matter, and the CUDA stack loosening is why running them anywhere is finally plausible.
@@ -62,14 +63,14 @@ Synthesis line to land: the compute story and the open story are one story — t
 
 **C2b why it lands:** OpenCode (Oct 18), LiteLLM and Railway (Oct 21) — three supply-chain hits in seven days, all aimed at the same asset: the inference keyring.
 
-**C3 the defense side.** xAI engineering, Oct 20: **IncidentWatch** scans the support queue every 5 minutes (15-min lookback) and alerts on spike; **IncidentSweep** flags incident-affected tickets, parks uncertain ones, closes the batch only after a human approves — Sept 18 incident: 204 tickets cleared in ~10 minutes with one engineer at the gate. Vendor-reported numbers. Tension line: offense is autonomous and cheap; defense is autonomous and gated — the gap between those postures is the operational argument of the year.
+**C3 php2shell — the language layer broke.** CERT-EU advisory 2026-018 + CISA alert (Oct 21): CVE-2026-109618 (OOM longjmp frees attacker-influenced memory) and CVE-2026-109619 (stale worker state), both CVSS 9.2, unauthenticated RCE in PHP core — every install serving requests, back to ~PHP 5.4; WordPress, Joomla, Drupal, MediaWiki. Wiz: frontier models did the heavy lifting on a decade-old flaw. Fixes: 8.5.12 / 8.4.27 / 8.3.36 / 8.2.35. Node.js same week: DNS NUL truncation (105482), TLS fullwidth-IP bypass (105483), Brotli RCE (111497). Tension line: the web's most boring layer held two 9.2s in core, and AI made them practical to find — and to exploit. Patch your PHP.
 
 ## One To Watch (32:30 onward)
 
 Three dated tripwires, in order:
 
 1. **The filing** — Anthropic's prospectus expected public ~**Oct 25**. Everything we aired is draft-stage; watch whether the $750B ceiling survives the public version.
-2. **The promised weights** — Mistral Large 4 (public preview, ~1T total / 49B active, weights promised end of October) and MiniMax M3.1 Flash ("later"). Two dated promises; hold them to it on-air next week.
+2. **The raise** — DeepSeek: ~$15B closed, nearly double target, CATL and Tencent in; STAR-listing prep as early as early 2027 (WSJ, Thursday). And MiniMax M3.1 Flash weights went live this morning: 428B/23B MoE, 252GB on Hugging Face — the "later" promise, kept.
 3. **The free window** — DeepSeek Search/Fetch free inside Claude Code, Codex, DeepSeek Harness until **Nov 1, 00:00 Beijing**. Then $0.75/1K. Check your harness call volume before the meter starts.
 
 ## Hot take — your proposition (22:00–26:00)
@@ -80,4 +81,4 @@ Three dated tripwires, in order:
 
 - Every caveat in the notes is a say-on-air caveat — vendor benches, draft S-1, single-source Huawei, vendor-reported xAI numbers.
 - One recap only, Andy's, at the close. You hand him the watch items and stay quiet.
-- If time collapses: cut order is A2 → C3 → B2b → drop the free-window watch card. Never cut sponsors or the close.
+- If time collapses: cut order is A2b raise line → C3 → B2b → drop the free-window watch card. Never cut sponsors or the close.
