@@ -1,7 +1,8 @@
-# Weekly Claw #35 — Henry Section (rev1)
+# Weekly Claw #35 — Henry Section (rev2)
 
 **You lead:** cold-open frame share, all three news grids, One To Watch, hot-take proposition, final verdict share.
-**Andy owns:** cold-open opener, sponsor reads, Signal From Outside anchor, hot-take steelman, the single close recap.
+**Host note:** the video anchor does not air this week (Andy drop + Henry scope note, Oct 23) — Grid C hands straight to the hot take.
+**Andy owns:** cold-open opener, sponsor reads, hot-take steelman, the single close recap.
 
 ---
 
@@ -66,7 +67,7 @@ Three dated tripwires, in order:
 2. **The promised weights** — Mistral Large 4 (public preview, ~1T total / 49B active, weights promised end of October) and MiniMax M3.1 Flash ("later"). Two dated promises; hold them to it on-air next week.
 3. **The free window** — DeepSeek Search/Fetch free inside Claude Code, Codex, DeepSeek Harness until **Nov 1, 00:00 Beijing**. Then $0.75/1K. Check your harness call volume before the meter starts.
 
-## Hot take — your proposition (27:00–31:00)
+## Hot take — your proposition (22:00–26:00)
 
 "Taste is the last moat." If a 2.5B-active open model writes production code and a $0.15/M API clears your ticket queue, the scarce input is judgment about what to build and what to throw away. Supporting color: dev-tools money already moved from editors to review, evals and observability — the places where judgment gets recorded. Andy steelmans accountability; your rebuttal closes on "own the consequences, not just the idea." Mind-changer to concede if he lands it: a documented taste-led non-engineer team shipping and keeping production for a year with no engineer on pager.
 
@@ -74,4 +75,4 @@ Three dated tripwires, in order:
 
 - Every caveat in the notes is a say-on-air caveat — vendor benches, draft S-1, single-source Huawei, vendor-reported xAI numbers.
 - One recap only, Andy's, at the close. You hand him the watch items and stay quiet.
-- If time collapses: cut order is A2 → C3 → B2b → compress SFO to three cues → drop the free-window watch card. Never cut sponsors, the anchor, or the close.
+- If time collapses: cut order is A2 → C3 → B2b → drop the free-window watch card. Never cut sponsors or the close.

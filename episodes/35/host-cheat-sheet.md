@@ -1,7 +1,8 @@
-# Weekly Claw #35 — Host Cheat Sheet (rev1)
+# Weekly Claw #35 — Host Cheat Sheet (rev2)
 
 **Air:** Friday, October 23, 2026 · 4:00 PM ET · hard stop 45:00
-**Deck:** `episodes/35/showprep/revs/deck.rev1.html` · 11 slides · EP23 authority styling
+**Deck:** `episodes/35/showprep/revs/deck.rev2.html` · 10 slides · EP23 authority styling
+**Rev2:** Signal From Outside dropped (Andy DROP + Henry scope note, Oct 23) — run is 31:00 scripted.
 **Thesis:** Open weights won the benchmark. Then they lost the building.
 
 ## Slide map
@@ -14,11 +15,10 @@
 | 4 | s-seg-grid-a | **Henry** | 3:30–11:00 | DeepSeek bench / MiniMax / DHS / Google |
 | 5 | s-seg-grid-b | **Henry** | 11:00–18:00 | Anthropic S-1 / CUDA moat |
 | 6 | s-seg-grid-c | **Henry** | 18:00–22:00 | Cairn / LiteLLM+Railway / xAI defense |
-| 7 | s-signal-outside | **Andy** | 22:00–27:00 | Theo · manual open · 6 cues |
-| 8 | s-hot-take | both | 27:00–31:00 | Taste vs accountability |
-| 9 | s-sponsor-heritage | Andy | 31:00–32:30 | Approved copy only |
-| 10 | s-watch | Henry→Andy | 32:30–36:00 | 3 watches · **Andy's single recap** |
-| 11 | s-sources | non-air | — | Receipts; skip on nav |
+| 7 | s-hot-take | both | 22:00–26:00 | Taste vs accountability |
+| 8 | s-sponsor-heritage | Andy | 26:00–27:30 | Approved copy only |
+| 9 | s-watch | Henry→Andy | 27:30–31:00 | 3 watches · **Andy's single recap** |
+| 10 | s-sources | non-air | — | Receipts; copy for the show notes |
 
 ## Cold open — Andy's 5 hooks (0:00–2:00)
 
@@ -57,28 +57,14 @@
 - *Cut order: C3 first, then fold C1b into C1.*
 - Caveat: Reuters couldn't establish data exfiltration; Railway final report pending.
 
-## Signal From Outside — Andy (22:00–27:00)
-
-- Video: Theo, "Opus 5.5 is proof that we do need smarter models," 10-20, 31:13, ~201K views. **Manual open only — no autoplay. Poster on slide.**
-- Cues (auto-caption; re-locate on open):
-  - **0:00** reversal thesis — "Opus 5.5 has changed my mind"
-  - **4:05** "shipping more code in a week than all of last year"; Frame.io ~70%/$1.3B clone
-  - **13:06** non-coders building; $200/mo users porting game maps
-  - **14:43** "We're not very creative… devs are not very good at most things that aren't delivering code"
-  - **27:12** T3os DRO "for my agents"
-  - **29:30** "I was wrong."
-- Sponsor read at ~3:11 in-video — don't replay it.
-- Fallback if embed fails: talk track over poster (see speaker notes).
-- *Compress to 3 cues (0:00 / 14:43 / 29:30) at 3:30 before cutting the anchor.*
-
-## Hot take (27:00–31:00)
+## Hot take (22:00–26:00)
 
 - **Henry:** taste is the last moat — scarcity moved from writing code to judging what to build. Dev-tools money already moved to review/evals/observability.
 - **Andy steelman:** accountability compounds, taste doesn't. Who holds keys, who carries pager. $50-a-breach is a staffing gap, not aesthetics; LiteLLM survivors were saved by a rotated key.
 - **Verdict:** taste gets you there; accountability keeps you in business. Only one is cheap to hire.
 - Mind-changer: a taste-led non-engineer team running production for a year, no engineer on pager.
 
-## Watch + close (32:30–36:00) — recap ONCE, Andy
+## Watch + close (27:30–31:00) — recap ONCE, Andy
 
 1. Anthropic prospectus expected public ~**Oct 25** — watch the $750B ceiling.
 2. Promised weights: Mistral Large 4 (end of Oct) and MiniMax M3.1 Flash ("later").
