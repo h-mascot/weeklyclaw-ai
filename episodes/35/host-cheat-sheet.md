@@ -3,6 +3,7 @@
 **Air:** Friday, October 23, 2026 · 4:00 PM ET · hard stop 45:00
 **Deck:** `episodes/35/showprep/revs/deck.rev2.html` · 10 slides · EP23 authority styling
 **Rev2:** video anchor dropped by host order (Andy + Henry, Oct 23) — run is 31:00 scripted.
+**Rev3:** Kimi K3.1 Pro swapped into A2 (Henry, show-day 15:45 ET). MiniMax → Sources/watch only.
 **Thesis:** Open weights won the benchmark. Then they lost the building.
 
 ## Slide map
@@ -33,11 +34,11 @@
 ## Grid A — Henry (3:30–11:00)
 
 - **A1 DeepSeek V4.1-Flash-1017.** MIT, ungated, 1M context, repo live 10-17. TB4.0 **42.3** (Sol 39.9, GLM-5.3 37.9, Opus 5 51.8). Search & Fetch API: $0.75/1K, free in Claude Code/Codex until Nov 1.
-- **A2 MiniMax M3.1 Flash.** Blog 10-19. Space Bunny = early version, 200T tokens processed anonymously. DeepSWE 73.7%, $0.15/$0.60 pricing. **Weights "later" — say so.**
+- **A2 Kimi K3.1 Pro** *(show-day add)*. Blog 10-23, 1:15 PM ET. 2.8T/104B MoE, 1M ctx, multimodal. **TB4.0 65.7** (Astra 58.2, Opus 5.5 66.4). Weights **Nov 4**. Vendor-run — say so.
 - **A3 DHS exclusion.** Federal Register 2026-21447, 10/20. Vendors carry the transitive burden.
 - **A4 Google Cloud swap.** GPT-6 family into Model Garden; same-day retirement of 16 managed open models.
 - *Cut order: A2 first, then fold A1b into A1.*
-- Caveat to say on air: DeepSeek/MiniMax benches are vendor-run; no independent reproduction yet.
+- Caveat to say on air: DeepSeek/Kimi/MiniMax benches are vendor-run; no independent reproduction yet.
 
 ## Grid B — Henry (11:00–18:00)
 
