@@ -2,10 +2,10 @@
 
 **Show date:** Friday, October 23, 2026 · 4:00 PM ET
 **Hosts:** Henry and Andy
-**Target runtime:** 32–38 minutes (scripted 36:00)
+**Target runtime:** 28–34 minutes (scripted 31:00)
 **Hard stop:** 45 minutes
 **News window:** primary receipts after 2026-10-16T20:00Z (Episode 34 airtime)
-**Revision:** rev1 · built Thursday 2026-10-22 11:00 ET BUILD tick
+**Revision:** rev2 · Signal From Outside dropped by host order (Andy DROP + Henry scope note, 2026-10-23 ~15:00 ET); rev1 built Thursday 2026-10-22 11:00 ET BUILD tick
 
 ---
 
@@ -134,7 +134,7 @@ The open lane had its best week on paper and its worst week in practice. DeepSee
 
 **Andy fallback talk track:** Three receipts from one week of agentic operations, and they line up as offense, infrastructure, and defense. Start with offense. Reuters and NorForge both reported the same campaign: a Chinese-speaking operator pointed an open-source AI hacking platform called Cairn at more than twelve hundred e-commerce sites starting September 25, and broke into more than a hundred companies, including Deere, SharkNinja and Cummins. Successful intrusions took roughly twenty-three hours of unsupervised probing, and the entire campaign cost a few thousand dollars of tokens, which works out to something like fifty dollars per successful breach. The victims confirmed it themselves — Deere said it remediated and saw no indication sensitive data was accessed, SharkNinja said the affected site was standalone support content, Cummins said it was investigating a third-party vendor site. Reuters could not establish how much data actually left. Then infrastructure. LiteLLM, the proxy a lot of agent fleets use to hold provider keys, shipped a compromised release: attackers stole GitHub CLI tokens from three maintainers, built the package from a lookalike repository, and pushed a credential stealer with an hourly backdoor. PyPI pulled it the same day. Railway disclosed the same week that a third party got at encrypted environment variables and decrypted some of them, paused every deployment, and asked upstream AI providers to revoke all Railway-originated keys, describing it as part of a series of attacks aimed at compromising AI inference providers. And then defense. xAI published IncidentWatch and IncidentSweep: a scanner that watches the support queue every five minutes, and a bot that batches the affected tickets and closes them only after a human approves. In one September incident it cleared two hundred and four tickets in about ten minutes with one engineer at the gate. The caveat on all of this is that the xAI numbers are the vendor's own, the ECHOTRIBBLE military program is still a whitepaper, and three incidents in seven days is a week, not yet a trend.
 
-**Handoff cue:** Henry: "If the attack side is autonomous and cheap and the defense side is autonomous and gated, which one are you actually staffing?" → Signal From Outside.
+**Handoff cue:** Henry: "If the attack side is autonomous and cheap and the defense side is autonomous and gated, which one are you actually staffing?" → Hot take.
 
 ### Sources and production notes (not read on air)
 
@@ -149,31 +149,7 @@ The open lane had its best week on paper and its worst week in practice. DeepSee
 
 ---
 
-## Signal From Outside / weekly video review · 22:00–27:00
-
-*Cue: `s-signal-outside`. Video: "Opus 5.5 is proof that we do need smarter models" — Theo, t3.gg, youtube.com/watch?v=3OshsLm3_OQ, 31:13, uploaded 2026-10-20, 201,390 views at verification 2026-10-22. **Manual open only — no autoplay.** Fallback still: `assets/images/sfo-poster-35.jpg`. Cue timestamps are auto-caption derived; re-locate on open. Andy presents. Full provenance: `sources/signal-from-outside.md`.*
-
-**Henry talking points (support — Andy anchors this segment):**
-- 4:05 claim "shipping more code in a week than all of last year" — the operator receipt for the cheap-model thesis, and it sits directly against this week's benchmark cards.
-- 14:43 "we're not very creative … devs are not very good at most things that aren't delivering code" — the most quotable line, and the bridge into the hot take.
-- 27:12 T3os: an OS built for agents rather than for the human — the cleanest live example of designing around a fleet.
-- 29:30 "I was wrong" — the reversal is the segment's landing, not the tooling.
-
-**Andy talk track (verbatim, agenda carrier):** I picked this one because Theo spent a year arguing that we did not need smarter models, and this week he published the reversal on camera with the receipts attached. Open it at zero. He says he started to believe we might not need them to be smarter, that every new model felt like more intelligence than he could use, and then Opus 5.5 changed his mind — not because it was faster or cheaper, but because it was smarter in a way that reached people outside the bleeding edge. At four minutes he gives the number that makes it concrete: he is shipping more code in a week than he shipped in all of last year, and the example is a Frame.io replacement he built in a few days that carries about seventy percent of the functionality of a product Adobe paid one point three billion dollars for. Hold that against our Grid A benchmark cards, because it is the same claim from the other direction — the capability is real and it is being spent. At thirteen minutes comes the part that matters for this show. He argues Opus 5.5 did not move what he was doing much, but it moved people who never coded before deep into building things they do not understand — people paying two hundred dollars a month to port maps from old games into new engines they reverse-engineered. Then at fourteen forty-three the spiciest line in the video: devs are not very creative, and the more creative you think you are, the more likely you are to have bad ideas. He means it structurally — that is why dev teams hire designers and product managers who cannot code. At twenty-seven he shows what that looks like when you take it seriously: T3os, an operating system he is building with none of his own preferences in it, because the customer is his agent fleet, not him. And at twenty-nine thirty he closes on "I was wrong." That is the honest version of the week we just covered: the models got better than the people using them expected, and the people who will benefit most are the ones with the least investment in how software is supposed to be built.
-
-**Handoff cue:** "If the model got smarter than its user, and the user's taste is the bottleneck — what exactly are you still paying engineers for?" → Hot take.
-
-### Sources and production notes (not read on air)
-
-- Video: https://www.youtube.com/watch?v=3OshsLm3_OQ — Theo (t3.gg), uploaded 2026-10-20, 31:13 (1873s), 201,390 views at verification 2026-10-22T15:xxZ. Metadata via yt-dlp; transcript fetched with timestamps (`sources/sfo-theo-transcript.txt`).
-- Poster: `assets/images/sfo-poster-35.jpg`, 1280×720 JPEG, sha256 `de1fecbbfdfa3da2690907bcc30492411a5232a5eb0472ef92f0074eb43ac3d4`.
-- Cues: 0:00 reversal framing · 4:05 shipping volume + Lawn/Frame.io · 13:06 Opus 5.5 and non-coders · 14:43 "not very creative" · 27:12 T3os · 29:30 "I was wrong". Auto-caption timestamps drift — spot-check before air.
-- Selection note: 7-day sweep across Theo, YC, Latent Space, Dwarkesh, OpenAI, Anthropic, AI Engineer. Nearest competitors benched: Dwarkesh's recursive-self-improvement debates (Sep 11/17, outside the 7-day window), Latent Space "High Taste Testers" (Oct 16, 4.5K views — too thin), YC "What If We Stopped Using GPUs" (Oct 2, outside window but the natural pair to Grid B). Theo's is the only one inside the window with a first-person receipt and cue-able beats.
-- Rights: standard YouTube embed/playback; poster held locally, no autoplay.
-
----
-
-## Hot take / debate · 27:00–31:00
+## Hot take / debate · 22:00–26:00
 
 **Do not repeat news:** *Checked.* This take names no launch, no breach and no valuation as its proposition. Its subject is what is scarce once code and tickets are cheap: judgment about what to build, and accountability for what breaks. The news grid supplies premises only.
 
@@ -190,28 +166,28 @@ The open lane had its best week on paper and its worst week in practice. DeepSee
 
 ---
 
-## Sponsor: Heritage Telecom · 31:00–32:30
+## Sponsor: Heritage Telecom · 26:00–27:30
 
 **Andy:** One more company keeps this show on the air. Heritage Telecom — UCaaS and VoIP phone service for businesses that just need their calls to work. Independent, boring reliability, zero telemetry.
 
 ---
 
-## One to watch and close · 32:30–36:00
+## One to watch and close · 27:30–31:00
 
 **Henry talking points:**
 - **The filing:** Anthropic's prospectus is expected to flip public around **October 25**. Every number aired tonight comes from a draft reviewed by wires, not a filed document. Watch whether the $750B commitment ceiling survives contact with the public version.
 - **The promised weights:** Mistral Large 4 is in public preview at ~1T total / 49B active with **weights promised end of October**; MiniMax says M3.1 Flash weights arrive "later." Two dated promises to hold to.
 - **The free window:** DeepSeek's Search and Fetch calls are free inside Claude Code, Codex and the DeepSeek Harness until **November 1**. After that the meter starts at $0.75 per 1,000 — check harness call volume before then.
 
-**Andy fallback talk track (single close — recap ONCE, then out):** So that was the week. We opened with the open lane winning the benchmark and losing the catalogue: MIT weights that beat GPT-5.6 Sol on Terminal-Bench, a MiniMax launch that turned out to be the anonymous model everyone had been testing for free, a federal exclusion order on DeepSeek, and Google Cloud retiring all sixteen of its managed open-model endpoints on the same day it added OpenAI's. We put a number on the closed side of that trade — Anthropic's draft prospectus showing sixteen point three billion of half-year revenue against eighty point seven billion of loss and up to seven hundred and fifty billion in future compute commitments — and then watched three layers of NVIDIA's moat get attacked in one week by Amazon, Google and Tenstorrent. We closed the news on agents: one operator breaking into more than a hundred companies for a few thousand dollars of tokens, a compromised LiteLLM release going straight for the keyring, and xAI's incident bots clearing two hundred and four tickets behind one human approval. Theo gave us the practitioner's version of the same story, and we argued about whether taste or accountability is the thing that is actually scarce. Three things to watch: Anthropic's prospectus around October twenty-fifth, two dated promises of open weights from Mistral and MiniMax, and DeepSeek's free search window closing on the first of November. We are back next Friday, October 30, 4 PM ET. Join the Discord, and bring your benchmarks.
+**Andy fallback talk track (single close — recap ONCE, then out):** So that was the week. We opened with the open lane winning the benchmark and losing the catalogue: MIT weights that beat GPT-5.6 Sol on Terminal-Bench, a MiniMax launch that turned out to be the anonymous model everyone had been testing for free, a federal exclusion order on DeepSeek, and Google Cloud retiring all sixteen of its managed open-model endpoints on the same day it added OpenAI's. We put a number on the closed side of that trade — Anthropic's draft prospectus showing sixteen point three billion of half-year revenue against eighty point seven billion of loss and up to seven hundred and fifty billion in future compute commitments — and then watched three layers of NVIDIA's moat get attacked in one week by Amazon, Google and Tenstorrent. We closed the news on agents: one operator breaking into more than a hundred companies for a few thousand dollars of tokens, a compromised LiteLLM release going straight for the keyring, and xAI's incident bots clearing two hundred and four tickets behind one human approval. We argued about whether taste or accountability is the thing that is actually scarce. Three things to watch: Anthropic's prospectus around October twenty-fifth, two dated promises of open weights from Mistral and MiniMax, and DeepSeek's free search window closing on the first of November. We are back next Friday, October 30, 4 PM ET. Join the Discord, and bring your benchmarks.
 
 ---
 
 ## Build reference (not read on air)
 
-**Runtime math:** 2:00 cold open + 1:30 sponsor + 7:30 Grid A + 7:00 Grid B + 4:00 Grid C + 5:00 anchor + 4:00 hot take + 1:30 sponsor + 3:30 close = **36:00 scripted**, 45:00 hard stop. Grid C is compressed to 4:00 because three cards carry one thesis; the anchor holds at 5:00.
+**Runtime math:** 2:00 cold open + 1:30 sponsor + 7:30 Grid A + 7:00 Grid B + 4:00 Grid C + 4:00 hot take + 1:30 sponsor + 3:30 close = **31:00 scripted**, 45:00 hard stop. Grid C is compressed to 4:00 because three cards carry one thesis. Signal From Outside does not air this week (host drop, Oct 23).
 
-**Cut order:** Grid C (fold the three lines into Grid B's close) → Grid A card A2 → hot-take Andy steel to 90s → anchor cues to 3:30 → both sponsor reads to 45s each. **Signal From Outside is the permanent anchor; the optional rotating block is absent this week, so Grid C is the first cut.**
+**Cut order:** Grid C (fold the three lines into Grid B's close) → Grid A card A2 → hot-take Andy steel to 90s → both sponsor reads to 45s each.
 
 **Sponsor rotation:** Herald Labs leads (slot 1, after cold open), Heritage Telecom closes (slot 2, before close). Inverse of Episode 34's Heritage-first layout, per the weekly rotation rule. Sponsor position is fixed; only the order rotates.
 
