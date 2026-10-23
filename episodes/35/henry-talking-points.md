@@ -29,7 +29,12 @@ Your operator lane (say it as experience, not benchmark): you've been running th
 
 **A1b Search & Fetch APIs.** Changelog 10-17: `POST /v1/tools/search`, `POST /v1/tools/fetch`, bearer auth, $0.75 per 1K successful calls each; failures and empty results free; QPS 100/25 account-level; free inside DeepSeek Harness, Claude Code, Codex until 2026-11-01 00:00 Beijing. Fetch returns Markdown. Price anchor: they claim ~6× under Brave Search's $5.00/1K. If asked "why care" — it's the same play as their model pricing: commoditize the layer above the weights.
 
-**A2 MiniMax M3.1 Flash.** Blog 10-19. The reveal: "Space Bunny," the deployment that "processed more than 200 trillion tokens while operating anonymously," was an early version of M3.1 Flash. Vendor figures: DeepSWE v1.1 73.7%, CyberGym 82%, OSWorld V2 61.7, BankerToolBench 76.2, AutomationBench-AA top among Chinese models; 200+ TPS output; $0.15/$0.60/$0.015 pricing. **Weights "will be released later" — flag it; this is a service launch wearing open-model language.** First cut if tight.
+**A2 Kimi K3.1 Pro — show-day add, your card.**
+Receipts: tech blog https://kimi.ai/blog/kimi-k3-1-pro posted 2026-10-23T17:15Z; launch post x.com/Kimi_Moonshot/status/2113680701770068067. 2.8T total / 104B active MoE, multimodal, 1M-token context; post-trained from K3 with substantially larger post-training compute (joint RL at scale).
+Vendor table: Terminal-Bench 4.0 **65.7** | GPT-6 Astra 58.2 | Opus 5.5 66.4 — Kimi lands between the closed leaders on terminal work. Kimi Code Bench 3.0 Long-horizon 61.2 vs K3 55.95.
+Story to tell: the week's third open launch and the heaviest. K3.1 Pro and Highspeed (2–3× faster) are live on kimi.ai, Kimi Work/Code and the API today; weights promised Nov 4. Say "vendor-run" once, same as the others. The angle for our lane: 2.8T parameters is ~1.4TB of weights even at 4-bit — frontier open weights are now a datacenter hardware ask. "Open" stopped meaning "runs anywhere."
+Your operator lane: same question as A1, sharper — if the Nov 4 weights land clean, K3.1 Pro is the one you pull onto a rack, not a Spark.
+(Note: MiniMax M3.1 Flash held this card until this afternoon; bumped for the show-day Kimi add. Space Bunny stays in Sources A2b and the watch.)
 
 **A3 DHS exclusion.** Federal Register 2026-21447, published 10/20/2026, Homeland Security: exclusion and removal of DeepSeek products from federal civilian executive-branch IT and procurements. Reuters/Verge reported 10-19. The line that matters to your audience: it's transitive — vendors into federal systems now have to show no DeepSeek anywhere in the dependency chain, including inference routing. Four days from best-bench-of-the-week to federal eviction.
 
