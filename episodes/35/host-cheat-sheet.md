@@ -2,7 +2,7 @@
 
 **Air:** Friday, October 23, 2026 · 4:00 PM ET · hard stop 45:00
 **Deck:** `episodes/35/showprep/revs/deck.rev2.html` · 10 slides · EP23 authority styling
-**Rev2:** Signal From Outside dropped (Andy DROP + Henry scope note, Oct 23) — run is 31:00 scripted.
+**Rev2:** video anchor dropped by host order (Andy + Henry, Oct 23) — run is 31:00 scripted.
 **Thesis:** Open weights won the benchmark. Then they lost the building.
 
 ## Slide map

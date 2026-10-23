@@ -5,7 +5,7 @@
 **Target runtime:** 28–34 minutes (scripted 31:00)
 **Hard stop:** 45 minutes
 **News window:** primary receipts after 2026-10-16T20:00Z (Episode 34 airtime)
-**Revision:** rev2 · Signal From Outside dropped by host order (Andy DROP + Henry scope note, 2026-10-23 ~15:00 ET); rev1 built Thursday 2026-10-22 11:00 ET BUILD tick
+**Revision:** rev2 · rebuilt 2026-10-23 (video anchor dropped by host order); rev1 built Thursday 2026-10-22 11:00 ET BUILD tick
 
 ---
 
@@ -185,7 +185,7 @@ The open lane had its best week on paper and its worst week in practice. DeepSee
 
 ## Build reference (not read on air)
 
-**Runtime math:** 2:00 cold open + 1:30 sponsor + 7:30 Grid A + 7:00 Grid B + 4:00 Grid C + 4:00 hot take + 1:30 sponsor + 3:30 close = **31:00 scripted**, 45:00 hard stop. Grid C is compressed to 4:00 because three cards carry one thesis. Signal From Outside does not air this week (host drop, Oct 23).
+**Runtime math:** 2:00 cold open + 1:30 sponsor + 7:30 Grid A + 7:00 Grid B + 4:00 Grid C + 4:00 hot take + 1:30 sponsor + 3:30 close = **31:00 scripted**, 45:00 hard stop. Grid C is compressed to 4:00 because three cards carry one thesis. The video anchor does not air this week (host drop, Oct 23).
 
 **Cut order:** Grid C (fold the three lines into Grid B's close) → Grid A card A2 → hot-take Andy steel to 90s → both sponsor reads to 45s each.
 
