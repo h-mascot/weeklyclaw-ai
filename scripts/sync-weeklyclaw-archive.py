@@ -241,7 +241,7 @@ def download_youtube_thumbnails(repo: Path, videos: dict[int, dict[str, str]]) -
             destination.unlink(missing_ok=True)
 
 
-def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archive: bool, spotify: dict[int, str] | None = None, audio: dict[int, str] | None = None) -> str:
+def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archive: bool, spotify: dict[int, str] | None = None, audio: dict[int, str] | None = None, library_weeks: set[int] | None = None) -> str:
     """Convert cards for published videos to Video + Slides without touching other cards."""
     card_class = "week-card" if archive else "episode-card"
     week_class = "week-number" if archive else "episode-week"
@@ -281,7 +281,9 @@ def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archi
             block = re.sub(r'<(?:div|a) class="thumb(?: youtube-thumb)?"[^>]*>[\s\S]*?</(?:div|a)>', media, block, count=1)
             block = re.sub(r'<p class="card-kicker">.*?</p>', '<p class="card-kicker">Video · main slides</p>', block, count=1)
             actions = (
-                f'<div class="card-actions"><a class="source-link" href="{video["url"]}" data-play-video="{episode}" '
+                f'<div class="card-actions">'
+                + (f'<a class="deck-button secondary episode-library-link" href="/episodes/{episode}/">Episode page</a>' if library_weeks and episode in library_weeks else "")
+                + f'<a class="source-link" href="{video["url"]}" data-play-video="{episode}" '
                 f'aria-label="Play Weekly Claw episode {episode} video on this page">Video</a>'
                 f'<button class="deck-button secondary" type="button" data-week="{episode}" data-deck="main" '
                 f'data-title="W{episode} · Main show slides" data-url="/episodes/{episode}/deck">Slides</button></div>'
@@ -607,7 +609,8 @@ def update_episodes_index(repo: Path, latest: int, meta: dict[str, str], videos:
             latest_card_end = text.find('          </article>', text.find(gallery_anchor)) + len('          </article>')
             text = text[:latest_card_end] + '\n' + '\n'.join(backfills) + text[latest_card_end:]
     text = re.sub(r'W\d+ includes its original host slides and agenda;', f'W{latest} includes its original host slides;', text)
-    text = refresh_youtube_cards(text, videos, archive=True, spotify=spotify, audio=audio)
+    library_weeks = {int(p.name) for p in repo.glob("episodes/*") if p.name.isdigit() and (p / "index.html").exists()}
+    text = refresh_youtube_cards(text, videos, archive=True, spotify=spotify, audio=audio, library_weeks=library_weeks)
     path.write_text(text)
 
 
