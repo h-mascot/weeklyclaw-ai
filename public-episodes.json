@@ -9,8 +9,8 @@
   },
   "coverage": {
     "inventoryStart": 10,
-    "inventoryEnd": 32,
-    "episodeCount": 23,
+    "inventoryEnd": 34,
+    "episodeCount": 25,
     "transcriptPublished": [
       22,
       24,
@@ -36,7 +36,9 @@
       23,
       25,
       26,
-      32
+      32,
+      33,
+      34
     ],
     "publicClipCount": 0,
     "publicationEvidence": {
@@ -146,6 +148,12 @@
       "32": [
         "episodes.json",
         "https://www.youtube.com/watch?v=RRYBhrJiyU8"
+      ],
+      "33": [
+        "episodes.json"
+      ],
+      "34": [
+        "episodes.json"
       ]
     },
     "limitations": [
@@ -41204,6 +41212,76 @@
       "publicationEvidence": [
         "episodes.json",
         "https://www.youtube.com/watch?v=RRYBhrJiyU8"
+      ],
+      "transcript": {
+        "status": "missing",
+        "sourceUrl": null,
+        "language": null,
+        "captionType": null,
+        "sourceHash": null,
+        "possibleCaptionErrors": false,
+        "segments": []
+      },
+      "clips": []
+    },
+    {
+      "week": 33,
+      "title": "Ultrafast Agents, Mistral Large 4 & OpenAI’s Math Release | WeeklyClaw #33",
+      "date": "2026-10-09",
+      "dateLabel": "9 Oct 2026",
+      "url": "https://www.youtube.com/watch?v=eRs_me5w_kI",
+      "videoId": "eRs_me5w_kI",
+      "thumbnailUrl": "/assets/youtube-thumbnails/w33.jpg",
+      "summary": [
+        "Mistral Large 4 previews 1T total / 52B active parameters, with weights promised for the end of October.",
+        "Reflection Beam previews 501B total / 23B active; weights, technical report and model card promised later in the month.",
+        "OpenAI releases 722 math manuscripts with 300 of 719 top-line results formalized; the separate Alman–Williams paper credits Claude with a faster algorithm.",
+        "Microsoft brings hybrid agent execution to Windows 11: Execution Containers reach GA with OpenClaw support.",
+        "ThinkingBox finds two-thirds of 121,680 agent trials failed to leave the right state behind.",
+        "Google announces a shared Gemini workplace agent with persistent cloud execution and coworker identities.",
+        "Nous Research announces a $90M raise and a plan for Hermes for Businesses.",
+        "Anthropic’s usage-policy update prohibits sustained cruel behavior toward models; LMCache discloses an unauthenticated RCE.",
+        "The closing debate asks whether polished consumer UX pulls users away from open, model-agnostic agents."
+      ],
+      "deckUrl": "/episodes/33/deck",
+      "publicationStatus": "public_verified",
+      "publicationEvidence": [
+        "episodes.json"
+      ],
+      "transcript": {
+        "status": "missing",
+        "sourceUrl": null,
+        "language": null,
+        "captionType": null,
+        "sourceHash": null,
+        "possibleCaptionErrors": false,
+        "segments": []
+      },
+      "clips": []
+    },
+    {
+      "week": 34,
+      "title": "Local AI, Voice Models & Building Reliable Agents | Weekly Claw 34",
+      "date": "2026-10-16",
+      "dateLabel": "16 Oct 2026",
+      "url": "https://www.youtube.com/watch?v=lCKEKFkVqQc",
+      "videoId": "lCKEKFkVqQc",
+      "thumbnailUrl": "/assets/youtube-thumbnails/w34.jpg",
+      "summary": [
+        "xAI Grok Voice 3.0 tops the speech-to-speech index at 86.9 while holding price at $0.08/min.",
+        "NVIDIA Nemotron 3.5 Bolt fits a 74B model into 24GB with open weights, training data and recipes.",
+        "StepFun opens Step 5 preview weights: 600B total, 27B active, up to 1M context.",
+        "DOJ charges an OpenAI engineer over a concealed boardroom recording device; charged, not convicted.",
+        "406 scientists including Hinton and Bengio call for default airgapping of cyber-capable models.",
+        "Anthropic posts a $16.8B quarter as its implied valuation swings below $2T ahead of a November IPO window.",
+        "The FT reports NVIDIA in talks to acquire or deepen its investment in Reflection AI, the lab behind Beam.",
+        "Meta ships Muse Spark Open — 816B parameters tuned for two Mac Studios, with gated repos and limited commercial terms.",
+        "The local stack question moves from whether models can run to whether they should."
+      ],
+      "deckUrl": "/episodes/34/deck",
+      "publicationStatus": "public_verified",
+      "publicationEvidence": [
+        "episodes.json"
       ],
       "transcript": {
         "status": "missing",
