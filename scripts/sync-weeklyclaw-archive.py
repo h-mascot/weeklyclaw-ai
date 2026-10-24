@@ -553,7 +553,7 @@ def update_episodes_index(repo: Path, latest: int, meta: dict[str, str], videos:
             <div class="card-copy"><p class="card-kicker">Main slides</p><h3>{html.escape(meta['headline'])}</h3><p>{html.escape(meta['desc'])}</p></div>
             <div class="card-actions"><button class="deck-button" type="button" data-week="{latest}" data-deck="main" data-title="W{latest} · Main show slides" data-url="/episodes/{latest}/deck">Slides</button></div>
           </article>'''
-    existing_card = re.compile(rf'          <article class="week-card"[^>]*>(?:(?!          </article>).)*?<span class="week-number">W{latest}</span>(?:(?!          </article>).)*?          </article>', re.S)
+    existing_card = re.compile(rf'          <article class="week-card"[^>]*>(?:(?!</article>).)*?<span class="week-number">W{latest}</span>(?:(?!</article>).)*?          </article>', re.S)
     existing_match = existing_card.search(text)
     if existing_match:
         existing_block = existing_match.group(0)
@@ -579,6 +579,33 @@ def update_episodes_index(repo: Path, latest: int, meta: dict[str, str], videos:
         text = existing_card.sub(lambda _: card, text, count=1)
     else:
         text = text.replace('        <div class="gallery" id="gallery">\n', '        <div class="gallery" id="gallery">\n' + card + '\n')
+
+    # Backfill cards for any older deck-published episode that has no gallery
+    # card yet (happens when several episodes promote in one sync). Video
+    # wiring is applied by refresh_youtube_cards below when a public video
+    # exists for the episode.
+    gallery_anchor = '        <div class="gallery" id="gallery">\n'
+    if gallery_anchor in text:
+        backfills: list[str] = []
+        for older in sorted(videos, reverse=True):
+            if older == latest:
+                continue
+            if re.search(rf'<span class="week-number">W{older}</span>', text):
+                continue
+            if not (repo / "episodes" / str(older) / "deck.html").exists():
+                continue
+            older_meta = deck_meta(repo, older)
+            backfills.append(
+                f'''          <article class="week-card" data-kind="main">
+            <div class="thumb"><img src="/assets/episode-art-v2/signal-studio.jpg" alt="Cobalt broadcast studio connecting unusual software objects"><span class="week-number">W{older}</span><span class="availability">Main slides</span></div>
+            <div class="card-copy"><p class="card-kicker">Main slides</p><h3>{html.escape(older_meta['headline'])}</h3><p>{html.escape(older_meta['desc'])}</p></div>
+            <div class="card-actions"><button class="deck-button" type="button" data-week="{older}" data-deck="main" data-title="W{older} · Main show slides" data-url="/episodes/{older}/deck">Slides</button></div>
+          </article>'''
+            )
+        if backfills:
+            # Insert newest-first directly under the latest card.
+            latest_card_end = text.find('          </article>', text.find(gallery_anchor)) + len('          </article>')
+            text = text[:latest_card_end] + '\n' + '\n'.join(backfills) + text[latest_card_end:]
     text = re.sub(r'W\d+ includes its original host slides and agenda;', f'W{latest} includes its original host slides;', text)
     text = refresh_youtube_cards(text, videos, archive=True, spotify=spotify, audio=audio)
     path.write_text(text)
