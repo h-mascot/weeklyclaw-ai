@@ -262,7 +262,12 @@ def refresh_youtube_cards(text: str, videos: dict[int, dict[str, str]], *, archi
                 opening_match = article_match.group(0)
                 existing_audio_attr = re.search(r'\sdata-audio-src="[^"]*"', opening_match)
                 opening = re.sub(r'\sdata-(?:week|video-id|spotify-id|audio-src)="[^"]*"', "", opening_match)
-                spotify_attribute = f' data-spotify-id="{spotify[episode]}"' if spotify and episode in spotify else ""
+                existing_spotify_attr = re.search(r'\sdata-spotify-id="[^"]+"', opening_match)
+                spotify_attribute = (
+                    f' data-spotify-id="{spotify[episode]}"'
+                    if spotify and episode in spotify
+                    else existing_spotify_attr.group(0) if existing_spotify_attr else ""
+                )
                 if audio and episode in audio:
                     audio_attribute = f' data-audio-src="{audio[episode]}"'
                 elif existing_audio_attr:

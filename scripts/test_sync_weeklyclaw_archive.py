@@ -99,6 +99,15 @@ class SyncMetadataTests(unittest.TestCase):
         refreshed_no_spotify = SYNC.refresh_youtube_cards(archive_html, videos, archive=True, spotify=None)
         self.assertNotIn("data-spotify-id", refreshed_no_spotify)
 
+        for discovered in (None, {}, {25: "another-episode"}):
+            with self.subTest(discovered=discovered):
+                preserved = SYNC.refresh_youtube_cards(refreshed, videos, archive=True, spotify=discovered)
+                self.assertIn('data-spotify-id="2GywqAyfGJMXafRHRbdIa6"', preserved)
+                self.assertEqual(SYNC.refresh_youtube_cards(preserved, videos, archive=True, spotify=discovered), preserved)
+        replaced = SYNC.refresh_youtube_cards(refreshed, videos, archive=True, spotify={22: "replacement"})
+        self.assertIn('data-spotify-id="replacement"', replaced)
+        self.assertNotIn('data-spotify-id="2GywqAyfGJMXafRHRbdIa6"', replaced)
+
     def test_refresh_youtube_cards_writes_audio_sources(self):
         videos = {22: {"id": "f2yugYwXOBo", "url": "https://www.youtube.com/watch?v=f2yugYwXOBo", "thumbnail": "x"}}
         audio = {22: "https://api.riverside.com/hosting-analytics/media/abc123"}
