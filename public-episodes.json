@@ -9,8 +9,8 @@
   },
   "coverage": {
     "inventoryStart": 10,
-    "inventoryEnd": 34,
-    "episodeCount": 25,
+    "inventoryEnd": 35,
+    "episodeCount": 26,
     "transcriptPublished": [
       22,
       24,
@@ -38,7 +38,8 @@
       26,
       32,
       33,
-      34
+      34,
+      35
     ],
     "publicClipCount": 0,
     "publicationEvidence": {
@@ -153,6 +154,9 @@
         "episodes.json"
       ],
       "34": [
+        "episodes.json"
+      ],
+      "35": [
         "episodes.json"
       ]
     },
@@ -41279,6 +41283,41 @@
         "The local stack question moves from whether models can run to whether they should."
       ],
       "deckUrl": "/episodes/34/deck",
+      "publicationStatus": "public_verified",
+      "publicationEvidence": [
+        "episodes.json"
+      ],
+      "transcript": {
+        "status": "missing",
+        "sourceUrl": null,
+        "language": null,
+        "captionType": null,
+        "sourceHash": null,
+        "possibleCaptionErrors": false,
+        "segments": []
+      },
+      "clips": []
+    },
+    {
+      "week": 35,
+      "title": "DeepSeek’s Big Leap, Kimi K3.1, PHP Security Crisis, Claude Duet | Weekly Claw 35",
+      "date": "2026-10-23",
+      "dateLabel": "23 Oct 2026",
+      "url": "https://www.youtube.com/watch?v=hVBT8guDVf0",
+      "videoId": "hVBT8guDVf0",
+      "thumbnailUrl": "/assets/youtube-thumbnails/w35.jpg",
+      "summary": [
+        "DeepSeek V4.1 Flash leads the discussion of open weights, coding benchmarks and where builders can run them.",
+        "Kimi K3.1 and MiniMax M3.1 Flash add to the week’s open-model competition.",
+        "DHS restrictions on DeepSeek and Google Cloud’s managed open-model retirements put distribution under scrutiny.",
+        "Anthropic’s reported draft prospectus brings revenue, infrastructure costs and future compute commitments into focus.",
+        "Amazon TorchNeuron, Google TorchTPU and Tenstorrent frame the debate about alternatives to NVIDIA’s stack.",
+        "The hosts discuss AI agents used in the Cairn hacking campaign and the economics of automated attacks.",
+        "LiteLLM and Railway security incidents raise questions about protecting inference credentials.",
+        "The PHP security crisis and Claude Duet connect the week’s security news with increasingly proactive agents.",
+        "The closing debate asks how taste, distribution and accountability shape the value of building with AI."
+      ],
+      "deckUrl": "/episodes/35/deck",
       "publicationStatus": "public_verified",
       "publicationEvidence": [
         "episodes.json"
