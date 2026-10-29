@@ -13,10 +13,10 @@ const outputPath = join(root, "public-episodes.json");
 assert.ok(existsSync(outputPath));
 const corpus = JSON.parse(readFileSync(outputPath, "utf8"));
 assert.equal(corpus.schemaVersion, 1);
-assert.equal(corpus.episodes.length, 23);
-assert.deepEqual(corpus.episodes.map((episode) => episode.week), [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]);
+assert.equal(corpus.episodes.length, 26);
+assert.deepEqual(corpus.episodes.map((episode) => episode.week), [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]);
 assert.deepEqual(corpus.coverage.transcriptPublished, [22, 24, 27, 28, 29, 30, 31]);
-assert.deepEqual(corpus.coverage.transcriptMissing, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 25, 26, 32]);
+assert.deepEqual(corpus.coverage.transcriptMissing, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 25, 26, 32, 33, 34, 35]);
 assert.equal(corpus.coverage.publicClipCount, 0);
 assert.ok(corpus.episodes.find((episode) => episode.week === 27).transcript.segments.length > 400);
 assert.ok(corpus.episodes.find((episode) => episode.week === 31).transcript.segments.length > 900);
@@ -54,7 +54,7 @@ try {
   mkdirSync(join(fixtureRoot, "data", "public-transcripts"), { recursive: true });
   mkdirSync(join(fixtureRoot, "data", "public-speaker-annotations"), { recursive: true });
   const fixtureSource = JSON.parse(readFileSync(join(root, "episodes.json"), "utf8"));
-  fixtureSource.episodes = fixtureSource.episodes.map((episode) => ({ ...episode, privatePath: "/Users/enterprise/secret-SHOULD_NOT_LEAK", downloadURL: "https://private.invalid/SHOULD_NOT_LEAK", notes: "SHOULD_NOT_LEAK" }));
+  fixtureSource.episodes = fixtureSource.episodes.filter((episode) => episode.week <= 32).map((episode) => ({ ...episode, privatePath: "/Users/enterprise/secret-SHOULD_NOT_LEAK", downloadURL: "https://private.invalid/SHOULD_NOT_LEAK", notes: "SHOULD_NOT_LEAK" }));
   fixtureSource.episodes.push({ week: 33, title: "Future public catalogue entry", date: null, url: null, videoId: null, summary: ["Published summary pending transcript"] });
   fixtureSource.episodes.push(
     { week: 34, title: "Draft source must not appear", date: null, url: null, videoId: null, summary: ["zxqdraftmarker9341"], status: "draft" },

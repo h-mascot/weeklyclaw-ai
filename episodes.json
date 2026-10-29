@@ -6,6 +6,28 @@
   },
   "episodes": [
     {
+      "week": 35,
+      "title": "DeepSeek’s Big Leap, Kimi K3.1, PHP Security Crisis, Claude Duet | Weekly Claw 35",
+      "date": "2026-10-23",
+      "url": "https://www.youtube.com/watch?v=hVBT8guDVf0",
+      "videoId": "hVBT8guDVf0",
+      "thumbnailUrl": "/assets/youtube-thumbnails/w35.jpg",
+      "durationSeconds": 3805,
+      "status": "published",
+      "visibility": "public",
+      "summary": [
+        "DeepSeek V4.1 Flash leads the discussion of open weights, coding benchmarks and where builders can run them.",
+        "Kimi K3.1 and MiniMax M3.1 Flash add to the week’s open-model competition.",
+        "DHS restrictions on DeepSeek and Google Cloud’s managed open-model retirements put distribution under scrutiny.",
+        "Anthropic’s reported draft prospectus brings revenue, infrastructure costs and future compute commitments into focus.",
+        "Amazon TorchNeuron, Google TorchTPU and Tenstorrent frame the debate about alternatives to NVIDIA’s stack.",
+        "The hosts discuss AI agents used in the Cairn hacking campaign and the economics of automated attacks.",
+        "LiteLLM and Railway security incidents raise questions about protecting inference credentials.",
+        "The PHP security crisis and Claude Duet connect the week’s security news with increasingly proactive agents.",
+        "The closing debate asks how taste, distribution and accountability shape the value of building with AI."
+      ]
+    },
+    {
       "week": 34,
       "title": "Local AI, Voice Models & Building Reliable Agents | Weekly Claw 34",
       "date": "2026-10-16",
