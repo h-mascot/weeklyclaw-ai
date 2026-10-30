@@ -1,4 +1,4 @@
-# Weekly Claw #36 — Host Cheat Sheet (rev1)
+# Weekly Claw #36 — Host Cheat Sheet (rev2)
 
 **Fri Oct 30, 2026 · 16:00 ET · target 37:15 (window 32–38) · HARD STOP 45:00**
 **N=11 slides:** title → cold open → sponsor(heritage) → grid A → grid B → grid C → SFO → hot take → sponsor(herald) → close → sources

@@ -1,4 +1,4 @@
-# Weekly Claw #36 — Agenda (rev1)
+# Weekly Claw #36 — Agenda (rev2)
 
 **Air:** Friday, October 30, 2026 · 16:00 ET (YouTube live) · Target 32–38 min (37:15 scripted), hard stop 45:00
 **Hosts:** Henry Mascot (@HiM) · Andy (@AndyML)
@@ -58,4 +58,4 @@ Wall Street became AI's landlord — and the numbers started lying. One week fus
 - SFO is manual-open only; no autoplay; fallback still = poster; presenter Andy this episode (host override 2026-10-30); no in-video sponsor read in chapters — verify on open.
 - Sponsor rotation this episode: Heritage (slot 1) → Herald Labs (slot 2).
 - Program Topics sheet: Episode 36 tab synced 2026-10-29 (C39–C58, direct API + readback verified).
-- Build trail: `episodes/36/showprep/revs/` rev1; validator authority EP34 rev3; website draft publish on pass.
+- Build trail: `episodes/36/showprep/revs/` rev2; validator authority EP35 rev4; website draft publish on pass.

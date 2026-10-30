@@ -1,4 +1,4 @@
-# Weekly Claw #36 — Henry Section (rev1)
+# Weekly Claw #36 — Henry Section (rev2)
 
 **Air:** Friday, October 30, 2026 · 16:00 ET · You lead: cold open, all three grids, hot take opener. (Andy takes Signal From Outside this episode — host override 2026-10-30.) Target 37:15 (window 32–38).
 
