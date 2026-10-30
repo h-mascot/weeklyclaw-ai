@@ -18,7 +18,7 @@ Wall Street became AI's landlord — and the numbers started lying. One week fus
 | 4:45 | Grid A — The money wall: SPV, Meta raise, S-1, earnings | s-seg-grid-a | Henry |
 | 11:45 | Grid B — The trust cracks: model politics, ARC harness, Carbon #1 | s-seg-grid-b | Henry |
 | 18:15 | Grid C — Agents go professional: Genie 4, red team, token efficiency | s-seg-grid-c | Henry |
-| 24:30 | Signal From Outside: Theo — the hard truth about token spend | s-signal-outside | Henry |
+| 24:30 | Signal From Outside: Jack Wotherspoon (Google DeepMind) — build your own team of managed agents | s-signal-outside | Andy |
 | 30:30 | Hot take: "Stop asking which model is best. Start asking who owns your harness." | s-hot-take | Both |
 | 33:30 | **Sponsor 2: Herald Labs** | s-sponsor-herald | Andy |
 | 34:30 | One to watch: IPO window, Meta ATM, election-through-models | s-watch | Andy |
@@ -38,7 +38,7 @@ Wall Street became AI's landlord — and the numbers started lying. One week fus
 - **C1 · Genie 4** — real-time world model, native audio, mid-sim steering. *(Primary: deepmind.google.)*
 - **C2 · Models that hack** — Anthropic red team: unreleased Claude chains 62 CVEs into Chrome RCE + 4 more chains; Cipher finds 4 EPICS zero-days in 3h49m. *(Primary: anthropic.com + causalsecurity.)*
 - **C3 · Token efficiency as product axis** — Copilot Fusion GA (AA: $5.59 vs $11.42/task); Particle-1 token-frugal RL. *(Primary: github.blog + AA + particle.ai.)*
-- **SFO · Theo — "the hard truth about token spend"** — $132M claim vs ~$800k–$1M arithmetic; 10×/yr cost declines. *(YouTube FHGfSjDGUIw, manual cues.)*
+- **SFO · Jack Wotherspoon (Google DeepMind) — "Build Your Own Team of Managed Agents"** — coding agents in cloud sandboxes from one API call: Interactions API, Antigravity harness, shared environments, uploaded skills + AGENTS.md, secrets proxy, triggers, multi-agent workflows; SEC-filing researcher → quant agent → report demo. *(YouTube Y_p3y6zP5QE, creator-chapter cues, manual open. Presenter Andy — host override 2026-10-30.)*
 
 **Context-only (sources slide, not decked):** Texas AG v. OpenAI/Altman (filed Oct 28).
 
@@ -49,13 +49,13 @@ Wall Street became AI's landlord — and the numbers started lying. One week fus
 - Anthropic red team: vendor-reported, unreleased internal model, authorized research with coordinated disclosure.
 - Meta: ~$60B ATM is planned, not raised.
 - Leaderboards: AA-measured, dated captures.
-- Theo: attributed arithmetic, not audited; auto-caption cues spot-checked before air.
+- Managed agents: vendor demo — Google showing Google; chapter cues spot-checked on open.
 - Genie session length: vendor-briefed. Particle-1: vendor-reported.
 
 ## Production notes
 
 - All grid card thumbnails link their primary receipts; every claim resolves to the sources slide.
-- SFO is manual-open only; no autoplay; fallback still = poster; skip Theo's sponsor read.
+- SFO is manual-open only; no autoplay; fallback still = poster; presenter Andy this episode (host override 2026-10-30); no in-video sponsor read in chapters — verify on open.
 - Sponsor rotation this episode: Heritage (slot 1) → Herald Labs (slot 2).
 - Program Topics sheet: Episode 36 tab synced 2026-10-29 (C39–C58, direct API + readback verified).
 - Build trail: `episodes/36/showprep/revs/` rev1; validator authority EP34 rev3; website draft publish on pass.

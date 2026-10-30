@@ -15,7 +15,7 @@
 | Convovo | "under its methodology: API, forced choice, ~500 races" | "models are liberal/conservative" |
 | Fusion cost | "$5.59 vs $11.42 per task — **AA-measured**" | "GitHub claims half price" |
 | Red team | "**Anthropic reports** an unreleased internal model" | "Claude is hacking people" |
-| Theo | "**Theo's arithmetic**: $132M claim → ~$800k–$1M" | "$132M is real/fake" (undated) |
+| Managed agents | "**one API call**: cloud sandbox, secrets proxy, agent-to-agent handoffs" | "managed agents are secure/production-ready" (naked) |
 | Genie sessions | "~2 minutes — **vendor-briefed**" | "2-minute worlds" (naked) |
 | Carbon rank | "AA v5.0, as of this week: 59.4, #1" | "Gemini is the best model" |
 
@@ -36,24 +36,26 @@
 | C1 Genie 4 | deepmind.google blog + demos | thumb click → LIVE |
 | C2 Red team | anthropic.com research + causalsecurity | thumb + sources |
 | C3 Fusion | github.blog changelog + AA article | thumb + sources |
-| SFO Theo | youtube.com/watch?v=FHGfSjDGUIw | poster + button |
+| SFO Managed Agents | youtube.com/watch?v=Y_p3y6zP5QE | poster + button |
 
 ## Signal From Outside — manual cue card
 
-**Theo · t3.gg · "the hard truth about token spend" · 36:07 · manual open, NO autoplay · skip his sponsor read**
+**Jack Wotherspoon · Google DeepMind (AI Engineer) · "Build Your Own Team of Managed Agents" · 19:43 · manual open, NO autoplay · presenter: ANDY**
 
 | Cue | Beat |
 |---|---|
-| 0:23 | $132M/yr claim — pause, do the math live (≈$63k/hr) |
-| 5:39–5:47 | the extrapolation being critiqued |
-| 7:00 | "order of magnitude and a half off" |
-| 8:28 | even 10× off → ~$100k/month |
-| 11:47 | revised: ~$800k–$1M |
-| 13:31 | 10×/yr, 4.5×/month cost declines |
-| 15:11 | benchmark-saturation caveat |
-| ~16:00 | handoff back to studio |
+| 0:54 | why run agents in the cloud |
+| 2:13 | DIY vs one API call — count the weekends |
+| 3:26 | the Interactions API |
+| 5:22 | building blocks: harness, env, skills, creds, triggers |
+| 7:02 | model choice incl. Gemini 4 Argon |
+| 12:21 | secrets stay OUT of the sandbox (proxy) |
+| 13:37 | multi-agent workflows |
+| 14:32 | demo: SEC research → quant → report |
+| 16:34 | managed agents inside an app |
+| ~19:00 | handoff to Henry (hot take) |
 
-Auto-caption timestamps — re-locate each cue on the day. Fallback: poster still + transcript quotes (they're in the speaker notes).
+Creator-published chapter timestamps — re-locate each cue on the day. Fallback: poster still + chapter beats (they're in the speaker notes).
 
 ## Timing checkpoints
 
@@ -63,18 +65,18 @@ Auto-caption timestamps — re-locate each cue on the day. Fallback: poster stil
 | 11:45 | grid A done | cut A4 color, keep numbers |
 | 18:15 | grid B done | B3 to 90s (score + lease line) |
 | 24:30 | grid C done | C1 to 60s (audio + steering) |
-| 30:30 | SFO done | drop 13:31 + 15:11 cues |
+| 30:30 | SFO done | drop 7:02 + 16:34 cues |
 | 33:30 | hot take done | Andy counter to 30s |
 | 37:15 | recap done | sources scroll during music |
 
 **Hard stop 45:00.** If at 40:00 the hot take hasn't started, Henry takes 60s, Andy 30s, jump to close.
 
 ## Roles
-- **Henry:** cold open · all grids · SFO · hot-take opener
-- **Andy:** open · both sponsors · hot-take counter · close + THE recap (one recap, no recap of the recap)
+- **Henry:** cold open · all grids · hot-take opener
+- **Andy:** open · both sponsors · SFO · hot-take counter · close + THE recap (one recap, no recap of the recap)
 - Producer: drop Discord link at open; pin sources slide at outro; clip timestamps to chat per segment.
 
 ## Landmines
-- Meta ATM ≠ raised. S-1 loss = mostly paper. 99.9% needs its harness. Convovo needs its caveats. Red team = "Anthropic reports, unreleased model, authorized research." Theo = attributed arithmetic. Leaderboards = dated. Genie 2-min = vendor-briefed. Particle-1 = vendor-reported.
+- Meta ATM ≠ raised. S-1 loss = mostly paper. 99.9% needs its harness. Convovo needs its caveats. Red team = "Anthropic reports, unreleased model, authorized research." Managed agents = vendor demo, Google showing Google. Leaderboards = dated. Genie 2-min = vendor-briefed. Particle-1 = vendor-reported.
 - Texas AG v. OpenAI is on the sources slide as context only — not a deck story. If chat asks: "suit filed Oct 28 over ChatGPT safety claims; link's on the slide, we'll cover it properly next week."
-- Sponsor isolation: Theo's in-video sponsor read is NOT our content.
+- Sponsor isolation: no in-video sponsor read expected (conference talk) — if one appears on open, skip it; it is NOT our content.

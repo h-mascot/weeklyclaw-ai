@@ -1,6 +1,6 @@
 # Weekly Claw #36 — Henry Section (rev1)
 
-**Air:** Friday, October 30, 2026 · 16:00 ET · You lead: cold open, all three grids, Signal From Outside, hot take opener. Target 37:15 (window 32–38).
+**Air:** Friday, October 30, 2026 · 16:00 ET · You lead: cold open, all three grids, hot take opener. (Andy takes Signal From Outside this episode — host override 2026-10-30.) Target 37:15 (window 32–38).
 
 **Your thesis in one line:** Wall Street became AI's landlord — and every number in AI became an argument.
 
@@ -52,22 +52,11 @@ Five hooks, one breath each. The grids do the unpacking — resist previewing de
 
 ---
 
-## Signal From Outside (25:45–31:45)
-
-Theo (t3.gg), "the hard truth about token spend," Oct 27, 36:07. Manual open — no autoplay; skip his sponsor read. Cues from auto-captions — spot-check on the day.
-
-- **0:23** play the $132M claim; pause and do the math live: $132M/yr ÷ 52 weeks ÷ 40 hrs ≈ $63k/hour. "Every intuition you have should be firing."
-- **7:00** Theo's verdict: "order of magnitude and a half off." **11:47** revised: ~$800k–$1M.
-- **8:28** — even 10× off, ~$100k/month for one engineer. Sit with that: the correction is still enormous.
-- **13:31** — intelligence ~10× cheaper/year, "4.5× per month"; 56¢ → 0.45¢ tasks; GLM-5.3-Flash at $0.016 as his budget pick.
-- **15:11** — his benchmark-saturation caveat: give him credit for honesty.
-- Your synthesis — connect to Grid A: "Wall Street is securitizing the supply of intelligence while the price of intelligence collapses. Both are true: absolute spend up, unit cost down. The squeeze is on everyone in the middle."
-
-Handoff: "Andy's hot take is literally about this."
+**Handoff at 24:30 — Signal From Outside goes to Andy this episode.** Throw: "Andy takes this week's signal — Google just tried to make his side of this argument obsolete."
 
 ## Hot take (31:45–34:45)
 
-You open (60s): "Stop asking which model is best. Start asking who owns your harness." Evidence already on the board: ARC's 37 points (B2) + GitHub shipping "stop choosing models" to millions (C3). The winners own evals + routing; waiting for a leaderboard is renting your judgment.
+You open (60s): "Stop asking which model is best. Start asking who owns your harness." Evidence already on the board: ARC’s 37 points (B2) + GitHub shipping "stop choosing models" to millions (C3) + DeepMind offering to rent you the entire harness (Andy’s signal). The winners own evals + routing; waiting for a leaderboard is renting your judgment.
 Let Andy push back (he'll argue router-renting lets vendor incentives become your architecture). Close (30s): the model layer is commoditizing — durable advantage moves up the stack to orchestration, evals, taste.
 State your falsifier once, cleanly: "Show me one vendor router that beat a competent in-house eval loop for a full year on cost AND quality — I'll change my tune."
 
@@ -77,5 +66,5 @@ State your falsifier once, cleanly: "Show me one vendor router that beat a compe
 - "Anthropic **reports**…" — red team, internal model
 - "**AA-measured**…" — leaderboards, Fusion costs
 - "Google **says**…" — Carbon claims
-- "**Theo's arithmetic**…" — SFO numbers, not audited
+- "**Google’s demo**…" — SFO receipts, vendor-shown (Andy presents)
 - "vendor-briefed" (Genie sessions) · "planned, not raised" (Meta ATM) · "under its methodology" (Convovo)
