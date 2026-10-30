@@ -30,6 +30,11 @@ const required = [
   'episodes/35/agenda.md',
   'episodes/35/agenda/index.html',
   'episodes/35/deck.html',
+  'episodes/36/deck.html',
+  'episodes/36/assets/videos/heritage-telecom-ad.mp4',
+  'episodes/36/assets/videos/herald-labs-ad.mp4',
+  'episodes/36/assets/images/heritage-telecom-ad-poster.jpg',
+  'episodes/36/assets/images/herald-labs-ad-poster.jpg',
   'episodes/34/deck.html',
   'episodes/34/agenda.md',
   'episodes/34/agenda/index.html',
@@ -541,4 +546,14 @@ const vj = JSON.parse(readFileSync(new URL('../vercel.json', import.meta.url), '
 if (!vj.redirects.some((r) => r.has && r.has.some((h) => h.value === 'www.weeklyclaw.ai'))) {
   console.error('vercel.json missing www.weeklyclaw.ai redirect');
   process.exit(1);
+}
+
+// Episode 36 sponsor media must remain embedded in the sponsor slots.
+const ep36Deck = readFileSync(new URL('../episodes/36/deck.html', import.meta.url), 'utf8');
+for (const [slot, slug, name] of [['heritage', 'heritage-telecom', 'Heritage Telecom'], ['herald', 'herald-labs', 'The Herald Labs']]) {
+  const slide = ep36Deck.split(`id="s-sponsor-${slot}"`)[1]?.split('\n<div class="slide')[0] ?? '';
+  for (const needle of ['<video controls preload="metadata" playsinline', `aria-label="${name} sponsor video"`, `assets/videos/${slug}-ad.mp4`, `assets/images/${slug}-ad-poster.jpg`]) {
+    if (!slide.includes(needle)) throw new Error(`Missing Episode 36 sponsor embed: ${needle}`);
+  }
+  if (/\bautoplay\b/.test(slide)) throw new Error('Sponsor videos must start manually');
 }

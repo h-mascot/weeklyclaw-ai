@@ -110,6 +110,10 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
 .sponsor-lockup.herald span{color:#11131d;font-size:2rem;font-weight:850;letter-spacing:-.03em;}
 .sponsor-lockup.heritage{width:min(660px,80vw);padding:14px 24px;border-radius:14px;}
 .sponsor-lockup.heritage img{width:100%;max-height:150px;}
+.sponsor-video .content{gap:10px;}
+.sponsor-video video{display:block;width:min(100%,calc((100vh - 210px)*16/9));max-height:calc(100vh - 210px);aspect-ratio:16/9;object-fit:contain;background:#000;border-radius:12px;box-shadow:0 12px 34px rgba(36,32,28,.16);}
+.sponsor-video .sponsor-footer{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:.8rem;}
+.sponsor-video .sponsor-footer a{color:#216655;}
 .social-cta{display:flex;align-items:center;justify-content:center;gap:26px;width:100%;max-width:1040px;}
 .social-links{text-align:center;min-width:0;}
 .discord-qr{display:grid;grid-template-columns:112px auto;align-items:center;gap:14px;padding:10px 16px 10px 10px;border:2px solid var(--border-subtle);border-radius:14px;background:#fffdf8;box-shadow:0 12px 30px rgba(79,64,49,.10);color:var(--text-primary);text-decoration:none;text-align:left;flex-shrink:0;}
@@ -230,15 +234,15 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
   </div>
 </div>
 
-<div class="slide" id="s-sponsor-heritage">
+<div class="slide sponsor-video" id="s-sponsor-heritage">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #36</div><div class="slide-tag">SPONSOR</div>
-  <div class="glow-orb orb-green" style="width:420px;height:420px;bottom:-120px;right:-100px;"></div>
   <div class="content">
-    <div class="part-label">Brought to you by</div>
-    <div class="sponsor-lockup heritage"><img class="sponsor-logo" src="assets/sponsors/heritage-telecom-logo-horizontal-1200.jpg" alt="Heritage Telecom logo"></div>
-    <p class="subtitle text-center mt-2" style="max-width:820px;">Business phone systems, texting, and reliable support from real people.</p>
-    <div class="quote-block mt-3">Upgrade your business communications at heritagetel.com.</div>
-    <div class="mt-2 pill green">heritagetel.com</div>
+    <div class="part-label">Brought to you by Heritage Telecom</div>
+    <video controls preload="metadata" playsinline poster="assets/images/heritage-telecom-ad-poster.jpg" aria-label="Heritage Telecom sponsor video">
+      <source src="assets/videos/heritage-telecom-ad.mp4" type="video/mp4">
+      Your browser does not support embedded video. <a href="assets/videos/heritage-telecom-ad.mp4">Download the Heritage Telecom ad</a>.
+    </video>
+    <div class="sponsor-footer"><a href="https://heritagetel.com/" target="_blank" rel="noopener">heritagetel.com</a><a href="assets/videos/heritage-telecom-ad.mp4" download>Download video</a></div>
   </div>
 </div>
 
@@ -499,15 +503,15 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
   </div>
 </div>
 
-<div class="slide" id="s-sponsor-herald">
+<div class="slide sponsor-video" id="s-sponsor-herald">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #36</div><div class="slide-tag">SPONSOR</div>
-  <div class="glow-orb orb-green" style="width:420px;height:420px;bottom:-120px;right:-100px;"></div>
   <div class="content">
-    <div class="part-label">Brought to you by</div>
-    <div class="sponsor-lockup herald"><img class="sponsor-logo" src="assets/sponsors/herald-labs-icon.svg" alt="Herald Labs logo"></div>
-    <p class="subtitle text-center mt-2" style="max-width:820px;">An applied AI product lab where humans and agents build together. Entity is mission control for agent teams. Hacker houses worldwide.</p>
-    <div class="quote-block mt-3">Build with humans. Ship with agents.</div>
-    <div class="mt-2 pill green">heraldlab.si</div>
+    <div class="part-label">Brought to you by The Herald Labs</div>
+    <video controls preload="metadata" playsinline poster="assets/images/herald-labs-ad-poster.jpg" aria-label="The Herald Labs sponsor video">
+      <source src="assets/videos/herald-labs-ad.mp4" type="video/mp4">
+      Your browser does not support embedded video. <a href="assets/videos/herald-labs-ad.mp4">Download The Herald Labs ad</a>.
+    </video>
+    <div class="sponsor-footer"><a href="https://heraldlab.si/" target="_blank" rel="noopener">heraldlab.si</a><a href="assets/videos/herald-labs-ad.mp4" download>Download video</a></div>
   </div>
 </div>
 
@@ -674,6 +678,7 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
   }
   progressBar.style.width = (1 / total * 100) + '%';
   document.addEventListener('keydown', (e) => {
+    if (e.target instanceof Element && e.target.closest('video, audio, input, textarea, select, button, a, [contenteditable]')) return;
     if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
     else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(current - 1); }
     else if (e.key === 'Home') { e.preventDefault(); go(0); }
@@ -685,6 +690,7 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
   });
   let wheelLock = false;
   document.addEventListener('wheel', (e) => {
+    if (e.target instanceof Element && e.target.closest('video, audio')) return;
     e.preventDefault();
     if (wheelLock) return;
     const delta = e.deltaY || e.deltaX;
@@ -695,6 +701,7 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
   let touchX = 0, touchY = 0;
   document.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; touchY = e.touches[0].clientY; }, { passive: true });
   document.addEventListener('touchend', (e) => {
+    if (e.target instanceof Element && e.target.closest('video, audio')) return;
     const dx = e.changedTouches[0].clientX - touchX;
     const dy = e.changedTouches[0].clientY - touchY;
     if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? current + 1 : current - 1);
