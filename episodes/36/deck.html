@@ -127,26 +127,36 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
 </style>
 
 <style>
-#s-seg-grid-a .content,#s-seg-grid-b .content{height:100%;max-height:100%;}
-#s-seg-grid-a .content > div:first-child,#s-seg-grid-b .content > div:first-child{flex:0 0 auto;}
-.story-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:18px;flex:1;min-height:0;margin-top:16px;overflow:hidden;}
-.story-card{display:flex;flex-direction:column;background:rgba(255,255,255,.03);border:1.5px solid var(--border-subtle);border-radius:16px;overflow:hidden;min-height:0;transition:border-color .2s;}
-.story-card:hover{border-color:var(--claw-red);}
-.story-card .thumb{flex:1 1 0;min-height:0;overflow:hidden;position:relative;background:#0d1117;}
-.story-card a.thumb{position:relative;}
-.story-card .thumb img,.story-card .thumb video{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
-.story-card .meta{padding:12px 16px 14px;display:flex;flex-direction:column;gap:4px;min-height:0;}
-.story-card .meta h3{font-size:1.06rem;line-height:1.25;margin:0;color:var(--text-primary);}
-.story-card .meta p{font-size:.82rem;line-height:1.35;margin:0;color:var(--text-secondary);}
-.story-card .meta a{font-family:var(--mono);font-size:.72rem;color:#225e6a;text-decoration:none;margin-top:2px;}
-
+.slide.news{padding:56px 64px 66px;}
+.slide.news .content{max-width:1440px;height:100%;justify-content:center;align-items:stretch;}
+.news-head{display:flex;flex-direction:column;align-items:flex-start;padding:0 4px;}
+.news-head .part-label{margin-bottom:6px;}
+.news-head h2{font-size:2.5rem;line-height:1;margin:0;text-align:left;}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:28px;width:100%;margin-top:20px;}
+.story{display:flex;flex-direction:column;min-width:0;background:var(--bg-card);border:2px solid var(--border-subtle);border-radius:18px;padding:10px;box-shadow:inset 0 0 0 6px var(--site-paper),0 12px 28px rgba(79,64,49,.08);transition:border-color .2s;}
+.story:hover{border-color:var(--claw-red);}
+.story .media{position:relative;display:block;aspect-ratio:16/10;width:100%;border-radius:12px;overflow:hidden;background:#fff;border:1px solid var(--border-subtle);}
+.story .media img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;}
+.story .media.contain{background:#f6f3ec;}
+.story .media.contain img{object-fit:contain;object-position:center;}
+.story .media.video{background:#14110e;}
+.story .media.video .kind{right:auto;left:10px;}
+.story .media video{display:block;width:100%;height:100%;object-fit:contain;background:#14110e;}
+.story .media .kind{position:absolute;right:10px;top:10px;z-index:2;font-family:var(--mono);font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:3px;background:rgba(36,32,28,.84);color:var(--site-paper);pointer-events:none;}
+.story .meta{display:flex;flex-direction:column;gap:6px;padding:14px 10px 6px;}
+.story .meta h3{font-size:1.55rem;line-height:1.06;margin:0;color:var(--text-primary);}
+.story .meta p{font-size:1.06rem;line-height:1.35;margin:0;color:var(--text-secondary);}
+.story .meta .src-link{font-family:var(--mono);font-size:.72rem;font-weight:600;color:#225e6a;text-decoration:none;margin-top:2px;}
+.story .meta .src-link:hover{text-decoration:underline;}
 #s-hot-take .receipts-img{width:100%;max-width:1080px;border-radius:14px;border:2px solid var(--border-subtle);box-shadow:0 12px 30px rgba(79,64,49,.10);}
-
-#s-sources .card{padding:12px 16px;}
-#s-sources .tag{font-size:.58rem;padding:2px 8px;}
-#s-sources .src-links{gap:3px 8px;margin-top:4px;}
-#s-sources .mt-2{margin-top:7px;}
-#s-sources .src-note{font-size:.54rem;line-height:1.2;}
+#s-sources .content{max-width:1440px;}
+#s-sources h2{margin-bottom:4px;}
+.src-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;width:100%;}
+#s-sources .card{padding:9px 13px;border-radius:12px;box-shadow:inset 0 0 0 4px var(--site-paper);}
+#s-sources .tag{font-size:.56rem;padding:2px 7px;margin-bottom:4px;}
+#s-sources .card p{font-size:.86rem;line-height:1.3;}
+#s-sources .card a{color:#225e6a;text-decoration:none;border-bottom:1px dashed #82b8c2;}
+#s-sources .src-note{font-size:.6rem;line-height:1.25;text-align:center;}
 </style>
 <script defer src="https://analytics.henrymascot.com/script.js" data-website-id="d3a6d170-e9f1-4301-a801-50ce6aadcaf1" data-tag="WeeklyClaw"></script></head>
 <body>
@@ -161,15 +171,14 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
 </svg>
 
 <div class="progress-bar" id="progressBar"></div>
-<div class="slide-counter"><span id="slideNum">1</span> / <span id="slideTotal">11</span></div>
+<div class="slide-counter"><span id="slideNum">1</span> / <span id="slideTotal">15</span></div>
 <div class="nav-dots" id="navDots"></div>
 <div class="kb-hint"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> navigate &middot; scroll / swipe &middot; <kbd>F</kbd> fullscreen</div>
 <div class="slide-container">
 
-<!-- EP36 content slides — spliced by build_deck.py into the EP35 rev4 authority chrome.
-     Slide order: title, cold open, sponsor-heritage (slot 1 — rotation inverted vs EP35),
-     grid A (3 cards), grid B (3 cards), grid C (3 cards), signal-from-outside (anchor),
-     hot take, sponsor-herald (slot 2), close, sources. 11 slides. -->
+<!-- EP36 rev3 content slides — spliced by qa/make_rev3.py into the rev2 chrome (EP35 rev4 authority lineage).
+     Slide order: title, cold open, sponsor-heritage (slot 1), seven two-story news slides, signal-from-outside (anchor),
+     hot take, sponsor-herald (slot 2), close, sources. 15 slides. -->
 
 <div class="slide active" id="s-title">
   <svg class="claw-bg" style="top:2%;right:-4%;"><use href="#weeklyclaw-logo"/></svg>
@@ -181,11 +190,11 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
     <h1 style="font-size:4.7rem;text-align:center;margin-bottom:6px;"><span class="gradient-text">Weekly Claw</span></h1>
     <div class="gradient-line wide"></div>
     <p class="subtitle text-center mt-2" style="max-width:980px;">
-      Wall Street became AI&rsquo;s landlord this week. BofA, Blackstone, Citi and Morgan Stanley formed a $63B SPV to buy Broadcom XPUs and lease them to Anthropic; SpaceX signed a ~$40B GPU master lease with Apollo; Meta filed ~$95B of stock and convertible paper the same morning as its Q3 beat; and Anthropic&rsquo;s public S-1 showed $16.3B of half-year revenue against an $80.7B paper loss. Then the receipts got awkward: Grok and GPT picked opposite parties in ~500 midterm races, ARC Prize showed GPT-6 Astra&rsquo;s 99.9% came from the vendor harness, and an unreleased Claude chained real zero-days across Chrome, Safari, Android, Windows and Linux.
+      Wall Street became AI&rsquo;s landlord: a $63B bank SPV leasing Broadcom XPUs to Anthropic, a ~$40B SpaceX GPU lease, and ~$95B of Meta paper. Then the receipts got awkward &mdash; models picked opposite parties, ARC showed a 37-point harness swing, two labs claimed to have refuted a famous complexity conjecture, and DeepMind shipped a world you can steer in real time.
     </p>
     <div class="mt-3" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
       <span class="pill blue">Hosts: @AndyML &middot; @HiM</span>
-      <span class="pill green">~34 min &middot; three grids &middot; one video anchor</span>
+      <span class="pill green">~37 min &middot; 14 stories &middot; one video anchor</span>
     </div>
     <div class="mt-3 logo-row">
       <span class="pill">Sponsored by</span>
@@ -203,20 +212,20 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
     <div class="part-label">Cold open &middot; the frame</div>
     <h2 class="text-center">Wall Street became AI&rsquo;s landlord. <span class="gradient-text">And the numbers started lying.</span></h2>
     <div class="gradient-line"></div>
-    <p class="subtitle text-center mt-1" style="max-width:980px;">One week: banks now originate compute the way they originate mortgages, models vote, benchmarks bend with the harness, and agents ship real zero-days &mdash; while Google quietly retook the independent #1. The money story and the trust story are the same story: when the bill is this big, every number becomes an argument.</p>
+    <p class="subtitle text-center mt-1" style="max-width:980px;">One week: banks originate compute like mortgages, models vote, benchmarks bend with the harness, labs announce proofs before the referees arrive &mdash; and Google retook the independent #1. When the bill is this big, every number becomes an argument.</p>
     <div class="mt-3 arc-wrap">
       <div class="arc-step now"><div class="arc-num">1</div><div class="arc-label">The financing wall</div></div>
       <div class="arc-step"><div class="arc-num">2</div><div class="arc-label">The trust cracks</div></div>
-      <div class="arc-step"><div class="arc-num">3</div><div class="arc-label">Agents go pro</div></div>
-      <div class="arc-step"><div class="arc-num">4</div><div class="arc-label">Token economics</div></div>
+      <div class="arc-step"><div class="arc-num">3</div><div class="arc-label">Models do research</div></div>
+      <div class="arc-step"><div class="arc-num">4</div><div class="arc-label">Agents go pro</div></div>
       <div class="arc-step"><div class="arc-num">5</div><div class="arc-label">One to watch</div></div>
     </div>
     <div class="mt-3" style="width:100%;display:flex;flex-direction:column;align-items:center;">
-      <div class="hook"><span class="hook-num gradient-text">&#127974;</span><span class="hook-text">Four banks formed a <span class="orange">$63B SPV</span> to buy Broadcom XPUs and lease them to Anthropic &mdash; Broadcom guarantees the residual. SpaceX added a <span class="orange">~$40B</span> GPU lease with Apollo the same week.</span></div>
-      <div class="hook"><span class="hook-num gradient-text">&#128176;</span><span class="hook-text">Meta filed <span class="orange">~$95B</span> of stock and mandatory convertible paper hours after its Q3 beat; Alphabet&rsquo;s quarterly free cash flow went <span class="orange">negative</span> for the first time this cycle on $51.4B of capex.</span></div>
-      <div class="hook"><span class="hook-num gradient-text">&#128202;</span><span class="hook-text">Anthropic&rsquo;s S-1: <span class="orange">$16.3B</span> H1 revenue against an <span class="orange">$80.7B</span> net loss &mdash; but ~$72.4B of it is non-cash fair-value accounting, with $112.4B cash on hand.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#127974;</span><span class="hook-text">Four banks formed a <span class="orange">$63B SPV</span> to buy Broadcom XPUs and lease them to Anthropic &mdash; Broadcom backs the residual. SpaceX added a <span class="orange">~$40B</span> GPU lease with Apollo.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#128176;</span><span class="hook-text">Meta filed <span class="orange">~$95B</span> of stock and convertible paper hours after its Q3 beat; Alphabet&rsquo;s free cash flow went <span class="orange">negative</span> on $51.4B of capex.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#129518;</span><span class="hook-text">OpenAI says its system <span class="orange">proved the Exponential Time Hypothesis false</span>; Anthropic claims its own refutation. Outside experts are still checking.</span></div>
       <div class="hook"><span class="hook-num gradient-text">&#127968;</span><span class="hook-text">Forced to pick in ~500 races, Grok chose Republicans <span class="orange">92%</span> of the time and GPT chose Democrats <span class="orange">97%</span> &mdash; agreement under 10%.</span></div>
-      <div class="hook"><span class="hook-num gradient-text">&#128736;</span><span class="hook-text">ARC Prize: GPT-6 Astra&rsquo;s <span class="orange">99.9%</span> came from OpenAI&rsquo;s own provider adapter; the neutral harness says <span class="orange">62.7%</span>. An unreleased Claude chained real 0-days across five platforms.</span></div>
+      <div class="hook"><span class="hook-num gradient-text">&#128736;</span><span class="hook-text">ARC Prize: GPT-6 Astra&rsquo;s <span class="orange">99.9%</span> came from OpenAI&rsquo;s own provider adapter; the neutral harness says <span class="orange">62.7%</span>.</span></div>
     </div>
   </div>
 </div>
@@ -233,86 +242,210 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
   </div>
 </div>
 
-<div class="slide" id="s-seg-grid-a">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #36</div><div class="slide-tag">WHAT HAPPENED THIS WEEK &middot; PART 1</div>
+<div class="slide news" id="s-seg-grid-a">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #36</div><div class="slide-tag">WHAT HAPPENED THIS WEEK &middot; 1 / 7</div>
   <div class="glow-orb orb-green" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
   <div class="content">
-    <div>
-      <div class="part-label">What happened this week &middot; part 1</div>
-      <h2>The money wall: <span class="gradient-text">Wall Street invents AI vendor finance.</span></h2>
-      <div class="gradient-line"></div>
-      <p class="subtitle mt-1" style="max-width:1000px;">AI capex outgrew balance sheets in one week: a $63B bank SPV, the largest GPU lease ever, ~$95B of Meta equity paper, and an S-1 that prices the whole era. Each card links its primary receipt.</p>
+    <div class="news-head">
+      <div class="part-label">What happened this week &middot; the money wall</div>
+      <h2>Wall Street <span class="gradient-text">becomes AI&rsquo;s landlord.</span></h2>
     </div>
-    <div class="story-grid">
-      <div class="story-card">
-        <a class="thumb" href="https://www.broadcom.com/company/news/financial-releases/64786" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/c52-broadcom-spv.png" alt="Broadcom financial release: 'Bank of America, Blackstone, Citi and Morgan Stanley Announce Landmark $63 Billion Financing Structure to Enable AI Compute Capacity in Partnership with Broadcom'" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>BofA, Blackstone, Citi and Morgan Stanley form a $63B SPV to buy XPUs &mdash; and lease them to Anthropic.</h3><p>Announced Oct 26: an SPV buys Broadcom XPUs and networking, leases them to Anthropic under the previously announced Broadcom&ndash;Anthropic compute agreement. BofA/Citi/Morgan Stanley arrange the first lien; Blackstone is sole committed second lien; Broadcom provides residual-value support equal to the first lien. Banks now originate compute like mortgages &mdash; and the chipmaker backstops the lease.</p><a href="https://www.broadcom.com/company/news/financial-releases/64786" target="_blank" rel="noopener">&#9654; LIVE &middot; broadcom.com &middot; PRIMARY RELEASE</a></div>
+    <div class="pair">
+      <div class="story">
+        <a class="media contain" href="https://www.broadcom.com/company/news/financial-releases/64786" target="_blank" rel="noopener"><img src="assets/images/artifacts/c52-broadcom-spv-r3.png" alt="Broadcom financial release, Oct 26, 2026: Bank of America, Blackstone, Citi and Morgan Stanley announce landmark $63 billion financing structure to enable AI compute capacity in partnership with Broadcom"><span class="kind">Primary release &middot; Oct 26</span></a>
+        <div class="meta">
+          <h3>Four banks form a $63B SPV to buy Broadcom XPUs and lease them to Anthropic.</h3>
+          <p>Broadcom backs the residual value. SpaceX signed a ~$40B GPU lease with Apollo the same week.</p>
+          <a class="src-link" href="https://www.broadcom.com/company/news/financial-releases/64786" target="_blank" rel="noopener">&#9654; LIVE &middot; broadcom.com &middot; SpaceX IR</a>
+        </div>
       </div>
-      <div class="story-card">
-        <a class="thumb" href="https://www.sec.gov/Archives/edgar/data/1326801/000119312526431036/d116268dfwp.htm" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/c49-meta-pricing-pr.png" alt="Meta pricing press release: concurrent offerings of $22.5B Class A common stock and depositary shares of Series A Mandatory Convertible Preferred Stock" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>Meta goes to the equity market for AI: ~$95B filed the same morning as its Q3 beat.</h3><p>Oct 26, first equity raise since 2013: $22.5B of Class A stock via forward sales + ~$12.5B of mandatory convertible preferred (Nasdaq &ldquo;METAM&rdquo;, auto-convert Aug 2029) &mdash; and a planned ~$60B ATM once new Class C stock trades. $35B underwritten now; the ATM is future, not raised. Purpose: AI infrastructure and &ldquo;personal superintelligence.&rdquo; Q3 revenue $64.6B, +26%.</p><a href="https://www.sec.gov/Archives/edgar/data/1326801/000119312526431040/d94886d424b5.htm" target="_blank" rel="noopener">&#9654; LIVE &middot; SEC 424B5 &middot; PRIMARY FILING</a></div>
-      </div>
-      <div class="story-card">
-        <a class="thumb" href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/c51-anthropic-s1-page1.jpg" alt="Anthropic PBC Form S-1 registration statement cover page, filed October 26, 2026" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>Anthropic files its S-1: $16.3B H1 revenue, an $80.7B loss that is mostly paper, and $112.4B cash.</h3><p>Filed Oct 26, Nasdaq ticker ANT: revenue $41M &rarr; $386M &rarr; $4.6B &rarr; $16.3B H1-2026; H1 net loss $80.7B of which ~$72.4B is non-cash fair-value changes; operating loss $693M; compute/infra expense ~$8.9B; $141.1B aggregate capital raised; $10.8B in remaining performance obligations (~75% expected within 12 months). The bill is real, the headline loss is accounting.</p><a href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm" target="_blank" rel="noopener">&#9654; LIVE &middot; SEC S-1 &middot; PRIMARY FILING</a></div>
-      </div>
-      <div class="story-card">
-        <a class="thumb" href="https://s206.q4cdn.com/479360582/files/doc_financials/2026/q3/2026q3-alphabet-earnings-release.pdf" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/c56-alphabet-q3.png" alt="Alphabet Q3 2026 earnings release: revenue $127.6B up 25%, Google Cloud revenue $30.7B up 103%" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>The Q3 earnings wall: Cloud doubles, capex bites, and Microsoft now books $10B a quarter from OpenAI.</h3><p>Alphabet Q3: revenue $127.6B (+25%), Google Cloud $30.7B (+103%, TPU sales &ldquo;a meaningful contributor&rdquo;), Cloud operating income $11.1B &mdash; but $51.4B of quarterly capex drove free cash flow to <strong>&minus;$9.1B</strong>, first negative quarter of the cycle. Microsoft&rsquo;s 10-Q: $10.0B quarterly revenue from OpenAI arrangements, $7.2B OpenAI receivables, $13B committed ($12B funded). Samsung: KRW 107.4T quarterly operating profit &mdash; first tech company past KRW 100T. The whole stack is now an AI bill.</p><a href="https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm" target="_blank" rel="noopener">&#9654; LIVE &middot; alphabet + msft 10-Q &middot; PRIMARY DOCUMENTS</a></div>
+      <div class="story">
+        <a class="media" href="https://www.sec.gov/Archives/edgar/data/1326801/000119312526431036/d116268dfwp.htm" target="_blank" rel="noopener"><img src="assets/images/artifacts/c49-meta-pricing-pr-r3.png" alt="Meta pricing release text: the Common Stock Offering was upsized to $25.0 billion from the previously announced $22.5 billion; net proceeds from the Depositary Shares Offering approximately $12.5 billion"><span class="kind">SEC filing &middot; Oct 26</span></a>
+        <div class="meta">
+          <h3>Meta files ~$95B of stock and convertible paper the morning of its Q3 beat.</h3>
+          <p>Priced: $25.0B of stock (upsized from $22.5B) plus ~$12.5B of mandatory convertibles. The ~$60B ATM is planned, not raised.</p>
+          <a class="src-link" href="https://www.sec.gov/Archives/edgar/data/1326801/000119312526431040/d94886d424b5.htm" target="_blank" rel="noopener">&#9654; LIVE &middot; SEC 424B5 &middot; primary filing</a>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="slide" id="s-seg-grid-b">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #36</div><div class="slide-tag">WHAT HAPPENED THIS WEEK &middot; PART 2</div>
+<div class="slide news" id="s-seg-grid-b">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #36</div><div class="slide-tag">WHAT HAPPENED THIS WEEK &middot; 2 / 7</div>
   <div class="glow-orb orb-blue" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
   <div class="content">
-    <div>
-      <div class="part-label">What happened this week &middot; part 2</div>
-      <h2>The trust cracks: <span class="gradient-text">models vote, harnesses score, judges wobble.</span></h2>
-      <div class="gradient-line"></div>
-      <p class="subtitle mt-1" style="max-width:1000px;">Three receipts that the numbers we argue about are softer than they look: an electoral-bias study, a 37-point harness swing, and a frontier #1 that changes hands every two weeks. Each card links its primary receipt.</p>
+    <div class="news-head">
+      <div class="part-label">What happened this week &middot; the bill</div>
+      <h2>Who pays <span class="gradient-text">for the AI bill.</span></h2>
     </div>
-    <div class="story-grid" style="grid-template-rows:1fr;">
-      <div class="story-card">
-        <a class="thumb" href="https://convovo.ai/ballot/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/c46-convovo-ballot.png" alt="Convovo AI Ballot 2026 study page: Grok 4.7 vs GPT-6.1 Sol candidate recommendations across ~500 midterm races" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>Forced to pick in ~500 races, Grok chose Republicans 92% of the time &mdash; GPT chose Democrats 97%.</h3><p>Convovo (Cornell prof Tapan Parikh&rsquo;s studio), Oct 24: via API, one no-hedging question &mdash; &ldquo;name one candidate.&rdquo; Grok 4.7 picked the Republican 92% of the time, GPT-6.1 Sol the Democrat 97%; agreement under 10%. The consumer apps refuse. Caveats are the story: API + forced choice, not the apps; sources and search topics split by party; Grok&rsquo;s lean vanished without search. Five days before the election.</p><a href="https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/" target="_blank" rel="noopener">&#9654; LIVE &middot; convovo + techcrunch &middot; METHODOLOGY CAVEAT</a></div>
+    <div class="pair">
+      <div class="story">
+        <a class="media" href="https://s206.q4cdn.com/479360582/files/doc_financials/2026/q3/2026q3-alphabet-earnings-release.pdf" target="_blank" rel="noopener"><img src="assets/images/artifacts/c56-alphabet-q3.png" alt="Alphabet Q3 2026 earnings release: revenue $127.6B up 25%, Google Cloud revenue $30.7B up 103%" style="object-position:top center;"><span class="kind">Earnings release &middot; Q3</span></a>
+        <div class="meta">
+          <h3>Q3 earnings: Google Cloud doubles to $30.7B, and capex pushes free cash flow negative.</h3>
+          <p>Alphabet spent $51.4B on capex (FCF &minus;$9.1B). Microsoft books $10.0B a quarter from OpenAI.</p>
+          <a class="src-link" href="https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm" target="_blank" rel="noopener">&#9654; LIVE &middot; Alphabet release &middot; Microsoft 10-Q</a>
+        </div>
       </div>
-      <div class="story-card">
-        <a class="thumb" href="https://arcprize.org/results/openai-gpt-6-astra" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/c47-arc-results.png" alt="ARC Prize results page for GPT-6 Astra: 62.7% standard harness vs 99.9% provider-adapter harness on ARC-AGI-3" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>ARC Prize: GPT-6 Astra&rsquo;s 99.9% came from OpenAI&rsquo;s own adapter &mdash; the neutral harness says 62.7%.</h3><p>ARC&rsquo;s own table, resurfaced by this week&rsquo;s coverage wave: 99.9% on ARC-AGI-3 with the Provider Adapter harness ($26,098 compute) vs 62.7% on the neutral Standard harness ($18,817). Same model, 37-point swing, harness is the variable. Pairs with arXiv 2610.04433: Claude Code and a ~100-line mini-agent are statistically equivalent on SWE-bench Verified; harness choice flips ~13% of hardest tasks, up to 3&times; cost.</p><a href="https://arxiv.org/abs/2610.04433" target="_blank" rel="noopener">&#9654; LIVE &middot; arcprize.org + arxiv &middot; PRIMARY TABLES</a></div>
-      </div>
-      <div class="story-card">
-        <a class="thumb" href="https://artificialanalysis.ai/models" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/c55-aa-leaderboard.png" alt="Artificial Analysis Intelligence Index v5 leaderboard: Gemini 4 Carbon 59.4 high-reasoning at #1, Claude Opus 5.5 58.4, GPT-6 Astra 56.9" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>Google launches Gemini 4 Carbon &mdash; and retakes the independent #1, two weeks after Argon.</h3><p>Oct 28: second Gemini 4 frontier release in a month. AA Intelligence Index v5.0: Carbon 59.4 (high reasoning) vs Opus 5.5 max 58.4, GPT-6 Astra 56.9, GPT-6.1 Terra 51.0 &mdash; AA-measured, not vendor-reported. Google&rsquo;s own framing: &ldquo;state-of-the-art cybersecurity and long horizon capabilities&rdquo; &mdash; access staged to cyber defenders first. Henry called it on X within the hour: &ldquo;No 1 on AA for the first time in a long time.&rdquo; When #1 cycles monthly between three labs, &ldquo;frontier lead&rdquo; is a lease, not a title.</p><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" target="_blank" rel="noopener">&#9654; LIVE &middot; AA v5.0 + blog.google &middot; DATED LEADERBOARD</a></div>
+      <div class="story">
+        <a class="media" href="https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers" target="_blank" rel="noopener"><img src="assets/images/artifacts/c62-chatgpt-pro-reversal.png" alt="BleepingComputer, Oct 29, 2026: OpenAI doubles ChatGPT Pro usage limits after backlash over planned 50% cut"><span class="kind">Reported &middot; Oct 29</span></a>
+        <div class="meta">
+          <h3>OpenAI cancels the Pro usage cut and adds up to $500 a month in API credits.</h3>
+          <p>Credits are $100&ndash;$500 per monthly billing period by Pro tier, after 7+ paid days; no rollover. Plus is excluded.</p>
+          <a class="src-link" href="https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions" target="_blank" rel="noopener">&#9654; LIVE &middot; OpenAI Help Center &middot; terms</a>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="slide" id="s-seg-grid-c">
-  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #36</div><div class="slide-tag">WHAT HAPPENED THIS WEEK &middot; PART 3</div>
+<div class="slide news" id="s-seg-grid-c">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #36</div><div class="slide-tag">WHAT HAPPENED THIS WEEK &middot; 3 / 7</div>
   <div class="glow-orb orb-red" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
   <div class="content">
-    <div>
-      <div class="part-label">What happened this week &middot; part 3</div>
-      <h2>Agents go professional: <span class="gradient-text">worlds, exploits, and cheaper tokens.</span></h2>
-      <div class="gradient-line"></div>
-      <p class="subtitle mt-1" style="max-width:1000px;">The capability curve went vertical and the unit economics went down: a real-time world model, model-written exploit chains, and token efficiency as a product axis. Each card links its primary receipt.</p>
+    <div class="news-head">
+      <div class="part-label">What happened this week &middot; model behavior</div>
+      <h2>What models believe <span class="gradient-text">&mdash; and what they should.</span></h2>
     </div>
-    <div class="story-grid" style="grid-template-columns:repeat(3,1fr);grid-template-rows:1fr;">
-      <div class="story-card">
-        <a class="thumb" href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/c53-genie4.png" alt="Google DeepMind blog: Genie 4, a new generation of world simulation with real-time interactive worlds and native audio" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>DeepMind announces Genie 4: real-time interactive worlds with native audio and mid-simulation steering.</h3><p>Oct 27, research preview: first real-time world model with natively generated audio, natural-language steering mid-simulation (weather, camera, new objects), ~2-minute consistent sessions (double Genie 3, per briefed press). Gemini Omni anchors realism; SynthID watermarks everything. Stated limits: drift on long runs, audio accuracy, legible text. The robot-training-rental framing is the builder angle.</p><a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener">&#9654; LIVE &middot; deepmind.google &middot; PRIMARY BLOG + DEMOS</a></div>
+    <div class="pair">
+      <div class="story">
+        <a class="media" href="https://convovo.ai/ballot/" target="_blank" rel="noopener"><img src="assets/images/artifacts/c46-convovo-ballot.png" alt="Convovo AI Ballot 2026 study page: Grok 4.7 vs GPT-6.1 Sol candidate recommendations across ~500 midterm races"><span class="kind">Study &middot; Oct 24</span></a>
+        <div class="meta">
+          <h3>Forced to pick in ~500 races, Grok chose Republicans 92% of the time; GPT chose Democrats 97%.</h3>
+          <p>One methodology: API, forced choice, not the consumer apps. Grok&rsquo;s lean vanished without search.</p>
+          <a class="src-link" href="https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/" target="_blank" rel="noopener">&#9654; LIVE &middot; Convovo &middot; TechCrunch</a>
+        </div>
       </div>
-      <div class="story-card">
-        <a class="thumb" href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/c57-anthropic-redteam.png" alt="Anthropic research post: Discovering and exploiting vulnerabilities in critical, real-world software with Claude" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>Anthropic&rsquo;s red team: an unreleased Claude chained real zero-days into working exploits across five platforms.</h3><p>Oct 27: after initial prompting, the model wrote a one-click Chrome sandbox-escape RCE (62 CVEs, patched in Chrome 156), a Safari same-origin bypass, an Android lock-screen bypass, and Windows/Linux data-only chains &mdash; all coordinated-disclosed first. Same week: agent Cipher found four EPICS Base zero-days (CVSS 9.8 worst) in 3h49m, CISA-coordinated. Authorized research, not deployment &mdash; but the capability curve is the signal.</p><a href="https://causalsecurity.com/research/epics-base-security-research" target="_blank" rel="noopener">&#9654; LIVE &middot; anthropic + causal &middot; PRIMARY RESEARCH</a></div>
+      <div class="story">
+        <a class="media" href="https://model-spec.openai.com/2026-10-29.html" target="_blank" rel="noopener"><img src="assets/images/artifacts/c63-openai-model-spec.png" alt="OpenAI Model Spec dated October 29, 2026, with five values in the sidebar: be faithful to human intent, minimize harm, be honest and transparent, facilitate human agency, act with care"><span class="kind">Primary spec &middot; Oct 29</span></a>
+        <div class="meta">
+          <h3>OpenAI rewrites its Model Spec around five values.</h3>
+          <p>Intent, harm, honesty, agency, care. OpenAI says its models &ldquo;do not yet fully reflect it.&rdquo;</p>
+          <a class="src-link" href="https://openai.com/index/updated-model-spec" target="_blank" rel="noopener">&#9654; LIVE &middot; openai.com &middot; dated spec</a>
+        </div>
       </div>
-      <div class="story-card">
-        <a class="thumb" href="https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/" target="_blank" rel="noopener" style="display:block;height:100%;"><img src="assets/images/artifacts/c58-copilot-fusion.png" alt="GitHub changelog: Route and orchestrate models with GitHub Copilot Fusion, generally available on all Copilot plans" style="object-fit:cover;object-position:top;"></a>
-        <div class="meta"><h3>Token efficiency becomes a product axis: Copilot Fusion makes orchestration the default; Particle-1 trains frugality itself.</h3><p>GitHub Universe, Oct 28: Fusion GA on all Copilot plans &mdash; pick an effort level, not a model; it routes across Opus 5.5, Sonnet 5.x and OpenAI models. AA measures $5.59 average cost per task vs $11.42 single-model, ~half the tokens, Fusion Max 60 on the AA Coding Agent Index. Same day: Suhail Doshi&rsquo;s Particle-1, RL-trained to solve SWE tasks with ~45% fewer tokens at comparable accuracy (vendor-reported). &ldquo;Which model&rdquo; is becoming &ldquo;which router.&rdquo;</p><a href="https://artificialanalysis.ai/articles/github-copilot-fusion-orchestrates-anthropic-and-openai-models-to-balance-performance-and-cost" target="_blank" rel="noopener">&#9654; LIVE &middot; github.blog + AA &middot; PRIMARY + MEASURED</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide news" id="s-seg-models">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #36</div><div class="slide-tag">WHAT HAPPENED THIS WEEK &middot; 4 / 7</div>
+  <div class="glow-orb orb-blue" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
+  <div class="content">
+    <div class="news-head">
+      <div class="part-label">What happened this week &middot; model launches &middot; benchmarks</div>
+      <h2>Two launches, <span class="gradient-text">two scoreboards.</span></h2>
+    </div>
+    <div class="pair">
+      <div class="story">
+        <a class="media contain" href="https://artificialanalysis.ai/models" target="_blank" rel="noopener"><img src="assets/images/artifacts/c55-aa-intel-index-r3.png" alt="Artificial Analysis Intelligence Index chart captured Oct 30, 2026: Gemini 4 Carbon (high) 59, Claude Opus 5.5 (max with fallback) 58, GPT-6 Astra (max) 57, GPT-6.1 Sol (max) 55"><span class="kind">Independent index &middot; AA</span></a>
+        <div class="meta">
+          <h3>Google launches Gemini 4 Carbon, and it takes #1 on Artificial Analysis.</h3>
+          <p>AA Intelligence Index: Carbon 59, Opus 5.5 58, GPT-6 Astra 57. AA-measured; captured Oct 30.</p>
+          <a class="src-link" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" target="_blank" rel="noopener">&#9654; LIVE &middot; artificialanalysis.ai &middot; blog.google</a>
+        </div>
+      </div>
+      <div class="story">
+        <a class="media contain" href="https://mistral.ai/news/mistral-large-4-oss/" target="_blank" rel="noopener"><img src="assets/images/artifacts/c59-mistral-large4-terminal-bench.png" alt="Mistral launch-page chart: Artificial Analysis Coding Agent Index, Terminal-Bench 4.0. ML4 Preview self-reported 28%, Mistral Large 4 41%, Beam 1.0 3%, Muse Spark Open 6%, Kimi K3 21%, DeepSeek V4.1 Flash 1017 31%, GLM-5.3 40%"><span class="kind">Vendor chart &middot; Mistral</span></a>
+        <div class="meta">
+          <h3>Mistral releases Large 4 as open weights: 41% on Terminal-Bench 4.0.</h3>
+          <p>Ahead of GLM-5.3&rsquo;s 40% here; a point behind it on AA&rsquo;s coding index at 47% fewer tokens. The 28% preview is self-reported.</p>
+          <a class="src-link" href="https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B" target="_blank" rel="noopener">&#9654; LIVE &middot; mistral.ai &middot; Hugging Face weights</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide news" id="s-seg-research">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #36</div><div class="slide-tag">WHAT HAPPENED THIS WEEK &middot; 5 / 7</div>
+  <div class="glow-orb orb-purple" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
+  <div class="content">
+    <div class="news-head">
+      <div class="part-label">What happened this week &middot; models do research</div>
+      <h2>Proofs and exploits, <span class="gradient-text">lab-reported.</span></h2>
+    </div>
+    <div class="pair">
+      <div class="story">
+        <a class="media" href="https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf" target="_blank" rel="noopener"><img src="assets/images/artifacts/c54-openai-eth-preprint.png" alt="First page of OpenAI's preprint titled The Exponential Time Hypothesis is False, attributed to OpenAI"><span class="kind">Lab preprint &middot; not yet refereed</span></a>
+        <div class="meta">
+          <h3>OpenAI says its system proved the Exponential Time Hypothesis false.</h3>
+          <p>It also claims Kakeya and QCD results. Anthropic reports its own ETH refutation. Outside review is pending.</p>
+          <a class="src-link" href="https://openai.com/index/building-scientific-understanding-with-academic-communities/" target="_blank" rel="noopener">&#9654; LIVE &middot; openai.com &middot; TechCrunch</a>
+        </div>
+      </div>
+      <div class="story">
+        <a class="media" href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" target="_blank" rel="noopener"><img src="assets/images/artifacts/c57-anthropic-redteam.png" alt="Anthropic research post: Discovering and exploiting vulnerabilities in critical, real-world software with Claude"><span class="kind">Lab research &middot; Oct 27</span></a>
+        <div class="meta">
+          <h3>Anthropic&rsquo;s red team: an unreleased Claude chained real zero-days across five platforms.</h3>
+          <p>Disclosed before publication. Same week, the agent Cipher found four EPICS Base zero-days; CISA coordinated.</p>
+          <a class="src-link" href="https://causalsecurity.com/research/epics-base-security-research" target="_blank" rel="noopener">&#9654; LIVE &middot; anthropic.com &middot; Causal Security</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide news" id="s-seg-harness">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #36</div><div class="slide-tag">WHAT HAPPENED THIS WEEK &middot; 6 / 7</div>
+  <div class="glow-orb orb-green" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
+  <div class="content">
+    <div class="news-head">
+      <div class="part-label">What happened this week &middot; agents and harnesses</div>
+      <h2>The harness <span class="gradient-text">is the product.</span></h2>
+    </div>
+    <div class="pair">
+      <div class="story">
+        <a class="media" href="https://arcprize.org/results/openai-gpt-6-astra" target="_blank" rel="noopener"><img src="assets/images/artifacts/c47-arc-results.png" alt="ARC Prize results page for GPT-6 Astra: 62.7% standard harness vs 99.9% provider-adapter harness on ARC-AGI-3"><span class="kind">Results table &middot; ARC Prize</span></a>
+        <div class="meta">
+          <h3>ARC Prize: GPT-6 Astra scored 99.9% with OpenAI&rsquo;s own adapter and 62.7% on the neutral harness.</h3>
+          <p>Same model, 37-point swing. The harness is the variable.</p>
+          <a class="src-link" href="https://arxiv.org/abs/2610.04433" target="_blank" rel="noopener">&#9654; LIVE &middot; arcprize.org &middot; arXiv</a>
+        </div>
+      </div>
+      <div class="story">
+        <a class="media" href="https://github.blog/changelog/2026-10-28-work-from-anywhere-with-a-new-connected-copilot-cloud-experience/" target="_blank" rel="noopener"><img src="assets/images/artifacts/c61-github-copilot-cloud.jpg" alt="GitHub changelog image: Work from anywhere with a new, connected Copilot cloud experience, showing phone and desktop Copilot sessions" style="object-position:center;"><span class="kind">Primary changelog &middot; Oct 28</span></a>
+        <div class="meta">
+          <h3>GitHub Universe: one Copilot session across every surface, and Agentic Workflows go GA.</h3>
+          <p>Web, mobile, CLI, VS Code and Slack share a cloud session. Computer use enters public preview.</p>
+          <a class="src-link" href="https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available/" target="_blank" rel="noopener">&#9654; LIVE &middot; github.blog changelog</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide news" id="s-seg-google">
+  <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #36</div><div class="slide-tag">WHAT HAPPENED THIS WEEK &middot; 7 / 7</div>
+  <div class="glow-orb orb-blue" style="width:380px;height:380px;top:-100px;right:-90px;"></div>
+  <div class="content">
+    <div class="news-head">
+      <div class="part-label">What happened this week &middot; Google</div>
+      <h2>Worlds you can steer, <span class="gradient-text">apps agents can call.</span></h2>
+    </div>
+    <div class="pair">
+      <div class="story">
+        <div class="media video">
+          <video controls preload="metadata" playsinline poster="assets/images/genie4-island-duet-poster.jpg" aria-label="Official Google DeepMind Genie 4 demo: island piano duet, real-time interaction">
+            <source src="assets/videos/genie4-island-duet-demo.mp4" type="video/mp4">
+            <a href="https://deepmind.google/models/genie/" target="_blank" rel="noopener">Watch the official Genie 4 demos on deepmind.google</a>
+          </video>
+          <span class="kind">Official demo &middot; click to play</span>
+        </div>
+        <div class="meta">
+          <h3>DeepMind announces Genie 4: real-time worlds with native audio that you can steer with words.</h3>
+          <p>Official DeepMind demo, shortened; trusted testers first. Sessions hold for a few minutes.</p>
+          <a class="src-link" href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener">&#9654; LIVE &middot; deepmind.google &middot; official film</a>
+        </div>
+      </div>
+      <div class="story">
+        <a class="media" href="https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/" target="_blank" rel="noopener"><img src="assets/images/artifacts/c60-google-connected-apps.png" alt="Google blog illustration for Connected Apps: app tiles connected to Gemini and Search" style="object-position:center;"><span class="kind">Primary blog &middot; Oct 28</span></a>
+        <div class="meta">
+          <h3>Google opens Connected Apps: one MCP server puts your app in Gemini and Search.</h3>
+          <p>Preview with phased access. Cloud MCP or Android AppFunctions; Adobe, Experian and Peloton are live in Gemini.</p>
+          <a class="src-link" href="https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/" target="_blank" rel="noopener">&#9654; LIVE &middot; blog.google &middot; developers</a>
+        </div>
       </div>
     </div>
   </div>
@@ -351,15 +484,15 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
     <div class="part-label">Hot take &middot; the debate</div>
     <h2 class="text-center">Stop asking which model is best. <span class="gradient-text">Start asking who owns your harness.</span></h2>
     <div class="gradient-line"></div>
-    <p class="subtitle text-center mt-1" style="max-width:940px;">Not a launch, not a financing: a claim about where the durable advantage lives now that orchestration is the default and the same model scores 62.7% or 99.9% on ARC depending on whose harness ran it.</p>
+    <p class="subtitle text-center mt-1" style="max-width:940px;">Not a launch, not a financing: a claim about where the durable advantage lives now that the same model scores 62.7% or 99.9% on ARC depending on whose harness ran it.</p>
     <div class="mt-3 two-col" style="gap:18px;">
       <div class="card">
         <h3 class="red">Henry</h3>
-        <p>The harness is the product now. GitHub just shipped &ldquo;stop choosing models&rdquo; to millions of developers, and ARC just proved the scaffolding is worth 37 points. The teams that win are the ones who own their evals and their routing &mdash; not the ones waiting for a vendor leaderboard to tell them what to run.</p>
+        <p>The harness is the product now. ARC just proved the scaffolding is worth 37 points, and GitHub&rsquo;s whole Universe pitch was one agent session across every surface. The teams that win are the ones who own their evals and their routing &mdash; not the ones waiting for a vendor leaderboard to tell them what to run.</p>
       </div>
       <div class="card">
         <h3 class="green">Andy</h3>
-        <p>Renting your judgment to a router is how you lose the thread. When Fusion picks the model, the vendor&rsquo;s incentive quietly becomes your architecture. Own the harness, yes &mdash; but own it because you measure it, not because you outsourced the measuring.</p>
+        <p>Renting your judgment to a vendor harness is how you lose the thread. When the vendor&rsquo;s adapter sets the score, the vendor&rsquo;s incentive quietly becomes your architecture. Own the harness, yes &mdash; but own it because you measure it, not because you outsourced the measuring.</p>
       </div>
     </div>
     <div class="mt-3 quote-block text-center" style="max-width:900px;">What would change Henry&rsquo;s mind: one documented case where a locked vendor router beat a competent in-house eval loop for a full year on cost and quality.</div>
@@ -374,7 +507,7 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
     <div class="sponsor-lockup herald"><img class="sponsor-logo" src="assets/sponsors/herald-labs-icon.svg" alt="Herald Labs logo"></div>
     <p class="subtitle text-center mt-2" style="max-width:820px;">An applied AI product lab where humans and agents build together. Entity is mission control for agent teams. Hacker houses worldwide.</p>
     <div class="quote-block mt-3">Build with humans. Ship with agents.</div>
-    <div class="mt-2 pill green">heraldlabs.si</div>
+    <div class="mt-2 pill green">heraldlab.si</div>
   </div>
 </div>
 
@@ -387,8 +520,8 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
     <div class="gradient-line"></div>
     <div class="mt-2 three-col">
       <div class="card">
-        <h3 class="red">The IPO window</h3>
-        <p>Anthropic&rsquo;s S-1 is on file (Nasdaq: ANT). Watch the roadshow math: whether the market prices the <strong>$80.7B paper loss</strong> or the <strong>$693M operating loss</strong> decides how every AI lab&rsquo;s books get read for the next decade.</p>
+        <h3 class="red">The ETH verdict</h3>
+        <p>Impagliazzo, Paturi and Williams are checking OpenAI&rsquo;s proof, and Anthropic says it has its own. Watch whether <strong>outside reviewers</strong> sign off &mdash; or find the gap.</p>
       </div>
       <div class="card">
         <h3 class="orange">The ATM lever</h3>
@@ -420,70 +553,92 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
 <div class="slide" id="s-sources">
   <div class="slide-brand"><svg><use href="#weeklyclaw-logo"/></svg> Weekly Claw #36</div><div class="slide-tag">SOURCES / LINKS</div>
   <div class="content">
-    <div class="part-label">Every claim, one click &middot; verified 2026-10-29</div>
+    <div class="part-label">Every claim, one click &middot; verified 2026-10-29 / 30</div>
     <h2 class="text-center">Sources &amp; <span class="gradient-text">Links.</span></h2>
     <div class="gradient-line"></div>
-    <div class="mt-2 three-col" style="gap:16px;">
+    <div class="mt-2 src-grid">
       <div class="card">
-        <span class="tag tag-green">A1 &middot; BROADCOM $63B SPV</span>
-        <p class="mt-2"><a href="https://www.broadcom.com/company/news/financial-releases/64786" target="_blank" rel="noopener">broadcom.com &middot; $63B structure</a></p>
+        <span class="tag tag-green">1 &middot; $63B SPV + SPACEX LEASE</span>
+        <p><a href="https://www.broadcom.com/company/news/financial-releases/64786" target="_blank" rel="noopener">broadcom.com &middot; $63B structure</a></p>
         <p><a href="https://ir.spacex.com/updates/releases-details/2026/SPACEX-SECURES-40-BILLION-IN-THE-LARGEST-GPU-FINANCING-" target="_blank" rel="noopener">SpaceX IR &middot; ~$40B GPU lease</a></p>
       </div>
       <div class="card">
-        <span class="tag tag-blue">A2 &middot; META ~$95B FINANCING</span>
-        <p class="mt-2"><a href="https://www.sec.gov/Archives/edgar/data/1326801/000119312526431036/d116268dfwp.htm" target="_blank" rel="noopener">SEC &middot; FWP pricing sheet</a></p>
+        <span class="tag tag-blue">2 &middot; META ~$95B</span>
+        <p><a href="https://www.sec.gov/Archives/edgar/data/1326801/000119312526431036/d116268dfwp.htm" target="_blank" rel="noopener">SEC &middot; FWP pricing sheet</a></p>
         <p><a href="https://www.sec.gov/Archives/edgar/data/1326801/000119312526431040/d94886d424b5.htm" target="_blank" rel="noopener">SEC &middot; 424B5 prospectus</a></p>
       </div>
       <div class="card">
-        <span class="tag tag-orange">A3 &middot; ANTHROPIC S-1</span>
-        <p class="mt-2"><a href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm" target="_blank" rel="noopener">SEC EDGAR &middot; Anthropic S-1</a></p>
-      </div>
-      <div class="card">
-        <span class="tag tag-yellow">A4 &middot; Q3 EARNINGS</span>
-        <p class="mt-2"><a href="https://s206.q4cdn.com/479360582/files/doc_financials/2026/q3/2026q3-alphabet-earnings-release.pdf" target="_blank" rel="noopener">Alphabet Q3 release</a></p>
+        <span class="tag tag-yellow">3 &middot; Q3 EARNINGS</span>
+        <p><a href="https://s206.q4cdn.com/479360582/files/doc_financials/2026/q3/2026q3-alphabet-earnings-release.pdf" target="_blank" rel="noopener">Alphabet Q3 release</a></p>
         <p><a href="https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm" target="_blank" rel="noopener">Microsoft 10-Q</a></p>
-        <p><a href="https://news.samsung.com/global/samsung-electronics-announces-third-quarter-2026-results" target="_blank" rel="noopener">Samsung Q3 newsroom</a></p>
       </div>
       <div class="card">
-        <span class="tag tag-red">B1 &middot; MODEL POLITICS</span>
-        <p class="mt-2"><a href="https://convovo.ai/ballot/" target="_blank" rel="noopener">Convovo &middot; AI Ballot 2026</a></p>
+        <span class="tag tag-orange">4 &middot; CHATGPT PRO + CREDITS</span>
+        <p><a href="https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers" target="_blank" rel="noopener">OpenAI Help &middot; Pro tiers</a></p>
+        <p><a href="https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions" target="_blank" rel="noopener">OpenAI Help &middot; API credits terms</a></p>
+      </div>
+      <div class="card">
+        <span class="tag tag-red">5 &middot; MODEL POLITICS</span>
+        <p><a href="https://convovo.ai/ballot/" target="_blank" rel="noopener">Convovo &middot; AI Ballot 2026</a></p>
         <p><a href="https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/" target="_blank" rel="noopener">TechCrunch &middot; study coverage</a></p>
       </div>
       <div class="card">
-        <span class="tag tag-green">B2 &middot; ARC HARNESS EFFECT</span>
-        <p class="mt-2"><a href="https://arcprize.org/results/openai-gpt-6-astra" target="_blank" rel="noopener">ARC Prize &middot; GPT-6 Astra table</a></p>
+        <span class="tag tag-purple">6 &middot; OPENAI MODEL SPEC</span>
+        <p><a href="https://openai.com/index/updated-model-spec" target="_blank" rel="noopener">openai.com &middot; updated Model Spec</a></p>
+        <p><a href="https://model-spec.openai.com/2026-10-29.html" target="_blank" rel="noopener">Model Spec &middot; 2026-10-29</a></p>
+      </div>
+      <div class="card">
+        <span class="tag tag-blue">7 &middot; GEMINI 4 CARBON</span>
+        <p><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" target="_blank" rel="noopener">blog.google &middot; Gemini 4 Carbon</a></p>
+        <p><a href="https://artificialanalysis.ai/models" target="_blank" rel="noopener">Artificial Analysis &middot; Intelligence Index</a></p>
+      </div>
+      <div class="card">
+        <span class="tag tag-orange">8 &middot; MISTRAL LARGE 4</span>
+        <p><a href="https://mistral.ai/news/mistral-large-4-oss/" target="_blank" rel="noopener">mistral.ai &middot; launch + charts</a></p>
+        <p><a href="https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B" target="_blank" rel="noopener">Hugging Face &middot; weights</a></p>
+      </div>
+      <div class="card">
+        <span class="tag tag-purple">9 &middot; ETH / KAKEYA / QCD</span>
+        <p><a href="https://openai.com/index/building-scientific-understanding-with-academic-communities/" target="_blank" rel="noopener">openai.com &middot; claims + review plan</a></p>
+        <p><a href="https://github.com/openai/math" target="_blank" rel="noopener">GitHub &middot; openai/math</a></p>
+        <p><a href="https://techcrunch.com/2026/10/27/frontier-ai-labs-say-their-models-refuted-the-exponential-time-hypothesis-what-does-that-mean/" target="_blank" rel="noopener">TechCrunch &middot; Anthropic claim</a></p>
+      </div>
+      <div class="card">
+        <span class="tag tag-red">10 &middot; RED TEAM + CIPHER</span>
+        <p><a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" target="_blank" rel="noopener">Anthropic &middot; vulnerabilities research</a></p>
+        <p><a href="https://causalsecurity.com/research/epics-base-security-research" target="_blank" rel="noopener">Causal Security &middot; Cipher &times; EPICS</a></p>
+      </div>
+      <div class="card">
+        <span class="tag tag-green">11 &middot; ARC HARNESS EFFECT</span>
+        <p><a href="https://arcprize.org/results/openai-gpt-6-astra" target="_blank" rel="noopener">ARC Prize &middot; GPT-6 Astra table</a></p>
         <p><a href="https://arxiv.org/abs/2610.04433" target="_blank" rel="noopener">arXiv &middot; harness-choice study</a></p>
       </div>
       <div class="card">
-        <span class="tag tag-blue">B3 &middot; GEMINI 4 CARBON</span>
-        <p class="mt-2"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" target="_blank" rel="noopener">blog.google &middot; Gemini 4 Carbon</a></p>
-        <p><a href="https://artificialanalysis.ai/models" target="_blank" rel="noopener">Artificial Analysis &middot; Intelligence Index v5.0</a></p>
+        <span class="tag tag-blue">12 &middot; GITHUB UNIVERSE</span>
+        <p><a href="https://github.blog/changelog/2026-10-28-work-from-anywhere-with-a-new-connected-copilot-cloud-experience/" target="_blank" rel="noopener">Changelog &middot; connected cloud</a></p>
+        <p><a href="https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available/" target="_blank" rel="noopener">Changelog &middot; Agentic Workflows GA</a></p>
+        <p><a href="https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases/" target="_blank" rel="noopener">Changelog &middot; Copilot app</a></p>
       </div>
       <div class="card">
-        <span class="tag tag-purple">C1 &middot; GENIE 4</span>
-        <p class="mt-2"><a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener">DeepMind &middot; Genie 4 blog + demos</a></p>
+        <span class="tag tag-purple">13 &middot; GENIE 4</span>
+        <p><a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener">DeepMind &middot; Genie 4 blog</a></p>
+        <p><a href="https://deepmind.google/models/genie/" target="_blank" rel="noopener">DeepMind &middot; Genie demos (video source)</a></p>
+        <p><a href="https://www.youtube.com/watch?v=sFfPkUJd_Jk" target="_blank" rel="noopener">YouTube &middot; official Genie 4 film</a></p>
       </div>
       <div class="card">
-        <span class="tag tag-orange">C2 &middot; MODELS THAT HACK</span>
-        <p class="mt-2"><a href="https://www.anthropic.com/research/discovering-vulnerabilities-with-claude" target="_blank" rel="noopener">Anthropic &middot; vulnerabilities research</a></p>
-        <p><a href="https://causalsecurity.com/research/epics-base-security-research" target="_blank" rel="noopener">Causal Security &middot; Cipher &times; EPICS Base</a></p>
+        <span class="tag tag-green">14 &middot; CONNECTED APPS</span>
+        <p><a href="https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/" target="_blank" rel="noopener">blog.google &middot; Connected Apps</a></p>
       </div>
       <div class="card">
-        <span class="tag tag-green">C3 &middot; TOKEN EFFICIENCY</span>
-        <p class="mt-2"><a href="https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/" target="_blank" rel="noopener">GitHub changelog &middot; Copilot Fusion GA</a></p>
-        <p><a href="https://particle.ai/blog/introducing-particle-1" target="_blank" rel="noopener">Particle &middot; introducing Particle-1</a></p>
-        <p><a href="https://artificialanalysis.ai/articles/github-copilot-fusion-orchestrates-anthropic-and-openai-models-to-balance-performance-and-cost" target="_blank" rel="noopener">Artificial Analysis &middot; Fusion cost analysis</a></p>
-      </div>
-      <div class="card">
-        <span class="tag tag-red">SFO &middot; DEEPMIND MANAGED AGENTS</span>
-        <p class="mt-2"><a href="https://www.youtube.com/watch?v=Y_p3y6zP5QE" target="_blank" rel="noopener">Wotherspoon &middot; managed agents (19:43)</a></p>
+        <span class="tag tag-red">SFO &middot; MANAGED AGENTS</span>
+        <p><a href="https://www.youtube.com/watch?v=Y_p3y6zP5QE" target="_blank" rel="noopener">Wotherspoon &middot; managed agents (19:43)</a></p>
       </div>
       <div class="card">
         <span class="tag tag-blue">TEXAS &middot; AG v. OPENAI</span>
-        <p class="mt-2"><a href="https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-sues-openai-and-ceo-sam-altman-lying-users-and-harming-texans" target="_blank" rel="noopener">Texas AG &middot; suit vs OpenAI and Altman</a></p>
+        <p><a href="https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-sues-openai-and-ceo-sam-altman-lying-users-and-harming-texans" target="_blank" rel="noopener">Texas AG &middot; suit vs OpenAI and Altman</a></p>
       </div>
     </div>
-    <p class="src-note mt-2">Dated captures · Convovo = one methodology · red-team + Particle-1 vendor-reported · Meta ATM planned, not raised.</p>
+    <p class="src-note mt-2">Dated captures &middot; Convovo = one methodology &middot; ETH/Kakeya/QCD and red team are lab-reported, outside review pending &middot; Mistral chart is vendor-published &middot; Meta ATM planned, not raised.</p>
   </div>
 </div>
 
@@ -551,6 +706,12 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
       if (idx >= 0) go(idx);
     }
   }
+})();
+</script>
+<script>
+(function() {
+  const pauseHidden = () => document.querySelectorAll('.slide:not(.active) video').forEach(v => { if (!v.paused) v.pause(); });
+  new MutationObserver(pauseHidden).observe(document.querySelector('.slide-container'), { subtree: true, attributes: true, attributeFilter: ['class'] });
 })();
 </script>
 </body>
