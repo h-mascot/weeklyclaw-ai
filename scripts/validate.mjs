@@ -222,7 +222,7 @@ if (changelogHtml.includes('Open changelog') || changelogHtml.includes('Host dec
 
 
 const episodesHtml = readFileSync(new URL('../episodes/index.html', import.meta.url), 'utf8');
-for (const needle of ['Weekly Claw Episodes', 'W35', 'W34', 'data-video-id="lCKEKFkVqQc"', 'W33', 'data-video-id="eRs_me5w_kI"', 'data-video-id="RRYBhrJiyU8"', '/assets/youtube-thumbnails/w32-approved-c.png', 'W31', 'data-video-id="YCgg0TtGYu0"', '/assets/youtube-thumbnails/w31-approved-a.png', 'Opus 5.5&#x27;s Price War', 'data-video-id="jAWCqtNs0ns"', '/assets/youtube-thumbnails/w30-approved-c.png', 'W29', 'data-video-id="-M4zet86U_A"', '/assets/youtube-thumbnails/w29-approved-a.png', 'W27', 'W26', 'The agent owns the loop', 'The Sandbox Failed', '/episodes/27/deck', '/episodes/22/deck', 'data-video-id="vqUkh8w2L8g"', 'data-video-id="f2yugYwXOBo"', 'data-video-id="dquJyEBQWpE"', 'data-video-id="MSRFmpDfaTg"', 'data-spotify-id="5t1xYX7e4DUv6l9DKUAi21"', 'data-spotify-id="58kOYSrhrMLArnNfVY41RQ"', 'data-spotify-id="2GywqAyfGJMXafRHRbdIa6"', 'data-spotify-id="1rzUjx7BfqL07H5fYDqr9e"', 'data-spotify-id="3LqMk9YFrbHkQhR3s7exJI"', '/assets/youtube-thumbnails/w27.jpg', '/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>16</strong>', 'video episodes']) {
+for (const needle of ['Weekly Claw Episodes', 'W36', 'W34', 'data-video-id="lCKEKFkVqQc"', 'W33', 'data-video-id="eRs_me5w_kI"', 'data-video-id="RRYBhrJiyU8"', '/assets/youtube-thumbnails/w32-approved-c.png', 'W31', 'data-video-id="YCgg0TtGYu0"', '/assets/youtube-thumbnails/w31-approved-a.png', 'Opus 5.5&#x27;s Price War', 'data-video-id="jAWCqtNs0ns"', '/assets/youtube-thumbnails/w30-approved-c.png', 'W29', 'data-video-id="-M4zet86U_A"', '/assets/youtube-thumbnails/w29-approved-a.png', 'W27', 'W26', 'The agent owns the loop', 'The Sandbox Failed', '/episodes/27/deck', '/episodes/22/deck', 'data-video-id="vqUkh8w2L8g"', 'data-video-id="f2yugYwXOBo"', 'data-video-id="dquJyEBQWpE"', 'data-video-id="MSRFmpDfaTg"', 'data-spotify-id="5t1xYX7e4DUv6l9DKUAi21"', 'data-spotify-id="58kOYSrhrMLArnNfVY41RQ"', 'data-spotify-id="2GywqAyfGJMXafRHRbdIa6"', 'data-spotify-id="1rzUjx7BfqL07H5fYDqr9e"', 'data-spotify-id="3LqMk9YFrbHkQhR3s7exJI"', '/assets/youtube-thumbnails/w27.jpg', '/assets/youtube-thumbnails/w22-v2-the-sandbox-failed-approved-20260727.jpg', '/assets/youtube-thumbnails/w21-v2-approved-20260727.jpg', '/assets/youtube-thumbnails/w20-v2-ai-got-cheap-approved-20260727.jpg', '<strong>16</strong>', 'video episodes']) {
   if (!episodesHtml.includes(needle)) {
     console.error(`Episodes index missing expected copy: ${needle}`);
     process.exit(1);
@@ -452,7 +452,7 @@ for (const [name, page] of [['homepage', html], ['episodes index', episodesHtml]
   }
 }
 
-for (const week of [10, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 31, 35]) {
+for (const week of [10, 11, 12, 13, 14, 15, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 31, 35, 36]) {
   const mainDeck = readFileSync(new URL(`../episodes/${week}/deck.html`, import.meta.url), 'utf8');
   if (!mainDeck.includes('Weekly') && !mainDeck.includes('OpenClaw')) {
     console.error(`Week ${week} main deck does not look like a Weekly Claw deck`);
