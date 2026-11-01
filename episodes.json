@@ -278,6 +278,26 @@
         "CNBC put Chinese models at up to 46% of US enterprise API tokens, up from ~4.5% a year ago — model choice became a political decision.",
         "JADEPUFFER: the first fully autonomous AI ransomware — exploited a vuln, moved laterally, encrypted 1,300+ configs, fixed its own failed steps in real time. The agentic attacker era is here."
       ]
+    },
+    {
+      "week": 36,
+      "title": "AI Spending Boom, Genie 4, Qwenputer & Managed Agents | Weekly Claw 36",
+      "date": "2026-10-31",
+      "url": "https://www.youtube.com/watch?v=VbzlQMhemAE",
+      "videoId": "VbzlQMhemAE",
+      "thumbnailUrl": "/assets/youtube-thumbnails/w36.jpg",
+      "status": "published",
+      "visibility": "public",
+      "summary": [
+        "Wall Street became AI's landlord: banks securitized the chips with a $63B SPV and a ~$40B GPU lease while Meta filed roughly $95B of equity paper.",
+        "The AI spending boom puts cloud contracts and compute accounting under scrutiny as the numbers start lying.",
+        "Model behavior and launches: Genie 4, Qwenputer and the week's benchmark results lead the model segment.",
+        "Models doing research: automated research agents move from demos to measurable output.",
+        "Agents and harnesses: the hot take argues to stop asking which model is best and start asking who owns your harness.",
+        "Signal From Outside: Jack Wotherspoon (Google DeepMind) on building your own team of managed agents.",
+        "One to watch: the ETH verdict, Meta ATM, and running elections through models.",
+        "Sponsors: Heritage Telecom and Herald Labs."
+      ]
     }
   ]
 }

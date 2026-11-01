@@ -236,8 +236,16 @@ function transcriptSegmentMarkup(segment) {
   return `<li id="${escapeHtml(segment.id)}" data-transcript-text="${escapeHtml(searchableText)}"><div class="transcript-meta">${timestampMarkup}</div><p>${escapeHtml(segment.text)}</p></li>`;
 }
 
+const HOST_AVATARS = { henry: "/assets/host-avatars/henry.png", andy: "/assets/host-avatars/andy.png" };
+
+function speakerBadgeMarkup(group) {
+  const avatar = HOST_AVATARS[group.key];
+  if (avatar) return `<span class="speaker-badge host" aria-hidden="true"><img src="${avatar}" alt=""></span>`;
+  return `<span class="speaker-badge" aria-hidden="true">${escapeHtml(group.initial)}</span>`;
+}
+
 function transcriptMarkup(segments) {
-  return transcriptSpeakerGroups(segments).map((group) => `<section class="transcript-speaker-group" data-speaker-group="${escapeHtml(group.key)}"><h3 class="transcript-speaker-heading"><span class="speaker-badge" aria-hidden="true">${escapeHtml(group.initial)}</span><span>${escapeHtml(group.label)}</span></h3><ol class="speaker-turns">${group.segments.map(transcriptSegmentMarkup).join("")}</ol></section>`).join("");
+  return transcriptSpeakerGroups(segments).map((group) => `<section class="transcript-speaker-group" data-speaker-group="${escapeHtml(group.key)}"><h3 class="transcript-speaker-heading">${speakerBadgeMarkup(group)}<span>${escapeHtml(group.label)}</span></h3><ol class="speaker-turns">${group.segments.map(transcriptSegmentMarkup).join("")}</ol></section>`).join("");
 }
 
 function episodeBody(episode, previous, next) {

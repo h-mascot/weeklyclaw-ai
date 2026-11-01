@@ -94,6 +94,8 @@ h1, h2, h3 { text-wrap: balance; }
 .transcript-speaker-group[hidden] { display: none; }
 .transcript-speaker-heading { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; color: var(--ink); font-size: 25px; line-height: 1; }
 .speaker-badge { display: inline-grid; place-items: center; width: 29px; height: 29px; border-radius: 50%; color: var(--paper); background: var(--green); font: 600 12px/1 var(--mono); }
+.speaker-badge.host { padding: 0; overflow: hidden; background: var(--green); }
+.speaker-badge.host img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
 .speaker-turns { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
 .speaker-turns > li { display: grid; grid-template-columns: 130px 1fr; gap: 18px; padding: 13px 0; border-top: 1px solid var(--line-soft); scroll-margin-top: 90px; }
 .speaker-turns > li[hidden] { display: none; }

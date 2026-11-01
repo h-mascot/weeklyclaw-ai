@@ -9,8 +9,8 @@
   },
   "coverage": {
     "inventoryStart": 10,
-    "inventoryEnd": 35,
-    "episodeCount": 26,
+    "inventoryEnd": 36,
+    "episodeCount": 27,
     "transcriptPublished": [
       22,
       24,
@@ -39,7 +39,8 @@
       32,
       33,
       34,
-      35
+      35,
+      36
     ],
     "publicClipCount": 0,
     "publicationEvidence": {
@@ -157,6 +158,9 @@
         "episodes.json"
       ],
       "35": [
+        "episodes.json"
+      ],
+      "36": [
         "episodes.json"
       ]
     },
@@ -41318,6 +41322,40 @@
         "The closing debate asks how taste, distribution and accountability shape the value of building with AI."
       ],
       "deckUrl": "/episodes/35/deck",
+      "publicationStatus": "public_verified",
+      "publicationEvidence": [
+        "episodes.json"
+      ],
+      "transcript": {
+        "status": "missing",
+        "sourceUrl": null,
+        "language": null,
+        "captionType": null,
+        "sourceHash": null,
+        "possibleCaptionErrors": false,
+        "segments": []
+      },
+      "clips": []
+    },
+    {
+      "week": 36,
+      "title": "AI Spending Boom, Genie 4, Qwenputer & Managed Agents | Weekly Claw 36",
+      "date": "2026-10-31",
+      "dateLabel": "31 Oct 2026",
+      "url": "https://www.youtube.com/watch?v=VbzlQMhemAE",
+      "videoId": "VbzlQMhemAE",
+      "thumbnailUrl": "/assets/youtube-thumbnails/w36.jpg",
+      "summary": [
+        "Wall Street became AI's landlord: banks securitized the chips with a $63B SPV and a ~$40B GPU lease while Meta filed roughly $95B of equity paper.",
+        "The AI spending boom puts cloud contracts and compute accounting under scrutiny as the numbers start lying.",
+        "Model behavior and launches: Genie 4, Qwenputer and the week's benchmark results lead the model segment.",
+        "Models doing research: automated research agents move from demos to measurable output.",
+        "Agents and harnesses: the hot take argues to stop asking which model is best and start asking who owns your harness.",
+        "Signal From Outside: Jack Wotherspoon (Google DeepMind) on building your own team of managed agents.",
+        "One to watch: the ETH verdict, Meta ATM, and running elections through models.",
+        "Sponsors: Heritage Telecom and Herald Labs."
+      ],
+      "deckUrl": "/episodes/36/deck",
       "publicationStatus": "public_verified",
       "publicationEvidence": [
         "episodes.json"

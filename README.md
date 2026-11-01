@@ -1,5 +1,9 @@
 # WeeklyClaw.ai
 
+> **AGENTS:** read [`SITE-MAP.md`](SITE-MAP.md) before any update — it maps every connected
+> surface (catalogue, decks, players, transcripts, timeline, summaries, validators) and the
+> checklist for each change type. Updating one place without the rest is the #1 incident cause.
+
 Official landing page for **The Weekly Claw**, OpenClaw's weekly community show.
 
 ## Published Weekly Claw slide routes

@@ -50,7 +50,7 @@ try {
   assert.doesNotMatch(firstDetail, /Weekly Claw #7<\/h1>/, "display title should not duplicate the episode label");
   assert.match(firstDetail, /data-start-seconds="12\.5"/);
   assert.match(firstDetail, /class="transcript-speaker-group" data-speaker-group="henry"/);
-  assert.match(firstDetail, /class="speaker-badge" aria-hidden="true">H<\/span>/);
+  assert.match(firstDetail, /class="speaker-badge host" aria-hidden="true"><img src="\/assets\/host-avatars\/henry.png" alt=""><\/span>/);
   assert.match(firstDetail, /Speaker not identified/);
   assert.doesNotMatch(firstDetail, /speaker_1/);
   assert.equal((firstDetail.match(/transcript-speaker-heading/g) || []).length, 2, "consecutive turns should group by speaker and split on change");
