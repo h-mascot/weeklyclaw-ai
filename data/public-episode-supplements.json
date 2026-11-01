@@ -226,6 +226,23 @@
         "https://www.youtube.com/watch?v=RRYBhrJiyU8"
       ],
       "notes": "The released video is public. A verified public transcript has not yet been imported."
+    },
+    "36": {
+      "status": "published",
+      "sourcePath": "data/public-transcripts/e36.txt",
+      "sourceUrl": "https://www.youtube.com/watch?v=VbzlQMhemAE",
+      "publicationStatus": "public_verified",
+      "evidence": [
+        "episodes.json",
+        "episodes/index.html",
+        "YouTube transcript panel export 2026-11-01"
+      ],
+      "notes": "Timestamped public YouTube transcript captured from the video's transcript panel (511 cues). Auto-caption recognition errors are possible; speaker labels pending Riverside corroboration.",
+      "language": "en",
+      "captionType": "authored_or_unspecified",
+      "sourceHash": "969ae2ecad6dae72df759a77a7444392bcc9aa50d5eb674575c6b2758efe5a14",
+      "speakerLabels": [],
+      "possibleCaptionErrors": true
     }
   },
   "limitations": [

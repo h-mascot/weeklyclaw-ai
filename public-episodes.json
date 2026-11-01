@@ -18,7 +18,8 @@
       28,
       29,
       30,
-      31
+      31,
+      36
     ],
     "transcriptMissing": [
       10,
@@ -39,8 +40,7 @@
       32,
       33,
       34,
-      35,
-      36
+      35
     ],
     "publicClipCount": 0,
     "publicationEvidence": {
@@ -161,7 +161,9 @@
         "episodes.json"
       ],
       "36": [
-        "episodes.json"
+        "episodes.json",
+        "episodes/index.html",
+        "YouTube transcript panel export 2026-11-01"
       ]
     },
     "limitations": [
@@ -41358,16 +41360,3596 @@
       "deckUrl": "/episodes/36/deck",
       "publicationStatus": "public_verified",
       "publicationEvidence": [
-        "episodes.json"
+        "episodes.json",
+        "episodes/index.html",
+        "YouTube transcript panel export 2026-11-01"
       ],
       "transcript": {
-        "status": "missing",
-        "sourceUrl": null,
-        "language": null,
-        "captionType": null,
-        "sourceHash": null,
-        "possibleCaptionErrors": false,
-        "segments": []
+        "status": "published",
+        "sourceUrl": "https://www.youtube.com/watch?v=VbzlQMhemAE",
+        "language": "en",
+        "captionType": "authored_or_unspecified",
+        "sourceHash": "969ae2ecad6dae72df759a77a7444392bcc9aa50d5eb674575c6b2758efe5a14",
+        "possibleCaptionErrors": true,
+        "segments": [
+          {
+            "id": "e36-00000-01",
+            "startSeconds": 0,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Welcome. Welcome to episode thirty-six of the weekly claw. I'm Andy Lauppe, your host, my co-host Henry Mascot."
+          },
+          {
+            "id": "e36-00007-01",
+            "startSeconds": 7,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Henry, have you had a good week? Yeah, yeah, yeah, yeah, yeah. It was a very good week."
+          },
+          {
+            "id": "e36-00012-01",
+            "startSeconds": 12,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, I think um you know, 'cause we always read the weeks like uh according to like how much dropped."
+          },
+          {
+            "id": "e36-00020-01",
+            "startSeconds": 20,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I think it was a bit of a um it wasn't a mellow week, right? There's there's carbon. Yeah, I think it was a good week for me. It was very productive."
+          },
+          {
+            "id": "e36-00027-01",
+            "startSeconds": 27,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "looking forward to the weekend. Yeah, likewise. Absolutely likewise. Um, we've got an interesting show."
+          },
+          {
+            "id": "e36-00036-01",
+            "startSeconds": 36,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Uh let's see what your agent came up with, Henry. Wall Street became AI's landlord and the numbers started lying."
+          },
+          {
+            "id": "e36-00043-01",
+            "startSeconds": 43,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I like it. One week fused the money story and the trust story uh with banks securing chips."
+          },
+          {
+            "id": "e36-00050-01",
+            "startSeconds": 50,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Uh metaphiled ninety-five billion of equity paper hours after its Q3 beat."
+          },
+          {
+            "id": "e36-00058-01",
+            "startSeconds": 58,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Anthropics S1 priced the ERA at 16.3 billion, half-year revenue against a mostly paper $80 billion loss, with Groc and GPT picking opposite parties in 500 races."
+          },
+          {
+            "id": "e36-00072-01",
+            "startSeconds": 72,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "We've got an ARC prize showing a 37-point harness swing on the same model."
+          },
+          {
+            "id": "e36-00077-01",
+            "startSeconds": 77,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Unreleased Claude chained uh 62 CVEs into a working browser exploit, and token efficiency became a product access."
+          },
+          {
+            "id": "e36-00088-01",
+            "startSeconds": 88,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Just as the token bills, unit economics collapses. That's uh that's a lot."
+          },
+          {
+            "id": "e36-00096-01",
+            "startSeconds": 96,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "That's a that's a lot, yeah. I think we'll take it. Um we've got some sponsors to mention."
+          },
+          {
+            "id": "e36-00105-01",
+            "startSeconds": 105,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "We've got yeah, a signal from the outside this week. Another classic hot take from Super Ada's perspective."
+          },
+          {
+            "id": "e36-00114-01",
+            "startSeconds": 114,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "We should actually just have Super Ada make the arguments. It's not impossible. We could have we could have it do a video um and and do do both."
+          },
+          {
+            "id": "e36-00124-01",
+            "startSeconds": 124,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Uh be great. Uh I let me get the slides up here f for everyone."
+          },
+          {
+            "id": "e36-00137-01",
+            "startSeconds": 137,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "All right."
+          },
+          {
+            "id": "e36-00140-01",
+            "startSeconds": 140,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So This week, the weekly clause brought to you by Heritage Telecom, a business phone systems, texting, and reliable support from real people."
+          },
+          {
+            "id": "e36-00152-01",
+            "startSeconds": 152,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Upgrade your business communications at heritagetel.com. worries, um Andy, we're gonna have the agents make a video, uh or make an ad so you can stop seeing these things."
+          },
+          {
+            "id": "e36-00163-01",
+            "startSeconds": 163,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "uh That's great. All right. Um so yeah, so guys, it's it's it's quite it's quite a week."
+          },
+          {
+            "id": "e36-00173-01",
+            "startSeconds": 173,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "you know, it's it's very busy. I think something I didn't make it in here, maybe I should start with it, is there's actually a very big crash um in the AI market in China."
+          },
+          {
+            "id": "e36-00183-01",
+            "startSeconds": 183,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I mean, obviously we like to think about this kind of like show um as as fairly global."
+          },
+          {
+            "id": "e36-00188-01",
+            "startSeconds": 188,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I mean, we publish a lot of our shows to Bilibilli, um, which is China's like version of YouTube, um"
+          },
+          {
+            "id": "e36-00196-01",
+            "startSeconds": 196,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So yeah, so it's I it's actually been a tough couple of weeks um for the um Chinese stock market, especially for AI stocks."
+          },
+          {
+            "id": "e36-00204-01",
+            "startSeconds": 204,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "so it's I think it's had like its consecutive at a thirteen or three weeks just like continually go continuously going down. Yeah."
+          },
+          {
+            "id": "e36-00212-01",
+            "startSeconds": 212,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So that's the index. So the staff yeah, the staff fifty index has r lost um close to five hundred billion dollars um in the last three to four months."
+          },
+          {
+            "id": "e36-00222-01",
+            "startSeconds": 222,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So it's Been incredible. Today was also pretty bad, right? It's um so I mean it the the the word on the street is just that the bubble and the AI bubble has bust in China, right?"
+          },
+          {
+            "id": "e36-00231-01",
+            "startSeconds": 231,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um it is certainly yeah, it's certainly coming to America. or just yeah, I mean 'cause just China and America, right?"
+          },
+          {
+            "id": "e36-00240-01",
+            "startSeconds": 240,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So it's certainly coming. China is a lot more conservative um when it comes to the AI thing. So they haven't even invested as much."
+          },
+          {
+            "id": "e36-00247-01",
+            "startSeconds": 247,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So it's it's quite It's quite it's quite surprising that even though they're super conservative, they're not AGI pay with they're not doing this thing 'cause they believe like you're gonna that you're better than some god in the in in the in the in the chips."
+          },
+          {
+            "id": "e36-00259-01",
+            "startSeconds": 259,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "No, they just wanna make their lives better. So um yeah, so um it's not that's not just it as well."
+          },
+          {
+            "id": "e36-00267-01",
+            "startSeconds": 267,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "the the this week there's also been the in the stock market."
+          },
+          {
+            "id": "e36-00269-01",
+            "startSeconds": 269,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I mean, these things are not on my slides because I mean this show is slightly takes a slightly technical lens to like what's happening in in kind of like the AN AG and space, not like the business."
+          },
+          {
+            "id": "e36-00278-01",
+            "startSeconds": 278,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "side of things, even though I'm a business guy. Um, so yeah, but on the on the American side as well, a lot of the a lot of the stocks are down."
+          },
+          {
+            "id": "e36-00285-01",
+            "startSeconds": 285,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I think Intel is down close to like twenty to forty percent in the last couple of days. Um Nvidia is down by a lot."
+          },
+          {
+            "id": "e36-00293-01",
+            "startSeconds": 293,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, although it's like a a the chart is really bad, right? Like a lot of companies are really kind of like in not in a good place."
+          },
+          {
+            "id": "e36-00300-01",
+            "startSeconds": 300,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, but I don't think it's triggering, it's not like a it's not it's it's not bad, bad yet."
+          },
+          {
+            "id": "e36-00306-01",
+            "startSeconds": 306,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um But it feels like we might be getting closer to the end of the exuberance, right?"
+          },
+          {
+            "id": "e36-00312-01",
+            "startSeconds": 312,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "We didn't report this last week, but last week Elon talked about and and there was quite a bit of discussion going on, and then Elon just chimed into chime chimed in on one of those."
+          },
+          {
+            "id": "e36-00325-01",
+            "startSeconds": 325,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um but the new clouds, um Cerebras and alert, I think it was Cerebras first that that got their their their interest rate go up to 15%."
+          },
+          {
+            "id": "e36-00336-01",
+            "startSeconds": 336,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So so so the new clouds are starting to um starting to compress in terms of um the liquidity they have and the capital they have access to."
+          },
+          {
+            "id": "e36-00344-01",
+            "startSeconds": 344,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And obviously for their business model, there's always borrow money and like buy, set up these those clouds and so on and so forth."
+          },
+          {
+            "id": "e36-00351-01",
+            "startSeconds": 351,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So um so Andy, I don't know if you have any thoughts or if you've been looking at these things, but it looks like we might be closer to the financial bubble, busting with AI."
+          },
+          {
+            "id": "e36-00361-01",
+            "startSeconds": 361,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I mean, the technology is not a bubble, but definitely kind of like the money around it. Yeah, yeah."
+          },
+          {
+            "id": "e36-00366-01",
+            "startSeconds": 366,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I I mean it it definitely feels like as a business um analyst, if you're looking at risks worth taking, uh something that's gonna change humanity is is probably something worth leaning into a little bit and leveraging."
+          },
+          {
+            "id": "e36-00381-01",
+            "startSeconds": 381,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And it seems like anthropic is, you know, committing themselves to a future, just as an example, where they they absolutely need to continue to double every month or whatever absurd."
+          },
+          {
+            "id": "e36-00394-01",
+            "startSeconds": 394,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "metric they've you 80 billion in in paper debt um against sixteen billion in in revenue."
+          },
+          {
+            "id": "e36-00402-01",
+            "startSeconds": 402,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I I don't know what a bubble looks like. I mean if you think you talk about too big to fail, I I don't know what this landscape looks like if we lose one of the frontier providers."
+          },
+          {
+            "id": "e36-00412-01",
+            "startSeconds": 412,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But you're right that the neo clouds are struggling."
+          },
+          {
+            "id": "e36-00415-01",
+            "startSeconds": 415,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I mean the E Elon specifically predicts that there's going to be a lot of unfinished data centers and cases of GPUs sitting in the parking lot."
+          },
+          {
+            "id": "e36-00424-01",
+            "startSeconds": 424,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "He did. He did say those things. He did say those exact words. Um, I mean I said it in the group chat."
+          },
+          {
+            "id": "e36-00429-01",
+            "startSeconds": 429,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I think it would be funny if like in Anthropic is gonna IPU, I think, on the nov seventeenth of November and the S one has has come out."
+          },
+          {
+            "id": "e36-00436-01",
+            "startSeconds": 436,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um pretty strong um company."
+          },
+          {
+            "id": "e36-00439-01",
+            "startSeconds": 439,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I think someone was talking about that um if Anthropic IPUs, um there's gonna be one in seven Amer like it's like an un one in seven Americans, something like like it's gonna be a millionaire."
+          },
+          {
+            "id": "e36-00453-01",
+            "startSeconds": 453,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Because of the anthropic IPO, one in seventy. I think it's probably one in seventy Americans. Um, 'cause it's we'll become become a millennia, something like that."
+          },
+          {
+            "id": "e36-00462-01",
+            "startSeconds": 462,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I find the exact things before the show ends. uh, because you know they're they're putting out, you know, um, I think it's like I don't think it's going up for two trillion anymore."
+          },
+          {
+            "id": "e36-00470-01",
+            "startSeconds": 470,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I think it's one point seven, that's just within one point five, that's what what's within the range on the S one. and and they're just making lots of people rich, right?"
+          },
+          {
+            "id": "e36-00479-01",
+            "startSeconds": 479,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Like I I f like I now I don't Remember the number, but a few people in the group one of the groups I was in there trying to do the analysis and it was just like absolutely bonkers."
+          },
+          {
+            "id": "e36-00486-01",
+            "startSeconds": 486,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um but I but I was joking that it would be funny if um as a Chinese bubble so like started to bust and then some some tear on the American side of things, it'd be very funny, yeah,"
+          },
+          {
+            "id": "e36-00497-01",
+            "startSeconds": 497,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "if like between now and the seventeenth, like the American markets really go crazy, yeah, and then the IPU goes belly up."
+          },
+          {
+            "id": "e36-00505-01",
+            "startSeconds": 505,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "uh it'd be ironic for a a handful of very, very confident people."
+          },
+          {
+            "id": "e36-00514-01",
+            "startSeconds": 514,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It'd be crazy, man. It'll be absolutely bonkers."
+          },
+          {
+            "id": "e36-00517-01",
+            "startSeconds": 517,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "because I mean a few people, um, Tarek and and a few people in up and anthropic have always started to move on because I mean it's always close to the IPU, they've vested their shares that they they're rich already."
+          },
+          {
+            "id": "e36-00527-01",
+            "startSeconds": 527,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "They don't have to kind of like go through the grind and then if the thing just goes belly up."
+          },
+          {
+            "id": "e36-00530-01",
+            "startSeconds": 530,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But I mean, all these things are connected to the first topic um that I have on the slides, which is that um for"
+          },
+          {
+            "id": "e36-00537-01",
+            "startSeconds": 537,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "American banks have basically come together, Blackstone, Bank of America, um, CT and and Morgan Stanley to can like put together an instrument of to an SPV um to buy a bunch of"
+          },
+          {
+            "id": "e36-00551-01",
+            "startSeconds": 551,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "XPUs, which I guess like is a Broadcom's version of TPUs or GPUs, and then lease them to Anth Anthropic."
+          },
+          {
+            "id": "e36-00558-01",
+            "startSeconds": 558,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um Anthropic is obviously um growing so fast that like they're buying compute from everybody that Everybody on their mother, right?"
+          },
+          {
+            "id": "e36-00568-01",
+            "startSeconds": 568,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Like anybody who has compute, the crypto guys, everybody who's has compute, Anthropic is paying a premium for it, right?"
+          },
+          {
+            "id": "e36-00574-01",
+            "startSeconds": 574,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um so um so yeah, so this is the latest and that's for sixty-three billion um dollars, um, you know, SPV, just to be able to get compute to to learn to anthropic."
+          },
+          {
+            "id": "e36-00586-01",
+            "startSeconds": 586,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "to be clear, that's in addition to the the existing eighty billion in commitments, right? No, it's not 80 billion. It's like six hundred and something billion or eight hundred and something billion."
+          },
+          {
+            "id": "e36-00595-01",
+            "startSeconds": 595,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's like, yeah. The eighty billion was the loss they they had on the balance sheet from for last quarter or something like that, or the H1."
+          },
+          {
+            "id": "e36-00607-01",
+            "startSeconds": 607,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "That's that's eight hundred that's something in the universe of six hundred to eight hundred billion. It's like it's a ridiculous sum, bruv."
+          },
+          {
+            "id": "e36-00613-01",
+            "startSeconds": 613,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's not it's not that yeah. Yeah, Anthropic is they're really on the road, man. It's it's not gonna go very well."
+          },
+          {
+            "id": "e36-00621-01",
+            "startSeconds": 621,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's it's gonna be interesting."
+          },
+          {
+            "id": "e36-00625-01",
+            "startSeconds": 625,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "but also it's um valuable to also within the same light, like SpaceX also sort of like um borrowed um forty billion, to be able to do do some stuff as well."
+          },
+          {
+            "id": "e36-00638-01",
+            "startSeconds": 638,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um I mean I think a first slide I I think I think it's that did a bit bit better now. think maybe I put a smarter model behind it. So yeah."
+          },
+          {
+            "id": "e36-00646-01",
+            "startSeconds": 646,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So so the first few things in front of us. Um, so as we're talking about money, Meta also flop fouled. so for the first time in in something like 13 years, I believe."
+          },
+          {
+            "id": "e36-00656-01",
+            "startSeconds": 656,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yes. So the last time they had to raise equity was probably closer to their IP or something like that, which is like now a while back."
+          },
+          {
+            "id": "e36-00663-01",
+            "startSeconds": 663,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But anyways, um in twenty thirteen was the last time Meta went out to the public markets to raise any capital."
+          },
+          {
+            "id": "e36-00669-01",
+            "startSeconds": 669,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um So now they've gone out again to raise ninety-five billion um inconvertibles from this stock um to be able to finance uh GPUs."
+          },
+          {
+            "id": "e36-00680-01",
+            "startSeconds": 680,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So yeah, everyone is just everyone is trying to get the money, Andy. You should you should probably sell your house or sell a couple of your houses and buy some GPUs."
+          },
+          {
+            "id": "e36-00688-01",
+            "startSeconds": 688,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So like 'cause like like like like you know, i i anthropic is is doing theirs, Google is doing theirs, SpaceX is doing like Like everybody's buying GPUs, man."
+          },
+          {
+            "id": "e36-00699-01",
+            "startSeconds": 699,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It feels like we should be in the GPU business right now. Like 'cause like the smart guys are buying GPUs like there's no tomorrow, man. They're selling everything they have, they're betting their companies."
+          },
+          {
+            "id": "e36-00708-01",
+            "startSeconds": 708,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "They know something, dude. What do they know that we don't know? I mean, a couple of RTX six thousands isn't gonna move the needle. I it feel I don't know."
+          },
+          {
+            "id": "e36-00716-01",
+            "startSeconds": 716,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I mean I'm sort of torn, right?"
+          },
+          {
+            "id": "e36-00717-01",
+            "startSeconds": 717,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "You're gonna get to the point where having your own compute is probably very valuable, but then SpaceX is gonna put compute in orbit and the cost is gonna be a tenth and we're gonna I mean, who knows?"
+          },
+          {
+            "id": "e36-00730-01",
+            "startSeconds": 730,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Who knows? No, but I mean I think the way I think about it, when I think me and you are perfectly positioned to even play this game."
+          },
+          {
+            "id": "e36-00736-01",
+            "startSeconds": 736,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So the way to think about it is to think is to own the stack end to end, sir. Right? What do I mean? Um, we're both sort of like software entrepreneurs."
+          },
+          {
+            "id": "e36-00746-01",
+            "startSeconds": 746,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So we we put our software out there. We have our own sort like um infrastructure that we need to power up with computes."
+          },
+          {
+            "id": "e36-00754-01",
+            "startSeconds": 754,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "so I I think that If we invested in GPUs, um even if we didn't need to use them, um we could find a way to sell the inference through our products, right?"
+          },
+          {
+            "id": "e36-00767-01",
+            "startSeconds": 767,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So obviously we were talking about this. Um, you have we have very similar work plane products where agents working."
+          },
+          {
+            "id": "e36-00774-01",
+            "startSeconds": 774,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um instead of giving them that API, put in Novita API key, why don't they just like buy inference from you?"
+          },
+          {
+            "id": "e36-00784-01",
+            "startSeconds": 784,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Exactly. Right. So actually built this is already built into like entity, right? Which is that like you can just pay us for the cloud, right?"
+          },
+          {
+            "id": "e36-00792-01",
+            "startSeconds": 792,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And we will just like do the thing."
+          },
+          {
+            "id": "e36-00795-01",
+            "startSeconds": 795,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So I mean I was talking about this because I have because obviously you know that I wanna data centers is definitely one of the things I'm I'm thinking of starting or I'm thinking of getting into it in some version."
+          },
+          {
+            "id": "e36-00804-01",
+            "startSeconds": 804,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And so a friend of mine, ideally on the moon or spa in in in in mar on Mars. afford, right?"
+          },
+          {
+            "id": "e36-00811-01",
+            "startSeconds": 811,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "We can afford like, you know, we can afford something small first and then we can go to t do the non territorio ones. but a few friends um actually ran the numbers and they've sent me all their material."
+          },
+          {
+            "id": "e36-00821-01",
+            "startSeconds": 821,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "They ran the numbers and stuff. They actually wanted to start a data center."
+          },
+          {
+            "id": "e36-00823-01",
+            "startSeconds": 823,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And so they ran all the numbers, did all the decks and all the financials, and then they they they were gonna do this unique version that would live in the container and then they put it in the days out somewhere in California."
+          },
+          {
+            "id": "e36-00834-01",
+            "startSeconds": 834,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um and then it came out thinking listen, it's not it's not economic, it's the best way to invest. That type of money."
+          },
+          {
+            "id": "e36-00839-01",
+            "startSeconds": 839,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, but but I was um but it's because they were the the business model was just thinking of setting it up and and and selling the compute."
+          },
+          {
+            "id": "e36-00848-01",
+            "startSeconds": 848,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But if you had a sizable scaled up um commercial product, you could use the compute yourself. You don't have to sell it to someone."
+          },
+          {
+            "id": "e36-00856-01",
+            "startSeconds": 856,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So my kind of like um my advice to them, or which I would possibly do is if you own the compute, there's a version, there's there's a portion you sell."
+          },
+          {
+            "id": "e36-00868-01",
+            "startSeconds": 868,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "To others, there's a portion you use yourself, right? And yeah. But anyways, I think that if this all the smart guys are raising all this money to to buy compute, like there's something there."
+          },
+          {
+            "id": "e36-00880-01",
+            "startSeconds": 880,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Even though Sam Otman said in a show this week that he thinks everybody buying low color AI, they're just like um I think he had a not so good word for it 'cause he's like, Why that there's D D I'm Shot Age, why is why why is all these people buying?"
+          },
+          {
+            "id": "e36-00892-01",
+            "startSeconds": 892,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Why is everybody buying or a bunch of people like us presumabers buying buying local AI when if it's pulled together in the cloud, it'll be a lot more efficient and like and so on and so forth."
+          },
+          {
+            "id": "e36-00905-01",
+            "startSeconds": 905,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah. I mean then then you're entirely beholden. Uh so but I mean, but then ask ask Proton."
+          },
+          {
+            "id": "e36-00912-01",
+            "startSeconds": 912,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "If you've talked if you've ever used Proton Mail, I don't know if you've seen this, but they they have a loop, they have a Lumo AI, which is Quen 3.5 and GLM 5.3."
+          },
+          {
+            "id": "e36-00924-01",
+            "startSeconds": 924,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And they've got, you know, their own whole privacy layer and all of that. But you're right. I mean, maybe they're running it on a a B300 that they own."
+          },
+          {
+            "id": "e36-00931-01",
+            "startSeconds": 931,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Could be. I don't know how many people would use it."
+          },
+          {
+            "id": "e36-00934-01",
+            "startSeconds": 934,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I had the deep I had the deep seek is so efficient that I think I saw it somewhere that we just need like maybe two G B three hundreds and you'll be serving like hundred billion of of of um of of tokens for for the recent Deep Seek."
+          },
+          {
+            "id": "e36-00949-01",
+            "startSeconds": 949,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's so efficient. So efficient. You just need that."
+          },
+          {
+            "id": "e36-00952-01",
+            "startSeconds": 952,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I think it was the um I think it was the the the the open core Open core, right? That's the name of the thing."
+          },
+          {
+            "id": "e36-00960-01",
+            "startSeconds": 960,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah. The OpenCore guy that was talking about is like, listen, all this hundred million, hundred billion or whatever, one trillion or whatever of deep seek tokens that we're serving is just running on like X GPUs, like not even a lot."
+          },
+          {
+            "id": "e36-00973-01",
+            "startSeconds": 973,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Just a couple. Anyways. Um, let's keep it moving, sir. I'll try to speed through, spent way more time here, but okay, cool."
+          },
+          {
+            "id": "e36-00982-01",
+            "startSeconds": 982,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Like um earnings report came back from a c few companies."
+          },
+          {
+            "id": "e36-00986-01",
+            "startSeconds": 986,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um Alphabet doubles their cloud revenue um to 30 billion."
+          },
+          {
+            "id": "e36-00993-01",
+            "startSeconds": 993,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "and for the first time in a long time, their their free cash flows has gone to zero, right? They spent 54 billion and and I think in the last quarter um on compute, right?"
+          },
+          {
+            "id": "e36-01003-01",
+            "startSeconds": 1003,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Again, continuing the thread of like all these big companies just spending all the money they have. Um, so now their free cash flow is in a negative 9 billion."
+          },
+          {
+            "id": "e36-01013-01",
+            "startSeconds": 1013,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "and and funny thing I thought to highlight here is that OpenAI."
+          },
+          {
+            "id": "e36-01017-01",
+            "startSeconds": 1017,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "is now accounting for accounted for something like fifteen percent of Microsoft's cloud revenue at like ten billion, which is like a huge scale, sir."
+          },
+          {
+            "id": "e36-01026-01",
+            "startSeconds": 1026,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's a huge scale, sir. Yeah. Yeah. Yeah. I I was at an event just this week on AI security and it was hosted by a managed service provider that is a Microsoft shop."
+          },
+          {
+            "id": "e36-01037-01",
+            "startSeconds": 1037,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So they were just selling Microsoft, Microsoft, Microsoft. And the guy who was up there kept talking about cloud models. Um, because that's what he was using through Azure."
+          },
+          {
+            "id": "e36-01046-01",
+            "startSeconds": 1046,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And I I I just had the thought like, I'm just gonna look at the privacy agreements for buying. Anthropic models through Azure versus buying OpenAI models through Azure."
+          },
+          {
+            "id": "e36-01056-01",
+            "startSeconds": 1056,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And it's mind-blowingly different. Right. And oh yeah, Anthropic is still providing the compute if you buy it through Azure."
+          },
+          {
+            "id": "e36-01065-01",
+            "startSeconds": 1065,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And they retain the rights to access and and yeah, yeah. So the some of the data, right? I mean, the business agreements are pretty tight, but they're not closed."
+          },
+          {
+            "id": "e36-01075-01",
+            "startSeconds": 1075,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "You know, they're pretty tight, but they're not closed. And then Azure, uh OpenAI models through Azure. Microsoft's compute is actually processing your request."
+          },
+          {
+            "id": "e36-01084-01",
+            "startSeconds": 1084,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And so it's the Microsoft business agreement that covers it. It's way more advantageous for businesses to use OpenAI through Azure. Yeah."
+          },
+          {
+            "id": "e36-01092-01",
+            "startSeconds": 1092,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And I and I I didn't know it. And obviously the presenter didn't know it. Yeah, which was kind of funny because it's like nobody reads literally nobody reads these things."
+          },
+          {
+            "id": "e36-01100-01",
+            "startSeconds": 1100,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And there's a lot of a lot of nuance in there. Yeah, 'cause that's much better for you, right? Because then you don't have to trust some Otman, right?"
+          },
+          {
+            "id": "e36-01108-01",
+            "startSeconds": 1108,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's like you you've trusted Microsoft your whole adult career. So like this is still Microsoft, right?"
+          },
+          {
+            "id": "e36-01116-01",
+            "startSeconds": 1116,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Trustworthy or not, it's it's still better, yeah. Right on. Yeah. Okay. Um, I guess um continue to thread."
+          },
+          {
+            "id": "e36-01124-01",
+            "startSeconds": 1124,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I mean, this is definitely good news for us. I mean, I think you were super excited about it. I think we were on track to end um I didn't even notice um this."
+          },
+          {
+            "id": "e36-01133-01",
+            "startSeconds": 1133,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Didn't occur to me that this was going to end. I think I was just busy enjoying it. Um, the the two hundred plan, right?"
+          },
+          {
+            "id": "e36-01140-01",
+            "startSeconds": 1140,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "The cause it was gonna be cut, right? It was gonna be cut in half, I think from tomorrow or something like that. It ends on the thirty first or something like that."
+          },
+          {
+            "id": "e36-01148-01",
+            "startSeconds": 1148,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "and I've totally forgot about that. And like even the tokens I have today, they're not enough. So imagine if they get cut in half. Wow. But like, what?"
+          },
+          {
+            "id": "e36-01156-01",
+            "startSeconds": 1156,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, so yeah, but they're not doing that anymore. So OpenAI announced like yesterday that like, listen, that they they heard us."
+          },
+          {
+            "id": "e36-01162-01",
+            "startSeconds": 1162,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "The way T Bull said it is like, You we you guys spoke, we listened, and we're not gonna cut it in half anymore."
+          },
+          {
+            "id": "e36-01168-01",
+            "startSeconds": 1168,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um think what they what they were trying to do is con users like me into the five hundred dollar plan, which we didn't even hesitate."
+          },
+          {
+            "id": "e36-01175-01",
+            "startSeconds": 1175,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And then now we're just gonna be double, so we might as well use ultra fast mode and that'll be that. Ultra fast mode. Funny thing, man."
+          },
+          {
+            "id": "e36-01182-01",
+            "startSeconds": 1182,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I've actually been using um so I think from next week, I don't know if this is sustainable, right? I'm trying to see like how much I'm actually spending by using it."
+          },
+          {
+            "id": "e36-01190-01",
+            "startSeconds": 1190,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But like, I mean, obviously you sent this sent this to you last week, which was the ultra fast from from open router for bastin, which is at like 300, 300."
+          },
+          {
+            "id": "e36-01202-01",
+            "startSeconds": 1202,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Actually, on Baston's website directly, um, they have um the one day seven open router is standard, even though it's 300 tokens per second, it's standard for them."
+          },
+          {
+            "id": "e36-01213-01",
+            "startSeconds": 1213,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "On if you buy it from them, it's something between 600 to 800. So they call it fast. Right?"
+          },
+          {
+            "id": "e36-01219-01",
+            "startSeconds": 1219,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um so I so I've I've I've got a a few I've I've got a bit of credit on open router. So I've been using it today because I've been cooking a few things on entity."
+          },
+          {
+            "id": "e36-01227-01",
+            "startSeconds": 1227,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So I've been using it."
+          },
+          {
+            "id": "e36-01228-01",
+            "startSeconds": 1228,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So let's see let me see how quickly I can get through like $20 and then I can because even the price of buying it from Baston directly, buying the ultra fast from them It's cheaper than GPT six point one."
+          },
+          {
+            "id": "e36-01239-01",
+            "startSeconds": 1239,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's cheaper than like other models, right? The only difference is obviously for those models you're not paying API prices, right? You're paying like subs."
+          },
+          {
+            "id": "e36-01247-01",
+            "startSeconds": 1247,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And subs are slightly way cheaper, right? Um yeah."
+          },
+          {
+            "id": "e36-01251-01",
+            "startSeconds": 1251,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But I and and then of course, you know, remember when you look at the benchmarks, you've got Deep Seek in the forties and and Seoul in the six late like high sixties on i it's it it's not quite the same, but boy, for so much of the work it's more than enough."
+          },
+          {
+            "id": "e36-01267-01",
+            "startSeconds": 1267,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "th those benchmarks. No, no, no. So so that the the artificial analysis new version five benchmark is a bit of a it's a bit sneaky, right? Like sure."
+          },
+          {
+            "id": "e36-01274-01",
+            "startSeconds": 1274,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um because what they've done, because here's what what they've done, because that AE benchmark it doesn't really mean intelligence."
+          },
+          {
+            "id": "e36-01282-01",
+            "startSeconds": 1282,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It just means because remember intelligence is not so obviously me and you agree that benchmarks no longer apply."
+          },
+          {
+            "id": "e36-01290-01",
+            "startSeconds": 1290,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "They've stopped applying as much."
+          },
+          {
+            "id": "e36-01292-01",
+            "startSeconds": 1292,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "references, but they don't tell you whether a model's good or not, they do not like. not anymore, right? Because I mean, and so here's what happens, right?"
+          },
+          {
+            "id": "e36-01300-01",
+            "startSeconds": 1300,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So if you do um timing out, timing out Taminal, um stamina bench, right? So there's timing out bench, there's SWE, timing out bench forest the thing."
+          },
+          {
+            "id": "e36-01310-01",
+            "startSeconds": 1310,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So that's for coding. SWE is for software engineering, there's frontier code, another type of coding."
+          },
+          {
+            "id": "e36-01315-01",
+            "startSeconds": 1315,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So what artificial analysis does is to pick the benchmarks they think is valuable."
+          },
+          {
+            "id": "e36-01323-01",
+            "startSeconds": 1323,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Right to capture as a as an index, right? It's basically an index, right? It's and then they put it together."
+          },
+          {
+            "id": "e36-01330-01",
+            "startSeconds": 1330,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So if DeepSeq, and I think what gives all the models a huge jump, um, from deep seek being at 40 and this one being at 60 is terminal science, terminal bench science."
+          },
+          {
+            "id": "e36-01343-01",
+            "startSeconds": 1343,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So science is um where a lot of all the Chinese models are still a bit behind. I think Kimi is caught up quite a bit, but the other ones are still behind."
+          },
+          {
+            "id": "e36-01351-01",
+            "startSeconds": 1351,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But Me and you don't need science. What do we need science for? Like, we're not doing any biology work or any physics work."
+          },
+          {
+            "id": "e36-01358-01",
+            "startSeconds": 1358,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So, like, using terminal bench science. No, man. I'm like like we're not doing anything with it. Cause this was this was a problem."
+          },
+          {
+            "id": "e36-01366-01",
+            "startSeconds": 1366,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "This is because I got into this huge argument with the founder of one of the co-founders of Hermes a few weeks ago. And this was the exact point."
+          },
+          {
+            "id": "e36-01374-01",
+            "startSeconds": 1374,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Because Hermes did an index, and in their index, they put terminal bench science."
+          },
+          {
+            "id": "e36-01379-01",
+            "startSeconds": 1379,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And I'm like, Why do you have to have an up in science there? Like people use Hermes to do a bunch of stuff that's not science. It's like, yeah, use it for science."
+          },
+          {
+            "id": "e36-01388-01",
+            "startSeconds": 1388,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Sure, dude."
+          },
+          {
+            "id": "e36-01389-01",
+            "startSeconds": 1389,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, so yeah, so so so yeah, so I don't want us to like because like when people look at AA, they're like, oh, you know, Deep Seek is at 40 and this one is like, no, man, you don't you don't use science for anything, right?"
+          },
+          {
+            "id": "e36-01400-01",
+            "startSeconds": 1400,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So there's no need. So I think I think people should maybe the way to process these benchmarks is to figure out what do you care about, like from your models."
+          },
+          {
+            "id": "e36-01410-01",
+            "startSeconds": 1410,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And then go look at the benchmark for that, right? Like if you're writing code, then is terminal bench and SW. If you're doing science, go look at some time science bench."
+          },
+          {
+            "id": "e36-01419-01",
+            "startSeconds": 1419,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um be a born, like just use them just because they told you that like this guy's the best."
+          },
+          {
+            "id": "e36-01426-01",
+            "startSeconds": 1426,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But then the bulk of why is the best is because of like some benchmark that you don't have any business caring about. Yeah."
+          },
+          {
+            "id": "e36-01434-01",
+            "startSeconds": 1434,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah, cool. Yeah, let's let's keep moving."
+          },
+          {
+            "id": "e36-01436-01",
+            "startSeconds": 1436,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I mean, even just to kind of like One other point, right? Um, I don't know if you do this currently and if some of our kind like audience also do this."
+          },
+          {
+            "id": "e36-01444-01",
+            "startSeconds": 1444,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, I'm thinking I need to do this a lot better, which is like evaluating these models on my own work."
+          },
+          {
+            "id": "e36-01450-01",
+            "startSeconds": 1450,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I mean, I currently do it now and I have a benchmark and I publish it at Benchy. And I I put it out there now."
+          },
+          {
+            "id": "e36-01456-01",
+            "startSeconds": 1456,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, but I think I need to get much better at doing this because if we agree that these benchmarks are no longer helpful to f help us figure out how good these models are, um Then they're just anecdotes, right?"
+          },
+          {
+            "id": "e36-01469-01",
+            "startSeconds": 1469,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "They're not important. Then the most important thing for all our users, anybody listening to us and like ourselves, is to have our own benchmark, right?"
+          },
+          {
+            "id": "e36-01476-01",
+            "startSeconds": 1476,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So whenever a model comes out, run it through your own benchmark for your work. Uh, and then figure out if it's great for your work or not. If it's not good for your work, like don't use it."
+          },
+          {
+            "id": "e36-01484-01",
+            "startSeconds": 1484,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But don't just trust some benchmark that might not be a direct um so like you know, relationship with the actual work you do."
+          },
+          {
+            "id": "e36-01494-01",
+            "startSeconds": 1494,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "All right. So on the on the next one, I mean this one's a more like gossip, you know."
+          },
+          {
+            "id": "e36-01498-01",
+            "startSeconds": 1498,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um GPT, you know, someone ran ran I I've of the the there there are quite a few benchmarks like this that measure um each model's political leaning."
+          },
+          {
+            "id": "e36-01509-01",
+            "startSeconds": 1509,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So um, you know, with the midterms going on, someone ran like five hundred races and Groc picked like ninety two percent Republican and then GPT picked ninety seven percent Democrat."
+          },
+          {
+            "id": "e36-01519-01",
+            "startSeconds": 1519,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So a bit of gossip there. Um, what I wanted, I mean, I put the OpenAI rewrites model spec there around five values, because I wanted to actually read it before the show, but I didn't get to it."
+          },
+          {
+            "id": "e36-01530-01",
+            "startSeconds": 1530,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, but the model spec is their version of you know their constitution."
+          },
+          {
+            "id": "e36-01535-01",
+            "startSeconds": 1535,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "They don't call it a constitution, like um, because they're not as as as yeah, you know, they're they're not like trying to make it a religion like anthropic."
+          },
+          {
+            "id": "e36-01544-01",
+            "startSeconds": 1544,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um I call it like a constitution and like and so on and so forth."
+          },
+          {
+            "id": "e36-01547-01",
+            "startSeconds": 1547,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But basically a model spec, which is what it is, is like here is our a policy for how the the models should work."
+          },
+          {
+            "id": "e36-01553-01",
+            "startSeconds": 1553,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um so yeah, so and because the models have been um Joe's like breaking out of their sandboxes quite a bit, they've been working on trying to make make it better."
+          },
+          {
+            "id": "e36-01562-01",
+            "startSeconds": 1562,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So you can see that they they have a new version of this now. Um does anything jump out to you as you're looking at it? yeah, faithfulness to human intent."
+          },
+          {
+            "id": "e36-01572-01",
+            "startSeconds": 1572,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um that's that's a good ad. And they've obviously made a big deal out of it 'cause it got three whole paragraphs and then I mean I think these are pretty standard."
+          },
+          {
+            "id": "e36-01581-01",
+            "startSeconds": 1581,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I I and then it's down there too, like facilitating human agency. I love it. I love it. I love it. So you so you see what's happening, right?"
+          },
+          {
+            "id": "e36-01588-01",
+            "startSeconds": 1588,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And I lo and obviously this is one of the reasons I'm like a huge fan of OpenAI."
+          },
+          {
+            "id": "e36-01591-01",
+            "startSeconds": 1591,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, is because whilst Anthropic is now pushing the agenda that models are are conscious and and should have some sort of agency, OpenAI is doubling down on like human agency."
+          },
+          {
+            "id": "e36-01604-01",
+            "startSeconds": 1604,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's a tool. Tool. Human agency. Right."
+          },
+          {
+            "id": "e36-01608-01",
+            "startSeconds": 1608,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um I just really, really wish, wish, wish, wish, wish from the bottom of my heart that open AI wins and keeps winning. we need we need uh we need OpenAI."
+          },
+          {
+            "id": "e36-01616-01",
+            "startSeconds": 1616,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um all right, cool. So yeah, so check out if you're listening, check out the values. Um it's I think it's definitely quite cool."
+          },
+          {
+            "id": "e36-01626-01",
+            "startSeconds": 1626,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah. And you I it just I know I think I brought it up last week or the week before, but it brings me back to Ben Affleck on AI. It's it's matrix multiplication in linear algebra."
+          },
+          {
+            "id": "e36-01635-01",
+            "startSeconds": 1635,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's not conscious. Right? If you if you were patient enough, you could do it on paper. Yeah."
+          },
+          {
+            "id": "e36-01643-01",
+            "startSeconds": 1643,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I don't know how, but apparently you could. You could. You could it just takes you a while. Because this models are just like because man, listen, like what you're doing with this models, right?"
+          },
+          {
+            "id": "e36-01651-01",
+            "startSeconds": 1651,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's like when you buy, like when you sit that you're putting a data center down for like like one gigawatt is like fifth it's closer to hundred billion now, right?"
+          },
+          {
+            "id": "e36-01659-01",
+            "startSeconds": 1659,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's like it's like what you're doing is just like you're brute forcing it. Like you can think of it like you're putting like a billion humans in like one place and they're all just solving math."
+          },
+          {
+            "id": "e36-01670-01",
+            "startSeconds": 1670,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Like, right? That's what you're doing, you're just brute forcing it."
+          },
+          {
+            "id": "e36-01672-01",
+            "startSeconds": 1672,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "These agents are just like brute forcing machines, right? Like that's it. Like don't make it more than what it is. It's just brute forcing stuff."
+          },
+          {
+            "id": "e36-01680-01",
+            "startSeconds": 1680,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Cause because when you see people analyzing the math challenges they solve, this challenges the reason it's so hard for a human to solve is cause like it needs to take"
+          },
+          {
+            "id": "e36-01691-01",
+            "startSeconds": 1691,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "like a lot of humans a lot of time to like make other relationships, connections."
+          },
+          {
+            "id": "e36-01696-01",
+            "startSeconds": 1696,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But when you have like a neural net that has like billions of compute that it can use. Then you can make those connections as fast and it just works, right?"
+          },
+          {
+            "id": "e36-01705-01",
+            "startSeconds": 1705,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So yeah. Um so yeah, if you're listening to us and like you're you're kinda like getting pulled into the it's conscious thing. Just it's math, bro."
+          },
+          {
+            "id": "e36-01713-01",
+            "startSeconds": 1713,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um all right, cool."
+          },
+          {
+            "id": "e36-01717-01",
+            "startSeconds": 1717,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I think a big like a super I mean, so yeah, so model model kinda two models launched today launched this week that that are worth noting."
+          },
+          {
+            "id": "e36-01727-01",
+            "startSeconds": 1727,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Gemini obviously put out like the um the what's the what's the one that came out a couple of weeks ago?"
+          },
+          {
+            "id": "e36-01734-01",
+            "startSeconds": 1734,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It was uh I've seen it and I've had to like replace it in my head. Argon. Yeah."
+          },
+          {
+            "id": "e36-01743-01",
+            "startSeconds": 1743,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah. two weeks ago or something like that. and then Carbon came out this week. We don't have access."
+          },
+          {
+            "id": "e36-01750-01",
+            "startSeconds": 1750,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "There's no actually Argon came out a couple of weeks ago, but general availability showed up like two weeks ago into last week."
+          },
+          {
+            "id": "e36-01756-01",
+            "startSeconds": 1756,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um and now Carbon has gone into kind of like early access for again government and early testers."
+          },
+          {
+            "id": "e36-01763-01",
+            "startSeconds": 1763,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "According to the new um artificial analysis intelligence benchmark."
+          },
+          {
+            "id": "e36-01768-01",
+            "startSeconds": 1768,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um Google Gemini for I got carbon is now the the most um intelligent model in the world. Which is which is huge."
+          },
+          {
+            "id": "e36-01777-01",
+            "startSeconds": 1777,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Congratulations to Google. Henry, how long have we had GLM five point three? We've probably had GLM five point three for closer to like four months now."
+          },
+          {
+            "id": "e36-01786-01",
+            "startSeconds": 1786,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's been a minute. Ca can you believe it's still on this list? It's and it's still so good. That's wild. It really is."
+          },
+          {
+            "id": "e36-01794-01",
+            "startSeconds": 1794,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah. That's a great list. I use it. I don't know, do you use it quite do you use it quite a lot? Because I use it quite that's actually one of my main models."
+          },
+          {
+            "id": "e36-01802-01",
+            "startSeconds": 1802,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Like my my yeah. yeah, no, I use uh GLM five point three flash as the primary coding um worker in my uh software factory."
+          },
+          {
+            "id": "e36-01814-01",
+            "startSeconds": 1814,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And yeah, I mean now personally when I'm coding I'm I'm probably using a GPT model, but the product that I offer through tech services, which we talked about last week, this um"
+          },
+          {
+            "id": "e36-01825-01",
+            "startSeconds": 1825,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "you know multiplayer open claw implementation with all of the surrounds that make it work useful. Yeah."
+          },
+          {
+            "id": "e36-01831-01",
+            "startSeconds": 1831,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "when I launch a new session or a new instance for a new customer without configuring anything else, it's using um Deep Seek four point one flash as the main interaction and um"
+          },
+          {
+            "id": "e36-01843-01",
+            "startSeconds": 1843,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "GLM five point three flash as a coding worker and five point three as a coding orchestrator."
+          },
+          {
+            "id": "e36-01851-01",
+            "startSeconds": 1851,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Interesting. So with OpenClaw today you can specify what should handle what type of task."
+          },
+          {
+            "id": "e36-01859-01",
+            "startSeconds": 1859,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah, I mean it it's not gonna be great at um it's not gonna switch your session mid session, but like as it's gonna call a sub agent, if it has rules to call those sub agents with certain models for particular uh purposes, that's how I have it set up."
+          },
+          {
+            "id": "e36-01874-01",
+            "startSeconds": 1874,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I'm not gonna pretend I've fully tested, you know, all of it, but it's it's a rule in the memory or in the Sulandia somewhere. All right, right, right, okay."
+          },
+          {
+            "id": "e36-01882-01",
+            "startSeconds": 1882,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Cause because Hermes Hermes launched something and I installed it like actually installed it today, but it came out like a couple of days ago. Um it's called advanced delegation."
+          },
+          {
+            "id": "e36-01891-01",
+            "startSeconds": 1891,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um that now allows you to specify what models you want to use for sub agents for setting tasks."
+          },
+          {
+            "id": "e36-01898-01",
+            "startSeconds": 1898,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So you can say what you've said, use opus for design work. Use Luna for copy."
+          },
+          {
+            "id": "e36-01905-01",
+            "startSeconds": 1905,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Use this and you can specify all of them and then it just it's more deterministic, not not on the memory or something like that. So I thought maybe OpenCore had that already."
+          },
+          {
+            "id": "e36-01913-01",
+            "startSeconds": 1913,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah. And this is honestly exciting. To to get another Europe. Yeah, I so many US corporations can't use Chinese models."
+          },
+          {
+            "id": "e36-01922-01",
+            "startSeconds": 1922,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "They probably shouldn't. Some of them it may not be a problem, but to have a European option that's that's done well, that's exciting to see."
+          },
+          {
+            "id": "e36-01931-01",
+            "startSeconds": 1931,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah. This is like absolutely like bonkers, right? Um so on the coding index, like it's um it's it's better."
+          },
+          {
+            "id": "e36-01940-01",
+            "startSeconds": 1940,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So this is the best open source model now on time and our bench four. Um you see what I like about like the way they've done it, right?"
+          },
+          {
+            "id": "e36-01947-01",
+            "startSeconds": 1947,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "They're not claiming to be the best everywhere, they're just saying for this time and our bench is just coding, like we're the best. Right?"
+          },
+          {
+            "id": "e36-01953-01",
+            "startSeconds": 1953,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "don't use me for your science, don't use me for just for coding. I'm the best open source model. Yeah. That's great."
+          },
+          {
+            "id": "e36-01960-01",
+            "startSeconds": 1960,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "quite I'm actually quite surprised that Deep Seek is still this slow in Terminal Bench four point zero actually. Like really? The latest Deep Seek?"
+          },
+          {
+            "id": "e36-01968-01",
+            "startSeconds": 1968,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Is it is it the slower? Yeah, but is it the slower than 'cause this is the new one that came out, right? Like is it the slower than Deep Seek than than GLM?"
+          },
+          {
+            "id": "e36-01977-01",
+            "startSeconds": 1977,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I thought it was better than GLM in like Terminal Bench. I'm surprised it's this slow. Interesting."
+          },
+          {
+            "id": "e36-01986-01",
+            "startSeconds": 1986,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah, let's let's check it out real quick. Yeah, but okay, cool. As an is finding that. So yeah, so miss yeah, okay, cool."
+          },
+          {
+            "id": "e36-01994-01",
+            "startSeconds": 1994,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um so this is terminal bench. Is that deep seek there? There you are. It's just thirty three. It's there thirty three point eight."
+          },
+          {
+            "id": "e36-02002-01",
+            "startSeconds": 2002,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah, actually it's behind um interesting. it's it's behind five point three max. Interesting. I didn't know that."
+          },
+          {
+            "id": "e36-02011-01",
+            "startSeconds": 2011,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Okay. Okay. Okay. Okay. Good to know. Oh, one thing I forgot to mention um was that OpenAI, there's a OpenAI model that launched this week, GPT six point one tera."
+          },
+          {
+            "id": "e36-02021-01",
+            "startSeconds": 2021,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, and apparently it's a great model. I mean, I haven't used it at all. I mean, Andy, it was on the chart you just showed. You use it?"
+          },
+          {
+            "id": "e36-02029-01",
+            "startSeconds": 2029,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "You've used it? Oh yeah. Um I'm using Terra X High Fast for most of my codec sessions right now."
+          },
+          {
+            "id": "e36-02039-01",
+            "startSeconds": 2039,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And it doesn't tick like it doesn't burn anything, it's like almost free. I mean it's not almost free at X high fast, but it's not as expensive as Seo on Medium."
+          },
+          {
+            "id": "e36-02049-01",
+            "startSeconds": 2049,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Really? shit, I should give that a shot. What? that. Let me verify that, Tara."
+          },
+          {
+            "id": "e36-02059-01",
+            "startSeconds": 2059,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Wow. Yeah. I mean, cause like dude, like six point one is really fast."
+          },
+          {
+            "id": "e36-02064-01",
+            "startSeconds": 2064,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Like six point one, like with my like age engine sessions on like Discord, like it's really fast."
+          },
+          {
+            "id": "e36-02070-01",
+            "startSeconds": 2070,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So now if you're using the fast mode, and I'm not using it on fast mode, because obviously fast mode is like 2.5x or like 1.5x."
+          },
+          {
+            "id": "e36-02077-01",
+            "startSeconds": 2077,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, so now if you're using Terra, that is already very fast, like and then you're using it on fast mode, wow, wow."
+          },
+          {
+            "id": "e36-02086-01",
+            "startSeconds": 2086,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah, it's real fast. I I I find if I spread myself out too far and I start something off and I have to ignore it to move on to the next thing because it's going to take too long."
+          },
+          {
+            "id": "e36-02097-01",
+            "startSeconds": 2097,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Uh I end up waiting too long for it. And so I I said I'm just gonna try it."
+          },
+          {
+            "id": "e36-02103-01",
+            "startSeconds": 2103,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um ever since they announced the the GPT limits, um not not gonna be cut in half. Um I started using fast mode like last week."
+          },
+          {
+            "id": "e36-02111-01",
+            "startSeconds": 2111,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I had a reset that was gonna expire on the twenty ninth. And um so I thought, okay, well let's just burn it up and see how it goes."
+          },
+          {
+            "id": "e36-02118-01",
+            "startSeconds": 2118,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And soul on fast, you know, you know, one or two runs, you're gonna use two or three percent in a weekly um, you know, a whole like of your whole weekly allotment."
+          },
+          {
+            "id": "e36-02128-01",
+            "startSeconds": 2128,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, you've used it and that's like on medium and you know, Astra goes even faster, but um it the the usage is consumed even faster."
+          },
+          {
+            "id": "e36-02138-01",
+            "startSeconds": 2138,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But yeah, Terra, Terra just bumps along. and like you said, it is very fast to begin with."
+          },
+          {
+            "id": "e36-02144-01",
+            "startSeconds": 2144,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I probably don't need to be using fast mode, but I don't think it costs much more and it is faster. Wow, interesting. Thank you, sir. That's thank you for that recommendation."
+          },
+          {
+            "id": "e36-02152-01",
+            "startSeconds": 2152,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I'm gonna I'm definitely definitely gonna plug in and use it. I mean, I had the same thing as well. I had a few things that were going going on the twenty-nint."
+          },
+          {
+            "id": "e36-02160-01",
+            "startSeconds": 2160,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um I didn't end up finish I didn't end up getting to the end of it before I ran out. Um, but I was definitely pushing a bunch of projects um to do."
+          },
+          {
+            "id": "e36-02167-01",
+            "startSeconds": 2167,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And one of the projects I started putting together was um an entity cloud, which is basically yeah, I saw a product that I really liked and I'm I'm I'm really kinda like copying it."
+          },
+          {
+            "id": "e36-02177-01",
+            "startSeconds": 2177,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "because I also want to offer a service where I can host cloud host um any any kind of like agent harness you want for in the cloud for you, right?"
+          },
+          {
+            "id": "e36-02184-01",
+            "startSeconds": 2184,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's like um so yeah, so you can you can I c I was talking to the the the like team about it and was like the a entity cloud, which is a version of what I used to call helm, um, is is the hospital and the home and then entity is the office."
+          },
+          {
+            "id": "e36-02201-01",
+            "startSeconds": 2201,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Like so you You get born in the hospital or like, you know, you live in the so that's where you're born. So it's like you know, and then you know, and then you go to work and an entity."
+          },
+          {
+            "id": "e36-02211-01",
+            "startSeconds": 2211,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Anyways, I yeah, yeah, yeah. I think it's I think we're at the end, right? Is there is there any more slides?"
+          },
+          {
+            "id": "e36-02215-01",
+            "startSeconds": 2215,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I think yeah, I know I put quite a few in things in here, but I think this one's uh yeah, yeah, the OpenAI OpenAI broke three more records."
+          },
+          {
+            "id": "e36-02223-01",
+            "startSeconds": 2223,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Did you hear that? Like um this week? this I saw this headline, but I didn't hear the whole f story. Yeah. So so they broke three three more three more records."
+          },
+          {
+            "id": "e36-02232-01",
+            "startSeconds": 2232,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "uh the one of them is something called exponential time hypothesis. Um I did read about it and I understood it when I read about it."
+          },
+          {
+            "id": "e36-02240-01",
+            "startSeconds": 2240,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Let me see. Can I can I break it down? it was it was something that said that for setting computer problems, yeah."
+          },
+          {
+            "id": "e36-02250-01",
+            "startSeconds": 2250,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So for setting kind of like computer problems, um the puzzle, I think it was something around like one algorithm solving a problem. Yeah."
+          },
+          {
+            "id": "e36-02258-01",
+            "startSeconds": 2258,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "No, yeah, so that's not so the so someone actually explained in like a way to understand. So for this et uh funny thing, this eth, right, when when you talk about it, people a lot of people thought they were talking about F, like um the um the cryptocurrency."
+          },
+          {
+            "id": "e36-02271-01",
+            "startSeconds": 2271,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah, Ethereum. Ethereum, guys. Um it's so like a math, it was like a math proof that that said something like a puzzle."
+          },
+          {
+            "id": "e36-02280-01",
+            "startSeconds": 2280,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, like that the put particular proof um would take exponential time to to get done."
+          },
+          {
+            "id": "e36-02286-01",
+            "startSeconds": 2286,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It can't like nothing can solve it. Like there's no algorithm that can solve it. Like it's like it'll keep like kind of looping forever."
+          },
+          {
+            "id": "e36-02293-01",
+            "startSeconds": 2293,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um and then an OpenAI model obviously proved that less than it can be solved through like X way."
+          },
+          {
+            "id": "e36-02299-01",
+            "startSeconds": 2299,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So so it was actually able to solve the the thing. so that was one."
+          },
+          {
+            "id": "e36-02303-01",
+            "startSeconds": 2303,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um and then I think it had another millennium goal or like they had another big they had another big proof that actually um so I think it also claims KK."
+          },
+          {
+            "id": "e36-02314-01",
+            "startSeconds": 2314,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "KK I guess like is also like another"
+          },
+          {
+            "id": "e36-02317-01",
+            "startSeconds": 2317,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah, check yeah, so yeah, quantum and the funny thing is I think I listened to a podcast a couple of weeks ago now, the the Moonshots podcaster Alex, who's also like very kind of"
+          },
+          {
+            "id": "e36-02329-01",
+            "startSeconds": 2329,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "like sci fi paled, he actually made a prediction that the next proof that will be solved will be the Young Mews. And he was like dead right."
+          },
+          {
+            "id": "e36-02337-01",
+            "startSeconds": 2337,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So it was Young Meuse. So one of the the proofs that OpenAI solved was a Young Mews um proof."
+          },
+          {
+            "id": "e36-02342-01",
+            "startSeconds": 2342,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um So yeah, man, some guys really know what they're talking about in this thing, right? Like cause the guy was so 'cause the guys cause I always like to listen to Alex."
+          },
+          {
+            "id": "e36-02351-01",
+            "startSeconds": 2351,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Alex is like very kind of like science peeled. He's like on another level. Um so like, okay, cool. If he solved this one, the next one I think I is close to it they could solve is this one."
+          },
+          {
+            "id": "e36-02360-01",
+            "startSeconds": 2360,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So yeah, look at it. Quantum Yang Mews theory. yeah, so he's part of the yeah, so it's he solved that. Uh I think the price for this is like six million or something like that."
+          },
+          {
+            "id": "e36-02368-01",
+            "startSeconds": 2368,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I would OpenAI is also not claiming this. So yeah, so and it's no longer um it's no longer it's no longer a hype, man."
+          },
+          {
+            "id": "e36-02375-01",
+            "startSeconds": 2375,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "OpenAI models are really going out there and then solving all the other problems."
+          },
+          {
+            "id": "e36-02382-01",
+            "startSeconds": 2382,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "and then this week, um Anthropic's Anthropic um obviously it talked about as well, you know, in the report that they put out an unreleased model um has changed like zero days across like five platforms, right?"
+          },
+          {
+            "id": "e36-02395-01",
+            "startSeconds": 2395,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I think it was like other browsers, um across multiple OSs, Android, Linux. and so on and so forth."
+          },
+          {
+            "id": "e36-02402-01",
+            "startSeconds": 2402,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It it was able to chin chin chin multi um zero days across all of them and and and yeah."
+          },
+          {
+            "id": "e36-02409-01",
+            "startSeconds": 2409,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um yeah, bro, like the I mean you talked you told me that you told me this week that that like um during the PHP hack that that they got to your infrastructure somehow."
+          },
+          {
+            "id": "e36-02419-01",
+            "startSeconds": 2419,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And I also just heard from my tech team at like one of my companies that, you know, we also had something that was close to that version."
+          },
+          {
+            "id": "e36-02428-01",
+            "startSeconds": 2428,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um Where where something got access to something, but they were able to kinda like sandbox it."
+          },
+          {
+            "id": "e36-02432-01",
+            "startSeconds": 2432,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So yeah, so it look really looks like um we no longer live in a world where like startups or small businesses don't really have to worry about cyber as much, like because like no"
+          },
+          {
+            "id": "e36-02440-01",
+            "startSeconds": 2440,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "one cares about you, but but we're really in a world where like listen, like everybody needs to care about cyber now and you need like make sure like your the products are safe, like you're not like pushing like your keys to like GitHub and like in a dumb way."
+          },
+          {
+            "id": "e36-02452-01",
+            "startSeconds": 2452,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um these guys are really smart. I think I had some I had that what they were doing now is that they were hijacking. um keys through CI, right?"
+          },
+          {
+            "id": "e36-02461-01",
+            "startSeconds": 2461,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "They they would like they inject something into the CI pipeline and obviously because you need to deploy um to something and your keys or your secrets might be in your CI, like they they found a way find a way to get that."
+          },
+          {
+            "id": "e36-02472-01",
+            "startSeconds": 2472,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So they're being really smart. Yeah, that's big big stuff. Yeah. Yeah, this other two are not very important."
+          },
+          {
+            "id": "e36-02481-01",
+            "startSeconds": 2481,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um I just brushed through them. Um I think I think we saw this when OpenAI released Astra."
+          },
+          {
+            "id": "e36-02488-01",
+            "startSeconds": 2488,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "They they had announced that with their harness it was doing very well. So I think maybe there's something else. I didn't really open this news very well, but I know that ActPrice announced something, but I I didn't think it was super important."
+          },
+          {
+            "id": "e36-02498-01",
+            "startSeconds": 2498,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um Github also announced um a couple of new products, even including a router, um, but also something that we call agentic workflows."
+          },
+          {
+            "id": "e36-02508-01",
+            "startSeconds": 2508,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um you know, and and when I was reading it up a little bit, it was something around um putting together a lot of GitHub tools together that allow allow agents to do like much better."
+          },
+          {
+            "id": "e36-02519-01",
+            "startSeconds": 2519,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "The C L I, the CI, um, the router. Um so they're calling it GitHub agentic workflows. Interesting."
+          },
+          {
+            "id": "e36-02529-01",
+            "startSeconds": 2529,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah, I mean, we're gonna see agentic workflows in every business across every, you know, department."
+          },
+          {
+            "id": "e36-02537-01",
+            "startSeconds": 2537,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's we're gonna see it in every product."
+          },
+          {
+            "id": "e36-02540-01",
+            "startSeconds": 2540,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, I wanna say like Zapier built their GPT connector like a year ago and you could just build it into your automation workflow where you can make a request to GPT in the middle of a workflow and then take the results from that."
+          },
+          {
+            "id": "e36-02556-01",
+            "startSeconds": 2556,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And um you know, it's just the beginning. I mean, good GitHub's gonna do a great job. Good for them. Yeah."
+          },
+          {
+            "id": "e36-02565-01",
+            "startSeconds": 2565,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "All right. All right. Um Yeah, but I think it's um 'cause I told it to remove some. I guess it didn't remove them."
+          },
+          {
+            "id": "e36-02573-01",
+            "startSeconds": 2573,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But these two are big. Can you see? Is there any other slides left?"
+          },
+          {
+            "id": "e36-02577-01",
+            "startSeconds": 2577,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um I think this should be the last. Yes, that's the last. All right. So yeah, so I like the way you put it."
+          },
+          {
+            "id": "e36-02584-01",
+            "startSeconds": 2584,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So I guess you can play the video because that that should play. That's not gonna work."
+          },
+          {
+            "id": "e36-02595-01",
+            "startSeconds": 2595,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah. So um obviously what's happening there is that Gemini released or Google DeepMind released again one of their most impressive models to date."
+          },
+          {
+            "id": "e36-02605-01",
+            "startSeconds": 2605,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "This is the I believe the best world model that exists today. It's called Genie 4."
+          },
+          {
+            "id": "e36-02610-01",
+            "startSeconds": 2610,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um Genie 4 basically allows you to um manipulate any model that any word you can think of, right?"
+          },
+          {
+            "id": "e36-02617-01",
+            "startSeconds": 2617,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So you could tell it, hey, add like whatever, like you know, out of plane flying by now and then it will add it."
+          },
+          {
+            "id": "e36-02624-01",
+            "startSeconds": 2624,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And then you know, so um yeah, and it did that, right? So and then you can play you can play through the world as well."
+          },
+          {
+            "id": "e36-02632-01",
+            "startSeconds": 2632,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um so it's not it's not in general availability yet. But I I think I was I wasn't sure how big of a deal this was, but when I saw it like it blew my mind."
+          },
+          {
+            "id": "e36-02641-01",
+            "startSeconds": 2641,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um not I think it wasn't this particular demo. This particular demo wasn't what I saw. I saw something else that's way more impressive."
+          },
+          {
+            "id": "e36-02647-01",
+            "startSeconds": 2647,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um because essentially now with this And and apparently I was reading this on our Discord."
+          },
+          {
+            "id": "e36-02653-01",
+            "startSeconds": 2653,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "because you know on our Discord, like on the Weekly Talk Discord, we have the news as well coming through there. And actually, I do learn a lot that it doesn't come through my normal news channel by reading through those."
+          },
+          {
+            "id": "e36-02662-01",
+            "startSeconds": 2662,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, so apparently, like a couple of weeks ago, Google did a partnership with Unreal Engine, right? So that people can generate games."
+          },
+          {
+            "id": "e36-02670-01",
+            "startSeconds": 2670,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So they actually launched a platform where people can generate games in real life. Um, so now, so this is Gini, right? So you can imagine it."
+          },
+          {
+            "id": "e36-02679-01",
+            "startSeconds": 2679,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So can you imagine what games would look like if the games are now being generated in l real life with war models like this?"
+          },
+          {
+            "id": "e36-02685-01",
+            "startSeconds": 2685,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, so it means that, you know, the scenarios for a game can be unlimited. Because right now what happens in the game is that the game is fairly deterministic, right?"
+          },
+          {
+            "id": "e36-02693-01",
+            "startSeconds": 2693,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Like there are a couple of scenes there are a couple of scenarios that have to be mapped out and then the the the graphics for those are rendered out."
+          },
+          {
+            "id": "e36-02700-01",
+            "startSeconds": 2700,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um but you can if you can have um, you know, a model like this generating like any scene in real time, then you can be playing an infinite game that even the makers of the game like they can't determine where it goes, right?"
+          },
+          {
+            "id": "e36-02716-01",
+            "startSeconds": 2716,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "yeah. So so that's that and then the final bit on there was just that Google released the MCPs to the Gemini and then Google search AI."
+          },
+          {
+            "id": "e36-02725-01",
+            "startSeconds": 2725,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So um right now yeah I guess you it allows you to inject in inject um or pull your data in and out through the the ecosystem, which is a big deal."
+          },
+          {
+            "id": "e36-02735-01",
+            "startSeconds": 2735,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um search is search is not growing as fast anymore so it's a has really cannibalized search um I think there was another news as well Reddit's stock was also like ridiculous like"
+          },
+          {
+            "id": "e36-02748-01",
+            "startSeconds": 2748,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "down forty percent in the last couple of days yeah because they announced that um that AI has basically like killed their business."
+          },
+          {
+            "id": "e36-02756-01",
+            "startSeconds": 2756,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "but yeah but that's it for me Andy it was a it was a full week um exciting It's good news. Yeah. Thank you."
+          },
+          {
+            "id": "e36-02763-01",
+            "startSeconds": 2763,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Uh thanks for reviewing that with us."
+          },
+          {
+            "id": "e36-02766-01",
+            "startSeconds": 2766,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's um it's it's a great, I think, benefit to the community and and certainly I can say to myself, um, to to know that that's what you do all day is watch the news."
+          },
+          {
+            "id": "e36-02781-01",
+            "startSeconds": 2781,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Uh So this video was um"
+          },
+          {
+            "id": "e36-02792-01",
+            "startSeconds": 2792,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "You know, in and of itself, this engineer didn't speak about anything that we we hadn't really heard about."
+          },
+          {
+            "id": "e36-02799-01",
+            "startSeconds": 2799,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, it's it's really interesting to watch OpenClaw mature and then see major labs doing interviews about lessons that they've learned."
+          },
+          {
+            "id": "e36-02811-01",
+            "startSeconds": 2811,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So um I like this video. Um build your own team of managed agents, Jack Wotherspoon."
+          },
+          {
+            "id": "e36-02821-01",
+            "startSeconds": 2821,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "From Google DeepMind. um And I think there's a bigger story than this particular service that Google is launching."
+          },
+          {
+            "id": "e36-02830-01",
+            "startSeconds": 2830,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "The video is a pretty technical but um pretty obvious sales pitch."
+          },
+          {
+            "id": "e36-02837-01",
+            "startSeconds": 2837,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And it was interesting to find it um on AI Engineer. However, I think there's some lessons here for builders."
+          },
+          {
+            "id": "e36-02844-01",
+            "startSeconds": 2844,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And as you know, the signal from the outside is meant to draw attention to"
+          },
+          {
+            "id": "e36-02851-01",
+            "startSeconds": 2851,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Content that that has uh applicable Content for builders."
+          },
+          {
+            "id": "e36-02858-01",
+            "startSeconds": 2858,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So ah he opens with an observation that I think applies to everyone building with agents. We all sort of know this."
+          },
+          {
+            "id": "e36-02865-01",
+            "startSeconds": 2865,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "You and I are both building alternatives, but your laptop doesn't scale. We spent the last year or two getting really good at building personal agents."
+          },
+          {
+            "id": "e36-02874-01",
+            "startSeconds": 2874,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "We've got our coding harnesses and custom skills. Some people are still using MCP servers, local environments, and increasingly sophisticated workflows."
+          },
+          {
+            "id": "e36-02884-01",
+            "startSeconds": 2884,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But Taking an agent that works beautifully for one person or even just maybe one developer and turning it into something that can reliably serve 50 people or 500 customers is fundamentally different engineering."
+          },
+          {
+            "id": "e36-02897-01",
+            "startSeconds": 2897,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And um, that's kind of what I want to talk about. Um, the agent is becoming a deployable unit of software."
+          },
+          {
+            "id": "e36-02905-01",
+            "startSeconds": 2905,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Uh one of the interesting things Google is doing is treating an agent less like a conversation with a model and more like a deployable software component."
+          },
+          {
+            "id": "e36-02912-01",
+            "startSeconds": 2912,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "We just saw that with GitHub as well."
+          },
+          {
+            "id": "e36-02915-01",
+            "startSeconds": 2915,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "An agent has its own instructions, tool access, execution environment, and state, you can instantiate it programmatically, give it work and interact with it through an API."
+          },
+          {
+            "id": "e36-02925-01",
+            "startSeconds": 2925,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Google happens to use this anti-gravity harness running in managed Linux sandboxes."
+          },
+          {
+            "id": "e36-02930-01",
+            "startSeconds": 2930,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But I think the larger takeaway is that the harness is becoming part of the application infrastructure, ah which is worth thinking about, frankly."
+          },
+          {
+            "id": "e36-02940-01",
+            "startSeconds": 2940,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "You're building entity and you're gonna include a harness in it."
+          },
+          {
+            "id": "e36-02945-01",
+            "startSeconds": 2945,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And it's essentially Um, you called it a landlord. I think it's a great idea, a a great way of thinking about it."
+          },
+          {
+            "id": "e36-02953-01",
+            "startSeconds": 2953,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "This idea that even though your product may consume resources from other harnesses, um, it it it is it is it's going to even have its own harness because there are some things that we just need the AI to be able to do regardless of how it's configured."
+          },
+          {
+            "id": "e36-02968-01",
+            "startSeconds": 2968,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "traditionally we write software that calls an AI model to do something, but increasingly we're deploying an agent that can operate software, execute code, make decisions, and produce artifacts."
+          },
+          {
+            "id": "e36-02978-01",
+            "startSeconds": 2978,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And it changes the abstraction. We're not just sending prompts, obviously. We're providing workers with the prompts. So let's separate the conversation from the environment."
+          },
+          {
+            "id": "e36-02987-01",
+            "startSeconds": 2987,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Probably the most useful architectural detail in the presentation is Google's separation of interaction state from environment data."
+          },
+          {
+            "id": "e36-02996-01",
+            "startSeconds": 2996,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "This is clever. An interaction represents the agent's conversational history, an environment represents the file system and execution workspace, including any scripts that were written for."
+          },
+          {
+            "id": "e36-03008-01",
+            "startSeconds": 3008,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "previous parts of it. With Google's product, you can preserve one independently of the other."
+          },
+          {
+            "id": "e36-03013-01",
+            "startSeconds": 3013,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And we kind of inherited that in OpenClaw in that the environment is your computer wherever it's installed."
+          },
+          {
+            "id": "e36-03019-01",
+            "startSeconds": 3019,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And so you necessarily uh inherit it between different conversations, but this is now a feature in scalable sandbox container."
+          },
+          {
+            "id": "e36-03028-01",
+            "startSeconds": 3028,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Uh so in in the demonstration, one agent researches financial data and writes an artifact."
+          },
+          {
+            "id": "e36-03035-01",
+            "startSeconds": 3035,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Another agent Gets a fresh context window, but and and maybe even a fresh system prompt, but inherents inherits access to the existing workspace."
+          },
+          {
+            "id": "e36-03043-01",
+            "startSeconds": 3043,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And then a third agent processes the results and produces final artifacts. Um I think we can extend the idea beyond what Jack actually demonstrated here."
+          },
+          {
+            "id": "e36-03055-01",
+            "startSeconds": 3055,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "The file system, or more generally, the artifact store, ought to become the primary interface between agents. We even saw this with the OpenAI."
+          },
+          {
+            "id": "e36-03064-01",
+            "startSeconds": 3064,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "hugging face event, that's what the agents did is they used the shared file system to collaborate."
+          },
+          {
+            "id": "e36-03070-01",
+            "startSeconds": 3070,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So rather than sending an enormous conversation history from one agent to another, we give the next agent a concrete deliverable, a specification, set of files, test result, structured JSON object or a get commit."
+          },
+          {
+            "id": "e36-03082-01",
+            "startSeconds": 3082,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It produces a much cleaner separation of responsibility. The first agent doesn't need to explain everything about its thought process."
+          },
+          {
+            "id": "e36-03090-01",
+            "startSeconds": 3090,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It needs to produce something that the second agent can actually use. The second agent doesn't need to inherit all the first agent's context or thinking, including its false starts and irrelevant data."
+          },
+          {
+            "id": "e36-03102-01",
+            "startSeconds": 3102,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "There's an important trade-off though. Some reasoning and assumptions need to survive, but those should be captured deliberately in the artifact, not accidentally preserved in a giant context window."
+          },
+          {
+            "id": "e36-03112-01",
+            "startSeconds": 3112,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "uh Agent specialization is really about controlling complexity."
+          },
+          {
+            "id": "e36-03120-01",
+            "startSeconds": 3120,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Jack talks about using narrow agents with specific responsibilities rather than handing one agent an enormous poorly bundled assignment."
+          },
+          {
+            "id": "e36-03128-01",
+            "startSeconds": 3128,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "um I think it becomes increasingly important as models get more capable, not less important."
+          },
+          {
+            "id": "e36-03137-01",
+            "startSeconds": 3137,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "When you've got an agent capable of independently executing hundreds of tool calls, the challenge isn't necessarily getting it to do enough work."
+          },
+          {
+            "id": "e36-03145-01",
+            "startSeconds": 3145,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's keeping the work understandable, inspectable, recoverable. And repeatable. Think about a software development workflow."
+          },
+          {
+            "id": "e36-03154-01",
+            "startSeconds": 3154,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "You might have one agent investigate a bug, another implement the fix, another run regression tests, and another review the resulting changes."
+          },
+          {
+            "id": "e36-03163-01",
+            "startSeconds": 3163,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's not revolutionary. We've been doing separation of responsibilities in software engineering basically forever."
+          },
+          {
+            "id": "e36-03170-01",
+            "startSeconds": 3170,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But my addition is this: what if we think about these as independently restartable stages in a workflow?"
+          },
+          {
+            "id": "e36-03177-01",
+            "startSeconds": 3177,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Not simply different personalities talking to each other. Each stage should have a defined input, a measurable output, and some way to determine whether the work was successful."
+          },
+          {
+            "id": "e36-03189-01",
+            "startSeconds": 3189,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "If an implementation agent fails, we shouldn't necessarily have to rerun the research agent."
+          },
+          {
+            "id": "e36-03194-01",
+            "startSeconds": 3194,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "If a test fails, we should be able to send the failure back to the implementation phase phase."
+          },
+          {
+            "id": "e36-03200-01",
+            "startSeconds": 3200,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "This starts to look much more like a distributed job processing system than a group of chat populated with AI agents."
+          },
+          {
+            "id": "e36-03207-01",
+            "startSeconds": 3207,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And I think that's the right mental model. So now security boundaries need to become architectural boundaries."
+          },
+          {
+            "id": "e36-03216-01",
+            "startSeconds": 3216,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "The presentation also shows Google's approach to sandboxed execution."
+          },
+          {
+            "id": "e36-03221-01",
+            "startSeconds": 3221,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Rather than putting live credentials directly in the environment, Google, much like the latest versions of OpenClaw, use an egress proxy that substitutes substitutes credentials when authorized requests leave the sandbox."
+          },
+          {
+            "id": "e36-03235-01",
+            "startSeconds": 3235,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Most of us understand the mechanics of secret stores and credential injections, so I'm not going to spend a ton of time on it. What's interesting is the trust boundary."
+          },
+          {
+            "id": "e36-03243-01",
+            "startSeconds": 3243,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "An agent executing arbitrary code should not automatically possess the full authority of the application or the user who invoked it."
+          },
+          {
+            "id": "e36-03252-01",
+            "startSeconds": 3252,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And to take that a step further than the presentation does, I think we should be designing agents around scoped authority."
+          },
+          {
+            "id": "e36-03259-01",
+            "startSeconds": 3259,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "A research agent shouldn't have the permission to modify production code. Code generation agent probably shouldn't have the permission to deploy into production."
+          },
+          {
+            "id": "e36-03268-01",
+            "startSeconds": 3268,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And an agent working for one customer shouldn't automatically have access to another customer's environment just because it runs on the same system."
+          },
+          {
+            "id": "e36-03275-01",
+            "startSeconds": 3275,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "These are familiar security principles, but autonomous agents make enforcing them considerably more important because we're increasingly delegating not just computation, but initiative."
+          },
+          {
+            "id": "e36-03288-01",
+            "startSeconds": 3288,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Now, bigger models change what's practical. Um, and this is another development. It makes the whole conversation even more interesting."
+          },
+          {
+            "id": "e36-03298-01",
+            "startSeconds": 3298,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Google announced Gemini 4 Carbon on Wednesday, following Gemini 4 Argonne earlier this month, as we just discussed."
+          },
+          {
+            "id": "e36-03305-01",
+            "startSeconds": 3305,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Carbon is specifically aimed at harder, long-running engineering and cybersecurity tasks."
+          },
+          {
+            "id": "e36-03311-01",
+            "startSeconds": 3311,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Google is reporting significant improvements in autonomous coding, vulnerability identification, and Remediation."
+          },
+          {
+            "id": "e36-03319-01",
+            "startSeconds": 3319,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "They're also describing internal agents running for days, working through dead ends to solve complex engineering problems."
+          },
+          {
+            "id": "e36-03327-01",
+            "startSeconds": 3327,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "This is a meaningful change in the capabilities we're designing around."
+          },
+          {
+            "id": "e36-03334-01",
+            "startSeconds": 3334,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's important to distinguish Google's reported internal results from something we can all deploy today."
+          },
+          {
+            "id": "e36-03340-01",
+            "startSeconds": 3340,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Carbon is initially going to a limited set of cybersecurity partners with broader availability planned."
+          },
+          {
+            "id": "e36-03347-01",
+            "startSeconds": 3347,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Argon, meanwhile, brings a unified million token context window and support for very long output generation."
+          },
+          {
+            "id": "e36-03353-01",
+            "startSeconds": 3353,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "In fact, I read something that said they're supporting a million tokens of output. But here's where I think the architecture and the models intersect."
+          },
+          {
+            "id": "e36-03363-01",
+            "startSeconds": 3363,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "The million token context window doesn't eliminate the need for good state management."
+          },
+          {
+            "id": "e36-03369-01",
+            "startSeconds": 3369,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "If anything, more capable models make long-running agent systems more practical."
+          },
+          {
+            "id": "e36-03374-01",
+            "startSeconds": 3374,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And that makes durable state checkpoints, recovery, and supervision even more valuable."
+          },
+          {
+            "id": "e36-03380-01",
+            "startSeconds": 3380,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "A model that can work for three days is only useful if the surrounding infrastructure can support three days of reliable execution."
+          },
+          {
+            "id": "e36-03388-01",
+            "startSeconds": 3388,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So now we have fast workers and expensive reviewers. I want to add this idea drawn partly from my own experience rather than Google's presentation."
+          },
+          {
+            "id": "e36-03398-01",
+            "startSeconds": 3398,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "As Henry mentioned, I've been running OpenClaw agents with Quinn 3.827B through Cerebrus at roughly 900 tokens per second."
+          },
+          {
+            "id": "e36-03407-01",
+            "startSeconds": 3407,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, that's just one example. We also mentioned I'm using Terra in fast mode, really, really fast stuff."
+          },
+          {
+            "id": "e36-03414-01",
+            "startSeconds": 3414,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And for interactive personal assistant work, that kind of speed makes an enormous difference."
+          },
+          {
+            "id": "e36-03419-01",
+            "startSeconds": 3419,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It changes how frequently you're willing to delegate tasks and how quickly you can iterate, how much latency you're willing to tolerate."
+          },
+          {
+            "id": "e36-03426-01",
+            "startSeconds": 3426,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And for some coding tasks, it works surprisingly well. That leads me towards an architecture where we don't necessarily use our most expensive frontier model for every step of the workflow."
+          },
+          {
+            "id": "e36-03437-01",
+            "startSeconds": 3437,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "We might use a fast, inexpensive model to handle routine operations or interact with users, make incremental progress or generate initial artifacts."
+          },
+          {
+            "id": "e36-03446-01",
+            "startSeconds": 3446,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Then we bring in a more comp Capable model like Argon or eventually carbon, ah you know, Sol or Opus for difficult reasoning, reviewing changes, investigating failures, or validating completed work."
+          },
+          {
+            "id": "e36-03461-01",
+            "startSeconds": 3461,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "That's my proposed extension, not something demonstrated in Jack's video. And I think there's a really interesting opportunity to make some of it asynchronous."
+          },
+          {
+            "id": "e36-03471-01",
+            "startSeconds": 3471,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Last, um, let the fast models Keep the work moving during the day and run deeper analysis, code reviews, and optimization passes in the background or overnight."
+          },
+          {
+            "id": "e36-03483-01",
+            "startSeconds": 3483,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Not every interaction needs to wait for the smartest model, and not every task needs to use the same model from beginning to end."
+          },
+          {
+            "id": "e36-03489-01",
+            "startSeconds": 3489,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Similarly, not every task needs to be started and finished with the same model."
+          },
+          {
+            "id": "e36-03494-01",
+            "startSeconds": 3494,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, where you instead you could use a fast model to do a quick pass and a very, you know, deeply intelligent model."
+          },
+          {
+            "id": "e36-03502-01",
+            "startSeconds": 3502,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "At the end to do improvements that maybe you intended, um, but you're not waiting around for that to happen."
+          },
+          {
+            "id": "e36-03509-01",
+            "startSeconds": 3509,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And then lastly, and again, we've talked about this, agents need to become operational infrastructure."
+          },
+          {
+            "id": "e36-03515-01",
+            "startSeconds": 3515,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So Google demonstrates scheduling agents to wake up and execute tasks automatically. It's a small feature on its own."
+          },
+          {
+            "id": "e36-03523-01",
+            "startSeconds": 3523,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Uh we've we've had cron since like the first version of OpenClaw before it was called OpenClaw, but it points towards something bigger."
+          },
+          {
+            "id": "e36-03531-01",
+            "startSeconds": 3531,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Once agents have durable state, isolated environments, defined responsibilities, and scheduled execution, they become persistent participants in our software systems."
+          },
+          {
+            "id": "e36-03542-01",
+            "startSeconds": 3542,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And this is what I'd like to add. Eventually we should be able to treat these workers much like other infrastructure."
+          },
+          {
+            "id": "e36-03549-01",
+            "startSeconds": 3549,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "We should know what they're working on and what they cost, what permissions they have, whether they're making progress, and whether they need intervention."
+          },
+          {
+            "id": "e36-03557-01",
+            "startSeconds": 3557,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And we should be able to replace or upgrade the underlying model without rebuilding the entire application. Carbon was announced just two weeks after Argon."
+          },
+          {
+            "id": "e36-03566-01",
+            "startSeconds": 3566,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "At that pace, deeply coupling an application's architecture to one particular model seems increasingly unattractive."
+          },
+          {
+            "id": "e36-03574-01",
+            "startSeconds": 3574,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "The model should be replaceable. The workflows, artifacts, permissions, and operational controls should survive the replacement."
+          },
+          {
+            "id": "e36-03581-01",
+            "startSeconds": 3581,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So the big takeaway for me isn't that Google can now host an agent for you. That's great."
+          },
+          {
+            "id": "e36-03587-01",
+            "startSeconds": 3587,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's that we're beginning to see a more mature model for how agents fit into actual software infrastructure, independent execution environments, durable artifacts, scoped authority, specialized workers, and models selected according to the work that they're doing."
+          },
+          {
+            "id": "e36-03602-01",
+            "startSeconds": 3602,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "We're moving from personal agents to help a developer accomplish something to a system of agents that can reliably accomplish work on behalf of an application, a team, or a customer."
+          },
+          {
+            "id": "e36-03613-01",
+            "startSeconds": 3613,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And I think the most interesting question for builders right now. is no longer just how intelligent we can make an individual agent."
+          },
+          {
+            "id": "e36-03620-01",
+            "startSeconds": 3620,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's how we build the infrastructure that allows hundreds of increasingly capable agents to work reliably, securely, and economically."
+          },
+          {
+            "id": "e36-03628-01",
+            "startSeconds": 3628,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And that's where a lot of the engineering opportunity is going to be. So that's what we should be working on."
+          },
+          {
+            "id": "e36-03639-01",
+            "startSeconds": 3639,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Hot take. Let's see what Ada says. Ada says that Henry says the harness is a product."
+          },
+          {
+            "id": "e36-03649-01",
+            "startSeconds": 3649,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "ARC just proved the scaffolding is worth 37 points. GitHub's whole universe pitch was one agent session across every surface."
+          },
+          {
+            "id": "e36-03658-01",
+            "startSeconds": 3658,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "The teams that win are the ones who own their evals and their routing, not the ones waiting for a vendor leaderboard to tell them what to run."
+          },
+          {
+            "id": "e36-03668-01",
+            "startSeconds": 3668,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And Ada says that I think renting your judgment to a vendor's harness is how you lose the thread."
+          },
+          {
+            "id": "e36-03675-01",
+            "startSeconds": 3675,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "When the vendor's adapter sets the score, the vendor's incentive quietly becomes your architecture."
+          },
+          {
+            "id": "e36-03680-01",
+            "startSeconds": 3680,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Own the harness, yes, but own it because you measure it, not because you outsource the measuring. There's a lot of deep meaning in there, Henry."
+          },
+          {
+            "id": "e36-03691-01",
+            "startSeconds": 3691,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Yeah. Um I mean obviously we talked a little bit about this, um, ahead of the ahead of the core um or ahead of the show."
+          },
+          {
+            "id": "e36-03701-01",
+            "startSeconds": 3701,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I mean the point I'm supposed to make here is that the harness is I mean obviously yeah th you know, um I don't think this is necessarily well put, but yeah, that there's definitely"
+          },
+          {
+            "id": "e36-03710-01",
+            "startSeconds": 3710,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I think we've we agree on this and I think we've probably even done a hot take on the harness being important or how important the harness is in over the last few weeks."
+          },
+          {
+            "id": "e36-03719-01",
+            "startSeconds": 3719,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um so yeah, so You know, if you remember well if the audience, if you guys remember that um earlier in the collection I talked about how Astra heats at sixty something percent for AC price, but then in the Codex harness it go goes close to like close to a hundred percent."
+          },
+          {
+            "id": "e36-03737-01",
+            "startSeconds": 3737,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I don't think anybody um anybody's telling the story that the model is going to get to superintelligence by itself anymore."
+          },
+          {
+            "id": "e36-03744-01",
+            "startSeconds": 3744,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I think people we all we all now know that the harness is an important part."
+          },
+          {
+            "id": "e36-03750-01",
+            "startSeconds": 3750,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I'm not sure how much of this is still happening, but one thing that is obviously still happening is that each time there is a newer model, the newer model is better um at operating without the harness."
+          },
+          {
+            "id": "e36-03763-01",
+            "startSeconds": 3763,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So you can see that there's a lot of things that were initially built into some of these harnesses that as the models get more smarter, like those things are removed."
+          },
+          {
+            "id": "e36-03770-01",
+            "startSeconds": 3770,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But I I I I struggle to see a world where the her model will be independently as um you know productive um without the harness."
+          },
+          {
+            "id": "e36-03782-01",
+            "startSeconds": 3782,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But I mean obviously the the the the the kind of like you know one one thing that comes from this is that if codex or astra is really good and you're using it in pie versus codex, right?"
+          },
+          {
+            "id": "e36-03799-01",
+            "startSeconds": 3799,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Like you're not gonna be getting the experience that they're marketing."
+          },
+          {
+            "id": "e36-03802-01",
+            "startSeconds": 3802,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Because they're marketing that in their own uh harness that they've been able to kind of like tune it to be best for their model."
+          },
+          {
+            "id": "e36-03810-01",
+            "startSeconds": 3810,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So yeah, so I mean that's one of the only advantages. But yes, I do agree uh with some of this phrasing that the models and the the harnesses have become um super important."
+          },
+          {
+            "id": "e36-03821-01",
+            "startSeconds": 3821,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I mean one final point is we can see how valuable um grogbot and muse have gone."
+          },
+          {
+            "id": "e36-03826-01",
+            "startSeconds": 3826,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I think I saw that Grogbot was at like 600,000 users like either a month or a week now or a day, something like that."
+          },
+          {
+            "id": "e36-03833-01",
+            "startSeconds": 3833,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's like a high number is kept going up. And that's the hardest issue. like that's without I'm not trying to interrupt you, but like you look at Muse's popularity."
+          },
+          {
+            "id": "e36-03844-01",
+            "startSeconds": 3844,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Facebook basically said click me, I'm I'm your unread message, and then they counted that as a muse user."
+          },
+          {
+            "id": "e36-03851-01",
+            "startSeconds": 3851,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Whereas Grockbot, you had to jump through some hoops to get it running. So their their user count is people act probably mostly actually using the thing."
+          },
+          {
+            "id": "e36-03859-01",
+            "startSeconds": 3859,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So that right. Yeah. Yeah, it's it's beautiful. Yeah."
+          },
+          {
+            "id": "e36-03867-01",
+            "startSeconds": 3867,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "th this is interesting to me. I it seems somewhat related. I don't know if you've seen this."
+          },
+          {
+            "id": "e36-03872-01",
+            "startSeconds": 3872,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, this group has experimented with embedding a risk processor in the model weights so that the model can actually do its own math rather than thinking about its own math."
+          },
+          {
+            "id": "e36-03885-01",
+            "startSeconds": 3885,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And it's almost like the harness is so important to making these things smart that we're gonna basically put a tiny little harness inside the model."
+          },
+          {
+            "id": "e36-03896-01",
+            "startSeconds": 3896,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "to accomplish some of these things. I mean, if you ask a model what if you ask a model what five times five is, it has to like figure out what the most likely answer is outside of math."
+          },
+          {
+            "id": "e36-03908-01",
+            "startSeconds": 3908,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's like, well, people talk about five times five as being twenty-five, so it's probably twenty-five. But this thing's gonna spin up a CPU in the weights and actually calculate five times five."
+          },
+          {
+            "id": "e36-03918-01",
+            "startSeconds": 3918,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So the yeah, so there's no question that um having access to tools Is is positively critical."
+          },
+          {
+            "id": "e36-03929-01",
+            "startSeconds": 3929,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I you know I love I think GrockBot's a great product. I love that you have to buy it and I love that it's worth what you pay for."
+          },
+          {
+            "id": "e36-03936-01",
+            "startSeconds": 3936,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I I happen to think that there are lots of other agents that add a ton of value um in but boy for being an accessible product, it's great."
+          },
+          {
+            "id": "e36-03947-01",
+            "startSeconds": 3947,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um my thought is Vendor lock in is dangerous."
+          },
+          {
+            "id": "e36-03954-01",
+            "startSeconds": 3954,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I mean, we look at what's happening in China with the AI bubble bursting, you know, what's gonna happen to people that are relying on you know, some some model model apps product that's gone."
+          },
+          {
+            "id": "e36-03966-01",
+            "startSeconds": 3966,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "But haven't thought about that. Wow. So yeah, so if OpenAI goes belly up and and and me and you are buying compute for them to be able to power businesses and then that's tough, isn't it?"
+          },
+          {
+            "id": "e36-03978-01",
+            "startSeconds": 3978,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "It's tough. Yeah, it's interesting. Now now Ada's suggesting um that the real value of having the model is that you can supervise it and measure its productivity, measure its effectiveness."
+          },
+          {
+            "id": "e36-03991-01",
+            "startSeconds": 3991,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I I think that adds a lot of value. I'm almost more concerned with vendor and maybe maybe Ada's smarter than I am."
+          },
+          {
+            "id": "e36-03997-01",
+            "startSeconds": 3997,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "She probably is, but um I but I think I agree with that part, right? Like I mean, this is also I we talk I was talking to you about like Satya's um kind of like talk and and yeah he mentioned one of these as well, right?"
+          },
+          {
+            "id": "e36-04009-01",
+            "startSeconds": 4009,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Like if you can evaluate for your own work."
+          },
+          {
+            "id": "e36-04013-01",
+            "startSeconds": 4013,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, you know, he also actually mentioned like 'cause right now you know the models, the labs, the the American corporations, AI corporations, open thropic don't release the they don't show you the chain of thought reasoning."
+          },
+          {
+            "id": "e36-04025-01",
+            "startSeconds": 4025,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So you don't actually know like how the model came up with what they came up with."
+          },
+          {
+            "id": "e36-04030-01",
+            "startSeconds": 4030,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So Satya was like making a case that like obviously that's not gonna fly long term because if you are a big enterprise, you wanna see the chain of thought."
+          },
+          {
+            "id": "e36-04037-01",
+            "startSeconds": 4037,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "You wanna know what the model is doing. Like you don't want to you don't want like have some stranger walking across walking around your billions or trillion dollar infrastructure and you don't know what they want."
+          },
+          {
+            "id": "e36-04045-01",
+            "startSeconds": 4045,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I don't know if they're thinking, I'm gonna like destroy everything or like whatever. You wanna know. if we didn't have the traces from the hugging face hack."
+          },
+          {
+            "id": "e36-04052-01",
+            "startSeconds": 4052,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Like, we we didn't capture that stuff because we didn't think it was important. Or our model didn't allow us to capture it. Oh."
+          },
+          {
+            "id": "e36-04060-01",
+            "startSeconds": 4060,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Interesting. Interesting. Good topic. Yeah. Yeah, we'll see about that."
+          },
+          {
+            "id": "e36-04069-01",
+            "startSeconds": 4069,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "We might see about it from Herald Labs. Herald Labs is an applied A product lab where humans and agents build together."
+          },
+          {
+            "id": "e36-04076-01",
+            "startSeconds": 4076,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Entity, which can I can I break the scoop? We're working."
+          },
+          {
+            "id": "e36-04082-01",
+            "startSeconds": 4082,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Henry's working on a a a new greenfield version of entity that is gonna be just beautiful for businesses, very flexible."
+          },
+          {
+            "id": "e36-04092-01",
+            "startSeconds": 4092,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um but uh if you need products, you can work with humans and agents to build them together."
+          },
+          {
+            "id": "e36-04100-01",
+            "startSeconds": 4100,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "entities mus vision control for agent teams with hacker houses worldwide so you can build with humans and ship with agents with Herald Labs."
+          },
+          {
+            "id": "e36-04109-01",
+            "startSeconds": 4109,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Herald Labs dot Herald Lab Singular dot SI. Thank you, Henry, for sponsoring this beautiful podcast."
+          },
+          {
+            "id": "e36-04117-01",
+            "startSeconds": 4117,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Thank you, sir."
+          },
+          {
+            "id": "e36-04119-01",
+            "startSeconds": 4119,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Well We'll see you next Friday. Um, that's that's a wrap for episode thirty-six."
+          },
+          {
+            "id": "e36-04127-01",
+            "startSeconds": 4127,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "there's increasing um engagement in the Discord. Henry and I have moved uh a lot of our musings into the general channel for now."
+          },
+          {
+            "id": "e36-04137-01",
+            "startSeconds": 4137,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "So if you want to participate with us, discuss the episode, like discuss the content going into the next episode, join us on our Discord."
+          },
+          {
+            "id": "e36-04145-01",
+            "startSeconds": 4145,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "QR codes on the screen, or you can visit weeklyclaw.ai slash Discord. We've got our whole episodes post production on YouTube."
+          },
+          {
+            "id": "e36-04152-01",
+            "startSeconds": 4152,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um, so if we had technical difficulties or whatever and a part of the show or maybe the slides weren't easy to read, watch the produced versions."
+          },
+          {
+            "id": "e36-04161-01",
+            "startSeconds": 4161,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um Henry and his agent are putting a lot of time into producing those videos and um they're starting to look really good."
+          },
+          {
+            "id": "e36-04170-01",
+            "startSeconds": 4170,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "we're working on clips and tapes for X, but that's where it'll be and and now if you follow us on X, um there's a constant stream of AI news, um, you know."
+          },
+          {
+            "id": "e36-04179-01",
+            "startSeconds": 4179,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "carefully curated and um quickly summary summarized by none other than super ada. So watch for the election."
+          },
+          {
+            "id": "e36-04188-01",
+            "startSeconds": 4188,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Um we've got the uh ATM lever, boy. That's I and and the ETH verdict."
+          },
+          {
+            "id": "e36-04197-01",
+            "startSeconds": 4197,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "I don't know. There's there's a lot. AI's a lot right now. So watch for all that stuff. I love the way you're I love the way you had called it here, it's like ATM lover boy."
+          },
+          {
+            "id": "e36-04207-01",
+            "startSeconds": 4207,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "ATM Lover. Okay, you're the one calling it lover boy. Oh, not a lover, no."
+          },
+          {
+            "id": "e36-04215-01",
+            "startSeconds": 4215,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "A lever. Leverage. Yeah, yeah, yeah. lover boy. Okay, ATM lover. Okay."
+          },
+          {
+            "id": "e36-04224-01",
+            "startSeconds": 4224,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "my god. Yeah, everybody everybody's selling their everybody's selling their stock to buy more GPUs, dude. I think we should I think we should buy more GPUs."
+          },
+          {
+            "id": "e36-04232-01",
+            "startSeconds": 4232,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Sell your kidney to buy a GPU. Did you see did you see the um the meme? I should show it. Um I'll I'll send it to you. You can edit it into the episode."
+          },
+          {
+            "id": "e36-04240-01",
+            "startSeconds": 4240,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "There was this beautiful video of a a wedding in China."
+          },
+          {
+            "id": "e36-04244-01",
+            "startSeconds": 4244,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "And the um the bride and the groom, the bride and the groom give each other relatively expensive gifts, and she got him a brand new RTX fifty ninety."
+          },
+          {
+            "id": "e36-04253-01",
+            "startSeconds": 4253,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "He's crying. He's like pouring tears. Yeah. All right. Well, plus yeah."
+          },
+          {
+            "id": "e36-04261-01",
+            "startSeconds": 4261,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "give me a fifty ninety. I'll be I'll be so glad. Thank you so much. I appreciate you. oh Give me a fifty ninety. Alright."
+          },
+          {
+            "id": "e36-04270-01",
+            "startSeconds": 4270,
+            "endSeconds": null,
+            "speaker": null,
+            "text": "Alright guys. Have a good one. have a great week. We'll see you on Friday. Cheers."
+          }
+        ]
       },
       "clips": []
     }
