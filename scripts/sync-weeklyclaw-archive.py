@@ -91,7 +91,7 @@ def fetch_youtube_episodes() -> dict[int, dict[str, str]]:
     ]
     numbered: dict[int, int] = {}
     for index, entry in enumerate(entries):
-        match = re.search(r"Weekly Claw\s*#(\d+)\b", entry.get("title") or "", re.I)
+        match = re.search(r"Weekly Claw\s*#?(\d+)\b", entry.get("title") or "", re.I)
         if match:
             numbered[index] = int(match.group(1))
 
@@ -112,7 +112,7 @@ def fetch_youtube_episodes() -> dict[int, dict[str, str]]:
     for index, entry in enumerate(entries):
         video_id = entry.get("id")
         title = entry.get("title") or ""
-        match = re.search(r"Weekly Claw\s*#(\d+)\b", title, re.I)
+        match = re.search(r"Weekly Claw\s*#?(\d+)\b", title, re.I)
         episode = int(match.group(1)) if match else inferred.get(index)
         if not video_id or episode is None:
             continue
