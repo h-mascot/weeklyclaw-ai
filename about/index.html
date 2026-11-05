@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  <link rel="canonical" href="https://weeklyclaw.ai/about">
+  <meta property="og:title" content="About Weekly Claw — the weekly AI show hosted by Andy and Henry">
+  <meta property="og:description" content="Weekly Claw is a weekly video podcast: sharp conversations with the people building AI. Hosted by Andy and Henry, new episodes Fridays.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://weeklyclaw.ai/about">
+  <meta property="og:image" content="https://weeklyclaw.ai/assets/og-image.jpg">
+  <meta property="og:site_name" content="Weekly Claw">
+  <title>About Weekly Claw — the weekly AI show for builders</title>
+  <meta name="description" content="Weekly Claw is a weekly video podcast hosted by Andy and Henry: sharp conversations with the people building AI. New episodes Fridays. Full archive on weeklyclaw.ai." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-card: #141414;
+      --claw-red: #e63946;
+      --claw-orange: #f4845f;
+      --claw-gradient: linear-gradient(135deg, #e63946, #f4845f);
+      --text-primary: #f5f5f5;
+      --text-secondary: #a0a0a0;
+      --text-muted: #666;
+      --border-subtle: #242424;
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(230,57,70,0.22), transparent 30rem),
+        radial-gradient(circle at 88% 0%, rgba(244,132,95,0.14), transparent 28rem),
+        var(--bg-dark);
+      color: var(--text-primary);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(100% - 32px, var(--max)); margin: 0 auto; }
+    .topbar { border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(10,10,10,0.72); backdrop-filter: blur(18px); }
+    .topbar-inner { height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -0.04em; }
+    .brand-mark { width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center; background: var(--claw-gradient); font-size: 23px; }
+    .nav { display: flex; gap: 16px; color: var(--text-secondary); font-size: 13px; font-weight: 800; }
+    .nav a:hover { color: var(--text-primary); }
+    main { padding: 72px 0 80px; }
+    .eyebrow { color: var(--claw-orange); font: 800 12px/1 JetBrains Mono, monospace; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { max-width: 820px; margin: 18px 0 16px; font-size: clamp(44px, 7vw, 86px); line-height: .9; letter-spacing: -.07em; }
+    .intro { max-width: 740px; color: var(--text-secondary); font-size: 19px; line-height: 1.55; margin: 0 0 36px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); border: 1px solid var(--border-subtle); border-radius: 24px; padding: 24px; position: relative; overflow: hidden; }
+    .card::before { content: ''; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, #e63946, #f4845f, #e63946); opacity: .72; }
+    .meta { color: var(--text-muted); font: 800 12px/1.4 JetBrains Mono, monospace; text-transform: uppercase; letter-spacing: .08em; }
+    h2 { margin: 12px 0 8px; font-size: 28px; letter-spacing: -.04em; }
+    p { color: var(--text-secondary); line-height: 1.56; margin: 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .btn { display: inline-flex; min-height: 42px; align-items: center; justify-content: center; border-radius: 999px; padding: 0 14px; border: 1px solid rgba(255,255,255,.12); color: var(--text-primary); font-weight: 850; font-size: 13px; }
+    .btn:hover { border-color: rgba(244,132,95,.75); background: rgba(255,255,255,.06); }
+    .btn-primary { background: var(--claw-gradient); border-color: transparent; }
+    .footer { border-top: 1px solid rgba(255,255,255,.06); color: var(--text-muted); padding: 36px 0; font-size: 13px; }
+    @media (max-width: 780px) { .grid { grid-template-columns: 1fr; } .nav { display: none; } }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PodcastSeries",
+  "name": "Weekly Claw",
+  "url": "https://weeklyclaw.ai/",
+  "description": "Weekly video podcast hosted by Andy and Henry: sharp conversations with the people building AI - agents, devtools, infrastructure, startups and the future of work. New episodes Fridays.",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Andy"
+    },
+    {
+      "@type": "Person",
+      "name": "Henry"
+    }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "OpenClaw community",
+    "url": "https://openclaw.ai"
+  },
+  "inLanguage": "en"
+}
+  </script>
+<script defer src="https://analytics.henrymascot.com/script.js" data-website-id="d3a6d170-e9f1-4301-a801-50ce6aadcaf1" data-tag="WeeklyClaw"></script></head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="/" aria-label="WeeklyClaw.ai home"><span class="brand-mark">🦞</span><span>WeeklyClaw.ai</span></a>
+      <nav class="nav" aria-label="Primary navigation"><a href="/">Episodes</a><a href="/changelog/">Release changelogs</a><a href="/episodes/">Archive</a><a href="https://openclaw.ai">OpenClaw</a></nav>
+    </div>
+  </header>
+  <main>
+    <div class="shell">
+      <div class="eyebrow">About the show</div>
+      <h1>Sharp conversations with the people building AI.</h1>
+      <p class="intro">Weekly Claw is a weekly video podcast about the people building AI. Each Friday, Andy and Henry break down the week — new model releases, agent infrastructure, developer tools, and the startups and workflows forming around them — for builders and founders, not hype.</p>
+      <section class="grid" aria-label="What the show covers">
+        <article class="card"><div class="meta">Coverage</div><h2>AI agents</h2><p>Agent frameworks, orchestration, safety and what actually ships in production.</p></article>
+        <article class="card"><div class="meta">Coverage</div><h2>Model releases</h2><p>Weekly rundowns of new frontier and open models, and what they change for builders.</p></article>
+        <article class="card"><div class="meta">Coverage</div><h2>Devtools & infrastructure</h2><p>The toolchain forming around AI-native development.</p></article>
+        <article class="card"><div class="meta">Coverage</div><h2>Startups & future of work</h2><p>How teams and companies are being rebuilt around AI.</p></article>
+      </section>
+      <p class="intro" style="margin-top:36px">Hosted by <strong>Andy and Henry</strong>. New episodes drop <strong>Fridays</strong>. Weekly Claw is the OpenClaw community's weekly program.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/episodes">Watch every episode</a>
+        <a class="btn" href="/timeline">Show timeline</a>
+        <a class="btn" href="/feedback">Send feedback</a>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"><div class="shell">© 2026 WeeklyClaw.ai · The Weekly Claw</div></footer>
+</body>
+</html>
