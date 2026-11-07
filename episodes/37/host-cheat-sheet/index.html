@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Weekly Claw #37 Host Cheat Sheet</title><style>body{margin:0;font:18px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#24201c;background:#ece4d5}a{color:#2a7e6b}.shell{width:min(920px,calc(100% - 36px));margin-inline:auto}header,footer{padding:22px 0}nav{display:flex;justify-content:space-between;gap:16px;align-items:center}.wordmark{font-weight:800;text-transform:uppercase;text-decoration:none;color:#24201c}.button{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid #2a7e6b;border-radius:6px;background:#2a7e6b;color:#fff9ee;text-decoration:none;font-weight:700}.button.secondary{color:#24201c;background:transparent;border-color:#b5a996}.intro{padding:56px 0 32px;border-block:1px solid #b5a996}.eyebrow{margin:0 0 10px;color:#2a7e6b;font:700 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase}h1{margin:0;font-size:clamp(42px,8vw,78px);line-height:.9;letter-spacing:-.05em;text-transform:uppercase}article{padding:36px 0 70px}h2,h3,h4{line-height:1.05;margin-top:2em}p,li{max-width:78ch}code{background:rgba(36,32,28,.08);padding:.1em .3em;border-radius:4px}</style><script defer src="https://analytics.henrymascot.com/script.js" data-website-id="d3a6d170-e9f1-4301-a801-50ce6aadcaf1" data-tag="WeeklyClaw"></script></head>
+<body><header><nav class="shell"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/37/deck">Open slides</a></div></nav></header><main class="shell"><section class="intro"><p class="eyebrow">Episode 37 · Host Cheat Sheet</p><h1>The agent stack got a landlord. And a bug bounty.</h1></section><article><h2>Weekly Claw #37 — host cheat sheet (rev4)</h2>
+<p>One page. Numbers, timings, and the things not to say. Deck revs/deck.rev4.html · Fri 2026-11-06 · 16:00 ET.</p>
+<h3>Numbers that must be exact</h3>
+<ul>
+<li>Pando: ~1PB/day · median push latency cut ~5x · reliability below 90% under Codex concurrency · built in 10 weeks · HN 269 points.</li>
+<li>Pierre: acquired Nov 4 · Code Storage + Trees/Diffs libraries. Conductor: Meta, same day · cloud shutdown <strong>November 20</strong>.</li>
+<li>Kimi K3.1 Pro: 2.8T total · 104B active · 1M context · ungated · MXFP4 QAT · 24 layers gated attention vs K3.</li>
+<li>ERNIE-5.5-Flash-Base: 280B total · 14B active · 33.5T tokens · custom licence.</li>
+<li>Hy4: API only · vision + computer use · weights pending.</li>
+<li>Qwen 3.8 27B: 3 of 4 games · raw policy weights · laptop. Sparks: 0.016% of weights · MATH-500 7.9 → 48.1.</li>
+<li>Exploits: 2,308 candidates → 1,724 reproduced → <strong>948 working</strong> · each with a patch · 30-hour run · $1.2M API. Model: <strong>GPT-6 Cyber</strong> (Nov 5) · ExploitGym 48.5% vs 32.1% (GPT-5.6 Cyber) · 99.93%/100% in-scope · 81 Firefox bugs, Mozilla MFSA2026-118 · Daybreak Red only.</li>
+<li>Anthropic: Q3 $16,956M (+46.7% QoQ) · 9-mo $33,242M · commitments $895.4B vs $447.5B · 9-mo compute $18,808M · ~13x annualized. Accession 0001628280-26-068676.</li>
+<li>Anthropic IPO: S-1/A filed Nov 2 · press reports (Reuters, WSJ) say investors balk at <strong>$1.5T</strong>, one floated $1T · October revenue absent from the updated S-1 · roadshow ~Nov 10 may slip. Read via The Decoder; Reuters bot-walled.</li>
+<li>SFO: Factory · Nikhil Harithas · 17:13 · published 2026-11-03 · 5,085 views at verification.</li>
+<li>Next episode: November 13, 4 PM ET.</li>
+</ul>
+<h3>Run sheet</h3>
+<ul>
+<li>0:00 Title → 0:20 Cold open (Henry) → 2:20 Herald Labs read (Andy) → 3:20</li>
+<li>3:20 S1 code stack (Henry; Andy footnote) → 8:20</li>
+<li>8:20 S2 open weights (Henry; Andy model-card detail) → 12:20</li>
+<li>12:20 S3 weight space (Henry; Andy skeptic) → 16:20</li>
+<li>16:20 S4 agent security (Henry; Andy Check Point detail) → 21:20</li>
+<li>21:20 Signal From Outside (Andy presents, 6 min) → 27:20</li>
+<li>27:20 Hot take (Henry proposition, Andy rebuttal, 4 min) → 31:20</li>
+<li>31:20 Heritage Telecom read (Henry) → 32:20</li>
+<li>32:20 Close: One to Watch + <strong>single recap</strong> (Andy), Discord CTA (Henry) → 34:20. Hard stop 45.</li>
+</ul>
+<h3>Cue points (auto-captions — spot-check before air)</h3>
+<ul>
+<li>SFO video: open manually, never autoplay. Beats 2:44 · 5:42 · 9:34 · 11:21 · 12:24 · 14:22 · 16:44.</li>
+</ul>
+<h3>Never say on air</h3>
+<ul>
+<li>That the show&#x27;s identity has broadened — justify by viewer stakes.</li>
+<li>A recap anywhere except the close slide. No recap in either sponsor read, in the cold open, or in the sign-off.</li>
+<li>Anthropic figures without &quot;unaudited, vendor-filed&quot;.</li>
+<li>Exploit counts without &quot;OpenAI-reported&quot;.</li>
+<li>&quot;Open weights&quot; for Hy4 · &quot;Apache&quot; for ERNIE · a verdict on weight space.</li>
+<li>Anthropic&#x27;s Cyber Mission / CIDP as this week&#x27;s news — the primary post is Oct 8, outside the news window.</li>
+<li>&quot;The IPO is filed/priced&quot; — only the S-1/A is on file. Say &quot;press reports&quot; for the valuation pushback, never &quot;the filing says&quot;.</li>
+</ul>
+<h3>Links on the final slide</h3>
+<ul>
+<li>weeklyclaw.ai · YouTube full episodes · X clips · Discord QR → weeklyclaw.ai/discord.</li>
+</ul></article></main><footer class="shell">Weekly Claw #37 · Host Cheat Sheet</footer></body></html>

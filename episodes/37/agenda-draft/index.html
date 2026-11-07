@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekly Claw #37 Agenda — The agent stack got a landlord. And a bug bounty.</title>
+<style>
+:root { color-scheme: light; --ink:#24201c; --paper:#fff9ee; --muted:#6e645a; --line:#b5a996; --accent:#2a7e6b; }
+body { margin:0; font:18px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:#ece4d5; }
+a { color:var(--accent); }
+.shell { width:min(920px, calc(100% - 36px)); margin-inline:auto; }
+header, footer { padding:22px 0; }
+nav { display:flex; justify-content:space-between; gap:16px; align-items:center; }
+.wordmark { font-weight:800; text-transform:uppercase; text-decoration:none; color:var(--ink); }
+.button { display:inline-flex; align-items:center; min-height:40px; padding:0 14px; border:1px solid var(--accent); border-radius:6px; background:var(--accent); color:var(--paper); text-decoration:none; font-weight:700; }
+.button.secondary { color:var(--ink); background:transparent; border-color:var(--line); }
+.intro { padding:56px 0 32px; border-block:1px solid var(--line); }
+.eyebrow { margin:0 0 10px; color:var(--accent); font:700 12px/1 ui-monospace,Menlo,monospace; letter-spacing:.12em; text-transform:uppercase; }
+h1 { margin:0; font-size:clamp(42px,8vw,78px); line-height:.9; letter-spacing:-.05em; text-transform:uppercase; }
+article { padding:36px 0 70px; }
+h2,h3,h4 { line-height:1.05; margin-top:2em; }
+p,li { max-width:78ch; }
+code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
+</style>
+<script defer src="https://analytics.henrymascot.com/script.js" data-website-id="d3a6d170-e9f1-4301-a801-50ce6aadcaf1" data-tag="WeeklyClaw"></script></head>
+<body>
+<header><nav class="shell" aria-label="Episode navigation"><a class="wordmark" href="/">Weekly Claw</a><div><a class="button secondary" href="/episodes">Episodes</a> <a class="button" href="/episodes/37/deck">Open slides</a></div></nav></header>
+<main class="shell">
+<section class="intro"><p class="eyebrow">Episode 37 · November 6, 2026</p><h1>The agent stack got a landlord. And a bug bounty.</h1><p>Revision: 4 (immutable once written; any change = new revision file) Runtime plan: 34 min content, hard stop 45 Lineup: 12 slides · 4 clustered news slides (8…</p></section>
+<article><h2>Weekly Claw #37 — Friday, November 6, 2026 — 4:00 PM ET</h2>
+<p><strong>Revision:</strong> 4 (immutable once written; any change = new revision file)</p>
+<p><strong>Runtime plan:</strong> 34 min content, hard stop 45</p>
+<p><strong>Lineup:</strong> 12 slides · 4 clustered news slides (8 stories) · 1 video anchor · 1 hot take</p>
+<p><strong>News window:</strong> 2026-10-30 20:00 UTC → 2026-11-05 19:30 UTC (EP36 aired Fri Oct 30, 16:00 ET)</p>
+<p><strong>Approval state:</strong> awaiting lineup review by Henry (Telegram 855505513) or Andy (7615999206)</p>
+<p><strong>Revision 4 (Fri REFRESH, additive):</strong> no story swap, no promotion. (a) Hot-take arc extension now carries the IPO pushback with two independent press receipts — Reuters and the Wall Street Journal report investors balking at the $1.5T valuation, one reportedly floating $1T, October revenue absent from the updated S-1, and the ~Nov 10 roadshow start at risk. (b) Close card 2 sharpened to match. (c) Cold-open hook count corrected to five in the talking points (agenda and speaker notes already had five). Deck markup unchanged — <code>deck.rev4.html</code> is byte-identical to <code>deck.rev3.html</code>.</p>
+<h3>Frame</h3>
+<p>One week of agent-era plumbing: OpenAI rebuilt Git for agent-scale traffic and then bought the tooling around it, Meta bought the multi-agent workspace, one open frontier checkpoint actually shipped its weights, two practitioners fought over what &quot;reading weights&quot; means, and a $1.2M model run produced 948 working root exploits. The throughline: the layer agents run on is being consolidated, priced, and attacked — all in five days.</p>
+<p>Cold-open promise (on air): &quot;The agents got a landlord, a lawyer, and a bug bounty — in the same week.&quot;</p>
+<h3>Segment order and timings</h3>
+<ol>
+<li><strong>Title</strong> — 0:00–0:20</li>
+<li><strong>Cold open</strong> — 0:20–2:20 (2 min): five hooks — Pando/Pierre + Conductor, Kimi weights, weight space, 948 exploits + prompt adware, Anthropic commitments</li>
+<li><strong>Sponsor · The Herald Labs</strong> — 2:20–3:20 (1 min, slot 1, inverted from EP36)</li>
+<li><strong>S1 · What happened this week · agent-era code stack</strong> — 3:20–8:20 (5 min)</li>
+<li><strong>S2 · What happened this week · open weights</strong> — 8:20–12:20 (4 min)</li>
+<li><strong>S3 · What happened this week · weight space</strong> — 12:20–16:20 (4 min)</li>
+<li><strong>S4 · What happened this week · agent security</strong> — 16:20–21:20 (5 min)</li>
+<li><strong>Signal From Outside · Factory, &quot;Your AI Agents Shouldn&#x27;t Care Where They Run&quot;</strong> — 21:20–27:20 (6 min)</li>
+<li><strong>Hot take · Anthropic&#x27;s $895.4B of purchase commitments</strong> — 27:20–31:20 (4 min)</li>
+<li><strong>Sponsor · Heritage Telecom</strong> — 31:20–32:20 (1 min, slot 2)</li>
+<li><strong>Close · One to watch + Discord</strong> — 32:20–34:20 (2 min)</li>
+<li><strong>Sources &amp; Links</strong> — non-air reference, shown at end</li>
+</ol>
+<h3>S1 — Agent-era code stack (C76 + C80)</h3>
+<p><strong>Lead:</strong> Henry. Andy supports with caveat/fallback prose only.</p>
+<p>Headline: <strong>OpenAI rebuilt Git for its agents, then bought the tooling around it.</strong></p>
+<ul>
+<li><strong>Pando</strong> (openai.com, Nov 2): Rust Git backend for agent-scale monorepos; ~1PB/day; median push latency cut ~5x; reliability had fallen below 90% under Codex concurrency; built with Codex in 10 weeks; unmodified Git protocol. HN thread 269 pts, submitted 2026-11-02T23:47Z.</li>
+<li><strong>Pierre</strong> (openai.com, Nov 4): OpenAI acquires Pierre Computer Company — Code Storage plus the Trees/Diffs libraries Codex already ships; post explicitly continues the Pando thread; open-source projects stay open; close pending conditions.</li>
+<li><strong>Conductor → Meta</strong> (TechCrunch 1:10 PM PST Nov 4; conductor.build changelog): workspace for deploying teams of agents on one project; Conductor cloud shuts down <strong>Nov 20</strong>.</li>
+<li>Caveat on air: sxz.io notes two described Pando client features live in OpenAI&#x27;s Git fork, not upstream Git.</li>
+</ul>
+<h3>S2 — Open weights (C79)</h3>
+<p><strong>Lead:</strong> Henry. Andy supports with caveat/fallback prose only.</p>
+<p>Headline: <strong>One frontier checkpoint actually shipped its weights.</strong></p>
+<ul>
+<li><strong>Kimi K3.1 Pro</strong> (HF, Nov 4): ungated; 2.8T total / 104B active; 1M context; MXFP4 QAT; MoonViT-V2 vision; Gated MLA→Gated DSA swap on 24 layers vs K3 (69 KDA + 24 Gated DSA row on the card); 11,658 downloads / 754 likes at check; vLLM day-0; Huawei serves via vLLM-Ascend + SGLang on Atlas A3 / Ascend 950.</li>
+<li><strong>ERNIE-5.5-Flash-Base</strong> (Baidu, Nov 5): 280B total / 14B active base checkpoint; 33.5T tokens; 1M-token fine-tune context; FP8+BF16; custom ERNIE license v1.0 — <strong>not Apache</strong>.</li>
+<li><strong>Tencent Hy4</strong> (Nov 4): first vision + first computer use, CLI+GUI, Blender/CAD-trained; live on Tencent Cloud + OpenRouter at $0.834/$2.501 per M — <strong>weights not posted</strong>, only Hy4-preview. Label &quot;API now, weights pending&quot; on air.</li>
+<li>Bench context (not a slide): Ricursive Ripple-65B Preview, Apache-2.0, Terminal-Bench 2.1 80.52.</li>
+</ul>
+<h3>S3 — Weight space (C75)</h3>
+<p><strong>Lead:</strong> Henry. Andy supports with caveat/fallback prose only.</p>
+<p>Headline: <strong>Qwen 3.8 27B read its own weights well enough to name the game.</strong></p>
+<ul>
+<li><strong>Willison</strong> (Nov 3): on a laptop, Qwen 3.8 27B names 3 of 4 games from raw policy weights; his own caveat — &quot;some of the wider commentary… does not feel justified.&quot;</li>
+<li><strong>Sparks claim</strong> (Nov 2): GPT-6 Astra reads small nets&#x27; weights; writes game-playing nets beating PPO-100M; fixes Qwen3.5-0.8B MATH-500 7.9→48.1 by editing 0.016% of weights.</li>
+<li><strong>Honnibal</strong> (Nov 3, &quot;…post is misleading&quot;): only toy nets are read weight-only; the Qwen/Go results lean on Python programs and up to 50 passes.</li>
+<li>Framing on air: claim vs rebuttal, explicitly labelled. Not a verdict.</li>
+</ul>
+<h3>S4 — Agent security (C82)</h3>
+<p><strong>Lead:</strong> Henry. Andy supports with caveat/fallback prose only.</p>
+<p>Headline: <strong>A $1.2M model run produced 948 working root exploits.</strong></p>
+<ul>
+<li><strong>OpenAI &quot;A thousand fewer paths to root&quot;</strong> (Nov 4, via THN): 30-hour pipeline; 2,308 candidate kernel findings → 1,724 dynamically reproduced → <strong>948 working local-privesc exploits</strong>, each with a patch; novel techniques include kernel object spraying, page grooming, five data-only privesc paths; OpenAI&#x27;s line: an unpatched low-priv account is &quot;functionally equivalent to root&quot; for a well-resourced actor. Label exploit counts OpenAI-reported.</li>
+<li><strong>GPT-6 Cyber launch</strong> (openai.com, Nov 5): OpenAI named the model behind the 948 run. ExploitGym 48.5% vs 32.1% for GPT-5.6 Cyber; out-of-scope-service avoidance 99.93% without the deployment prompt and 100% with it; 81 previously unknown high-severity Firefox bugs, Mozilla fixes in MFSA2026-118; classified Critical under the Preparedness Framework. API and Codex access is Daybreak Red customers only. Label OpenAI-reported.</li>
+<li><strong>Check Point &quot;prompt adware&quot;</strong> (Nov 3): Haiou jailbreak bundle targets Codex; installs Skills and rewrites Codex config so ads for the author&#x27;s paid LLM gateway are injected into later agent responses. Seen alongside Cobalt Strike, VulnClaw and Ladon. Broader risk: gateways snooping data, stealing cloud keys, injecting tool calls.</li>
+</ul>
+<h3>Signal From Outside — Factory, Nikhil Harithas (permanent anchor)</h3>
+<ul>
+<li>Title: <strong>&quot;Your AI Agents Shouldn&#x27;t Care Where They Run&quot;</strong> · AI Engineer · video <code>XIHZpZtYCzo</code></li>
+<li>Published 2026-11-03T01:00:22-08:00 · 17:13 · 5,085 views at verification · poster <code>assets/images/sfo37-factory-relay.jpg</code></li>
+<li>Verified: transcript saved at <code>sources/transcript-XIHZpZtYCzo.txt</code> (489 lines); cues read against transcript, <strong>spot-check before air</strong> (auto-captions can drift by seconds).</li>
+<li>Cue beats (manual open only, never autoplay):</li>
+</ul>
+<p>  - 2:44–3:34 — &quot;agents can&#x27;t just keep borrowing your identity… they&#x27;re basically slightly non-deterministic applications&quot;</p>
+<p>  - 5:42–6:40 — control plane, compute gateway and relay</p>
+<p>  - 9:34–10:26 — bring your own key, stays inside the VPC, blast radius contained</p>
+<p>  - 11:21–11:36 — plans to open source the compute layer; &quot;the abstractions have nothing to do with Factory&quot;</p>
+<p>  - 12:24–12:37 — snapshots and forking for fleets and swarms</p>
+<p>  - 14:22–15:45 — the hard parts: bookkeeping, AWS microVM 8-hour session cap, snapshot/rehydrate for multi-day missions</p>
+<p>  - 16:44–17:05 — &quot;agents shouldn&#x27;t care where they run&quot;</p>
+<ul>
+<li>Selection reason on air: it is the operational counterweight to S1 — the labs are consolidating the layer, while a 17-minute practitioner talk shows what it actually costs to make agents run where a customer&#x27;s security team says they must.</li>
+</ul>
+<h3>Hot take — Anthropic&#x27;s commitments (C77, receipts only)</h3>
+<ul>
+<li>Proposition: <strong>The revenue is the headline. The commitments are the story.</strong></li>
+<li>Receipts (vendor-filed, EDGAR accession 0001628280-26-068676, filed 2026-11-02T14:24Z): Q3 revenue <strong>$16,956M</strong> (+46.7% QoQ); nine-month <strong>$33,242M</strong>; purchase commitments <strong>$895.4B</strong> vs <strong>$447.5B</strong>; nine-month compute $18,808M. Ratio ~13x annualized revenue.</li>
+<li>Arc extension, bench-grade only: TeraWulf/Google credit backstop for a $19B Anthropic lease (Nov 4); Nasdaq &quot;ANT&quot; IPO pending. IPO pushback — Reuters and the Wall Street Journal report prospective investors balking at the $1.5T valuation, with one reportedly floating $1T; October revenue is absent from the updated S-1 and the roadshow&#x27;s ~Nov 10 start is at risk. Read via The Decoder&#x27;s rendering (Reuters itself is bot-walled to us) — attribute as &quot;press reports&quot;, never as a filing.</li>
+<li>Non-duplication check: no news slide carries Anthropic; this is the only airing of the S-1/A numbers.</li>
+</ul>
+<h3>Bench (recorded, not promoted)</h3>
+<ul>
+<li>C74 Apple opens Siri AI developer access (App Intents + skills, iOS 27.3 Developer Preview) — strong, held for next week; official Apple docs only, spring submission gate/terms TBD, EU unavailable.</li>
+<li>C78 Sovereign stacks (IndiaAI EKA-1 / Dhīr 2B·5B; DeepSeek V5 reportedly Ascend-950-native) — the Ascend leg stays labelled unconfirmed.</li>
+<li>C81 ChatGPT search ≈20% of Google&#x27;s volume, 1B→1.2B weekly users in 60 days — single-source on-record, methodology undisclosed.</li>
+<li>C83 Midterms: ~$187M AI ads, ~90% undisclosed; OpenAI National Community Compact (Nov 5) — Henry-angle low, keep for the next political cycle tick.</li>
+<li>Watch-only: Qwen 4 &quot;next week&quot; per Alibaba CTO; Gemini 4 Carbon tops AA Intelligence Index (JS-rendered scores unverified); fal at $16B per Bloomberg; Claude Marketplace 25+ partner agents; GPT-5.6 Cyber in AWS GovCloud.</li>
+</ul>
+<h3>Sponsor slots</h3>
+<ul>
+<li>Slot 1: The Herald Labs (<code>assets/videos/herald-labs-ad.mp4</code>, poster <code>assets/images/herald-labs-ad-poster.jpg</code>, heraldlab.si)</li>
+<li>Slot 2: Heritage Telecom (<code>assets/videos/heritage-telecom-ad.mp4</code>, poster <code>assets/images/heritage-telecom-ad-poster.jpg</code>, heritagetel.com)</li>
+</ul>
+<h3>Close</h3>
+<ul>
+<li>One to watch, three cards: (1) Conductor cloud shutdown Nov 20 — where do those teams land; (2) Anthropic&#x27;s roadshow around Nov 10 — now at risk: press reports say investors are pushing back on the $1.5T valuation and October revenue is missing from the updated S-1, so does the $895.4B survive diligence; (3) Kimi K3.1 Pro real-world adoption vs Ripple-65B economics.</li>
+<li>Discord QR to <code>https://weeklyclaw.ai/discord</code> on the close slide; recap appears <strong>once</strong>, on this slide, and is never repeated in the cheat sheet or end copy.</li>
+</ul>
+<h3>Caveats carried on air</h3>
+<ul>
+<li>All Anthropic figures vendor-filed.</li>
+<li>Exploit counts OpenAI-reported.</li>
+<li>Hy4 weights pending; ERNIE licence is custom, not Apache.</li>
+<li>Weight-space claims contested — claim vs rebuttal, not settled.</li>
+<li>SFO cues creator/auto-caption timestamps — spot-check before air.</li>
+<li>Pando client-feature caveat per sxz.io.</li>
+</ul></article>
+</main>
+<footer class="shell">Weekly Claw #37 · Agenda and source notes · <a href="/episodes/37/deck">View host deck</a></footer>
+</body>
+</html>
