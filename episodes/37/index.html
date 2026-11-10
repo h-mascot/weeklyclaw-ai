@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-page="episode-library">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weekly Claw #37 — OpenAI’s Agent Git Stack, Kimi K3.1 Pro Weights, 948 Root Exploits &amp; Anthropic’s B Commitments | Weekly Claw 37</title>
+  <meta name="description" content="OpenAI rebuilt Git for agent-scale traffic with Pando (Rust backend, ~1PB/day, built with Codex in 10 weeks), then bought Pierre Computer Company — the tooling around it.">
+  <link rel="canonical" href="https://weeklyclaw.ai/episodes/37/">
+  <meta property="og:title" content="Weekly Claw #37 — OpenAI’s Agent Git Stack, Kimi K3.1 Pro Weights, 948 Root Exploits &amp; Anthropic’s B Commitments | Weekly Claw 37">
+  <meta property="og:description" content="OpenAI rebuilt Git for agent-scale traffic with Pando (Rust backend, ~1PB/day, built with Codex in 10 weeks), then bought Pierre Computer Company — the tooling around it.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://weeklyclaw.ai/episodes/37/">
+  <meta property="og:image" content="https://weeklyclaw.ai/assets/youtube-thumbnails/w37.jpg">
+  <meta name="theme-color" content="#ece4d5">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem('weeklyclaw-theme') || 'light'; } catch { document.documentElement.dataset.theme = 'light'; }</script>
+  <link rel="stylesheet" href="/assets/episode-library.css">
+<script defer src="https://analytics.henrymascot.com/script.js" data-website-id="d3a6d170-e9f1-4301-a801-50ce6aadcaf1" data-tag="WeeklyClaw"></script></head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="wordmark" href="/" aria-label="Weekly Claw home">WEEKLY CLAW</a>
+    <nav class="site-nav" aria-label="Primary navigation"><a href="/episodes">Episodes</a><a href="/timeline/">Timeline</a><a href="/episodes#summaries">Summaries</a><button class="theme-toggle" data-theme-toggle type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode"><span aria-hidden="true" data-theme-icon>☾</span><span data-theme-label>Dark mode</span></button></nav>
+  </div></header>
+  <main id="main-content" class="episode-main">
+  <section class="episode-hero"><div class="shell narrow">
+    <p class="eyebrow">Weekly Claw · episode 37</p>
+    <p class="episode-date">6 Nov 2026</p>
+    <h1>OpenAI’s Agent Git Stack, Kimi K3.1 Pro Weights, 948 Root Exploits &amp; Anthropic’s B Commitments</h1>
+    <div class="hero-actions"><a class="button secondary" href="https://www.youtube.com/watch?v=0vhC_W9AOLY" target="_blank" rel="noopener">Source video ↗</a><a class="button secondary" href="/episodes/37/deck">Slides ↗</a><a class="button secondary" href="/timeline/?q=OpenAI%E2%80%99s%20Agent%20Git">Search this topic ↗</a></div>
+  </div></section>
+  <section class="episode-player"><div class="shell narrow"><div class="section-kicker">Watch</div><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/0vhC_W9AOLY?rel=0" title="Weekly Claw episode 37: OpenAI’s Agent Git Stack, Kimi K3.1 Pro Weights, 948 Root Exploits &amp; Anthropic’s B Commitments | Weekly Claw 37" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div></section>
+  <section class="episode-content"><div class="shell narrow">
+    <div class="tab-list" role="tablist" aria-label="Episode content"><button id="summary-tab" class="tab-button" role="tab" aria-selected="true" aria-controls="summary-panel" tabindex="0">Summary</button><button id="transcript-tab" class="tab-button" role="tab" aria-selected="false" aria-controls="transcript-panel" tabindex="-1">Full transcript</button></div>
+    <section id="summary-panel" class="tab-panel" role="tabpanel" aria-labelledby="summary-tab"><p class="section-kicker">What this episode covers</p><ul class="summary-list"><li>OpenAI rebuilt Git for agent-scale traffic with Pando (Rust backend, ~1PB/day, built with Codex in 10 weeks), then bought Pierre Computer Company — the tooling around it.</li><li>Meta acquired Conductor, the workspace for deploying teams of agents on one project; Conductor cloud shuts down November 20.</li><li>Open weights: Kimi K3.1 Pro shipped ungated (2.8T total / 104B active, 1M context, MXFP4); ERNIE-5.5-Flash-Base arrived under a custom license; Tencent Hy4 is API-now, weights-pending.</li><li>Weight space: Qwen 3.8 27B named 3 of 4 games from raw policy weights (Willison) as GPT-6 Astra weight-reading claims met Honnibal’s rebuttal — claim vs rebuttal, explicitly labelled.</li><li>Agent security: OpenAI’s .2M, 30-hour run produced 948 working local-privesc exploits (counts OpenAI-reported); Check Point exposed “prompt adware” jailbreaks targeting Codex.</li><li>Signal From Outside: Factory’s Nikhil Harithas — “Your AI Agents Shouldn’t Care Where They Run.”</li><li>Hot take: Anthropic’s Q3 revenue hit ,956M (+46.7% QoQ) while purchase commitments reached .4B vs .5B — the revenue is the headline, the commitments are the story — with the “ANT” Nasdaq IPO pending.</li><li>Sponsors: Herald Labs and Heritage Telecom.</li></ul></section>
+    <section id="transcript-panel" class="tab-panel" role="tabpanel" aria-labelledby="transcript-tab"><p class="section-kicker">Published record</p><div class="unavailable"><strong>Transcript unavailable</strong><p>No published transcript is recorded for this episode. We will show it here when a verified transcript is published.</p></div></section>
+    
+  </div></section>
+  <nav class="episode-pagination shell narrow" aria-label="Episode navigation"><a href="/episodes/36/" rel="prev"><span>Previous episode</span><strong>W36 · AI Spending Boom, Genie 4, Qwenputer &amp; Managed Agents | Weekly Claw 36</strong></a><span></span></nav>
+</main>
+  <footer class="site-footer"><div class="shell footer-inner"><span>© 2026 Weekly Claw</span><nav aria-label="Footer navigation"><a href="/episodes">Episodes</a><a href="/timeline/">Topic timeline</a><a href="/">Home</a></nav></div></footer>
+  <script src="/assets/episode-detail.js" defer></script>
+</body>
+</html>
