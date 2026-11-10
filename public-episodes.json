@@ -9,8 +9,8 @@
   },
   "coverage": {
     "inventoryStart": 10,
-    "inventoryEnd": 36,
-    "episodeCount": 27,
+    "inventoryEnd": 37,
+    "episodeCount": 28,
     "transcriptPublished": [
       22,
       24,
@@ -40,7 +40,8 @@
       32,
       33,
       34,
-      35
+      35,
+      37
     ],
     "publicClipCount": 0,
     "publicationEvidence": {
@@ -164,6 +165,9 @@
         "episodes.json",
         "episodes/index.html",
         "YouTube transcript panel export 2026-11-01"
+      ],
+      "37": [
+        "episodes.json"
       ]
     },
     "limitations": [
@@ -44950,6 +44954,40 @@
             "text": "Alright guys. Have a good one. have a great week. We'll see you on Friday. Cheers."
           }
         ]
+      },
+      "clips": []
+    },
+    {
+      "week": 37,
+      "title": "OpenAI’s Agent Git Stack, Kimi K3.1 Pro Weights, 948 Root Exploits & Anthropic’s B Commitments | Weekly Claw 37",
+      "date": "2026-11-06",
+      "dateLabel": "6 Nov 2026",
+      "url": "https://www.youtube.com/watch?v=0vhC_W9AOLY",
+      "videoId": "0vhC_W9AOLY",
+      "thumbnailUrl": "/assets/youtube-thumbnails/w37.jpg",
+      "summary": [
+        "OpenAI rebuilt Git for agent-scale traffic with Pando (Rust backend, ~1PB/day, built with Codex in 10 weeks), then bought Pierre Computer Company — the tooling around it.",
+        "Meta acquired Conductor, the workspace for deploying teams of agents on one project; Conductor cloud shuts down November 20.",
+        "Open weights: Kimi K3.1 Pro shipped ungated (2.8T total / 104B active, 1M context, MXFP4); ERNIE-5.5-Flash-Base arrived under a custom license; Tencent Hy4 is API-now, weights-pending.",
+        "Weight space: Qwen 3.8 27B named 3 of 4 games from raw policy weights (Willison) as GPT-6 Astra weight-reading claims met Honnibal’s rebuttal — claim vs rebuttal, explicitly labelled.",
+        "Agent security: OpenAI’s .2M, 30-hour run produced 948 working local-privesc exploits (counts OpenAI-reported); Check Point exposed “prompt adware” jailbreaks targeting Codex.",
+        "Signal From Outside: Factory’s Nikhil Harithas — “Your AI Agents Shouldn’t Care Where They Run.”",
+        "Hot take: Anthropic’s Q3 revenue hit ,956M (+46.7% QoQ) while purchase commitments reached .4B vs .5B — the revenue is the headline, the commitments are the story — with the “ANT” Nasdaq IPO pending.",
+        "Sponsors: Herald Labs and Heritage Telecom."
+      ],
+      "deckUrl": "/episodes/37/deck",
+      "publicationStatus": "public_verified",
+      "publicationEvidence": [
+        "episodes.json"
+      ],
+      "transcript": {
+        "status": "missing",
+        "sourceUrl": null,
+        "language": null,
+        "captionType": null,
+        "sourceHash": null,
+        "possibleCaptionErrors": false,
+        "segments": []
       },
       "clips": []
     }
