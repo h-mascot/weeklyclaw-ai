@@ -161,6 +161,17 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
 #s-sources .card p{font-size:.86rem;line-height:1.3;}
 #s-sources .card a{color:#225e6a;text-decoration:none;border-bottom:1px dashed #82b8c2;}
 #s-sources .src-note{font-size:.6rem;line-height:1.25;text-align:center;}
+
+/* full-bleed sponsor video (host-directed 2026-11-12): video covers the slide.
+   Slide padding (52/68/64) and the static .content anchor would letterbox the
+   video, so: slide padding 0, content static, video absolute to the slide. */
+.slide.sponsor-video{padding:0;}
+.slide.sponsor-video::before{display:none;}
+.slide.sponsor-video .content{position:static;max-width:none;width:100%;height:100%;justify-content:flex-end;align-items:center;gap:0;}
+.slide.sponsor-video video{position:absolute;top:0;left:0;width:100%;height:100%;max-height:none;aspect-ratio:auto;object-fit:cover;border-radius:0;box-shadow:none;z-index:1;}
+.slide.sponsor-video .part-label{position:absolute;top:64px;left:0;right:0;z-index:3;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.7);}
+.slide.sponsor-video .sponsor-footer{position:relative;z-index:3;padding:10px 18px;margin-bottom:64px;background:rgba(15,13,11,.55);border-radius:999px;backdrop-filter:blur(4px);}
+.slide.sponsor-video .sponsor-footer a{color:#fff;}
 </style>
 <script defer src="https://analytics.henrymascot.com/script.js" data-website-id="d3a6d170-e9f1-4301-a801-50ce6aadcaf1" data-tag="WeeklyClaw"></script></head>
 
