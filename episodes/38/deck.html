@@ -608,6 +608,73 @@ h3{font-size:1.35rem;line-height:1;margin-bottom:8px;}
 
 <script>
 (function() {
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+  const slideNumEl = document.getElementById('slideNum');
+  const slideTotalEl = document.getElementById('slideTotal');
+  const progressBar = document.getElementById('progressBar');
+  const navDots = document.getElementById('navDots');
+  slideTotalEl.textContent = total;
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => go(i));
+    navDots.appendChild(dot);
+  }
+  const dots = navDots.querySelectorAll('.nav-dot');
+  function go(i) {
+    if (i < 0 || i >= total) return;
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = i;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    slideNumEl.textContent = current + 1;
+    progressBar.style.width = ((current + 1) / total * 100) + '%';
+    if (history.replaceState) history.replaceState(null, '', '#' + slides[current].id);
+  }
+  progressBar.style.width = (1 / total * 100) + '%';
+  document.addEventListener('keydown', (e) => {
+    if (e.target instanceof Element && e.target.closest('video, audio, input, textarea, select, button, a, [contenteditable]')) return;
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(current + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(current - 1); }
+    else if (e.key === 'Home') { e.preventDefault(); go(0); }
+    else if (e.key === 'End') { e.preventDefault(); go(total - 1); }
+    else if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+  let wheelLock = false;
+  document.addEventListener('wheel', (e) => {
+    if (e.target instanceof Element && e.target.closest('video, audio')) return;
+    e.preventDefault();
+    if (wheelLock) return;
+    const delta = e.deltaY || e.deltaX;
+    if (Math.abs(delta) < 12) return;
+    wheelLock = true; setTimeout(() => wheelLock = false, 650);
+    go(delta > 0 ? current + 1 : current - 1);
+  }, { passive: false });
+  let touchX = 0, touchY = 0;
+  document.addEventListener('touchstart', (e) => { touchX = e.touches[0].clientX; touchY = e.touches[0].clientY; }, { passive: true });
+  document.addEventListener('touchend', (e) => {
+    if (e.target instanceof Element && e.target.closest('video, audio')) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    const dy = e.changedTouches[0].clientY - touchY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? current + 1 : current - 1);
+  }, { passive: true });
+  if (location.hash) {
+    const target = document.querySelector(location.hash);
+    if (target && target.classList.contains('slide')) {
+      const idx = Array.prototype.indexOf.call(slides, target);
+      if (idx >= 0) go(idx);
+    }
+  }
+})();
+</script>
+<script>
+(function() {
   const pauseHidden = () => document.querySelectorAll('.slide:not(.active) video').forEach(v => { if (!v.paused) v.pause(); });
   new MutationObserver(pauseHidden).observe(document.querySelector('.slide-container'), { subtree: true, attributes: true, attributeFilter: ['class'] });
 })();
