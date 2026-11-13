@@ -1,0 +1,4 @@
+interface:
+  display_name: "Weekly Claw Multiplatform Publisher"
+  short_description: "Publish Weekly Claw on YouTube, X, and Bilibili"
+  default_prompt: "Use $weekly-claw-youtube-publisher to finish this episode, stage YouTube, X, and Bilibili idempotently, and publish only the exact approved release surfaces."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Weekly Claw Thumbnail Skill"
+  short_description: "Create All-In-style Weekly Claw thumbnails"
+  default_prompt: "Use $thumbnail-skill to create three QA-passed Weekly Claw thumbnails with the canonical episode title."

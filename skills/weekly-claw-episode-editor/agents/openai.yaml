@@ -1,0 +1,4 @@
+interface:
+  display_name: "Weekly Claw Episode Editor"
+  short_description: "Turn raw recordings into verified final episodes"
+  default_prompt: "Use $weekly-claw-episode-editor to turn these Weekly Claw recordings into a finished, verified episode master."
