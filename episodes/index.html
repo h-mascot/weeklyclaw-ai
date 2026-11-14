@@ -102,6 +102,7 @@
     .filter-button:hover, .filter-button[aria-pressed="true"] { color: var(--ink); background: var(--coral); border-color: var(--coral); }
     .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
     .week-card { min-width: 0; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); transition: transform 170ms ease, border-color 170ms ease; }
+    .interview-card { min-width: 0; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
     .week-card:hover { transform: translateY(-4px); border-color: rgba(108,124,255,.75); }
     .week-card[hidden] { display: none; }
     .thumb { position: relative; overflow: hidden; display: block; aspect-ratio: 3 / 2; margin: 12px 12px 0; border: 1px solid var(--line-soft); border-radius: 7px; background: var(--ink); }
@@ -677,6 +678,19 @@
               </ul>
             <div class="summary-links"><a href="https://www.youtube.com/watch?v=MSRFmpDfaTg" target="_blank" rel="noopener">Watch W20 →</a></div>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="archive" id="interviews" aria-labelledby="interviews-title">
+      <div class="shell">
+        <div class="archive-toolbar"><div><p class="eyebrow">Weekly Claw Interviews</p><h2 id="interviews-title">Conversations with builders</h2></div></div>
+        <div class="gallery">
+          <article class="interview-card">
+            <a class="thumb youtube-thumb" href="https://www.youtube.com/watch?v=CfnKdfhQPBQ" target="_blank" rel="noopener" aria-label="Watch Weekly Claw Interviews 01 with Pritam on YouTube"><img src="/assets/youtube-thumbnails/interview-01.jpg" alt="Weekly Claw Interviews 01 thumbnail"><span class="week-number">Interview 01</span><span class="availability">Video</span></a>
+            <div class="card-copy"><p class="card-kicker">Interview · Pritam</p><h3>Financial Foundation Models, AI Banking Agents, Shadow AI</h3><p>Pritam joins Weekly Claw to discuss financial foundation models, AI banking agents and shadow AI.</p></div>
+            <div class="card-actions"><a class="deck-button" href="https://www.youtube.com/watch?v=CfnKdfhQPBQ" target="_blank" rel="noopener">Watch interview</a></div>
           </article>
         </div>
       </div>
