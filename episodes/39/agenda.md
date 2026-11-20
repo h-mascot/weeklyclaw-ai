@@ -1,15 +1,13 @@
-# Weekly Claw #39 — Show Agenda (rev1 · UNVALIDATED)
+# Weekly Claw #39 — Show Agenda (rev2 · UNVALIDATED)
 
 **Episode:** 39 — "Prices dropped. Liabilities landed."
 **Show date:** Friday, November 20, 2026 · 4:00 PM ET (21:00 UTC)
 **Hosts:** Henry Mascot (@HiM) · Andy (@AndyML → canonical handle @alauppe)
 **Target runtime:** ~34 min content · **Hard stop:** 45 minutes
 **Build path:** direct-hermes (Cursor WeeklyClawDeckBuilder unavailable in this environment; 11:00 ET tick died mid-run, recovered by the 12:00 ET tick per the EP38 precedent)
-**Deck:** `revs/deck.rev1.html` (13 slides) · **Speaker notes:** `speaker-notes.md`
+**Deck:** `revs/deck.rev2.html` (13 slides) · **Speaker notes:** `speaker-notes.md`
 
-## Episode thesis
-
-This week everything got a price. Washington's chip rule stopped policing what America sells and started policing what anyone designs — the whole foundry chain became a checkpoint overnight, with TSMC and Samsung suspending shipments and Nvidia exiting licensed Hopper. Anthropic's safety brand got a market price — $83.00, above range, trading as ANT — on the same day a cross-ideology coalition of famous scientists published "Anthropic is not a safe AI company." Agent mistakes got legal form in 24 hours: Reuters caught Muse displaying strangers' bank balances, Arizona opened a criminal probe, and Citi rewrote its terms so customers own their agents' actions. Frontier intelligence got repriced three times in one week — Astra −20% with the first High self-improvement rating, Neon at $3/$15, Microsoft specialists at 2–40% of frontier cost. And self-improvement moved from ratings to receipts: two open black-hole problems closed, 46% of OpenAI's own research tasks finished by its agents, silicon-proven chip gains, 60% of Meta's ads-fleet propagation. The throughline: **everything got a price — the chips, the tokens, the safety brand, the liability.**
+## Episode thesis This week the industry stopped trading on narrative and started clearing on primary artifacts. Washington's November 19 chip rule stopped policing what America sells and started policing what anyone designs — turning the foundry chain into a compliance checkpoint as TSMC and Samsung suspended shipments and Nvidia exited licensed Hopper. Anthropic's safety brand got a market print — $83.00, above range, trading as ANT — alongside a cross-ideology coalition of prominent scientists publishing "Anthropic is not a safe AI company." Consumer agent risk took legal form in 24 hours: Reuters documented Muse sending staffers bank balances that weren't theirs (which Meta says aren't real), Arizona opened a criminal probe, and Citi rewrote its terms so customers own their agents' actions. Frontier intelligence got repriced three times in one week — Astra −20% with the first High self-improvement rating, Neon at $3/$15, and Microsoft specialists at 2–40% of frontier cost. And self-improvement produced verifiable work: two open black-hole problems closed, 46% of OpenAI's own research tasks finished by its agents, silicon-proven chip gains, and 60% of Meta's ads-fleet propagation. The throughline: **everything got a price — the chips, the tokens, the safety brand, the liability.**
 
 ## Segment map (build reference)
 
@@ -42,10 +40,9 @@ Break-glass: if running long at the 27:00 mark, cut News 4/5 story B (Microsoft 
 - Muse + Arizona + Citi Section H in one news cycle.
 - Price war ×3; self-improvement receipts ×4 labs.
 
-**Henry's talking points:**
-- "Everything got a price this week. Even the apologies will, soon."
-- "The rule follows the silicon now, not the seller."
-- "Eighty-three dollars, and three Fields Medalists say the brand is spent."
+**Henry's talking points:** - "Everything got a price this week, and the agents got lawyers."
+- "The rule follows the designer now, not the American seller."
+- "Eighty-three dollars a share, with three Fields Medalists signing 'not a safe AI company.'"
 
 **Henry landing line:** "Prices dropped. Liabilities landed."
 
@@ -142,8 +139,7 @@ Break-glass: if running long at the 27:00 mark, cut News 4/5 story B (Microsoft 
 - Arizona: AG Kris Mayes criminal probe — "apparent infiltration of banks by rogue AI agents."
 - Citi Section H (updated Nov 2026): customers cautioned; responsible for agent actions. Card is a summary; header verbatim; read full text live.
 
-**Henry's talking points:**
-- "Ten million downloads, and nobody taught it whose money is whose."
+**Henry's talking points:** - "Ten million downloads since September, and either it leaked balances or it fabricated them — neither is production-ready."
 - "The first big-bank response isn't a control. It's a terms patch."
 - "A prosecutor, a wire service, and a ToS section asked the same question in 24 hours."
 
@@ -196,8 +192,7 @@ Break-glass: if running long at the 27:00 mark, cut News 4/5 story B (Microsoft 
 - Chips: Jalapeño area −13%/−10% silicon-proven (with AMD, 14% PPA on GPU IP). Meta: 60% of ads-fleet propagation, $45M+.
 
 **Henry's talking points:**
-- "One day after the card says High, four labs publish homework."
-- "Two open physics problems, Lean proofs, a physicist's signature. That's not a benchmark — that's a CV."
+- "One day after the card says High, four labs publish homework." - "Two open physics problems, Lean proofs, physicist-checked. That's not a benchmark — that's a CV."
 - "The 79-vs-25 split is the map every AI team should build on."
 
 **Henry landing line:** "The RSI conversation moved from ratings to receipts."
@@ -286,8 +281,7 @@ Break-glass: if running long at the 27:00 mark, cut News 4/5 story B (Microsoft 
 - Watch 2: OpenAI Nov-20 platform approval rule — verify docs before air or cut the mention.
 - Watch 3: Nov 25 weights wall (Qwen4-Max-Preview retirement + ERNIE 5.5 Flash); Nov 28 Gentlemen ransomware countdown (Ep40 window).
 
-**Henry's talking points:**
-- "Three dates: tomorrow, tomorrow, and the twenty-fifth."
+**Henry's talking points:** - "Three dates: November 20, November 20, and November 25."
 - "Discord for the receipts between shows."
 
 **Henry landing line:** "Back next Friday, November 27."

@@ -1,6 +1,6 @@
-# Weekly Claw #39 — host cheat sheet (rev1)
+# Weekly Claw #39 — host cheat sheet (rev2)
 
-One page. Numbers, timings, and the things not to say. Deck revs/deck.rev1.html · Fri 2026-11-20 · 16:00 ET.
+One page. Numbers, timings, and the things not to say. Deck revs/deck.rev2.html · Fri 2026-11-20 · 16:00 ET.
 
 ## Numbers that must be exact
 
@@ -42,9 +42,8 @@ Break-glass at 27:00: Microsoft story to one line; second SFO beat to 30 seconds
 - The "$107.3B raise" — unreconciled with the pricing release; don't use it. IPO figures = pricing release; relays = "reported."
 - Benchmark rows unlabeled — **"vendor-reported"** for launch claims; **"vendor-cited"** for AA placements; verify AA live before quoting.
 - The Citi Section H card as verbatim — **header verbatim only; read the full text live.**
-- "Indicated to open 25% above" as a settled print — pre-print language.
-- A recap anywhere except the single close line — never recap the recap.
-- Correct Andy's Heritage "Thank Heritage— sorry, habit" recovery gag — it is scripted, keep it.
+- "Indicated to open 25% above" as a settled print — pre-print language. - A recap anywhere except the single close line — never recap twice.
+- Anything correcting Andy's Heritage "Thank Heritage— sorry, habit" recovery gag — it is scripted, keep it.
 
 ## Links on the final slide
 

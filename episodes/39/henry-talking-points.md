@@ -1,4 +1,4 @@
-# Weekly Claw #39 — Henry section (rev1)
+# Weekly Claw #39 — Henry section (rev2)
 
 Henry's segment assignments and running orders for the Nov 20 show. Times are cumulative from the run sheet in `agenda.md`.
 
@@ -9,13 +9,13 @@ Henry's segment assignments and running orders for the Nov 20 show. Times are cu
 3. **News 2/5 ipo** (8:00–12:00) — the tension segment: $83 pricing release facts + MisAnthropic Statement. Landing line: "The safety brand has a ticker now."
 4. **News 3/5 liability** (12:00–16:00) — carry the Meta-says/Reuters-unresolved caveat verbatim. Landing question: "Fraud, a bug, or just Section H?"
 5. **News 4/5 pricewar** (16:00–19:30) — say "vendor-reported" on every benchmark. Landing line: "Intelligence got cheaper. Knowing what it's hiding didn't."
-6. **News 5/5 selfimprove** (19:30–23:00) — the wow segment; physics receipts first, jagged map second. Landing line: "From ratings to receipts."
+6. **News 5/5 selfimprove** (19:30–23:00) — the receipts segment; physics proofs first, jagged map second. Landing line: "The RSI conversation moved from ratings to receipts."
 7. **Hot take** (27:00–30:30) — proposition: safety went public; guidance is the test. Mind-changer on the slide.
 8. **Close** (32:00–33:30) — three dates, single recap line, Discord CTA.
 
 ## Henry's through-lines (spoken, from his own material)
 
-- The verification-loop pattern: this week's physics receipts are the Claude Code engineering-post thesis at lab scale — agents self-organize for six weeks, Lean verifies, a physicist signs. "Verification loops let you run dozens of agents" — now it closed two open problems.
+- The verification-loop pattern: this week's physics receipts are the Claude Code engineering-post thesis at lab scale — agents self-organize for six weeks, Lean verifies, a physicist checks every main result. "Verification loops let you run dozens of agents" — now it closed two open problems.
 - The operator map: OpenAI's 79/35/25 jagged split is the same "monitor before you serve" sequencing he preaches for agent fleets.
 - The disclosure discipline: BIS rule + Treasury plan + Citi Section H + an IPO prospectus are all the same instrument — the stack gets read by strangers now. His team's source ledgers are practice for the disclosure era.
 - Price war: the 95%-off cached input price changes agent economics at 1M context — rerun the fleet math before Monday.
