@@ -10,8 +10,8 @@ Henry's segment assignments and running orders for the Nov 20 show. Times are cu
 4. **News 3/5 liability** (12:00–16:00) — carry the Meta-says/Reuters-unresolved caveat verbatim. Landing question: "Fraud, a bug, or just Section H?"
 5. **News 4/5 pricewar** (16:00–19:30) — say "vendor-reported" on every benchmark. Landing line: "Intelligence got cheaper. Knowing what it's hiding didn't."
 6. **News 5/5 selfimprove** (19:30–23:00) — the receipts segment; physics proofs first, jagged map second. Landing line: "The RSI conversation moved from ratings to receipts."
-7. **Hot take** (27:00–30:30) — proposition: safety went public; guidance is the test. Mind-changer on the slide.
-8. **Close** (32:00–33:30) — three dates, single recap line, Discord CTA.
+7. **Hot take** (31:00–34:30) — proposition: safety went public; guidance is the test. Mind-changer on the slide.
+8. **Close** (36:00–37:30) — three dates, single recap line, Discord CTA.
 
 ## Henry's through-lines (spoken, from his own material)
 

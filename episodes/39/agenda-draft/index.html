@@ -31,9 +31,9 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <p><strong>Episode:</strong> 39 — &quot;Prices dropped. Liabilities landed.&quot;</p>
 <p><strong>Show date:</strong> Friday, November 20, 2026 · 4:00 PM ET (21:00 UTC)</p>
 <p><strong>Hosts:</strong> Henry Mascot (@HiM) · Andy (@AndyML → canonical handle @alauppe)</p>
-<p><strong>Target runtime:</strong> ~34 min content · <strong>Hard stop:</strong> 45 minutes</p>
+<p><strong>Target runtime:</strong> ~38 min content · <strong>Hard stop:</strong> 45 minutes</p>
 <p><strong>Build path:</strong> direct-hermes (Cursor WeeklyClawDeckBuilder unavailable in this environment; 11:00 ET tick died mid-run, recovered by the 12:00 ET tick per the EP38 precedent)</p>
-<p><strong>Deck:</strong> <code>revs/deck.rev2.html</code> (13 slides) · <strong>Speaker notes:</strong> <code>speaker-notes.md</code></p>
+<p><strong>Deck:</strong> <code>deck.html</code> (13 slides) · <strong>Speaker notes:</strong> <code>speaker-notes.md</code></p>
 <h3>Episode thesis</h3>
 <p>This week the industry stopped trading on narrative and started clearing on primary artifacts. Washington&#x27;s November 19 chip rule stopped policing what America sells and started policing what anyone designs — turning the foundry chain into a compliance checkpoint as TSMC and Samsung suspended shipments and Nvidia exited licensed Hopper. Anthropic&#x27;s safety brand got a market print — $83.00, above range, trading as ANT — alongside a cross-ideology coalition of prominent scientists publishing &quot;Anthropic is not a safe AI company.&quot; Consumer agent risk took legal form in 24 hours: Reuters documented Muse sending staffers bank balances that weren&#x27;t theirs (which Meta says aren&#x27;t real), Arizona opened a criminal probe, and Citi rewrote its terms so customers own their agents&#x27; actions. Frontier intelligence got repriced three times in one week — Astra −20% with the first High self-improvement rating, Neon at $3/$15, and Microsoft specialists at 2–40% of frontier cost. And self-improvement produced verifiable work: two open black-hole problems closed, 46% of OpenAI&#x27;s own research tasks finished by its agents, silicon-proven chip gains, and 60% of Meta&#x27;s ads-fleet propagation. The throughline: <strong>everything got a price — the chips, the tokens, the safety brand, the liability.</strong></p>
 <h3>Segment map (build reference)</h3>
@@ -46,11 +46,11 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <p>| 5 | News 3/5 · Agent liability burst | 4.0 | 12:00–16:00 |</p>
 <p>| 6 | News 4/5 · The frontier price war | 3.5 | 16:00–19:30 |</p>
 <p>| 7 | News 5/5 · Self-improvement receipts | 3.5 | 19:30–23:00 |</p>
-<p>| 8 | Signal From Outside · Bloomberg TV (manual, 2 beats) | 4.0 | 23:00–27:00 |</p>
-<p>| 9 | Hot take · safety goes public | 3.5 | 27:00–30:30 |</p>
-<p>| 10 | Sponsor · Heritage Telecom | 1.5 | 30:30–32:00 |</p>
-<p>| 11 | Watch list + close | 1.5 | 32:00–33:30 |</p>
-<p>Break-glass: if running long at the 27:00 mark, cut News 4/5 story B (Microsoft specifics) to one line and drop the second SFO beat to 30 seconds. Never cut the Meta-says/Reuters-unresolved caveat, the BIS effective-date line, or the sources caveat block.</p>
+<p>| 8 | Signal From Outside · ARTEX / Risky Business #859 (Andy) | 8.0 | 23:00–31:00 |</p>
+<p>| 9 | Hot take · safety goes public | 3.5 | 31:00–34:30 |</p>
+<p>| 10 | Sponsor · Heritage Telecom | 1.5 | 34:30–36:00 |</p>
+<p>| 11 | Watch list + close | 1.5 | 36:00–37:30 |</p>
+<p>Break-glass: if behind at the 23:00 handoff, skip playback and use the 4-minute ARTEX version: episode context, three security checks, closing question. Never cut the Meta-says/Reuters-unresolved caveat, the BIS effective-date line, or the sources caveat block.</p>
 <p>---</p>
 <h3>1 · Cold open (2.5 min)</h3>
 <p><strong>Visual cue:</strong> Title → cold open slide. Five arc steps, five hooks. Henry opens, reads the frame, hits three numbers, hands off.</p>
@@ -214,27 +214,26 @@ code { background:rgba(36,32,28,.08); padding:.1em .3em; border-radius:4px; }
 <li>Caveat: every lab figure vendor-reported (labeled); physics side independent-checkable (preprint + Lean).</li>
 <li>Cut instruction: chip-design and Meta lines compress to one sentence each if long.</li>
 </ul>
-<h3>8 · Signal From Outside — Bloomberg Television (4.0 min)</h3>
-<p><strong>Visual cue:</strong> <code>s-signal-outside</code>. MANUAL OPEN — NOT AUTOPLAY. Poster: <code>assets/images/sfo39-bloomberg.jpg</code>. Play plan: 0:00 ~60s → 1:03 ~30s → 2:44 to end (~48s).</p>
-<p><strong>Segment talking points:</strong></p>
+<h3>8 · Signal From Outside — ARTEX: Build for a shorter response window (8.0 min)</h3>
+<p><strong>Visual cue:</strong> <code>s-signal-outside</code>. Andy reviews the opening of <a href="https://youtu.be/xqFGJc-nYQY">Risky Business #859</a> (Nov 11), with Patrick Gray, James Wilson, and Chris Krebs. Use the slide as the visual; optional manual video open only, no autoplay.</p>
+<p><strong>What the episode says:</strong></p>
 <ul>
-<li>Bloomberg Television, uploaded Nov 19 (debut morning), 3:32 runtime, 776 views at verification.</li>
-<li>Beats (auto-caption timestamps — re-locate on open): 0:00 &quot;public market appetite… pure AI model company&quot; · 1:03 &quot;What in God&#x27;s name is a frontier model business?&quot; · 2:44 &quot;900 billion plus&quot; infrastructure spend · 3:10 enterprise vs consumer fork.</li>
-<li>Fallback still: the poster. The talk track stands on the pricing release + live quote.</li>
+<li>Wilson points to a simple combination: shared notes, workers that coordinate, and an orchestrator. Gray focuses on the pace of incidents; Krebs distinguishes encountering the tool from a confirmed breach.</li>
+<li>Shared tooling is not shared attribution. CrowdStrike documented use in a South Korean finance campaign; a later FBI alert describes multiple actors and campaigns, not one coordinated incident.</li>
 </ul>
-<p><strong>Henry&#x27;s talking points:</strong></p>
-<ul>
-<li>&quot;The market&#x27;s first read on a pure frontier-lab IPO — live, this morning.&quot;</li>
-<li>&quot;On air: filing facts first, broadcaster market-color second.&quot;</li>
-</ul>
-<p><strong>Henry landing line:</strong> &quot;The clip says what the market hopes. The filing says what the company sold.&quot;</p>
-<p><strong>Andy fallback talk track:</strong> See <code>speaker-notes.md</code> § s-signal-outside.</p>
-<p><strong>Handoff cue:</strong> &quot;That&#x27;s the week in facts. The take is next.&quot;</p>
+<p><strong>Andy’s security takeaways:</strong></p>
+<ol>
+<li>Shrink what’s exposed: know what is internet-facing, give temporary tools an owner and an expiry, and remove what you no longer use.</li>
+<li>Limit what one credential can reach: separate build, deploy, and recovery access; prefer short-lived, scoped credentials.</li>
+<li>Drill the response: use a test credential to measure detection and revocation; prove you can restore from a backup the same identity cannot alter.</li>
+</ol>
+<p><strong>Closing question:</strong> If a deployment credential leaked today, what could it reach, how fast could you revoke it, and could you still recover?</p>
+<p><strong>Handoff cue:</strong> “That's the signal. Now let's get to the hot take.”</p>
 <p><strong>Sources / production notes:</strong></p>
 <ul>
-<li>Primary: https://www.youtube.com/watch?v=Lb3d-p3sUSs (metadata + auto-captions verified 2026-11-19; qa/sfo39.en.vtt).</li>
-<li>Caveat: broadcaster commentary; &quot;indicated to open&quot; is pre-print; guest claims attributed.</li>
-<li>Cut instruction: drop the second play beat to 30s if running past 27:00 cumulative.</li>
+<li><a href="https://www.risky.biz/RB859/">Publisher notes</a> · <a href="https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/">CrowdStrike campaign report</a> · <a href="https://www.ic3.gov/CSA/2026/261113.pdf">FBI FLASH, Nov 13</a> (postdates the episode).</li>
+<li>Optional cue points from the audio transcript (check video timing before playback): ~2:49 coordination; ~4:23 control; ~6:17 visibility and attribution.</li>
+<li>If short on time, skip playback and use the 4-minute rundown; keep the attribution distinction.</li>
 </ul>
 <h3>9 · Hot take — safety goes public (3.5 min)</h3>
 <p><strong>Visual cue:</strong> <code>s-hot-take</code>. Receipt: same safe.ai capture as slide 5 (reuse disclosed on-slide).</p>

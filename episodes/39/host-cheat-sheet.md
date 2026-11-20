@@ -1,6 +1,6 @@
 # Weekly Claw #39 — host cheat sheet (rev2)
 
-One page. Numbers, timings, and the things not to say. Deck revs/deck.rev2.html · Fri 2026-11-20 · 16:00 ET.
+One page. Numbers, timings, and the things not to say. Deck deck.html · Fri 2026-11-20 · 16:00 ET.
 
 ## Numbers that must be exact
 
@@ -12,7 +12,7 @@ One page. Numbers, timings, and the things not to say. Deck revs/deck.rev2.html 
 - **Arizona** — AG **Kris Mayes**, **criminal investigation**, OpenAI + other AI firms, "apparent infiltration of banks by rogue AI agents" (Reuters; 3 syndications). **Citi Section H** — "Use of Third-Party Artificial Intelligence (AI) Agents", Online User Agreement **updated Nov 2026**: customers cautioned; **responsible for agent actions**. Card is a summary — header verbatim.
 - **Price war** — GPT-6.2 Astra: **$8 / $40** per M (cached **$0.40**), **−20%** vs GPT-6 Astra; +5.2 Agents' Last Exam at **<1/3 cost**; system card: **first released model rated HIGH AI self-improvement**; regressions: obstacle omission, **evaluation awareness <3% of turns**. Gemini 4 Neon: **$3 / $15** (cached **$0.15**, **95% off**), **1M window**, **#3 AA Intelligence (61 xhigh)**, **#1 AA Coding Agent (58.6)** — vendor-cited, verify live. Microsoft Ignite: **seven specialists at 2–40%** of frontier task cost; Cyber 2 Flash **92.3% vs Astra 91.5% at <2% cost**; contamination footnote **92/905**.
 - **Self-improvement receipts** — Claude: **2003 Hawking–Page calculation completed**; modular-bootstrap ceiling **Λ≈9.1266** (vs proven c/8.5); ~**6-week** self-organized agent run; **Lean-verified**; physicist-checked. OpenAI: **46%** of 2–4h research tasks (**23% in March**); jagged **79/35/25**; median agent spend **$2,400/day** (p90 $23,000); **5.7** agent workdays/researcher; safety workweeks **+77%**. Chips: Jalapeño area **−13% / −10%**, silicon-proven; AMD **14% PPA**. Meta: **60%** of ads-fleet propagation, **$45M+** savings.
-- **SFO:** Bloomberg Television `Lb3d-p3sUSs` · **3:32** · uploaded **Nov 19** · 776 views at verification · cue beats: 0:00 appetite/pure-AI · **1:03** "frontier model business?" · **2:44** "$900B plus" infra · **3:10** enterprise-vs-consumer. "Indicated to open +25%" = **pre-print language** — quote screen is the receipt.
+- **SFO:** [Risky Business #859](https://youtu.be/xqFGJc-nYQY) (Nov 11) · Andy’s three checks: exposed services, credential reach, detect/revoke/restore. Same tool ≠ same actor.
 - **Next episode:** Friday, **November 27**, 4 PM ET.
 
 ## Run sheet
@@ -24,16 +24,16 @@ One page. Numbers, timings, and the things not to say. Deck revs/deck.rev2.html 
 - 12:00 S3 Agent liability burst (Henry) 4.0 → 16:00
 - 16:00 S4 Frontier price war (Henry) 3.5 → 19:30
 - 19:30 S5 Self-improvement receipts (Henry) 3.5 → 23:00
-- 23:00 Signal From Outside — Bloomberg TV, 2 beats (manual open) 4.0 → 27:00
-- 27:00 Hot take — safety goes public (Henry proposition, Andy rebuttal) 3.5 → 30:30
-- 30:30 Heritage Telecom read 1.5 → 32:00
-- 32:00 Watch list + close: three dates, **single recap line**, Discord CTA (Henry) 1.5 → 33:30. **Hard stop 45.**
+- 23:00 Signal From Outside — ARTEX / Risky Business #859 (Andy) 8.0 → 31:00
+- 31:00 Hot take — safety goes public (Henry proposition, Andy rebuttal) 3.5 → 34:30
+- 34:30 Heritage Telecom read 1.5 → 36:00
+- 36:00 Watch list + close: three dates, **single recap line**, Discord CTA (Henry) 1.5 → 37:30. **Hard stop 45.**
 
-Break-glass at 27:00: Microsoft story to one line; second SFO beat to 30 seconds. Never cut the Meta-says/Reuters caveat, the BIS effective-date line, or the sources caveat.
+Break-glass at 23:00: skip playback and use the 4-minute ARTEX rundown. Never cut the Meta-says/Reuters caveat, the BIS effective-date line, or the sources caveat.
 
-## Cue points (auto-captions — re-locate on open)
+## Cue points (audio transcript — check against video)
 
-- SFO: open manually, never autoplay. Play plan: 0:00 ~60s → 1:03 ~30s → 2:44 to end ~48s. Beats: 0:00 "public market appetite… pure AI model company" · 1:03 "What in God's name is a frontier model business?" · 2:44 "900 billion plus that Anthropic plans to spend" · 3:10 "Anthropic bet on the enterprise, OpenAI bet on the consumer."
+- SFO: optional manual open only. Approximate audio cues (check video timing): ~2:49 coordination · ~4:23 control · ~6:17 visibility and attribution. No clip required.
 
 ## Never say on air
 
